@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>CV Martin Tournoij</title>
+
+		<style>
+			.page {
+				position: relative;
+				/* 21x29.7cm */
+				width: 20.5cm;
+				height: 29.3cm;
+				page-break-after: always;
+			}
+
+			.page.last {
+				page-break-after: avoid;
+			}
+
+			body {
+				padding: 0; 
+				margin: 0;
+				font-family: "Fontin";
+				font-size: 12px;
+				line-height: 1.3em;
+				color: #333;
+			}
+			@media screen {
+				.page { border: 1px #666 dashed; margin-botton: 1em; }
+			}
+
+			h1, h2, h3 {  padding: .1em; margin: .1em; }
+			h1 {
+				font-size: 2em;
+				margin-bottom: .5em;
+				padding-bottom: .5em;
+				padding-top: .7em;
+				padding-left: .2em;
+				border-bottom: 2px solid #333;
+			}
+			h2 {
+				font-size: 1.4em;
+				margin-left: 1em;
+				margin-top: .6em;
+				margin-bottom: .1em;
+			}
+			h3 {
+				font-size: 1.2em;
+				margin-left: 2.5em;
+			}
+
+			p, li { white-space: pre-line; }
+			p {
+				margin: .3em;
+				margin-left: 4em;
+			}
+			p.indentmore { margin-left: 6em; }
+			p.ref { margin-left: 5.5em; font-size: .9em; }
+
+			ul { margin-left: 2em; margin-top: 0em; }
+			ul ul { margin-left: 0; padding-left: 2em; }
+			ul li { margin-bottom: 1em; }
+			ul ul > li {
+				list-style: circle;
+				margin-bottom: .2em;
+			}
+
+			.versie {
+				position: absolute;
+				bottom: 0cm;
+				left: 1cm;
+				width: 18.8cm;
+				text-align: right;
+				font-size: .9em;
+			}
+			.pagina {
+				position: absolute;
+				bottom: 0cm;
+				left: .2cm;
+				font-size: .9em;
+			}
+			#persoonsgegevens p { float: left; }
+
+			i {
+				color: #000;
+				text-decoration: underline;
+				/*background-color: #eee;*/
+			}
+
+			.clear { clear: both; }
+		</style>
+	</head>
+
+	<body>
+		<div class="page last">
+			<h1>CV Martin T<span class="redact">ournoij</span></h1>
+			<div id="persoonsgegevens">
+				<h2>Persoonsgegevens</h2>
+				<p>Martin T<span class="redact">ournoij</span>
+					<span class="redact">Van Renesseweg 14</span>
+					<span class="redact">5645 JR Eindhoven</span></p>
+
+				<p>Geboortedatum: 18 Juni 1985
+					<span class="redact">06 5156 2385</span>
+					<a class="redact" href="mailto:martin@arp242.net">martin@arp242.net</a></p>
+				</div>
+				<br class="clear" />
+
+			<div id="werkervaring">
+				<h2>Werkervaring</h2>
+
+				<h3>Maart 2014–Heden, <span class="redact">LICO Innovations B.V.</span> software ontwikkeling</h3>
+				<ul>
+					<li>(<i>Ruby on Rails</i>, <i>CoffeeScript</i>)</li>
+				</ul>
+
+				<h3>April 2013–December 2013, <span class="redact">AuguSoft</span> software ontwikkeling</h3>
+				<ul>
+					<li><span class="redact">VillaXL</span> — Verhuur van vakantiehuizen
+						<ul>
+							<li>Verschillende onderhoudswerkzaamheden, bugfixes, uitbreidingen aan de beheerinterface (<i>PHP</i>, <i>MySQL</i>, <i>JavaScript</i>, <i>jQuery</i>)</li>
+							<li>Verschillende onderhoudswerkzaamheden, bugfixes, uitbreidingen aan de frontend (<i>PHP</i>, <i>MySQL</i>, <i>CoffeeScript</i>, <i>jQuery</i>)</li>
+						</ul>
+					</li>
+
+						<li>CMS interface — Flexibel CMS systeem om hele websites mee te beheren
+						<ul>
+							<li>Ontwerp &amp; ontwikkeling van de user interface (<i>PHP</i>, <i>CoffeeScript</i>, <i>Twig</i>, <i>LessCSS</i>, <i>Bootstrap</i>, <i>jQuery</i>)</li>
+							<li>Programmeren van de backend code (<i>PHP</i>, <i>MySQL</i>)</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>November 2011–April 2013, <span class="redact">LeadMedia B.V. / Jibr B.V.</span> software ontwikkeling</h3>
+				<ul>
+					<li>Ontwikkeling van <span class="redact">WeRemind</span> — Online agenda met de mogelijkheid automatisch herinneren te versturen
+						<ul>
+							<li>Programmeren van de backend (<i>Python</i>, <i>web.py</i>, <i>MySQL</i>)</li>
+							<li>Ontwerp &amp; programmeren van de frontend (<i>Jinja2</i>, <i>CoffeeScript</i>, <i>jQuery</i>)</li>
+							<li>Opzet &amp; beheer serverinfrastructuur (<i>CentOS</i>, <i>MySQL</i>, <i>nginx</i>, <i>Varnish</i>)</li>
+						</ul>
+
+					<li>Ontwikkeling van <span class="redact">Jibr</span> — Online website builder
+						<ul>
+							<li>Programmeren van de backend (<i>PHP</i>, <i>Zend  Framework</i>, <i>Smarty</i>, <i>MySQL</i>, <i>Python</i>)</li>
+							<li>Programmeren van de frontend (<i>JavaScript</i>, <i>jQuery</i>)</li>
+							<li>Opzet &amp; beheer serverinfrastructuur (<i>CentOS</i>, <i>MySQL</i>, <i>nginx</i>, <i>Varnish</i>, <i>memcached</i>, <i>postfix</i>)</li>
+						</ul>
+					</li>
+
+					<li>Onderhoud &amp; uitbreidingen <span class="redact">Webklik</span> — Online website-builder &amp; email hosting
+						<ul>
+							<li>Verschillende onderhoudswerkzaamheden, bugfixes, verschillende uitbreidingen (<i>PHP</i>, <i>Zend</i>, <i>Smarty</i>, <i>MySQL</i>)</li>
+							<li>Beheer serverinfrastructuur (<i>CentOS</i>, <i>lighttpd</i>, <i>Exim</i>, <i>Dovecot</i>, <i>SpamAssassin</i>, <i>PowerDNS</i>, <i>Varnish</i>)</li>
+							<li>Tweedelijns support</li>
+						</ul>
+					</li>
+
+					<li>Onderhoud &amp; uitbreidingen <span class="redact">Tixor</span> — Prijsvergelijk site voor concertkaarten
+						<ul>
+							<li>Verschillende onderhoudswerkzaamheden, bugfixes, verschillende uitbreidingen (<i>PHP</i>, <i>Zend Framework</i>, <i>MySQL</i>)</li>
+							<li>Beheer serverinfrastructuur (<i>CentOS</i>, <i>lighttpd</i>, <i>Varnish</i>)</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>Juli 2010–Oktober 2011, <span class="redact">Aragorn B.V.</span> software ontwikkeling</h3>
+				<ul>
+					<li>Ontwikkeling en beheer intranet
+						<ul>
+							<li>Ticket systeem om reparaties van PC/Laptops/etc. te registeren en bij te houden (<i>PHP</i>, <i>JavaScript</i>, <i>MySQL</i>)</li>
+							<li>Leverancier zoekmachine, zoeken van 30+ leverancier met 1 interface (<i>PHP</i>, <i>JavaScript</i>, <i>MySQL</i>)</li>
+							<li>Implementatie van koppeling tussen ERP systeem (Exact globe), TOPdesk, en Intranet (<i>Python</i>) </li>
+							<li>Verschillende hulpmiddelen, zoals automatisering van de prijslijst, automatisch berekenen van marges/omzet</li>
+							<li>Custom FreeDOS, FreeBSD, &amp; WinPE boot CD/USB voor reparatie van PC’s (<i>Python</i>, <i>C</i>)</li>
+							<li>Installatie, inrichting &amp; beheer servers voor intranet (Fedora) en website (<i>CentOS</i>, <i>Apache</i>, <i>Varnish</i>, <i>MySQL</i>)</li>
+							<li>Binnen een klein bedrijf is flexibele houding vereist; de taken bestonden dus ook uit het opnemen van de telefoon, het maken van offertes, technisch advies geven, en al het andere dat er tussendoor komt</li>
+						</ul>
+					</li>
+
+					<li>Ontwikkeling website
+						<ul>
+							<li>Op maat gemaakte CMS &amp; webshop met koppeling naar achterliggend administratie</li>
+						</ul>
+					</li>
+				</ul>
+
+				<h3>Augustus 2008–Juli 2010, <span class="redact">Aragorn B.V.</span> support/reparatie</h3>
+				<ul>
+					<li>Reparatiedienst &amp; helpdesk voor particuliere en zakelijke klanten
+						<ul>
+							<li>Diagnose en reparatie van computersystemen op software &amp; hardware niveau voor particuliere en zakelijke klanten</li>
+							<li>Reparatie laptops (vervangen scherm, moederbord, powerjacks, etc.)</li>
+							<li>Diagnose en reparatie aanverwante randapparatuur (printers, routers, etc.)
+							<li>Verkoop, advies, en helpdesk per telefoon, email, of aan de balie</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div id="overige">
+				<h2>Overige</h2>
+				<h3>Verschillende hobby activiteiten</h3>
+				<ul>
+					<li>Het schrijven van software is meer dan een 9-tot-5 activiteit
+						<ul>
+							<li>Een overzicht van een aantal “hobbyprojecten” is te vinden op: <a class="redact" href="http://code.arp242.net">http://code.arp242.net</a></li>
+							<li>Oprichting, installatie, beheer van <span class="redact">daemonforums.org</span> — Een BSD/IT-georiënteerd forum</li>
+							<li>Begonnen met programmeren op de leeftijd van 12 op de MSX met MSX-BASIC</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="pagina">1/1</div>
+			<div class="versie">
+				<em>Versie: 2014-01-20. Meest recente versie: <a class="redact" href="http://arp242.net/cv/">http://arp242.net/cv/</a></em>
+			</div>
+		</div>
+
+		<!--
+		<div class="page last">
+			<h1>CV Martin T<span class="redact">ournoij</span></h1>
+
+
+			<div class="pagina">2/2</div>
+			<div class="versie">
+				<em>Versie: 2014-01-20. Meest recente versie: <a class="redact" href="http://arp242.net/cv/">http://arp242.net/cv/</a></em>
+			</div>
+		</div>
+		-->
+
+		<script>
+			if (window.location.hash === '#redact') {
+				var redact = document.getElementsByClassName('redact'),
+					r;
+
+				for (var i = 0; redact.length > i; i += 1) {
+					r = redact[i];
+					r.style.backgroundColor = '#000';
+					r.style.width = r.clientWidth + 'px';
+					r.style.display = 'inline-block';
+					r.innerHTML = '&nbsp;';
+
+					if (r.tagName.toLowerCase() === 'a') {
+						r.href = '#_';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

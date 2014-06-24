@@ -1,0 +1,55 @@
+---
+layout: default
+title: arp242.net
+---
+
+<div class="intro">
+	<div class="mugshot">
+		<img src="images/me.jpg" alt="Me!" class="mugshot">
+	</div>
+	<p>
+		This is the homepage of Martin Tournoij, also known as Carpetsmoker and arp242 on the web.  I write about
+		<em>stuff</em> on this page, occasionally.
+	</p>
+
+	<p>
+		I currently work as a software developer to pay my bills; I consider myself fairly lucky, since this is what I
+		actually enjoy doing.
+		I currently use Ruby (on Rails) with CoffeeScript; in previous bill-paying endeavours, I used PHP, Python, and
+		JavaScript. I’ve also programmed in C, Scheme, Haskell, and Perl.
+		I like to use FreeBSD or OpenBSD, and I’ve used Linux a lot as well. In general, I feel UNIX is the way to go.
+	</p>
+
+	<p>
+		I play the guitar &amp; bass guitar, both after a fashion.
+		<a href="http://www.youtube.com/watch?v=z8VIhIIq-kk">I</a>
+		<a href="http://www.youtube.com/watch?v=Y_o4omd8T5c">like</a>
+		<a href="http://www.youtube.com/watch?v=TAJRpKyvq8w">all</a>
+		<a href="http://www.youtube.com/watch?v=OjR4QYsa9nE">sorts</a>
+		<a href="http://www.youtube.com/watch?v=M9JEPeeohYs">of</a>
+		<a href="http://www.youtube.com/watch?v=-ARb9_YWKFo">music</a>
+	</p>
+
+	<p>
+		I can be found on
+		<a href="http://stackoverflow.com/users/660921/carpetsmoker">StackOverflow</a>,
+		the <a href="http://forums.freebsd.org/memberlist.php?mode=viewprofile&amp;u=703">FreeBSD Forums</a>,
+		<a href="http://daemonforums.org/member.php?u=2">DaemonForums</a>,
+		and a number of other places.<br>
+
+		You can email me at <a href="mailto:martin@arp242.net">martin@arp242.net</a>.
+	</p>
+</div>
+
+<a class="intro-bitbucket" href="http://code.arp242.net">For code projects, see my BitBucket page</a>
+
+<div class="weblog-overview">
+
+	{% for post in site.posts %}
+		<div class="weblog-brief">
+			<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+			<em>Created on {{ post.date | date_to_string }}</em>
+			{{ post.excerpt }}
+		</div>
+	{% endfor %}
+</div>
