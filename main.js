@@ -38,7 +38,6 @@
       url: "http://comments.arp242.net/" + (window.location.pathname.split('/').pop().replace(/\.html$/, '')),
       type: 'get',
       dataType: 'json',
-      error: function(xhr, status, err) {},
       success: function(data) {
         if (!data.success) {
           return;
@@ -73,8 +72,6 @@
       type: $(this).attr('method'),
       data: $(this).serialize(),
       dataType: 'json',
-      error: function(xhr, status, err) {}
-    }, alert("Sorry, there was an error"), {
       success: (function(_this) {
         return function(data) {
           if (!data.success) {
@@ -88,5 +85,9 @@
       })(this)
     });
   });
+
+  if ($('.weblog-comments').length > 0) {
+    get();
+  }
 
 }).call(this);

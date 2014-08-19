@@ -28,8 +28,7 @@ get = (cb) ->
 		url: "http://comments.arp242.net/#{window.location.pathname.split('/').pop().replace /\.html$/, ''}"
 		type: 'get'
 		dataType: 'json'
-		error: (xhr, status, err) ->
-			#alert "Sorry, there was an error: `#{err}'"
+		#error: (xhr, status, err) -> alert "Sorry, there was an error: `#{err}'"
 		success: (data) ->
 			return unless data.success
 			#return alert "Sorry, there was an error: `#{data.err}'" unless data.success
@@ -57,8 +56,7 @@ $('.feedbackform form').on 'submit', (e) ->
 		type: $(this).attr 'method'
 		data: $(this).serialize()
 		dataType: 'json'
-		error: (xhr, status, err) ->
-		alert "Sorry, there was an error"
+		#error: (xhr, status, err) -> alert "Sorry, there was an error"
 		success: (data) =>
 			return alert "Sorry, there was an error: `#{data.err}'" unless data.success
 
@@ -66,4 +64,4 @@ $('.feedbackform form').on 'submit', (e) ->
 			get -> $('.comments-list div:last').highlight()
 
 
-#get() if $('.weblog-comments').length > 0
+get() if $('.weblog-comments').length > 0

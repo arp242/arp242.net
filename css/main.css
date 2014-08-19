@@ -213,9 +213,10 @@ h3 {
   padding: 0 12px;
   padding-top: 3px;
   text-align: right;
-  background-color: #32a041;
+  background-color: #666;
   border-radius: 2px;
   color: #fff;
+  text-shadow: 1px 1px 2px #333;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 .intro-bitbucket:hover {

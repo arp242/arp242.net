@@ -7,20 +7,14 @@ require 'yaml'
 
 require 'sinatra'
 
+set :protection, :origin_whitelist => ['http://arp242.net', 'http://192.168.178.2:4000']
 
 post '/new-comment' do
 	content_type :json
+	headers 'Access-Control-Allow-Origin' => 'http://arp242.net'
 
 	if params[:turingtest] != '42'
 		return { :success => false, :err => 'You failed the turing test' }.to_json
-	end
-
-	if request.env['HTTP_ORIGIN'] == 'http://192.168.178.2:4000'
-		headers \
-			'Access-Control-Allow-Origin' => 'http://192.168.178.2:4000'
-	else
-		headers \
-			'Access-Control-Allow-Origin' => 'http://arp242.net'
 	end
 
 	begin
@@ -33,14 +27,18 @@ post '/new-comment' do
 		db.close if db
 	end
 
-	Net::SMTP.start('localhost', 25) do |smtp|
-		smtp.open_message_stream('martin@arp242.net', ['martin@arp242.net']) do |f|
-			f.puts 'From: martin@arp242.net'
-			f.puts 'To: martin@arp242.net'
-			f.puts 'Subject: New comment at arp242.net'
-			f.puts ''
-			f.puts params.inspect
+	begin
+		Net::SMTP.start('localhost', 25) do |smtp|
+			smtp.open_message_stream('martin@arp242.net', ['martin@arp242.net']) do |f|
+				f.puts 'From: martin@arp242.net'
+				f.puts 'To: martin@arp242.net'
+				f.puts 'Subject: New comment at arp242.net'
+				f.puts ''
+				f.puts params.inspect
+			end
 		end
+	rescue
+		# Do nothing for now...
 	end
 
 	return { :success => true }.to_json
@@ -49,14 +47,7 @@ end
 
 get '/:id' do
 	content_type :json
-
-	if request.env['HTTP_ORIGIN'] == 'http://192.168.178.2:4000'
-		headers \
-			'Access-Control-Allow-Origin' => 'http://192.168.178.2:4000'
-	else
-		headers \
-			'Access-Control-Allow-Origin' => 'http://arp242.net'
-	end
+	headers 'Access-Control-Allow-Origin' => 'http://arp242.net'
 
 	begin
 		db = SQLite3::Database.new "comments.sqlite3"
