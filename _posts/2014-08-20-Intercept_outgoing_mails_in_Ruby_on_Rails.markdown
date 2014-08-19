@@ -47,7 +47,7 @@ seems to be somewhat complicated for Thunderbird:
 
 1. Exit Thunderbird
 2. `cd ~/.thunderbird/$profile_name/Mail/Local Folders/`
-3. `ln -s ~/code/yourproject/tmp/mail.mbox` your-folder-name
+3. `ln -s ~/code/yourproject/tmp/mail.mbox your-folder-name`
 4. Restart Thunderbird; you should now have the mbox file in *‘Local Folders’*
 
 See also [this page](http://bahut.alma.ch/2010/01/open-mbox-file-in-thunderbird.html).
