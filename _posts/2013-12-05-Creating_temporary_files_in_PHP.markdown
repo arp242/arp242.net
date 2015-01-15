@@ -20,14 +20,13 @@ In addition, the function is susceptible to a race condition.
 
 `tempnam()` is slightly better, but it doesn’t allow creating directories,
 using a suffix in the filename, or choose the maximum number of possible files.
-These shortcomings sounds somewhat trivial, but I’ve seen (and must admit, even
-wrote) quick ’n dirty hacks to work around this.
+I’ve seen (and must admit, even wrote) quick ’n dirty hacks to work around this.
 
 In addition, you also need to specify a `$prefix` (using the rather
 wonky-named `sys_get_temp_dir()` function), rather that using a sane default,
 and the error reporting (or rather, lack thereof) leaves much to be desired.
 
-This problem has been solved a long ago. POSIX offers us
+This problem has been solved a long time ago. POSIX offers us
 [`mkstemp()`](http://pubs.opengroup.org/onlinepubs/009695399/functions/mkstemp.html)
 , and many systems also implement `mkstemps()` and `mkdtemp()`.
 It’s somewhat unfortunate that PHP doesn’t just implement a proxy to these
@@ -88,16 +87,14 @@ module offers, but it’s better than the PHP functions.
 		$name = '';
 		$doreplace = False;
 		$Xs = [];
-		foreach (range(0, strlen($template)) as $i)
-		{
+		foreach (range(0, strlen($template)) as $i) {
 			$c = substr($template, $i, 1);
 			if ($c !== 'X')
 				$doreplace = False;
 			elseif ($c === 'X' && substr($template, $i + 1, 1) === 'X')
 				$doreplace = True;
 
-			if ($doreplace)
-			{
+			if ($doreplace) {
 				$c = $padchars[mt_rand(0, strlen($padchars) - 1)];
 				$Xs[] = $i;
 			}
@@ -113,14 +110,12 @@ module offers, but it’s better than the PHP functions.
 		$curpos = array_shift($Xs);
 		$startchr = strpos($padchars, substr($name, $curpos, 1)) - 1;
 		$trychr = $startchr;
-		while (true)
-		{
+		while (true) {
 			if ($permutation >= $maxpermutations)
 				throw new MktempError("Unable to create $prefix/$template; all possible file permutations already exist");
 
 			# Try to create file/directory
-			if ($dir)
-			{
+			if ($dir) {
 				$s = @mkdir("$prefix/$name", 0700);
 
 				# What we *really* want to do is do something along the lines of 
@@ -141,25 +136,21 @@ module offers, but it’s better than the PHP functions.
 				#
 				# There's a bug for this, but it doesn't seem to be considered much 
 				# of a priority...  https://bugs.php.net/bug.php?id=49396
-				if (!$s && file_exists("$prefix/$name"))
-				{
+				if (!$s && file_exists("$prefix/$name")) {
 					$err = error_get_last();
 					throw new MktempError("Error creating `$prefix/$name': {$err['message']}");
 				}
 				if ($s) break;
 			}
-			else
-			{
+			else {
 				$s = @fopen("$prefix/$name", 'x');
 
-				if ($s === False && !file_exists("$prefix/$name"))
-				{
+				if ($s === False && !file_exists("$prefix/$name")) {
 					$err = error_get_last();
 					throw new MktempError("Error creating `$prefix/$name': {$err['message']}");
 				}
 
-				if ($s !== False)
-				{
+				if ($s !== False) {
 					fclose($s);
 					chmod("$prefix/$name", 0600);
 					break;
@@ -173,8 +164,7 @@ module offers, but it’s better than the PHP functions.
 			if ($trychr > strlen($padchars) - 1)
 				$trychr = 0;
 
-			if ($trychr === $startchr)
-			{
+			if ($trychr === $startchr) {
 				$curpos = array_shift($Xs);
 				$startchr = strpos($padchars, substr($name, $curpos, 1)) - 1;
 				$trychr = $startchr + 1;
@@ -194,26 +184,22 @@ module offers, but it’s better than the PHP functions.
 	error_reporting(E_ALL);
 	ini_set('display_errors', 'on');
 
-	foreach (range(0, 10) as $i)
-	{
-		try 
-		{
+	foreach (range(0, 10) as $i) {
+		try {
 			mktemp('nonexistent', '/nonexistent');
 			print("We excpected an exception\n");
 			exit(1);
 		}
 		catch (MktempError $exc) { }
 
-		try
-		{
+		try {
 			mktemp('NoXCharacters');
 			print("We excpected an exception\n");
 			exit(1);
 		}
 		catch (MktempError $exc) { }
 
-		try
-		{
+		try {
 			mktemp('ohnoes.XXXXXX', '../../../../../etc/passwd');
 			print("We excpected an exception\n");
 			exit(1);

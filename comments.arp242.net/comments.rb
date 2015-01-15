@@ -1,17 +1,22 @@
 #!/usr/bin/env ruby
 
-require 'sqlite3'
+require 'bundler/setup'
+
 require 'json'
 require 'net/smtp'
+require 'sqlite3'
 require 'yaml'
 
 require 'sinatra'
 
-set :protection, :origin_whitelist => ['http://arp242.net', 'http://192.168.178.2:4000']
+site = 'http://arp242.net'
+email = 'martin@arp242.net'
+
+set :protection, :origin_whitelist => [site, 'http://192.168.178.2:4000']
 
 post '/new-comment' do
 	content_type :json
-	headers 'Access-Control-Allow-Origin' => 'http://arp242.net'
+	headers 'Access-Control-Allow-Origin' => site
 
 	if params[:turingtest] != '42'
 		return { :success => false, :err => 'You failed the turing test' }.to_json
@@ -29,10 +34,10 @@ post '/new-comment' do
 
 	begin
 		Net::SMTP.start('localhost', 25) do |smtp|
-			smtp.open_message_stream('martin@arp242.net', ['martin@arp242.net']) do |f|
-				f.puts 'From: martin@arp242.net'
-				f.puts 'To: martin@arp242.net'
-				f.puts 'Subject: New comment at arp242.net'
+			smtp.open_message_stream(email, [email]) do |f|
+				f.puts "From: #{email}"
+				f.puts "To: #{email}"
+				f.puts "Subject: New comment at #{site}"
 				f.puts ''
 				f.puts params.inspect
 			end
@@ -47,7 +52,7 @@ end
 
 get '/:id' do
 	content_type :json
-	headers 'Access-Control-Allow-Origin' => 'http://arp242.net'
+	headers 'Access-Control-Allow-Origin' => site
 
 	begin
 		db = SQLite3::Database.new "comments.sqlite3"

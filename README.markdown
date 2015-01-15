@@ -1,1 +1,1 @@
-This is my site, arp242.net
+This is my site, [arp242.net][http://arp242.net]

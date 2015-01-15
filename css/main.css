@@ -1,30 +1,23 @@
 @charset "utf-8";
 @font-face {
-  font-family: EquipLight;
-  src: url('fonts/29E54C_0_0.eot');
-  src: url('fonts/29E54C_0_0.eot?#iefix') format('embedded-opentype'), url('fonts/29E54C_0_0.woff') format('woff'), url('fonts/29E54C_0_0.ttf') format('truetype');
+  font-family: DejaVuSans;
+  src: url('font/DejaVuSans-webfont.eot?#iefix') format('embedded-opentype'), url('font/DejaVuSans-webfont.woff') format('woff'), url('font/DejaVuSans-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-  font-family: BandaRegular;
-  src: url('fonts/29E78E_0_0.eot');
-  src: url('fonts/29E78E_0_0.eot?#iefix') format('embedded-opentype'), url('fonts/29E78E_0_0.woff') format('woff'), url('fonts/29E78E_0_0.ttf') format('truetype');
+  font-family: DejaVuSansMono;
+  src: url('font/DejaVuSansMono-webfont.eot?#iefix') format('embedded-opentype'), url('font/DejaVuSansMono-webfont.woff') format('woff'), url('font/DejaVuSansMono-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 body {
-  font-family: EquipLight, "Lucida Sans Unicode", "Lucida Grande", "Dejavu Sans", "Bitstream Vera Sans", sans-serif;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-#menu {
-  font-family: BandaRegular, "Dejavu Serif", Georgia, serif;
+  font-family: "Dejavu Sans", "Bitstream Vera Sans" DejaVuSans, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 input,
 textarea,
 code {
-  font-family: "Consolas", "Menlo", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+  font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", DejaVuSansMono, "Consolas", monospace;
 }
 html {
   margin: 0;
@@ -401,7 +394,40 @@ input:-moz-placeholder {
 }
 .comments-list div {
   white-space: pre;
-  font-family: "Consolas", "Menlo", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
   border-bottom: 1px solid #b7b7b7;
   padding-bottom: .5em;
+}
+kbd {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+  color: #333;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.4em;
+  margin: 0 .1em;
+  padding: .1em .6em;
+  text-shadow: 0 1px 0 #fff;
+  white-space: nowrap;
+}
+blockquote {
+  margin-left: 1em;
+  padding-left: 1em;
+  border-left: 3px solid #0027ff;
+  background-color: #f4f3ff;
+  border-radius: 2px;
+}
+.footnotes {
+  border-top: 1px solid #b7b7b7;
+  margin-left: -1em;
+  margin-right: -0.5em;
+  padding-left: 1em;
+  padding-right: 0.5em;
+  padding-top: 1em;
+}
+.footnotes:before {
+  display: block;
+  content: "Footnotes";
+  font-weight: bold;
 }

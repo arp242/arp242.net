@@ -3,16 +3,16 @@ layout: post
 title: Intercept outgoing mails in Ruby on Rails
 ---
 
-A simple way to this, which just works™
+A simple way to do this, which just works™
 
 
-There are already a bunch of solutions for this; including the
+There already are a bunch of solutions for this; including the
 [post\_office][po] gem by my coworker, but this is the simple UNIX-y approach
 for us simple UNIX-y folks.
 
-We take advantage of `delivery_method = :sendmail`, this effective just pipes an
-email to a binary; this is *assumed* to be `sendmail`, but it can be anything,
-really;
+We take advantage of `delivery_method = :sendmail`, this just pipes an email to
+something executable; this is *assumed* to be `sendmail`, but it can be
+anything, really...
 
 
 Append to mbox file
@@ -32,18 +32,19 @@ etc.
 		}
 	end
 
-`script/fake-sendmail`
+`script/fake-sendmail` (don’t forget to make this executable):
 
 	#!/bin/sh
-	echo "\nFrom FAKE-SENDMAIL $(date)" >> "$1"
+	echo "From FAKE-SENDMAIL $(date)" >> "$1"
 	cat /dev/stdin >> "$1"
+	echo >> "$1"
 
 
-You can reading the mbox file from the commandline with `mail -f tmp/mail.mbox`
-or `mutt -f tmp/mail.mbox`.
+You can read the mbox file from the commandline with `mail -f tmp/mail.mbox` or
+`mutt -f tmp/mail.mbox`.
 
-Most email clients should be able to mbox files one way or another; although it
-seems to be somewhat complicated for Thunderbird:
+Most email clients should be able to read mbox files one way or other;
+although it seems to be somewhat complicated for Thunderbird:
 
 1. Exit Thunderbird
 2. `cd ~/.thunderbird/$profile_name/Mail/Local Folders/`
@@ -55,7 +56,7 @@ See also [this page](http://bahut.alma.ch/2010/01/open-mbox-file-in-thunderbird.
 
 Forward to another email address
 --------------------------------
-This will just forward all mails to another email address. Simple.
+This will just forward all mails to another email address.
 
 `config/environments/development.rb`
 
@@ -68,7 +69,7 @@ This will just forward all mails to another email address. Simple.
 		}
 	end
 
-`script/fake-sendmail`
+`script/fake-sendmail` (don’t forget to make this executable)
 
 	#!/bin/sh
 	sendmail -if fake_sendmail@example.com "$1" < /dev/stdin

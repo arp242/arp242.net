@@ -82,7 +82,7 @@ invalid UTF-8 sequences:
 
 The moral here is: **byte streams are not character streams**, don’t use ’em as
 such. It may work for now, but whenever someone adds multibyte support to GNU
-tr, your command will fail. It’s 2014, always assume multibyte by default.
+tr, your command will fail. It’s 2014, **always assume multibyte**.
 
 
 Other problems
@@ -97,8 +97,8 @@ force. Also, 8 characters is too short, use at least 15.
 
 	$ curl -s http://sensiblepassword.com/?harder=1
 
-Getting a random from the internet is spectacularly stupid & naive. Someone now
-knows:
+Getting a random password from the internet is spectacularly stupid & naive.
+Someone now knows:
 
 - A password you are using for some service or site
 - Unique personal details about you (IP address, browser/environment info)
@@ -114,7 +114,7 @@ Just don’t do this. Ever. Randomly banging on the keyboard is a lot better.
 
 Good solutions
 --------------
-	# strings -n1 < /dev/urandom | tr -d '[:space:]' | head -c15
+	$ strings -n 1 < /dev/urandom | tr -d '[:space:]' | head -c15
 	$ openssl rand -base64 15
 	$ gpg2 --armor --gen-random 1 15
 
@@ -126,11 +126,11 @@ more characters (92 instead of 64). It also doesn’t require external tools
 
 Lessons
 -------
-- A byte streams is not the same thing as a character stream
-- Use `strings(1)` to convert a byte stream to a character stream
-- Don’t use the hex output of a hashing algorithm (SHA256, MD5)
-- Don’t trust copy/paste solutions from the internet; always think for yourself
-- BSD > GNU
+- A byte streams is not the same thing as a character stream.
+- Use `strings(1)` to convert a byte stream to a character stream.
+- Don’t use the hex output of a hashing algorithm (SHA256, MD5).
+- Don’t trust copy/paste solutions from the internet; always think for yourself!
+- BSD beats GNU.
 
 
 
