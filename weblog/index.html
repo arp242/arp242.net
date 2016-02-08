@@ -1,0 +1,15 @@
+---
+layout: default
+title: arp242.net – Weblog
+---
+
+<div class="weblog-overview">
+	<a href="/" class="index-back">&#8592; Back</a>
+	{% for post in site.posts %}
+		<div class="weblog-brief">
+			<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+			<em>{{ post.date | date_to_string }}</em>
+			{{ post.excerpt }}
+		</div>
+	{% endfor %}
+</div>

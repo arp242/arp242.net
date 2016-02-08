@@ -169,7 +169,7 @@ blockquote {
 	padding-bottom: .5em;
 	border-bottom: 1px solid #b7b7b7;
 	
-	h1 {
+	h2 {
 		font-family: @font;
 		font-size: 1em;
 		// Never push the date down
@@ -217,6 +217,16 @@ blockquote {
 	position: absolute;
 	top: 14px;
 	font-weight: bold;
+
+	a {
+		margin-right: 1em;
+	}
+}
+
+.index-back {
+	font-weight: bold;
+	margin-bottom: 1.5em;
+	display: inline-block;
 }
 
 .footnotes {
@@ -233,4 +243,50 @@ blockquote {
 		content: "Footnotes";
 		font-weight: bold;
 	}
+}
+
+
+/*** code stuff ***/
+.code-projects .weblog-brief {
+	background-position: 0 0;
+	background-size: 22px;
+	background-repeat: no-repeat;
+
+	h2 {
+		margin-left: 28px;
+	}
+
+	p {
+		margin-left: 0;
+	}
+}
+
+.lang-python {
+	background-image: url("../images/lang-python.svg");
+}
+
+.lang-ruby {
+	background-image: url("../images/lang-ruby.svg");
+}
+
+// PHP ... always "specially abled"
+.code-projects .weblog-brief.lang-php {
+	background-image: url("../images/lang-php.png");
+	background-position: 0 3px;
+}
+
+.lang-viml {
+	background-image: url("../images/lang-viml.svg");
+}
+
+.lang-coffeescript {
+	background-image: url("../images/lang-coffeescript.svg");
+}
+
+.lang-shell {
+	background-image: url("../images/lang-shell.svg");
+}
+
+.lang-c {
+	background-image: url("../images/lang-c.svg");
 }

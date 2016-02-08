@@ -18,10 +18,20 @@ h2{font-size:1.4em}
 h3{font-size:1.2em;padding:0;margin-bottom:0}
 blockquote{margin-left:1em;padding-left:1em;border-left:3px solid #0027ff;background-color:#f4f3ff;border-radius:2px}
 .weblog-overview{padding:.5em;padding-left:1em;position:relative}
-.weblog-brief{line-height:1.5em;margin-bottom:.6em;padding-bottom:.5em;border-bottom:1px solid #b7b7b7}.weblog-brief h1{font-family:'Libre Baskerville','DejaVu Serif','Georgia',serif;font-size:1em;max-width:calc(100% - 100px);margin:0;float:left}
+.weblog-brief{line-height:1.5em;margin-bottom:.6em;padding-bottom:.5em;border-bottom:1px solid #b7b7b7}.weblog-brief h2{font-family:'Libre Baskerville','DejaVu Serif','Georgia',serif;font-size:1em;max-width:calc(100% - 100px);margin:0;float:left}
 .weblog-brief em{float:right;margin-right:7px;font-size:14px}
 .weblog-brief p{margin:0;clear:both;margin-left:1em}@media screen and (max-width:768px){.weblog-brief p{margin-left:0}}
 .weblog-article{padding:.5em;padding-left:1em;padding-top:2em}.weblog-article h1,.weblog-article>p:nth-child(3){text-align:center}
 .weblog-article>p:nth-child(4){display:none}
-.weblog-back{position:absolute;top:14px;font-weight:bold}
+.weblog-back{position:absolute;top:14px;font-weight:bold}.weblog-back a{margin-right:1em}
+.index-back{font-weight:bold;margin-bottom:1.5em;display:inline-block}
 .footnotes{margin-left:-1em;margin-right:-0.5em;padding-left:1em;padding-right:.5em;padding-top:1em;border-top:1px solid #b7b7b7}.footnotes:before{display:block;content:"Footnotes";font-weight:bold}
+.code-projects .weblog-brief{background-position:0 0;background-size:22px;background-repeat:no-repeat}.code-projects .weblog-brief h2{margin-left:28px}
+.code-projects .weblog-brief p{margin-left:0}
+.lang-python{background-image:url("../images/lang-python.svg")}
+.lang-ruby{background-image:url("../images/lang-ruby.svg")}
+.code-projects .weblog-brief.lang-php{background-image:url("../images/lang-php.png");background-position:0 3px}
+.lang-viml{background-image:url("../images/lang-viml.svg")}
+.lang-coffeescript{background-image:url("../images/lang-coffeescript.svg")}
+.lang-shell{background-image:url("../images/lang-shell.svg")}
+.lang-c{background-image:url("../images/lang-c.svg")}

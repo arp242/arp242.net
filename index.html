@@ -16,9 +16,6 @@ title: arp242.net
 	</p>
 
 	<p>
-		For my code proj&shy;ects, <a href="http://code.arp242.net">see my BitBucket page</a>; I also have some stuff
-		<a href="https://github.com/Carpetsmoker">over at GitHub</a>.
-
 		I can also be found on
 		<a href="https://stackoverflow.com/users/660921/carpetsmoker">Stack&shy;Over&shy;flow</a>,
 		<a href="https://vi.stackexchange.com/users/51/carpetsmoker">Vi and Vim Stack&shy;Ex&shy;change</a>,
@@ -27,12 +24,19 @@ title: arp242.net
 </div>
 
 <div class="weblog-overview">
-
-	{% for post in site.posts %}
+	<h1>Latest weblog entries</h1>
+	{% for i in (0..4) %}
 		<div class="weblog-brief">
-			<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-			<em>{{ post.date | date_to_string }}</em>
-			{{ post.excerpt }}
+			<h2><a href="{{ site.posts[i].url }}">{{ site.posts[i].title }}</a></h2>
+			<em>{{ site.posts[i].date | date_to_string }}</em>
+			{{ site.posts[i].excerpt }}
 		</div>
 	{% endfor %}
+	<a href="/weblog/"><strong>See all →</strong></a>
+</div>
+
+<div class="weblog-overview code-projects">
+	<h1>Latest code updates</h1>
+	{% include_relative _index-code.html %}
+	<a href="/code/"><strong>See all →</strong></a>
 </div>
