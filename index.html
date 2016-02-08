@@ -4,42 +4,25 @@ title: arp242.net
 ---
 
 <div class="intro">
-	<div class="mugshot">
-		<img src="images/me.jpg" alt="Me!" class="mugshot">
-	</div>
+	<img src="images/me.jpg" alt="This is me. I promise!" title="This is me. I promise!" class="mugshot">
+
 	<p>
-		This is the homepage of Martin Tournoij, also known as Carpetsmoker and arp242 on the web.  I write about
-		<em>stuff</em> on this page, occasionally.
+		This is the home&shy;page of <strong>Martin Tournoij</strong>, also known as <strong>Carpet&shy;smo&shy;ker</strong> and
+		<strong>arp242</strong> on the web.<br>
 	</p>
 
 	<p>
-		I currently work as a software developer to pay my bills; I consider myself fairly lucky, since this is what I
-		actually enjoy doing.
-		I currently use Ruby (on Rails) with CoffeeScript; in previous bill-paying endeavours, I used PHP, Python, and
-		JavaScript. I’ve also programmed in C, Scheme, Haskell, and Perl.
-		I like to use FreeBSD or OpenBSD, and I’ve used Linux a lot as well. In general, I feel UNIX is the way to go.
+		I write about <em>stuff</em> on this page, oc&shy;ca&shy;sion&shy;al&shy;ly.
 	</p>
 
 	<p>
-		I play the guitar &amp; bass guitar, both after a fashion.
-		<a href="http://www.youtube.com/watch?v=z8VIhIIq-kk">I</a>
-		<a href="http://www.youtube.com/watch?v=Y_o4omd8T5c">like</a>
-		<a href="http://www.youtube.com/watch?v=TAJRpKyvq8w">all</a>
-		<a href="http://www.youtube.com/watch?v=OjR4QYsa9nE">sorts</a>
-		<a href="http://www.youtube.com/watch?v=M9JEPeeohYs">of</a>
-		<a href="http://www.youtube.com/watch?v=-ARb9_YWKFo">music</a>
-	</p>
-
-	<p>
-		For code projects, <a href="http://code.arp242.net">see my BitBucket page</a>; I also have some stuff
+		For my code proj&shy;ects, <a href="http://code.arp242.net">see my BitBucket page</a>; I also have some stuff
 		<a href="https://github.com/Carpetsmoker">over at GitHub</a>.
 
 		I can also be found on
-		<a href="http://stackoverflow.com/users/660921/carpetsmoker">StackOverflow</a>,
-		the <a href="http://forums.freebsd.org/members/carpetsmoker.703/">FreeBSD Forums</a>,
-		<a href="http://daemonforums.org/member.php?u=2">DaemonForums</a>,
-		<a href="http://rationalwiki.org/wiki/User:Carpetsmoker">RationalWiki</a>,
-		and a number of other places. You can email me at <a href="mailto:martin@arp242.net">martin@arp242.net</a>.
+		<a href="https://stackoverflow.com/users/660921/carpetsmoker">Stack&shy;Over&shy;flow</a>,
+		<a href="https://vi.stackexchange.com/users/51/carpetsmoker">Vi and Vim Stack&shy;Ex&shy;change</a>,
+		and a num&shy;ber of other pla&shy;ces. You can email me at <a href="mailto:martin@arp242.net">martin@arp242.net</a>.
 	</p>
 </div>
 
@@ -48,7 +31,7 @@ title: arp242.net
 	{% for post in site.posts %}
 		<div class="weblog-brief">
 			<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-			<em>Created on {{ post.date | date_to_string }}</em>
+			<em>{{ post.date | date_to_string }}</em>
 			{{ post.excerpt }}
 		</div>
 	{% endfor %}

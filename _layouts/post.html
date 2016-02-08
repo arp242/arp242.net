@@ -5,12 +5,16 @@ layout: default
 <div class="weblog-article">
 	<a href="../" class="weblog-back">&#8592; Back to home</a>
 	<h1>{{ page.title }}</h1>
-	<p>Written on <em>{{ page.date | date_to_string }}</em></p>
+	<p>Written on {{ page.date | date_to_string }}</p>
 
 	{{ content }}
 
 	<div class="weblog-comments">
 		<h2>Comments</h2>
+		You can mail me at <a href="mailto:martin@arp242.net">martin@arp242.net</a> for feedback etc. No, I don’t have
+		Twitter. If your feedback is less than 140 characters it is probably not worth sending.
+
+		<!--
 		<div class="comments-list">
 			{% comments %}
 		</div>
@@ -31,12 +35,10 @@ layout: default
 					No tags, but all your newlines/whitespace are preserved as-is.
 				</p>
 
-				<!--
 				<p>
 					<label for="comment-notify">Email me when someone adds a comment</label>
 					<input type="checkbox" id="comment-notify" name="notify">
 				</p>
-				-->
 
 				<p>
 					<input type="text" id="turingtest" name="turingtest" placeholder="Prove you’re a human by entering the number 42 here">
@@ -47,5 +49,6 @@ layout: default
 				</p>
 			</form>
 		</div>
+		-->
 	</div>
 </div>

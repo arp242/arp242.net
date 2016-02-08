@@ -3,7 +3,7 @@ layout: post
 title: Generate passwords from the commandline
 ---
 
-Many websites offer a solution for this, but many proposed solutions are dubious at best
+Many websites offer a solution for this, but many proposed solutions are dubious at best.
 
 
 I needed to generate a random password from a shell script, I figured that this

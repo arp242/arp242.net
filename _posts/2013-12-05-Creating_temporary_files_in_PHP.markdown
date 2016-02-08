@@ -37,7 +37,6 @@ few minor details, but most of it is the same. It doesn’t quite offer the
 flexibility that Python’s [`tempfile`](http://docs.python.org/library/tempfile.html)
 module offers, but it’s better than the PHP functions.
 
-
 	#!/usr/bin/env php
 	<?php
 

@@ -3,16 +3,16 @@ layout: post
 title: Intercept outgoing mails in Ruby on Rails
 ---
 
-A simple way to do this, which just works™
+A simple way to do this, which just works™.
 
 
 There already are a bunch of solutions for this; including the
-[post\_office][po] gem by my coworker, but this is the simple UNIX-y approach
-for us simple UNIX-y folks.
+[post\_office][po] gem by my co-worker, but this is the simple Unix-y approach
+for us simple Unix-y folks.
 
 We take advantage of `delivery_method = :sendmail`, this just pipes an email to
 something executable; this is *assumed* to be `sendmail`, but it can be
-anything, really...
+anything.
 
 
 Append to mbox file
@@ -21,7 +21,7 @@ This is similar to setting `delivery_method = :file`, except that you can read
 the mails with `$any` mail client, so you can check formatting, attachments,
 etc.
 
-`config/environments/development.rb`
+`config/environments/development.rb`:
 
 	YourApp::Application.configure do
 		# [...]
@@ -58,7 +58,7 @@ Forward to another email address
 --------------------------------
 This will just forward all mails to another email address.
 
-`config/environments/development.rb`
+`config/environments/development.rb`:
 
 	YourApp::Application.configure do
 		# [...]
@@ -69,7 +69,7 @@ This will just forward all mails to another email address.
 		}
 	end
 
-`script/fake-sendmail` (don’t forget to make this executable)
+`script/fake-sendmail` (don’t forget to make this executable):
 
 	#!/bin/sh
 	sendmail -if fake_sendmail@example.com "$1" < /dev/stdin

@@ -3,7 +3,7 @@ layout: post
 title: Making find -exec faster
 ---
 
-Let’s see if we can make `find -exec` a bit faster
+Let’s see if we can make `find -exec` a bit faster.
 
 Here’s a little `find` trick that not many people seem to know:
 
@@ -39,7 +39,7 @@ Let’s see what [POSIX has to say about it][posix] (emphases mine):
 > for each set of aggregated pathnames.**
 
 Or in slightly more normal English: If you use `;`, `find` will execute the
-utility once for every path; if you use `+`, if will cram as many paths as it
+utility once for every path; if you use `+`, it will cram as many paths as it
 can in an invocation.
 
 How many? Well, as many as `ARG_MAX` allows. [Quoting from POSIX Again][limits]:
@@ -107,6 +107,7 @@ We can work around this by spawning a `sh` one-liner:
 
 
 [^1]: Linux users can use [`strace`][strace]. OpenBSD users [`ktrace`][ktrace].
+
 [posix]: http://pubs.opengroup.org/onlinepubs/9699919799/utilities/find.html
 [limits]: http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/limits.h.html
 [truss]: http://www.freebsd.org/cgi/man.cgi?query=truss&apropos=0&sektion=0&manpath=FreeBSD+10.1-RELEASE&arch=default&format=html

@@ -1,0 +1,130 @@
+// Old CSS stuff
+form { margin: 0; padding: 0; }
+input, textarea {
+	font-size: 14px;
+	padding: .3em .5em;
+	border: 1px solid #b7b7b7;
+	border-radius: 2px;
+	background-color: #fff;
+	color: #000;
+	opacity: 1;
+}
+input[type=submit] { font-size: 1.1em; background-color: #eee; color: #000; }
+textarea { width: 90%; }
+
+input:focus, textarea:focus, select:focus, *:target {
+	border: 1px solid #36a;
+	box-shadow: 0px 0px 3px #36a;
+}
+
+
+#comment-name, #comment-email { width: 44%; margin: 0; }
+#comment-name { margin-right: .6em; }
+#comment-text { width: 91.5%; }
+#turingtest { width: 91.5%; }
+
+::-webkit-input-placeholder { color: #505050; }
+input:-moz-placeholder { color: #505050; }
+
+#comment-error {
+	padding: .5em;
+	max-width: 43.5em;
+	border: 2px solid red;
+	background-color: #eee;
+	display: none;
+
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+.comment {
+	border: 1px solid #b7b7b7;
+
+	max-width: 43.5em;
+	margin: .5em 0;
+	padding: .5em;
+
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+.comment strong {
+	font-size: .9em;
+}
+.comment p { margin-bottom: 0; margin-top: .5em; }
+
+.weblog-comments {
+	border-top: 1px solid #b7b7b7;
+	position: relative;
+	left: -1em;
+	bottom: -1.2em;
+	padding-left: 1em;
+	padding-top: .1em;
+	padding-bottom: 2em;
+	max-width: 48em;
+}
+
+.weblog-comments button {
+	border: 1px solid #b7b7b7;
+	border-radius: 2px;
+	background-color: #eee;
+	font-size: 1.1em;
+	padding: .3em .8em;
+}
+
+.comments-list {
+	h3 {
+		margin-bottom: 0;
+	}
+
+	div {
+		white-space: pre;
+		//font-family: "Consolas", "Menlo", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+		border-bottom: 1px solid #b7b7b7;
+		padding-bottom: .5em;
+	}
+}
+
+
+.prebuttons {
+	float: right;
+	padding-right: 1.5em;
+	cursor: pointer;
+	line-height: 1.4em;
+	height: 1em;
+}
+	
+.prebuttons:hover {
+	transform: translate(0px, -4px);
+	-o-transform: translate(0px, -4px);
+	-moz-transform: translate(0px, -4px);
+	-webkit-transform: translate(0px, -4px);
+}
+
+.prebuttons a {
+	color: #000;
+	background-color: #eee;
+	/*opacity: .9;*/
+	opacity: 1;
+	padding: .2em .4em;
+
+	border-radius: 8px 8px 0 0;
+}
+
+
+kbd {
+	font-size: 12px;
+	background-color: #f7f7f7;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 0 0 2px #fff inset;
+	color: #333;
+	display: inline-block;
+	line-height: 1.4em;
+	margin: 0 .1em;
+	padding: .1em .6em;
+	text-shadow: 0 1px 0 #fff;
+	white-space: nowrap;
+}
