@@ -1,10 +1,8 @@
 ---
 layout: post
 title: Opera 11 onload bug
+excerpt: Recent Opera versions don't execute onload when Microsoft .eot webfonts are used.
 ---
-
-Recent Opera versions don't execute onload when Microsoft .eot webfonts are used.
-
 
 **Update 20110629**  
 Opera released version 11.50, which fixes the issue. As mentioned in the

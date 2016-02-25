@@ -1,10 +1,8 @@
 ---
 layout: post
 title: Run multiple services on one port and use PF's overload to switch between them
+excerpt: I would like to access both ssh and a subversion HTTPS repository at my server.
 ---
-
-I would like to access both ssh and a subversion HTTPS repository at my server.
-
 
 At my work there’s a HTTP/HTTPS proxy which requires authentication, I would
 like to access both ssh and a subversion repository through HTTP at my home

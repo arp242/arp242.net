@@ -1,10 +1,8 @@
 ---
 layout: post
 title: Generate passwords from the commandline
+excerpt: Many websites offer a solution for this, but many proposed solutions are dubious at best.
 ---
-
-Many websites offer a solution for this, but many proposed solutions are dubious at best.
-
 
 I needed to generate a random password from a shell script, I figured that this
 was solved long ago, so I turned to *teh interwebz* to quickly copy/paste a
@@ -43,7 +41,7 @@ escape code.
 However, with UTF-8 or another multibyte character sets, it gets more
 complicated.
 Not every random byte stream is a valid set of UTF-8 characters, the chances of a
-random byte stream also being a valid UTF-8 character stream is quite small.
+random byte stream also being a valid UTF-8 character stream are quite small.
 
 Yet, it seems to work on Linux with GNU tr. Why? Here’s a clue:
 
@@ -126,7 +124,7 @@ more characters (92 instead of 64). It also doesn’t require external tools
 
 Lessons
 -------
-- A byte streams is not the same thing as a character stream.
+- A byte stream is not the same thing as a character stream.
 - Use `strings(1)` to convert a byte stream to a character stream.
 - Don’t use the hex output of a hashing algorithm (SHA256, MD5).
 - Don’t trust copy/paste solutions from the internet; always think for yourself!

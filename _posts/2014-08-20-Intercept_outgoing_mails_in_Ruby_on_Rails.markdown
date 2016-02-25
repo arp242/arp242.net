@@ -1,10 +1,8 @@
 ---
 layout: post
 title: Intercept outgoing mails in Ruby on Rails
+excerpt: A simple way to do this, which just works™.
 ---
-
-A simple way to do this, which just works™.
-
 
 There already are a bunch of solutions for this; including the
 [post\_office][po] gem by my co-worker, but this is the simple Unix-y approach

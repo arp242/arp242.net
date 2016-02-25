@@ -1,11 +1,8 @@
 name: arp242.net
 url: http://arp242.net
 author: Martin Tournoij
-#       Deprecation: The 'pygments' configuration option has been renamed to
-#       'highlighter'. Please update your config file accordingly. The allowed
-#       values are 'rouge', 'pygments' or null.
-#pygments: true
+excerpt_separator: 
 highlighter: null
 permalink: /weblog/:title.html
-exclude: [comments, old, vendor, Gemfile, Gemfile.lock]
+exclude: [comments, old, vendor, Gemfile, Gemfile.lock, mkcode.lua, new.arp242.net]
 markdown: kramdown

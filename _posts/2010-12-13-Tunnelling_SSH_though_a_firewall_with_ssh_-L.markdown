@@ -1,10 +1,8 @@
 ---
 layout: post
 title: Tunnelling SSH though a firewall with ssh -L
+excerpt: Here's a little tip on how to tunnel ssh through another machine with the `-L` option.
 ---
-
-Here's a little tip on how to tunnel ssh through another machine with the `-L` option.
-
 
 Here’s a little tip on how to tunnel ssh through another machine with
 the `-L` option. While not terribly difficult, I did spend some time

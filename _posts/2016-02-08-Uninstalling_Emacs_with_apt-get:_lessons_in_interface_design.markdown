@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "Uninstalling Emacs with apt-get: lessons in interface design"
+excerpt: Lessons we can learn from `apt-get`’s spectacuarly surprising behaviour.
 ---
-
-Lessons we can learn from `apt-get`’s spectacuarly surprising behaviour.
 
 I rather like Debian. I also like Ubuntu. It does a lot of things right.
 Unfortunately, it also does one thing absolutely horribly wrong, and that is

@@ -36,7 +36,7 @@ body {
 	position: relative;
 	top: 8px;
 	max-width: 49em;
-	min-height: 89.5%;
+	//min-height: 89.5%;
 	margin: 0 auto;
 	overflow: hidden;
 
@@ -52,16 +52,29 @@ body {
 	overflow: hidden;
 	text-align: justify;
 	line-height: 1.5em;
+}
 
+.intro,
+.disclaimer,
+.code-links {
 	background-color: #505050;
 	color: #fff;
-	border-radius: 2px;
 	text-shadow: 1px 1px 2px #333;
 
 	a {
 		color: #fff;
 		text-decoration: underline;
+
+		&:hover {
+			color: #96c6ff;
+			text-decoration: none;
+		}
 	}
+}
+
+.intro {
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
 }
 
 .disclaimer {
@@ -84,6 +97,14 @@ body {
 	margin-left: 6px;
 	margin-left: .75em;
 	border-radius: 2px;
+
+	@media screen and (max-width: 600px) {
+		width: 25%;
+	}
+
+	@media screen and (max-width: 430px) {
+		display: none;
+	}
 }
 
 
@@ -93,13 +114,11 @@ a {
 	color: #00f;
 	text-decoration: none;
 
-	transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0s;
-	-o-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0s;
-	-moz-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0s;
-	-webkit-transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1) 0s;
+	transition: all .2s;
+	-webkit-transition: all .2s;
 
 	&:hover {
-		color: #15f;
+		color: #6491ff;
 		text-decoration: underline;
 	}
 
@@ -201,15 +220,10 @@ blockquote {
 	padding-left: 1em;
 	padding-top: 2em;
 
-	// Heading and date (first child is back button, 2nd the h1, 3rddate)
-	h1,
+	// Heading and date (first child is back button, 2nd the h1, 3rd date)
+	.weblog-back + h1,
 	& > p:nth-child(3) {
 		text-align: center;
-	}
-
-	// Don't display the summary again; we only use it for .weblog-brief
-	& > p:nth-child(4) {
-		display: none;
 	}
 }
 
@@ -289,4 +303,17 @@ blockquote {
 
 .lang-c {
 	background-image: url("../images/lang-c.svg");
+}
+
+.code-links {
+	//border: 1px solid #b7b7b7;
+	float: right;
+	margin: 0;
+	padding: 0 1.5em;
+	border-radius: 2px;
+	margin-left: .5em;
+
+	a {
+		text-decoration: none;
+	}
 }

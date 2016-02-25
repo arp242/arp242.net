@@ -1,10 +1,8 @@
 ---
 layout: post
 title: Digging for hosts on FreeBSD 10
+excerpt: FreeBSD 10 removes bind and with it the `dig(1)` and `nslookup(1)` utilities.
 ---
-
-FreeBSD 10 removes bind and with it the `dig(1)` and `nslookup(1)` utilities.
-
 
 FreeBSD 10 now has [unbound](http://unbound.net/) for DNS lookups, which is
 actually a lot better than bind (the zone server, [nsd](http://www.nlnetlabs.nl/projects/nsd/),

@@ -1,10 +1,8 @@
 ---
 layout: post
 title: Minimal Apache configuration for subversion
+excerpt: This is a minimal Apache configuration file for use with subversion access with SSL.
 ---
-
-This is a minimal Apache configuration file for use with subversion access with SSL.
-
 
 If you want to use subversion over HTTP you have little choice but to use
 Apache.

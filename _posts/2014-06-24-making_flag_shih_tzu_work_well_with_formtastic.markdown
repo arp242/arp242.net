@@ -1,10 +1,8 @@
 ---
 layout: post
 title: Making FlagShihTzu work well with Formtastic
+excerpt: Combine the power of Formtastic & FlagShihTzu.
 ---
-
-Combine the power of [Formtastic][formtastic] & [FlagShihTzu][flag].
-
 
 [FlagShihTzu][flag] & [Formtastic][formtastic] don’t work together
 out-of-the-box, but this can be solved with a few lines of code.

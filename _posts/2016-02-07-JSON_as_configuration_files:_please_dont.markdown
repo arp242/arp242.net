@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "JSON as configuration files: please don’t"
+excerpt: Using JSON for configuration files is a disturbing trend.
 ---
-
-Using JSON for configuration files is a disturbing trend.
 
 I’ve recently witnessed the rather disturbing trend of using JSON for
 configuration files.

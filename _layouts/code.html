@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="weblog-article">
+	<span class="weblog-back">
+		<a href="/">Home</a>
+		<a href="/code/">Code index</a>
+	</span>
+
+	<h1>{{ page.title }}</h1>
+
+	<ul class="code-links">
+		{% if page.extra_links %}
+			{{ page.extra_links }}
+		{% endif %}
+		<li><a href="https://bitbucket.org/Carpetsmoker/{{ page.link }}/get/tip.tar.gz">Download</a></li>
+		<li><a href="https://bitbucket.org/Carpetsmoker/{{ page.link }}/issues">Bug tracker</a></li>
+		<li><a href="https://bitbucket.org/Carpetsmoker/{{ page.link }}/src">Source code</a></li>
+	</ul>
+	{{ content }}
+</div>

@@ -1,10 +1,8 @@
 ---
 layout: post
 title: Online Unreal Tournament server browser with pcntl fork()
+excerpt: Browse Unreal Tournament servers in a web browsers.
 ---
-
-Browse Unreal Tournament servers in a web browsers.
-
 
 Another Unreal Tournament related script that I’ve been using for a long time.
 
@@ -42,7 +40,7 @@ The code with fork
 		# http://wiki.beyondunreal.com/Legacy:UT_Server_Query
 
 		$address = gethostbyname($server['0']);
-		
+
 		if (!$s = fsockopen('udp://' . $server['0'], $server['1'], $errno, $errstr, 2))
 			return False;
 
@@ -77,7 +75,7 @@ The code with fork
 			#return "<tr><td colspan=\"4\">Could not connect to {$s['0']} {$s['1']}</td></tr>";
 			return '';
 		}
-		
+
 		if (isset($info['numplayers']))
 		{
 			$numplayers = $info['numplayers'] . " Players:<br />\n";

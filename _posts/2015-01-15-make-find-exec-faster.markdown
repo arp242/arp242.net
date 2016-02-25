@@ -1,9 +1,8 @@
 ---
 layout: post
 title: Making find -exec faster
+excerpt: Let’s see if we can make `find -exec` a bit faster.
 ---
-
-Let’s see if we can make `find -exec` a bit faster.
 
 Here’s a little `find` trick that not many people seem to know:
 
