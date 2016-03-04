@@ -1,0 +1,43 @@
+#!/usr/bin/env python2
+
+from __future__ import print_function
+import os, sys, subprocess, shutil, time
+
+if len(sys.argv) > 1:
+	subdir = sys.argv[1]
+else:
+	subdir = ''
+
+root = os.path.dirname(os.path.realpath(sys.argv[0]))
+local = os.path.join(root, '_site/', subdir)
+remote = os.path.join(root, '_remote/carpetsmoker.fastmail.nl/files/site/', subdir)
+
+dav = subprocess.Popen(['fusedav',
+	'-u', 'carpetsmoker@fastmail.nl', '-p', open(root + '/_secret', 'r').read(),
+	'https://dav.messagingengine.com/', os.path.join(root, '_remote')])
+time.sleep(2)
+
+local_files = subprocess.check_output("find " + local + " -type f -exec stat --format '%Y %n' {} +", shell=True)
+local_files = { ' '.join(f.split(' ')[1:]).replace(local, ''): int(f.split(' ')[0])  for f in local_files.split('\n') if f != '' }
+
+remote_files = subprocess.check_output("find " + remote + " -type f -exec stat --format '%Y %n' {} +", shell=True)
+remote_files = { ' '.join(f.split(' ')[1:]).replace(remote, ''): int(f.split(' ')[0])  for f in remote_files.split('\n') if f != '' }
+
+# Copy modified
+for path, local_mtime in local_files.items():
+	lpath = '{}/{}'.format(local, path)
+	rpath = '{}/{}'.format(remote, path)
+
+	if path in remote_files and remote_files[path] < local_mtime:
+		print('cp', path)
+		shutil.copy2(lpath, rpath)
+
+
+# Delete stuff
+for path in remote_files.keys():
+	rpath = '{}/{}'.format(remote, path)
+	if path not in local_files:
+		print('rm', path)
+		os.unlink(rpath)
+
+dav.terminate()

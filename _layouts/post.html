@@ -10,6 +10,11 @@ layout: default
 
 	<h1>{{ page.title }}</h1>
 	<p>Written on {{ page.date | date_to_string }}</p>
+	{% if page.so %}
+		<em class="hatnote">This is modified from my answer at Stack Overflow: <a href="{{ page.so[1] }}">{{ page.so[0] }}</a>.</em>
+	{% elsif page.vi %}
+		<em class="hatnote">This is modified from my answer at Vi and Vim Stack Exchange: <a href="{{ page.vi[1] }}">{{ page.vi[0] }}</a>.</em>
+	{% endif %}
 
 	{{ content }}
 

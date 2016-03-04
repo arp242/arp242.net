@@ -261,3 +261,6 @@ blockquote {
 .code-links a {
   text-decoration: none;
 }
+.hatnote {
+  font-size: .8em;
+}

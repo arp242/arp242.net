@@ -4,5 +4,5 @@ author: Martin Tournoij
 excerpt_separator: 
 highlighter: null
 permalink: /weblog/:title.html
-exclude: [comments, old, vendor, Gemfile, Gemfile.lock, mkcode.lua, new.arp242.net]
+exclude: [Gemfile, Gemfile.lock]
 markdown: kramdown

@@ -4,13 +4,13 @@ title: download-npo
 link: download-npo
 ---
 
-**Download-npo downloads videos from the Dutch npo.nl (formerly uitzending
-gemist) site. The rest of the documentation is in Dutch.**
+**Download-npo downloads videos from the Dutch npo.nl site. The rest of the
+documentation is in Dutch.**
 
-Download-npo (voorheen `download-gemist`) download videos van de [NPO][1]
-(voorheen ‘uitzending gemist’) site van de publieke omroep. In principe zouden
-alle sites die gebruik maken van de zogeheten “NPOPlayer” moeten werken, zoals
-bv. ncrv.nl of nrc.nl (al zijn deze niet allemaal getest).
+Download-npo (voorheen `download-gemist`) download videos van de [NPO][1] site
+van de publieke omroep. In principe zouden alle sites die gebruik maken van de
+zogeheten “NPOPlayer” zouden moeten werken, zoals bv. ncrv.nl of nrc.nl (al
+zijn deze niet allemaal getest).
 
 Voor vragen of opmerkingen kun je mailen naar [martin@arp242.net][3].
 
@@ -38,56 +38,10 @@ download-npo is een commandline-tool, er is ook een grafische frontend
 Voorbeeld:  
 `download-npo http://www.npo.nl/andere-tijden/23-10-2014/VPWON_1227038`
 
+of met alleen de episode ID:  
+`download-npo VPWON_1227038`
 
-Overzicht van alle opties (dit is wat je te zien krijgt als je `download-npo
---help` gebruikt):
-
-	./download-npo [-hvdnVsofwcmMtTk] [-o output_dir] [-f output_file] [url url2 ...]
-
-	Video URL kan vanaf de commandline opgegeven worden, of via stdin
-
-	  -h  Toon korte help; gebruik --help voor een langere help
-	  -v  Toon versie
-	  -d  Schrijf een config bestand met de standaard waarden
-	  -n  Download niks, laat zien wat we zouden doen
-	  -V  Toon meer informatie over wat we doen; gebruik 2 keer voor meer info
-	  -s  Stil: geef geen informatieve berichten (alleen errors)
-	  -o  Zet output directory. Default is huidige directory
-	  -f  Bestandsnaam, relatief aan -o; default is titel {titel}-{episode_id}
-		  Gebruik - voor stdout
-	  -w  Overschrijf bestaande bestanden (default is om bestand over te slaan
-		  als deze al bestaat)
-	  -c  Verwijder geen karakters in de bestandsnaam muv. spaties
-			- Als je -c 2x opgeeft, worden spaties ook behouden
-			- De default is om alle ongeldige FAT32/NTFS karakters te
-			  verwijderen en spaties te vervangen door underscores
-	  -m  Toon enkel de metadata in YAML formaat
-	  -M  Toon enkel de metadata in JSON formaat
-	  -t  Download ook ondertiteling, als deze bestaat
-	  -T  Download alleen ondertiteling, geef een error als deze niet bestaan
-	  -k  Selecteer de kwaliteit; hoog (default), middel of laag
-
-	De -o en -f opties kunnen een aantal variabelen bevatten. Deze worden er met
-	de Python .format() methode ingezet.
-	Als een variabele niet bestaan in de data die npo.nl ons geeft, dan wordt dit
-	stil genegeerd. Let op dat er relatief veel video's lijken te zijn met meta-data
-	die incompleet is (met name de wat oudere video's). Ook het formaat/inhoud van
-	de data is niet altijd consequent. Alleen de aanwezigheid van {episode_id} is
-	gegarandeerd, dus ik zou deze er altijd bij zetten om lege bestandsnamen zoals
-	'.mp4' te voorkomen.
-
-	  {episode_id}        Uniek nummer voor deze uitzending
-	  {datum}             Datum van uitzending
-	  {titel}             Titel; vaak is dit de serietitel
-	  {aflevering_titel}  Titel van de aflevering
-	  {tijdsduur}         Tijdsduur
-	  {serie_id}          Uniek nummer voor deze serie
-	  {serie_titel}       Titel van de serie; vaak is dit hetzelfde als de {titel}
-
-	Je kan eventueel ook defaults opslaan in de een config bestand, dit wordt gelezen
-	uit /home/martin/.config/download-npo.conf.
-	Met -d wordt er een config bestand geschreven met de standaard waarden.
-	Zie de comments in het bestand voor meer details.
+Zie `download-npo -h` voor een overzicht van alle opties.
 
 
 FAQ
@@ -108,7 +62,7 @@ Kan ik ook een video streamen zonder het eerst op te slaan?
 -----------------------------------------------------------
 Uiteraard! Bijvoorbeeld met:
 
-`download-npo -f - http://www.npo.nl/andere-tijden/23-10-2014/VPWON_1227038 | mplayer -cache 4096 -cache-min 99 -`
+	$ download-npo -f - VPWON_1227038 | mplayer -cache 4096 -cache-min 99 -
 
 Het `play-npo` script doet dit.
 
@@ -140,8 +94,25 @@ Maar, deze alternatieven zijn bekend bij mij:
 Staat jouw programma er niet bij? Mail me dan even en ik zet het erbij.
 
 
+Kan ik ook in 1 keer alle uitzendingen downloaden van een bepaald programma?
+----------------------------------------------------------------------------
+Niet direct. Eerst kon dat wel, maar dat ging te vaak kapot omdat de site
+veranderd werd.
+
+Voor Windows is er de [Npo-Pvr][npo-pvr] PowerShell wrapper door Jan Hoek.
+Door periodiek dit scriptje te starten worden steeds de nieuwste afleveringen
+gedownload.
+
+
 ChangeLog
 =========
+Versie 2.2, 2016-02-29
+----------------------
+- Schrijf metadata naar mp4 bestand als de `mutagen` module beschikbaar is.
+- Installeer `.desktop` bestand en icoon, zodat het te zien is in
+  Ubuntu/Unity/etc.
+- Verschillende bugfixes.
+
 
 Versie 2.1, 2015-09-18
 ----------------------
@@ -278,6 +249,7 @@ Versie 1.0, 2012-10-03
 [2]: http://python.org/
 [3]: mailto:martin@arp242.net
 [d-win]: http://tmp.arp242.net/download-npo-setup-2.1.exe
-[d-unix]: https://bitbucket.org/Carpetsmoker/download-npo/get/version-2.1.tar.gz
+[d-unix]: https://bitbucket.org/Carpetsmoker/download-npo/get/version-2.2.tar.gz
 [libmms]: http://sourceforge.net/projects/libmms/
 [dg.nl]: http://downloadgemist.nl
+[npo-pvr]: https://github.com/jhoek/Npo-Pvr
