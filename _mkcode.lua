@@ -80,13 +80,14 @@ html = ''
 for k, p in pairs(projects) do
 	local _, _, y, m, d = string.find(p['updated_on'], "(%d+)%-(%d+)%-(%d+)T")
 	local date = os.date("%d %b %Y", os.time{year=y, month=m, day=d})
+	local sortdate = string.format('%s%s%s', y, m , d)
 
 	html = html .. string.format([[
-		<div class="weblog-brief lang-%s">
+		<div class="weblog-brief lang-%s" data-updated="%s" data-name="%s">
 			<em>%s</em>
 			<h2><a href="/code/%s/">%s</a></h2>
 			<p>%s</p>
-		</div>]], p['language'], date, p['link'], p['name'], p['description'])
+		</div>]], p['language'], sortdate, p['name'], date, p['link'], p['name'], p['description'])
 
 	-- Only show last 5 updates on front page
 	if k == 5 then
@@ -124,7 +125,6 @@ layout: default
 title: Code projects
 ---
 
-<div class="weblog-overview code-projects">
-<a href="/" class="index-back">&#8592; Back</a>
-]] .. html .. '</div>')
+<div class="weblog-overview code-projects">{% include_relative top.html %}
+]] .. html .. '<script src="/script/jquery.js"></script><script src="/script/main.js"></script></div>')
 fp:close()

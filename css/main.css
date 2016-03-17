@@ -261,6 +261,11 @@ blockquote {
 .code-links a {
   text-decoration: none;
 }
+.code-nav {
+  float: right;
+  margin-top: 4px;
+  margin-right: 6px;
+}
 .hatnote {
   font-size: .8em;
 }
