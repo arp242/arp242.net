@@ -32,6 +32,17 @@ for path, local_mtime in local_files.items():
 		print('cp', path)
 		shutil.copy2(lpath, rpath)
 
+# Copy new
+for path in local_files.keys():
+	lpath = '{}/{}'.format(local, path)
+	rpath = '{}/{}'.format(remote, path)
+	if path not in remote_files:
+		print('cp', path)
+                d = os.path.dirname(rpath)
+                if not os.path.exists(d):
+                    os.makedirs(d)
+		shutil.copy2(lpath, rpath)
+
 
 # Delete stuff
 for path in remote_files.keys():

@@ -12,7 +12,7 @@ layout: default
 
 	<ul class="code-links">
 		{% if page.extra_links %}
-			{{ page.extra_links }}
+			<li>{{ page.extra_links | markdownify | remove:'<p>' | remove:'</p>'  }}</li>
 		{% endif %}
 		<li><a href="https://bitbucket.org/Carpetsmoker/{{ page.link }}/get/tip.tar.gz">Download</a></li>
 		<li><a href="https://bitbucket.org/Carpetsmoker/{{ page.link }}/issues">Issue tracker</a></li>

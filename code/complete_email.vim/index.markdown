@@ -2,8 +2,9 @@
 layout: code
 title: complete_email.vim
 link: complete_email.vim
-extra_links: <li><a href="http://www.vim.org/scripts/script.php?script_id=5208">This plugin at www.vim.org</a></li>
+extra_links: "[This plugin at www.vim.org](http://www.vim.org/scripts/script.php?script_id=5208)"
 ---
+
 
 
 Allow completion of email addresses so you can use Vim as a basic "address

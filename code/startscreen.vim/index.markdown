@@ -2,8 +2,9 @@
 layout: code
 title: startscreen.vim
 link: startscreen.vim
-extra_links: <li><a href="http://www.vim.org/scripts/script.php?script_id=5338">This plugin at www.vim.org</a></li>
+extra_links: "[This plugin at www.vim.org](http://www.vim.org/scripts/script.php?script_id=5338)"
 ---
+
 
 
 Introduction

@@ -63,6 +63,7 @@ body {
 }
 .disclaimer {
   margin-top: 1.5em;
+  clear: both;
 }
 .intro > p:nth-child(2) {
   margin-top: 0;
@@ -106,12 +107,15 @@ pre {
   background-color: #eee;
   color: #000;
 }
+p,
+pre {
+  margin-right: .5em;
+}
 pre {
   line-height: 1.3em;
   width: auto;
   max-height: 500px;
   padding: 1em;
-  margin-right: .5em;
   overflow: auto;
   clear: right;
   border-radius: 2px;

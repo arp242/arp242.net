@@ -4,5 +4,5 @@ author: Martin Tournoij
 excerpt_separator: 
 highlighter: null
 permalink: /weblog/:title.html
-exclude: [Gemfile, Gemfile.lock]
+exclude: [Gemfile, Gemfile.lock, mkcode.go]
 markdown: kramdown
