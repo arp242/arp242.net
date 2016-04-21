@@ -13,12 +13,34 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 99.5%;
   overflow-y: scroll;
   background-color: #eee;
   tab-size: 4;
   -o-tab-size: 4;
   -moz-tab-size: 4;
+}
+hr {
+  margin: 0;
+  font-size: 60px;
+  border: none;
+  text-align: center;
+  vertical-align: middle;
+  color: #278c09;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+hr:before,
+hr:after {
+  display: inline-block;
+  line-height: 40px;
+  height: 40px;
+}
+hr:before {
+  margin-right: .6em;
+  content: "☙";
+}
+hr:after {
+  margin-left: .6em;
+  content: "❧";
 }
 #content {
   position: relative;
@@ -99,7 +121,9 @@ a:hover {
   text-decoration: underline;
 }
 a img {
-  border: none;
+  border-radius: 2px;
+  border: 1px solid #dadada;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 code,
 pre {
@@ -195,6 +219,9 @@ blockquote {
 .weblog-article > p:nth-child(3) {
   text-align: center;
 }
+.weblog-article img {
+  max-width: 100%;
+}
 .weblog-back {
   position: absolute;
   top: 14px;
@@ -254,6 +281,9 @@ blockquote {
 }
 .lang-c {
   background-image: url("../images/lang-c.svg");
+}
+.lang-go {
+  background-image: url("../images/lang-go.png");
 }
 .code-links {
   float: right;

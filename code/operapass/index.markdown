@@ -43,6 +43,7 @@ operpass also includes pyDes from http://twhiteman.netfirms.com/des.html
 
 ChangeLog
 =========
+
 Version 1.3, 2014-11-01
 -----------------------
 - Detect if a master password is set

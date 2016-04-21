@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"math"
 	"net/http"
 	"os"
@@ -71,8 +72,6 @@ title: Code projects
 		` + html_brief + `
 	{{end}}
 </div>
-<script src="/script/jquery.js"></script>
-<script src="/script/main.js"></script>
 `
 
 var tpl_index = template.Must(template.New("index").Funcs(funcs).Parse(html_index))
@@ -203,7 +202,9 @@ func read_and_write_repository(repo repository, index int, ch chan<- repository)
 	ch <- repo
 
 	// Write code/<project>/index.markdown
-	f, err := os.Create(root + "/code/" + repo.LinkName + "/index.markdown")
+	dir := root + "/code/" + repo.LinkName
+	os.MkdirAll(dir, 0755)
+	f, err := os.Create(dir + "/index.markdown")
 	check(err)
 	defer f.Close()
 
@@ -218,7 +219,7 @@ func read_url(url string) []byte {
 	resp, err := http.Get(url)
 	defer resp.Body.Close()
 	if err != nil || resp.StatusCode != 200 {
-		fmt.Fprintf(os.Stderr, "mkcode: %v\n", resp.StatusCode, err)
+		fmt.Fprintf(os.Stderr, "mkcode: %v %v %v\n", url, resp.StatusCode, err)
 		os.Exit(1)
 	}
 
@@ -244,6 +245,6 @@ func get_link(value *repository, which string) string {
 // Panic if err is non-nil
 func check(err error) {
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 }
