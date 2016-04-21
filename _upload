@@ -13,7 +13,7 @@ local = os.path.join(root, '_site/', subdir)
 remote = os.path.join(root, '_remote/carpetsmoker.fastmail.nl/files/site/', subdir)
 
 dav = subprocess.Popen(['fusedav',
-	'-u', 'carpetsmoker@fastmail.nl', '-p', open(root + '/_secret', 'r').read(),
+	'-u', 'carpetsmoker@fastmail.nl', '-p', open(root + '/_secret', 'r').read().strip(),
 	'https://dav.messagingengine.com/', os.path.join(root, '_remote')])
 time.sleep(2)
 
@@ -38,9 +38,9 @@ for path in local_files.keys():
 	rpath = '{}/{}'.format(remote, path)
 	if path not in remote_files:
 		print('cp', path)
-                d = os.path.dirname(rpath)
-                if not os.path.exists(d):
-                    os.makedirs(d)
+		d = os.path.dirname(rpath)
+		if not os.path.exists(d):
+			os.makedirs(d)
 		shutil.copy2(lpath, rpath)
 
 
