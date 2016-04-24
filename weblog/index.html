@@ -9,7 +9,7 @@ title: arp242.net – Weblog
 		<div class="weblog-brief">
 			<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 			<em>{{ post.date | date_to_string }}</em>
-			<p>{{ post.excerpt | markdownify }}</p>
+			{{ post.excerpt | markdownify }}
 		</div>
 	{% endfor %}
 </div>
