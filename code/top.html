@@ -5,10 +5,11 @@
 	<select id="code-sort">
 		<option value="updated">Last update</option>
 		<option value="name">Name</option>
+		<option value="status">Status</option>
 	</select>
 
-	<label for="code-filter">Filter</label>
-	<select id="code-filter">
+	<label for="code-filter-lang">Language</label>
+	<select id="code-filter-lang">
 		<option value="">Show all</option>
 		<option value="c">C</option>
 		<option value="coffeescript">CoffeeScript</option>
@@ -18,5 +19,14 @@
 		<option value="ruby">Ruby</option>
 		<option value="shell">Shell</option>
 		<option value="viml">VimScript</option>
+	</select>
+
+	<label for="code-filter-status">Status</label>
+	<select id="code-filter-status">
+		<option value="">All</option>
+		<option value="archived">Archived</option>
+		<option value="experimental">Experimental</option>
+		<option value="finished">Finished</option>
+		<option value="stable">Stable</option>
 	</select>
 </div>

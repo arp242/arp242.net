@@ -1,8 +1,12 @@
 ---
 layout: code
-title: MediaWiki-FontAwesome
-link: mediawiki-fontawesome
+title: "MediaWiki-FontAwesome"
+link: "mediawiki-fontawesome"
+last_version: "tip"
+pre1: "Project status: archived (I no longer work on this, as I don't have a MediaWiki install to administer any more. It's still usable, though, and I'll still fix bugs when reported; contact me if you want to take over maintainership)."
+
 ---
+
 
 Add [Font Awesome](https://fortawesome.github.io/Font-Awesome/) to MediaWiki.
 

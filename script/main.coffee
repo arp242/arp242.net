@@ -21,12 +21,17 @@ set_hash_key = (key, value) ->
 
 
 filter = ->
-	h = get_hash_key 'filter'
-	if h is ''
-		$('.weblog-brief').css 'display', 'block'
-	else
-		$(".weblog-brief:not(.lang-#{h})").css 'display', 'none'
-		$(".weblog-brief.lang-#{h}").css 'display', 'block'
+	lang = get_hash_key 'filter-lang'
+	status = get_hash_key 'filter-status'
+
+	$('.weblog-brief').each ->
+		elem = $(this)
+		show = true
+		if lang isnt ''
+			show = false unless elem.hasClass "lang-#{lang}"
+		if status isnt ''
+			show = false unless elem.hasClass "status-#{status}"
+		elem.css 'display', if show then 'block' else 'none'
 
 
 sort = ->
@@ -45,10 +50,12 @@ $(document).ready ->
 	filter()
 	sort()
 
-	$('#code-filter').on 'change', -> set_hash_key 'filter', $(this).find(':selected').attr 'value'
+	$('#code-filter-lang').on 'change', -> set_hash_key 'filter-lang', $(this).find(':selected').attr 'value'
+	$('#code-filter-status').on 'change', -> set_hash_key 'filter-status', $(this).find(':selected').attr 'value'
 	$('#code-sort').on 'change', -> set_hash_key 'sort', $(this).find(':selected').attr 'value'
 
-	$("#code-filter option[value=\"#{get_hash_key 'filter'}\"]").attr 'selected', 'selected'
+	$("#code-filter-lang option[value=\"#{get_hash_key 'filter-lang'}\"]").attr 'selected', 'selected'
+	$("#code-filter-status option[value=\"#{get_hash_key 'filter-status'}\"]").attr 'selected', 'selected'
 	$("#code-sort option[value=\"#{get_hash_key 'sort'}\"]").attr 'selected', 'selected'
 
 

@@ -1,8 +1,12 @@
 ---
 layout: code
-title: find-cursor
-link: find-cursor
+title: "find-cursor"
+link: "find-cursor"
+last_version: "tip"
+pre1: "Project status: stable"
+
 ---
+
 
 Simple XLib program to highlight the cursor position. This is similar to the
 feature found in Windows XP (and possibly later?)

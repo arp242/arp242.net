@@ -1,7 +1,10 @@
 ---
 layout: code
-title: dnsblock
-link: dnsblock
+title: "dnsblock"
+link: "dnsblock"
+last_version: "tip"
+pre1: "Experimental"
+
 ---
 
 DNS proxy which can spoof responses to block ads and malicious websites.
@@ -20,7 +23,7 @@ Dnsblock is written in Go, so you'll need that.
 
 Install it:
 
-	$ go get code.arp242.net/dnsblock
+	$ go get -u code.arp242.net/dnsblock
 
 Setup user and chroot directory:
 
@@ -56,12 +59,18 @@ No release yet. This is experimental software.
 
 TODO
 ====
+- Figure out a better name
 - Write proper installation instructions
 - Cache some stuff
 - Look at DNSSEC?
 - Listen to signals to reload
 - Measure some degree of performance
 
+Similar:
+
+- [adsuck][adsuck] (POSIX systems)
+- [Little Snitch](https://www.obdev.at/products/littlesnitch/index.html) (OSX)
+
 
 [adsuck]: https://github.com/conformal/adsuck
-[dns]: https://github.com/miekg/dns
+[dns]: https://godoc.org/github.com/miekg/dns

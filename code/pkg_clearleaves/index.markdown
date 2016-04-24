@@ -1,7 +1,10 @@
 ---
 layout: code
-title: pkg_clearleaves
-link: pkg_clearleaves
+title: "pkg_clearleaves"
+link: "pkg_clearleaves"
+last_version: "tip"
+pre1: "Experimental"
+
 ---
 
 For FreeBSD there's a tool called [`pkg_cutleaves`][cl], which is a *very* handy

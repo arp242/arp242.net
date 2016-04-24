@@ -1,7 +1,10 @@
 ---
 layout: code
-title: virc
-link: virc
+title: "virc"
+link: "virc"
+last_version: "tip"
+pre1: "Experimental"
+
 ---
 
 Virc is an IRC client in Vim. Or more accuratly, it's a Vim wrapper around

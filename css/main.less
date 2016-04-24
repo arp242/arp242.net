@@ -4,6 +4,11 @@
 @font-heading: 'Roboto Condensed', 'DejaVu Sans', Calibri, sans-serif;
 @font-mono: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", DejaVuSansMono, "Consolas", monospace;
 
+@menu_bg: #505050;
+@menu_fg: #fff;
+
+@highlight_fg: #278c09;
+@highlight_fg: #3a6ea5;
 
 /*** Layout stuff ***/
 html {
@@ -42,7 +47,9 @@ hr {
 	text-align: center;
 	vertical-align: middle;
 
-	color: #278c09;
+	clear: both;
+
+	color: @highlight_fg;
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, .1);
 
 	&:before, &:after {
@@ -87,9 +94,10 @@ hr {
 
 .intro,
 .disclaimer,
-.code-links {
-	background-color: #505050;
-	color: #fff;
+.code-links,
+.weblog-header {
+	background-color: @menu_bg;
+	color: @menu_fg;
 	text-shadow: 1px 1px 2px #333;
 
 	a {
@@ -252,23 +260,55 @@ blockquote {
 }
 
 // The actual article
-.weblog-article {
+.weblog-article,
+.code-page {
 	padding: .5em;
 	padding-left: 1em;
 	padding-top: 2em;
 
+	img {
+		max-width: 100%;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		border-bottom: 1px solid @highlight_fg;;
+		color: @highlight_fg;
+	}
+}
+
+.weblog-article {
 	// Heading and date (first child is back button, 2nd the h1, 3rd date)
+	/*
 	.weblog-back + h1,
 	& > p:nth-child(3) {
 		text-align: center;
 	}
+	*/
 
-	img {
-		max-width: 100%;
+	.weblog-header {
+		text-align: center;
+
+		margin-left: -1em;
+		margin-right: -.5em;
+		border-radius: 2px;
+		padding-bottom: .5em;
+
+		h1 {
+			border-bottom: none;
+			color: inherit;
+			padding: .5em 0;
+			margin-bottom: 0;
+		}
+
+		p {
+			margin: 0;
+			padding: 0;
+		}
 	}
 }
 
-.weblog-back {
+.weblog-back,
+.code-back {
 	position: absolute;
 	top: 14px;
 	font-weight: bold;
@@ -352,14 +392,48 @@ blockquote {
 
 .code-links {
 	//border: 1px solid #b7b7b7;
-	float: right;
-	margin: 0;
-	padding: 0 1.5em;
+
+	//float: right;
+	//width: 100%;
+
+	//margin: 0;
+	//padding: 0 1.5em;
+	margin-left: -1em;
+	margin-right: -.5em;
 	border-radius: 2px;
-	margin-left: .5em;
+	//margin-left: .5em;
+	text-align: center;
+	padding-bottom: .5em;
 
 	a {
 		text-decoration: none;
+
+		//background-color: #36a;
+		background-color: @highlight_fg;
+		padding: .3em .5em;
+		margin-right: 1em;
+		text-shadow: none;
+
+		border-top-left-radius: 2px;
+		border-top-right-radius: 2px;
+	}
+	
+	h1 {
+		padding: .5em 0;
+		margin-bottom: 0;
+		border-bottom: none;
+		color: inherit;
+	}
+
+	ul {
+		margin: 0;
+	}
+
+	// Added by markdownify
+	p {
+		padding: 0;
+		margin: 0;
+		margin-bottom: .5em;
 	}
 }
 

@@ -1,10 +1,11 @@
 ---
 layout: code
-title: undofile_warn.vim
-link: undofile_warn.vim
-extra_links: "[This plugin at www.vim.org](http://www.vim.org/scripts/script.php?script_id=5207)"
+title: "undofile_warn.vim"
+link: "undofile_warn.vim"
+last_version: "version-1.1"
+pre1: "Project status: stable"
+post1: "[This plugin at www.vim.org](http://www.vim.org/scripts/script.php?script_id=5207)"
 ---
-
 
 
 Introduction

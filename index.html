@@ -29,7 +29,7 @@ title: arp242.net
 		<div class="weblog-brief">
 			<h2><a href="{{ site.posts[i].url }}">{{ site.posts[i].title }}</a></h2>
 			<em>{{ site.posts[i].date | date_to_string }}</em>
-			<p>{{ site.posts[i].excerpt | markdownify }}</p>
+			{{ site.posts[i].excerpt | markdownify }}
 		</div>
 	{% endfor %}
 	<a href="/weblog/"><strong>See all →</strong></a>

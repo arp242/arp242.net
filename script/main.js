@@ -40,14 +40,25 @@
   };
 
   filter = function() {
-    var h;
-    h = get_hash_key('filter');
-    if (h === '') {
-      return $('.weblog-brief').css('display', 'block');
-    } else {
-      $(".weblog-brief:not(.lang-" + h + ")").css('display', 'none');
-      return $(".weblog-brief.lang-" + h).css('display', 'block');
-    }
+    var lang, status;
+    lang = get_hash_key('filter-lang');
+    status = get_hash_key('filter-status');
+    return $('.weblog-brief').each(function() {
+      var elem, show;
+      elem = $(this);
+      show = true;
+      if (lang !== '') {
+        if (!elem.hasClass("lang-" + lang)) {
+          show = false;
+        }
+      }
+      if (status !== '') {
+        if (!elem.hasClass("status-" + status)) {
+          show = false;
+        }
+      }
+      return elem.css('display', show ? 'block' : 'none');
+    });
   };
 
   sort = function() {
@@ -73,13 +84,17 @@
     }
     filter();
     sort();
-    $('#code-filter').on('change', function() {
-      return set_hash_key('filter', $(this).find(':selected').attr('value'));
+    $('#code-filter-lang').on('change', function() {
+      return set_hash_key('filter-lang', $(this).find(':selected').attr('value'));
+    });
+    $('#code-filter-status').on('change', function() {
+      return set_hash_key('filter-status', $(this).find(':selected').attr('value'));
     });
     $('#code-sort').on('change', function() {
       return set_hash_key('sort', $(this).find(':selected').attr('value'));
     });
-    $("#code-filter option[value=\"" + (get_hash_key('filter')) + "\"]").attr('selected', 'selected');
+    $("#code-filter-lang option[value=\"" + (get_hash_key('filter-lang')) + "\"]").attr('selected', 'selected');
+    $("#code-filter-status option[value=\"" + (get_hash_key('filter-status')) + "\"]").attr('selected', 'selected');
     return $("#code-sort option[value=\"" + (get_hash_key('sort')) + "\"]").attr('selected', 'selected');
   });
 

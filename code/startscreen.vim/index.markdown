@@ -1,10 +1,11 @@
 ---
 layout: code
-title: startscreen.vim
-link: startscreen.vim
-extra_links: "[This plugin at www.vim.org](http://www.vim.org/scripts/script.php?script_id=5338)"
+title: "startscreen.vim"
+link: "startscreen.vim"
+last_version: "version-1.0"
+pre1: "Project status: stable"
+post1: "[This plugin at www.vim.org](http://www.vim.org/scripts/script.php?script_id=5338)"
 ---
-
 
 
 Introduction

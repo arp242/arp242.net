@@ -1,7 +1,10 @@
 ---
 layout: code
-title: config
-link: config
+title: "config"
+link: "config"
+last_version: "tip"
+pre1: "Project status: stable"
+
 ---
 
 My dotfiles. Mostly `vim`, `tcsh`, and `mutt`.

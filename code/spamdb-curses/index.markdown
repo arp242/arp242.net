@@ -1,16 +1,18 @@
 ---
 layout: code
-title: spamdb-curses
-link: spamdb-curses
+title: "spamdb-curses"
+link: "spamdb-curses"
+last_version: "version_1.2-fixed"
+pre1: "Project status: finished (it does what it needs to do and there are no known bugs)."
+
 ---
+
 
 Human friendly curses interface for `spamdb(8)` to manage addresses for the
 whitelist/greylist.
 
-Note: This is for OpenBSD's `spamd(8)`, which has absolutely nothing to do with
+Note: this is for OpenBSD's `spamd(8)`, which has absolutely nothing to do with
 SpamAssasin's `spamd`.
-
-It's simple, and "just works"™ ... What more is there to say?
 
 ChangeLog
 =========

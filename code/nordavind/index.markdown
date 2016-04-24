@@ -1,7 +1,10 @@
 ---
 layout: code
-title: Nordavind
-link: nordavind
+title: "Nordavind"
+link: "nordavind"
+last_version: "tip"
+pre1: "Experimental"
+
 ---
 
 Nordavind is a web based audio player.

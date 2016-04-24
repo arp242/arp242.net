@@ -1,10 +1,11 @@
 ---
 layout: code
-title: confirm_quit.vim
-link: confirm_quit.vim
-extra_links: "[This plugin at www.vim.org](http://www.vim.org/scripts/script.php?script_id=5209)"
+title: "confirm_quit.vim"
+link: "confirm_quit.vim"
+last_version: "version-1.0"
+pre1: "Project status: finished (it does what it needs to do and there are no known bugs)."
+post1: "[This plugin at www.vim.org](http://www.vim.org/scripts/script.php?script_id=5209)"
 ---
-
 
 
 Introduction

@@ -1,8 +1,12 @@
 ---
 layout: code
-title: MediaWiki-Typography
-link: mediawiki-typography
+title: "MediaWiki-Typography"
+link: "mediawiki-typography"
+last_version: "tip"
+pre1: "Project status: archived (I no longer work on this, as I don't have a MediaWiki install to administer any more. It's still usable, though, and I'll still fix bugs when reported; contact me if you want to take over maintainership)."
+
 ---
+
 
 Automatically replace "quotes" with “smart” quotes. Also replaces - with an em
 dash (—) and ... with an ellipsis (…).

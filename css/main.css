@@ -25,7 +25,8 @@ hr {
   border: none;
   text-align: center;
   vertical-align: middle;
-  color: #278c09;
+  clear: both;
+  color: #3a6ea5;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
 hr:before,
@@ -62,20 +63,23 @@ hr:after {
 }
 .intro,
 .disclaimer,
-.code-links {
+.code-links,
+.weblog-header {
   background-color: #505050;
-  color: #fff;
+  color: #ffffff;
   text-shadow: 1px 1px 2px #333;
 }
 .intro a,
 .disclaimer a,
-.code-links a {
+.code-links a,
+.weblog-header a {
   color: #fff;
   text-decoration: underline;
 }
 .intro a:hover,
 .disclaimer a:hover,
-.code-links a:hover {
+.code-links a:hover,
+.weblog-header a:hover {
   color: #96c6ff;
   text-decoration: none;
 }
@@ -210,24 +214,64 @@ blockquote {
     margin-left: 0;
   }
 }
-.weblog-article {
+.weblog-article,
+.code-page {
   padding: .5em;
   padding-left: 1em;
   padding-top: 2em;
 }
-.weblog-article .weblog-back + h1,
-.weblog-article > p:nth-child(3) {
-  text-align: center;
-}
-.weblog-article img {
+.weblog-article img,
+.code-page img {
   max-width: 100%;
 }
-.weblog-back {
+.weblog-article h1,
+.code-page h1,
+.weblog-article h2,
+.code-page h2,
+.weblog-article h3,
+.code-page h3,
+.weblog-article h4,
+.code-page h4,
+.weblog-article h5,
+.code-page h5,
+.weblog-article h6,
+.code-page h6 {
+  border-bottom: 1px solid #3a6ea5;
+  color: #3a6ea5;
+}
+.weblog-article {
+  /*
+	.weblog-back + h1,
+	& > p:nth-child(3) {
+		text-align: center;
+	}
+	*/
+}
+.weblog-article .weblog-header {
+  text-align: center;
+  margin-left: -1em;
+  margin-right: -0.5em;
+  border-radius: 2px;
+  padding-bottom: .5em;
+}
+.weblog-article .weblog-header h1 {
+  border-bottom: none;
+  color: inherit;
+  padding: .5em 0;
+  margin-bottom: 0;
+}
+.weblog-article .weblog-header p {
+  margin: 0;
+  padding: 0;
+}
+.weblog-back,
+.code-back {
   position: absolute;
   top: 14px;
   font-weight: bold;
 }
-.weblog-back a {
+.weblog-back a,
+.code-back a {
   margin-right: 1em;
 }
 .index-back {
@@ -286,14 +330,34 @@ blockquote {
   background-image: url("../images/lang-go.png");
 }
 .code-links {
-  float: right;
-  margin: 0;
-  padding: 0 1.5em;
+  margin-left: -1em;
+  margin-right: -0.5em;
   border-radius: 2px;
-  margin-left: .5em;
+  text-align: center;
+  padding-bottom: .5em;
 }
 .code-links a {
   text-decoration: none;
+  background-color: #3a6ea5;
+  padding: .3em .5em;
+  margin-right: 1em;
+  text-shadow: none;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.code-links h1 {
+  padding: .5em 0;
+  margin-bottom: 0;
+  border-bottom: none;
+  color: inherit;
+}
+.code-links ul {
+  margin: 0;
+}
+.code-links p {
+  padding: 0;
+  margin: 0;
+  margin-bottom: .5em;
 }
 .code-nav {
   float: right;

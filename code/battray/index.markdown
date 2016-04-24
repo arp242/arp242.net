@@ -1,8 +1,12 @@
 ---
 layout: code
-title: battray
-link: battray
+title: "battray"
+link: "battray"
+last_version: "version-2.2"
+pre1: "Project status: stable"
+
 ---
+
 
 Battray is a fairly simply tray icon to show your laptop’s battery status.
 It's simple, easy, fairly environment-independent, and ‘just works’ without
@@ -17,7 +21,16 @@ Installation
 Battray requires Python 3.2+ with GTK (through [PyGObject][pygobject]). It runs
 on FreeBSD, OpenBSD, and Linux.
 
-Just type `./battray.py` to try it out; or run `./setup.py install` if you like it.
+OpenBSD:
+
+	doas pkg_add py-gobject3
+
+Debian/Ubuntu:
+
+	sudo apt-get install python3-gi
+
+After that run `./battray.py` with Python **3**. You can run `./setup.py
+install` if you like it.
 
 
 Configuration
@@ -100,6 +113,13 @@ Available variables
 
 ChangeLog
 =========
+
+Version 2.2, 2016-04-24
+-----------------------
+- Better handle systems without any battery by showing a message in the tooltip
+  rather than in the console or showing "unknown" (OpenBSD & Linux only, I
+  don't have a FreeBSD system to test this).
+- Fix some Gtk/Gobject deprecation warnings.
 
 Version 2.1, 2015-11-09
 -----------------------

@@ -1,8 +1,12 @@
 ---
 layout: code
-title: MediaWiki-Scepticismus
-link: mediawiki-scepticismus
+title: "MediaWiki-Scepticismus"
+link: "mediawiki-scepticismus"
+last_version: "tip"
+pre1: "Project status: archived (I no longer work on this, as I don't have a MediaWiki install to administer any more. It's still usable, though, and I'll still fix bugs when reported; contact me if you want to take over maintainership)."
+
 ---
+
 
 MediaWiki skin designed to be comfortably readable. Designed for
 [skepticpages.org](https://skepticpages.org).
