@@ -25,6 +25,11 @@ remote_files = { ' '.join(f.split(' ')[1:]).replace(remote, ''): int(f.split(' '
 
 # Copy modified
 for path, local_mtime in local_files.items():
+	# Jekyll doesn't preserve the mtimes from the markdown files
+	# spath = '{}'.format(path)
+	#local_mtime = os.stat()
+	#sys.exit()
+
 	lpath = '{}/{}'.format(local, path)
 	rpath = '{}/{}'.format(remote, path)
 
@@ -42,7 +47,6 @@ for path in local_files.keys():
 		if not os.path.exists(d):
 			os.makedirs(d)
 		shutil.copy2(lpath, rpath)
-
 
 # Delete stuff
 for path in remote_files.keys():

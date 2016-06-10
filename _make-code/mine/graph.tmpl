@@ -1,0 +1,63 @@
+<noscript><p>The revision graph only works with JavaScript-enabled browsers.</p></noscript>
+
+<div id="wrapper">
+	<ul id="nodebgs" class="stripes2"></ul>
+		<canvas id="graph" width="{canvaswidth}" height="{canvasheight}"></canvas>
+	<ul id="graphnodes"></ul>
+</div>
+
+<script src="/script/excanvas.js"></script>
+<script src="/script/hg.js"></script>
+<script type="text/javascript">
+	<!-- hide script content
+
+	var data = {jsdata|json};
+	var graph = new Graph();
+	graph.scale({bg_height});
+
+	graph.vertex = function(x, y, color, parity, cur) \{
+		this.ctx.beginPath();
+		color = this.setColor(color, 0.25, 0.75);
+		this.ctx.arc(x, y, radius, 0, Math.PI * 2, true);
+		this.ctx.fill();
+
+		var bg = '<li class="bg"></li>';
+		var left = (this.bg_height - this.box_size) + (this.columns + 1) * this.box_size;
+		var nstyle = 'padding-left: ' + left + 'px;';
+
+		var tagspan = '';
+		if (cur[7].length || cur[8].length || (cur[6][0] != 'default' || cur[6][1])) \{
+			tagspan = '<span class="logtags">';
+			if (cur[6][1]) \{
+				tagspan += '<span class="branchhead" title="' + cur[6][0] + '">';
+				tagspan += cur[6][0] + '</span> ';
+			} else if (!cur[6][1] && cur[6][0] != 'default') \{
+				tagspan += '<span class="branchname" title="' + cur[6][0] + '">';
+				tagspan += cur[6][0] + '</span> ';
+			}
+			if (cur[7].length) \{
+				for (var t in cur[7]) \{
+					var tag = cur[7][t];
+					tagspan += '<span class="tag">' + tag + '</span> ';
+				}
+			}
+			if (cur[8].length) \{
+				for (var b in cur[8]) \{
+					var bookmark = cur[8][b];
+					tagspan += '<span class="tag">' + bookmark + '</span> ';
+				}
+			}
+			tagspan += '</span>';
+		}
+
+		var item = '<li style="' + nstyle + '"><span class="desc">';
+		item += '<a href="./' + cur[0] + '.html" title="' + cur[0] + '">' + cur[3] + '</a>';
+		item += '</span>' + tagspan + '<span class="info">' + cur[5] + ', by ' + cur[4] + '</span></li>';
+		
+		return [bg, item];
+	}
+
+	graph.render(data);
+
+	// stop hiding script -->
+</script>

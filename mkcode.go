@@ -70,7 +70,7 @@ var funcs = template.FuncMap{
 
 const html_brief = `
 <div class="weblog-brief lang-{{.Language}} status-{{.ShortStatus}}" data-updated="{{.UpdatedOn|date_sort}}" data-name="{{.Name}}" data-status="{{.ShortStatus}}">
-	<em>{{.ShortStatus}}, {{.UpdatedOn|date_human}}</em>
+	<em>Status: {{.ShortStatus}}, last updated: {{.UpdatedOn|date_human}}</em>
 	<h2><a href="/code/{{.LinkName}}/">{{.Name}}</a></h2>
 	<p>{{.Description|html}}</p>
 </div>
@@ -238,8 +238,12 @@ func read_and_write_repository(repo repository, index int, ch chan<- repository)
 				repo.Status = strings.TrimSpace(m)
 				end := strings.Index(m, "(")
 				if end < 0 {
-					end = len(m)
+					end = strings.Index(m, ";")
+					if end < 0 {
+						end = len(m)
+					}
 				}
+
 				repo.ShortStatus = strings.ToLower(strings.TrimSpace(m[strings.Index(m, ":")+1 : end]))
 			}
 		}
@@ -247,7 +251,7 @@ func read_and_write_repository(repo repository, index int, ch chan<- repository)
 	}
 
 	if repo.Status == "" {
-		repo.Status = "Experimental"
+		repo.Status = "Project status: experimental"
 		repo.ShortStatus = "experimental"
 	}
 

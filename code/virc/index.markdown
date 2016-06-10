@@ -3,7 +3,7 @@ layout: code
 title: "virc"
 link: "virc"
 last_version: "tip"
-pre1: "Experimental"
+pre1: "Project status: experimental"
 
 ---
 

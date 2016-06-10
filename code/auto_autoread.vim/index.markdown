@@ -3,7 +3,7 @@ layout: code
 title: "auto_autoread.vim"
 link: "auto_autoread.vim"
 last_version: "version-1.0"
-pre1: "Experimental"
+pre1: "Project status: experimental"
 
 ---
 

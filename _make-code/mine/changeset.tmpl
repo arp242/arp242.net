@@ -1,0 +1,41 @@
+<div class="description">{desc|strip|escape|websub|nonempty}</div>
+
+<table id="changesetEntry">
+	<tr>
+		<th class="author">author</th>
+		<td class="author">{author|obfuscate}</td>
+	</tr>
+	<tr>
+		<th class="date">date</th>
+		<td class="date age">{date|rfc822date}</td>
+	</tr>
+	<tr>
+		<th class="author">parents</th>
+		<td class="author">{ifeq(count(parent), '2', parent%changesetparentdiff, parent%changesetparent)}</td>
+	</tr>
+	<tr>
+		<th class="author">children</th>
+		<td class="author">{child%changesetchild}</td>
+	</tr>
+	<tr>
+		<th class="files">files</th>
+		<td class="files">{files}</td>
+	</tr>
+	<tr>
+		<th class="diffstat">diffstat</th>
+			<td class="diffstat">
+				{diffsummary}
+				<a id="diffstatexpand" href="javascript:toggleDiffstat()">[<tt>+</tt>]</a>
+				<div id="diffstatdetails" style="display:none;">
+					<a href="javascript:toggleDiffstat()">[<tt>-</tt>]</a>
+					<table class="diffstat-table stripes2">{diffstat}</table>
+				</div>
+			</td>
+		</tr>
+</table>
+
+<div class="overflow">
+	<div class="sourcefirst linewraptoggle">line wrap: <a class="linewraplink" href="javascript:toggleLinewrap()">on</a></div>
+	<div class="sourcefirst"> line diff</div>
+	<div class="stripes2 diffblocks">{diff}</div>
+</div>
