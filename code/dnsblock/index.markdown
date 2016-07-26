@@ -10,9 +10,9 @@ pre1: "Project status: experimental; it works for the author, and may be useful 
 
 DNS proxy and filter.
 
-The intended and most common usage is to block third-party browser requests.
-It's not intended to "block advertisement" as such, rather it's intended to
-"block third party requests".
+It's intended usage is to block third-party browser requests. It's not intended
+to "block advertisement" as such, rather it's intended to "block third party
+requests".
 
 It's inspired by adsuck, which unfortunately hasn't been updated in a few years
 and is suffering from some problems.
@@ -21,6 +21,7 @@ Advantages:
 
 - Lightweight.
 - Browser independent − also works for requests outside the browser.
+- Will not endlessly frob in web page's DOM (which many adblocks do).
 
 To be fair, there are some disadvantages as well:
 
@@ -39,6 +40,7 @@ dnsblock is written in Go, so you'll need that. Tested systems are:
 - Go 1.5 on OpenBSD 5.9
 - Go 1.6 on VoidLinux (musl libc)
 - Go 1.6 on Ubuntu 16.04
+- Go 1.6 on Arch Linux
 
 Other POSIX systems should also work.
 
@@ -48,7 +50,6 @@ You can download and build it with:
 	$ cd dnsblock
 	$ ./build.sh
 	$ ./install.sh
-
 
 Setting up `/etc/resolv.conf`
 -----------------------------
@@ -99,24 +100,32 @@ Set `/etc/resolvconf/resolv.conf.d/head` to:
 
 	nameserver 127.0.0.53
 
-and run `resolvconf -u`
+and run `resolvconf -u`.
+
+### Arch Linux
+Add to `/etc/resolvconf.conf` to :
+
+	name_servers=127.0.0.53
+
+and run `resolvconf -u`.
+
 
 Browser setup
 --------------
-TODO
 
-- DNS cache?
+### Root certificate
+On first startup a root certificate will be generated and put in
+`/var/dnsblock`. We use this root certificate to sign https requests.
 
-- Install root certificate
+You will need to import this certificate in your browser.
+
 
 **NOTE!** Make sure the certificate is readable! Firefox will **NOT** show an
 error or warning if it's not.
 
-		$ openssl genrsa -out /var/dnsblock/rootCA.key 2048
-		$ openssl req -x509 -new -nodes -key /var/dnsblock/rootCA.key -sha256 -days 1024 -out /var/dnsblock/rootCA.pem
-
-		$ chown _dnsblock:_dnsblock /var/dnsblock/rootCA*
-		$ chmod 600 /var/dnsblock/rootCA*
+### Cache
+You will need to turn off the hyper-aggressive ttl-ignoring DNS cache that both
+Firefox and Chrome are infected with.
 
 How it works
 ============
@@ -128,13 +137,14 @@ will be resolved to:
 
 	http://127.0.0.53:80/some_script.js
 
-dnsblock also runs a HTTP server at `127.0.0.53:80` which will either:
+dnsblock runs a HTTP server at `127.0.0.53:80` and `127.0.0.53:443` which will
+either:
 
 1. Serve some no-ops for some common scripts so web pages don't error out
-   (Google Analytics, AddThis).
+   (Google Analytics, AddThis, etc.).
 2. Serve an simple HTML or JS page informing the user that this request is
    blocked. This is a useful so that you don't have to guess *why* a request
-   doesn't work and to keep the error log clutter-free.
+   doesn't work and to keep the browser's error log clutter-free.
 
 ChangeLog
 =========
@@ -142,8 +152,7 @@ No release yet. This is experimental software.
 
 TODO
 ====
-- Figure out a better name
-- Better https
+- Figure out a better name (there is already a project named dnsblock!)
 - Listen to signals to reload
 - Measure some degree of performance
 
@@ -164,15 +173,15 @@ martin@arp242.net
 
 Here are some similar programs:
 
-- [adsuck](https://github.com/conformal/adsuck) (POSIX systems)
-- [Little Snitch](https://www.obdev.at/products/littlesnitch/index.html) (OSX)
-- [dnsblock](https://github.com/torrentkino/dnsblock)
+- [adsuck][adsuck] (POSIX systems)
+- [Little Snitch][little-snitch] (OSX)
+- [dnsblock][dnsblock] (POSIX systems)
 
 
 Authors and license
 ===================
 This program is written by Martin Tournoij <martin@arp242.net>, whose job would
-have been a lot harder without [Miek Gieben's DNS library][dns].
+have been a lot harder without [Miek Gieben's DNS library][miekg-dns].
 
 The MIT License (MIT)
 
@@ -196,5 +205,8 @@ liability, whether in an action of contract, tort or otherwise, arising
 from, out of or in connection with the software or the use or other dealings
 in the software.
 
-[dns]: https://godoc.org/github.com/miekg/dns
+[adsuck]: https://github.com/conformal/adsuck
+[miekg-dns]: https://godoc.org/github.com/miekg/dns
+[dnsblock]: https://github.com/torrentkino/dnsblock
+[little-snitch]: https://www.obdev.at/products/littlesnitch/index.html
 [unbound]: https://unbound.net/
