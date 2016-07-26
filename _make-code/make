@@ -18,11 +18,10 @@ trap c EXIT INT
 sleep 2
 
 out="/data/code/arp242.net/code/$project"
-mkdir -p "$out/commits" "$out/browse"
-
 # Get header
 header=$(sed $(( 1 + $(grep -n ^---$ "$out/index.markdown" | cut -d: -f1 | tail -n1) )),50000d "$out/index.markdown")
 
+# Write with header
 write() {
 	echo "$header" > $2
 	echo "{% raw %}" >> $2
@@ -30,12 +29,17 @@ write() {
 	echo "{% endraw %}" >> $2
 }
 
-write "$(curl -s 'http://localhost:8001/tags')" "$out/tags.html" 
-write "$(curl -s 'http://localhost:8001/graph/tip?revcount=5000')" "$out/commits/index.html"
-for line in $(curl -s 'http://localhost:8001/shortlog/tip?revcount=5000'); do
-	write "$(curl -s "http://localhost:8001/rev/$line")" "$out/commits/$line.html"
-done
+# Tags
+write "$(curl -s 'http://localhost:8001/tags')" "$out/downloads.html" 
 
+# Commits
+#mkdir -p "$out/commits"
+#write "$(curl -s 'http://localhost:8001/graph/tip?revcount=5000')" "$out/commits/index.html"
+#for line in $(curl -s 'http://localhost:8001/shortlog/tip?revcount=5000'); do
+#	write "$(curl -s "http://localhost:8001/rev/$line")" "$out/commits/$line.html"
+#done
+
+# Files
 hg_ls() {
 	local root=$1
 
@@ -61,6 +65,5 @@ hg_ls() {
 	done
 }
 
-hg_ls /
-
-kill "$serve"
+#mkdir -p "$out/browse"
+#hg_ls /
