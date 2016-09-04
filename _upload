@@ -10,11 +10,13 @@ else:
 
 root = os.path.dirname(os.path.realpath(sys.argv[0]))
 local = os.path.join(root, '_site/', subdir)
-remote = os.path.join(root, '_remote/carpetsmoker.fastmail.nl/files/site/', subdir)
+remote = os.path.join(root, '_remote/', subdir)
 
-dav = subprocess.Popen(['fusedav',
-	'-u', 'carpetsmoker@fastmail.nl', '-p', open(root + '/_secret', 'r').read().strip(),
-	'https://dav.messagingengine.com/', os.path.join(root, '_remote')])
+dav = subprocess.Popen(['wdfs',
+	'-o', 'username=carpetsmoker@fastmail.nl',
+	'-o', 'password={}'.format(open(root + '/_secret', 'r').read().strip()),
+	'https://webdav.fastmail.com/carpetsmoker.fastmail.nl/files/site/',
+	os.path.join(root, '_remote')])
 time.sleep(2)
 
 local_files = subprocess.check_output("find " + local + " -type f -exec stat --format '%Y %n' {} +", shell=True)

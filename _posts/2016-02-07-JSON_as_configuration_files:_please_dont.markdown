@@ -2,6 +2,7 @@
 layout: post
 title: "JSON as configuration files: please don’t"
 excerpt: Using JSON for configuration files is a disturbing trend.
+updated: 4 Sep 2016
 ---
 
 I’ve recently witnessed the rather disturbing trend of using JSON for
@@ -9,19 +10,20 @@ configuration files.
 
 Please don’t. Ever. Not even once. It’s a really bad idea.
 
-It’s not what JSON was intended for and consequently not what it’s good at. JSON
-is intended to be a “lightweight data-interchange format”, and claims that it is
-“easy for humans to read and write” and “easy for machines to parse and
-generate”.
+It’s simply not what JSON was designed to do, and consequently not what it’s
+good at. JSON is intended to be a “lightweight data-interchange format”, and
+claims that it is “easy for humans to read and write” and “easy for machines to
+parse and generate”.
 
-As a data interchange format JSON works rather well. You *can* read and write it
-pretty easily and it’s also very easy to parse for machines. It’s a good
-trade-off between the extremes of machine-readable and human-readable and a
-[huge improvement][^1] on what it intended to replace: XML, which I consider to
-be unreadable by *both* machines and humans.
-
-Bit none of that means it’s also suitable as a configuration file format, as
-this has **different needs** than a data interchange format.
+As a data interchange format JSON works pretty good, a human *can* read and
+write it comparatively easily, and it’s also pretty easy to parse for machines.
+It’s a good trade-off between the extremes of machine-readable and
+human-readable and a huge improvement on what it intended to replace: XML
+which I consider to be unreadable by *both* machines and humans.  
+But using it for other purposes is somewhat akin to saying “hey, this hammer
+works really really well for driving in nails! I love it! Why not hammer in this
+screw with it!” Sure, it sort of works, but it’s very much the wrong tool for
+the job.
 
 Specific shortcomings
 ---------------------
@@ -54,6 +56,19 @@ new key, e.g.:
 
 But this is just damn ugly.
 
+Other people have pointed out that you can use the commit log, but this is an
+even worse idea. Consider something like `bower`:
+
+	// Please be VERY CAREFUL when updating this, since this library often
+	// makes incompatible changes even in minor bugfix releases (e.g. when
+	// updating from 1.1.1 to 1.1.2).
+	'some_stupid_lib': '1.1.1'
+
+So, are you going to dig though the entire commit history in search for some
+important message?
+
+Of course not.
+
 ### Readability
 It’s just not *that* readable. Sure, it’s readable *for a data-interchange
 format*, but not readable for a configuration file.
@@ -61,13 +76,13 @@ format*, but not readable for a configuration file.
 Readability counts.
 
 ### Strictness
-The JSON standard is pretty strict—this is good, it allows for concise and fast
-parsers that don’t have to muck about with different formats−but it also means
-it’s more difficult to write.
+The JSON standard is pretty strict − this is good, it allows for concise and
+fast parsers that don’t have to muck about with different formats − but it also
+means it’s more difficult to write.
 
-A trailing comma in objects or arrays is an error, and something that has
-bitten me more than once. And having to escape all instances or `"` can be
-pretty annoying if your string contains a lot of `"`s.
+For example a trailing comma in objects or arrays is an error, and something
+that has bitten me more than once. And having to escape all instances or `"` can
+be pretty annoying if your string contains a lot of `"`s.
 
 ### Lack of programmability
 Not always an issue, but sometimes it is, especially when JSON is used to
@@ -82,26 +97,32 @@ For example, consider:
 		$wear = 'pants';
 
 This is an issue for example in MediaWiki’s `skin.json` file. One thing I wanted
-to do is not include some CSS if some plugin is loaded, and we can’t do this−we
-can (probably) work around it in the PHP file, but “working around” things is
+to do is not include some CSS if some plugin is loaded, and we can’t do this −
+we can (probably) work around it in the PHP file, but “working around” things is
 never good (and remember, we can’t leave a comment in the JSON file to inform
 people that we’re working around things!)
+
+The old way of doing things in MediaWiki (declaring class variables) was a lot
+better and provided much more features.
 
 Alternatives
 ------------
 - The [“recommended way”][crockford] by JSON author Douglas Crockford is “pipe
   it through JSMin before handing it to your JSON parser”. *Some* JSON parsers
-  also explicitly support comments (but most don’t).
+  also explicitly support comments (but most don’t). Having to pre-process your
+  configuration files is a pain though.
 
 - `import`, `require`, `include`, or use whatever code-importing facilities your
   language provides (or even `eval()`). Obviously, this means configuration
-  files have to be a trusted source (which is usually the case).
+  files have to be a trusted source, but this is usually the case.
 
 - `ini` files; not standardized, but this usually isn’t a problem since
-  configuration files typically are intended to be read by only one program.
+  configuration files are typically intended to be read by only one program.
 
-- YAML; it’s okay-ish, but also rather complex. The indentation can also become
-  difficult to follow in large documents.
+- [TOML][toml] is very similar to `ini` files, but standardized.
+
+- YAML is sort of okay-ish ... I guess ... I'm not a big fan of it though, I
+  wrote a separate page on that: [YAML: probably not so great after all][yaml].
 
 - While I wouldn’t necessarily recommend it, “rolling your own” configuration
   file parser is really easy. In Python:
@@ -126,8 +147,8 @@ Alternatives
 				# Everything after that is the value
 				value = '='.join(line[1:]).strip()
 
-	This doesn’t support everything that `.ini` files do, but it’s enough for
-	many applications.
+	This doesn’t support everything that `.ini` files do, but for many purposes
+	it can work quite well.
 
 Examples
 --------
@@ -136,14 +157,15 @@ Name and shame :-)
 - MediaWiki’s new [extension registration](https://www.mediawiki.org/wiki/Manual:Extension_registration)
   system is what motivated me to write this.
 - npm’s [`package.json`](https://docs.npmjs.com/files/package.json) (which uses
-  a [stupid system](http://stackoverflow.com/a/14221781/660921) for adding
+  a [somewhat silly system](http://stackoverflow.com/a/14221781/660921) for adding
   comments).
+- Bower is full-on idiotic by just saying [comments aren't useful enough to
+  support](https://github.com/bower/bower/issues/1059).
 
 ### Advocates
 - [JSON configuration file format](http://octodecillion.com/blog/json-data-file-format/)
 
 
-[^1]: XML advocates typically shout “validation!” here. There is something to be said for that, but XML validation is a horribly complex beast−I don’t think I’ve ever seen it work−and the problem can typically be solved by just using a few lines of code.
-
-
 [crockford]: https://plus.google.com/+DouglasCrockfordEsq/posts/RK8qyGVaGSr
+[toml]: https://github.com/toml-lang/toml
+[yaml]: http://arp242.net/weblog/yaml_probably_not_so_great_after_all.html

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -euC
+
+lessc css/main.less css/main.css
+bundle exec jekyll build

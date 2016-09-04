@@ -10,7 +10,12 @@ layout: default
 
 	<div class="weblog-header">
 		<h1>{{ page.title }}</h1>
-		<p>Written on {{ page.date | date_to_string }}</p>
+		<p>
+			Written on {{ page.date | date_to_string }}
+			{% if page.updated %}
+				− last updated on {{ page.updated }}
+			{% endif %}
+		</p>
 	</div>
 
 	{% if page.so %}
