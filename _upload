@@ -12,12 +12,15 @@ root = os.path.dirname(os.path.realpath(sys.argv[0]))
 local = os.path.join(root, '_site/', subdir)
 remote = os.path.join(root, '_remote/', subdir)
 
-dav = subprocess.Popen(['wdfs',
-	'-o', 'username=carpetsmoker@fastmail.nl',
-	'-o', 'password={}'.format(open(root + '/_secret', 'r').read().strip()),
-	'https://webdav.fastmail.com/carpetsmoker.fastmail.nl/files/site/',
-	os.path.join(root, '_remote')])
-time.sleep(2)
+if not os.path.exists(remote + '/index.html'):
+	print('wdfs')
+	dav = subprocess.Popen(['wdfs',
+		'-o', 'username=carpetsmoker@fastmail.nl',
+		'-o', 'password={}'.format(open(root + '/_secret', 'r').read().strip()),
+		'https://webdav.fastmail.com/carpetsmoker.fastmail.nl/files/site/',
+		os.path.join(root, '_remote')])
+	dav.communicate()
+	time.sleep(1)
 
 local_files = subprocess.check_output("find " + local + " -type f -exec stat --format '%Y %n' {} +", shell=True)
 local_files = { ' '.join(f.split(' ')[1:]).replace(local, ''): int(f.split(' ')[0])  for f in local_files.split('\n') if f != '' }
@@ -37,6 +40,8 @@ for path, local_mtime in local_files.items():
 
 	if path in remote_files and remote_files[path] < local_mtime:
 		print('cp', path)
+		# wdfs does weird things if we don't unlink first
+		os.unlink(rpath)
 		shutil.copy2(lpath, rpath)
 
 # Copy new
@@ -56,5 +61,3 @@ for path in remote_files.keys():
 	if path not in local_files:
 		print('rm', path)
 		os.unlink(rpath)
-
-dav.terminate()

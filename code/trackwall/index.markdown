@@ -1,7 +1,7 @@
 ---
 layout: code
-title: "dnsblock"
-link: "dnsblock"
+title: "trackwall"
+link: "trackwall"
 last_version: "tip"
 pre1: "Project status: experimental; it works for the author, and may be useful to others, but may also sacrifice your firstborn to Cthulhu and take out a new mortgage on your house."
 
@@ -10,7 +10,7 @@ pre1: "Project status: experimental; it works for the author, and may be useful 
 
 DNS proxy and filter.
 
-It's intended usage is to block third-party browser requests. It's not intended
+Its intended usage is to block third-party browser requests. It's not intended
 to "block advertisement" as such, rather it's intended to "block third party
 requests".
 
@@ -35,7 +35,7 @@ Getting started
 
 Download and building
 ---------------------
-dnsblock is written in Go, so you'll need that. Tested systems are:
+trackwall is written in Go, so you'll need that. Tested systems are:
 
 - Go 1.5 on OpenBSD 5.9
 - Go 1.6 on VoidLinux (musl libc)
@@ -46,14 +46,14 @@ Other POSIX systems should also work.
 
 You can download and build it with:
 
-	$ hg clone http://code.arp242.net/dnsblock
-	$ cd dnsblock
+	$ hg clone https://bitbucket.org/Carpetsmoker/trackwall
+	$ cd trackwall
 	$ ./build.sh
 	$ ./install.sh
 
 Setting up `/etc/resolv.conf`
 -----------------------------
-After dnsblock is up and running you'll need to tell the OS to actually use it.
+After trackwall is up and running you'll need to tell the OS to actually use it.
 This is usually done by adding `nameserver <addr>` to `/etc/resolv.conf`. Most
 systems auto-generate this file (usually from DHCP).
 
@@ -85,7 +85,7 @@ should be enough.
 
 **Note**: if you're using the musl libc version then this won't work as
 expected, since musl's resolvers sends a query to *all* nameservers and uses
-whichever one responds fastest, so you'll need to set *only* dnsblock as the
+whichever one responds fastest, so you'll need to set *only* trackwall as the
 nameserver. This can be done by creating
 `/usr/libexec/dhcpcd-hooks/90-resolv.conf` with:
 
@@ -93,7 +93,7 @@ nameserver. This can be done by creating
 	echo 'nameserver 127.0.0.53' > /etc/resolv.conf
 
 Don't forget to make this executable! You'll also need to set the `dns-forward`
-setting manually in `/etc/dnsblock/config`.
+setting manually in `/etc/trackwall/config`.
 
 ### Ubuntu
 Set `/etc/resolvconf/resolv.conf.d/head` to:
@@ -115,7 +115,7 @@ Browser setup
 
 ### Root certificate
 On first startup a root certificate will be generated and put in
-`/var/dnsblock`. We use this root certificate to sign https requests.
+`/var/trackwall`. We use this root certificate to sign https requests.
 
 You will need to import this certificate in your browser.
 
@@ -137,7 +137,7 @@ will be resolved to:
 
 	http://127.0.0.53:80/some_script.js
 
-dnsblock runs a HTTP server at `127.0.0.53:80` and `127.0.0.53:443` which will
+trackwall runs a HTTP server at `127.0.0.53:80` and `127.0.0.53:443` which will
 either:
 
 1. Serve some no-ops for some common scripts so web pages don't error out
@@ -152,7 +152,6 @@ No release yet. This is experimental software.
 
 TODO
 ====
-- Figure out a better name (there is already a project named dnsblock!)
 - Listen to signals to reload
 - Measure some degree of performance
 
@@ -163,7 +162,7 @@ Will this serve as a local DNS resolver and/or cache?
 -----------------------------------------------------
 No. This is not a DNS resolver/cache, just a proxy/filter. If you're looking for
 a DNS cache then [unbound][unbound] is a good option. Running both on even an
-older system should be fine (the dnsblock author is running them both on a
+older system should be fine (the trackwall author is running them both on a
 ten-year old OpenBSD laptop).
 
 This program sucks. What alternatives are there?

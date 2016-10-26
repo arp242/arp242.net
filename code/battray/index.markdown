@@ -8,7 +8,7 @@ pre1: "Project status: stable"
 ---
 
 
-Battray is a fairly simply tray icon to show your laptop’s battery status.
+Battray is a fairly simple tray icon to show your laptop’s battery status.
 It's simple, easy, fairly environment-independent, and ‘just works’ without
 tons of {Gnome,KDE,..} dependencies.
 
@@ -18,6 +18,13 @@ dim the screen when you switch from AC to battery, etc.
 
 Installation
 ============
+The quickest is to install it with `pip`:
+
+    pip install battray
+
+Manual instructions
+-------------------
+
 Battray requires Python 3.2+ with GTK (through [PyGObject][pygobject]). It runs
 on FreeBSD, OpenBSD, and Linux.
 
@@ -186,6 +193,39 @@ Version 1.0, 2009-08-16
 -----------------------
 - Initial release.
 
+Authors and license
+===================
+Battray was written by Martin Tournoij <martin@arp242.net> and released under
+the terms of the MIT license:
+
+The MIT License (MIT)
+
+Copyright © 2008-2016 Martin Tournoij
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+The software is provided "as is", without warranty of any kind, express or
+implied, including but not limited to the warranties of merchantability,
+fitness for a particular purpose and noninfringement. In no event shall the
+authors or copyright holders be liable for any claim, damages or other
+liability, whether in an action of contract, tort or otherwise, arising
+from, out of or in connection with the software or the use or other dealings
+in the software.
+
+-------------------
+
+The notification sound is by
+[Keith W. Blackwell](http://www.freesound.org/people/zimbot/sounds/122989/)
+and released under the terms of the
+[CC BY](https://creativecommons.org/licenses/by/3.0/) license.
 
 [dunst]: https://github.com/knopwob/dunst
 [pygobject]: https://wiki.gnome.org/action/show/Projects/PyGObject
