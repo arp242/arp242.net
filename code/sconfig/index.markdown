@@ -9,6 +9,8 @@ pre1: "Project status: experimental"
 
 `sconfig` is a simple yet functional configuration file parser for Go.
 
+[godoc](https://godoc.org/arp242.net/sconfig)
+
 What does it look like?
 =======================
 
@@ -40,7 +42,7 @@ Can be parsed with:
 		"fmt"
 		"os"
 
-		"bitbucket.org/Carpetsmoker/sconfig"
+		"arp242.net/sconfig"
 	)
 
 	type Config struct {
