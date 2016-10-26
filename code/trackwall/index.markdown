@@ -37,19 +37,22 @@ Download and building
 ---------------------
 trackwall is written in Go, so you'll need that. Tested systems are:
 
-- Go 1.5 on OpenBSD 5.9
+- Go 1.7 on Arch Linux
 - Go 1.6 on VoidLinux (musl libc)
 - Go 1.6 on Ubuntu 16.04
-- Go 1.6 on Arch Linux
+- Go 1.5 on OpenBSD 5.9
 
 Other POSIX systems should also work.
 
 You can download and build it with:
 
-	$ hg clone https://bitbucket.org/Carpetsmoker/trackwall
-	$ cd trackwall
-	$ ./build.sh
-	$ ./install.sh
+	$ go get -u arp242.net/trackwall
+	$ go install trackwall
+
+You will probably want to run the `install.sh` script to setup some stuff as
+well:
+
+	$ $GOPATH/src/arp242.net/install.sh
 
 Setting up `/etc/resolv.conf`
 -----------------------------

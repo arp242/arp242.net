@@ -7,9 +7,10 @@ pre1: "Project status: experimental"
 
 ---
 
-`sconfig` is a simple yet functional configuration file parser for Go.
+[![GoDoc](https://godoc.org/arp242.net/sconfig?status.svg)](https://godoc.org/arp242.net/sconfig)
+[![Go Report Card](https://goreportcard.com/badge/arp242.net/sconfig)](https://goreportcard.com/report/arp242.net/sconfig)
 
-[godoc](https://godoc.org/arp242.net/sconfig)
+`sconfig` is a simple yet functional configuration file parser for Go.
 
 What does it look like?
 =======================

@@ -1,4 +1,5 @@
-// Make a better looking "profile overview" than what BitBucket offers these days
+// Make a better looking "profile overview" than what BitBucket offers these
+// days
 package main
 
 import (
@@ -68,7 +69,7 @@ var funcs = template.FuncMap{
 	"date_sort":  func(t time.Time) string { return t.Format("20060102") },
 }
 
-const html_brief = `
+const htmlBrief = `
 <div class="weblog-brief lang-{{.Language}} status-{{.ShortStatus}}" data-updated="{{.UpdatedOn|date_sort}}" data-name="{{.Name}}" data-status="{{.ShortStatus}}">
 	<em>Status: {{.ShortStatus}}, last updated: {{.UpdatedOn|date_human}}</em>
 	<h2><a href="/code/{{.LinkName}}/">{{.Name}}</a></h2>
@@ -76,9 +77,9 @@ const html_brief = `
 </div>
 `
 
-var tpl_brief = template.Must(template.New("brief").Funcs(funcs).Parse(html_brief))
+var tplBrief = template.Must(template.New("brief").Funcs(funcs).Parse(htmlBrief))
 
-const html_index = `---
+const htmlIndex = `---
 layout: default
 title: Code projects
 ---
@@ -86,14 +87,17 @@ title: Code projects
 <div class="weblog-overview code-projects">
 	{% include_relative top.html %}
 	{{range .Values}}
-		` + html_brief + `
+		` + htmlBrief + `
 	{{end}}
 </div>
+<script>
+{% include_relative main.js  %}
+</script>
 `
 
-var tpl_index = template.Must(template.New("index").Funcs(funcs).Parse(html_index))
+var tplIndex = template.Must(template.New("index").Funcs(funcs).Parse(htmlIndex))
 
-const html_project = `---
+const htmlProject = `---
 layout: code
 title: "{{.Name}}"
 link: "{{.LinkName}}"
@@ -104,13 +108,13 @@ last_version: "{{.LastVersion}}"
 
 {{.Readme}}`
 
-var tpl_project = template.Must(template.New("project").Parse(html_project))
+var tplProject = template.Must(template.New("project").Parse(htmlProject))
 
 //var extra_links_regexp = regexp.MustCompile(`^- (.*)+\s+-{41}`)
 // Everything before exactly 41 -'s at the start of the file
-var extra_links_regexp = regexp.MustCompile(`(?s)(.+)\n-{41}\n`)
+var extraLinksRegexp = regexp.MustCompile(`(?s)(.+)\n-{41}\n`)
 
-// Sort by date
+// ByDate sorts by date
 type ByDate []repository
 
 func (arr ByDate) Len() int           { return len(arr) }
@@ -126,25 +130,25 @@ func main() {
 	}
 	root = os.Args[1]
 
-	var repos, all_repos repositories
+	var repos, allRepos repositories
 	ch := make(chan repositories)
-	for i := 1; i <= pages; i += 1 {
-		go read_repositories(fmt.Sprintf("%s?page=%d", user, i), ch)
+	for i := 1; i <= pages; i++ {
+		go readRepositories(fmt.Sprintf("%s?page=%d", user, i), ch)
 	}
 
 	// Check for more pages
 	repos = <-ch
 	if int(repos.Size) > int(repos.Pagelen)*pages {
-		n_pages := int(math.Ceil(repos.Size / repos.Pagelen))
+		nPages := int(math.Ceil(repos.Size / repos.Pagelen))
 		fmt.Fprintf(os.Stderr,
 			"Warning: pages is set to %v, but there are %v pages.\n",
-			pages, n_pages)
+			pages, nPages)
 
-		for i := pages + 1; i <= n_pages; i += 1 {
-			go read_repositories(fmt.Sprintf("%s?page=%d", user, i), ch)
+		for i := pages + 1; i <= nPages; i++ {
+			go readRepositories(fmt.Sprintf("%s?page=%d", user, i), ch)
 		}
 
-		pages = n_pages
+		pages = nPages
 	}
 
 	for i := 1; i <= pages; i++ {
@@ -153,22 +157,22 @@ func main() {
 			repos = <-ch
 		}
 		for _, v := range repos.Values {
-			all_repos.Values = append(all_repos.Values, v)
+			allRepos.Values = append(allRepos.Values, v)
 		}
 	}
 
-	sort.Sort(ByDate(all_repos.Values))
-	make_index(&all_repos)
+	sort.Sort(ByDate(allRepos.Values))
+	makeIndex(&allRepos)
 }
 
 // Make code/index.html
-func make_index(all_repos *repositories) {
+func makeIndex(allRepos *repositories) {
 	f, err := os.Create(root + "/code/index.html")
 	check(err)
 	defer f.Close()
 
 	out := bufio.NewWriter(f)
-	err = tpl_index.Execute(out, all_repos)
+	err = tplIndex.Execute(out, allRepos)
 	check(err)
 	out.Flush()
 
@@ -178,8 +182,8 @@ func make_index(all_repos *repositories) {
 	defer f.Close()
 
 	out = bufio.NewWriter(f)
-	for i := 0; i < 5; i += 1 {
-		err = tpl_brief.Execute(out, all_repos.Values[i])
+	for i := 0; i < 5; i++ {
+		err = tplBrief.Execute(out, allRepos.Values[i])
 		check(err)
 	}
 	out.Flush()
@@ -187,8 +191,8 @@ func make_index(all_repos *repositories) {
 
 // Read one repository page; calls read_and_write_repository() so it writes out
 // some files
-func read_repositories(url string, ch chan<- repositories) {
-	data := read_url(url)
+func readRepositories(url string, ch chan<- repositories) {
+	data := readURL(url)
 	var repos repositories
 	err := json.Unmarshal(data, &repos)
 	check(err)
@@ -214,10 +218,10 @@ func read_and_write_repository(repo repository, index int, ch chan<- repository)
 	l := strings.Split(repo.HTMLLink, "/")
 	repo.LinkName = l[len(l)-1]
 
-	repo.Readme = string(read_url(repo.HTMLLink + "/raw/tip/README.markdown"))
+	repo.Readme = string(readURL(repo.HTMLLink + "/raw/tip/README.markdown"))
 
 	// Extract metadata from the README
-	match := extra_links_regexp.FindStringSubmatch(repo.Readme)
+	match := extraLinksRegexp.FindStringSubmatch(repo.Readme)
 	if match != nil && len(match) > 1 {
 		for _, m := range strings.Split(match[1], "\n") {
 			if m == "" {
@@ -228,7 +232,7 @@ func read_and_write_repository(repo repository, index int, ch chan<- repository)
 				repo.ExtraLink = strings.TrimSpace(strings.TrimLeft(m, "-"))
 			} else {
 				// Project status
-				
+
 				// Append
 				if repo.Status != "" {
 					repo.Status += " " + strings.TrimSpace(m)
@@ -247,7 +251,7 @@ func read_and_write_repository(repo repository, index int, ch chan<- repository)
 				repo.ShortStatus = strings.ToLower(strings.TrimSpace(m[strings.Index(m, ":")+1 : end]))
 			}
 		}
-		repo.Readme = extra_links_regexp.ReplaceAllString(repo.Readme, "")
+		repo.Readme = extraLinksRegexp.ReplaceAllString(repo.Readme, "")
 	}
 
 	if repo.Status == "" {
@@ -273,7 +277,7 @@ func read_and_write_repository(repo repository, index int, ch chan<- repository)
 	defer f.Close()
 
 	out := bufio.NewWriter(f)
-	err = tpl_project.Execute(out, repo)
+	err = tplProject.Execute(out, repo)
 	check(err)
 	out.Flush()
 }
@@ -288,8 +292,8 @@ type commit_t struct {
 }
 
 // Try and find updated_on from last commit that is *not* to the README
-func find_updated(repo repository) (updated_on time.Time) {
-	data := read_url(repo.CommitsLink)
+func find_updated(repo repository) time.Time {
+	data := readURL(repo.CommitsLink)
 	var commits commits_t
 	err := json.Unmarshal(data, &commits)
 	check(err)
@@ -315,7 +319,7 @@ type tag_t struct {
 func last_tag(repo repository) (tagname string) {
 	// Most stuff is tagged as "version-1.2", so sorting descending gives the
 	// most recent version first (can't sort by date)
-	data := read_url(repo.TagsLink + "?sort=-name")
+	data := readURL(repo.TagsLink + "?sort=-name")
 	var tags tags_t
 	err := json.Unmarshal(data, &tags)
 	check(err)
@@ -325,7 +329,7 @@ func last_tag(repo repository) (tagname string) {
 }
 
 // Read text from an URL
-func read_url(url string) []byte {
+func readURL(url string) []byte {
 	resp, err := http.Get(url)
 	defer resp.Body.Close()
 	if err != nil || resp.StatusCode != 200 {

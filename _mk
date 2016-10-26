@@ -1,6 +1,16 @@
 #!/bin/sh
 
-set -euC
+set -eC
+set -x
+
+if [ "$1" = "code" ] || [ "$2" = "code" ]; then
+	./_mkcode.sh
+fi
 
 lessc css/main.less css/main.css
-bundle exec jekyll build
+coffee -c script/main.coffee
+bundle exec jekyll build --incremental
+
+if [ "$1" = "deploy" ] || [ "$2" = "deploy" ]; then
+	netlify deploy -p _site -s arp242
+fi
