@@ -1,10 +1,10 @@
 ---
 layout: post
-title: I really, really don’t like git, but I’m going to migrate my projects to it
+title: I don’t like git, but I’m going to migrate my projects to it
 excerpt: 
 ---
 
-I really, really don’t like git. But I’m going to migrate my projects to it.
+I don’t like git. But I’m going to migrate my projects to it.
 
 First, let me explain why I don’t like git
 ==========================================

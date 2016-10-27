@@ -88,7 +88,7 @@ title: Code projects
 	{{end}}
 </div>
 <script>
-{% include_relative main.js  %}
+{% include script/main.js  %}
 </script>
 `
 
@@ -313,7 +313,7 @@ func readURL(url string) []byte {
 		os.Exit(1)
 	}
 
-	req.SetBasicAuth("Carpetsmoker", `XXX`)
+	//req.SetBasicAuth("Carpetsmoker", `XXX`)
 	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "mkcode error: %v %v\n", url, err)

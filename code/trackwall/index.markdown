@@ -8,6 +8,10 @@ pre1: "Project status: experimental; it works for the author, and may be useful 
 ---
 
 
+[![Build Status](https://travis-ci.org/Carpetsmoker/trackwall.svg?branch=master)](https://travis-ci.org/Carpetsmoker/trackwall)
+[![Coverage Status](https://coveralls.io/repos/github/Carpetsmoker/trackwall/badge.svg)](https://coveralls.io/github/Carpetsmoker/trackwall)
+[![Go Report Card](https://goreportcard.com/badge/arp242.net/trackwall)](https://goreportcard.com/report/arp242.net/trackwall)
+
 DNS proxy and filter.
 
 Its intended usage is to block third-party browser requests. It's not intended

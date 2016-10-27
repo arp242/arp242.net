@@ -9,8 +9,10 @@ pre1: "Project status: experimental"
 
 [![GoDoc](https://godoc.org/arp242.net/sconfig?status.svg)](https://godoc.org/arp242.net/sconfig)
 [![Go Report Card](https://goreportcard.com/badge/arp242.net/sconfig)](https://goreportcard.com/report/arp242.net/sconfig)
+[![Build Status](https://travis-ci.org/Carpetsmoker/sconfig.svg?branch=master)](https://travis-ci.org/Carpetsmoker/sconfig)
+[![Coverage Status](https://coveralls.io/repos/github/Carpetsmoker/sconfig/badge.svg?branch=master)](https://coveralls.io/github/Carpetsmoker/sconfig?branch=master)
 
-`sconfig` is a simple yet functional configuration file parser for Go.
+`sconfig` is a simple and functional configuration file parser for Go.
 
 What does it look like?
 =======================
@@ -31,9 +33,11 @@ A file like this:
 	# Two values
 	order allow deny
 
-	host  # Multiline stuff
+	host  # Idented lines are collapsed
 		arp242.net         # My website
 		stackoverflow.com  # I like this too
+
+	address arp242.net
 
 Can be parsed with:
 
@@ -52,19 +56,38 @@ Can be parsed with:
 		Match   []*regexp.Regexp
 		Order   []string
 		Hosts   []string
+		Address string
 	}
 
 	func main() {
 		config := Config{}
-		sconfig.TypeHandlers["[]*regexp.Regexp"] = func(field *reflect.Value, v []string) interface{} {
-			r := []*regexp.Regexp{}
-			for _, s := range v {
-				r = append(r, regexp.MustCompile(s))
+
+		// Let sconfig know how to parse []*regexp.Regexp
+		TypeHandlers["[]*regexp.Regexp"] = func(v []string) (interface{}, error) {
+			a := make([]*regexp.Regexp, len(v))
+			for i := range v {
+				r, err := regexp.Compile(v[i])
+				if err != nil {
+					return nil, err
+				}
+				a[i] = r
 			}
-			return r
+			return a, nil
 		}
 
-		err := sconfig.Parse(&config, "config", nil)
+		err := sconfig.Parse(&config, "config", map[string]func([]string){
+
+			// Customer handler
+			"address": func(line []string) error {
+				addr, err := net.LookupHost(line[0])
+				if err != nil {
+					return err
+				}
+
+				config.Address = addr[0]
+			},
+		})
+
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Error parsing config: %v", err)
 		}
@@ -122,7 +145,7 @@ Set default values?
 Just set them before parsing:
 
 	c := MyConfig{Value: "The default"}
-	sconfig.Parse("a-file", &c, sconfig.Handlers{})
+	sconfig.Parse(&c, "a-file", sconfig.Handlers{})
 
 
 Syntax
