@@ -2,7 +2,7 @@
 layout: code
 title: "pkg_sanity"
 link: "pkg_sanity"
-last_version: "tip"
+last_version: "master"
 pre1: "Project status: Stable"
 
 ---

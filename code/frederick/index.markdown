@@ -1,6 +1,6 @@
 ---
 layout: code
-title: "Frederick"
+title: "frederick"
 link: "frederick"
 last_version: "version-2.0"
 pre1: "Project status: stable"

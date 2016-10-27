@@ -1,8 +1,8 @@
 ---
 layout: code
-title: "Nordavind"
+title: "nordavind"
 link: "nordavind"
-last_version: "tip"
+last_version: "master"
 pre1: "Project status: experimental"
 
 ---

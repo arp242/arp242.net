@@ -2,7 +2,7 @@
 layout: code
 title: "robots"
 link: "robots"
-last_version: "tip"
+last_version: "master"
 pre1: "Project status: finished (it does what it needs to do and there are no known bugs)."
 
 ---

@@ -2,7 +2,7 @@
 layout: code
 title: "config"
 link: "config"
-last_version: "tip"
+last_version: "master"
 pre1: "Project status: stable"
 
 ---

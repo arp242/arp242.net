@@ -2,7 +2,7 @@
 layout: code
 title: "arp242.net"
 link: "arp242.net"
-last_version: "tip"
+last_version: "master"
 pre1: "Project status: stable"
 
 ---

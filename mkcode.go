@@ -1,5 +1,3 @@
-// Make a better looking "profile overview" than what BitBucket offers these
-// days
 package main
 
 import (
@@ -8,7 +6,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"math"
 	"net/http"
 	"os"
 	"regexp"
@@ -31,36 +28,34 @@ var statusmaps = map[string][]string{
 }
 
 // Options
-const user = "https://api.bitbucket.org/2.0/repositories/Carpetsmoker"
+const user = "https://api.github.com/users/Carpetsmoker/repos?affiliation=owner"
 
-var pages = 4
+// Knowing how many pages there are in advance helps speed things up later
+var pages = 2
 
 // JSON structs
-type repositories struct {
-	Next    string
-	Page    int
-	Pagelen float64
-	Size    float64
-	Values  []repository
-}
+type repositories []repository
 
 type repository struct {
 	Name        string    `json:"name"`
 	Description string    `json:"description"`
 	Language    string    `json:"language"`
-	UpdatedOn   time.Time `json:"updated_on"`
-	LinkName    string    // e.g. nordavind instead of Nordavind
-	Readme      string
-	ExtraLink   string
-	Status      string
-	ShortStatus string
-	LastVersion string
+	UpdatedOn   time.Time `json:"updated_at"`
+	Fork        bool      `json:"fork"`
+
+	LinkName      string // e.g. nordavind instead of Nordavind
+	LinkNameLower string // e.g. nordavind instead of Nordavind
+	Readme        string
+	ExtraLink     string
+	Status        string
+	ShortStatus   string
+	LastVersion   string
 
 	// We need to use interface here since some values are Objects and some are Arrays
-	Links       map[string]interface{}
-	CommitsLink string
-	TagsLink    string
-	HTMLLink    string
+	//Links       map[string]interface{}
+	CommitsLink string `json:"commits_url"` // git_commits_url?
+	TagsLink    string `json:"tags_url"`    // git_tags_url?
+	HTMLLink    string `json:"html_url"`
 }
 
 // HTML templates
@@ -72,7 +67,7 @@ var funcs = template.FuncMap{
 const htmlBrief = `
 <div class="weblog-brief lang-{{.Language}} status-{{.ShortStatus}}" data-updated="{{.UpdatedOn|date_sort}}" data-name="{{.Name}}" data-status="{{.ShortStatus}}">
 	<em>Status: {{.ShortStatus}}, last updated: {{.UpdatedOn|date_human}}</em>
-	<h2><a href="/code/{{.LinkName}}/">{{.Name}}</a></h2>
+	<h2><a href="/code/{{.LinkNameLower}}/">{{.Name}}</a></h2>
 	<p>{{.Description|html}}</p>
 </div>
 `
@@ -87,7 +82,9 @@ title: Code projects
 <div class="weblog-overview code-projects">
 	{% include_relative top.html %}
 	{{range .Values}}
+		{{if not .Fork}}
 		` + htmlBrief + `
+		{{end}}
 	{{end}}
 </div>
 <script>
@@ -130,49 +127,27 @@ func main() {
 	}
 	root = os.Args[1]
 
-	var repos, allRepos repositories
-	ch := make(chan repositories)
+	// Read repos
+	var allRepos repositories
 	for i := 1; i <= pages; i++ {
-		go readRepositories(fmt.Sprintf("%s?page=%d", user, i), ch)
+		repos := readRepositories(fmt.Sprintf("%s&page=%d", user, i))
+		allRepos = append(allRepos, repos...)
 	}
 
-	// Check for more pages
-	repos = <-ch
-	if int(repos.Size) > int(repos.Pagelen)*pages {
-		nPages := int(math.Ceil(repos.Size / repos.Pagelen))
-		fmt.Fprintf(os.Stderr,
-			"Warning: pages is set to %v, but there are %v pages.\n",
-			pages, nPages)
-
-		for i := pages + 1; i <= nPages; i++ {
-			go readRepositories(fmt.Sprintf("%s?page=%d", user, i), ch)
-		}
-
-		pages = nPages
-	}
-
-	for i := 1; i <= pages; i++ {
-		// We already read the first page
-		if i != 1 {
-			repos = <-ch
-		}
-		for _, v := range repos.Values {
-			allRepos.Values = append(allRepos.Values, v)
-		}
-	}
-
-	sort.Sort(ByDate(allRepos.Values))
-	makeIndex(&allRepos)
+	sort.Sort(ByDate(allRepos))
+	makeIndex(allRepos)
 }
 
 // Make code/index.html
-func makeIndex(allRepos *repositories) {
+func makeIndex(allRepos repositories) {
 	f, err := os.Create(root + "/code/index.html")
 	check(err)
 	defer f.Close()
 
 	out := bufio.NewWriter(f)
-	err = tplIndex.Execute(out, allRepos)
+	err = tplIndex.Execute(out, map[string]repositories{
+		"Values": allRepos,
+	})
 	check(err)
 	out.Flush()
 
@@ -183,42 +158,42 @@ func makeIndex(allRepos *repositories) {
 
 	out = bufio.NewWriter(f)
 	for i := 0; i < 5; i++ {
-		err = tplBrief.Execute(out, allRepos.Values[i])
+		err = tplBrief.Execute(out, allRepos[i])
 		check(err)
 	}
 	out.Flush()
 }
 
-// Read one repository page; calls read_and_write_repository() so it writes out
+// Read one repository page; calls readAndWriteRepo() so it writes out
 // some files
-func readRepositories(url string, ch chan<- repositories) {
+func readRepositories(url string) (repos repositories) {
 	data := readURL(url)
-	var repos repositories
+
 	err := json.Unmarshal(data, &repos)
 	check(err)
 
-	ch2 := make(chan repository)
-	for i, v := range repos.Values {
-		go read_and_write_repository(v, i, ch2)
+	for i, v := range repos {
+		// Don't list stuff I forked, only repos I created
+		if v.Fork {
+			continue
+		}
+		readAndWriteRepo(&v, i)
+		repos[i] = v
 	}
 
-	for i := 0; len(repos.Values) > i; i++ {
-		repo := <-ch2
-		repos.Values[i] = repo
-	}
-
-	ch <- repos
+	return repos
 }
 
 // Read some extra repository info and write to /code/<project>/index.markdown
-func read_and_write_repository(repo repository, index int, ch chan<- repository) {
-	repo.HTMLLink = get_link(&repo, "html")
-	repo.CommitsLink = get_link(&repo, "commits")
-	repo.TagsLink = get_link(&repo, "tags")
+func readAndWriteRepo(repo *repository, index int) {
 	l := strings.Split(repo.HTMLLink, "/")
 	repo.LinkName = l[len(l)-1]
+	repo.LinkNameLower = strings.ToLower(repo.LinkName)
+	repo.Language = strings.ToLower(repo.Language)
 
-	repo.Readme = string(readURL(repo.HTMLLink + "/raw/tip/README.markdown"))
+	//repo.Readme = string(readURL(repo.HTMLLink + "/raw/tip/README.markdown"))
+	repo.Readme = string(readURL("https://raw.githubusercontent.com/Carpetsmoker/" + repo.LinkName + "/master/README.markdown"))
+	//https://raw.githubusercontent.com/Carpetsmoker/password-bunny/master/README.markdown
 
 	// Extract metadata from the README
 	match := extraLinksRegexp.FindStringSubmatch(repo.Readme)
@@ -264,13 +239,11 @@ func read_and_write_repository(repo repository, index int, ch chan<- repository)
 		repo.Status = "Project status: " + m[1]
 	}
 
-	repo.UpdatedOn = find_updated(repo)
-	repo.LastVersion = last_tag(repo)
-
-	ch <- repo
+	repo.UpdatedOn = findUpdated(*repo)
+	repo.LastVersion = lastTag(*repo)
 
 	// Write code/<project>/index.markdown
-	dir := root + "/code/" + repo.LinkName
+	dir := root + "/code/" + repo.LinkNameLower
 	os.MkdirAll(dir, 0755)
 	f, err := os.Create(dir + "/index.markdown")
 	check(err)
@@ -282,78 +255,79 @@ func read_and_write_repository(repo repository, index int, ch chan<- repository)
 	out.Flush()
 }
 
-type commits_t struct {
-	Values []commit_t
-}
-
-type commit_t struct {
+type commitT struct {
 	Date    time.Time
 	Message string
 }
+type commitsT []commitT
 
 // Try and find updated_on from last commit that is *not* to the README
-func find_updated(repo repository) time.Time {
-	data := readURL(repo.CommitsLink)
-	var commits commits_t
-	err := json.Unmarshal(data, &commits)
-	check(err)
-
-	for _, commit := range commits.Values {
-		if strings.Index(strings.ToLower(commit.Message), "readme") == -1 {
-			return commit.Date
-		}
-	}
+func findUpdated(repo repository) time.Time {
+	// "commit": {
+	//   "author": {
+	//     "name": "Martin Tournoij",
+	//     "email": "martin@arp242.net",
+	//     "date": "2011-09-26T00:59:29Z"
+	//   },
+	//data := readURL("https://api.github.com/repos/Carpetsmoker/" + repo.LinkName + "/commits")
+	//var commits commitsT
+	//err := json.Unmarshal(data, &commits)
+	//check(err)
+	//for _, commit := range commits {
+	//	if strings.Index(strings.ToLower(commit.Message), "readme") == -1 {
+	//		return commit.Date
+	//	}
+	//}
 
 	return repo.UpdatedOn
 }
 
-type tags_t struct {
-	Values []tag_t
-}
+type tagsT []tagT
 
-type tag_t struct {
+type tagT struct {
 	Name string
 }
 
 // Find the last tag, or "tip"
-func last_tag(repo repository) (tagname string) {
+func lastTag(repo repository) (tagname string) {
 	// Most stuff is tagged as "version-1.2", so sorting descending gives the
 	// most recent version first (can't sort by date)
 	data := readURL(repo.TagsLink + "?sort=-name")
-	var tags tags_t
+	var tags tagsT
 	err := json.Unmarshal(data, &tags)
 	check(err)
 
-	// "tip" tag should always be present.
-	return tags.Values[0].Name
+	if len(tags) == 0 {
+		return "master"
+	}
+	return tags[0].Name
 }
 
 // Read text from an URL
 func readURL(url string) []byte {
-	resp, err := http.Get(url)
-	defer resp.Body.Close()
-	if err != nil || resp.StatusCode != 200 {
-		fmt.Fprintf(os.Stderr, "mkcode: %v %v %v\n", url, resp.StatusCode, err)
+	fmt.Println(url)
+	client := &http.Client{Timeout: 5 * time.Second}
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "mkcode error: %v %v\n", url, err)
 		os.Exit(1)
 	}
+
+	req.SetBasicAuth("Carpetsmoker", `XXX`)
+	resp, err := client.Do(req)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "mkcode error: %v %v\n", url, err)
+		os.Exit(1)
+	}
+	if resp.StatusCode != 200 {
+		fmt.Fprintf(os.Stderr, "mkcode code %v: %v %v\n", resp.StatusCode, url, err)
+		os.Exit(1)
+	}
+	defer resp.Body.Close()
 
 	b, err := ioutil.ReadAll(resp.Body)
 	check(err)
 	return b
-}
-
-// Get a link.href fields. Special foo is needed because "clone" is an Array and
-// not an Object like the other fields...
-func get_link(value *repository, which string) string {
-	for k, v := range value.Links {
-		if k == which {
-			switch x := v.(type) {
-			case map[string]interface{}:
-				return x["href"].(string)
-			}
-		}
-	}
-	return ""
 }
 
 // Panic if err is non-nil

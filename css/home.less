@@ -1,0 +1,33 @@
+@import "vars.less";
+@import "base.less";
+
+.intro {
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+}
+
+.intro {
+	// First is the .mugshot-wrapper
+	& > p:nth-child(2) {
+		margin-top: 0;
+	}
+
+	& > p:last-child {
+		margin-bottom: 0;
+	}
+}
+.mugshot {
+	float: right;
+	margin-left: 6px;
+	margin-left: .75em;
+	border-radius: 2px;
+
+	@media screen and (max-width: 600px) {
+		width: 25%;
+	}
+
+	@media screen and (max-width: 430px) {
+		display: none;
+	}
+}
+

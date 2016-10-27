@@ -2,7 +2,7 @@
 layout: code
 title: "sanitize_files"
 link: "sanitize_files"
-last_version: "tip"
+last_version: "master"
 pre1: "Project status: stable"
 
 ---

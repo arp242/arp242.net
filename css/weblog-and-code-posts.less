@@ -1,0 +1,83 @@
+@import "vars.less";
+
+pre {
+	line-height: 1.3em;
+	width: auto;
+	max-height: 500px;
+	padding: 1em;
+	overflow: auto;
+	clear: right;
+	border-radius: 2px;
+	border: 1px solid #dadada;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+}
+
+blockquote {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 3px solid #0027ff;
+	background-color: #f4f3ff;
+	border-radius: 2px;
+}
+
+
+// The actual article
+.weblog-article,
+.code-page {
+	padding: .5em;
+	padding-left: 1em;
+	padding-top: 2em;
+
+	img {
+		max-width: 100%;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		border-bottom: 1px solid @highlight_fg;;
+		color: @highlight_fg;
+	}
+}
+
+.weblog-article {
+	// Heading and date (first child is back button, 2nd the h1, 3rd date)
+	/*
+	.weblog-back + h1,
+	& > p:nth-child(3) {
+		text-align: center;
+	}
+	*/
+
+	.weblog-header {
+		text-align: center;
+
+		margin-left: -1em;
+		margin-right: -.5em;
+		border-radius: 2px;
+		padding: 0 1em;
+		padding-bottom: .5em;
+
+		h1 {
+			border-bottom: none;
+			color: inherit;
+			padding: .5em 0;
+			margin-bottom: 0;
+		}
+
+		p {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+.weblog-back,
+.code-back {
+	position: absolute;
+	top: 14px;
+	font-weight: bold;
+
+	a {
+		margin-right: 1em;
+	}
+}
+

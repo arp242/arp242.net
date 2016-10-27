@@ -2,7 +2,7 @@
 layout: code
 title: "find-cursor"
 link: "find-cursor"
-last_version: "tip"
+last_version: "master"
 pre1: "Project status: stable"
 
 ---

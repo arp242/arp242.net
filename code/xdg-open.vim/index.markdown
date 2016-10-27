@@ -2,7 +2,7 @@
 layout: code
 title: "xdg-open.vim"
 link: "xdg-open.vim"
-last_version: "tip"
+last_version: "master"
 pre1: "Project status: experimental"
 
 ---

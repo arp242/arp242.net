@@ -7,7 +7,11 @@ if [ "$1" = "code" ] || [ "$2" = "code" ]; then
 	./_mkcode.sh
 fi
 
-lessc css/main.less css/main.css
+for f in css/*.less; do
+	lessc -clean-css="--s1 --advanced" "$f" "${f%.less}.css"
+	#sed -E 's/^ *//; /^\/\*.*\*\/$/d' base.css | tr -d '\n' | sed -E 's/;}/;}\n/g'
+done
+
 coffee -c script/main.coffee
 bundle exec jekyll build --incremental
 

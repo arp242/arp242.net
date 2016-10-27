@@ -2,8 +2,14 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="go-import" content="arp242.net/{{ page.pkg }} hg {{ page.clone }}">
+		<meta name="go-import" content="arp242.net/{{ page.pkg }} git {{ page.clone }}">
 		<meta name="go-source" content="arp242.net/{{ page.pkg }} {{ page.home }} {{ page.src }} {{ page.src }}">
 		<meta http-equiv="refresh" content="0; url={{ page.home }}">
 	</head>
+	<body>
+		<p>
+			This is the <code>{{ page.pkg }}</code> Go package, which can be imported as <code>arp242.net/{{ page.pkg }}</code>.
+			It's homepage is at <a href="{{ page.home }}">{{ page.home }}</a>.
+		</p>
+	</body>
 </html>

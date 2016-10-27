@@ -18,9 +18,9 @@ layout: default
 			{{ page.pre2 | markdownify }}
 		{% endif %}
 
-		<a href="https://bitbucket.org/Carpetsmoker/{{ page.link }}/get/{{ page.last_version }}.tar.gz">Download</a>
-		<a href="https://bitbucket.org/Carpetsmoker/{{ page.link }}/issues">Issue tracker</a>
-		<a href="https://bitbucket.org/Carpetsmoker/{{ page.link }}/src">Source code</a>
+		<a href="https://github.com/Carpetsmoker/{{ page.link }}/archive/{{ page.last_version }}.tar.gz">Download</a>
+		<a href="https://github.com/Carpetsmoker/{{ page.link }}/issues">Issue tracker</a>
+		<a href="https://github.com/Carpetsmoker/{{ page.link }}">Source code</a>
 
 		{% if page.post1 %}
 			{{ page.post1 | markdownify | remove:'<p>' | remove:'</p>'  }}

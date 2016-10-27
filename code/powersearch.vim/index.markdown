@@ -2,7 +2,7 @@
 layout: code
 title: "powersearch.vim"
 link: "powersearch.vim"
-last_version: "tip"
+last_version: "master"
 pre1: "Project status: experimental"
 
 ---

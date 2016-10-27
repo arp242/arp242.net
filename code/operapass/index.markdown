@@ -2,7 +2,7 @@
 layout: code
 title: "operapass"
 link: "operapass"
-last_version: "version 1.3"
+last_version: "version_1.3"
 pre1: "Project status: finished (it does what it needs to do and there are no known bugs)."
 post1: "[Windows binary](https://bitbucket.org/Carpetsmoker/operapass/downloads/operapass-1.2-windows.zip)"
 ---
