@@ -1,4 +1,3 @@
-http://hn.premii.com/#/article/12796556
 ---
 layout: post
 title: "JSON as configuration files: please don’t"
