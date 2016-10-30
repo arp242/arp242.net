@@ -31,18 +31,31 @@ layout: default
 		You can mail me at <a href="mailto:martin@arp242.net">martin@arp242.net</a> for feedback etc. No, I don’t have
 		Twitter, but you can use this form to send me an email if you want.
 
-		<form name="weblog-contact" netlify netlify-honeypot="turing-test">
-			<label for="name">Name</label>
-			<input type="text" name="name" id="name"><br>
+		<form name="weblog-{{ page.id }}" netlify netlify-honeypot="turing-test">
+			<label for="contact-name">Name</label>
+			<input type="text" name="contact-name" id="contact-name"><br>
 
-			<label for="email">Email (optional)</label>
-			<input type="email" name="email" id="email"><br>
+			<label for="contact-email">Email (optional)</label>
+			<input type="email" name="contact-email" id="contact-email"><br>
 
-			<label for="message">Message</label>
-			<textarea name="message" id="message"></textarea><br>
+			<label for="contact-message">Message</label>
+			<textarea name="contact-message" id="contact-message"></textarea><br>
 
 			<div style="display: none; visibility: hidden;"><input name="turing-test"></div>
 			<button>Send</button>
 		</form>
 	</div>
+
+	<script>
+		document.getElementsByTagName('form')[0].addEventListener('submit', function(e) {
+			if (document.getElementById('contact-name').value.trim() === '') {
+				alert('Must fill in a name')
+				e.preventDefault()
+			}
+			else if (document.getElementById('contact-message').value.trim() === '') {
+				alert('Must full in a message')
+				e.preventDefault()
+			}
+		})
+	</script>
 </div>
