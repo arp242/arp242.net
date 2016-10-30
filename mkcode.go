@@ -15,6 +15,8 @@ import (
 	"time"
 )
 
+var _pw = ""
+
 var statusmaps = map[string][]string{
 	"arp242.net": []string{"stable", "stable"},
 	"config":     []string{"stable", "stable"},
@@ -313,7 +315,9 @@ func readURL(url string) []byte {
 		os.Exit(1)
 	}
 
-	//req.SetBasicAuth("Carpetsmoker", `XXX`)
+	if _pw != "" {
+		req.SetBasicAuth("Carpetsmoker", pw)
+	}
 	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "mkcode error: %v %v\n", url, err)
