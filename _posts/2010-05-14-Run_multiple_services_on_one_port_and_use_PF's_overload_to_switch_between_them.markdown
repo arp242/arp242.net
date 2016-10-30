@@ -101,8 +101,8 @@ To your `/etc/crontab` add:
 
 	* * * * * root /sbin/pfctl -t rdr_ssh -T expire 60 > /dev/null 2>&1
 
-
 From [pfctl(8)][pfctl]:
+
 	-T expire number
 				Delete addresses which had their statistics cleared
 				more than number seconds ago.  For entries which
