@@ -9,24 +9,26 @@ import (
 	"net/http"
 	"os"
 	"regexp"
-	"sort"
 	"strings"
 	"text/template"
 	"time"
 )
 
-var _pw = ""
+var pw = ""
 
-var statusmaps = map[string][]string{
-	"arp242.net": []string{"stable", "stable"},
-	"config":     []string{"stable", "stable"},
+var defaults = map[string]repository{
+	"arp242.net": {ShortStatus: "stable", Status: "Project status: stable", Language: "ruby"},
+	"config":     {ShortStatus: "stable", Status: "Project status: stable"},
+
+	"MediaWiki-FontAwesome":  {Language: "php"},
+	"MediaWiki-Scepticismus": {Language: "php"},
 
 	// Vim stuff, doing the vimtomd.py crap doesn't help :-/
-	"complete_email.vim": []string{"stable", "stable"},
-	"confirm_quit.vim":   []string{"finished", "finished (it does what it needs to do and there are no known bugs)."},
-	"helplink.vim":       []string{"stable", "stable"},
-	"startscreen.vim":    []string{"stable", "stable"},
-	"undofile_warn.vim":  []string{"stable", "stable"},
+	"confirm_quit.vim":   {ShortStatus: "finished", Status: "Project status: finished (it does what it needs to do and there are no known bugs)."},
+	"complete_email.vim": {ShortStatus: "stable", Status: "Project status: stable"},
+	"helplink.vim":       {ShortStatus: "stable", Status: "Project status: stable"},
+	"startscreen.vim":    {ShortStatus: "stable", Status: "Project status: stable"},
+	"undofile_warn.vim":  {ShortStatus: "stable", Status: "Project status: stable"},
 }
 
 // Options
@@ -84,9 +86,7 @@ title: Code projects
 <div class="weblog-overview code-projects">
 	{% include_relative top.html %}
 	{{range .Values}}
-		{{if not .Fork}}
 		` + htmlBrief + `
-		{{end}}
 	{{end}}
 </div>
 <script>
@@ -124,7 +124,8 @@ var root string
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Fprintf(os.Stderr, "First argument must be the root directory to write to (e.g. use ./_mkcode.sh).\n")
+		fmt.Fprintf(os.Stderr,
+			"First argument must be the root directory to write to (e.g. use ./_mkcode.sh).\n")
 		os.Exit(1)
 	}
 	root = os.Args[1]
@@ -135,8 +136,18 @@ func main() {
 		repos := readRepositories(fmt.Sprintf("%s&page=%d", user, i))
 		allRepos = append(allRepos, repos...)
 	}
+	// Don't list stuff I forked, only repos I created
+	for i, v := range allRepos {
+		if v.Fork {
+			allRepos = append(allRepos[:i], allRepos[i+1:]...)
+		}
+	}
 
-	sort.Sort(ByDate(allRepos))
+	// Write files
+	for i, v := range allRepos {
+		readAndWriteRepo(&v)
+		allRepos[i] = v
+	}
 	makeIndex(allRepos)
 }
 
@@ -166,28 +177,18 @@ func makeIndex(allRepos repositories) {
 	out.Flush()
 }
 
-// Read one repository page; calls readAndWriteRepo() so it writes out
-// some files
+// Read one repository page
 func readRepositories(url string) (repos repositories) {
 	data := readURL(url)
 
 	err := json.Unmarshal(data, &repos)
 	check(err)
 
-	for i, v := range repos {
-		// Don't list stuff I forked, only repos I created
-		if v.Fork {
-			continue
-		}
-		readAndWriteRepo(&v, i)
-		repos[i] = v
-	}
-
 	return repos
 }
 
 // Read some extra repository info and write to /code/<project>/index.markdown
-func readAndWriteRepo(repo *repository, index int) {
+func readAndWriteRepo(repo *repository) {
 	l := strings.Split(repo.HTMLLink, "/")
 	repo.LinkName = l[len(l)-1]
 	repo.LinkNameLower = strings.ToLower(repo.LinkName)
@@ -236,9 +237,16 @@ func readAndWriteRepo(repo *repository, index int) {
 		repo.ShortStatus = "experimental"
 	}
 
-	if m, hm := statusmaps[repo.Name]; hm {
-		repo.ShortStatus = m[0]
-		repo.Status = "Project status: " + m[1]
+	if def, has := defaults[repo.Name]; has {
+		if def.ShortStatus != "" {
+			repo.ShortStatus = def.ShortStatus
+		}
+		if def.Status != "" {
+			repo.Status = def.Status
+		}
+		if def.Language != "" {
+			repo.Language = def.Language
+		}
 	}
 
 	repo.UpdatedOn = findUpdated(*repo)
@@ -315,7 +323,7 @@ func readURL(url string) []byte {
 		os.Exit(1)
 	}
 
-	if _pw != "" {
+	if pw != "" {
 		req.SetBasicAuth("Carpetsmoker", pw)
 	}
 	resp, err := client.Do(req)

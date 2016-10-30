@@ -35,7 +35,9 @@ You can prevent this by setting `g:undofile_warn_no_map` to 1.
 
 Options
 =======
-`g:undofile_warn_prevent`                                (Boolean, default: 1)
+`g:undofile_warn_mode`                                   (Boolean, default: 1)
 
-Prevent the `u` from actually undoing when we warm; if set to 0, we
-will warn _and_ undo.
+- `0`   Show a warning for a second but don't actually change behaviour.
+- `1`   Show a warning and do nothing on the first `u` press, confirm with
+        pressing `u` again.
+- `2`   Ask for explicit confirmation
