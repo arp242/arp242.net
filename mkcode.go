@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"os"
 	"regexp"
+	"sort"
 	"strings"
 	"text/template"
 	"time"
@@ -136,12 +137,15 @@ func main() {
 		repos := readRepositories(fmt.Sprintf("%s&page=%d", user, i))
 		allRepos = append(allRepos, repos...)
 	}
+
 	// Don't list stuff I forked, only repos I created
 	for i, v := range allRepos {
 		if v.Fork {
 			allRepos = append(allRepos[:i], allRepos[i+1:]...)
 		}
 	}
+
+	sort.Sort(ByDate(allRepos))
 
 	// Write files
 	for i, v := range allRepos {
