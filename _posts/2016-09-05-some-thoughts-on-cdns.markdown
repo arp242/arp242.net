@@ -92,7 +92,7 @@ The old adage of ‘everything is a fucking DNS problem’ has been replaced wit
 ‘everything is a fucking caching problem’.
 
 Caching is great, but it also adds a lot of complexity. CDNs effectively add
-another layer of caching, and things can − and *do* − go wrong here.
+another layer of caching, and things can – and *do* – go wrong here.
 
 Conclusion
 ----------

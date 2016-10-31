@@ -1,16 +1,17 @@
 ---
 layout: code
-title: "xdg-open.vim"
-link: "xdg-open.vim"
+title: "xdg_open.vim"
+link: "xdg_open.vim"
 last_version: "master"
-pre1: "Project status: experimental"
+pre1: "Project status: stable"
 
 ---
 
 Re-implements netrw's `gx` command with a call to `xdg-open` (or a similar
 tool of your choosing).
 
-This is especially useful if you're using dirvish or some other file-manager.
+This is especially useful if you're using dirvish or some other file-manager
+other than netrw.
 
 Is this fully compatible with netrw?
 ------------------------------------
@@ -38,7 +39,7 @@ Can I disable netrw completely?
 		let g:loaded_netrw = 1
 
 - To disable the netrw doc files you need to remove the doc file at 
-  `$VIMRUNTIME/doc/pi_netrw.txt* and rebuild the help tags with:
+  `$VIMRUNTIME/doc/pi_netrw.txt` and rebuild the help tags with:
 
 		:helptags $VIMRUNTIME/doc
 

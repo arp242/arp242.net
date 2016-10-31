@@ -179,7 +179,7 @@ So how well does it do?
 
 > YAML is easily readable by humans.
 
-True only if you stick to a small subset. The full set is quite complex − much
+True only if you stick to a small subset. The full set is quite complex – much
 *more* so than XML or JSON.
 
 > YAML data is portable between programming languages.
@@ -214,15 +214,15 @@ Well, it is, but I would argue that it’s *too* expressive (e.g. too complex).
 
 Conclusion
 ----------
-Don’t get me wrong, it’s not like YAML is absolutely terrible − it’s certainly
-not full-on stupid as [using JSON][json-no] − but it’s not exactly great either.
+Don’t get me wrong, it’s not like YAML is absolutely terrible – it’s certainly
+not full-on stupid as [using JSON][json-no] – but it’s not exactly great either.
 There are some drawbacks and surprises that are not at all obvious at first, and
 there are actually a number of better alternatives (such as [TOML][toml] and
 other more specialized formats).
 
 Personally, I’m not very likely to use it again.
 
-[^1]: If tabs would be allowed, I would be able to (temporarily) increase the tab width to a higher number to make it easier − this is sort if the point of tabs.
+[^1]: If tabs would be allowed, I would be able to (temporarily) increase the tab width to a higher number to make it easier – this is sort if the point of tabs.
 
 [faq]: http://www.yaml.org/faq.html
 [yaml-spec]: http://yaml.org/spec/1.2/spec.pdf

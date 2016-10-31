@@ -12,11 +12,11 @@ Add and vote for news links. Used on [skepticpages.org](https://skepticpages.org
 
 Tags:
 
-- `<listwigo group=".." num=".."/>` − List `num` WIGO entries for the group
+- `<listwigo group=".." num=".."/>` – List `num` WIGO entries for the group
   `group`.
-- `<wigorefs/>` − Show all WIGO entries which link to the current page.
-- `<addwigo group=".."/>` − Show a form to add a new entry to `group`.
-- `<wigo id=".."/>` − Show WIGO entry for WIGO `id`.
+- `<wigorefs/>` – Show all WIGO entries which link to the current page.
+- `<addwigo group=".."/>` – Show a form to add a new entry to `group`.
+- `<wigo id=".."/>` – Show WIGO entry for WIGO `id`.
 
 Groups are dynamic; so just adding a new `<addwigo/>` tag is enough.
 

@@ -30,6 +30,7 @@ var defaults = map[string]repository{
 	"helplink.vim":       {ShortStatus: "stable", Status: "Project status: stable"},
 	"startscreen.vim":    {ShortStatus: "stable", Status: "Project status: stable"},
 	"undofile_warn.vim":  {ShortStatus: "stable", Status: "Project status: stable"},
+	"xdg_open.vim":       {ShortStatus: "stable", Status: "Project status: stable"},
 }
 
 // Options
@@ -145,6 +146,21 @@ func main() {
 		}
 	}
 
+	// Only include repos on the cmdline, of any
+	if len(os.Args) > 2 {
+		var newAll repositories
+		for _, sel := range os.Args[2:] {
+			for _, v := range allRepos {
+				if v.Name == sel {
+					newAll = append(newAll, v)
+					break
+				}
+			}
+		}
+
+		allRepos = newAll
+	}
+
 	sort.Sort(ByDate(allRepos))
 
 	// Write files
@@ -152,7 +168,12 @@ func main() {
 		readAndWriteRepo(&v)
 		allRepos[i] = v
 	}
-	makeIndex(allRepos)
+
+	if len(os.Args) > 2 {
+		fmt.Println("NOT writing index since repos were filtered")
+	} else {
+		makeIndex(allRepos)
+	}
 }
 
 // Make code/index.html
@@ -198,9 +219,9 @@ func readAndWriteRepo(repo *repository) {
 	repo.LinkNameLower = strings.ToLower(repo.LinkName)
 	repo.Language = strings.ToLower(repo.Language)
 
-	//repo.Readme = string(readURL(repo.HTMLLink + "/raw/tip/README.markdown"))
-	repo.Readme = string(readURL("https://raw.githubusercontent.com/Carpetsmoker/" + repo.LinkName + "/master/README.markdown"))
-	//https://raw.githubusercontent.com/Carpetsmoker/password-bunny/master/README.markdown
+	repo.Readme = string(readURL(fmt.Sprintf(
+		"https://raw.githubusercontent.com/Carpetsmoker/%v/master/README.markdown?v=%v",
+		repo.LinkName, time.Now().Unix())))
 
 	// Extract metadata from the README
 	match := extraLinksRegexp.FindStringSubmatch(repo.Readme)

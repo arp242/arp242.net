@@ -24,7 +24,7 @@ and is suffering from some problems.
 Advantages:
 
 - Lightweight.
-- Browser independent − also works for requests outside the browser.
+- Browser independent – also works for requests outside the browser.
 - Will not endlessly frob in web page's DOM (which many adblocks do).
 
 To be fair, there are some disadvantages as well:

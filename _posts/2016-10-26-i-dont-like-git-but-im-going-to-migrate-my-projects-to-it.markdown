@@ -67,7 +67,7 @@ Compare with `hg`:
 	% hg ci --amend
 	abort: cannot amend public changesets
 
-This makes much more sense, since you typically don’t want to do this − there
+This makes much more sense, since you typically don’t want to do this – there
 are exceptions of course, but those are rare and far in between.
 
 There are many more examples like this to be found.
@@ -81,8 +81,8 @@ add many of the commands that are enabled by default in git. It’s also pretty
 easy to write your own extension.
 
 git ‘extensions’ are merely commands starting with `git-`. These are typically
-shell or Perl scripts − or in the case of `git-instaweb` a shell script which
-generates a Perl script − parsing the output of other git commands. It’s ugly,
+shell or Perl scripts – or in the case of `git-instaweb` a shell script which
+generates a Perl script – parsing the output of other git commands. It’s ugly,
 it’s difficult to port reliably (as Larry Wall famously said, “it’s easier to
 port a shell than a script script”), and it’s C core [leaves it open to classic
 memcpy buffer overflows][git-memcpy]. It’s also not even faster, since Python
@@ -120,7 +120,7 @@ the network effect.
   `git` or vice-versa. This is also why I use Markdown for most things (even
   though there are better alternatives); switching syntaxes is hard.
 
-- Lots of people are familiar with git and GitHub − not so much with mercurial
+- Lots of people are familiar with git and GitHub – not so much with mercurial
   and Bitbucket. I feel I’m missing out on bug reports and patches because
   people give up.
 
