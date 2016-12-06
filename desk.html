@@ -28,5 +28,15 @@ some other way I'm sure you're smart enough to figure out how).</p>
 
 		var component = app.ko.contextFor($('#ticket-view-tab-messages')[0]).$component;
 		component.ticket.threads(component.ticket.threads().reverse());
+
+		/* Reloading ticket resets the order */
+		component.FetchTicket = function() { }
 	})();">Desk reader view</a>
+</p>
+
+<h2>Warning</h2>
+<p>
+	This is a hack. It will disable updating of tickets, and may have unpredictable side-effects if you try to modify
+	stuff. You should probably modify stuff in a different tab or something and use this <em>only</em> for reading
+	tickets.
 </p>
