@@ -2,7 +2,7 @@
 layout: code
 title: "auto_mkdir2.vim"
 link: "auto_mkdir2.vim"
-last_version: "master"
+last_version: "version-1.0"
 pre1: "Project status: experimental"
 post1: "[This plugin at www.vim.org](http://www.vim.org/scripts/script.php?script_id=5474)"
 ---

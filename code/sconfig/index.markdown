@@ -8,7 +8,7 @@ pre1: "Project status: experimental"
 ---
 
 [![GoDoc](https://godoc.org/arp242.net/sconfig?status.svg)](https://godoc.org/arp242.net/sconfig)
-[![Go Report Card](https://goreportcard.com/badge/arp242.net/sconfig)](https://goreportcard.com/report/arp242.net/sconfig)
+[![Go Report Card](https://goreportcard.com/badge/github.com/Carpetsmoker/sconfig)](https://goreportcard.com/report/github.com/Carpetsmoker/sconfig)
 [![Build Status](https://travis-ci.org/Carpetsmoker/sconfig.svg?branch=master)](https://travis-ci.org/Carpetsmoker/sconfig)
 [![Coverage Status](https://coveralls.io/repos/github/Carpetsmoker/sconfig/badge.svg?branch=master)](https://coveralls.io/github/Carpetsmoker/sconfig?branch=master)
 
@@ -16,7 +16,6 @@ pre1: "Project status: experimental"
 
 What does it look like?
 =======================
-
 A file like this:
 
 	# This is a comment
@@ -48,10 +47,13 @@ Can be parsed with:
 		"os"
 
 		"arp242.net/sconfig"
+
+		// Types that need imports are in handlers/pkgname
+		_ "arp242.net/sconfig/handlers/regexp"
 	)
 
 	type Config struct {
-		Port    int
+		Port    int64
 		BaseURL string
 		Match   []*regexp.Regexp
 		Order   []string
@@ -61,22 +63,7 @@ Can be parsed with:
 
 	func main() {
 		config := Config{}
-
-		// Let sconfig know how to parse []*regexp.Regexp
-		TypeHandlers["[]*regexp.Regexp"] = func(v []string) (interface{}, error) {
-			a := make([]*regexp.Regexp, len(v))
-			for i := range v {
-				r, err := regexp.Compile(v[i])
-				if err != nil {
-					return nil, err
-				}
-				a[i] = r
-			}
-			return a, nil
-		}
-
-		err := sconfig.Parse(&config, "config", map[string]func([]string){
-
+		err := sconfig.Parse(&config, "config", sconfig.Handlers{
 			// Customer handler
 			"address": func(line []string) error {
 				addr, err := net.LookupHost(line[0])
@@ -85,6 +72,7 @@ Can be parsed with:
 				}
 
 				config.Address = addr[0]
+				return nil
 			},
 		})
 
@@ -147,6 +135,27 @@ Just set them before parsing:
 	c := MyConfig{Value: "The default"}
 	sconfig.Parse(&c, "a-file", sconfig.Handlers{})
 
+Use `int` types? I get an error?
+--------------------------------
+Only `int64` and `uint64` are handled by default; this should be fine for
+almost all use cases of this package. If you want to add them, you can do easily
+with your own TypeHandler :-)
+
+Note that the size of `int` and `uint` are platform-dependent, so adding those
+may not be a good idea...
+
+I get a "don’t know how to set fields of the type ..." error if I try to use `sconfig.TypeHandlers`
+---------------------------------------------------------------------------------------------------
+Include the package name; even if the TypeHandler is in the same package. Do:
+
+    sconfig.TypeHandlers["[]main.RecordT"] = func(v []string) (interface{}, error) {
+
+and not:
+
+	sconfig.TypeHandlers["[]RecordT"] = func(v []string) (interface{}, error) {
+
+Replace `main` with the appreciate pacakge name.
+
 
 Syntax
 ======
@@ -192,7 +201,8 @@ The syntax of the file is very simple.
 
 Programs using it
 =================
-- [trackwall][trackwall]
+- [trackwall](https://arp242.net/code/trackwall)
+- [transip-dynamic](https://arp242.net/code/transip-dynamic)
 
 Alternatives
 ============
@@ -202,4 +212,3 @@ Aside from those mentioned in the "But why not..." section above:
 
 [json-no]: http://arp242.net/weblog/JSON_as_configuration_files-_please_dont.html
 [yaml-meh]: http://arp242.net/weblog/yaml_probably_not_so_great_after_all.html
-[trackwall]: http://code.arp242.net/trackwall
