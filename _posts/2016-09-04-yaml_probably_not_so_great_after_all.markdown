@@ -2,12 +2,51 @@
 layout: post
 title: "YAML: probably not so great after all"
 excerpt: YAML looks great at a glance, but has some problems that may not be obvious at first
+updated: 17 Dec 2016
 ---
-
 
 I previously wrote [why using JSON for human-editable configuration files is a
 bad idea][json-no]. Today we’re going to look at some of the problems with YAML.
 
+
+Insecure by default
+-------------------
+YAML in insecure by default.  Loading a user-provided (untrusted) YAML string
+needs careful consideration.
+
+	!!python/object/apply:os.system
+	args: ['ls /']
+
+Running it with `print(yaml.load(open('a.yaml')))` should give you something
+like:
+
+	bin   etc   lib    lost+found  opt   root  sbin  tmp  var sys
+	boot  dev   efi    home        lib64 mnt   proc  run  srv usr
+	0
+
+Many other languages (including Ruby and PHP[^1]) are also unsafe by default.
+[Searching for `yaml.load` on GitHub](https://github.com/search?q=yaml.load&type=Code&utf8=%E2%9C%93)
+gives a whopping 2.8 million results.
+[`yaml.safe_load`](https://github.com/search?q=yaml.safe_load&type=Code&utf8=%E2%9C%93) only gives 26,000 results.
+
+Mind you, many of those `yaml.load()`s are fine – loading in a config file with
+`yaml.load()` is often okay since it’s usually (though not always!) from a
+‘trusted source’, and many are from test files with static YAML. But still, one
+can’t help but wonder how many exploits are hidden in those 2.8 million results.
+
+To be clear, this is not a theoretical problem. In 2013 [every Ruby on Rails
+application ever written was found to be vulnerable][rails] to remote code
+execution due to exactly this problem.
+
+One might argue this is not really the fault of the YAML format *as such*, but
+rather the fault of the libraries implementing it wrong, but it seems to be the
+case that the majority of libraries are unsafe by default (especially the
+dynamic languages), so *de-facto* it is a problem with YAML.
+
+One might also argue that fixing it is as easy as replacing `load()` with
+`safe_load()`, but many people are unaware of the problem, and even *if* you’re
+aware of it, it’s one of those things that can be easy to forget. It’s horrible
+API design.
 
 Can be hard to edit, especially for large files
 -----------------------------------------------
@@ -36,7 +75,7 @@ lines? It is very difficult to see "where" in the file you are because it may be
 off the screen. You’ll need to scroll up, but then you need to keep track of the
 indentation, which can actually be pretty hard even with indentation guides,
 especially since 2-space indentation is the norm and [tab indentation is simply
-forbidden][faq][^1].
+forbidden][faq][^2].
 
 I’ve been programming Python for over a decade, so it’s not like I’m not used to
 significant whitespace, but sometimes I’m still struggling with YAML. In Python,
@@ -144,15 +183,10 @@ While Ruby outputs:
 
 	["Mark McGwire", "Sammy Sosa", "Ken Griffey"]
 
-Which behaviour is the correct one? I, for one, wasn’t able to extract that
-from the spec in a reasonable amount of time, but given that it occurs as an
-example in the YAML spec, I’d guess that it shouldn’t error out. The Ruby
-output also misses the second document, so I’m not even sure that’s actually
-correct.
-
-The important bit there though is that two major programming languages behave
-*differently*, and that it’s non-trivial to even see which behaviour is the
-correct one.
+The reason for this is that there are multiple YAML documents in a single file
+(`---` start the document). In Python I could use the `load_all()` to parse all
+documents. Ruby’s `load()` just loads the first document, and as near as I can
+tell, doesn’t even have a way to load multiple documents.
 
 ------------
 
@@ -215,14 +249,15 @@ Well, it is, but I would argue that it’s *too* expressive (e.g. too complex).
 Conclusion
 ----------
 Don’t get me wrong, it’s not like YAML is absolutely terrible – it’s certainly
-not full-on stupid as [using JSON][json-no] – but it’s not exactly great either.
+not as [problematic as using JSON][json-no] – but it’s not exactly great either.
 There are some drawbacks and surprises that are not at all obvious at first, and
 there are actually a number of better alternatives (such as [TOML][toml] and
 other more specialized formats).
 
 Personally, I’m not very likely to use it again.
 
-[^1]: If tabs would be allowed, I would be able to (temporarily) increase the tab width to a higher number to make it easier – this is sort if the point of tabs.
+[^1]: In PHP you need to modify an INI setting for the safe behaviour; you can’t just call something like `yaml_safe()`. The PHP folks managed again to make something stupid *even more stupid*. Congratulations.
+[^2]: If tabs would be allowed, I would be able to (temporarily) increase the tab width to a higher number to make it easier – this is sort if the point of tabs.
 
 [faq]: http://www.yaml.org/faq.html
 [yaml-spec]: http://yaml.org/spec/1.2/spec.pdf
@@ -231,3 +266,5 @@ Personally, I’m not very likely to use it again.
 [xml-spec]: https://www.w3.org/TR/REC-xml/
 [json-no]: http://arp242.net/weblog/JSON_as_configuration_files-_please_dont.html
 [toml]: https://github.com/toml-lang/toml
+[rails]: https://www.sitepoint.com/anatomy-of-an-exploit-an-in-depth-look-at-the-rails-yaml-vulnerability/
+[pickle]: https://arp242.net/weblog/security-of-python's-pickle-and-marshal-modules.html
