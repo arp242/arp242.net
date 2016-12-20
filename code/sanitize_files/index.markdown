@@ -3,10 +3,12 @@ layout: code
 title: "sanitize_files"
 link: "sanitize_files"
 last_version: "master"
-pre1: "Project status: stable"
 
 ---
 
+Project status: stable
+
+-----------------------------------------
 
 We’ve all been here, you just inherited a project and it’s a mess.
 

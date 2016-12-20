@@ -3,10 +3,13 @@ layout: code
 title: "operapass"
 link: "operapass"
 last_version: "version_1.3"
-pre1: "Project status: finished (it does what it needs to do and there are no known bugs)."
-post1: "[Windows binary](https://bitbucket.org/Carpetsmoker/operapass/downloads/operapass-1.2-windows.zip)"
+
 ---
 
+Project status: finished (it does what it needs to do and there are no known bugs).
+[Windows binary](https://bitbucket.org/Carpetsmoker/operapass/downloads/operapass-1.2-windows.zip)
+
+-----------------------------------------
 
 This software works for **Opera 12 and earlier** (the Presto-based versions),
 and **not** for the newer Blink-based versions.

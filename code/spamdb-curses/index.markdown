@@ -3,10 +3,12 @@ layout: code
 title: "spamdb-curses"
 link: "spamdb-curses"
 last_version: "version_1.2"
-pre1: "Project status: finished (it does what it needs to do and there are no known bugs)."
 
 ---
 
+Project status: finished (it does what it needs to do and there are no known bugs).
+
+-----------------------------------------
 
 Human friendly curses interface for `spamdb(8)` to manage addresses for the
 whitelist/greylist.

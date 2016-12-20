@@ -3,10 +3,10 @@ layout: code
 title: "pkg_sanity"
 link: "pkg_sanity"
 last_version: "master"
-pre1: "Project status: Stable"
 
 ---
 
+[![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://arp242.net/status/archived)
 
 Performs some basic sanity checks for FreeBSD packages.
 

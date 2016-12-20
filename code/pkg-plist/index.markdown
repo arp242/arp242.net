@@ -3,10 +3,10 @@ layout: code
 title: "pkg-plist"
 link: "pkg-plist"
 last_version: "version_1.4"
-pre1: "Project status: finished (it does what it needs to do and there are no known bugs)."
 
 ---
 
+[![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://arp242.net/status/archived)
 
 Make a pkg-plist for a FreeBSD port. Try to be as ‘automatic’ as possible. 
 

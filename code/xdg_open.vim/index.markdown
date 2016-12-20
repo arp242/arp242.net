@@ -3,9 +3,10 @@ layout: code
 title: "xdg_open.vim"
 link: "xdg_open.vim"
 last_version: "version-1.0"
-pre1: "Project status: stable"
 
 ---
+
+[![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
 
 Re-implements netrw's `gx` command with a call to `xdg-open` (or a similar
 tool of your choosing).

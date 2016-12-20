@@ -3,7 +3,6 @@ layout: code
 title: "sconfig"
 link: "sconfig"
 last_version: "master"
-pre1: "Project status: experimental"
 
 ---
 

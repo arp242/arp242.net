@@ -3,10 +3,10 @@ layout: code
 title: "startscreen.vim"
 link: "startscreen.vim"
 last_version: "version-1.0"
-pre1: "Project status: stable"
-post1: "[This plugin at www.vim.org](http://www.vim.org/scripts/script.php?script_id=5338)"
+
 ---
 
+[![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
 
 Introduction
 ============

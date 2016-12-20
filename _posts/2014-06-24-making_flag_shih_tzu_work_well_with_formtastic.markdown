@@ -17,9 +17,9 @@ There are probably a few ways to do this; here’s mine:
 			column: 'features',
 		)
 
-
 		# Allow easy assignment from formtastic as an Array; for example:
-		# ['', '1', '', '3'] will set features to 4 (:warpdrive & :electrolytes)
+		# ['', '1', '', '3'] will set features to 4 (:warpdrive
+		# and :electrolytes)
 		def features_array= val
 			self.features =
 				if val.respond_to?(:reduce)
@@ -28,7 +28,6 @@ There are probably a few ways to do this; here’s mine:
 					val
 				end
 		end
-
 
 		# Get as an Array with all bits set as an int, ie:
 		# [1, 3]

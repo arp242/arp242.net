@@ -3,10 +3,10 @@ layout: code
 title: "auto_mkdir2.vim"
 link: "auto_mkdir2.vim"
 last_version: "version-1.0"
-pre1: "Project status: experimental"
-post1: "[This plugin at www.vim.org](http://www.vim.org/scripts/script.php?script_id=5474)"
+
 ---
 
+[![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
 
 Automatically create direcories that don't exist yet when writing a file.
 

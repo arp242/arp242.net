@@ -3,10 +3,12 @@ layout: code
 title: "password-bunny"
 link: "password-bunny"
 last_version: "version-1.3"
-pre1: "Project status: stable"
 
 ---
 
+Project status: stable
+
+-----------------------------------------
 
 
 Manage passwords with Vim.

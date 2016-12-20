@@ -15,22 +15,22 @@ import (
 	"time"
 )
 
-var pw = ""
+var pw = ``
 
 var defaults = map[string]repository{
-	"arp242.net": {ShortStatus: "stable", Status: "Project status: stable", Language: "ruby"},
-	"config":     {ShortStatus: "stable", Status: "Project status: stable"},
+	"arp242.net": {Status: "stable", Language: "ruby"},
+	"config":     {Status: "stable"},
 
 	"MediaWiki-FontAwesome":  {Language: "php"},
 	"MediaWiki-Scepticismus": {Language: "php"},
 
 	// Vim stuff, doing the vimtomd.py crap doesn't help :-/
-	"confirm_quit.vim":   {ShortStatus: "finished", Status: "Project status: finished (it does what it needs to do and there are no known bugs)."},
-	"complete_email.vim": {ShortStatus: "stable", Status: "Project status: stable"},
-	"helplink.vim":       {ShortStatus: "stable", Status: "Project status: stable"},
-	"startscreen.vim":    {ShortStatus: "stable", Status: "Project status: stable"},
-	"undofile_warn.vim":  {ShortStatus: "stable", Status: "Project status: stable"},
-	"xdg_open.vim":       {ShortStatus: "stable", Status: "Project status: stable"},
+	"confirm_quit.vim":   {Status: "finished"},
+	"complete_email.vim": {Status: "stable"},
+	"helplink.vim":       {Status: "stable"},
+	"startscreen.vim":    {Status: "stable"},
+	"undofile_warn.vim":  {Status: "stable"},
+	"xdg_open.vim":       {Status: "stable"},
 }
 
 // Options
@@ -54,7 +54,6 @@ type repository struct {
 	Readme        string
 	ExtraLink     string
 	Status        string
-	ShortStatus   string
 	LastVersion   string
 
 	// We need to use interface here since some values are Objects and some are Arrays
@@ -71,8 +70,8 @@ var funcs = template.FuncMap{
 }
 
 const htmlBrief = `
-<div class="weblog-brief lang-{{.Language}} status-{{.ShortStatus}}" data-updated="{{.UpdatedOn|date_sort}}" data-name="{{.Name}}" data-status="{{.ShortStatus}}">
-	<em>Status: {{.ShortStatus}}, last updated: {{.UpdatedOn|date_human}}</em>
+<div class="weblog-brief lang-{{.Language}} status-{{.Status}}" data-updated="{{.UpdatedOn|date_sort}}" data-name="{{.Name}}" data-status="{{.Status}}">
+	<em>Status: {{.Status}}, last updated: {{.UpdatedOn|date_human}}</em>
 	<h2><a href="/code/{{.LinkNameLower}}/">{{.Name}}</a></h2>
 	<p>{{.Description|html}}</p>
 </div>
@@ -103,7 +102,6 @@ layout: code
 title: "{{.Name}}"
 link: "{{.LinkName}}"
 last_version: "{{.LastVersion}}"
-{{if .Status}}pre1: "{{.Status}}"{{end}}
 {{if .ExtraLink}}post1: "{{.ExtraLink}}"{{end}}
 ---
 
@@ -111,9 +109,7 @@ last_version: "{{.LastVersion}}"
 
 var tplProject = template.Must(template.New("project").Parse(htmlProject))
 
-//var extra_links_regexp = regexp.MustCompile(`^- (.*)+\s+-{41}`)
-// Everything before exactly 41 -'s at the start of the file
-var extraLinksRegexp = regexp.MustCompile(`(?s)(.+)\n-{41}\n`)
+var statusRegexp = regexp.MustCompile(`https:\/\/arp242.net\/status\/(\w+)`)
 
 // ByDate sorts by date
 type ByDate []repository
@@ -223,49 +219,17 @@ func readAndWriteRepo(repo *repository) {
 		"https://raw.githubusercontent.com/Carpetsmoker/%v/master/README.markdown?v=%v",
 		repo.LinkName, time.Now().Unix())))
 
-	// Extract metadata from the README
-	match := extraLinksRegexp.FindStringSubmatch(repo.Readme)
-	if match != nil && len(match) > 1 {
-		for _, m := range strings.Split(match[1], "\n") {
-			if m == "" {
-				continue
-			}
-			if m[0] == '[' || m[0] == '-' {
-				// Markdown link
-				repo.ExtraLink = strings.TrimSpace(strings.TrimLeft(m, "-"))
-			} else {
-				// Project status
-
-				// Append
-				if repo.Status != "" {
-					repo.Status += " " + strings.TrimSpace(m)
-					continue
-				}
-
-				repo.Status = strings.TrimSpace(m)
-				end := strings.Index(m, "(")
-				if end < 0 {
-					end = strings.Index(m, ";")
-					if end < 0 {
-						end = len(m)
-					}
-				}
-
-				repo.ShortStatus = strings.ToLower(strings.TrimSpace(m[strings.Index(m, ":")+1 : end]))
-			}
-		}
-		repo.Readme = extraLinksRegexp.ReplaceAllString(repo.Readme, "")
+	// Extract some data from the README
+	findStatus := statusRegexp.FindStringSubmatch(repo.Readme)
+	if len(findStatus) == 2 {
+		repo.Status = findStatus[1]
 	}
 
 	if repo.Status == "" {
-		repo.Status = "Project status: experimental"
-		repo.ShortStatus = "experimental"
+		repo.Status = "experimental"
 	}
 
 	if def, has := defaults[repo.Name]; has {
-		if def.ShortStatus != "" {
-			repo.ShortStatus = def.ShortStatus
-		}
 		if def.Status != "" {
 			repo.Status = def.Status
 		}
@@ -349,21 +313,23 @@ func readURL(url string) []byte {
 	}
 
 	if pw != "" {
-		req.SetBasicAuth("Carpetsmoker", pw)
+		req.SetBasicAuth("arpetsmoker", pw)
 	}
 	resp, err := client.Do(req)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "mkcode error: %v %v\n", url, err)
 		os.Exit(1)
 	}
-	if resp.StatusCode != 200 {
-		fmt.Fprintf(os.Stderr, "mkcode code %v: %v %v\n", resp.StatusCode, url, err)
-		os.Exit(1)
-	}
-	defer resp.Body.Close()
-
 	b, err := ioutil.ReadAll(resp.Body)
 	check(err)
+	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		fmt.Fprintf(os.Stderr, "mkcode code %v: %v %v\n%v", resp.StatusCode,
+			string(b), url, err)
+		os.Exit(1)
+	}
+
 	return b
 }
 

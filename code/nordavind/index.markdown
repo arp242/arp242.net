@@ -3,7 +3,6 @@ layout: code
 title: "nordavind"
 link: "nordavind"
 last_version: "master"
-pre1: "Project status: experimental"
 
 ---
 

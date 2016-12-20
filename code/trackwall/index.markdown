@@ -3,10 +3,14 @@ layout: code
 title: "trackwall"
 link: "trackwall"
 last_version: "master"
-pre1: "Project status: experimental; it works for the author, and may be useful to others, but may also sacrifice your firstborn to Cthulhu and take out a new mortgage on your house."
 
 ---
 
+Project status: experimental; it works for the author, and may be useful to
+others, but may also sacrifice your firstborn to Cthulhu and take out a new
+mortgage on your house.
+
+-----------------------------------------
 
 [![Build Status](https://travis-ci.org/Carpetsmoker/trackwall.svg?branch=master)](https://travis-ci.org/Carpetsmoker/trackwall)
 [![Coverage Status](https://coveralls.io/repos/github/Carpetsmoker/trackwall/badge.svg)](https://coveralls.io/github/Carpetsmoker/trackwall)

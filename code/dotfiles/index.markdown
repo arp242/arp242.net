@@ -1,9 +1,8 @@
 ---
 layout: code
-title: "config"
-link: "config"
+title: "dotfiles"
+link: "dotfiles"
 last_version: "master"
-pre1: "Project status: stable"
 
 ---
 

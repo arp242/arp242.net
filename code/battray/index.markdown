@@ -3,14 +3,15 @@ layout: code
 title: "battray"
 link: "battray"
 last_version: "version-2.2"
-pre1: "Project status: stable"
 
 ---
 
+[![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
+[![PyPI](https://img.shields.io/pypi/v/nine.svg)](https://pypi.python.org/pypi/battray)
 
-Battray is a fairly simple tray icon to show your laptop’s battery status.
-It's simple, easy, fairly environment-independent, and ‘just works’ without
-tons of {Gnome,KDE,..} dependencies.
+Battray is a simple tray icon to show your laptop’s battery status. It's simple,
+easy, fairly environment-independent, and ‘just works’ without tons of
+{Gnome,KDE,..} dependencies.
 
 You can also configure it to play annoying sounds if your battery is getting low,
 dim the screen when you switch from AC to battery, etc.

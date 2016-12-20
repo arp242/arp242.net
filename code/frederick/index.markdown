@@ -3,10 +3,12 @@ layout: code
 title: "frederick"
 link: "frederick"
 last_version: "version-2.0"
-pre1: "Project status: stable"
 
 ---
 
+Project status: stable
+
+-----------------------------------------
 
 Frederick is a web-based feed reader (RSS, Atom). It’s simple, and should “just
 work”.
