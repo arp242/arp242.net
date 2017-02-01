@@ -2,6 +2,7 @@
 layout: post
 title: Opera 11 onload bug
 excerpt: Recent Opera versions don't execute onload when Microsoft .eot webfonts are used.
+categories: programming-and-such
 ---
 
 **Update 20110629**  

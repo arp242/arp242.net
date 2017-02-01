@@ -3,6 +3,7 @@ layout: post
 title: "YAML: probably not so great after all"
 excerpt: YAML looks great at a glance, but has some problems that may not be obvious at first
 updated: 17 Dec 2016
+categories: programming-and-such
 ---
 
 I previously wrote [why using JSON for human-editable configuration files is a

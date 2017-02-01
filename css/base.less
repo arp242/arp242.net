@@ -49,6 +49,23 @@ body {
 	}
 }
 
+.label {
+	background-color: @menu_bg;
+	color: @menu_fg;
+	text-shadow: 1px 1px 2px #333;
+
+	background-color: #626262;
+	border-radius: 3px;
+	padding: .1em .3em;
+	font-size: .8em;
+	color: #fff;
+
+	&:hover {
+		color: #aaa;
+		text-decoration: none;
+	}
+}
+
 /*** Default style tags, used on many pages  ***/
 a {
 	color: #00f;
@@ -115,13 +132,13 @@ h3 { font-size: 1.2em; padding: 0; margin-bottom: 0; }
 		float: left;
 	}
 
-	em {
+	> em {
 		float: right;
 		margin-right: 7px;
 		font-size: 14px;
 	}
 
-	p {
+	> p {
 		margin: 0;
 		clear: both;
 		margin-left: 1em;

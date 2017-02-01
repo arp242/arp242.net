@@ -7,7 +7,7 @@ last_version: "version-2.2"
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
-[![PyPI](https://img.shields.io/pypi/v/nine.svg)](https://pypi.python.org/pypi/battray)
+[![PyPI](https://img.shields.io/pypi/v/battray.svg)](https://pypi.python.org/pypi/battray)
 
 Battray is a simple tray icon to show your laptop’s battery status. It's simple,
 easy, fairly environment-independent, and ‘just works’ without tons of
@@ -79,8 +79,8 @@ Available functions
 
 - `set_color('red|yellow|green')`  
   Fill battery icon with  this  color; it can either be the colour name `green`,
-  `yellow`, or `red`, or a color code as int: `0xff0000ff` (the last byte is
-  the alpha channel).
+  `yellow`, or `red`, or a color code as int in RGBA: `0xff0000ff` (the last
+  byte is the alpha channel).
 
 - `notify(msg, level)`  
   Send a desktop notification; you need a notification daemon (such as
@@ -122,6 +122,11 @@ Available variables
 ChangeLog
 =========
 
+Version 2.3, unreleased
+-----------------------
+- Linux: Show warning if we can't import the `dbus` module.
+- Linux: Fix for systems that have `BAT1` but not `BAT0`.
+
 Version 2.2, 2016-04-24
 -----------------------
 - Better handle systems without any battery by showing a message in the tooltip
@@ -135,7 +140,6 @@ Version 2.1, 2015-11-09
 - Move some stuff around so we can show a clear message that only Python 3 is
   supported.
 
-
 Version 2.0, 2015-09-18
 -----------------------
 - **Configuration files from previous versions are not compatible**.
@@ -143,7 +147,6 @@ Version 2.0, 2015-09-18
 - Better support for Linux.
 - Only support Python 3 for now.
 - Many changes.
-
 
 Version 1.5, 2012-07-11
 -----------------------
@@ -154,22 +157,22 @@ Version 1.5, 2012-07-11
 - Update default config.
 - Update docs.
 
-
 Version 1.4, 2011-09-26
 -----------------------
 - Play sounds in a better way (Separate thread, not separate process).
 - Update a few docs.
-
 
 Version 1.3, 2011-07-24
 -----------------------
 - **Configuration files from previous versions are not compatible**.
 - Add Linux support (Submitted by Andy Mikhaylenko).
 - Better configuration file/platform file importing.
-- We now play a wav file with OSS instead of (trying to) use the PC speaker. Most laptops emulate a PC speaker, but the exact implementation varies from vendor to vendor and is the usual mess we've come to expect of these simple things :-(
+- We now play a wav file with OSS instead of (trying to) use the PC speaker.
+  Most laptops emulate a PC speaker, but the exact implementation varies from
+  vendor to vendor and is the usual mess we've come to expect of these simple
+  things :-(
 - Add installer.
 - Fix FreeBSD/amd64.
-
 
 Version 1.2, 2009-10-22
 -----------------------
@@ -178,11 +181,11 @@ Version 1.2, 2009-10-22
 - Add manpage.
 - Various minor improvements.
 
-
 Version 1.1, 2009-09-06
 -----------------------
 - Battery icon is now green/yellow/red depending on battery life remaining.
-- Battray will now warn you if battery level is below a certain percentage (See warn and warnMethod options in config.py).
+- Battray will now warn you if battery level is below a certain percentage (See
+  warn and warnMethod options in config.py).
 - Reload configuration on SIGHUP.
 - Added instructions on how to add platform.
 - Add new icon to indicate error (Instead of no icon loaded at all).
@@ -201,7 +204,7 @@ the terms of the MIT license:
 
 The MIT License (MIT)
 
-Copyright © 2008-2016 Martin Tournoij
+Copyright © 2008-2017 Martin Tournoij
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to

@@ -7,10 +7,15 @@ title: arp242.net – Weblog
 	<a href="/" class="index-back">&#8592; Back</a>
 	<a class="subscribe" href="/feed.xml" style="float: right">subscribe via RSS</a>
 	{% for post in site.posts %}
-		<div class="weblog-brief">
+		<div class="weblog-brief" data-category="{{ c }}">
 			<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 			<em>{{ post.date | date_to_string }}</em>
 			{{ post.excerpt | markdownify }}
+			{% comment %}
+			{% for c in post.categories %}
+				<a class="label" href="/weblog/?#filter-category={{ c }}">{{ c | prettify }}</a>
+			{% endfor %}
+			{% endcomment %}
 		</div>
 	{% endfor %}
 </div>

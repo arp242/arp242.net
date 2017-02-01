@@ -8,7 +8,7 @@ last_version: "version-1.0"
 
 - [This plugin at www.vim.org](http://www.vim.org/scripts/script.php?script_id=5206)
 - [GitHub mirror](https://github.com/vim-scripts/auto_autoread.vim)
-- [Full documentation](http://code.arp242.net/auto_autoread.vim/raw/tip/doc/auto_autoread.txt) (`:help auto-autoread.txt`)
+- [Full documentation](doc/auto_autoread.txt) (`:help auto-autoread.txt`)
 
 -----------------------------------------------------------------------------
 

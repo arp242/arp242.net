@@ -2,6 +2,7 @@
 layout: post
 title: Creating temporary files in PHP
 excerpt: "`mktemp()` isn’t good enough; here’s something that’s (slightly) better."
+categories: programming-and-such
 ---
 
 Creating temporary files in PHP is not as straightforward as it “should” be in a

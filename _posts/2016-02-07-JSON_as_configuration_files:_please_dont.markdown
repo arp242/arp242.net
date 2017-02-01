@@ -3,6 +3,7 @@ layout: post
 title: "JSON as configuration files: please don’t"
 excerpt: Using JSON for configuration files is a disturbing trend.
 updated: 17 Dec 2016
+categories: programming-and-such
 ---
 
 > Writing the config in JSON was a huge mistake lol. Wish I'd paid for attention
