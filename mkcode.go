@@ -18,19 +18,10 @@ import (
 var pw = ``
 
 var defaults = map[string]repository{
-	"arp242.net": {Status: "stable", Language: "ruby"},
-	"config":     {Status: "stable"},
-
+	"arp242.net":             {Language: "ruby", Status: "stable"},
+	"dotfiles":               {Language: "python", Status: "stable"},
 	"MediaWiki-FontAwesome":  {Language: "php"},
 	"MediaWiki-Scepticismus": {Language: "php"},
-
-	// Vim stuff, doing the vimtomd.py crap doesn't help :-/
-	"confirm_quit.vim":   {Status: "finished"},
-	"complete_email.vim": {Status: "stable"},
-	"helplink.vim":       {Status: "stable"},
-	"startscreen.vim":    {Status: "stable"},
-	"undofile_warn.vim":  {Status: "stable"},
-	"xdg_open.vim":       {Status: "stable"},
 }
 
 // Options
@@ -214,6 +205,9 @@ func readAndWriteRepo(repo *repository) {
 	repo.LinkName = l[len(l)-1]
 	repo.LinkNameLower = strings.ToLower(repo.LinkName)
 	repo.Language = strings.ToLower(repo.Language)
+	if repo.Language == "vim script" {
+		repo.Language = "viml"
+	}
 
 	repo.Readme = string(readURL(fmt.Sprintf(
 		"https://raw.githubusercontent.com/Carpetsmoker/%v/master/README.markdown?v=%v",
