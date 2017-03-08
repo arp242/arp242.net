@@ -6,9 +6,6 @@ updated: 17 Dec 2016
 categories: programming-and-such
 ---
 
-> Writing the config in JSON was a huge mistake lol. Wish I'd paid for attention
-> beforehand.
-
 I’ve recently witnessed the rather disturbing trend of using JSON for
 configuration files.
 

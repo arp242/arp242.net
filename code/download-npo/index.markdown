@@ -2,7 +2,7 @@
 layout: code
 title: "download-npo"
 link: "download-npo"
-last_version: "version-2.5.2"
+last_version: "version-2.6"
 
 ---
 
@@ -144,9 +144,10 @@ Staat jouw programma er niet bij? Mail me dan even en ik zet het erbij.
 
 ChangeLog
 =========
-Versie 2.6, nog niet gereleased
--------------------------------
-- Voeg `download-gemist-list` weer toe.
+Versie 2.6, 2017-03-02
+----------------------
+- Fix voor huidige versie van de site.
+- Bugfix voor Python2 icm. `-f` flag en unicode.
 
 Versie 2.5.2, 2017-02-01
 ------------------------
