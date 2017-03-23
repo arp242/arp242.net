@@ -2,7 +2,7 @@
 layout: code
 title: "pkg_clearleaves"
 link: "pkg_clearleaves"
-last_version: "master"
+last_version: "version-1.2"
 
 ---
 

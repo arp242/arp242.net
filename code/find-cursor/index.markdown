@@ -6,19 +6,18 @@ last_version: "master"
 
 ---
 
-Project status: stable
-
------------------------------------------
+[![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
+[![Build Status](https://travis-ci.org/Carpetsmoker/find-cursor.svg?branch=master)](https://travis-ci.org/Carpetsmoker/find-cursor)
 
 Simple XLib program to highlight the cursor position. This is similar to the
 feature found in Windows XP (and possibly later?)
 
-![screenshot.gif](https://bytebucket.org/Carpetsmoker/find-cursor/raw/tip/screenshot.gif)
+![screenshot.gif](https://raw.githubusercontent.com/Carpetsmoker/find-cursor/master/screenshot.gif)
 
 Using it
 ========
-Compile it by typing `make`. Run it with `-h` for some options controlling the
-appearance.
+Compile it by typing `make`. Run it with `-h` to see some options for
+controlling the appearance.
 
 - The author runs it with [`xcape`][xcape]:
 
