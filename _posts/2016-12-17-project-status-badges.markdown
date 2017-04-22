@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Project status badges
-excerpt: Communicating your open source project’s status
+excerpt: Communicating your open source project’s status.
 categories: programming-and-such
 ---
 

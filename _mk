@@ -7,13 +7,15 @@ if [ "$1" = "code" ] || [ "$2" = "code" ]; then
 	./_mkcode.sh
 fi
 
-for f in css/*.less; do
-	lessc -clean-css="--s1 --advanced" "$f" "${f%.less}.css"
-	#sed -E 's/^ *//; /^\/\*.*\*\/$/d' base.css | tr -d '\n' | sed -E 's/;}/;}\n/g'
-done
+if [ "$1" != "quick" ] || [ "$2" = "quick" ]; then
+	for f in css/*.less; do
+		lessc -clean-css="--s1 --advanced" "$f" "${f%.less}.css"
+		#sed -E 's/^ *//; /^\/\*.*\*\/$/d' base.css | tr -d '\n' | sed -E 's/;}/;}\n/g'
+	done
+	coffee -c script/main.coffee
+fi
 
-coffee -c script/main.coffee
-bundle exec jekyll build --incremental
+JEKYLL_NO_BUNDLER_REQUIRE=1 jekyll build --incremental
 
 if [ "$1" = "deploy" ] || [ "$2" = "deploy" ]; then
 	netlify deploy -p _site -s arp242
