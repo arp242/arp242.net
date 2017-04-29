@@ -9,9 +9,16 @@ last_version: "master"
 [![GoDoc](https://godoc.org/arp242.net/sconfig?status.svg)](https://godoc.org/arp242.net/sconfig)
 [![Go Report Card](https://goreportcard.com/badge/github.com/Carpetsmoker/sconfig)](https://goreportcard.com/report/github.com/Carpetsmoker/sconfig)
 [![Build Status](https://travis-ci.org/Carpetsmoker/sconfig.svg?branch=master)](https://travis-ci.org/Carpetsmoker/sconfig)
-[![Coverage Status](https://coveralls.io/repos/github/Carpetsmoker/sconfig/badge.svg?branch=master)](https://coveralls.io/github/Carpetsmoker/sconfig?branch=master)
+[![codecov](https://codecov.io/gh/Carpetsmoker/sconfig/branch/master/graph/badge.svg)](https://codecov.io/gh/Carpetsmoker/sconfig)
 
 `sconfig` is a simple and functional configuration file parser for Go.
+
+Installing
+==========
+
+	go get arp242.net/sconfig
+
+Go 1.5 and newer should work, but the test suite only runs with 1.7 and newer.
 
 What does it look like?
 =======================
@@ -63,7 +70,7 @@ Can be parsed with:
 	func main() {
 		config := Config{}
 		err := sconfig.Parse(&config, "config", sconfig.Handlers{
-			// Customer handler
+			// Custom handler
 			"address": func(line []string) error {
 				addr, err := net.LookupHost(line[0])
 				if err != nil {
@@ -114,7 +121,8 @@ How do I...
 ===========
 
 Validate fields?
----------------
+----------------
+TODO: Mention chainable handlers here.
 There is no built-in way to do this. You can use `if` statements :-)
 
 Maybe I'll add this at a later date, an early (unreleased) version actually had
@@ -136,24 +144,26 @@ Just set them before parsing:
 
 Use `int` types? I get an error?
 --------------------------------
-Only `int64` and `uint64` are handled by default; this should be fine for
-almost all use cases of this package. If you want to add them, you can do easily
-with your own TypeHandler :-)
+Only `int64` and `uint64` are handled by default; this should be fine for almost
+all use cases of this package. If you want to add any of the other (u)int types
+you can do easily with your own type handler :-)
 
 Note that the size of `int` and `uint` are platform-dependent, so adding those
-may not be a good idea...
+may not be a good idea.
 
-I get a "don’t know how to set fields of the type ..." error if I try to use `sconfig.TypeHandlers`
----------------------------------------------------------------------------------------------------
-Include the package name; even if the TypeHandler is in the same package. Do:
+I get a "don’t know how to set fields of the type ..." error if I try to add a new type handler
+-----------------------------------------------------------------------------------------------
+Include the package name; even if the type handler is in the same package. Do:
 
-    sconfig.TypeHandlers["[]main.RecordT"] = func(v []string) (interface{}, error) {
+	sconfig.RegisterType("[]main.RecordT", func(v []string) (interface{}, error) {
+	}
 
 and not:
 
-	sconfig.TypeHandlers["[]RecordT"] = func(v []string) (interface{}, error) {
+	sconfig.RegisterType("[]RecordT", func(v []string) (interface{}, error) {
+	}
 
-Replace `main` with the appreciate pacakge name.
+Replace `main` with the appropriate package name.
 
 
 Syntax
@@ -167,7 +177,7 @@ The syntax of the file is very simple.
 - Backslash: `\` character (U+005C).
 - Space: ` ` character (U+0020).
 - NULL byte: U+0000.
-- Newline LF (U+000A) or CR+LF (U+000D, U+000A).
+- Newline: LF (U+000A) or CR+LF (U+000D, U+000A).
 - Line: Any set of characters ended by a Newline
 
 ### Reading the file

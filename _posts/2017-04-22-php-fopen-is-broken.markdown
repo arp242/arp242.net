@@ -2,6 +2,7 @@
 layout: post
 title: "PHP’s fopen() is broken"
 excerpt: Basic functions such as `fopen()` are horribly broken in PHP.
+categories: programming-and-such
 ---
 
 Yes, I know that “bashing PHP” is *sooooo 2010*. But even now many people don’t

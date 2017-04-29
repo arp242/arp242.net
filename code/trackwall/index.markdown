@@ -6,14 +6,9 @@ last_version: "master"
 
 ---
 
-Project status: experimental; it works for the author, and may be useful to
-others, but may also sacrifice your firstborn to Cthulhu and take out a new
-mortgage on your house.
-
------------------------------------------
-
+[![This project is considered experimental](https://img.shields.io/badge/Status-experimental-red.svg)](https://arp242.net/status/experimental)
 [![Build Status](https://travis-ci.org/Carpetsmoker/trackwall.svg?branch=master)](https://travis-ci.org/Carpetsmoker/trackwall)
-[![Coverage Status](https://coveralls.io/repos/github/Carpetsmoker/trackwall/badge.svg)](https://coveralls.io/github/Carpetsmoker/trackwall)
+[![codecov](https://codecov.io/gh/Carpetsmoker/trackwall/branch/master/graph/badge.svg)](https://codecov.io/gh/Carpetsmoker/trackwall)
 [![Go Report Card](https://goreportcard.com/badge/arp242.net/trackwall)](https://goreportcard.com/report/arp242.net/trackwall)
 
 DNS proxy and filter.
