@@ -2,7 +2,7 @@
 layout: code
 title: "download-npo"
 link: "download-npo"
-last_version: "version-2.7.1"
+last_version: "version-2.7.2"
 
 ---
 
@@ -10,7 +10,8 @@ last_version: "version-2.7.1"
 [![PyPI](https://img.shields.io/pypi/v/download-npo.svg)](https://pypi.python.org/pypi/download-npo)
 [![Build Status](https://travis-ci.org/Carpetsmoker/download-npo.svg?branch=master)](https://travis-ci.org/Carpetsmoker/download-npo)
 [![Build status](https://ci.appveyor.com/api/projects/status/72k47k6m209o2u25/branch/master?svg=true)](https://ci.appveyor.com/project/Carpetsmoker/download-npo/branch/master)
-[![Coverage Status](https://coveralls.io/repos/github/Carpetsmoker/download-npo/badge.svg?branch=master)](https://coveralls.io/github/Carpetsmoker/download-npo?branch=master)
+[![codecov](https://codecov.io/gh/Carpetsmoker/download-npo/branch/master/graph/badge.svg)](https://codecov.io/gh/Carpetsmoker/download-npo)
+
 
 **Download-npo downloads videos from the Dutch npo.nl site. The rest of the
 documentation is in Dutch.**

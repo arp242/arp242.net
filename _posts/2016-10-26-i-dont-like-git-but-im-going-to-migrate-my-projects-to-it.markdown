@@ -33,8 +33,8 @@ those are actually used by most users? git is bloatware, and like most bloatware
 it comes with a [notoriously difficult to understand manual][git-man].
 
 Mercurial has a manual and user interface that I understand without too much
-effort, and this is by far the the biggest reason I very much prefer mercurial
-over git. If I need to know something from mercurial I can just read the
+effort, and this is by far the biggest reason I very much prefer mercurial over
+git. If I need to know something from mercurial I can just read the
 documentation and go ‘ah’, with git … not so much. There’s a reason so many of
 the [top Stack Overflow questions][so-top] are about git.
 

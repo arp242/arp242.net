@@ -33,11 +33,12 @@ How to use it
 
 - Open up `config` in any 'ol text editor. Set the appropriate values.
 
-- Build and run the program: `go build transip-dynamic.go; ./main`
+- Build and run the program: `go run transip-dynamic.go`
 
 - You probably want to run this automatically every hour orso with cron.
 
 Alternatives
 ============
 * [transip-dyndns](https://github.com/RolfKoenders/transip-dyndns) (deals poorly
-  with A and AAAA records; can only set one domain, node.js).
+  with A and AAAA records; can only set one domain; node.js so difficult to
+  run).

@@ -9,10 +9,10 @@ Yes, I know that “bashing PHP” is *sooooo 2010*. But even now many people do
 seem to fully realize the limitations and problems of this language.
 
 There have been some improvements in the last few years (the sort of
-improvements that other languages have had for ages), but unfortunately some of
-the larger problems still remain. Arguably the largest is the absolutely abysmal
-state of the standard library. Rather than do a [Gish gallop][gish] I’ll just
-focus on one very basic core function: [`fopen()`][php-fopen].
+improvements that other languages have had for ages), but unfortunately some
+problems still remain. Arguably the largest is the absolutely abysmal state of
+the standard library. Rather than do a [Gish gallop][gish] I’ll just focus on
+one very basic core function: [`fopen()`][php-fopen].
 
 
 Lack of errors
@@ -251,7 +251,7 @@ So, what now?
 So, what about the rest of the standard library?
 ------------------------------------------------
 One PHP fan might reply to this article with something along the lines of: “so
-fopen may have serious shortcomings, but that’s just one function out of
+fopen may have serious shortcomings, but that’s only one function out of
 thousands!”
 
 Well, yes, but many functions in PHP suffer from similar problems (and some,
@@ -268,7 +268,7 @@ PHP has made some decent progress in the area of language features (we can do
 been – and continues to be – the lack of quality in the standard library. I’ve
 used `fopen()` as a single example here, but I could have used many others.  
 
-The lack of good errors is a common problem, not just with `fopen()`. Other
+The lack of good errors is a common problem, not only with `fopen()`. Other
 problems include standard library functions missing features, leaving you to
 re-implement them yourself (this is probably why PHP frameworks are so popular,
 they attempt to fix much of the standard library).
@@ -284,9 +284,9 @@ code that assumes the existing API, and if you break too much, It doesn’t matt
 how much better you make it, any people will stick to the old version rather
 than use the new version (see: Python 3, Perl 6).
 
-Perhaps we just shouldn’t fix PHP. There are plenty of alternatives available
-with a similar feature-set. Why do we need PHP? If you ask me, investing time in
-PHP is just a [sunk-cost fallacy](http://rationalwiki.org/wiki/Sunk_cost).
+Perhaps we shouldn’t fix PHP. There are plenty of alternatives available with a
+similar feature-set. Why do we need PHP? If you ask me, investing time in PHP is
+a [sunk-cost fallacy](http://rationalwiki.org/wiki/Sunk_cost).
 
 
 

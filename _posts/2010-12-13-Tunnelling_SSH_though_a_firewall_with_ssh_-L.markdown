@@ -24,12 +24,12 @@ The network setup (simplified):
 
 The problem is connecting to public webserver from my workstation, first I had
 to ssh or sftp to the Linux firewall, and from that machine I could connect to
-to the webserver.
+the webserver.
 
 There has to be an easier way… And a look at the SSH manpage provided the
 answer: The `-L` option.
 
-Excerpt from From [ssh(1)][ssh]:
+Excerpt from [ssh(1)][ssh]:
 
 	-L [bind_address:]port:host:hostport
 		Specifies that the given port on the local (client) host is to be

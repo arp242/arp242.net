@@ -23,9 +23,8 @@ It’s a good trade-off between machine-readable and human-readable and a huge
 improvement on what it intended to replace: XML, which I consider to be
 unreadable by *both* machines and humans.  
 But using it for other purposes is somewhat akin to saying “hey, this hammer
-works really really well for driving in nails! I love it! Why not hammer in this
-screw with it!” Sure, it sort of works, but it’s very much the wrong tool for
-the job.
+works really well for driving in nails! I love it! Why not hammer in this screw
+with it!” Sure, it sort of works, but it’s very much the wrong tool for the job.
 
 Specific shortcomings
 ---------------------

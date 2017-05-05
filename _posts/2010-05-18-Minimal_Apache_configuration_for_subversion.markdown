@@ -12,8 +12,8 @@ This is a “minimal” Apache configuration file for use with subversion access
 with SSL. In many cases, I feel that the best approach is to “Start simple,
 then add complexity”.  
 The default Apache configuration file is anything but “start simple”, it’s
-much much larger than needed, especially if you only want to use it for
-subversion access.
+much larger than needed, especially if you only want to use it for subversion
+access.
 
 httpd.conf
 ----------
