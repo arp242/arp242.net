@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Digging for hosts on FreeBSD 10
-excerpt: FreeBSD 10 removes bind and with it the `dig(1)` and `nslookup(1)` utilities.
 categories: programming-and-such
 ---
 

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Some thoughts on CDNs
-excerpt: Let’s look at some of the disadvantages of CDNs.
 categories: programming-and-such
 ---
 

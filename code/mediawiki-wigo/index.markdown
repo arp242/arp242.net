@@ -12,7 +12,7 @@ fix bugs when reported; contact me if you want to take over maintainership).
 
 -----------------------------------------
 
-Add and vote for news links. Used on [skepticpages.org](https://skepticpages.org).
+Add and vote for news links.
 
 Tags:
 

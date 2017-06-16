@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
@@ -60,34 +61,6 @@ var funcs = template.FuncMap{
 	"date_sort":  func(t time.Time) string { return t.Format("20060102") },
 }
 
-const htmlBrief = `
-<div class="weblog-brief lang-{{.Language}} status-{{.Status}}" data-updated="{{.UpdatedOn|date_sort}}" data-name="{{.Name}}" data-status="{{.Status}}">
-	<em>Status: {{.Status}}, last updated: {{.UpdatedOn|date_human}}</em>
-	<h2><a href="/code/{{.LinkNameLower}}/">{{.Name}}</a></h2>
-	<p>{{.Description|html}}</p>
-</div>
-`
-
-var tplBrief = template.Must(template.New("brief").Funcs(funcs).Parse(htmlBrief))
-
-const htmlIndex = `---
-layout: default
-title: Code projects
----
-
-<div class="weblog-overview code-projects">
-	{% include_relative top.html %}
-	{{range .Values}}
-		` + htmlBrief + `
-	{{end}}
-</div>
-<script>
-{% include script/main.js  %}
-</script>
-`
-
-var tplIndex = template.Must(template.New("index").Funcs(funcs).Parse(htmlIndex))
-
 const htmlProject = `---
 layout: code
 title: "{{.Name}}"
@@ -112,12 +85,8 @@ func (arr ByDate) Less(i, j int) bool { return arr[i].UpdatedOn.Unix() > arr[j].
 var root string
 
 func main() {
-	if len(os.Args) < 2 {
-		fmt.Fprintf(os.Stderr,
-			"First argument must be the root directory to write to (e.g. use ./_mkcode.sh).\n")
-		os.Exit(1)
-	}
-	root = os.Args[1]
+	root, _ = filepath.Abs(os.Args[0])
+	root = filepath.Dir(filepath.Dir(root))
 
 	// Read repos
 	var allRepos repositories
@@ -155,38 +124,6 @@ func main() {
 		readAndWriteRepo(&v)
 		allRepos[i] = v
 	}
-
-	if len(os.Args) > 2 {
-		fmt.Println("NOT writing index since repos were filtered")
-	} else {
-		makeIndex(allRepos)
-	}
-}
-
-// Make code/index.html
-func makeIndex(allRepos repositories) {
-	f, err := os.Create(root + "/code/index.html")
-	check(err)
-	defer f.Close()
-
-	out := bufio.NewWriter(f)
-	err = tplIndex.Execute(out, map[string]repositories{
-		"Values": allRepos,
-	})
-	check(err)
-	out.Flush()
-
-	// Write first five entries for the home page
-	f, err = os.Create(root + "/_index-code.html")
-	check(err)
-	defer f.Close()
-
-	out = bufio.NewWriter(f)
-	for i := 0; i < 5; i++ {
-		err = tplBrief.Execute(out, allRepos[i])
-		check(err)
-	}
-	out.Flush()
 }
 
 // Read one repository page

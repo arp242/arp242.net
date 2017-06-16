@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Online Unreal Tournament server browser with pcntl fork()
-excerpt: Browse Unreal Tournament servers in a web browsers.
 categories: programming-and-such
 ---
 

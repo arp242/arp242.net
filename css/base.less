@@ -1,6 +1,79 @@
-@import "vars.less";
+/******************
+ *** Variables ****
+ *****************/
+@font: 'Libre Baskerville', 'DejaVu Serif', 'Georgia', serif;
+@font-heading: 'Roboto Condensed', 'DejaVu Sans', Calibri, sans-serif;
+@font-mono: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", DejaVuSansMono, "Consolas", monospace;
 
-/*** Layout, used on every page ***/
+@highlight-fg: #278c09;
+@highlight-fg: #3a6ea5;
+
+@content-width: 46rem;
+@content-padding: 4rem;
+
+@narrow-width: @content-width;
+
+/***********
+ * Fonts ***
+ ***********/
+/*
+ * Avoid using the JS stuff. This means it won't work in some older browsers but
+ * who cares – it's not like the font is * that important.
+ *
+ * curl -s -A 'Mozilla/5.0 (X11; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0' \
+ *     'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700%7cRoboto+Condensed:400,400italic' |
+ *     grep -A7 '\/\* latin \*\/' |
+ *     sed '/^--/d; /^\//d'
+ */
+@font-face {
+	font-family: 'Libre Baskerville';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Libre Baskerville'),
+		local('LibreBaskerville-Regular'),
+		url(https://fonts.gstatic.com/s/librebaskerville/v4/pR0sBQVcY0JZc_ciXjFsK6Ucnt8gjcHpqyffjHeZWDA.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+	font-family: 'Libre Baskerville';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Libre Baskerville Bold'),
+		local('LibreBaskerville-Bold'),
+		url(https://fonts.gstatic.com/s/librebaskerville/v4/kH7K4InNTm7mmOXXjrA5v6y7YSlLHrWsjpD3RcrnyFM.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+	}
+@font-face {
+	font-family: 'Libre Baskerville';
+	font-style: italic;
+	font-weight: 400;
+	src: local('Libre Baskerville Italic'),
+		local('LibreBaskerville-Italic'),
+		url(https://fonts.gstatic.com/s/librebaskerville/v4/QHIOz1iKF3bIEzRdDFaf5eUHi-3yDrzgLLsrfaKVF9k.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+	font-family: 'Roboto Condensed';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Roboto Condensed'),
+		local('RobotoCondensed-Regular'),
+		url(https://fonts.gstatic.com/s/robotocondensed/v13/Zd2E9abXLFGSr9G3YK2MsDAdhzWOYhqHvOZMRGaEyPo.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+	font-family: 'Roboto Condensed';
+	font-style: italic;
+	font-weight: 400;
+	src: local('Roboto Condensed Italic'),
+		local('RobotoCondensed-Italic'),
+		url(https://fonts.gstatic.com/s/robotocondensed/v13/BP5K8ZAJv9qEbmuFp8RpJdbvlX87CS9_IgWvysdluIM.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/**************
+ *** Layout ***
+ **************/
 body {
 	font: 16px/1.9em @font;
 	margin: 0;
@@ -9,64 +82,53 @@ body {
 	tab-size: 4;
 	-moz-tab-size: 4;
 }
-#content {
+#home, #page {
 	position: relative;
 	top: 8px;
-	max-width: 49em;
+	padding: 0 @content-padding;
 	margin: 0 auto;
 	overflow: hidden;
 	background-color: #fff;
 	color: #252525;
+	max-width: @content-width;
 	box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+
+	@media (max-width: @narrow-width) {
+		padding: 0 1rem;
+	}
 }
-.intro,
-.disclaimer {
-	padding: 1em;
-	overflow: hidden;
-	text-align: justify;
-	line-height: 1.5em;
-}
-.disclaimer {
-	margin-top: 1.5em;
+
+#disclaimer {
 	clear: both;
+	margin: 1rem auto;
+	max-width: @content-width;
+	text-align: right;
+	font-size: 14px;
+	color: #666;
+	position: relative;
+	left: @content-padding - .4rem;
+
+	@media (max-width: @narrow-width) {
+		left: -1rem;
+	}
 }
-.intro,
-.disclaimer,
-.code-links,
-.weblog-header {
-	background-color: @menu_bg;
-	color: @menu_fg;
-	text-shadow: 1px 1px 2px #333;
 
-	a {
-		color: #fff;
-		text-decoration: underline;
+#home {
+	ul {
+		list-style: none;
+		padding-left: 1rem;
 
-		&:hover {
-			color: #ddd;
-			text-decoration: none;
+		li a {
+			display: inline-block;
+			min-width: 11em;
 		}
 	}
 }
 
-.label {
-	background-color: @menu_bg;
-	color: @menu_fg;
-	text-shadow: 1px 1px 2px #333;
 
-	background-color: #626262;
-	border-radius: 3px;
-	padding: .1em .3em;
-	font-size: .8em;
-	color: #fff;
-
-	&:hover {
-		color: #aaa;
-		text-decoration: none;
-	}
-}
-
-/*** Default style tags, used on many pages  ***/
+/****************
+ *** Defaults ***
+ ***************/
 a {
 	color: #00f;
 	text-decoration: none;
@@ -85,6 +147,10 @@ a {
 	}
 }
 
+img {
+	max-width: 100%;
+}
+
 code, pre {
 	font-family: @font-mono;
 	background-color: #eee;
@@ -95,8 +161,27 @@ p, pre {
 	margin-right: .5em;
 }
 
+pre {
+	line-height: 1.3em;
+	width: auto;
+	max-height: 500px;
+	padding: 1em;
+	overflow: auto;
+	clear: right;
+	border-radius: 1px;
+	border: 1px solid #dadada;
+}
+
 p code {
 	padding: 1px 5px;
+}
+
+blockquote {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 3px solid #0027ff;
+	background-color: #f4f3ff;
+	border-radius: 2px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -108,96 +193,115 @@ h1 { font-size: 1.6em; }
 h2 { font-size: 1.4em; }
 h3 { font-size: 1.2em; padding: 0; margin-bottom: 0; }
 
+hr {
+	margin: 0;
+	font-size: 60px;
+	border: none;
+	text-align: center;
+	vertical-align: middle;
 
-// Index of all posts
-.weblog-overview {
-	padding: .5em;
-	padding-left: 1em;
-	position: relative;
-}
+	clear: both;
 
-// Brief summary of post
-.weblog-brief {
-	line-height: 1.5em;
-	margin-bottom: .6em;
-	padding-bottom: .5em;
-	border-bottom: 1px solid #b7b7b7;
-	
-	h2 {
-		font-family: @font;
-		font-size: 1em;
-		// Never push the date down
-		max-width: calc(~"100% - 100px");
-		margin: 0;
-		float: left;
+	color: @highlight-fg;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, .1);
+
+	&:before, &:after {
+		display: inline-block;
+		line-height: 40px;
+		height: 40px;
 	}
 
-	> em {
-		float: right;
-		margin-right: 7px;
-		font-size: 14px;
+	&:before {
+		margin-right: .6em;
+		content: "☙";
 	}
 
-	> p {
-		margin: 0;
-		clear: both;
-		margin-left: 1em;
-
-		@media screen and (max-width: 768px) {
-			margin-left: 0;
-		}
+	&:after {
+		margin-left: .6em;
+		content: "❧";
 	}
 }
 
-/*** code stuff ***/
-.code-projects .weblog-brief {
-	background-position: 0 0;
-	background-size: 22px;
-	background-repeat: no-repeat;
-
-	h2 {
-		margin-left: 28px;
-	}
-
-	p {
-		margin-left: 0;
-	}
+label {
+	display: inline-block;
+	width: 200px;
+	vertical-align: top;
 }
-
-.lang-python {
-	background-image: url("../images/lang-python.svg");
+input, textarea {
+	min-width: 400px;
+	padding: .4em;
+	margin-bottom: .5em;
+	border: 1px solid #ccc;
 }
-
-.lang-ruby {
-	background-image: url("../images/lang-ruby.svg");
+textarea {
+	min-height: 7em;
 }
-
-// PHP ... always "specially abled"
-.code-projects .weblog-brief.lang-php {
-	background-image: url("../images/lang-php.png");
-	background-position: 0 3px;
-}
-
-.lang-viml {
-	background-image: url("../images/lang-viml.svg");
-}
-
-.lang-coffeescript {
-	background-image: url("../images/lang-coffeescript.svg");
-}
-
-.lang-shell {
-	background-image: url("../images/lang-shell.svg");
-}
-
-.lang-c {
-	background-image: url("../images/lang-c.svg");
-}
-
-.lang-go {
-	background-image: url("../images/lang-go.png");
+button {
+	margin-left: 210px;
 }
 
 .hatnote {
 	font-size: .8em;
+}
+
+
+/****************
+ *** Any page ***
+ ***************/
+#to-home {
+	max-width: @content-width + @content-padding + 3.5rem;
+	margin: 0 auto;
+	margin-top: .3em;
+	font-weight: bold;
+
+	@media (max-width: @narrow-width) {
+		margin-left: .5rem;
+	}
+}
+
+#page {
+	h1, h2, h3, h4, h5, h6 {
+		border-bottom: 1px solid @highlight-fg;;
+		color: @highlight-fg;
+	}
+
+	#header {
+		text-align: center;
+		margin-bottom: 2em;
+
+		h1 {
+			border-bottom: none;
+			color: inherit;
+			padding: .5em 0;
+			margin-bottom: 0;
+		}
+
+		p {
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			margin: 0 .5em;
+		}
+	}
+}
+
+.footnotes {
+	margin-left: -1em;
+	margin-right: -0.5em;
+	padding-left: 1em;
+	padding-right: 0.5em;
+	padding-top: 1em;
+	border-top: 1px solid #b7b7b7;
+
+	&:before {
+		display: block;
+		content: "Footnotes";
+		font-weight: bold;
+	}
+
+	li:target {
+		background-color: #ff0;
+	}
 }

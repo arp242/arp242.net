@@ -5,87 +5,18 @@
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<title>{{ page.title }}</title>
 	<link rel="shortcut icon" href="/favicon.ico">
-
-	<style>
-		{% if page.url == '/' %}
-			/* home.css */
-			{% include /css/home.css %}
-		{% elsif page.url == '/weblog/' %}
-			/* weblog-index.css */
-			{% include /css/weblog-index.css %}
-		{% elsif page.url == '/code/' %}
-			/* weblog-index.css (code) */
-			{% include /css/weblog-index.css %}
-		{% elsif page.url contains '/weblog/' %}
-			/* weblog-post.css */
-			{% include /css/weblog-post.css %}
-		{% elsif page.url contains '/code/' %}
-			/* code-post.css */
-			{% include /css/code-post.css %}
-		{% else %}
-			/* base.css */
-			{% include /css/base.css %}
-		{% endif %}
-	</style>
 	<link rel="alternate" type="application/rss+xml" title="arp242.net" href="/feed.xml">
 	<link rel="canonical" href="https://arp242.net{{ page.url }}">
+
+	<style>{% include /css/base.css %}</style>
 </head>
 
 <body>
-	<div id="content">
-		{{ content }}
-		<div class="disclaimer">
-			Copyright © 2010-2017 Martin Tournoij &lt;martin@arp242.net&gt;<br>
-			This document is licensed under a
-			<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">cc-by 4.0 license</a>.
-		</div>
+	{{ content }}
+	<div id="disclaimer">
+		Copyright © 2010-2017 Martin Tournoij &lt;martin@arp242.net&gt;<br>
+		This document is licensed under a
+		<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">cc-by 4.0 license</a>.
 	</div>
-
-	<style>
-	/*
-	Avoid using the JS stuff. This means it won't work in some older browsers but who cares – it's not like the font is
-	that important.
-
-		curl -s -A 'Mozilla/5.0 (X11; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0' \
-			'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700%7cRoboto+Condensed:400,400italic' |
-			grep -A7 '\/\* latin \*\/' |
-			sed '/^--/d; /^\//d'
-	*/
-	@font-face {
-	font-family: 'Libre Baskerville';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Libre Baskerville'), local('LibreBaskerville-Regular'), url(https://fonts.gstatic.com/s/librebaskerville/v4/pR0sBQVcY0JZc_ciXjFsK6Ucnt8gjcHpqyffjHeZWDA.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-	}
-	@font-face {
-	font-family: 'Libre Baskerville';
-	font-style: normal;
-	font-weight: 700;
-	src: local('Libre Baskerville Bold'), local('LibreBaskerville-Bold'), url(https://fonts.gstatic.com/s/librebaskerville/v4/kH7K4InNTm7mmOXXjrA5v6y7YSlLHrWsjpD3RcrnyFM.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-	}
-	@font-face {
-	font-family: 'Libre Baskerville';
-	font-style: italic;
-	font-weight: 400;
-	src: local('Libre Baskerville Italic'), local('LibreBaskerville-Italic'), url(https://fonts.gstatic.com/s/librebaskerville/v4/QHIOz1iKF3bIEzRdDFaf5eUHi-3yDrzgLLsrfaKVF9k.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-	}
-	@font-face {
-	font-family: 'Roboto Condensed';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Roboto Condensed'), local('RobotoCondensed-Regular'), url(https://fonts.gstatic.com/s/robotocondensed/v13/Zd2E9abXLFGSr9G3YK2MsDAdhzWOYhqHvOZMRGaEyPo.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-	}
-	@font-face {
-	font-family: 'Roboto Condensed';
-	font-style: italic;
-	font-weight: 400;
-	src: local('Roboto Condensed Italic'), local('RobotoCondensed-Italic'), url(https://fonts.gstatic.com/s/robotocondensed/v13/BP5K8ZAJv9qEbmuFp8RpJdbvlX87CS9_IgWvysdluIM.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-	}
-	</style>
 </body>
 </html>

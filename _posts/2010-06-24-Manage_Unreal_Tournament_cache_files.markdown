@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Manage Unreal Tournament cache files
-excerpt: Manage Unreal Tournament 99 cache files with a Python script.
 categories: programming-and-such
 ---
 

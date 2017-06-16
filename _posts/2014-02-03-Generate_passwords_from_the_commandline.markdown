@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Generate passwords from the commandline
-excerpt: Many websites offer a solution for this, but many proposed solutions are dubious at best.
 categories: programming-and-such
 ---
 

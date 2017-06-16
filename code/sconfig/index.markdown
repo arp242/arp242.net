@@ -6,6 +6,7 @@ last_version: "master"
 
 ---
 
+[![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
 [![GoDoc](https://godoc.org/arp242.net/sconfig?status.svg)](https://godoc.org/arp242.net/sconfig)
 [![Go Report Card](https://goreportcard.com/badge/github.com/Carpetsmoker/sconfig)](https://goreportcard.com/report/github.com/Carpetsmoker/sconfig)
 [![Build Status](https://travis-ci.org/Carpetsmoker/sconfig.svg?branch=master)](https://travis-ci.org/Carpetsmoker/sconfig)
@@ -133,6 +134,7 @@ Besides, there are are several libraries that already do a good job at that such
 as
 [validator](https://github.com/go-playground/validator),
 [go-validation](https://github.com/BakedSoftware/go-validation),
+[govalidator](https://github.com/asaskevich/govalidator),
 and others.
 
 Set default values?

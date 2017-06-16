@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "A primer on the `str` and `bytes` types in Python 3"
-excerpt: Python 3 handles strings a bit different.
 so: ["Python 3 TypeError: must be str, not bytes with sys.stdout.write()", "http://stackoverflow.com/a/21689447/660921"]
 categories: programming-and-such
 ---

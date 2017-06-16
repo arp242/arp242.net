@@ -1,0 +1,23 @@
+---
+layout: bare
+title: Readable text!
+---
+
+<p>
+I don't know what's up with people. <a
+	href="ttps://umbrella.cisco.com/blog/blog/2013/03/06/announcing-sodium-a-new-cryptographic-library/">Look at
+	this</a>. Thin light-grey text on a white background. Completely unreadable.</p>
+
+<p>This little bookmarklet should reset it for most websites. Hopefully.</p>
+
+<p>Drag the below link to the bookmarks bar. If you don't have one add the contents of it to your bookmarks
+some other way (I'm sure you're smart enough to figure out how).</p>
+
+<p>
+	<a href="javascript:(function() {
+		document.querySelectorAll('p, li, div').forEach(function(n) {
+			n.style.color = '#000'
+			n.style.font = '500 16px/1.7em sans-serif'
+		})
+	})();">Readable!</a>
+</p>

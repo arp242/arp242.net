@@ -1,7 +1,6 @@
 #!/bin/sh
 
 set -eC
-set -x
 
 if [ "$1" = "code" ] || [ "$2" = "code" ]; then
 	./_mkcode.sh
@@ -12,7 +11,6 @@ if [ "$1" != "quick" ] || [ "$2" = "quick" ]; then
 		lessc -clean-css="--s1 --advanced" "$f" "${f%.less}.css"
 		#sed -E 's/^ *//; /^\/\*.*\*\/$/d' base.css | tr -d '\n' | sed -E 's/;}/;}\n/g'
 	done
-	coffee -c script/main.coffee
 fi
 
 JEKYLL_NO_BUNDLER_REQUIRE=1 jekyll build --incremental

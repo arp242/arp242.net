@@ -2,22 +2,15 @@
 layout: default
 ---
 
-<div class="weblog-article">
-	<span class="weblog-back">
-		<a href="/">Home</a>
-		<a href="/weblog/">Weblog index</a>
-	</span>
-
-	<div class="weblog-header">
+<div id="to-home"><a href="/">Home</a></div>
+<div id="page">
+	<div id="header">
 		<h1>{{ page.title }}</h1>
 		<p>
 			Written on {{ page.date | date_to_string }}
-			{% if page.updated %}
-				− last updated on {{ page.updated }}
-			{% endif %}
+			{% if page.updated %}− last updated on {{ page.updated }}{% endif %}
 		</p>
 	</div>
-
 	{% if page.so %}
 		<em class="hatnote">This is modified from my answer at Stack Overflow: <a href="{{ page.so[1] }}">{{ page.so[0] }}</a>.</em>
 	{% elsif page.vi %}
@@ -26,40 +19,6 @@ layout: default
 
 	{{ content }}
 
-	<div class="weblog-comments">
-		<h2>Feedback</h2>
-		You can mail me at <a href="mailto:martin@arp242.net">martin@arp242.net</a> for feedback etc. No, I don’t have
-		Twitter.
-		
-		<!-- 
-		but you can use this form to send me an email if you want.
-
-		<form name="weblog-{{ page.id }}" netlify netlify-honeypot="turing-test">
-			<label for="contact-name">Name</label>
-			<input type="text" name="contact-name" id="contact-name"><br>
-
-			<label for="contact-email">Email (optional)</label>
-			<input type="email" name="contact-email" id="contact-email"><br>
-
-			<label for="contact-message">Message</label>
-			<textarea name="contact-message" id="contact-message"></textarea><br>
-
-			<div style="display: none; visibility: hidden;"><input name="turing-test"></div>
-			<button>Send</button>
-		</form>
-		-->
-	</div>
-
-	<script>
-		document.getElementsByTagName('form')[0].addEventListener('submit', function(e) {
-			if (document.getElementById('contact-name').value.trim() === '') {
-				alert('Must fill in a name')
-				e.preventDefault()
-			}
-			else if (document.getElementById('contact-message').value.trim() === '') {
-				alert('Must full in a message')
-				e.preventDefault()
-			}
-		})
-	</script>
+	<h2>Feedback</h2>
+	<p>You can mail me at <a href="mailto:martin@arp242.net">martin@arp242.net</a> for feedback, questions, etc.</p>
 </div>

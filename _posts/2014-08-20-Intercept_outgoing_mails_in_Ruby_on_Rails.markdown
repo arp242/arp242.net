@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Intercept outgoing mails in Ruby on Rails
-excerpt: A simple way to do this, which just works™.
 categories: programming-and-such
 ---
 

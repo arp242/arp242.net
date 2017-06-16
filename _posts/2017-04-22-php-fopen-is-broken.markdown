@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "PHP’s fopen() is broken"
-excerpt: Basic functions such as `fopen()` are horribly broken in PHP.
 categories: programming-and-such
 ---
 

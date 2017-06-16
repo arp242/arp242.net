@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Security of Python's pickle and marshal modules"
-excerpt: Both of these modules come with a big warning in the documentation. Why?
 so: ["Marshal unserialization - not secure", "http://stackoverflow.com/q/26931919/660921"]
 categories: programming-and-such
 ---

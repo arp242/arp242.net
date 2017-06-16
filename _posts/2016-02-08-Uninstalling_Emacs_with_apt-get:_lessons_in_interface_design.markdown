@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Uninstalling Emacs with apt-get: lessons in interface design"
-excerpt: Lessons we can learn from `apt-get`’s spectacuarly surprising behaviour.
 categories: programming-and-such
 ---
 
