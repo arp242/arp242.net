@@ -18,7 +18,7 @@
  ***********/
 /*
  * Avoid using the JS stuff. This means it won't work in some older browsers but
- * who cares – it's not like the font is * that important.
+ * who cares – it's not like the font is that important.
  *
  * curl -s -A 'Mozilla/5.0 (X11; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0' \
  *     'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700%7cRoboto+Condensed:400,400italic' |
@@ -254,6 +254,10 @@ button {
 	margin-top: .3em;
 	font-weight: bold;
 
+	a {
+		margin-right: 2em;
+	}
+
 	@media (max-width: @narrow-width) {
 		margin-left: .5rem;
 	}
@@ -303,5 +307,20 @@ button {
 
 	li:target {
 		background-color: #ff0;
+	}
+}
+
+/*********************
+ *** se/index.html ***
+ *********************/
+.bordered-images {
+	img {
+		padding: .5em;
+		border: 1px solid #d6d6d6;
+		border-radius: 2px;
+	}
+
+	p {
+		margin-bottom: 2em;
 	}
 }
