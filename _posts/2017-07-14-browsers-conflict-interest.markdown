@@ -7,7 +7,7 @@ What do you get when you search for ‘Firefox’ in a new Windows 10 installati
 
 A big fat ad for Microsoft Edge:
 
-<div class="center-img"><img alt="Firefox in Bing" src="{% base64 ./images/browser/ms-edge1.png %}"></div>
+<div class="center-img"><img alt="Firefox in Bing" src="{% base64 ./_images/browser/ms-edge1.png %}"></div>
 
 Note that this is a *full-screen* screenshot on a 1920x1080 screen (right-click
 and select ‘view image’ for the full size). Firefox is juts *barely* visible at
@@ -16,7 +16,7 @@ the bottom.
 But it doesn’t end there, Microsoft also “helpfully” displays a warning that
 this file “could harm your computer”:
 
-<div class="center-img"><img alt="Downloading Firefox" src="{% base64 ./images/browser/ms-edge2.png %}"></div>
+<div class="center-img"><img alt="Downloading Firefox" src="{% base64 ./_images/browser/ms-edge2.png %}"></div>
 
 [According to
 Microsoft](https://support.microsoft.com/en-gb/help/2566263/a-warning-message-unexpectedly-appears-when-you-try-to-download-a-file),
@@ -27,7 +27,7 @@ Somehow I find it hard to believe that the Firefox installer fits this bill…
 But wait, there’s more! When changing the default browser from Edge to Firefox
 we get yet another ad, baked right in to the settings screen:
 
-<div class="center-img"><img alt="Changing default browser" src="{% base64 ./images/browser/ms-edge3.png %}"></div>
+<div class="center-img"><img alt="Changing default browser" src="{% base64 ./_images/browser/ms-edge3.png %}"></div>
 
 -------
 
@@ -35,7 +35,7 @@ It doesn’t end with Microsoft. For years Google displayed a Chrome
 advertisements on Google search (although it seems they have stopped doing it
 now). And what about enabling the ‘Do Not Track’ header in Chrome?
 
-<div class="center-img"><img alt="Enabling Do Not Track" src="{% base64 ./images/browser/chrome1.png %}"></div>
+<div class="center-img"><img alt="Enabling Do Not Track" src="{% base64 ./_images/browser/chrome1.png %}"></div>
 
 I’m sure that the fact that Google has a significant vested interest in tracking
 the hell out of everyone on the internet is purely coincidental.

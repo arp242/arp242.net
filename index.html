@@ -17,7 +17,7 @@ title: arp242.net
 	<h1 id="writings">Writings</h1>
 	<p>I write about <em>stuff</em> on this page, occasionally.</p>
 	<ul>{% for p in site.posts %}
-		<li><a href="{{ p.url }}">{{ p.title }}</a></li>{% endfor %}
+		<li{% if p.standout %} class="standout"{% endif %}><a href="{{ p.url }}">{{ p.title }}</a></li>{% endfor %}
 	</ul>
 
 	<h1 id="code">Code projects</h1>

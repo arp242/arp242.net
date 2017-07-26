@@ -10,9 +10,10 @@ if [ "$1" != "quick" ] || [ "$2" = "quick" ]; then
 	for f in css/*.less; do
 		if [  "$f" -nt "${f%.less}.css" ]; then
 			echo "lessc $f"
-			lessc -clean-css="--s1 --advanced" "$f" "${f%.less}.css"
+			lessc "$f" |
+				sed -E '/^ \*/d; /^\/\*/d; /\*\/$/d; s/^ *//; s/;/; /g' | tr -d '\n' | sed -E 's/; }/;}\n/g' \
+				>| "${f%.less}.css"
 		fi
-		#sed -E 's/^ *//; /^\/\*.*\*\/$/d' base.css | tr -d '\n' | sed -E 's/;}/;}\n/g'
 	done
 fi
 
