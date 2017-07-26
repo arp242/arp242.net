@@ -3,12 +3,15 @@
 set -eC
 
 if [ "$1" = "code" ] || [ "$2" = "code" ]; then
-	( cd _mkcode && ./_mkcode )
+	( cd _mkcode && go build && ./mkcode )
 fi
 
 if [ "$1" != "quick" ] || [ "$2" = "quick" ]; then
 	for f in css/*.less; do
-		lessc -clean-css="--s1 --advanced" "$f" "${f%.less}.css"
+		if [  "$f" -nt "${f%.less}.css" ]; then
+			echo "lessc $f"
+			lessc -clean-css="--s1 --advanced" "$f" "${f%.less}.css"
+		fi
 		#sed -E 's/^ *//; /^\/\*.*\*\/$/d' base.css | tr -d '\n' | sed -E 's/;}/;}\n/g'
 	done
 fi

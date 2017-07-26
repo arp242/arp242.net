@@ -3,7 +3,6 @@ layout: code
 title: "dotfiles"
 link: "dotfiles"
 last_version: "master"
-
 ---
 
 My dotfiles.

@@ -3,7 +3,6 @@ layout: code
 title: "sanitize_files"
 link: "sanitize_files"
 last_version: "master"
-
 ---
 
 Project status: stable

@@ -3,7 +3,6 @@ layout: code
 title: "operapass"
 link: "operapass"
 last_version: "version_1.3"
-
 ---
 
 Project status: finished (it does what it needs to do and there are no known bugs).

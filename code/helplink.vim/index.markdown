@@ -3,7 +3,6 @@ layout: code
 title: "helplink.vim"
 link: "helplink.vim"
 last_version: "version-1.0"
-
 ---
 
 [![This project is considered finished](https://img.shields.io/badge/Status-finished-green.svg)](https://arp242.net/status/finished) 

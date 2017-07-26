@@ -3,7 +3,6 @@ layout: code
 title: "MediaWiki-Typography"
 link: "MediaWiki-Typography"
 last_version: "master"
-
 ---
 
 Project status: archived (I no longer work on this, as I don't have a MediaWiki

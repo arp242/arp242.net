@@ -3,7 +3,6 @@ layout: code
 title: "nordavind"
 link: "nordavind"
 last_version: "master"
-
 ---
 
 Nordavind is a web based audio player.

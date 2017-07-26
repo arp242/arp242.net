@@ -3,7 +3,6 @@ layout: code
 title: "battray"
 link: "battray"
 last_version: "version-2.2"
-
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)

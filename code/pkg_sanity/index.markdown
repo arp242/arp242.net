@@ -3,7 +3,6 @@ layout: code
 title: "pkg_sanity"
 link: "pkg_sanity"
 last_version: "master"
-
 ---
 
 [![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://arp242.net/status/archived)

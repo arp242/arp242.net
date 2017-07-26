@@ -3,7 +3,6 @@ layout: code
 title: "packman.vim"
 link: "packman.vim"
 last_version: "master"
-
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)

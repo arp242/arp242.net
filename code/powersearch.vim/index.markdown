@@ -3,7 +3,6 @@ layout: code
 title: "powersearch.vim"
 link: "powersearch.vim"
 last_version: "master"
-
 ---
 
 powersearch.vim adds several search-related enhancements, each of which can be

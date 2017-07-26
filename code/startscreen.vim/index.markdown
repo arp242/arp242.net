@@ -3,7 +3,6 @@ layout: code
 title: "startscreen.vim"
 link: "startscreen.vim"
 last_version: "version-1.0"
-
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)

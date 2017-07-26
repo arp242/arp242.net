@@ -3,7 +3,6 @@ layout: code
 title: "spamdb-curses"
 link: "spamdb-curses"
 last_version: "version_1.2"
-
 ---
 
 Project status: finished (it does what it needs to do and there are no known bugs).

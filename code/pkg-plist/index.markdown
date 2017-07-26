@@ -3,7 +3,6 @@ layout: code
 title: "pkg-plist"
 link: "pkg-plist"
 last_version: "version_1.4"
-
 ---
 
 [![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://arp242.net/status/archived)

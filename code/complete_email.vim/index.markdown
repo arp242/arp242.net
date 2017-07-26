@@ -3,7 +3,6 @@ layout: code
 title: "complete_email.vim"
 link: "complete_email.vim"
 last_version: "version-1.1"
-
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)

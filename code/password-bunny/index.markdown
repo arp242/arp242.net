@@ -3,7 +3,6 @@ layout: code
 title: "password-bunny"
 link: "password-bunny"
 last_version: "version-1.3"
-
 ---
 
 Project status: stable

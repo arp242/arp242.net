@@ -3,7 +3,6 @@ layout: code
 title: "pkg_clearleaves"
 link: "pkg_clearleaves"
 last_version: "version-1.2"
-
 ---
 
 For FreeBSD there's a tool called [`pkg_cutleaves`][cl], which is a *very* handy

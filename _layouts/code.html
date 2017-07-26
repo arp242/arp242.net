@@ -19,13 +19,6 @@ layout: default
 		<a href="https://github.com/Carpetsmoker/{{ page.link }}/issues">Issue tracker</a>
 		/
 		<a href="https://github.com/Carpetsmoker/{{ page.link }}">Source code</a>
-
-		{% if page.post1 %}
-			{{ page.post1 | markdownify | remove:'<p>' | remove:'</p>'  }}
-		{% endif %}
-		{% if page.post2 %}
-			{{ page.post2 | markdownify | remove:'<p>' | remove:'</p>'  }}
-		{% endif %}
 	</div>
 	{{ content }}
 </div>
