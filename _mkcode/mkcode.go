@@ -244,7 +244,7 @@ func readURL(url string) []byte {
 	}
 
 	if pw != "" {
-		req.SetBasicAuth("arpetsmoker", pw)
+		req.SetBasicAuth("Carpetsmoker", pw)
 	}
 	resp, err := client.Do(req)
 	if err != nil {

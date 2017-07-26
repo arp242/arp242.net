@@ -4,8 +4,7 @@ title: "Make <code>docker ps</code> work on normal sized terminals"
 categories: programming-and-such politics
 ---
 
-I’m sorry folks, but I cannot call this anything other than brain-damaged levels
-of bad interface design:
+I’m sorry folks, but I cannot call this anything other than silly interface design:
 
 	[~]% docker ps
 	CONTAINER ID        IMAGE                                 COMMAND                  CREATED             STATUS                            PORTS                                                                                                NAMES

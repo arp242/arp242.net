@@ -24,7 +24,7 @@ Compare this to the default behaviour of `:edit *.vim`, which will either:
 - error out with `E77: Too many file names` if there are more than one matches.
 
 [Based on my answer here](http://vi.stackexchange.com/q/2108/51), which also
-lists some other solutions:
+lists some other solutions.
 
 By default it'll map `:Edit`, `:Tabedit`, `:Split`, and `:Vsplit`. You can use
 `:cabbr tabe Tabe` etc. to use it automatically.

@@ -2,7 +2,7 @@
 layout: code
 title: "download-npo"
 link: "download-npo"
-last_version: "version-2.7.2"
+last_version: "version-2.8"
 
 ---
 

@@ -16,8 +16,7 @@ often quite useful to link to this when explaining something.
 With this plugin you can make a link to the help section you're viewing. Just
 use `:Helplink`.
 
-I originally wrote this here:
-http://meta.vi.stackexchange.com/a/1250/51
+[I originally wrote this here](http://meta.vi.stackexchange.com/a/1250/51).
 
 There is just one command: `:Helplink`, which will attempt to find the tags for
 the current section and copies that to the clipboard as Markdown.

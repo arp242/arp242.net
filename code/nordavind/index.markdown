@@ -30,7 +30,7 @@ Audio codecs
 Nordavind will transparently convert FLAC, MP3, and OGG files for you so that
 your browser can play them, but you should be aware that converting from MP3 to
 Ogg Vorbis (or vice versa) *will* reduce audio quality even at fairly high
-bitrates because you’re converting from one lossless format to another. So you
+bitrates because you’re converting from one lossy format to another. So you
 may want to choose your browser depending on the format of you music collection.
 
 Note that converting FLAC to either format is fine.

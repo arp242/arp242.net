@@ -45,7 +45,7 @@ Can I disable netrw completely?
 
   This has the advantage of not cluttering `:helpgrep` or tab completion.
 
-  You will need write permissions here (e.g. run it as root). Unfortunately
-  you will nee to re-run this after every upgrade.
+  You will need write permissions here (e.g. run it as root). Unfortunately you
+  will need to re-run this after every upgrade.
 
 See `:help xdg_open` for the full documentation.

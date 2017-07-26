@@ -36,11 +36,13 @@ The list is in no particular order. Items with a <sup>▸</sup> are a video.
 - [Why elections are bad for
   democracy](https://www.theguardian.com/politics/2016/jun/29/why-elections-are-bad-for-democracy) – lots of people seem
   to equate ‘elections’ with ‘democracy’, but they’re not the same things!
+- [Before you can be with others, first learn to be alone](https://aeon.co/ideas/before-you-can-be-with-others-first-learn-to-be-alone)
 
 Programming
 ===========
 - [The Mess We're In](https://www.youtube.com/watch?v=lKXe3HUG2l4) <sup>▸</sup> – Erlang creator Joe Armstrong about the
   state of software today.
+- [Simplicity is Complicated](https://www.youtube.com/watch?v=rFejpH_tAHM) <sup>▸</sup> 
 - [Why Should I Care What Color the Bikeshed Is?](http://bikeshed.com/) – applies to all of life, really.
 - [The Art of Unix Programming](http://catb.org/~esr/writings/taoup/html/) (book) – this should have been named ‘The Art
   of Programming’, full stop. Useful for any programmer.
@@ -51,6 +53,11 @@ Programming
 - [Knightmare: A DevOps Cautionary Tale](https://dougseven.com/2014/04/17/knightmare-a-devops-cautionary-tale/)
 - [How the Web Became Unreadable](https://www.wired.com/2016/10/how-the-web-became-unreadable/) – the amount of time I
   spend frobbing in my browser’s inspector to make shit readable is getting ridiculous.
+
+
+Dutch
+=====
+- [Hoe één verroest draadje de halve Randstad platlegt](https://www.nrc.nl/nieuws/2017/07/07/kortsluiting-hoe-een-verroest-draadje-de-halve-randstad-plat-legt-11727393-a1565893)
 
 </div>
 

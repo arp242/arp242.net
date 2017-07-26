@@ -10,11 +10,11 @@ last_version: "version-1.0"
 
 Ask for confirmation before quitting Vim.
 
-I originally wrote this as an answer on vi Stack Exchange:
-http://vi.stackexchange.com/a/3712/51
+I originally wrote this as [an answer on vi Stack
+Exchange](http://vi.stackexchange.com/a/3712/51).
 
-The idea is based on the "ConfirmQuit" script:
-http://www.vim.org/scripts/script.php?script_id=1072
+The idea is based on the ["ConfirmQuit"
+script](http://www.vim.org/scripts/script.php?script_id=1072).
 
 To use it you'll need to remap keys that "quit" Vim as there's no other way to
 prevent Vim from quitting. This plugin comes with the following mappings by
