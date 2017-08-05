@@ -91,9 +91,9 @@ memcpy buffer overflows][git-memcpy]. It’s also not even faster, since Python
 Why is everyone using git then?
 ===============================
 
-1. Linus Torvaldus wrote it.
+1. Linus Torvalds wrote it.
 2. GitHub
-3. Linus Torvaldus wrote it.
+3. Linus Torvalds wrote it.
 
 GitHub had to compete against SourceForge. The challenge was pretty low;
 SourceForge *always* sucked, was *always* slow, and the only thing *anyone*
