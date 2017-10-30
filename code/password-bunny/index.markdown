@@ -5,10 +5,13 @@ link: "password-bunny"
 last_version: "version-1.3"
 ---
 
-Project status: stable
+[![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://arp242.net/status/archived)
 
------------------------------------------
+Note that this project is **archived**. I added a `convert-to-pass` script to
+convert the contents of a password database to
+[`pass`](https://www.passwordstore.org/).
 
+---
 
 Manage passwords with Vim.
 

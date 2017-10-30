@@ -8,10 +8,10 @@ categories: programming-and-such
 I previously wrote [why using JSON for human-editable configuration files is a
 bad idea][json-no]. Today we’re going to look at some of the problems with YAML.
 
-
 Insecure by default
 -------------------
-YAML is insecure by default.  Loading a user-provided (untrusted) YAML string
+
+YAML is insecure by default. Loading a user-provided (untrusted) YAML string
 needs careful consideration.
 
 	!!python/object/apply:os.system
@@ -50,8 +50,9 @@ bad API design.
 
 Can be hard to edit, especially for large files
 -----------------------------------------------
-YAML files can be hard to edit, and this difficulty grows quite fast as the file
-gets larger.
+
+YAML files can be hard to edit, and this difficulty grows fast as the file gets
+larger.
 
 A good example of this are Ruby on Rails’ translation files; for example:
 
@@ -69,28 +70,28 @@ A good example of this are Ruby on Rails’ translation files; for example:
 			   title: "Edit title"
 			   body: "Edit body"
 
-
 This still looks okay, right? But what if this file has 100 lines? Or 1,000
-lines? It is very difficult to see "where" in the file you are because it may be
-off the screen. You’ll need to scroll up, but then you need to keep track of the
-indentation, which can actually be pretty hard even with indentation guides,
-especially since 2-space indentation is the norm and [tab indentation is simply
+lines? It is difficult to see "where" in the file you are because it may be off
+the screen. You’ll need to scroll up, but then you need to keep track of the
+indentation, which can be pretty hard even with indentation guides, especially
+since 2-space indentation is the norm and [tab indentation is
 forbidden][faq][^2].
 
-I’ve been programming Python for over a decade, so it’s not like I’m not used to
-significant whitespace, but sometimes I’m still struggling with YAML. In Python,
-the drawbacks and loss of clarity are usually contained by not having functions
-that are several pages long, but data or configuration files have no such
-natural limits to their length.
+I’ve been programming Python for over a decade, so I’m used to significant
+whitespace, but sometimes I’m still struggling with YAML. In Python the
+drawbacks and loss of clarity are contained by not having functions that are
+several pages long, but data or configuration files have no such natural limits
+to their length.
 
-For small files this is not a problem; but it really doesn’t scale well to larger files.
+For small files this is not a problem; but it really doesn’t scale well to
+larger files.
 
 It’s pretty complex
 -------------------
-YAML may seem ‘simple’ and ‘obvious’ at a glance, but it’s actually not. The
-[YAML spec][yaml-spec] is 23,449 words; for comparison, [TOML][toml-spec] is
-838 words, [JSON][json-spec] is 1,969 words, and [XML][xml-spec] is 20,603
-words.
+
+YAML may seem ‘simple’ and ‘obvious’ at a glance, but turns out it’s not. The
+[YAML spec][yaml-spec] is 23,449 words; for comparison, [TOML][toml-spec] is 838
+words, [JSON][json-spec] is 1,969 words, and [XML][xml-spec] is 20,603 words.
 
 Who among us have read all that? Who among us have read and *understood* all of
 that? Who among of have read, *understood*, and **remembered** all of that?
@@ -100,7 +101,7 @@ YAML](http://stackoverflow.com/a/21699210/660921) with subtly different behaviou
 
 Yeah :-/
 
-That post actually gets even more interesting if you look at [its revision
+That post gets even more interesting if you look at [its revision
 history](http://stackoverflow.com/posts/21699210/revisions), as the author of
 the post discovers more and more ways to do this and more of the subtleties
 involved.
@@ -113,6 +114,7 @@ mine):
 > selections are used as motivation for the remainder of the specification.
 
 ### It’s not portable
+
 Because it’s so complex, its claims of portability have been greatly
 exaggerated. For example consider this example taken from the YAML spec:
 
@@ -126,15 +128,15 @@ exaggerated. For example consider this example taken from the YAML spec:
 	: [ 2001-07-02, 2001-08-12,
 		2001-08-14 ]
 
-So aside from the fact that most readers of this probably won’t even know what
-this does, try parsing it in Python with PyYAML:
+Aside from the fact that most readers of this probably won’t even know what this
+does, try parsing it in Python with PyYAML:
 
 	yaml.constructor.ConstructorError: while constructing a mapping
 	  in "a.yaml", line 1, column 1
 	found unhashable key
 	  in "a.yaml", line 1, column 3
 
-But in Ruby it works:
+In Ruby it works:
 
 	{
 		["Detroit Tigers", "Chicago cubs"] => [
@@ -154,7 +156,7 @@ The reason for this is because you can’t use a list as a dict key in Python:
 	  File "<stdin>", line 1, in <module>
 	  TypeError: unhashable type: 'list'
 
-And this restriction is hardly unique to Python; common languages such as PHP,
+And this restriction is not unique to Python; common languages such as PHP,
 JavaScript, and Go all share this restriction.
 
 So use this in a YAML file, and you won’t be able to read it in most languages.
@@ -172,7 +174,7 @@ Here’s another example again taken from the examples section of the YAML spec:
 	- Chicago Cubs
 	- St Louis Cardinals
 
-But Python says:
+Python says:
 
 	yaml.composer.ComposerError: expected a single document in the stream
 	  in "a.yaml", line 3, column 1
@@ -184,9 +186,9 @@ While Ruby outputs:
 	["Mark McGwire", "Sammy Sosa", "Ken Griffey"]
 
 The reason for this is that there are multiple YAML documents in a single file
-(`---` start the document). In Python I could use the `load_all()` to parse all
-documents. Ruby’s `load()` just loads the first document, and as near as I can
-tell, doesn’t even have a way to load multiple documents.
+(`---` start the document). In Python there is the `load_all()` function to
+parse all documents. Ruby’s `load()` just loads the first document, and as near
+as I can tell, doesn’t have a way to load multiple documents.
 
 ------------
 
@@ -194,9 +196,9 @@ One of the results of this is that some people [are implementing subsets of
 YAML](https://docs.saltstack.com/en/latest/topics/yaml/) without all the obscure
 stuff almost no one uses anyway.
 
-
 Goals achieved?
 ---------------
+
 The spec states:
 
 > The design goals for YAML are, in decreasing priority:
@@ -213,8 +215,8 @@ So how well does it do?
 
 > YAML is easily readable by humans.
 
-True only if you stick to a small subset. The full set is quite complex – much
-*more* so than XML or JSON.
+True only if you stick to a small subset. The full set is complex – much *more*
+so than XML or JSON.
 
 > YAML data is portable between programming languages.
 
@@ -236,7 +238,7 @@ I’ll take their word for it.
 
 > YAML is expressive and extensible.
 
-Well, it is, but I would argue that it’s *too* expressive (e.g. too complex).
+Well, it is, but it’s *too* expressive (e.g. too complex).
 
 > YAML is easy to implement and use.
 
@@ -248,13 +250,14 @@ Well, it is, but I would argue that it’s *too* expressive (e.g. too complex).
 
 Conclusion
 ----------
+
 Don’t get me wrong, it’s not like YAML is absolutely terrible – it’s certainly
 not as [problematic as using JSON][json-no] – but it’s not exactly great either.
 There are some drawbacks and surprises that are not at all obvious at first, and
-there are actually a number of better alternatives (such as [TOML][toml] and
-other more specialized formats).
+there are a number of better alternatives (such as [TOML][toml] and other more
+specialized formats).
 
-Personally, I’m not very likely to use it again.
+Personally, I’m not likely to use it again when I’ve got a choice.
 
 [^1]: In PHP you need to modify an INI setting for the safe behaviour; you can’t just call something like `yaml_safe()`. The PHP folks managed again to make something stupid *even more stupid*. Congratulations.
 [^2]: If tabs would be allowed, I would be able to (temporarily) increase the tab width to a higher number to make it easier – this is sort if the point of tabs.

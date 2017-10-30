@@ -7,7 +7,8 @@ categories: programming-and-such
 Another Unreal Tournament related script that I’ve been using for a long time.
 
 Today I refactored the code to use `pcntl_fork()` in order to speed the script
-up.  
+up.
+
 This is the only real multiprocessing facility offered by PHP, it is exactly
 the same as the “classic” UNIX `fork()` function (See:
 [/ext/pcntl/pcntl.c(541)][fork]). More advanced/efficient versions such as
@@ -23,9 +24,9 @@ Note: do not use `exit()` to exit the child process, use
 `exit()` doesn't work when run from CGI, it exits the parent process too (It
 does work when run from the commandline).
 
-
 The code with fork
 ------------------
+
 	<?php
 	#
 	# Martin Tournoij <martin@arp242.net>
@@ -128,7 +129,7 @@ The code with fork
 				"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 			<head>
-				<meta http-equiv="Content-Type" content="%s" /> 
+				<meta http-equiv="Content-Type" content="%s" />
 				<title>Infiltration Servers</title>
 				<style type="text/css">
 					table { border-collapse: collapse; margin: .25em; width: 95%%; }
@@ -144,10 +145,10 @@ The code with fork
 				</style>
 			</head>
 			<body>
-				<p>Refresh your browser and the list will be refreshed. Click on a link to 
+				<p>Refresh your browser and the list will be refreshed. Click on a link to
 					refresh just that one server (faster).<br />
-					Unfortunately, the list of players is often incomplete. This is not a 
-					bug on my side but one in the UT server. Sometimes trying for a few times can get you a 
+					Unfortunately, the list of players is often incomplete. This is not a
+					bug on my side but one in the UT server. Sometimes trying for a few times can get you a
 					larger list, but often not :(</p>
 
 				<table summary="Infiltration servers">
@@ -185,8 +186,8 @@ The code with fork
 		print '</body></html>';
 	}
 
-	# We do not use a masterserver but maintain the list here manually; This is a 
-	# feature and not a bug because the masterserver for the mod I play 
+	# We do not use a masterserver but maintain the list here manually; This is a
+	# feature and not a bug because the masterserver for the mod I play
 	# (Infiltration) is not particularly reliable.
 	$servers = array(
 		array('cerberon.net', 17778), # coop1
@@ -231,7 +232,7 @@ The code with fork
 	}
 
 	# Wait for all childs to finish
-	while (count($procs) > 0) 
+	while (count($procs) > 0)
 	{
 		$pid = pcntl_waitpid(-1, $status, WNOHANG);
 
@@ -255,9 +256,9 @@ The code with fork
 	html($tbl);
 	exit(0);
 
-
 The code without fork
 ---------------------
+
 This is the old version without forking, it’s slower but since
 `pcntl_fork()` is not always available it may still be of some interest.
 
@@ -272,7 +273,7 @@ This is the old version without forking, it’s slower but since
 		# http://wiki.beyondunreal.com/Legacy:UT_Server_Query
 
 		$address = gethostbyname($server['0']);
-		
+
 		if (!$s = fsockopen('udp://' . $server['0'], $server['1'], $errno, $errstr, 2))
 			return False;
 
@@ -297,8 +298,8 @@ This is the old version without forking, it’s slower but since
 		return $prettyinfo;
 	}
 
-	# We do not use a masterserver but maintain the list here manually; This is a 
-	# feature and not a bug because the masterserver for the mod I play 
+	# We do not use a masterserver but maintain the list here manually; This is a
+	# feature and not a bug because the masterserver for the mod I play
 	# (Infiltration) is not particularly reliable.
 	$servers = array(
 		array('cerberon.net', 17778), # coop1
@@ -329,7 +330,7 @@ This is the old version without forking, it’s slower but since
 			#$tbl .= "<tr><td colspan=\"4\">Could not connect to {$s['0']} {$s['1']}</td></tr>";
 			continue;
 		}
-		
+
 		if (isset($info['numplayers']))
 		{
 			$numplayers = $info['numplayers'] . " Players:<br />\n";
@@ -379,7 +380,7 @@ This is the old version without forking, it’s slower but since
 		"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 		<head>
-			<meta http-equiv="Content-Type" content="<?php print $charset; ?>" /> 
+			<meta http-equiv="Content-Type" content="<?php print $charset; ?>" />
 			<title>Infiltration Servers</title>
 			<style type="text/css">
 				table { border-collapse: collapse; margin: .25em; width: 95%; }
@@ -395,10 +396,10 @@ This is the old version without forking, it’s slower but since
 			</style>
 		</head>
 		<body>
-			<p>Refresh your browser and the list will be refreshed. Click on a link to 
+			<p>Refresh your browser and the list will be refreshed. Click on a link to
 				refresh just that one server (faster).<br />
-				Unfortunately, the list of players is often incomplete. This is not a 
-				bug on my side but one in the UT server. Sometimes trying for a few times can get you a 
+				Unfortunately, the list of players is often incomplete. This is not a
+				bug on my side but one in the UT server. Sometimes trying for a few times can get you a
 				larger list, but often not :(</p>
 
 			<table summary="Infiltration servers">

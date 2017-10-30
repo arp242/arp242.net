@@ -17,7 +17,8 @@ a:hover {color: #6491ff; text-decoration: underline;}
 a img {border-radius: 2px; border: 1px solid #dadada; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);}
 img {max-width: 100%;}
 div.center-img {text-align: center;}
-div.center-img img {border: 1px solid #d6d6d6; border-radius: 2px;}
+div.border-img img {border: 1px solid #d6d6d6; border-radius: 2px;}
+div.right-img {float: right;}
 code,pre {font-family: "DejaVu Sans Mono", "Bitstream Vera Sans Mono", DejaVuSansMono, "Consolas", monospace; background-color: #eee; color: #000;}
 p,pre {margin-right: .5em;}
 pre {line-height: 1.3em; width: auto; max-height: 500px; padding: 1em; overflow: auto; clear: right; border-radius: 1px; border: 1px solid #dadada;}
@@ -49,3 +50,5 @@ button {margin-left: 210px;}
 .footnotes li:target {background-color: #ff0;}
 .bordered-images img {padding: .5em; border: 1px solid #d6d6d6; border-radius: 2px;}
 .bordered-images p {margin-bottom: 2em;}
+img.imgzoom-loading {cursor: wait !important;}
+.imgzoom-large {cursor: pointer; box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); transition: all .4s;}

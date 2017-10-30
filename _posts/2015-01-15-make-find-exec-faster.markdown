@@ -4,7 +4,7 @@ title: Making find -exec faster
 categories: programming-and-such
 ---
 
-Here’s a little `find` trick that not many people seem to know:
+Here’s a little `find` trick that few people seem to know:
 
 	# 13 seconds...
 	$ time find . -type f -exec stat {} \; > /dev/null
@@ -28,7 +28,7 @@ That’s quite a large difference! All we did was swap the `;` for a `+`.
 Let’s see what [POSIX has to say about it][posix] (emphases mine):
 
 > If the primary expression is punctuated by a `<semicolon>`, **the utility
-> `utility_name` shall be invoked once for each pathname** 
+> `utility_name` shall be invoked once for each pathname**
 >
 > [.. snip ..]
 >
@@ -55,7 +55,6 @@ Most contemporary systems have it set much higher though; Linux (3.16, x86\_64)
 defines `ARG_MAX` as 131072 (128k), while FreeBSD (10, i386) gives it as 262144
 (256k).
 
-
 Let’s verify this with [`truss`][truss][^1]:
 
 	# Amount of files we have
@@ -77,7 +76,6 @@ Let’s verify this with [`truss`][truss][^1]:
 	$ grep fork truss-slow | wc -l
 		2641
 
-
 Caveat
 ------
 
@@ -90,7 +88,6 @@ There is one small caveat, this won’t work:
 	# GNU find is even more cryptic:
 	$ find: missing argument to `-exec'
 
-
 Going [back to POSIX][posix]:
 
 > Only a `<plus-sign>` that immediately follows an argument containing only the
@@ -98,12 +95,11 @@ Going [back to POSIX][posix]:
 > uses of the `<plus-sign>` shall not be treated as special.
 
 In other words, the command *needs* to end with `{} +`. `cp {} /tmp +` doesn’t,
-and thus gives an error.  
+and thus gives an error.
 
 We can work around this by spawning a `sh` one-liner:
 
 	$ find . -type f -exec sh -c 'cp "$@" /tmp' {} +
-
 
 [^1]: Linux users can use [`strace`][strace]. OpenBSD users [`ktrace`][ktrace].
 

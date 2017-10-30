@@ -8,19 +8,18 @@ If you want to use subversion over HTTP you have little choice but to use
 Apache.
 
 This is a “minimal” Apache configuration file for use with subversion access
-with SSL. In many cases, I feel that the best approach is to “Start simple,
-then add complexity”.  
-The default Apache configuration file is anything but “start simple”, it’s
-much larger than needed, especially if you only want to use it for subversion
-access.
+with SSL. In many cases, I feel that the best approach is to “Start simple, then
+add complexity”. The default Apache configuration file is anything but “start
+simple”, it’s much larger than needed, especially if you only want to use it for
+subversion access.
 
 httpd.conf
 ----------
-Note: these directives are written for Apache 2.2 on FreeBSD. They *may*
-or **may not** work for other Apache versions. It *should* work for
-other operating systems. On Linux you will probably want to change the
-`libexec/apache22` to something else (for example `modules/` on Red Hat
-based systems).
+
+Note: these directives are written for Apache 2.2 on FreeBSD. They *may* or
+**may not** work for other Apache versions. It *should* work for other operating
+systems. On Linux you may need to change `libexec/apache22` to something else
+(for example `modules/` on Red Hat based systems).
 
 	# Modules to load
 	LoadModule alias_module libexec/apache22/mod_alias.so
@@ -101,7 +100,6 @@ based systems).
 			SetInputFilter DEFLATE
 	</Location>
 
-
 The default configuration:
 
 	[/usr/local/etc/apache22]# wc -l httpd.conf extra/httpd-ssl.conf
@@ -111,7 +109,6 @@ The default configuration:
 	[/usr/local/etc/apache22]# grep -Ev '(^#|^$)' httpd.conf extra/httpd-ssl.conf | wc -l
 		256
 
-
 Compared to the above file:
 
 	[/usr/local/etc/apache22]# wc -l httpd.conf
@@ -119,12 +116,12 @@ Compared to the above file:
 	[/usr/local/etc/apache22]# grep -Ev '(^#|^$)' httpd.conf | wc -l
 		41
 
-
 Additional setup
 ----------------
-You can generate a basic self-signed SSL certificate with:
-	$ openssl req -new -x509 -keyout svn.pem -out svn.pem -days 365 -nodes
 
+You can generate a basic self-signed SSL certificate with:
+
+	$ openssl req -new -x509 -keyout svn.pem -out svn.pem -days 365 -nodes
 
 When OpenSSL asks for your name, enter the server’s hostname, not your name.
 
@@ -136,8 +133,8 @@ The `AuthUserFile` `/usr/local/etc/svn-auth-file` can be created/modified with t
 	$ touch /usr/local/etc/svn-auth-file
 	$ htpasswd -s /usr/local/etc/svn-auth-file lovecraft dunwich
 
-
 Further reading
 ---------------
+
 - [svnbook chapter 6: httpd, the Apache HTTP Server](http://svnbook.red-bean.com/nightly/en/svn.serverconfig.httpd.html)
 - [Official Apache documentation](http://httpd.apache.org/docs/2.2/)

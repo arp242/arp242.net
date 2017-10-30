@@ -7,9 +7,10 @@ categories: programming-and-such
 I don’t like git. But I’m going to migrate my projects to it.
 
 First, let me explain why I don’t like git
-==========================================
+------------------------------------------
+
 My chief gripe with git is its user interface. It’s pretty bad. With ‘user
-interface’ I mean the commandline user interface. Let me just show by example:
+interface’ I mean the commandline user interface. Let me show by example:
 
 	$ git help commit | wc -l
 	480
@@ -60,19 +61,19 @@ three times in the last few years:
 
 `git push` will now refuse; you can `--force` and sometimes that’s okay, but
 sometimes it’s not, and it’s not so easy to undo the amend ([the solutions
-listed here][undo-amend] undo *everything*, not just the `--amend`).
+listed here][undo-amend] undo *everything*, not only the `--amend`).
 
 Compare with `hg`:
 
 	% hg ci --amend
 	abort: cannot amend public changesets
 
-This makes much more sense, since you typically don’t want to do this – there
-are exceptions of course, but those are rare and far in between.
+This makes much more sense, since you typically don’t want to do this. There are
+exceptions, but those are rare and far in between.
 
 There are many more examples like this to be found.
 
---------------------
+---
 
 From a technical point of view mercurial has some advantages as well. It has a
 well-designed extensible plugin system; aside from the 50 standard commands
@@ -89,7 +90,7 @@ memcpy buffer overflows][git-memcpy]. It’s also not even faster, since Python
 [is so much easier to optimize][facebook-hg].
 
 Why is everyone using git then?
-===============================
+-------------------------------
 
 1. Linus Torvalds wrote it.
 2. GitHub
@@ -111,8 +112,9 @@ explains][linus-fanboys]:
 Software written by Linus are like films with Tom Cruise. People go see it
 because it has Tom Cruise in it, not because it’s necessarily a great film.
 
-But why switch to git then?
-===========================
+Why switch to git then?
+-----------------------
+
 The same reason so many use Facebook while constantly complaining about it:
 the network effect.
 

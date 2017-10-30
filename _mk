@@ -3,7 +3,11 @@
 set -eC
 
 if [ "$1" = "code" ] || [ "$2" = "code" ]; then
-	( cd _mkcode && go build && ./mkcode )
+	(
+		cd _mkcode
+		go build mkcode.go
+		./mkcode
+	)
 fi
 
 if [ "$1" != "quick" ] || [ "$2" = "quick" ]; then

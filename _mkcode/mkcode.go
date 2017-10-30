@@ -61,17 +61,20 @@ func main() {
 		allRepos = append(allRepos, repos...)
 	}
 
-	// Don't list stuff I forked, only repos I created
-	for i, v := range allRepos {
+	// Don't list stuff I forked, only repos I created.
+	myRepos := []repository{}
+	for _, v := range allRepos {
 		if v.Fork {
-			allRepos = append(allRepos[:i], allRepos[i+1:]...)
+			continue
 		}
+
+		myRepos = append(myRepos, v)
 	}
 
 	// Write files
 	numRequests := 0
 	ch := make(chan bool)
-	for _, v := range allRepos {
+	for _, v := range myRepos {
 		go readAndWriteRepo(ch, v)
 		numRequests++
 	}

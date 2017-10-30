@@ -10,30 +10,26 @@ high-level language. The PHP library offers two functions two create temporary f
 and [`tempnam()`](http://nl3.php.net/tempnam).
 
 I would consider neither adequate, `tmpfile()` accepts no options at all, it’s a
-1:1 mapping to the C `tmpfile()` function.  
-It returns a file handle (rather than a pathname) and the file is deleted when
-the script ends. This certainly has legitimate use cases, but quite often it’s
-not what you want.
-In addition, the function is susceptible to a race condition.
+1:1 mapping to the C `tmpfile()` function. It returns a file handle (rather than
+a pathname) and the file is deleted when the script ends. This certainly has
+legitimate use cases, but often it’s not what you want. It’s also susceptible to
+a race condition.
 
 `tempnam()` is slightly better, but it doesn’t allow creating directories,
 using a suffix in the filename, or choose the maximum number of possible files.
 I’ve seen (and must admit, even wrote) quick ’n dirty hacks to work around this.
 
-In addition, you also need to specify a `$prefix` (using the rather
-wonky-named `sys_get_temp_dir()` function), rather that using a sane default,
-and the error reporting (or rather, lack thereof) leaves much to be desired.
+The error reporting (or rather, lack thereof) is also problematic.
 
 This problem has been solved a long time ago. POSIX offers us
 [`mkstemp()`](http://pubs.opengroup.org/onlinepubs/009695399/functions/mkstemp.html)
-, and many systems also implement `mkstemps()` and `mkdtemp()`.
-It’s somewhat unfortunate that PHP doesn’t just implement a proxy to these
-functions or re-implements them…
+, and many systems also implement `mkstemps()` and `mkdtemp()`. It’s unfortunate
+that PHP doesn’t implement a proxy to these functions or re-implements them…
 
 Here my PHP implementation of `mkstemps()`, it behaves slightly different in a
-few minor details, but most of it is the same. It doesn’t quite offer the
-flexibility that Python’s [`tempfile`](http://docs.python.org/library/tempfile.html)
-module offers, but it’s better than the PHP functions.
+few minor details, but most of it is the same. It doesn’t offer the flexibility
+that Python’s [`tempfile`](http://docs.python.org/library/tempfile.html) module
+offers, but it’s better than the PHP functions.
 
 	#!/usr/bin/env php
 	<?php
@@ -43,7 +39,7 @@ module offers, but it’s better than the PHP functions.
 	 *
 	 * If $prefix is Null, sys_get_temp_dir() is used
 	 *
-	 * The template can be any file name, all sequences of two or more subsequent 
+	 * The template can be any file name, all sequences of two or more subsequent
 	 * X's are replaced by random alphanumeric characters
 	 *
 	 * If $dir is True, a directory is created
@@ -52,7 +48,7 @@ module offers, but it’s better than the PHP functions.
 	 *
 	 * We return the full path to the created file or directory.
 	 *
-	 * This implementation is written by Martin Tournoij <martin@arp242.net>, while 
+	 * This implementation is written by Martin Tournoij <martin@arp242.net>, while
 	 * peeking at FreeBSD's implementation of mkstemp (src/lib/libc/stdio/mktemp.c)
 	 * http://arp242.net/weblog/Creating_temporary_files_in_PHP.html
 	 */
@@ -115,23 +111,23 @@ module offers, but it’s better than the PHP functions.
 			if ($dir) {
 				$s = @mkdir("$prefix/$name", 0700);
 
-				# What we *really* want to do is do something along the lines of 
-				# `errno == EEXISTS' in C. In PHP there is, as far as I can see, no 
+				# What we *really* want to do is do something along the lines of
+				# `errno == EEXISTS' in C. In PHP there is, as far as I can see, no
 				# way to do this.
-				# The only thing we can do is run error_get_last(), and get a text 
-				# message, which is locale-dependent and may change in future PHP 
+				# The only thing we can do is run error_get_last(), and get a text
+				# message, which is locale-dependent and may change in future PHP
 				# versions.
 				#
 				# This check is needed, because all sort of things can go wrong (
-				# permissions of $prefix changed, signal caught, symlink loop, max 
+				# permissions of $prefix changed, signal caught, symlink loop, max
 				# file descriptors, etc).
 				#
-				# The file_exists() sort of solves the problem, I can't think of any 
-				# serious drawbacks, but it's extra disk I/O, and in very, *VERY* 
-				# rare cases it's not reliable (fopen() failed for another reason & 
+				# The file_exists() sort of solves the problem, I can't think of any
+				# serious drawbacks, but it's extra disk I/O, and in very, *VERY*
+				# rare cases it's not reliable (fopen() failed for another reason &
 				# this file is created before we arrive at this check)
 				#
-				# There's a bug for this, but it doesn't seem to be considered much 
+				# There's a bug for this, but it doesn't seem to be considered much
 				# of a priority...  https://bugs.php.net/bug.php?id=49396
 				if (!$s && file_exists("$prefix/$name")) {
 					$err = error_get_last();
@@ -154,7 +150,7 @@ module offers, but it’s better than the PHP functions.
 				}
 			}
 
-			# Loop over each X we replaced, and try the next character from 
+			# Loop over each X we replaced, and try the next character from
 			# $padchars
 			$permutation += 1;
 			$trychr += 1;
@@ -175,8 +171,8 @@ module offers, but it’s better than the PHP functions.
 
 	class MktempError extends Exception { }
 
-
-### Some basic tests
+Some basic tests
+----------------
 
 	error_reporting(E_ALL);
 	ini_set('display_errors', 'on');
@@ -217,3 +213,8 @@ module offers, but it’s better than the PHP functions.
 
 		print "\n";
 	}
+
+Also see
+--------
+
+- [PHP’s `fopen()` is broken](/weblog/php-fopen-is-broken.html).

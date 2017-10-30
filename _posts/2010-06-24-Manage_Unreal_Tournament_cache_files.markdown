@@ -4,14 +4,13 @@ title: Manage Unreal Tournament cache files
 categories: programming-and-such
 ---
 
-This is a little Python script to manage cache files for Unreal Tournament,
-been using it for years, figured I might as well put it here.  
-I only used/tested this with the original UT on Windows and FreeBSD, should
-work for Linux and possibly MacOS X too.
+This is a little Python script to manage cache files for Unreal Tournament, been
+using it for years, figured I’d put it here. I only used/tested this with the
+original UT on Windows and FreeBSD, should work for Linux and MacOS X.
 
-Note this script will just rename the files to the correct name in the
-`Cache/` directory, it doesn’t put them in the correct UT Dirctory
-(`System/`, `Textures/`, etc.).  
+This script will only rename the files to the correct name in the `Cache/`
+directory, it doesn’t put them in the correct UT Directory (`System/`,
+`Textures/`, etc.).
 This is a feature and not a bug because when you’re using mods you often don’t
 want to use the standard UT directories, there’s no way to figuring out which
 files belongs to which mod (or even if it belongs to any mod).
@@ -24,9 +23,9 @@ A few simple commands can move the files:
 
 etc…
 
-
 The actual code
 ---------------
+
 	#!/usr/bin/env python
 	#
 	# Martin Tournoij <martin@arp242.net>
@@ -34,9 +33,9 @@ The actual code
 	# Free to use for whatever purpose. There are no restrictions.
 	# Version 20100624
 	#
-	# This is a very simple script to manage unreal tournament cache files.
+	# This is a simple script to manage unreal tournament cache files.
 	# Works on Windows, FreeBSD, Linux.
-	# 
+	#
 
 	import os
 	import re
@@ -70,7 +69,7 @@ The actual code
 				newfile.append(l)
 				continue
 			move.append(l)
-		
+
 		f.close()
 		return move, newfile
 

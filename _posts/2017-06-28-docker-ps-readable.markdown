@@ -23,10 +23,10 @@ normal sized terminal:
 
 <div style="text-align: center"><img alt="Docker xterm" src="{% base64 ./_images/docker/docker-wide.png %}"></div>
 
-It’s exactly 56 characters too much for even a full-screen xterm(!!) Guess I’ll
+It’s exactly 56 characters too much for even a full-screen xterm(!) Guess I’ll
 have to buy a new 32 inch 4k HD screen to run Docker?
 
-Fortunately I’m [not the first person who notices this ~~idiotic design~~
+I’m [not the first person who notices this ~~idiotic design~~
 issue](https://github.com/moby/moby/issues/7477), and a [`--format` switch was
 added](https://github.com/moby/moby/pull/14699) after enough people complained.
 
@@ -49,8 +49,7 @@ Compare:
 Still a bit larger than the standard 80 columns, but only by a bit (108 in this
 specific example), which is a hell of a lot better than 260.
 
-You can add this to `~/.config/docker.json` – and of course the config is in [a
-stupid
+You can add this to `~/.config/docker.json` – and the config is in [a stupid
 format](https://arp242.net/weblog/json_as_configuration_files-_please_dont) – to
 have it apply automatically:
 
@@ -61,7 +60,7 @@ have it apply automatically:
 	}
 {% endraw %}
 
-This is not just easier than a shell alias, but will also make it work for
+This is not only easier than a shell alias, but will also make it work for
 `docker container ls`.
 
 You can check `man docker-container-ls` for the documentation on `--format`.

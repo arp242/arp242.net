@@ -7,8 +7,7 @@ layout: default
 	<div id="header">
 		<h1>{{ page.title }}</h1>
 		<p>
-			Written on {{ page.date | date_to_string }}
-			{% if page.updated %}− last updated on {{ page.updated }}{% endif %}
+			Written on {{ page.date | date_to_string }}{% if page.updated %} − last updated on {{ page.updated }}{% endif %}.
 		</p>
 	</div>
 	{% if page.so %}

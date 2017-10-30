@@ -76,6 +76,7 @@
  **************/
 body {
 	font: 16px/1.9em @font;
+	//font-feature-settings: "kern" on, "liga" on, "calt" on, "dlig";
 	margin: 0;
 	background-color: #eee;
 	overflow-y: scroll;
@@ -162,10 +163,15 @@ img {
 
 div.center-img {
 	text-align: center;
-	img {
-		border: 1px solid #d6d6d6;
-		border-radius: 2px;
-	}
+}
+
+div.border-img img {
+	border: 1px solid #d6d6d6;
+	border-radius: 2px;
+}
+
+div.right-img {
+	float: right;
 }
 
 code, pre {
@@ -340,4 +346,19 @@ button {
 	p {
 		margin-bottom: 2em;
 	}
+}
+
+/***************
+ *** imgzoom ***
+ **************/
+img.imgzoom-loading {
+	cursor: wait !important;
+}
+
+.imgzoom-large {
+	cursor: pointer;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+
+	/* Simple animation */
+	transition: all .4s;
 }

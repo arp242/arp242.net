@@ -2,7 +2,7 @@
 layout: code
 title: "download-npo"
 link: "download-npo"
-last_version: "version-2.8"
+last_version: "version-2.9"
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
@@ -90,18 +90,6 @@ Uiteraard! Bijvoorbeeld met:
 
 Het `play-npo` script doet dit.
 
-Kan ik ook in 1 keer alle uitzendingen downloaden van een bepaald programma?
-----------------------------------------------------------------------------
-Ja, met `download-npo-list` kan je een lijst van alle uitzendingen ophalen:
-
-	download-npo-list http://www.npo.nl/andere-tijden/VPWON_1247337
-
-Je kan dit pipen naar `download-npo` met bv:
-
-	download-npo-list http://www.npo.nl/andere-tijden/VPWON_1247337 |
-		cut -d ' ' -f 2 |
-		download-npo
-
 Ondertitels worden opgeslagen als .srt, maar zijn eigenlijk in het WebVTT formaat?
 ----------------------------------------------------------------------------------
 Dat klopt; WebVTT wordt vooralsnog door maar weinig spelers herkend, en het is
@@ -135,7 +123,8 @@ Voor het ophalen van een lijst met afleveringen:
   nieuwe afleveringen van geabonneerde programma’s automatisch downloaden. De
   Flexget plugin zit [in Flexget
   zelf](https://github.com/Flexget/Flexget/blob/develop/flexget/plugins/input/npo_watchlist.py)
-  en is gemaakt door [Jeroen L.](https://github.com/jeroenl).
+  en is gemaakt door [Jeroen L.](https://github.com/jeroenl). Problemen hiermee
+  graag op de Flexget bugtracker melden; ik houd deze plugin niet zelf bij.
 
 Staat jouw programma er niet bij? Mail me dan even en ik zet het erbij.
 

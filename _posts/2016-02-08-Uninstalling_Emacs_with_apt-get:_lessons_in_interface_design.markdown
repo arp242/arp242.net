@@ -17,7 +17,7 @@ So, lets remove Emacs:
 
 	$ sudo apt-get remove emacs24
 	Reading package lists... Done
-	Building dependency tree       
+	Building dependency tree
 	Reading state information... Done
 	The following extra packages will be installed:
 	  emacs24-lucid xaw3dg
@@ -28,7 +28,7 @@ So, lets remove Emacs:
 	0 to upgrade, 2 to newly install, 1 to remove and 0 not to upgrade.
 	Need to get 3,534 kB of archives.
 	After this operation, 531 kB of additional disk space will be used.
-	Do you want to continue? [Y/n] 
+	Do you want to continue? [Y/n]
 
 Wait, it wants to install another version of Emacs? Meh. The reason for this is
 because *another* package has been “manually installed” and that `emacs24` is
@@ -60,7 +60,7 @@ No really, what’s wrong with this:
 	  emacs24
 
 	This will download 3,534 kB and use 531 kB of disk space.
-	Do you want to continue? [Y/n] 
+	Do you want to continue? [Y/n]
 
 - Remove useless `Reading package lists`-cruft. I don’t need to know this.
   Please, include a `--verbose` switch to spit out as much information as
@@ -99,13 +99,13 @@ Of course, there are other things we can do. Personally, I would consider just
 removing `emacs` much more logical (after displaying a clear message, of
 course), this is what tools like `yum` do.
 
-----------------
+---
 
 Lets move on and try removing `emacs`:
 
 	$ sudo apt-get remove emacs
 	Reading package lists... Done
-	Building dependency tree       
+	Building dependency tree
 	Reading state information... Done
 	The following packages will be REMOVED
 	  emacs
@@ -148,17 +148,16 @@ But lets try it:
 
 	$ sudo apt-get autoremove
 	Reading package lists... Done
-	Building dependency tree       
+	Building dependency tree
 	Reading state information... Done
 	0 to upgrade, 0 to newly install, 0 to remove and 0 not to upgrade.
-
 
 I have no idea why this doesn’t work. Lets try and remove the `emacs24` packages
 directly; surly a wildcard like `*` will work?
 
 	$ sudo apt-get remove emacs\*
 	Reading package lists... Done
-	Building dependency tree       
+	Building dependency tree
 	Reading state information... Done
 	Note, selecting 'emacsen-common' for regex 'emacs*'
 	Note, selecting 'qml-module-qtqml-statemachine' for regex 'emacs*'
@@ -300,7 +299,8 @@ intended I would have had to use `^emacs` or `^emacs.*`.
   optional, anything with `emac` will match). We should have used `emacs.\*`,
   but this *still* isn’t enough, since this will match anywhere in the string
   (e.g. `notmuch-emacs`), so we need to anchor it to the start: `^emacs.\*`. We
-  can lose the `.\*` since its not anchored to the end.  
+  can lose the `.\*` since its not anchored to the end.
+
   I would say, if you *must* use regular expressions for this, *anchor it to the
   start*. This will prevent this sort of unexpected matches, and can be easily
   “undone” with `.*emacs` (this is often called a regexp *match*, rather than
@@ -317,13 +317,13 @@ output.
 Eventually it errors out on an error relating to ... WebKit ... Which it wants
 to install ... I have no idea why.
 
--------------------------
+---
 
 So, `^emacs24`:
 
 	$ sudo apt-get remove ^emacs24
 	Reading package lists... Done
-	Building dependency tree       
+	Building dependency tree
 	Reading state information... Done
 	Note, selecting 'emacs24-nox' for regex '^emacs24'
 	Note, selecting 'emacs24-el' for regex '^emacs24'
@@ -369,8 +369,9 @@ So, `^emacs24`:
 
 And we’re finished ... *finally*!
 
-So, the lessons learned?
-------------------------
+The lessons learned?
+--------------------
+
 - **Do** follow the principle of least surprise unless there is a very good
   reason not to.
 - **Do** inform the user *why* you’re doing something if it may be surprising
@@ -382,11 +383,12 @@ So, the lessons learned?
 
 More examples
 -------------
+
 Some other examples of similar surprising `apt-get` behaviour:
 
-	$ apt-get remove compiz-gnome 
+	$ apt-get remove compiz-gnome
 	Reading package lists... Done
-	Building dependency tree       
+	Building dependency tree
 	Reading state information... Done
 	The following extra packages will be installed:
 	  compiz-kde compizconfig-backend-kconfig kdelibs5-data libattica0.3 libdlrestrictions1 libkdecore5 libkdeui5
@@ -439,13 +441,14 @@ Here’s another:
 	0 to upgrade, 8 to newly install, 46 to remove and 0 not to upgrade.
 	Need to get 3,432 kB of archives.
 	After this operation, 20.6 MB disk space will be freed.
-	Do you want to continue [Y/n]? 
+	Do you want to continue [Y/n]?
 
 There are so many things wrong with this output that it hurts (and remember
-`yes` is the default, so pressing `Y` here will basically hose the system).
+`yes` is the default, so pressing `Y` here will effectively hose the system).
 
 Responses
 ---------
+
 For some reason, responses like this to criticism of `apt-get` are far too
 common:
 
@@ -473,7 +476,6 @@ No.
 
 Maybe, but it’s another *tu quoque*, and hasn’t been the case for at least
 fifteen years.
-
 
 [silence]: http://www.catb.org/~esr/writings/taoup/html/ch01s06.html#id2878450
 [pkg-emacs]: https://packages.debian.org/stable/editors/emacs

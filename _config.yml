@@ -6,3 +6,5 @@ highlighter: null
 permalink: /weblog/:title.html
 exclude: [Gemfile, Gemfile.lock, mkcode.go]
 markdown: kramdown
+plugins:
+  - liquid_reading_time

@@ -6,24 +6,24 @@ categories: programming-and-such
 
 At my work there’s a HTTP/HTTPS proxy which requires authentication, I would
 like to access both ssh and a subversion repository through HTTP at my home
-server.  
-The easiest solution would be to use two IP addresses, but I don’t have an
-extra IP address available.   
-Ports other than 443 are blocked, and using port 80 won’t work because the
-HTTP proxy doesn’t support the HTTP WebDAV extensions required for subversion
-(and it’s also insecure).
+server.
+
+The easiest solution would be to use two IP addresses, but I don’t have an extra
+IP address available. Ports other than 443 are blocked, and using port 80 won’t
+work because the HTTP proxy doesn’t support the HTTP WebDAV extensions required
+for subversion (and it’s also insecure).
 
 The solution
 ------------
+
 Use pf’s `overload` feature to switch between services on a given port.
 
-Using it is simple:   
-I can use svn whenever I want, if I would like to use ssh I open my browser,
-go to `http://94.142.244.51` three times in 42 seconds and I can use ssh.   
-After closing ssh and waiting for a minute I can use svn again.
+Using it is simple: I can use svn whenever I want, if I would like to use ssh I
+open my browser, go to `http://94.142.244.51` three times in 42 seconds and I
+can use ssh. After closing ssh and waiting for a minute I can use svn again.
 
-This solution will work for FreeBSD and OpenBSD. The concept can probably be
-implemented in most other stateful firewalls too.
+This solution will work for FreeBSD and OpenBSD. The concept can be implemented
+in most – if not all – other stateful firewalls too.
 
 /etc/pf.conf
 ------------
@@ -72,12 +72,11 @@ From [pf.conf(5)][pf.conf]:
 	have completed the 3-way handshake that a single host can make.
 
 	max-src-conn-rate <number> / <seconds>
-	Limit the rate of new connections over a time interval.  The con-
+	Limit the rate of new connections over a time interval. The con-
 	nection rate is an approximation calculated as a moving average.
 
 It took me some time to realize that if no service is running on port 80 the
-connection attempt will just time out and the 3-way handshake is not
-completed.
+connection attempt will time out and the 3-way handshake is not completed.
 
 You can use Python to start a simple webserver that does nothing.
 
@@ -96,7 +95,8 @@ Or you can use your webserver with a document root of `/var/empty/` if you prefe
 ------------
 
 It’s also useful to add a crontab entry to flush the table periodically to
-switch back to svn when you’re done with ssh.  
+switch back to svn when you’re done with ssh.
+
 To your `/etc/crontab` add:
 
 	* * * * * root /sbin/pfctl -t rdr_ssh -T expire 60 > /dev/null 2>&1
@@ -105,25 +105,25 @@ From [pfctl(8)][pfctl]:
 
 	-T expire number
 				Delete addresses which had their statistics cleared
-				more than number seconds ago.  For entries which
+				more than number seconds ago. For entries which
 				have never had their statistics cleared, number
 				refers to the time they were added to the table.
 
-In other words: As long as a connection is open, the address won’t be removed,
-but if no connection has been open for 60 seconds the address is removed.
+In other words: As long as a connection is open, the address won’t be
+removed, but if no connection has been open for 60 seconds the address is
+removed.
 
 Or, if you prefer, you can manually clear the table with:
 
 	pfctl -t rdr_ssh -T del <ipaddress>
 
-
 Further reading
 ---------------
+
 - [pfctl(8)][pfctl]
 - [pf.conf(5)][pfctl]
 - [PF user’s guide from the OpenBSD site](http://openbsd.org/faq/pf/index.html)
 - [FreeBSD handbook: 30.4 The OpenBSD Packet Filter (PF) and ALTQ]( http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/firewalls-pf.html)
-
 
 [pf.conf]: http://www.openbsd.org/cgi-bin/man.cgi?apropos=0&sektion=5&manpath=OpenBSD+Current&arch=i386&format=html&query=pf.conf
 [pfctl]: http://www.openbsd.org/cgi-bin/man.cgi?apropos=0&sektion=8&manpath=OpenBSD+Current&arch=i386&format=html&query=pfctl

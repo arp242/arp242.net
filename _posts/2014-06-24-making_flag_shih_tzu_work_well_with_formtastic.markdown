@@ -7,7 +7,7 @@ categories: programming-and-such
 [FlagShihTzu][flag] & [Formtastic][formtastic] don’t work together
 out-of-the-box, but this can be solved with a few lines of code.
 
-There are probably a few ways to do this; here’s mine:
+There are a few ways to do this; here’s mine:
 
 	class Spaceship < ActiveRecord::Base
 		has_flags(
@@ -39,13 +39,11 @@ There are probably a few ways to do this; here’s mine:
 		end
 	end
 
-
 Now you can do this in your view:
 
 	= f.input :features_array, as: :check_boxes,
 		label: I18n.t('Which features does your spaceship have?'),
 		collection: flag_to_collection(Spaceship, 'features')
-
 
 And you may also want this little [helper][helpers]:
 
@@ -55,10 +53,8 @@ And you may also want this little [helper][helpers]:
 		end
 	end
 
-
-PS. Don’t forget to add `:features_array` to the
+P.S. Don’t forget to add `:features_array` to the
 [StrongParameters][strong_params] if you’re using Rails 4.
-
 
 [flag]: https://github.com/pboling/flag_shih_tzu
 [formtastic]: https://github.com/justinfrench/formtastic

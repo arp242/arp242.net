@@ -4,41 +4,40 @@ title: Digging for hosts on FreeBSD 10
 categories: programming-and-such
 ---
 
-FreeBSD 10 now has [unbound](http://unbound.net/) for DNS lookups, which is
-actually a lot better than bind (the zone server, [nsd](http://www.nlnetlabs.nl/projects/nsd/),
-is *not* in FreeBSD base), but I was confused when my favourite DNS tools
-`dig(1)` was MIA.
+FreeBSD 10 now has [unbound](http://unbound.net/) for DNS lookups, which is a
+lot better than bind (the zone server,
+[nsd](http://www.nlnetlabs.nl/projects/nsd/), is *not* in FreeBSD base), but I
+was confused when my favourite DNS tools `dig(1)` was MIA.
 
 So, what can we use now?
 
-
 host(1)
 -------
-[`host(1)`][host] is usually part of bind, but for FreeBSD 10 a compatible
-replacement has been imported from [ldns-host][ldnshost].
 
-	[~]% host arp242.net
+[`host(1)`][host] is part of bind, but for FreeBSD 10 a compatible replacement
+has been imported from [ldns-host][ldnshost].
+
+	$ host arp242.net
 	arp242.net has address 66.111.4.53
 	arp242.net mail is handled by 20 in2-smtp.messagingengine.com.
 	arp242.net mail is handled by 10 in1-smtp.messagingengine.com.
 
-It has a nice short output, which is cool. For a reverse lookup, just use the IP
+It has a nice short output, which is cool. For a reverse lookup, use the IP
 address:
 
-	[~]% host 66.111.4.53
+	$ host 66.111.4.53
 	53.4.111.66.in-addr.arpa domain name pointer web.messagingengine.com.
-
 
 Using `dig arp242.net NS`
 
-	[~]% host -tNS arp242.net
+	$ host -tNS arp242.net
 	arp242.net name server ns0.transip.net.
 	arp242.net name server ns2.transip.eu.
 	arp242.net name server ns1.transip.nl.
 
 `dig arp242.net ANY` can be done with `host -a`
 
-	[~]% host -a arp242.net
+	$ host -a arp242.net
 
 	Trying "arp242.net"
 	;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 24937
@@ -59,16 +58,14 @@ Using `dig arp242.net NS`
 
 	Received 158 bytes from 192.168.178.1#53 in 0 ms
 
-
 drill(1)
 --------
 
 [`drill(1)`][drill] Comes with unbound, and behaves a bit more like `dig`
 
-
-	[~]% drill arp242.net
+	$ drill arp242.net
 	;; ->>HEADER<<- opcode: QUERY, rcode: NOERROR, id: 33602
-	;; flags: qr rd ra ; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0 
+	;; flags: qr rd ra ; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
 	;; QUESTION SECTION:
 	;; arp242.net.  IN      A
 
@@ -84,12 +81,11 @@ drill(1)
 	;; WHEN: Tue Mar  4 21:27:18 2014
 	;; MSG SIZE  rcvd: 44
 
+Reverse lookup with `-x`:
 
-Reverse lookup with `-x`
-
-	[~]% drill -x 66.111.4.53
+	$ drill -x 66.111.4.53
 	;; ->>HEADER<<- opcode: QUERY, rcode: NOERROR, id: 19910
-	;; flags: qr rd ra ; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0 
+	;; flags: qr rd ra ; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
 	;; QUESTION SECTION:
 	;; 53.4.111.66.in-addr.arpa.    IN      PTR
 
@@ -105,12 +101,11 @@ Reverse lookup with `-x`
 	;; WHEN: Tue Mar  4 21:28:04 2014
 	;; MSG SIZE  rcvd: 79
 
-
 And classes work like `dig` as well
 
-	[~]% drill arp242.net ANY
+	$ drill arp242.net ANY
 	;; ->>HEADER<<- opcode: QUERY, rcode: NOERROR, id: 62701
-	;; flags: qr tc rd ra ; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 0 
+	;; flags: qr tc rd ra ; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 0
 	;; QUESTION SECTION:
 	;; arp242.net.  IN      ANY
 
@@ -137,12 +132,11 @@ And classes work like `dig` as well
 	;; WARNING: The answer packet was truncated; you might want to
 	;; query again with TCP (-t argument), or EDNS0 (-b for buffer size)
 
+`+short` doesn’t work, though:
 
-`+short` doesn’t seem to work, though
-
-	[~]% drill arp242.net +short
+	$ drill arp242.net +short
 	;; ->>HEADER<<- opcode: QUERY, rcode: NXDOMAIN, id: 609
-	;; flags: qr rd ra ; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0 
+	;; flags: qr rd ra ; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
 	;; QUESTION SECTION:
 	;; +short.      IN      A
 
@@ -159,12 +153,10 @@ And classes work like `dig` as well
 	;; WHEN: Tue Mar  4 21:29:52 2014
 	;; MSG SIZE  rcvd: 99
 
-
-
 But I really want dig, man!
 ---------------------------
-Then you shall have it: [dns/bind-tools](http://www.freshports.org/dns/bind-tools).
 
+Then you shall have it: [dns/bind-tools](http://www.freshports.org/dns/bind-tools).
 
 [ldnshost]: http://tx97.net/ldns-host/
 [host]: http://www.freebsd.org/cgi/man.cgi?query=host&apropos=0&sektion=0&manpath=FreeBSD+10.0-RELEASE&arch=default&format=html

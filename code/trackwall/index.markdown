@@ -159,6 +159,7 @@ TODO
 ====
 - Listen to signals to reload
 - Measure some degree of performance
+- Serve surrogates for "CDN"s etc. as well (like decentraleyes extension)
 
 FAQ
 ===

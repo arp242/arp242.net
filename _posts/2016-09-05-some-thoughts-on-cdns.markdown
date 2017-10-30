@@ -10,6 +10,7 @@ from CDNs is plentiful, but things are a bit more complex than that.
 
 Performance
 -----------
+
 The greatest touted advantage of a CDN is faster load times. Because CDNs have
 worldwide servers, users can fetch a copy of your content from a server nearby
 which should be faster.
@@ -42,6 +43,7 @@ about as fast (and certainly ‘fast enough’).
 
 Hacks
 -----
+
 Any server can be compromised, no matter how secure. It is entirely possible for
 someone to breach your CDN and inject malicious code.
 
@@ -68,6 +70,7 @@ other sites). Not great, but not a disaster either.
 
 Malicious CDNs
 --------------
+
 In a similar vein, the CDN provider may "go bad" in the future and start
 inserting adware or such in the CDN.
 [Sourceforge does this with some
@@ -79,6 +82,7 @@ time?
 
 Availability
 ------------
+
 A CDN may go down for an hour, week, month, or cease operation altogether. If
 the CDN stops working, your JavaScript and CSS stop working, which basically
 means that your site stops working.
@@ -88,6 +92,7 @@ look at again. Ideally, they should keep working for as long as possible.
 
 Complexity
 ----------
+
 The old adage of ‘everything is a fucking DNS problem’ has been replaced with
 ‘everything is a fucking caching problem’.
 
@@ -96,6 +101,7 @@ another layer of caching, and things can – and *do* – go wrong here.
 
 Conclusion
 ----------
+
 Think about the drawbacks, try to optimize your server with Varnish first, and
 please, *measure* the actual real-world performance (which is probably easier
 said than done).

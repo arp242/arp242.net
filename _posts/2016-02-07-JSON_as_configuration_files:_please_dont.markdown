@@ -20,8 +20,9 @@ it comparatively easily, and it’s also pretty easy to parse for machines
 (although there [are problems][parse]).
 It’s a good trade-off between machine-readable and human-readable and a huge
 improvement on what it intended to replace: XML, which I consider to be
-unreadable by *both* machines and humans.  
-But using it for other purposes is somewhat akin to saying “hey, this hammer
+unreadable by *both* machines and humans.
+
+Using it for other purposes is somewhat akin to saying “hey, this hammer
 works really well for driving in nails! I love it! Why not hammer in this screw
 with it!” Sure, it sort of works, but it’s very much the wrong tool for the job.
 
@@ -29,6 +30,7 @@ Specific shortcomings
 ---------------------
 
 ### Lack of comments
+
 This is by far the biggest problem: you can’t add comments in JSON files. The
 occasional JSON parser supports it, but most don’t and it’s not in the standard,
 in fact, comment support was [explicitly removed from JSON][crockford] for good
@@ -70,12 +72,14 @@ important message?
 Of course not.
 
 ### Readability
+
 It’s just not *that* readable. Sure, it’s readable *for a data-interchange
 format*, but not readable for a configuration file.
 
 Readability counts.
 
 ### Strictness
+
 The JSON standard is fairly strict − this is good, it allows for concise and
 fast parsers that don’t have to muck about with different formats − but it also
 means it’s more difficult to write.
@@ -85,6 +89,7 @@ that has bitten me more than once. And having to escape all instances or `"` can
 be pretty annoying if your string contains a lot of `"`s.
 
 ### Lack of programmability
+
 Not always an issue, but sometimes it is, especially when JSON is used to
 configure some piece of code.
 
@@ -107,14 +112,15 @@ better and provided much more features.
 
 Alternatives
 ------------
+
 - The [“recommended way”][crockford] by JSON author Douglas Crockford is “pipe
   it through JSMin before handing it to your JSON parser”. *Some* JSON parsers
   also explicitly support comments (but most don’t). Having to pre-process your
   configuration files is a pain though.
 
 - `import`, `require`, `include`, or use whatever code-importing facilities your
-  language provides (or even `eval()`). Obviously, this means configuration
-  files have to be a trusted source, but this is usually the case.
+  language provides (or even `eval()`). This means configuration files have to
+  be a trusted source, but this is usually the case.
 
 - `ini` files; not standardized, but this usually isn’t a problem since
   configuration files are typically intended to be read by only one program.
@@ -152,6 +158,7 @@ Alternatives
 
 Examples
 --------
+
 Name and shame :-)
 
 - MediaWiki’s new [extension registration](https://www.mediawiki.org/wiki/Manual:Extension_registration)
@@ -159,10 +166,12 @@ Name and shame :-)
 - npm’s [`package.json`](https://docs.npmjs.com/files/package.json) (which uses
   a [somewhat silly system](http://stackoverflow.com/a/14221781/660921) for adding
   comments).
-- Bower is full-on idiotic by just saying [comments aren't useful enough to
+- Bower is full-on idiotic by saying [comments aren't useful enough to
   support](https://github.com/bower/bower/issues/1059).
+- … Unfortunately many, many more …
 
 ### Advocates
+
 - [JSON configuration file format](http://octodecillion.com/blog/json-data-file-format/)
 
 [crockford]: https://plus.google.com/+DouglasCrockfordEsq/posts/RK8qyGVaGSr

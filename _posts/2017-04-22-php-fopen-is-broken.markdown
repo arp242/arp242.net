@@ -8,17 +8,17 @@ Yes, I know that “bashing PHP” is *sooooo 2010*. But even now many people do
 seem to fully realize the limitations and problems of this language.
 
 There have been some improvements in the last few years (the sort of
-improvements that other languages have had for ages), but unfortunately some
-problems still remain. Arguably the largest is the absolutely abysmal state of
-the standard library. Rather than do a [Gish gallop][gish] I’ll just focus on
-one very basic core function: [`fopen()`][php-fopen].
-
+improvements that other languages have had for ages), but some problems still
+remain. Arguably the largest is the absolutely abysmal state of the standard
+library. Rather than do a [Gish gallop][gish] I’ll only focus on one basic core
+function: [`fopen()`][php-fopen].
 
 Lack of errors
--------------
-On errors `fopen()` simply returns boolean `False` and emits an `E_WARNING`
-error; the problem here is that **there is no way to figure out what went
-wrong**.
+--------------
+
+On errors `fopen()` simplistically returns boolean `False` and emits an
+`E_WARNING` error; the problem here is that **there is no way to figure out what
+went wrong**.
 
 In C, you can use the `errno` variable to check what went wrong.  `EEXISTS`
 indicates the path already exists, `EACCESS` indicates you don’t have
@@ -27,8 +27,8 @@ are many more, the [POSIX specification for `fopen()` has a list][c-fopen]).
 
 This can be very useful. For example, for a `ENAMETOOLONG`, you could trim the
 pathname and try again, for `EEXISTS`, you could try adding `(1)` to the
-filename, etc. In other words: you can do something sane, rather than just quit
-and say “an error occurred, unable to proceed”.
+filename, etc. In other words: you can do something sane, rather than quit and
+say “an error occurred, unable to proceed”.
 
 For some algorithms, these errors are *required* to work properly. If you want
 to have a `mktemp()` with more features than the default function PHP offers,
@@ -43,6 +43,7 @@ There are some functions that get the `errno` for specific modules, such as
 that module, not for `fopen()` or other functions.
 
 ### Other languages?
+
 Every other language that I know of 
 [except Bourne shell scripting](http://stackoverflow.com/q/27152022/660921)
 can do this. For example in Ruby we use exceptions:
@@ -61,6 +62,7 @@ All other languages that I know work the same, either by exceptions (most modern
 languages), or by a return value or special `errno` variable (C, Lua, Go, etc.).
 
 ### Exceptions
+
 `fopen()` never raises an exception, this code:
 
 	try {
@@ -75,8 +77,7 @@ Will still give you:
 
 	PHP Warning: fopen(/etc/shadow): failed to open stream: Permission denied in /home/martin/test.php on line 4
 
-And PHP will just *continue happily* after this error as if nothing happened.
-Yikes!
+And PHP will *continue happily* after this error as if nothing happened. Yikes!
 
 What you could do instead is to install a custom error handler to throw an
 Exception:
@@ -131,9 +132,9 @@ mentioning:
 Great, so one inconsistent and confusing mechanism is replaced with another
 inconsistent and confusing mechanism.
 
-
 Opening directories
 -------------------
+
 Another brain-dead C copy is that you can `fopen()` directories:
 
 > fopen — Opens file or URL
@@ -173,9 +174,8 @@ But on mode `w` you get an error:
 	$fp = fopen('/etc', 'w');
 	PHP Warning:  fopen(/etc): failed to open stream: Is a directory in php shell code on line 1
 
-In Unix/C a directory is really just a file; and originally you could just open
-and read it, like any ol’ file. This is how you got the directory entries back
-in the day!
+In Unix/C a directory is really a file; and originally you could open and read
+it like any ol’ file. This is how you got the directory entries back in the day!
 
 Here’s an example:
 
@@ -219,12 +219,13 @@ In PHP, everyone will have to invent their own API.
 
 Wrappers
 --------
+
 In a drunken bout of featuritis someone thought it would be a good feature to
 add “wrappers” to `fopen()` so you can use it to download files from HTTP,
 FTP, open archives, and so forth.
 
-Of course, this may or may not work, depending on the value of
-`allow_url_fopen`. Every PHP installation behaves different!
+This may or may not work, depending on the value of `allow_url_fopen`. Every PHP
+installation behaves different!
 
 There are some problems with this; for starters it's rather hackish. How do you
 get the response headers? Why, with a special magically created
@@ -244,11 +245,9 @@ remote code vulnerability[^1].
 	  is now off by default, but it took the PHP folk a while to realize this
 	  was even a problem since `allow_url_include` wasn't introduced until 2006.
 
-So, what now?
-=============
+What about the rest of the standard library?
+--------------------------------------------
 
-So, what about the rest of the standard library?
-------------------------------------------------
 One PHP fan might reply to this article with something along the lines of: “so
 fopen may have serious shortcomings, but that’s only one function out of
 thousands!”
@@ -259,9 +258,9 @@ such as `proc_open()`, are even worse).
 I chose to highlight a single example in depth, rather than list a large list of
 things.
 
-
 Conclusion
 ---------
+
 PHP has made some decent progress in the area of language features (we can do
 `function_call()[1]`, woohoo!), but I believe the largest problem always has
 been – and continues to be – the lack of quality in the standard library. I’ve
@@ -286,8 +285,6 @@ than use the new version (see: Python 3, Perl 6).
 Perhaps we shouldn’t fix PHP. There are plenty of alternatives available with a
 similar feature-set. Why do we need PHP? If you ask me, investing time in PHP is
 a [sunk-cost fallacy](http://rationalwiki.org/wiki/Sunk_cost).
-
-
 
 [gish]: http://www.urbandictionary.com/define.php?term=Gish%20Gallop
 [php-fopen]: http://php.net/manual/en/function.fopen.php
