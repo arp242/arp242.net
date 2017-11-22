@@ -2,7 +2,7 @@
 layout: code
 title: "battray"
 link: "battray"
-last_version: "version-2.2"
+last_version: "version-2.3"
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
@@ -121,10 +121,11 @@ Available variables
 ChangeLog
 =========
 
-Version 2.3, unreleased
+Version 2.3, 2017-11-07
 -----------------------
-- Linux: Show warning if we can't import the `dbus` module.
-- Linux: Fix for systems that have `BAT1` but not `BAT0`.
+- FreeBSD: Fix for Python 3.
+- Linux: Remove support for `/sys` for now as it seems that this changed on
+  newer systems; UPower is required.
 
 Version 2.2, 2016-04-24
 -----------------------

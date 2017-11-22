@@ -13,6 +13,8 @@ last_version: "master"
 
 `goimport` is a tool to add, remove, or replace imports in Go files.
 
+Install it with `go get arp242.net/goimport`.
+
 Example usage:
 
 	# Add errors package.
@@ -24,13 +26,18 @@ Example usage:
 	# Add errors package aliased as "errs"
 	$ goimport -add errors:errs foo.go
 
+	# Either add an import or replace existing errors with
+	# github.com/pkg/errors.
+	$ goimport -replace github.com/pkg/errors foo.go
+
+	# Go get package if it doesn't exist
+	$ goimport -add github.com/pkg/errors -g foo.go
+
+	# Print out only the import block as json (useful for # editor integrations).
+	$ goimport -add github.com/pkg/errors -j foo.go
+
+See `goimport -h` for the full help.
+
 TODO:
 
 - Make `-rm` deal with named imports.
-- What to do if a package is already imported?
-- Error out if package not in GOPATH.
-- Remove quotes in e.g. `-add '"errors"'
-- Make sure it works with trailing slash, e.g. `-add the/path/with/slash/`
-- Add automatic `go get`?
-- Add `-toggle` to toggle importing/removing
-- Possible to print out only import block?

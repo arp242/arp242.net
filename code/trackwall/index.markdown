@@ -181,6 +181,7 @@ Here are some similar programs:
 - [adsuck][adsuck] (POSIX systems)
 - [Little Snitch][little-snitch] (OSX)
 - [dnsblock][dnsblock] (POSIX systems)
+- [dns66](https://github.com/julian-klode/dns66) (Android)
 
 
 Authors and license
