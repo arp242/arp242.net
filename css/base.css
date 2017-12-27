@@ -5,14 +5,17 @@
 @font-face {font-family: 'Roboto Condensed'; font-style: italic; font-weight: 400; src: local('Roboto Condensed Italic'), local('RobotoCondensed-Italic'), url(https://fonts.gstatic.com/s/robotocondensed/v13/BP5K8ZAJv9qEbmuFp8RpJdbvlX87CS9_IgWvysdluIM.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;}
 body {font: 16px/1.9em 'Libre Baskerville', 'DejaVu Serif', 'Georgia', serif; margin: 0; background-color: #eee; overflow-y: scroll; tab-size: 4; -moz-tab-size: 4;}
 #home,#page {position: relative; top: 8px; padding: 0 4rem; margin: 0 auto; overflow: hidden; background-color: #fff; color: #252525; max-width: 46rem; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);}
-@media (max-width: 46rem) {#home,#page {padding: 0 1rem;}
+@media (max-width: 46rem) {#home,#page {padding: 0 .5rem;}
 }#disclaimer {clear: both; margin: 1rem auto; max-width: 46rem; text-align: right; font-size: 14px; color: #666; position: relative; left: 3.6rem;}
 @media (max-width: 46rem) {#disclaimer {left: -1rem;}
 }#home ul {list-style: none; padding-left: 1rem;}
-#home ul li a {display: inline-block; min-width: 11em;}
+#home ul li a {display: inline-block; min-width: 11em; vertical-align: top;}
 #home ul .standout {font-weight: bold;}
 #home ul .standout:before {content: "★ "; color: #dfdf16;}
-a {color: #00f; text-decoration: none; transition: all .2s; -webkit-transition: all .2s;}
+@media (max-width: 46rem) {#home ul {list-style: disc;}
+#home ul li {margin-bottom: .5rem;}
+#home ul li a {min-width: auto;}
+}a {color: #00f; text-decoration: none; transition: all .2s; -webkit-transition: all .2s;}
 a:hover {color: #6491ff; text-decoration: underline;}
 a img {border-radius: 2px; border: 1px solid #dadada; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);}
 img {max-width: 100%;}

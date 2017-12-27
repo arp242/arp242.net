@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "YAML: probably not so great after all"
-updated: 17 Dec 2016
+updated: 27 Dec 2017
 categories: programming-and-such
 ---
 
@@ -77,21 +77,25 @@ indentation, which can be pretty hard even with indentation guides, especially
 since 2-space indentation is the norm and [tab indentation is
 forbidden][faq][^2].
 
-I’ve been programming Python for over a decade, so I’m used to significant
-whitespace, but sometimes I’m still struggling with YAML. In Python the
-drawbacks and loss of clarity are contained by not having functions that are
+And accidentally getting the indentation wrong often isn't an error; it will
+often just deserialize to something you didn't intend. Happy debugging!
+
+I’ve been happily programming Python for over a decade, so I’m used to
+significant whitespace, but sometimes I’m still struggling with YAML. In Python
+the drawbacks and loss of clarity are contained by not having functions that are
 several pages long, but data or configuration files have no such natural limits
 to their length.
 
 For small files this is not a problem; but it really doesn’t scale well to
-larger files.
+larger files, especially not if you want to edit them later on.
 
 It’s pretty complex
 -------------------
 
-YAML may seem ‘simple’ and ‘obvious’ at a glance, but turns out it’s not. The
-[YAML spec][yaml-spec] is 23,449 words; for comparison, [TOML][toml-spec] is 838
-words, [JSON][json-spec] is 1,969 words, and [XML][xml-spec] is 20,603 words.
+YAML may seem ‘simple’ and ‘obvious’ when glancing at a basic example, but turns
+out it’s not. The [YAML spec][yaml-spec] is 23,449 words; for comparison,
+[TOML][toml-spec] is 838 words, [JSON][json-spec] is 1,969 words, and
+[XML][xml-spec] is 20,603 words.
 
 Who among us have read all that? Who among us have read and *understood* all of
 that? Who among of have read, *understood*, and **remembered** all of that?
@@ -112,6 +116,44 @@ mine):
 > This section provides a quick glimpse into the expressive power of YAML. **It is
 > not expected that the first-time reader grok all of the examples**. Rather, these
 > selections are used as motivation for the remainder of the specification.
+
+### Surprising behaviour
+
+What does this parse to (examples courtesy of
+[Colm O'Connor](https://github.com/crdoconnor/strictyaml/blob/master/FAQ.rst#what-is-wrong-with-implicit-typing)):
+
+	- Don Corleone: Do you have faith in my judgment?
+	- Clemenza: Yes
+	- Don Corleone: Do I have your loyalty?
+
+Yup!
+
+	[
+		{'Don Corleone': 'Do you have faith in my judgment?'},
+		{'Clemenza': True},
+		{'Don Corleone': 'Do I have your loyalty?'}
+	]
+
+Or what about:
+
+	python: 3.5.3
+	postgres: 9.3
+
+9.3 gets recognized as a number, but 3.5.3 does’t:
+
+	{'python': '3.5.3', 'postgres': 9.3}
+
+Or what about:
+
+	013: Tilburg
+	Effenaar: Eindhoven
+
+013 is a popular music Venue in Tilburg, but YAML will send you the wrong way:
+
+	{11: 'Tilburg', 'Effenaar': 'Eindhoven'}
+
+All of this – and more – is why many experienced YAMLers will often quote all
+strings, even when it's not strictly required.
 
 ### It’s not portable
 
@@ -190,11 +232,9 @@ The reason for this is that there are multiple YAML documents in a single file
 parse all documents. Ruby’s `load()` just loads the first document, and as near
 as I can tell, doesn’t have a way to load multiple documents.
 
-------------
-
-One of the results of this is that some people [are implementing subsets of
-YAML](https://docs.saltstack.com/en/latest/topics/yaml/) without all the obscure
-stuff almost no one uses anyway.
+I’m fairly sure that many more incompatibilities more subtle than this can be
+found. Are you *sure* that every YAML parser will treat `foo:bar` as a string,
+or `0x42` as the integer `42`, etc.?
 
 Goals achieved?
 ---------------
@@ -254,13 +294,17 @@ Conclusion
 Don’t get me wrong, it’s not like YAML is absolutely terrible – it’s certainly
 not as [problematic as using JSON][json-no] – but it’s not exactly great either.
 There are some drawbacks and surprises that are not at all obvious at first, and
-there are a number of better alternatives (such as [TOML][toml] and other more
-specialized formats).
+there are a number of better alternatives such as [TOML][toml] and other more
+specialized formats.
 
 Personally, I’m not likely to use it again when I’ve got a choice.
 
-[^1]: In PHP you need to modify an INI setting for the safe behaviour; you can’t just call something like `yaml_safe()`. The PHP folks managed again to make something stupid *even more stupid*. Congratulations.
-[^2]: If tabs would be allowed, I would be able to (temporarily) increase the tab width to a higher number to make it easier – this is sort if the point of tabs.
+If you *must* use YAML then I recommend you use
+[StrictYAML](https://github.com/crdoconnor/strictyaml), which removes some
+(though not all) of the more hairy parts.
+
+[^1]: In PHP you need to modify an INI setting for the safe behaviour; you can’t just call something like `yaml_safe()`. The PHP folks managed to make something stupid *even more stupid*. Congratulations.
+[^2]: Don't want to start the spaces vs. tabs debate here, but if tabs would be allowed I would be able to (temporarily) increase the tab width to a higher number to make it easier to see – this is sort if the point of tabs.
 
 [faq]: http://www.yaml.org/faq.html
 [yaml-spec]: http://yaml.org/spec/1.2/spec.pdf

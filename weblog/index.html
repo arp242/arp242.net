@@ -1,0 +1,11 @@
+---
+layout: default
+title: arp242.net
+---
+
+<div id="to-home"><a href="/">Home</a></div>
+<div id="home">
+	<ul>{% for p in site.posts %}
+		<li{% if p.standout %} class="standout"{% endif %}><a href="{{ p.url }}">{{ p.title }}</a></li>{% endfor %}
+	</ul>
+</div>

@@ -95,7 +95,7 @@ body {
 	box-shadow: 0 0 6px rgba(0, 0, 0, .2);
 
 	@media (max-width: @narrow-width) {
-		padding: 0 1rem;
+		padding: 0 .5rem;
 	}
 }
 
@@ -118,10 +118,11 @@ body {
 	ul {
 		list-style: none;
 		padding-left: 1rem;
-
+	
 		li a {
 			display: inline-block;
 			min-width: 11em;
+			vertical-align: top; /* Aligns list bullets. */
 		}
 
 		.standout {
@@ -132,6 +133,17 @@ body {
 			}
 		}
 
+		@media (max-width: @narrow-width) {
+			list-style: disc;
+
+			li {
+				margin-bottom: .5rem;
+
+				a {
+					min-width: auto;
+				}
+			}
+		}
 	}
 }
 
