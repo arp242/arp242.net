@@ -106,5 +106,9 @@ examples:
 - Error handling can be tricky (check `$?` or `set -e`), and doing something
   more advanced beyond "an error occurred" is practically impossible.
 
+- Undefined variables are not an error unless you use `set -u`, leading to "fun
+  stuff" like `rm -r ~/$undefined` deleting user's home dir ([not a theoretical
+  problem](https://github.com/ValveSoftware/steam-for-linux/issues/3671)).
+
 - Everything is a string. Some shells add arrays, which works but is about as
   ugly as can be.

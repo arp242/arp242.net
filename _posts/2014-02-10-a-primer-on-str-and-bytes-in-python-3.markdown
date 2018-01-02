@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A primer on the <code>str</code> and <code>bytes</code> types in Python 3"
+title: "A primer on the str and bytes types in Python 3"
 so: ["Python 3 TypeError: must be str, not bytes with sys.stdout.write()", "http://stackoverflow.com/a/21689447/660921"]
 categories: programming-and-such
 ---

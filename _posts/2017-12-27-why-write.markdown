@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Why write?
+title: "Why write?"
 ---
 
 At the start of *Breaking Bad* Walter is faced with a tricky situation. He
