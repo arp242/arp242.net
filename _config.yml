@@ -2,9 +2,9 @@ name: arp242.net
 url: https://arp242.net
 author: Martin Tournoij
 excerpt_separator: 
-highlighter: null
+highlighter: none
 permalink: /weblog/:title.html
 exclude: [Gemfile, Gemfile.lock, mkcode.go]
 markdown: kramdown
-plugins:
-  - liquid_reading_time
+#plugins:
+#  - liquid_reading_time
