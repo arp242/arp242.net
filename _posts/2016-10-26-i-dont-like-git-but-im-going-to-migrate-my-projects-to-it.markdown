@@ -2,6 +2,7 @@
 layout: post
 title: I don’t like git, but I’m going to migrate my projects to it
 categories: programming-and-such
+updated: 21 Feb 2018
 ---
 
 I don’t like git. But I’m going to migrate my projects to it.
@@ -13,19 +14,19 @@ My chief gripe with git is its user interface. It’s pretty bad. With ‘user
 interface’ I mean the commandline user interface. Let me show by example:
 
 	$ git help commit | wc -l
-	480
+	506
 	$ hg help commit | wc -l
-	56
+	59
 	$ hg help commit -v | wc -l
-	92
+	96
 
-And currently, my git has 160 “core” commands:
+And currently, my git has 164 “core” commands:
 
 	$ ls -1f /usr/lib/git-core/ | grep -v / | wc -l
-	168
+	171
 
-Eight of those aren’t executable and don’t work (error or by design?), meaning I
-have 160 runnable git commands in the standard installation. Compare this to
+Seven of those aren’t executable and don’t work (error or by design?), meaning I
+have 164 runnable git commands in the standard installation. Compare this to
 mercurial’s 50 built-in commands (from `hg help`).
 
 *“But git commit has so many more features”*, well, perhaps. But how many of
@@ -33,10 +34,10 @@ those are actually used by most users? git is bloatware, and like most bloatware
 it comes with a [notoriously difficult to understand manual][git-man].
 
 Mercurial has a manual and user interface that I understand without too much
-effort, and this is by far the biggest reason I very much prefer mercurial over
-git. If I need to know something from mercurial I can just read the
-documentation and go ‘ah’, with git … not so much. There’s a reason so many of
-the [top Stack Overflow questions][so-top] are about git.
+effort, and this is by far the biggest reason I much prefer mercurial over git.
+If I need to know something from mercurial I can just read the documentation and
+go ‘ah’, with git … not so much. There’s a reason so many of the [top Stack
+Overflow questions][so-top] are about git.
 
 Now, some might say (and indeed, have said) that I’m lazy and just need to spend
 more time and effort learning git. Well, perhaps, but the thing is, git doesn’t
@@ -50,18 +51,21 @@ occur only a few times a year. For example consider this error I’ve made two o
 three times in the last few years:
 
 	# Do work
-	$ git ci -m 'Best code ever!'
+	$ git checkout -b feature-branch
+	$ git commit -m 'Best code ever!'
 	$ git push
 
-	# Go have dinner. Discover some error after dinner, fix it.
+	# Okay, work here is done so let's check out master again.
+	$ git checkout master
+
+	# Go have dinner. Discover I forgot something after dinner, fix it.
 	# Let's just ammend that commit instead of making a new one!
-	$ git ci --amend
+	$ git commit --amend
 
-	# But wait, I forgot I already pushed >_<
+	# But wait, I forgot I switched back to master >_<
 
-`git push` will now refuse; you can `--force` and sometimes that’s okay, but
-sometimes it’s not, and it’s not so easy to undo the amend ([the solutions
-listed here][undo-amend] undo *everything*, not only the `--amend`).
+It’s not so easy to undo the amend ([the solutions listed here][undo-amend] undo
+*everything*, not only the `--amend`).
 
 Compare with `hg`:
 
@@ -76,18 +80,18 @@ There are many more examples like this to be found.
 ---
 
 From a technical point of view mercurial has some advantages as well. It has a
-well-designed extensible plugin system; aside from the 50 standard commands
-mercurial also ships with 33 extensions (`hg help extensions`) by default, which
-add many of the commands that are enabled by default in git. It’s also pretty
-easy to write your own extension.
+well-designed plugin system; aside from the 50 standard commands mercurial also
+ships with 33 extensions (`hg help extensions`) by default, which add many of
+the commands that are enabled by default in git. It’s also pretty easy to write
+your own extension.
 
 git ‘extensions’ are merely commands starting with `git-`. These are typically
 shell or Perl scripts – or in the case of `git-instaweb` a shell script which
 generates a Perl script – parsing the output of other git commands. It’s ugly,
 it’s difficult to port reliably (as Larry Wall famously said, “it’s easier to
-port a shell than a script script”), and it’s C core [leaves it open to classic
-memcpy buffer overflows][git-memcpy]. It’s also not even faster, since Python
-[is so much easier to optimize][facebook-hg].
+port a shell than a script script”), and its C core [leaves it open to classic
+memcpy buffer overflows][git-memcpy]. It’s not even faster, since Python [is so
+much easier to optimize][facebook-hg].
 
 Why is everyone using git then?
 -------------------------------
@@ -96,7 +100,7 @@ Why is everyone using git then?
 2. GitHub
 3. Linus Torvalds wrote it.
 
-GitHub had to compete against SourceForge. The challenge was pretty low;
+GitHub had to compete with SourceForge. The challenge was pretty low;
 SourceForge *always* sucked, was *always* slow, and the only thing *anyone*
 really used it for was finding projects and when you found it, the first thing
 you did was click “Visit this project’s website”.
@@ -124,7 +128,7 @@ the network effect.
 
 - Lots of people are familiar with git and GitHub – not so much with mercurial
   and Bitbucket. I feel I’m missing out on bug reports and patches because
-  people give up.
+  people simply can’t be bothered sending them on an unfamiliar platform.
 
 - A number of tools only work with git, and either don’t want to implement
   mercurial support or sometimes even removed it. This is broken and stupid, but
@@ -133,7 +137,7 @@ the network effect.
 One important reason I’ve held out with mercurial and Bitbucket for as long as I
 did is because I feel having something to choose is good and don’t like
 monopolies. In a monopoly sooner or later things tend to stagnate, the world of
-open source is not exception (look at SourceForge, subversion, Apache, gcc,
+open source is not an exception (look at SourceForge, subversion, Apache, gcc,
 etc.).  
 For a while I hoped that mercurial and git would *both* exist as common version
 control systems, but this doesn’t seem to be happening anytime soon, and I’ve
@@ -142,7 +146,7 @@ I’d rather spend as little time as possible on these sort of logistics, and
 simply by using mercurial instead of git I (and others) have to spend more time
 on these logistics.
 
-So let’s simply ‘go with the flow’ and use git, even though it’s pretty shit.
+So let’s simply ‘go with the flow’ and use git, even though I don’t like it.
 
 [undo-amend]: http://stackoverflow.com/a/1459264/660921
 [linus-fanboys]: https://www.bloomberg.com/news/articles/2015-06-16/the-creator-of-linux-on-the-future-without-him
