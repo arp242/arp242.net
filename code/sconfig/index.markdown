@@ -23,71 +23,74 @@ What does it look like?
 =======================
 A file like this:
 
-	# This is a comment
+```apache
+# This is a comment
 
-	port 8080 # This is also a comment
+port 8080 # This is also a comment
 
-	# Look ma, no quotes!
-	base-url http://example.com
+# Look ma, no quotes!
+base-url http://example.com
 
-	# We'll parse these in a []*regexp.Regexp
-	match ^foo.+
-	match ^b[ao]r
+# We'll parse these in a []*regexp.Regexp
+match ^foo.+
+match ^b[ao]r
 
-	# Two values
-	order allow deny
+# Two values
+order allow deny
 
-	host  # Idented lines are collapsed
-		arp242.net         # My website
-		stackoverflow.com  # I like this too
+host  # Idented lines are collapsed
+	arp242.net         # My website
+	stackoverflow.com  # I like this too
 
-	address arp242.net
+address arp242.net
+```
 
 Can be parsed with:
 
-	package main
+```go
+package main
 
-	import (
-		"fmt"
-		"os"
+import (
+	"fmt"
+	"os"
 
-		"arp242.net/sconfig"
+	"arp242.net/sconfig"
 
-		// Types that need imports are in handlers/pkgname
-		_ "arp242.net/sconfig/handlers/regexp"
-	)
+	// Types that need imports are in handlers/pkgname
+	_ "arp242.net/sconfig/handlers/regexp"
+)
 
-	type Config struct {
-		Port    int64
-		BaseURL string
-		Match   []*regexp.Regexp
-		Order   []string
-		Hosts   []string
-		Address string
+type Config struct {
+	Port    int64
+	BaseURL string
+	Match   []*regexp.Regexp
+	Order   []string
+	Hosts   []string
+	Address string
+}
+
+func main() {
+	config := Config{}
+	err := sconfig.Parse(&config, "config", sconfig.Handlers{
+		// Custom handler
+		"address": func(line []string) error {
+			addr, err := net.LookupHost(line[0])
+			if err != nil {
+				return err
+			}
+
+			config.Address = addr[0]
+			return nil
+		},
+	})
+
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error parsing config: %v", err)
 	}
 
-	func main() {
-		config := Config{}
-		err := sconfig.Parse(&config, "config", sconfig.Handlers{
-			// Custom handler
-			"address": func(line []string) error {
-				addr, err := net.LookupHost(line[0])
-				if err != nil {
-					return err
-				}
-
-				config.Address = addr[0]
-				return nil
-			},
-		})
-
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "Error parsing config: %v", err)
-		}
-
-		fmt.Printf("%#v\n", config)
-	}
-
+	fmt.Printf("%#v\n", config)
+}
+```
 
 But why not...
 ==============
@@ -116,31 +119,54 @@ But why not...
   They're both fine, I just don't like the syntax much. Typing all those pesky
   `=` and `"` characters is just so much work man!
 
+- Viper?  
+  [viper](https://github.com/spf13/viper/) is very popular, which I frankly find
+  somewhat surprising. It's large, quite complex, adds a [a lot of
+  dependencies](https://godoc.org/github.com/spf13/viper?import-graph), and IMHO
+  doesn't even work all that well to begin with.
+
 How do I...
 ===========
 
 Validate fields?
 ----------------
-TODO: Mention chainable handlers here.
-There is no built-in way to do this. You can use `if` statements :-)
+Handlers can be chained. For example the default handler for `int64` is:
 
-Maybe I'll add this at a later date, an early (unreleased) version actually had
-tag-based validation, but I removed it as it added a bunch of complexity and I'm
-not at all sure this is a common enough problem that needs solving.
+	RegisterType("int64", ValidateSingleValue(), handleInt64)
 
-Besides, there are are several libraries that already do a good job at that such
-as
-[validator](https://github.com/go-playground/validator),
-[go-validation](https://github.com/BakedSoftware/go-validation),
-[govalidator](https://github.com/asaskevich/govalidator),
-and others.
+`ValidateSingleValue()` returns a type handler that will give an error if there
+isn't a single value for this key; for example this is an error:
+
+	foo 42 42
+
+There are several others as well. See `Validate*()` in godoc. You can add more
+complex validation handlers if you want, but in general I would recommend just
+using plain ol' `if` statements.
+
+Adding things such as tag-based validation isn't a goal at this point. I'm not
+at all that sure this is a common enough problem that needs solving, and there
+are already many other packages which do this (no need to reinvent the wheel).
 
 Set default values?
 -------------------
 Just set them before parsing:
 
 	c := MyConfig{Value: "The default"}
-	sconfig.Parse(&c, "a-file", sconfig.Handlers{})
+	sconfig.Parse(&c, "a-file", nil)
+
+Override from the environment/flags/etc.?
+-----------------------------------------
+There is no direct built-in support for that, but there is `Fields()` to
+list all the field names. For example:
+
+	c := MyConfig{Foo string}
+	sconfig.Parse(&c, "a-file", nil)
+
+	for name, val := range sconfig.Fields(&c) {
+		if flag[name] != "" {
+			val.SetString(flag[name])
+		}
+	}
 
 Use `int` types? I get an error?
 --------------------------------
@@ -208,16 +234,14 @@ The syntax of the file is very simple.
 - All Lines that start with one or more Whitespace characters will be appended
   to the last Value.
 
-Programs using it
-=================
-- [trackwall](https://arp242.net/code/trackwall)
-- [transip-dynamic](https://arp242.net/code/transip-dynamic)
-
 Alternatives
 ============
 Aside from those mentioned in the "But why not..." section above:
 
-- [https://github.com/kovetskiy/ko](https://github.com/kovetskiy/ko)
+- [github.com/kovetskiy/ko](https://github.com/kovetskiy/ko)
+- [github.com/stevenroose/gonfig](https://github.com/stevenroose/gonfig)
+
+Probably others? Open an issue/PR and I'll add it.
 
 [json-no]: http://arp242.net/weblog/JSON_as_configuration_files-_please_dont.html
 [yaml-meh]: http://arp242.net/weblog/yaml_probably_not_so_great_after_all.html
