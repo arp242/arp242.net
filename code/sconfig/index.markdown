@@ -2,7 +2,7 @@
 layout: code
 title: "sconfig"
 link: "sconfig"
-last_version: "master"
+last_version: "v1.0"
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
@@ -176,6 +176,14 @@ you can do easily with your own type handler :-)
 
 Note that the size of `int` and `uint` are platform-dependent, so adding those
 may not be a good idea.
+
+Use my own types as config fields?
+----------------------------------
+You have three options:
+
+- Add a type handler with `sconfig.RegisterType()`.
+- Make your type satisfy the `encoding.TextUnmarshaler` interface.
+- Add a `Handler` in `sconfig.Parse()`.
 
 I get a "don’t know how to set fields of the type ..." error if I try to add a new type handler
 -----------------------------------------------------------------------------------------------
