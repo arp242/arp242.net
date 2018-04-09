@@ -1,7 +1,7 @@
 ---
 title: "Browsers and conflicts of interests"
 layout: post
-updated: 27 Dec 2017
+updated: 9 Apr 2018
 ---
 
 What do you get when you search for ‘Firefox’ in a new Windows 10 installation?
@@ -64,8 +64,8 @@ Google ads?
 These concerns are hardly new; the Microsoft browser bundling was a subject of
 much complaining and litigation in the past leading to the (in)famous
 [BrowserChoice.eu](https://en.wikipedia.org/wiki/BrowserChoice.eu). Whether that
-was a good decision or not is up for grabs, but baking full-page ads and
-warnings in your products strikes me as ethically dubious at best.
+was a good decision is up for grabs, but baking full-page ads and warnings in
+your products strikes me as ethically dubious at best.
 
 I haven’t used Windows – or any Microsoft product – in years, but it looks like
 it’s still the same old crap. Just booting Windows also blew away my `grub`
@@ -81,4 +81,5 @@ Search, Gmail, Chrome: it's all free of charge. Some of it (like Chromium and
 Android) is even (partly) Open Source (or ‘[Free
 Software](https://www.fsf.org/about/what-is-free-software)’, if you prefer).
 This is kind of neat, but seems to do little to protect most people’s actual
-freedoms.
+freedoms, and in the end it’s not about the money you pay but about your
+freedom.

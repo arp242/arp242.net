@@ -38,6 +38,7 @@ The list is in no particular order. Items with a <sup>▸</sup> are a video.
   to equate ‘elections’ with ‘democracy’, but they’re not the same things!
 - [Before you can be with others, first learn to be alone](https://aeon.co/ideas/before-you-can-be-with-others-first-learn-to-be-alone)
 - [What Bullets Do to Bodies](http://highline.huffingtonpost.com/articles/en/gun-violence/)
+- [History of the Amiga](https://arstechnica.com/series/history-of-the-amiga/)
 
 
 Programming
