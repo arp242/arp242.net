@@ -40,9 +40,11 @@ Oh, and Microsoft also
 
 ---
 
-It doesn’t end with Microsoft. For years Google displayed a Chrome
-advertisements on Google search (although it looks like they have stopped doing
-it now). And what about enabling the ‘Do Not Track’ header in Chrome?
+It doesn’t end with Microsoft. For years [Google displayed a Chrome
+advertisements on Google
+search](https://productforums.google.com/forum/#!topic/chrome/u_8RWVl1TzE)
+(although it looks like they have stopped doing it now). And what about enabling
+the ‘Do Not Track’ header in Chrome?
 
 <div class="border-img center-img"><img alt="Enabling Do Not Track" src="{% base64 ./_images/browser/chrome1.png %}"></div>
 
@@ -61,25 +63,37 @@ Google ads?
 
 ---
 
-These concerns are hardly new; the Microsoft browser bundling was a subject of
-much complaining and litigation in the past leading to the (in)famous
-[BrowserChoice.eu](https://en.wikipedia.org/wiki/BrowserChoice.eu). Whether that
-was a good decision is up for grabs, but baking full-page ads and warnings in
-your products strikes me as ethically dubious at best.
+These concerns are hardly new; Microsoft bundling their Internet Explorer
+browser (as well as some other products, such as Media Player) with their
+Windows operating system was a subject of much complaining and litigation in the
+past, eventually leading to the (in)famous
+[BrowserChoice.eu](https://en.wikipedia.org/wiki/BrowserChoice.eu). Whether the
+BrowserChoice.eu screen was a good solution is up for grabs; many people found
+it annoying. But it seems to me that a *single* screen offering you a *useful*
+choice is a lot better than the *several* annoying fake warnings that Windows 10
+shows.
 
 I haven’t used Windows – or any Microsoft product – in years, but it looks like
-it’s still the same old crap. Just booting Windows also blew away my `grub`
-bootloader by the way. My ten-minute stint with Microsoft Windows is over.
-
-All of this makes paying the Microsoft tax on my ThinkPad even more sour…
+it’s still the [same old
+crap](https://www.cnet.com/news/facts-behind-microsofts-anti-linux-campaign/).
+Oh, and just booting Windows also blew away my `grub` bootloader by the way. My
+ten-minute stint with Microsoft Windows is over. All of this makes paying the
+Microsoft tax on my ThinkPad even more sour :-(
 
 ---
 
-Microsoft was (is) perceived as a monopoly; I suspect that a strong reason that
-Google isn’t by many people because you don’t directly pay for their products.
-Search, Gmail, Chrome: it's all free of charge. Some of it (like Chromium and
-Android) is even (partly) Open Source (or ‘[Free
+One reason Microsoft can get away with their Internet Explorer shenanigans is
+because a lot changed in the last ten years, and Microsoft is no longer as
+dominant as it once was: Internet Explorer market share is small, and macOS –
+and to a lesser extent Linux – offers competition to Windows.
+
+For some reason people’s perception of Google seems more cavalier; part of the
+reason for that is because it doesn’t have the dominance Microsoft once had
+(Chrome ‘only’ has about 60% market share at the time of writing), but I suspect
+that another important reason is that you don’t directly pay for most Google
+products. Search, Gmail, Chrome: it's all free of charge. Some of it (like
+Chromium and Android) is even (partly) Open Source (or ‘[Free
 Software](https://www.fsf.org/about/what-is-free-software)’, if you prefer).
 This is kind of neat, but seems to do little to protect most people’s actual
-freedoms, and in the end it’s not about the money you pay but about your
-freedom.
+freedoms, and in the end it’s important to remember that it’s not about the
+money you pay, but about your freedom.
