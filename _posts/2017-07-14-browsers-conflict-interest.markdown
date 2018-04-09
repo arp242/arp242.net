@@ -76,14 +76,12 @@ shows.
 I haven’t used Windows – or any Microsoft product – in years, but it looks like
 it’s still the [same old
 crap](https://www.cnet.com/news/facts-behind-microsofts-anti-linux-campaign/).
-Oh, and just booting Windows also blew away my `grub` bootloader by the way. My
-ten-minute stint with Microsoft Windows is over. All of this makes paying the
-Microsoft tax on my ThinkPad even more sour :-(
+All of this makes paying the Microsoft tax on my ThinkPad even more sour :-(
 
 ---
 
-One reason Microsoft can get away with their Internet Explorer shenanigans is
-because a lot changed in the last ten years, and Microsoft is no longer as
+One reason Microsoft can now get away with their Internet Explorer shenanigans
+is because a lot changed in the last ten years, and Microsoft is no longer as
 dominant as it once was: Internet Explorer market share is small, and macOS –
 and to a lesser extent Linux – offers competition to Windows.
 
