@@ -15,9 +15,9 @@ body {font: 16px/1.9em 'Libre Baskerville', 'DejaVu Serif', 'Georgia', serif; ma
 @media (max-width: 46rem) {#home ul {list-style: disc;}
 #home ul li {margin-bottom: .5rem;}
 #home ul li a {min-width: auto;}
-}a {color: #00f; text-decoration: none; transition: all .2s; -webkit-transition: all .2s;}
-a:hover {color: #6491ff; text-decoration: underline;}
-a img {border-radius: 2px; border: 1px solid #dadada; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);}
+}a,a code {color: #00f; text-decoration: none; transition: all .2s; -webkit-transition: all .2s;}
+a:hover,a code:hover {color: #6491ff; text-decoration: underline;}
+a img,a code img {border-radius: 2px; border: 1px solid #dadada; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);}
 img {max-width: 100%;}
 div.center-img {text-align: center;}
 div.border-img img {border: 1px solid #d6d6d6; border-radius: 2px;}
