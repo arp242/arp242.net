@@ -68,6 +68,11 @@ func main() {
 			continue
 		}
 
+		// Ignore my "test" repo as well.
+		if v.Name == "test" {
+			continue
+		}
+
 		myRepos = append(myRepos, v)
 	}
 
@@ -102,15 +107,21 @@ func readAndWriteRepo(ch chan bool, repo repository) {
 
 	// Write code/<project>/index.markdown
 	dir := root + "/code/" + repo.LinkNameLower
-	os.MkdirAll(dir, 0755)
+	err := os.MkdirAll(dir, 0755)
+	check(err)
+
 	f, err := os.Create(dir + "/index.markdown")
 	check(err)
-	defer f.Close()
+	defer func() {
+		err := f.Close()
+		check(err)
+	}()
 
 	out := bufio.NewWriter(f)
 	err = pageTemplate.Execute(out, repo)
 	check(err)
-	out.Flush()
+	err = out.Flush()
+	check(err)
 
 	ch <- true
 }
@@ -163,7 +174,7 @@ func readURL(url string) []byte {
 	}
 	b, err := ioutil.ReadAll(resp.Body)
 	check(err)
-	defer resp.Body.Close()
+	defer resp.Body.Close() // nolint: errcheck
 
 	if resp.StatusCode != 200 {
 		fmt.Fprintf(os.Stderr, "mkcode code %v: %v %v\n%v", resp.StatusCode,
