@@ -58,16 +58,16 @@ fewer bugs.
 
 Take my [packman.vim](https://github.com/Carpetsmoker/packman.vim) script for
 example. It started out as a simple `for` loop over all directories and a `git
-pull`. At about 200 lines it's hardly the most complex script, and it's pretty
-much feature-complete as far as I'm concerned, but had I written it in Go as I
-originally planned then it would have been much easier to add support for
-printing out the status or cloning new repos from a config file. It would also
-be almost trivial to add support for parallel clones, which is nigh-impossible
-in a shell script. In hindsight, I would have saved time, and gotten a better
-result to boot.
+pull` and has grown from there.
+At about 200 lines it's hardly the most complex script, but had I written it in
+Go as I originally planned then it would have been much easier to add support
+for printing out the status or cloning new repos from a config file. It would
+also be almost trivial to add support for parallel clones, which is hard (though
+not impossible) to do correct in a shell script.
+In hindsight, I would have saved time, and gotten a better result to boot.
 
-I regret writing most shell script I've written for similar reasons, and my 2018
-new year's pledge will be to not write any more.
+I regret writing most shell scripts I've written for similar reasons, and my
+2018 new year's pledge will be to not write any more.
 
 Appendix: the problems
 ----------------------
@@ -77,7 +77,7 @@ examples:
 
 - Dealing with filenames that contain spaces or other ‘special’ characters
   requires careful attention to detail. The vast majority of scripts get this
-  wrong, even when written by experiences authors who care about such things
+  wrong, even when written by experienced authors who care about such things
   (e.g. me), because it's so *easy* to do it wrong.
 
 - There are many "right" and "wrong" ways to do things. Should you use `which`
@@ -91,7 +91,7 @@ examples:
   complex algorithms can be very painful – if not nigh-impossible – even when
   using the ksh/zsh/bash extensions. My ad-hoc HTML parsing in the example above
   was okay for a quick one-off script, but you really don't want to do things
-  like that in a production-script that will continue to work.
+  like that in a production-script.
 
 - It can be hard to write shell scripts that work well on all platforms.
   `/bin/sh` could be `dash` or `bash`, and will behave different. External tools
@@ -110,5 +110,7 @@ examples:
   stuff" like `rm -r ~/$undefined` deleting user's home dir ([not a theoretical
   problem](https://github.com/ValveSoftware/steam-for-linux/issues/3671)).
 
-- Everything is a string. Some shells add arrays, which works but is about as
-  ugly as can be.
+- Everything is a string. Some shells add arrays, which works but the syntax is
+  obscure and ugly. Numeric computations with fractions remain tricky and rely
+  on external tools such as `bc` or `dc` (`$(( .. ))` expansion only works for
+  integers).
