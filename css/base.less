@@ -21,7 +21,7 @@
  * who cares – it's not like the font is that important.
  *
  * curl -s -A 'Mozilla/5.0 (X11; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0' \
- *     'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700%7cRoboto+Condensed:400,400italic' |
+ *     'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700%7cRoboto+Condensed:400' |
  *     grep -A7 '\/\* latin \*\/' |
  *     sed '/^--/d; /^\//d'
  */
@@ -31,7 +31,7 @@
 	font-weight: 400;
 	src: local('Libre Baskerville'),
 		local('LibreBaskerville-Regular'),
-		url(https://fonts.gstatic.com/s/librebaskerville/v4/pR0sBQVcY0JZc_ciXjFsK6Ucnt8gjcHpqyffjHeZWDA.woff2) format('woff2');
+		url(/fonts/libre-baskerville.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 @font-face {
@@ -40,16 +40,16 @@
 	font-weight: 700;
 	src: local('Libre Baskerville Bold'),
 		local('LibreBaskerville-Bold'),
-		url(https://fonts.gstatic.com/s/librebaskerville/v4/kH7K4InNTm7mmOXXjrA5v6y7YSlLHrWsjpD3RcrnyFM.woff2) format('woff2');
+		url(/fonts/libre-baskerville-bold.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-	}
+}
 @font-face {
 	font-family: 'Libre Baskerville';
 	font-style: italic;
 	font-weight: 400;
 	src: local('Libre Baskerville Italic'),
 		local('LibreBaskerville-Italic'),
-		url(https://fonts.gstatic.com/s/librebaskerville/v4/QHIOz1iKF3bIEzRdDFaf5eUHi-3yDrzgLLsrfaKVF9k.woff2) format('woff2');
+		url(/fonts/libre-baskerville-italic.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 @font-face {
@@ -58,16 +58,7 @@
 	font-weight: 400;
 	src: local('Roboto Condensed'),
 		local('RobotoCondensed-Regular'),
-		url(https://fonts.gstatic.com/s/robotocondensed/v13/Zd2E9abXLFGSr9G3YK2MsDAdhzWOYhqHvOZMRGaEyPo.woff2) format('woff2');
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-}
-@font-face {
-	font-family: 'Roboto Condensed';
-	font-style: italic;
-	font-weight: 400;
-	src: local('Roboto Condensed Italic'),
-		local('RobotoCondensed-Italic'),
-		url(https://fonts.gstatic.com/s/robotocondensed/v13/BP5K8ZAJv9qEbmuFp8RpJdbvlX87CS9_IgWvysdluIM.woff2) format('woff2');
+		url(/fonts/roboto-condensed.woff2) format('woff2');
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
@@ -76,7 +67,6 @@
  **************/
 body {
 	font: 16px/1.9em @font;
-	//font-feature-settings: "kern" on, "liga" on, "calt" on, "dlig";
 	margin: 0;
 	background-color: #eee;
 	overflow-y: scroll;
@@ -84,10 +74,9 @@ body {
 	-moz-tab-size: 4;
 }
 #home, #page {
-	position: relative;
-	top: 8px;
 	padding: 0 @content-padding;
 	margin: 0 auto;
+	margin-top: 8px;
 	overflow: hidden;
 	background-color: #fff;
 	color: #252525;
@@ -125,14 +114,6 @@ body {
 			vertical-align: top; /* Aligns list bullets. */
 		}
 
-		.standout {
-			font-weight: bold;
-			&:before {
-				content: "★ ";
-				color: #dfdf16;
-			}
-		}
-
 		@media (max-width: @narrow-width) {
 			list-style: disc;
 
@@ -147,7 +128,6 @@ body {
 	}
 }
 
-
 /****************
  *** Defaults ***
  ***************/
@@ -156,7 +136,6 @@ a code {
 	color: #00f;
 	text-decoration: none;
 	transition: all .2s;
-	-webkit-transition: all .2s;
 
 	&:hover {
 		color: #6491ff;
@@ -235,9 +214,7 @@ hr {
 	border: none;
 	text-align: center;
 	vertical-align: middle;
-
 	clear: both;
-
 	color: @highlight-fg;
 	text-shadow: 2px 2px 2px rgba(0, 0, 0, .1);
 
@@ -258,28 +235,9 @@ hr {
 	}
 }
 
-label {
-	display: inline-block;
-	width: 200px;
-	vertical-align: top;
-}
-input, textarea {
-	min-width: 400px;
-	padding: .4em;
-	margin-bottom: .5em;
-	border: 1px solid #ccc;
-}
-textarea {
-	min-height: 7em;
-}
-button {
-	margin-left: 210px;
-}
-
 .hatnote {
 	font-size: .8em;
 }
-
 
 /****************
  *** Any page ***
