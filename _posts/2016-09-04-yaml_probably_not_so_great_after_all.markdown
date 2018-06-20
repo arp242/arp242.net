@@ -94,7 +94,7 @@ It’s pretty complex
 
 YAML may seem ‘simple’ and ‘obvious’ when glancing at a basic example, but turns
 out it’s not. The [YAML spec][yaml-spec] is 23,449 words; for comparison,
-[TOML][toml-spec] is 838 words, [JSON][json-spec] is 1,969 words, and
+[TOML][toml-spec] is 3,339 words, [JSON][json-spec] is 1,969 words, and
 [XML][xml-spec] is 20,603 words.
 
 Who among us have read all that? Who among us have read and *understood* all of
