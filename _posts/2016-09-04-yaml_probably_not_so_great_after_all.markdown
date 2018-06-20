@@ -309,7 +309,7 @@ If you *must* use YAML then I recommend you use
 (though not all) of the more hairy parts.
 
 [^1]: In PHP you need to modify an INI setting for the safe behaviour; you can’t just call something like `yaml_safe()`. The PHP folks managed to make something stupid *even more stupid*. Congratulations.
-[^2]: Don't want to start the spaces vs. tabs debate here, but if tabs would be allowed I would be able to (temporarily) increase the tab width to a higher number to make it easier to see – this is sort if the point of tabs.
+[^2]: Don't want to start the spaces vs. tabs debate here, but if tabs would be allowed I would be able to (temporarily) increase the tab width to a higher number to make it easier to see – this is sort of the point of tabs.
 
 [faq]: http://www.yaml.org/faq.html
 [yaml-spec]: http://yaml.org/spec/1.2/spec.pdf
