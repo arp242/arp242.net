@@ -234,7 +234,7 @@ as I can tell, doesn’t have a way to load multiple documents.
 
 I’m fairly sure that many more incompatibilities more subtle than this can be
 found. Are you *sure* that every YAML parser will treat `foo:bar` as a string,
-or `0x42` as the integer `42`, etc.?
+or `0x42` as the integer `66`, etc.?
 
 Goals achieved?
 ---------------
