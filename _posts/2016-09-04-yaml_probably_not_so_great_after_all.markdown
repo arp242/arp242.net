@@ -6,7 +6,8 @@ categories: programming-and-such
 ---
 
 I previously wrote [why using JSON for human-editable configuration files is a
-bad idea][json-no]. Today we’re going to look at some of the problems with YAML.
+bad idea][json-no]. Today we’re going to look at some general problems with the
+YAML format.
 
 Insecure by default
 -------------------
@@ -139,21 +140,24 @@ Or what about:
 	python: 3.5.3
 	postgres: 9.3
 
-9.3 gets recognized as a number, but 3.5.3 does’t:
+`3.5.3` gets recognized as as string, but `9.3` gets recognized as a number
+instead of a string:
 
 	{'python': '3.5.3', 'postgres': 9.3}
 
 Or what about:
 
-	013: Tilburg
 	Effenaar: Eindhoven
+	013: Tilburg
 
 013 is a popular music Venue in Tilburg, but YAML will send you the wrong way:
 
 	{11: 'Tilburg', 'Effenaar': 'Eindhoven'}
 
 All of this – and more – is why many experienced YAMLers will often quote all
-strings, even when it's not strictly required.
+strings, even when it's not strictly required. Many people don’t use quotes, and
+it can be easy to forget especially if the rest of the file – possibly written
+by other people – doesn’t use quotes.
 
 ### It’s not portable
 
