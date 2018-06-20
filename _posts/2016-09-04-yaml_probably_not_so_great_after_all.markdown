@@ -150,7 +150,8 @@ Or what about:
 	Effenaar: Eindhoven
 	013: Tilburg
 
-013 is a popular music Venue in Tilburg, but YAML will send you the wrong way:
+013 is a popular music Venue in Tilburg, but YAML will send you the wrong way
+since it’s parsed as an octal number:
 
 	{11: 'Tilburg', 'Effenaar': 'Eindhoven'}
 
