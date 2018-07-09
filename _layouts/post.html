@@ -14,6 +14,8 @@ layout: default
 		<em class="hatnote">This is modified from my answer at Stack Overflow: <a href="{{ page.so[1] }}">{{ page.so[0] }}</a>.</em>
 	{% elsif page.vi %}
 		<em class="hatnote">This is modified from my answer at Vi and Vim Stack Exchange: <a href="{{ page.vi[1] }}">{{ page.vi[0] }}</a>.</em>
+	{% elsif page.hatnote %}
+		<em class="hatnote">{{ page.hatnote }}</em>
 	{% endif %}
 
 	{{ content }}

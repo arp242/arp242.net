@@ -3,6 +3,7 @@ layout: post
 title: "JSON as configuration files: please don’t"
 updated: 17 Dec 2016
 categories: programming-and-such
+hatnote: 'Also see <a href="/weblog/yaml_probably_not_so_great_after_all.html">YAML: probably not so great after all.</a>'
 ---
 
 I’ve recently witnessed the rather disturbing trend of using JSON for
@@ -110,52 +111,6 @@ people that we’re working around things!)
 The old way of doing things in MediaWiki (declaring class variables) was a lot
 better and provided much more features.
 
-Alternatives
-------------
-
-- The [“recommended way”][crockford] by JSON author Douglas Crockford is “pipe
-  it through JSMin before handing it to your JSON parser”. *Some* JSON parsers
-  also explicitly support comments (but most don’t). Having to pre-process your
-  configuration files is a pain though.
-
-- `import`, `require`, `include`, or use whatever code-importing facilities your
-  language provides (or even `eval()`). This means configuration files have to
-  be a trusted source, but this is usually the case.
-
-- `ini` files; not standardized, but this usually isn’t a problem since
-  configuration files are typically intended to be read by only one program.
-
-- [TOML][toml] is very similar to `ini` files, but standardized.
-
-- YAML is sort of okay-ish ... I guess ... I'm not a big fan of it though, I
-  wrote a separate page on that: [YAML: probably not so great after all][yaml].
-
-- While I wouldn’t necessarily recommend it, “rolling your own” configuration
-  file parser is really easy. In Python:
-
-	  with open('my-file.ini') as fp:
-	  	for i, line in enum(fp.readline()):
-	  		# Remove comments
-	  		line = re.sub('[#;].*', '', line).strip()
-
-	  		# Skip blank lines
-	  		if line = '':
-	  			continue
-
-	  		# Error out on lines without a =
-	  		if not '=' in line:
-	  			raise Exception('No = on line {}'.format(i + 1))
-
-	  		# Everything before the first = is a key
-	  		line = line.split('=')
-	  		key = line[0].strip()
-
-	  		# Everything after that is the value
-	  		value = '='.join(line[1:]).strip()
-
-  This doesn’t support everything that `.ini` files do, but for many purposes
-  it can work quite well.
-
 Examples
 --------
 
@@ -170,11 +125,7 @@ Name and shame :-)
   support](https://github.com/bower/bower/issues/1059).
 - … Unfortunately many, many more …
 
-### Advocates
-
-- [JSON configuration file format](http://octodecillion.com/blog/json-data-file-format/)
 
 [crockford]: https://plus.google.com/+DouglasCrockfordEsq/posts/RK8qyGVaGSr
 [toml]: https://github.com/toml-lang/toml
-[yaml]: http://arp242.net/weblog/yaml_probably_not_so_great_after_all.html
 [parse]: http://seriot.ch/parsing_json.php
