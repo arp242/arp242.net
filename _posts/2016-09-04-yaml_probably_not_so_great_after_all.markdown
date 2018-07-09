@@ -237,9 +237,7 @@ The reason for this is that there are multiple YAML documents in a single file
 parse all documents. Ruby’s `load()` just loads the first document, and as near
 as I can tell, doesn’t have a way to load multiple documents.
 
-I’m fairly sure that many more incompatibilities more subtle than this can be
-found. Are you *sure* that every YAML parser will treat `foo:bar` as a string,
-or `0x42` as the integer `66`, etc.?
+There are [many more incompatibilities between implementations][yaml-sucks].
 
 Goals achieved?
 ---------------
@@ -313,6 +311,7 @@ If you *must* use YAML then I recommend you use
 
 [faq]: http://www.yaml.org/faq.html
 [yaml-spec]: http://yaml.org/spec/1.2/spec.pdf
+[yaml-sucks]: https://github.com/cblp/yaml-sucks
 [toml-spec]: https://github.com/toml-lang/toml
 [json-spec]: http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf
 [xml-spec]: https://www.w3.org/TR/REC-xml/
