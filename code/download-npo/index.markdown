@@ -58,11 +58,13 @@ Gebruik
 download-npo is een commandline-tool, er is ook een grafische frontend
 `download-npo-gui`.
 
-Voorbeeld:  
-`download-npo http://www.npo.nl/andere-tijden/23-10-2014/VPWON_1227038`
+Voorbeeld:
 
-of met alleen de episode ID:  
-`download-npo VPWON_1227038`
+    download-npo http://www.npo.nl/andere-tijden/23-10-2014/VPWON_1227038
+
+of met alleen de episode ID:
+
+    download-npo VPWON_1227038
 
 Zie `download-npo -h` voor een overzicht van alle opties.
 
@@ -94,6 +96,15 @@ Ondertitels worden opgeslagen als .srt, maar zijn eigenlijk in het WebVTT formaa
 ----------------------------------------------------------------------------------
 Dat klopt; WebVTT wordt vooralsnog door maar weinig spelers herkend, en het is
 feitelijk hetzelfde als Subrip (`.srt`) ondertitels (de verschillen zijn miniem).
+
+Werkt dit ook vanuit het buitenland?
+------------------------------------
+Voor de meeste videos werkt het downloaden van het buitenland prima.
+
+Voor andere videos is er echter een beperking ivm. de copyright (je krijgt dan
+een foutmelding). Daar kan ik niet zo veel aan doen, aangezien dat via het IP
+address gaat. Je zal dan een VPN verbinding met een Nederlands IP address of
+iets dergelijks moeten gebruiken.
 
 Ik vind dit geen fijn programma, weet je misschien iets anders?
 ---------------------------------------------------------------

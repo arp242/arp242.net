@@ -2,7 +2,6 @@ package main
 
 import (
 	"bufio"
-	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -12,9 +11,11 @@ import (
 	"strings"
 	"text/template"
 	"time"
+
+	"arp242.net/hubhub"
 )
 
-const user = "https://api.github.com/users/Carpetsmoker/repos"
+const user = "/users/Carpetsmoker/repos"
 
 type repository struct {
 	Name        string `json:"name"`
@@ -47,39 +48,22 @@ var root string
 func main() {
 	root, _ = filepath.Abs(os.Args[0])
 	root = filepath.Dir(filepath.Dir(root))
+	fmt.Println("writing to", root)
+
+	hubhub.User = "Carpetsmoker"
+	hubhub.Token = os.Getenv("GITHUB_PASS")
 
 	// Read repos
 	var allRepos []repository
-	for i := 1; i <= 10; i++ {
-		var repos []repository
-		err := json.Unmarshal(readURL(fmt.Sprintf("%s?page=%d", user, i)), &repos)
-		check(err)
+	err := hubhub.Paginate(&allRepos, "GET", user, 0)
+	check(err)
 
-		if len(repos) == 0 {
-			break
-		}
-		allRepos = append(allRepos, repos...)
-	}
-
-	// Don't list stuff I forked, only repos I created.
-	myRepos := []repository{}
-	for _, v := range allRepos {
-		if v.Fork {
-			continue
-		}
-
-		// Ignore my "test" repo as well.
-		if v.Name == "test" {
-			continue
-		}
-
-		myRepos = append(myRepos, v)
-	}
+	allRepos = filter(allRepos)
 
 	// Write files
 	numRequests := 0
 	ch := make(chan bool)
-	for _, v := range myRepos {
+	for _, v := range allRepos {
 		go readAndWriteRepo(ch, v)
 		numRequests++
 	}
@@ -93,21 +77,51 @@ func main() {
 	fmt.Println("")
 }
 
+// Don't list stuff I forked, only repos I created.
+func filter(allRepos []repository) []repository {
+	myRepos := []repository{}
+	for _, v := range allRepos {
+		if v.Fork {
+			continue
+		}
+
+		// Ignore my "test" repo as well.
+		if v.Name == "test" {
+			continue
+		}
+
+		myRepos = append(myRepos, v)
+	}
+	return myRepos
+}
+
 // Read some extra repository info and write to /code/<project>/index.markdown
 func readAndWriteRepo(ch chan bool, repo repository) {
 	l := strings.Split(repo.HTMLLink, "/")
 	repo.LinkName = l[len(l)-1]
 	repo.LinkNameLower = strings.ToLower(repo.LinkName)
-	repo.READMEContents = string(readURL(fmt.Sprintf(
+
+	resp, err := http.Get(fmt.Sprintf(
 		"https://raw.githubusercontent.com/Carpetsmoker/%v/master/README.markdown?v=%v",
-		repo.LinkName, time.Now().Unix())))
+		repo.LinkName, time.Now().Unix()))
+	if err != nil {
+		check(err)
+	}
+	defer resp.Body.Close() // nolint: errcheck
+
+	data, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		check(err)
+	}
+
+	repo.READMEContents = string(data)
 
 	// Extract some data from the README
 	repo.LastVersion = lastTag(repo)
 
 	// Write code/<project>/index.markdown
 	dir := root + "/code/" + repo.LinkNameLower
-	err := os.MkdirAll(dir, 0755)
+	err = os.MkdirAll(dir, 0755)
 	check(err)
 
 	f, err := os.Create(dir + "/index.markdown")
@@ -126,63 +140,19 @@ func readAndWriteRepo(ch chan bool, repo repository) {
 	ch <- true
 }
 
-type tagT struct {
-	Name string
-}
-
-type tagsT []tagT
-
 // Find the last tag, or "master".
 func lastTag(repo repository) (tagname string) {
 	// Most stuff is tagged as "version-1.2", so sorting descending gives the
 	// most recent version first (can't sort by date)
-	data := readURL(repo.TagsLink + "?sort=-name")
-	var tags tagsT
-	err := json.Unmarshal(data, &tags)
+
+	var tags []struct{ Name string }
+	_, err := hubhub.Request(&tags, "GET", repo.TagsLink+"?sort=-name")
 	check(err)
 
 	if len(tags) == 0 {
 		return "master"
 	}
 	return tags[0].Name
-}
-
-// Read text from an URL
-func readURL(url string) []byte {
-	//fmt.Println(url)
-	client := &http.Client{Timeout: 5 * time.Second}
-	req, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "mkcode error: %v %v\n", url, err)
-		os.Exit(1)
-	}
-
-	req.Header.Set("User-Agent", "Carpetsmoker/mkcode")
-	if _, err := os.Stat(root + "/_mkcode/_secret"); err == nil {
-		pw, err := ioutil.ReadFile(root + "/_mkcode/_secret")
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "mkcode error: could not read _secret: %v\n", err)
-			os.Exit(1)
-		}
-		req.SetBasicAuth("Carpetsmoker", strings.TrimSpace(string(pw)))
-	}
-
-	resp, err := client.Do(req)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "mkcode error: %v %v\n", url, err)
-		os.Exit(1)
-	}
-	b, err := ioutil.ReadAll(resp.Body)
-	check(err)
-	defer resp.Body.Close() // nolint: errcheck
-
-	if resp.StatusCode != 200 {
-		fmt.Fprintf(os.Stderr, "mkcode code %v: %v %v\n%v", resp.StatusCode,
-			string(b), url, err)
-		os.Exit(1)
-	}
-
-	return b
 }
 
 // Panic if err is non-nil
