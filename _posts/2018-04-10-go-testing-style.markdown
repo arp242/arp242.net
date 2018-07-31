@@ -5,8 +5,8 @@ updated: 31 Jul 2018
 ---
 
 A small (opinionated) style guide for writing Go tests. There is much more to be
-said about writing good tests than just what I’ve written here. Most of this
-focuses on *style*, rather than *technique*.
+said about writing good tests than what I’ve written here. Most of this focuses
+on *style*, rather than *technique*.
 
 Use table-drive tests, and consistently use `tt` for a test case
 ----------------------------------------------------------------
@@ -89,8 +89,8 @@ Lint your tests as your regular code
 
 Tests are code that can fail, be wrong, and will need to be maintained. So if
 you think it’s worth running a linter on your regular code, then it’s almost
-certainly also worth running it on your test code (like e.g. `go vet`,
-`errcheck`, etc.)
+certainly also worth running it on your test code (e.g. `go vet`, `errcheck`,
+etc.)
 
 Use `want` and `got`
 --------------------
@@ -112,7 +112,7 @@ Add useful, aligned, information
 It’s annoying when a test fail with a useless error message, or a noisy error
 message which makes it hard to see what exactly went wrong.
 
-This is not very useful:
+This is not especially useful:
 
     t.Errorf("wrong output: %v", got)
 
@@ -153,6 +153,22 @@ Notice the two spaces after `got:` to make it aligned with `want`. If I had used
 
 I also tend to prefer to use `%q` or `%#v`, as that will show things like
 trailing whitespace or unprintable characters more clearly.
+
+Use a diff when comparing larger objects; for example with
+[go-cmp](https://github.com/google/go-cmp):
+
+	if d := cmp.Diff(got, tt.want); d != "" {
+		t.Errorf("(-got +want)\n:%s", d)
+	}
+
+<!-- -->
+
+	--- FAIL: TestParseFilter (0.00s)
+		--- FAIL: TestParseFilter/alias (0.00s)
+			query_test.go:717: (-got +want)
+				:{jsonapi.Filter}.Alias:
+					-: "fail"
+					+: "alias"
 
 Make it clear what is being tested
 ----------------------------------
