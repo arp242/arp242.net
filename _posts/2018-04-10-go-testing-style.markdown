@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Go testing style guide"
+updated: 31 Jul 2018
 ---
 
 A small (opinionated) style guide for writing Go tests. There is much more to be
@@ -11,8 +12,8 @@ Use table-drive tests, and consistently use `tt` for a test case
 ----------------------------------------------------------------
 
 Try to use table-driven tests whenever feasible, but it’s okay to just copy some
-code when it’s not; don’t force it (e.g. sometimes it’s easy to write a
-table-driven test for all but one or two cases).
+code when it’s not; don’t force it (e.g. sometimes it’s easier to write a
+table-driven test for all but one or two cases; be practical).
 
 Consistently using the same variable name for a test case will make it easier to
 work with large code bases. You don’t *have* to use `tt`, but it is the most
@@ -32,9 +33,10 @@ Example:
 Use subtests
 ------------
 
-Using subtests makes it easier to see what fails and, more importantly, easy to
-run just a single test. Since subtests are comparatively new (Go 1.7, Oct 2016)
-many existing tests don’t use them, but they should be used for all new tests.
+Using subtests makes it possible to run just a single test case from a table, as
+well as easily see which test *exactly* failed. Since subtests are comparatively
+new (Go 1.7, Oct 2016) many existing tests don’t use them, but they should be
+used for all new tests.
 
 I tend to simply use the test number if it’s obvious what is being tested, and
 add a test name if it’s not or if there are many test cases.
@@ -49,8 +51,8 @@ Example:
 
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("%d", i), func(t *testing.T) {
-			out := TestFunction(tt.input)
-			if out != tt.want {
+			got := TestFunction(tt.input)
+			if got != tt.want {
 				t.Errorf("failed for %v ...", tt.input)
 			}
 		})
@@ -65,14 +67,14 @@ for some confusing test failures.
 
 Example:
 
-    out, err := Fun()
+    got, err := Fun()
     if err != nil {
         t.Fatalf("unexpected error: %v", err)
     }
 
 or:
 
-    out, err := Fun()
+    got, err := Fun()
     if err != tt.wantErr {
         t.Fatalf("wrong error\ngot:  %v\nwant: %v", err, tt.wantErr)
     }
@@ -85,13 +87,13 @@ err != nil && [..]`).
 Lint your tests as your regular code
 ------------------------------------
 
-Tests are code that can fail, be wrong, and will need to be maintained, so if
+Tests are code that can fail, be wrong, and will need to be maintained. So if
 you think it’s worth running a linter on your regular code, then it’s almost
 certainly also worth running it on your test code (like e.g. `go vet`,
 `errcheck`, etc.)
 
-Use want and got, not expected and actual
------------------------------------------
+Use `want` and `got`
+--------------------
 
 `want` is shorter than `expected`, `got` is shorter than `actual`. Shorter names
 is always good, IMHO, and is especially beneficial for aligning output (see next
@@ -110,7 +112,7 @@ Add useful, aligned, information
 It’s annoying when a test fail with a useless error message, or a noisy error
 message which makes it hard to see what exactly went wrong.
 
-So this is *not good*:
+This is not very useful:
 
     t.Errorf("wrong output: %v", got)
 
@@ -150,7 +152,7 @@ Notice the two spaces after `got:` to make it aligned with `want`. If I had used
 `expected` I would have to use six spaces.
 
 I also tend to prefer to use `%q` or `%#v`, as that will show things like
-leading/trailing spaces more clearly.
+trailing whitespace or unprintable characters more clearly.
 
 Make it clear what is being tested
 ----------------------------------
