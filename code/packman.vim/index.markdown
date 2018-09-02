@@ -24,7 +24,7 @@ your Vim is missing it.
 -----------------------
 
 Using packman is simple: define the plugins you want in `packman.conf` and run
-it to install new plugins and update existing ones.. Packman will try to load
+it to install new plugins and update existing ones. Packman will try to load
 the configuration file from `~/.vim/packman.conf` or `packman.conf` in the the
 current directory.
 

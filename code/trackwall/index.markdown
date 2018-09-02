@@ -179,6 +179,7 @@ Here are some similar programs:
 - [adsuck][adsuck] (POSIX systems)
 - [Little Snitch][little-snitch] (OSX)
 - [dnsblock][dnsblock] (POSIX systems)
+- [pi-hole](https://pi-hole.net/)
 - [dns66](https://github.com/julian-klode/dns66) (Android)
 
 

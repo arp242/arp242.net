@@ -13,14 +13,14 @@ recommend this site for various reasons (for a start it uses invalid syntax, and
 some options it sets are inadvisable). I did like the idea though, hence this
 project.
 
-It is an alterantive to spf13, vim-bootstrap, and whatnot which give new users a
+It is an alternative to spf13, vim-bootstrap, and whatnot which give new users a
 huge vimrc full of undocumented/unclear options.
 
 Who not just use `:help`? Well:
 
-	$ wc -l options.coffee /usr/share/vim/vim80/doc/options.txt
-	 456 options.coffee
-	9120 /usr/share/vim/vim80/doc/options.txt
+	$ wc -l options.coffee /usr/share/vim/vim81/doc/options.txt
+	   457 options.coffee
+	  9229 /usr/share/vim/vim81/doc/options.txt
 
 Also, the help descriptions try to add a little bit more context/explanation
 more aimed at new users, rather than being a reference manual like Vim's

@@ -55,7 +55,7 @@ func main() {
 
 	// Read repos
 	var allRepos []repository
-	err := hubhub.Paginate(&allRepos, "GET", user, 0)
+	err := hubhub.Paginate(&allRepos, user, 0)
 	check(err)
 
 	allRepos = filter(allRepos)
