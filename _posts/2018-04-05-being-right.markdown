@@ -31,9 +31,9 @@ useless.
 There are many examples where people might have a correct *conclusion*, but
 completely counter-productive reasoning:
 
-- Declassification of the [Verona
+- Declassification of the [Venona
   project](https://en.wikipedia.org/wiki/Venona_project) in 1995 revealed that
-  USSR spies has infiltrated the U.S. and U.K. governments, leading some to the
+  USSR spies had infiltrated the U.S. and U.K. governments, leading some to the
   conclusion that Joseph McCarthy's frantic anti-Communist witch hunts were
   justified.  
   McCarthy had no knowledge of *actual* USSR spies, and there is zero overlap
@@ -41,7 +41,7 @@ completely counter-productive reasoning:
   McCarthy.
 
 - Alex Jones’ famous [THEY’RE TURNING THE FROGS
-  GAY!](https://www.youtube.com/watch?v=_ePLkAm8i2s) fragment is correct in its
+  GAY](https://www.youtube.com/watch?v=_ePLkAm8i2s) fragment is correct in its
   conclusion as chemicals *are* causing sexual changes in frogs and other
   animals. <sup>(ref: [1](http://news.berkeley.edu/2010/03/01/frogs/),
   [2](http://www.newsweek.com/female-frogs-estrogen-hermaphrodites-suburban-waste-369553),
@@ -49,7 +49,9 @@ completely counter-productive reasoning:
   Jones completely misidentifies the reason for this as ‘social engineering’
   rather than urban and industrial waste (which is why he is crazy).
 
-(.. and many more; I'll add examples as I find them ..)
+- (...and many more; I'll add examples as I find them...)
+
+
 
 [1]: https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem
 [2]: https://en.wikipedia.org/wiki/Wiles%27s_proof_of_Fermat%27s_Last_Theorem

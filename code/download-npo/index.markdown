@@ -126,10 +126,6 @@ Maar, deze alternatieven zijn bekend bij mij:
 
 Voor het ophalen van een lijst met afleveringen:
 
-- Voor Windows is er de [Npo-Pvr][npo-pvr] PowerShell wrapper door Jan Hoek.
-  Door periodiek dit scriptje te starten worden steeds de nieuwste afleveringen
-  gedownload.
-
 - Er is ook een plugin voor [Flexget](http://flexget.com/); daarmee kan je
   nieuwe afleveringen van geabonneerde programma’s automatisch downloaden. De
   Flexget plugin zit [in Flexget

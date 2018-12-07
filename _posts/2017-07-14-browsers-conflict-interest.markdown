@@ -1,7 +1,7 @@
 ---
 title: "Browsers and conflicts of interests"
 layout: post
-updated: 9 Apr 2018
+updated: 7 Dec 2018
 ---
 
 What do you get when you search for ‘Firefox’ in a new Windows 10 installation?
@@ -56,6 +56,12 @@ Chrome’s [new ad blocker][2] (or ‘ad filter’ as they call it) is also rath
 suspect. We now have Google – whose primary revenue comes in through ads –
 determining what ads you get to see. How often do you think it will filter
 Google ads?
+
+[Clearing all cookies in Chrome didn't clear Google
+cookies](https://twitter.com/ctavan/status/1044282084020441088); they added an
+option for it in a later version, but by default "clear all cookies" will still
+retain Google-related cookies. It also won't clear local storage, meaning that
+"clear browsing data" is rather ineffectual to prevent tracking.
 
 [1]: https://www.bleepingcomputer.com/news/google/google-bans-adnauseam-from-chrome-the-ad-blocker-that-clicks-on-all-ads/
 [2]: https://theintercept.com/2017/06/05/be-careful-celebrating-googles-new-ad-blocker-heres-whats-really-going-on/
