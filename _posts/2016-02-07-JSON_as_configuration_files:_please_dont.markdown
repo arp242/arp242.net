@@ -2,9 +2,11 @@
 layout: post
 title: "JSON as configuration files: please don’t"
 updated: 17 Dec 2016
-categories: programming-and-such
-hatnote: 'Also see <a href="/weblog/yaml_probably_not_so_great_after_all.html">YAML: probably not so great after all.</a>'
 ---
+
+<em class="hatnote">Also see
+<a href="/weblog/yaml_probably_not_so_great_after_all.html">
+YAML: probably not so great after all.</a></em>
 
 I’ve recently witnessed the rather disturbing trend of using JSON for
 configuration files.

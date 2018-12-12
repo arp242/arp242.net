@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Digging for hosts on FreeBSD 10
-categories: programming-and-such
 ---
 
 FreeBSD 10 now has [unbound](http://unbound.net/) for DNS lookups, which is a

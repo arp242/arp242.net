@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Some thoughts on CDNs
-categories: programming-and-such
 ---
 
 “Of course you should use a CDN to deliver your JavaScript and CSS content” is

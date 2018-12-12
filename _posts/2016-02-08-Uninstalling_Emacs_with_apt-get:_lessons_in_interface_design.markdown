@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Uninstalling Emacs with apt-get: lessons in interface design"
-categories: programming-and-such
 ---
 
 I rather like Debian. I also like Ubuntu. It does a lot of things right.

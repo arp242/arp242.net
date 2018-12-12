@@ -2,7 +2,6 @@
 layout: post
 title: "YAML: probably not so great after all"
 updated: 27 Dec 2017
-categories: programming-and-such
 ---
 
 I previously wrote [why using JSON for human-editable configuration files is a

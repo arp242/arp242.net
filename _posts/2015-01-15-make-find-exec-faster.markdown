@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Making find -exec faster
-categories: programming-and-such
 ---
 
 Here’s a little `find` trick that few people seem to know:

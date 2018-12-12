@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Make docker ps work on normal sized terminals"
-categories: programming-and-such
 ---
 
 I’m sorry folks, but I cannot call this anything other than silly interface design:

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Manage Unreal Tournament cache files
-categories: programming-and-such
 ---
 
 This is a little Python script to manage cache files for Unreal Tournament, been

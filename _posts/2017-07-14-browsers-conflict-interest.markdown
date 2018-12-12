@@ -1,7 +1,6 @@
 ---
 title: "Browsers and conflicts of interests"
 layout: post
-updated: 7 Dec 2018
 ---
 
 What do you get when you search for ‘Firefox’ in a new Windows 10 installation?

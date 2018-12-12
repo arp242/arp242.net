@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Running multiple services on one port with PF
-categories: programming-and-such
 ---
 
 At my work there’s a HTTP/HTTPS proxy which requires authentication, I would

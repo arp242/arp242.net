@@ -1,7 +1,6 @@
 ---
 layout: post
 title: I don’t like git, but I’m going to migrate my projects to it
-categories: programming-and-such
 updated: 21 Feb 2018
 ---
 

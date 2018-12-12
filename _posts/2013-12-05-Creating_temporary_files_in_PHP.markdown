@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Creating temporary files in PHP
-categories: programming-and-such
 ---
 
 Creating temporary files in PHP is not as straightforward as it “should” be in a

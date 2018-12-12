@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "PHP’s fopen() is broken"
-categories: programming-and-such
 ---
 
 Yes, I know that “bashing PHP” is *sooooo 2010*. But even now many people don’t

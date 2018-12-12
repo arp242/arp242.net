@@ -6,20 +6,9 @@ layout: default
 <div id="page">
 	<div id="header">
 		<h1>{{ page.title }}</h1>
-		<p>
-			Written on {{ page.date | date_to_string }}{% if page.updated %} − last updated on {{ page.updated }}{% endif %}.
-		</p>
+		<p>Written on {{ page.date | date_to_string }}{% if page.updated %} − last updated on {{ page.updated }}{% endif %}.</p>
 	</div>
-	{% if page.so %}
-		<em class="hatnote">This is modified from my answer at Stack Overflow: <a href="{{ page.so[1] }}">{{ page.so[0] }}</a>.</em>
-	{% elsif page.vi %}
-		<em class="hatnote">This is modified from my answer at Vi and Vim Stack Exchange: <a href="{{ page.vi[1] }}">{{ page.vi[0] }}</a>.</em>
-	{% elsif page.hatnote %}
-		<em class="hatnote">{{ page.hatnote }}</em>
-	{% endif %}
-
 	{{ content }}
-
 	<h2>Feedback</h2>
 	<p>You can mail me at <a href="mailto:martin@arp242.net">martin@arp242.net</a> or
 		<a href="https://github.com/Carpetsmoker/arp242.net/issues/new">

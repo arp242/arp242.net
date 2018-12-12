@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Generate passwords from the commandline
-categories: programming-and-such
 ---
 
 I needed to generate a random password from a shell script, I figured that this

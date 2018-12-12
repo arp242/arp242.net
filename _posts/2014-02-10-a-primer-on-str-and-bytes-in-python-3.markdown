@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "A primer on the str and bytes types in Python 3"
-so: ["Python 3 TypeError: must be str, not bytes with sys.stdout.write()", "http://stackoverflow.com/a/21689447/660921"]
-categories: programming-and-such
 ---
+
+<em class="hatnote">This is modified from my answer at Stack Overflow:
+<a href="http://stackoverflow.com/a/21689447/660921">Python 3 TypeError: must be
+str, not bytes with sys.stdout.write()</a>.</em>
 
 Python 3 handles strings a bit different. Originally there was only one type for
 strings: `str`. When unicode gained traction in the '90s the new `unicode` type

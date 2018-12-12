@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Minimal Apache configuration for subversion
-categories: programming-and-such
 ---
 
 If you want to use subversion over HTTP you have little choice but to use

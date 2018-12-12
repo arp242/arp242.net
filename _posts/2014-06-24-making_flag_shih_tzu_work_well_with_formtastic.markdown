@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Making FlagShihTzu work well with Formtastic
-categories: programming-and-such
 ---
 
 [FlagShihTzu][flag] & [Formtastic][formtastic] don’t work together

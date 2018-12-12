@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Why teach kids to program?
-categories: programming-and-such politics
 ---
 
 Teaching kids the basics of computer programming is a good idea for the same
