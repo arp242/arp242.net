@@ -74,8 +74,8 @@ No really, what’s wrong with this:
   > Well-designed programs treat the user’s attention and concentration as a
   > precious and limited resource, only to be claimed when necessary.
 
-  Perhaps more importantly, useless output distracts from the important
-  output—which especially matters when a tool does something surprising (like
+  Perhaps more importantly, useless output distracts from the important output –
+  which especially matters when a tool does something surprising (like
   `apt-get`).
 
 - Give a clear warning that `emacs` depends on `emacs24`, and that we’re
@@ -279,7 +279,7 @@ So it’s not a wildcard but a regexp search on the full string. To get what I h
 intended I would have had to use `^emacs` or `^emacs.*`.
 
 - Using regular expressions here is stupid. I have nothing against regexps *as
-  such*—I even own *Mastering Regular Expressions*—but this is the wrong tool
+  such* – I even own *Mastering Regular Expressions* – but this is the wrong tool
   for the wrong job. A simple wildcard pattern would be more than adequate for
   >95% of the use cases and is a lot less likely to bite you. If you need more
   flexibility, then regular expressions are hardly the only way to go, for

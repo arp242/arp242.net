@@ -78,7 +78,7 @@ body {
 	#disclaimer { left: -1rem; }
 }
 
-#home ul { lis1-style: none; padding-left: 1rem; }
+#home ul { list-style: none; padding-left: 1rem; }
 #home ul li a:first-child { display: inline-block; min-width: 11em; vertical-align: top; }
 
 @media (max-width: 46rem) {
