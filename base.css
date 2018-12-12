@@ -2,6 +2,7 @@
 	font-family: 'Libre Baskerville';
 	font-style: normal;
 	font-weight: 400;
+	font-display: optional;
 	src:
 		local('Libre Baskerville'),
 		local('LibreBaskerville-Regular'),
@@ -11,6 +12,7 @@
 	font-family: 'Libre Baskerville';
 	font-style: normal;
 	font-weight: 700;
+	font-display: optional;
 	src:
 		local('Libre Baskerville Bold'),
 		local('LibreBaskerville-Bold'),
@@ -20,6 +22,7 @@
 	font-family: 'Libre Baskerville';
 	font-style: italic;
 	font-weight: 400;
+	font-display: optional;
 	src:
 		local('Libre Baskerville Italic'),
 		local('LibreBaskerville-Italic'), url(/fonts/libre-baskerville-italic.woff2) format('woff2');
