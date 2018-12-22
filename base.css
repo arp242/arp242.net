@@ -123,6 +123,7 @@ pre {
   clear: right;
   border-radius: 1px;
   border: 1px solid #dadada;
+  font-size: 14px;
 }
 
 p code { padding: 1px 5px; }
@@ -135,7 +136,7 @@ blockquote {
 	border-radius: 2px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
 	font-family: 'Libre Baskerville', 'DejaVu Serif', 'Georgia', serif;
 	line-height: 1.3;
 	font-variant-ligatures: common-ligatures discretionary-ligatures;
@@ -161,9 +162,15 @@ hr:after  { margin-left: 0.6em;  content: "❧"; }
 
 .hatnote { font-size: 0.8em; }
 
-#page h1, #page h2, #page h3, #page h4, #page h5, #page h6 {
-	border-bottom: 1px solid #3a6ea5;
+#page h2 { border-bottom: 1px solid #3a6ea5; }
+#page h1, #page h2, #page h3 { color: #3a6ea5; position: relative; }
+h1 code, h2 code, h3 code { color: #3a6ea5; background-color: transparent; }
+h1 a, h2 a, h3 a {
+	position: absolute;
+	left: -1em;
 	color: #3a6ea5;
+	font-size: .8em;
+	line-height: 1.6em;
 }
 
 #page #header {
@@ -172,7 +179,6 @@ hr:after  { margin-left: 0.6em;  content: "❧"; }
 }
 
 #page #header h1 {
-	border-bottom: none;
 	color: inherit;
 	padding: 0.5em 0;
 	margin-bottom: 0;
