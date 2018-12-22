@@ -7,17 +7,16 @@ I moved to New Zealand last week, and as a proper Dutch person one of the first
 things I did after arriving was getting a bicycle.
 
 I was recommended [a great place][crooked] where they collect old bikes and
-provide people with the parts and tools to fix up the bikes. Want a bike? Choose
-one, fix it, and it's yours. There are helpful and knowledgable volunteers who
-will gladly help you and explain how things work, but in the end you'll have to
-fix your own bike; they're not going to do it for you.
+provide people with the parts and tools to fix them up. Want a bike? Choose one,
+fix it, and it's yours. There are helpful and knowledgable volunteers who will
+gladly help you and explain how things work, but you'll have to fix your own
+bike; they're not going to do it for you.
 
 I like this DIY attitude; I built my own fixie – which I unfortunately couldn't
-bring – years ago and had been maintaining it myself ever since, but there are
-many different aspects I never touched on, such as different brake systems,
-gears, etc. Fixing my bike with some help and explanation was a useful
-experience which taught me a thing or two that I'll be sure to use in the
-future.
+bring – years ago and had been maintaining it myself ever since. There are many
+different aspects I never touched on, such as different brake systems, gears,
+etc. and fixing my bike with some help and explanation was a useful experience
+which taught me a thing or two that I'll be sure to use in the future.
 
 ---
 
@@ -27,12 +26,11 @@ anyone else to do work for me.
 
 Open source software is fundamentally a [DIY ethic][diy] for many – though not
 all – people who participate in it. It certainly is for me. I just fix stuff I
-want myself. Since I take some amount of pride in my work and want things to
-work well for others I'll also fix most bugs that are reported, but sometimes
-people will post an enhancement or feature request and just expect me to
-implement it. Sometimes this is even combined with a "but project X does
-it!"-comment. Well, feck off and use project X then (I don't actually say this,
-just think it).
+want myself. Since I take some amount of pride in my work I'll also fix most
+bugs that are reported, but sometimes people will post an enhancement or feature
+request and just expect me to implement it. Sometimes this is even combined with
+a "but project X does it!"-comment. Well, feck off and use project X then (I
+don't actually say this, just think it).
 
 I've seen more than a few people get frustrated by this attitude especially –
 though hardly exclusively – in the OpenBSD and suckless communities ([recent
@@ -41,13 +39,13 @@ communicated in a somewhat unhelpful fashion (the OpenBSD saying is "shut up and
 hack"), but also because some people seem to misunderstand what it means to be a
 maintainer of an open source project. Open source software isn't a service I
 provide to the world; it's something I DIY'd myself and make available to the
-world because why not? In an alternative universe without Free Software or Open
-Source I would probably have written the same software, just for my personal
-needs. [^1]
+world so everyone can benefit and work on it with me.[^1] In an alternative
+universe without Free Software or Open Source I would probably have written the
+same software, just for my personal needs.
 
 Are there people who contribute to open source for other reasons? Sure. Some do
 because they really believe in [Free Software][free-sw], or because they like
-programming as a hobby. But those are not the majority.
+programming as a hobby. But I don't think those are the majority.
 
 Not all non-code contributions are useless. Well-written bug reports are often
 useful, and sometimes someone will have a great idea for an enhancement or
@@ -87,7 +85,7 @@ the end the software will work better as users will be more willing to spend
 some time fixing stuff *themselves*, rather than just expecting other people to
 do it for them.
 
-[^1]: Some open source software is supported by companies. Only about [14% of the contributions to the Linux kernel are *not* affiliated with a company][linux]. I don't think this matters: these are companies who are DIY-ing as well.
+[^1]: Some open source software is supported by companies. Only about [14% of the contributions to the Linux kernel are *not* affiliated with a company][linux]. I don't think this matters for the purpose of this post; these are companies who are DIY-ing as well.
 
 [example]: https://www.reddit.com/r/suckless/comments/9mhwg8/why_does_sts_latency_suck_so_bad/e7fu9sj/
 [crooked]: https://www.facebook.com/TheCrookedSpoke

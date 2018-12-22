@@ -1,6 +1,7 @@
 ---
 title: "Browsers and conflicts of interests"
 layout: post
+updated: 22 Dec 2018
 ---
 
 What do you get when you search for ‘Firefox’ in a new Windows 10 installation?
@@ -65,6 +66,20 @@ retain Google-related cookies. It also won't clear local storage, meaning that
 [1]: https://www.bleepingcomputer.com/news/google/google-bans-adnauseam-from-chrome-the-ad-blocker-that-clicks-on-all-ads/
 [2]: https://theintercept.com/2017/06/05/be-careful-celebrating-googles-new-ad-blocker-heres-whats-really-going-on/
 [3]: https://bugzilla.mozilla.org/show_bug.cgi?id=975444
+
+Recently someone [claimed that YouTube deliberately slowed the performance of
+Edge][4]. I don't think this claim is true – there are valid reasons for
+overlaying an empty div – but that doesn't matter. What matters is that
+Google/YouTube definitely *could* do so if they want, which is a marked
+difference from just a few years ago.
+
+I don't think we want to have a company to have that amount of power. They're
+mostly behaving well right now ([mostly...][5]) but are you sure they will still
+in five years? Ten years? Thirty years? Past experiences with companies such as
+Big Blue, AT&T, Microsoft, etc. seem to have been forgotten.
+
+[4]: https://news.ycombinator.com/item?id=18697824
+[5]: https://arstechnica.com/gadgets/2018/12/the-web-now-belongs-to-google-and-that-should-worry-us-all/
 
 ---
 
