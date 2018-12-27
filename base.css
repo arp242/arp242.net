@@ -169,6 +169,7 @@ h1 a, h2 a, h3 a {
 	position: absolute;
 	left: -1em;
 	color: #3a6ea5;
+	opacity: .5;
 	font-size: .8em;
 	line-height: 1.6em;
 }

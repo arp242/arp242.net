@@ -21,7 +21,9 @@ Learning practical skills is not about *reading* but about *doing*. Only
 to learn about the appropriate techniques, but only actually practising what I’ve
 read will teach me to be a carpenter.
 This is why you should do the exercises and write a program. Even writing a
-comparatively simple program will help solidify your skills.
+comparatively simple program will help solidify your skills. I encourage people
+to write real actually useful projects as soon as they're able, which help with
+motivation as well as solidifying the new knowledge.
 
 Taking notes while reading the book also helps. I always write down key concepts
 while I’m reading about them in brief notes. I don’t often refer to them, it’s
