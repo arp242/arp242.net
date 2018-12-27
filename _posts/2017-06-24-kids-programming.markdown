@@ -4,6 +4,10 @@ title: Why teach kids to program?
 updated: 23 Dec 2018
 ---
 
+<div class="hatnote">Discussions:
+<a href="https://lobste.rs/s/eoy7p4/why_teach_kids_program_2017">Lobsters</a>
+</div>
+
 Teaching kids the basics of computer programming is a good idea for the same
 reason that teaching things such as maths and physics are a good idea: it
 teaches deeper truths.

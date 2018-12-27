@@ -4,6 +4,10 @@ layout: post
 updated: 22 Dec 2018
 ---
 
+<div class="hatnote">Discussions:
+<a href="https://www.reddit.com/r/firefox/comments/8avev2/browsers_and_conflicts_of_interests/">/r/firefox</a>
+</div>
+
 What do you get when you search for ‘Firefox’ in a new Windows 10 installation?
 
 A big fat ad for Microsoft Edge:

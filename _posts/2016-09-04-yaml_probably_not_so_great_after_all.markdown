@@ -4,6 +4,12 @@ title: "YAML: probably not so great after all"
 updated: 27 Dec 2017
 ---
 
+<div class="hatnote">Discussions:
+<a href="https://news.ycombinator.com/item?id=17358103">Hacker News</a>,
+<a href="https://lobste.rs/s/dwjgn1/yaml_probably_not_so_great_after_all">Lobsters</a>,
+<a href="https://www.reddit.com/r/programming/comments/8shzcu/yaml_probably_not_so_great_after_all/">/r/programming</a>
+</div>
+
 I previously wrote [why using JSON for human-editable configuration files is a
 bad idea][json-no]. Today we’re going to look at some general problems with the
 YAML format.
