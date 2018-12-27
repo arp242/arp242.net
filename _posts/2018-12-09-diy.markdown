@@ -48,9 +48,11 @@ world so everyone can benefit and work on it with me.[^1] In an alternative
 universe without Free Software or Open Source I would probably have written the
 same software, just for my personal needs.
 
-Are there people who contribute to open source for other reasons? Sure. Some do
-because they really believe in [Free Software][free-sw], or because they like
-programming as a hobby. But I don't think those are the majority.
+The term "Open source" is a broad catch-all term, which includes Free Software,
+"Source Provided Software"[^2], **DIY Software**, and probably a few more. It is
+my suspicion that the majority of open source projects aimed at developers
+(libraries, programming tools, etc.) is DIY Software, even if it isn't
+explicitly stated.
 
 Not all non-code contributions are useless. Well-written bug reports are often
 useful, and sometimes someone will have a great idea for an enhancement or
@@ -91,6 +93,7 @@ some time fixing stuff *themselves*, rather than just expecting other people to
 do it for them.
 
 [^1]: Some open source software is supported by companies. Only about [14% of the contributions to the Linux kernel are *not* affiliated with a company][linux]. I don't think this matters for the purpose of this post; these are companies who are DIY-ing as well.
+[^2]: Software that uses an open source license but with little community engagement. Try landing a patch in Chrome or Android as a non-Google employee.
 
 [example]: https://www.reddit.com/r/suckless/comments/9mhwg8/why_does_sts_latency_suck_so_bad/e7fu9sj/
 [crooked]: https://www.facebook.com/TheCrookedSpoke
