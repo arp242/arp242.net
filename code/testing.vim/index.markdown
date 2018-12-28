@@ -113,8 +113,7 @@ I originally implemented this for vim-go, based on Fatih's previous work (see
 [runtest.vim](https://github.com/vim/vim/blob/master/src/testdir/runtest.vim) in
 the Vim source code repository.
 
-[testbed]: https://github.com/tweekmonster/vim-testbed
 [cov]: https://github.com/Vimjas/covimerage
-[1476]: https://github.com/fatih/vim-go/pull/1476
 [1157]: https://github.com/fatih/vim-go/pull/1157
 [1158]: https://github.com/fatih/vim-go/pull/1158
+[1476]: https://github.com/fatih/vim-go/pull/1476
