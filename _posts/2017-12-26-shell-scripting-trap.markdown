@@ -84,7 +84,8 @@ examples:
 - Dealing with filenames that contain spaces or other ‘special’ characters
   requires careful attention to detail. The vast majority of scripts get this
   wrong, even when written by experienced authors who care about such things
-  (e.g. me), because it's so *easy* to do it wrong.
+  (e.g. me), because it's so *easy* to do it wrong. [Adding quotes is not
+  enough](https://dwheeler.com/essays/filenames-in-shell.html).
 
 - There are many "right" and "wrong" ways to do things. Should you use `which`
   or `command`? Should you use `$@` or `$*`, and should that be quoted? Should
