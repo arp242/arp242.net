@@ -23,7 +23,7 @@ title: arp242.net
 	<p>I write about <em>stuff</em> on this page, occasionally.
 		<a href="/feed.xml">RSS feed</a>.</p>
 	<ul>{% for p in site.posts %}
-		<li{% if p.standout %} class="standout"{% endif %}><a href="{{ p.url }}">{{ p.title }}</a></li>{% endfor %}
+		<li{% if p.standout %} class="standout"{% endif %}><a href="{{ p.url }}">{% if p.path contains '_drafts' %}DRAFT: {% endif %}{{ p.title }}</a></li>{% endfor %}
 	</ul>
 
 	<h1 id="code">Code projects</h1>

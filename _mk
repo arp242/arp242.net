@@ -7,4 +7,4 @@ if [ "$1" = "code" ] || [ "$2" = "code" ]; then
 	./_mkcode/_mkcode
 fi
 
-JEKYLL_NO_BUNDLER_REQUIRE=1 jekyll build --incremental
+JEKYLL_NO_BUNDLER_REQUIRE=1 jekyll build --incremental --drafts --unpublished
