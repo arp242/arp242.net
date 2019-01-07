@@ -46,15 +46,14 @@ comprehend.
 
 Sometimes you can do a straightforward implementation that doesn't sacrifice
 anything for testability; great! But sometimes you have to strike a balance. For
-some code, not adding a test is fine.
+some code, not adding a unit test is fine.
 
-In particular, intensive focus on "unit tests" can be incredibly damaging to a
-code base. Some codebases have a gazillion unit tests, which makes *any* change
-excessively time-consuming as you're fixing up a whole bunch of tests for even
-trivial changes.
-Furthermore, a lot of these tests are just duplicates. Adding tests to every
-layer of a simple CRUD HTTP endpoint is a common example; in most apps it's fine
-to just rely on a single integration test.
+Intensive focus on "unit tests" can be incredibly damaging to a code base. Some
+codebases have a gazillion unit tests, which makes *any* change excessively
+time-consuming as you're fixing up a whole bunch of tests for even trivial
+changes. Often times a lot of these tests are just duplicates; adding tests to
+every layer of a simple CRUD HTTP endpoint is a common example. In many apps
+it's fine to just rely on a single integration test.
 
 Stuff like SQL mocks is another great example. It makes code more complex,
 harder to change, all so we can say we added a "unit test" to `select * from foo
@@ -74,7 +73,7 @@ also still an option. A lot of applications don't have those kind of complex
 queries anyway.
 
 One important reason for the focus on unit tests is to ensure test code runs
-*fast*. This, again, was a response to Java test harnesses that take a day to
+*fast*. This was a response to massive test harnesses that take a day to
 run. This, again, is not really a problem in Go. All integration tests I've
 written run in a reasonable amount of time (several seconds at most, usually
 faster). The test cache introduced in Go 1.10 makes it even less of a concern.
@@ -98,10 +97,10 @@ feedback from peers and performance reviews, I am at least a programmer of
 "average" skill level, if not more.
 
 If an average programmer has trouble comprehending what is in essence a handful
-of simple functions, something has gone wrong. The refactor traded one tool to
-verify correctness (simplicity) with another (testing). Simplicity is hardly a
-guarantee to ensure correctness, but neither are unit tests. Ideally, we should
-do both.
+of simple functions because there are so many layers of abstractions, then
+something has gone wrong. The refactor traded one tool to verify correctness
+(simplicity) with another (testing). Simplicity is hardly a guarantee to ensure
+correctness, but neither are unit tests. Ideally, we should do both.
 
 Postscript: the refactor introduced a bug and removed a feature that was useful,
 but is now harder to add, not in the least because the code is much more
@@ -111,7 +110,7 @@ complex.
 
 All units working correctly gives exactly zero guarantees that the program is
 working correctly. A lot of logic errors won't be caught because the logic
-consists of several units working together. So you *need* integration tests ,
+consists of several units working together. So you *need* integration tests,
 and if the integration tests duplicate half of your unit tests, then why bother
 with those unit tests?
 
@@ -119,24 +118,23 @@ Test Driven Development (TDD) is also just *one* tool. It works well for some
 problems; not so much for others. In particular, I think that "forced to write
 code in tiny units" can be terribly harmful in some cases. Some code is just a
 serial script which says "do this, and then that, and then this". Splitting that
-up in 3 or 4 functions just so that your code is in "tiny units" can greatly
-reduce how easy the code is to understand, and thus harder to verify that it is
-correct.
+up in a whole bunch of "tiny units" can greatly reduce how easy the code is to
+understand, and thus harder to verify that it is correct.
 
 I've had to fix some Ruby code where everything was in tiny units – there is a
-strong culture of TDD in the Ruby community – and even though the entire logic
-should have been simple, I found it incredibly hard to understand anything. If
-everything is split in "tiny units" then understanding how everything fits
-together to create an actually runnable program that does something useful will
-be much harder.
+strong culture of TDD in the Ruby community – and even though the units were
+easy to understand I found it incredibly hard to understand the application
+logic. If everything is split in "tiny units" then understanding how everything
+fits together to create an actual program that does something useful will be
+much harder.
 
-This is a bit of a common theme. You see the same friction in the old
-microkernel vs. monolithic kernel debate, or the more recent microservices vs.
-monolithic app one. In *theory* splitting everything up in to small parts sounds
-like a great idea, but in practice it turns out that making all the small parts
-work together well is a very hard problem. A hybrid approach seems to work best
-for kernels and app design, balancing the ad&shy;van&shy;tages and downsides of both
-approaches. I think the same applies to code.
+You see the same friction in the old microkernel vs. monolithic kernel debate,
+or the more recent microservices vs. monolithic app one. In *theory* splitting
+everything up in to small parts sounds like a great idea, but in practice it
+turns out that making all the small parts work together well is a very hard
+problem. A hybrid approach seems to work best for kernels and app design,
+balancing the ad&shy;van&shy;tages and downsides of both approaches. I think the
+same applies to code.
 
 To be clear, I am not against unit tests or TDD and claiming we should all
 gung-go cowboy code our way through life 🤠. I write unit tests and practice
@@ -165,8 +163,8 @@ opposite.
 This brings me to the topic of testing frameworks. I have never understood what
 problem libraries such as [goblin][goblin] are solving. How is this:
 
-	Expect(err).To(test.expectErr)
-	Expect(val).To(test.expectValues)
+	Expect(err).To(nil)
+	Expect(out).To(test.wantOut)
 
 An improvement over this?
 
@@ -174,8 +172,8 @@ An improvement over this?
 		t.Fatal(err)
 	}
 
-	if output != tt.expectedOutput {
-		t.Fatal("unexpected output")
+	if out != tt.want {
+		t.Errorf("out:  %q\nwant: %q", out, tt.want)
 	}
 
 What's wrong with `if` and `==`? Why do we need to abstract it?
@@ -187,9 +185,9 @@ the execution in several different functions (`BeforeEach()` and
 
 This is known as Behaviour-driven development (BDD). I am not entirely sure what
 to think of BDD. I am skeptical, but I've never *properly* used it in a large
-project so I'm hesitant to just dismiss it. But most projects don't really use
-BDD, they just use a library with a BDD syntax and shoehorn their testing code
-in to that. That's ad-hoc BDD, or *faux-BDD*.
+project so I'm hesitant to just dismiss it. Note that I said "properly": most
+projects don't really use BDD, they just use a library with a BDD syntax and
+shoehorn their testing code in to that. That's ad-hoc BDD, or *faux-BDD*.
 
 Whatever merits BDD may have, they are not present simply because your testing
 code vaguely resembles BDD-style syntax. This on its own demonstrates that BDD
@@ -211,11 +209,10 @@ All code – including testing code – can fail in confusing, surprising, and
 unexpected ways (a "bug"), and then you're expected to debug that code. The more
 complex the code, the harder it is to debug.
 
-You should expect all code – including testing code – that you write to go
-through at least one debugging cycle after you've finished writing it. Often,
-there is more than one cycle. Note that with debugging cycle I don't mean "there
-is a bug in the code you need to fix", but rather "I need to look at this code
-to fix the bug".
+You should expect all code – including testing code – to go through several
+debugging cycles. Note that with debugging cycle I don't mean "there is a bug in
+the code you need to fix", but rather "I need to look at this code to fix the
+bug".
 
 In general, I already find testing code harder to debug than regular code, as
 the "code surface" tends to be larger. You have the testing code and the actual
@@ -238,7 +235,7 @@ concern (it's also important in business context, but a bit less so, as you've
 got actual time to train people).
 
 Seeing PRs with "here's the code, it works, but I couldn't figure out the tests,
-plz halp me!" is not uncommon; and I'm fairly sure that at least a few people
+plz halp!" is not uncommon; and I'm fairly sure that at least a few people
 never even bothered to submit PRs just because they got stuck on the tests. I
 know I have.
 
@@ -251,7 +248,6 @@ tests". It's ... no fun at all.
 
 Writing good software is hard. I've got some ideas on how to do it, but don't
 have a comprehensive view. I'm not sure if anyone really does.
-
 I do know that "always add unit tests" and "always practice TDD" isn't the
 answer, in spite of them being useful concepts. To give an analogy: most people
 would agree that a free market is a good idea, but at the same time even most
