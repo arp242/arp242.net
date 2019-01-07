@@ -160,7 +160,7 @@ hr:before, hr:after { display: inline-block; line-height: 40px; height: 40px; }
 hr:before { margin-right: 0.6em; content: "☙"; }
 hr:after  { margin-left: 0.6em;  content: "❧"; }
 
-.hatnote { font-size: 0.8em; }
+.hatnote { font-size: 0.8em; font-style: italic; }
 
 #page h2 { border-bottom: 1px solid #3a6ea5; }
 #page h1, #page h2, #page h3 { color: #3a6ea5; position: relative; }
