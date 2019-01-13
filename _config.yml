@@ -6,5 +6,8 @@ highlighter: none
 permalink: /weblog/:title.html
 exclude: [Gemfile, Gemfile.lock, mkcode.go]
 markdown: kramdown
-#plugins:
-#  - liquid_reading_time
+
+# Always publish all posts, some posts may be considered in the "future" by the
+# deploy pipline as that's in the US, but I'm in New Zealand, so that's almost a
+# full day behind.
+future: true
