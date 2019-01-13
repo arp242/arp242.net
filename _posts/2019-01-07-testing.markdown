@@ -4,11 +4,10 @@ title: "Testing isn't everything"
 ---
 
 <div class="hatnote">
-This is adopted from the reddit discussion on <a
-href="https://www.reddit.com/r/golang/comments/acycf0/want_to_write_good_unit_tests_in_go_dont_panic_or/edck1x8/">
+This is adopted from a discussion about
+<a href="https://medium.com/@jens.neuse/want-to-write-good-unit-tests-in-go-dont-panic-or-should-you-ba3eb5bf4f51">
 Want to write good unit tests in go? Don’t panic… or should you?</a>
-While this mainly talks about Go I think a lot of the points apply to other
-languages, too.
+While this mainly talks about Go a lot of the points also apply to other languages.
 </div>
 
 Some of the most difficult code I've worked with is code that is "easily
@@ -17,7 +16,7 @@ what's going on, just so that it can add a "unit test" to what would otherwise
 be a very straightforward function. DHH called this [Test-induced design
 damage][tidd].
 
-Testing is just *one* tool to make sure that your program works, out of several.
+Testing is *just one tool* to make sure that your program works, out of several.
 Another very important tool is writing code in such a way that it is easy to
 understand and reason about ("simplicity").
 
@@ -27,7 +26,7 @@ read 1,000 lines of code but still had no idea what's going on. I recently had
 to port a simple Java "emoji replacer" (:joy: ➙ 😂) to Go. To ensure
 compatibility I looked up the im&shy;ple&shy;men&shy;ta&shy;tion.
 It was a whole bunch of classes, factories, and whatnot which all just resulted
-in calling a regexp on a string. The Go code is just a small function 🤷.
+in calling a regexp on a string. 🤷
 
 In dynamic languages like Ruby and Python tests are important for a different
 reason, as something like this will "work" just fine:
@@ -42,7 +41,8 @@ mix stuff up.
 
 In Go, both of these problems are less of a concern. It has a good static type
 system, and the focus is on simple straightforward code that is easy to
-comprehend.
+comprehend. Even for a number of dynamic languages there are optional typing
+systems (function annotations in Python, TypeScript for JavaScript).
 
 Sometimes you can do a straightforward implementation that doesn't sacrifice
 anything for testability; great! But sometimes you have to strike a balance. For
@@ -65,12 +65,12 @@ from the database, the Unit Test purists will start complaining that it's not a
 For most queries, the integration tests and/or manual tests are fine, and
 extensive SQL mocks are entirely superfluous at best, and harmful at worst.
 
-There are exceptions, of course; if you've got a lot of `if condition { q +=
-"more sql" }` then adding SQL mocks to verify the correctness of that logic
-might be a good idea, and even in those cases a "non-unit unit test" (e.g. one
-that just accesses the database) may be a better option. Integration tests are
-also still an option. A lot of applications don't have those kind of complex
-queries anyway.
+There are exceptions, of course; if you've got a lot of `if cond { q += "more
+sql" }` then adding SQL mocks to verify the correctness of that logic might be a
+good idea. Even in those cases a "non-unit unit test" (e.g. one that just
+accesses the database) is still a viable option. Integration tests are also
+still an option. A lot of applications don't have those kind of complex queries
+anyway.
 
 One important reason for the focus on unit tests is to ensure test code runs
 *fast*. This was a response to massive test harnesses that take a day to
@@ -114,7 +114,7 @@ consists of several units working together. So you *need* integration tests,
 and if the integration tests duplicate half of your unit tests, then why bother
 with those unit tests?
 
-Test Driven Development (TDD) is also just *one* tool. It works well for some
+Test Driven Development (TDD) is also *just one tool*. It works well for some
 problems; not so much for others. In particular, I think that "forced to write
 code in tiny units" can be terribly harmful in some cases. Some code is just a
 serial script which says "do this, and then that, and then this". Splitting that
@@ -129,9 +129,9 @@ fits together to create an actual program that does something useful will be
 much harder.
 
 You see the same friction in the old microkernel vs. monolithic kernel debate,
-or the more recent microservices vs. monolithic app one. In *theory* splitting
-everything up in to small parts sounds like a great idea, but in practice it
-turns out that making all the small parts work together well is a very hard
+or the more recent microservices vs. monolithic app one. In *principle*
+splitting everything up in small parts sounds like a great idea, but in practice
+it turns out that making all the small parts work together is a very hard
 problem. A hybrid approach seems to work best for kernels and app design,
 balancing the ad&shy;van&shy;tages and downsides of both approaches. I think the
 same applies to code.
@@ -141,22 +141,6 @@ gung-go cowboy code our way through life 🤠. I write unit tests and practice
 TDD, *when it makes sense*. My point is that unit tests and TDD are not the
 solution to *every single last problem* and should applied indiscriminately.
 This is why I use words such as "some" and "often" so frequently.
-
-
-<!--
-
-all of
-these things on a daily basis. But I am against the *One True Way*™ usage of
-these concepts, where they're applied to every problem indiscriminately.
-
-
- I am *not* making the point that we
-should all just gung-ho cowboy code our way through every problem. Quite the
-opposite.
-
--->
-
-
 
 ---
 
@@ -176,7 +160,9 @@ An improvement over this?
 		t.Errorf("out:  %q\nwant: %q", out, tt.want)
 	}
 
-What's wrong with `if` and `==`? Why do we need to abstract it?
+What's wrong with `if` and `==`? Why do we need to abstract it? Note that with
+table-driven tests you're only typing these checks *once*, so you're saving just
+a few lines here.
 
 [Ginkgo][ginkgo] is even worse. It turns a very simple, straightforward, and
 understandable piece of code and doesn't just abstract `if`, it also chops up
@@ -193,12 +179,11 @@ Whatever merits BDD may have, they are not present simply because your testing
 code vaguely resembles BDD-style syntax. This on its own demonstrates that BDD
 is perhaps not a great idea for many projects.
 
-I think there are real problems with these BDD(-ish) test tools, as they all
-obfuscate what you're actually doing.
-No matter what, testing is still just a matter of getting the output of a
-function and checking if that matches what you expected. No testing methodology
-is going to change that fundamental. The more layers you add on top of that, the
-harder it will be to debug.
+I think there are real problems with these BDD(-ish) test tools, as they
+obfuscate what you're actually doing. No matter what, testing remains a matter
+of getting the output of a function and checking if that matches what you
+expected. No testing methodology is going to change that fundamental. The more
+layers you add on top of that, the harder it will be to debug.
 
 When determining if something is "easy" then my prime concern is not how easy
 something is to write, but how easy something is to *debug* when things fail. I
