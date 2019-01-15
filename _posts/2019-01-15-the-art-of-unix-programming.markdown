@@ -62,8 +62,8 @@ email esr and ask nicely. Another project, for another weekend :-)
 	  HTML page directly. I usually try lynx first, then a graphical browser if
 	  the page needs it"*
 
-[data]: /taoup/#ch05s02
-[phil]: /taoup#ch01s06
+[data]: /the-art-of-unix-programming/#ch05s02
+[phil]: /the-art-of-unix-programming#ch01s06
 [taoup]: http://catb.org/~esr/writings/taoup/html/
-[taoup-mine]: /taoup/
-[fix]: /taoup/fix-taoup.py
+[taoup-mine]: /the-art-of-unix-programming/
+[fix]: /the-art-of-unix-programming/fix-taoup.py
