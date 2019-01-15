@@ -2160,10 +2160,8 @@ primitives written in C.  We discuss this style of design in
   <a href="#interfacechapter" title="Chapter 11. Interfaces">Chapter 11</a>.
 </p>
 <p>
-  Another way is to separate your application into cooperating
-front-end and back-end processes communicating through a specialized
-application protocol over sockets
-  ; we discuss this kind of design in
+  Another way is to separate your application into cooperating front-end and back-end processes communicating through a
+  specialized application protocol over sockets; we discuss this kind of design in
   <a href="#textualitychapter" title="Chapter 5. Textuality">Chapter 5</a>
   and
   <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">Chapter 7</a>.  The front end implements policy; the
@@ -3760,19 +3758,11 @@ stipulation that those files continued to be freely redistributed.
   </span>
  </blockquote>
 <p>
-  The settlement set an important precedent by freeing an entire
-working Unix from proprietary control, but its effects on BSD itself
-were dire.  Matters were not helped when, in 1992–1994, the
-Computer Science Research Group at
-Berkeley
-  shut
-down
-  ; afterwards,
-factional warfare within the BSD community split it into
-three competing development efforts.  As a result, the BSD lineage
-lagged behind Linux
-  at a crucial time and lost to it
-the lead position in the Unix community.
+  The settlement set an important precedent by freeing an entire working Unix from proprietary control, but its effects
+  on BSD itself were dire.  Matters were not helped when, in 1992–1994, the Computer Science Research Group at Berkeley
+  shut down; afterwards, factional warfare within the BSD community split it into three competing development efforts.
+  As a result, the BSD lineage lagged behind Linux at a crucial time and lost to it the lead position in the Unix
+  community.
 </p>
 <p>
   The Linux
@@ -6824,7 +6814,7 @@ is a cost; don't pay it twice.
 </p>
 <p>
   Often it's possible to remove code duplication by
-  <em>refactoring</em> ; that is, changing the organization
+  <em>refactoring</em>; that is, changing the organization
 of your code without changing the core algorithms.  Data duplication
 sometimes appears to be forced on you.  But when you see it, here are
 some valuable questions to ask:
@@ -6874,16 +6864,10 @@ own corollaries of the SPOT rule:
   <ul>
    <li>
     <p>
-     Are you duplicating data because you're caching intermediate
-results of some computation or lookup?  Consider carefully whether
-this is premature
-optimization
-     ;
-stale caches (and the layers of code needed to keep caches
-synchronized) are a fertile source of bugs,<sup><a href="#ftn.id2895368" id="id2895368">[44]</a></sup>
-     and
-can even slow down overall performance if (as often happens) the
-cache-management overhead is higher than you expected.
+	 Are you duplicating data because you're caching intermediate results of some computation or lookup?  Consider
+	 carefully whether this is premature optimization; stale caches (and the layers of code needed to keep caches
+	 synchronized) are a fertile source of bugs,<sup><a href="#ftn.id2895368" id="id2895368">[44]</a></sup> and can even
+	 slow down overall performance if (as often happens) the cache-management overhead is higher than you expected.
     </p>
    </li>
    <li>
@@ -7564,16 +7548,9 @@ scripting the image-hacking logic in the GIMP core.  A registry of
 GIMP plugins is available on the World Wide Web.
 </p>
 <p>
-  Though most GIMP plugins are small, simple
-C
-  programs, it is
-also possible to write a plugin that exposes the library API to a
-scripting language
-  ; we'll discuss this possibility in
-  <a href="#interfacechapter" title="Chapter 11. Interfaces">
-   Chapter 11</a>
-  when we examine
-the ‘polyvalent program’ pattern.
+  Though most GIMP plugins are small, simple C programs, it is also possible to write a plugin that exposes the library
+  API to a scripting language; we'll discuss this possibility in <a href="#interfacechapter" title="Chapter 11.
+  Interfaces"> Chapter 11</a> when we examine the ‘polyvalent program’ pattern.
 </p>
 
 
@@ -7949,13 +7926,9 @@ whereas data files are program-generated and can become arbitrarily
 large.
 </p>
 <p>
-  Historically, Unix has related but different sets of conventions
-for these two kinds of representation.  The conventions for run
-control files are surveyed in
-  <a href="#configurationchapter" title="Chapter 10. Configuration">
-   Chapter 10</a>
-  ; only conventions for data files are
-examined in this chapter.
+  Historically, Unix has related but different sets of conventions for these two kinds of representation.  The
+  conventions for run control files are surveyed in <a href="#configurationchapter" title="Chapter 10. Configuration">
+  Chapter 10</a>; only conventions for data files are examined in this chapter.
 </p>
 
 
@@ -9388,20 +9361,13 @@ layer their special-purpose protocols on top of HTTP, using web servers
 as generic service platforms.
 </p>
 <p>
-  This is a viable option because, at the transaction layer, HTTP
-is very simple and general.  An HTTP request is a message in an
-RFC-822/MIME-like
-format
-  ; typically, the
-headers contain identification and authentication information, and the
-first line is a method call on some resource specified by a Universal
-Resource Indicator (URI).  The most important methods are GET (fetch
-the resource), PUT (modify the resource) and POST (ship data to a form
-or back-end process). The most important form of URI is a URL or
-Uniform Resource Locator, which identifies the resource by service
-type, host name, and a location on the host.  An HTTP response is
-simply an RFC-822/MIME message and can contain arbitrary content to be
-interpreted by the client.
+  This is a viable option because, at the transaction layer, HTTP is very simple and general.  An HTTP request is a
+  message in an RFC-822/MIME-like format; typically, the headers contain identification and authentication information,
+  and the first line is a method call on some resource specified by a Universal Resource Indicator (URI).  The most
+  important methods are GET (fetch the resource), PUT (modify the resource) and POST (ship data to a form or back-end
+  process). The most important form of URI is a URL or Uniform Resource Locator, which identifies the resource by
+  service type, host name, and a location on the host.  An HTTP response is simply an RFC-822/MIME message and can
+  contain arbitrary content to be interpreted by the client.
 </p>
 <p>
   Web servers handle the transport and request-multiplexing layers
@@ -10271,12 +10237,9 @@ hardware that doesn't have a standard way to report their own
 capabilities.
 </p>
 <p>
-  The design of terminfo benefits from experience with an earlier
-capability format called termcap.  The database of termcap
-descriptions lived in a textual format in one big file,
-  <code>/etc/termcap</code> ; though this format is 
-now obsolete, your Unix system almost certainly includes a
-copy.
+  The design of terminfo benefits from experience with an earlier capability format called termcap.  The database of
+  termcap descriptions lived in a textual format in one big file, <code>/etc/termcap</code>; though this format is now
+  obsolete, your Unix system almost certainly includes a copy.
 </p>
 <p>
   Normally, the key used to look up your terminal type entry is
@@ -12650,18 +12613,12 @@ these technologies have not been naturalized into the Unix
 culture.
 </p>
 <p>
-  There seem to be several underlying reasons for this.  One is
-that RPC interfaces are not readily
-discoverable
-  ;
-that is, it is difficult to query these interfaces for their
-capabilities, and difficult to monitor them in action without building
-single-use tools as complex as the programs being monitored (we
-examined some of the reasons for this in
-  <a href="#transparencychapter" title="Chapter 6. Transparency">
-   Chapter 6</a>). They have the same version skew
-problems as libraries, but those problems are harder to track because
-they're distributed and not generally obvious at link time.
+  There seem to be several underlying reasons for this.  One is that RPC interfaces are not readily discoverable; that
+  is, it is difficult to query these interfaces for their capabilities, and difficult to monitor them in action without
+  building single-use tools as complex as the programs being monitored (we examined some of the reasons for this in <a
+  href="#transparencychapter" title="Chapter 6. Transparency"> Chapter 6</a>). They have the same version skew problems
+  as libraries, but those problems are harder to track because they're distributed and not generally obvious at link
+  time.
 </p>
 <p>
   As a related issue, interfaces that have richer type signatures
@@ -13388,7 +13345,7 @@ complete treatment, see
      <td>
       <code>x</code> followed by at most one
       <code>z</code> followed by
-      <code>y</code> ; thus,
+      <code>y</code>; thus,
       <code>"xy"</code> or
       <code>"xzy"</code> but not
       <code>"xz"</code> or
@@ -13401,7 +13358,7 @@ complete treatment, see
      <td>
       <code>x</code> followed by any number of instances of
       <code>z</code>, followed by
-      <code>y</code> ;
+      <code>y</code>;
    thus,
       <code>"xy"</code> or
       <code>"xzy"</code> or
@@ -13416,7 +13373,7 @@ complete treatment, see
      <td>
       <code>x</code> followed by one or more instances of
       <code>z</code>, followed by
-      <code>y</code> ;
+      <code>y</code>;
    thus,
       <code>"xzy"</code> or
       <code>"xzzy"</code> but not
@@ -13433,7 +13390,7 @@ complete treatment, see
       <code>x</code> or
       <code>y</code> or
       <code>z</code>, followed by
-      <code>t</code> ;
+      <code>t</code>;
    thus,
       <code>"sxt"</code> or
       <code>"syt"</code> or
@@ -13450,7 +13407,7 @@ complete treatment, see
       <code>x</code> or characters in the range
       <code>0</code> –
       <code>9</code>, followed by
-      <code>b</code> ;
+      <code>b</code>;
    thus,
       <code>"axb"</code> or
       <code>"a0b"</code> or
@@ -13467,7 +13424,7 @@ complete treatment, see
       <code>x</code> or
       <code>y</code> or
       <code>z</code>, followed by
-      <code>t</code> ;
+      <code>t</code>;
    thus,
       <code>"sdt"</code> or
       <code>"set"</code> but not
@@ -13484,7 +13441,7 @@ complete treatment, see
       <code>x</code> or in the range
       <code>0</code> –
       <code>9</code>, followed by
-      <code>t</code> ; thus,
+      <code>t</code>; thus,
       <code>"slt"</code> or
       <code>"smt"</code> but not
       <code>"sxt"</code> or
@@ -14086,15 +14043,10 @@ groff(1),
 from the Free Software Foundation.
 </p>
 <p>
-  We'll examine
-  <em>troff</em> in more detail in
-  <a href="#documentationchapter" title="Chapter 18. Documentation">
-   Chapter 18</a>
-  ; for now,
-it's sufficient to note that it is a good example of an imperative
-minilanguage that borders on being a full-fledged interpreter (it has
-conditionals and recursion but not loops; it is accidentally
-Turing-complete).
+  We'll examine <em>troff</em> in more detail in <a href="#documentationchapter" title="Chapter 18. Documentation">
+	  Chapter 18</a>; for now, it's sufficient to note that it is a good example of an imperative minilanguage that
+  borders on being a full-fledged interpreter (it has conditionals and recursion but not loops; it is accidentally
+  Turing-complete).
 </p>
 <p>
   The postprocessors (‘drivers’ in DWB terminology)
@@ -14469,7 +14421,7 @@ they help make the declarations easier to read at a glance.
 </p>
 <p>
   The traditional term for this sort of thing is
-  <em>syntactic sugar</em> ; the maxim that goes with this
+  <em>syntactic sugar</em>; the maxim that goes with this
 is a famous quip that “syntactic sugar causes cancer of the
 semicolon”.<sup><a href="#ftn.id2935218" id="id2935218">[88]</a></sup>
   Indeed, syntactic sugar needs to be used
@@ -14589,8 +14541,7 @@ still be a good idea, but doing so to economize on machine resources
 is a bad one.  Machine resources get cheaper over time, but space in
 programmers' heads only gets more expensive.  Modern minilanguages can
 either be general but noncompact, or specialized but very
-compact
-  ; specialized
+compact; specialized
 but noncompact simply won't compete.
 </p>
 <h4 id="id2935613"><a href="#id2935613">§</a>Case Study: PostScript</h4>
@@ -15967,7 +15918,7 @@ impedance-match the two sets.
   and
 Java
   programmers call this
-  <em>introspection</em> ; in
+  <em>introspection</em>; in
 some other object-oriented languages it's called
   <em>
    metaclass
@@ -17862,7 +17813,7 @@ filter might use this to reverse its normal translation action
     <p>
      Silent (without argument). Suppress normal diagnostic or result
 output (similar to
-     <code>-q</code> ; when both are supported, q
+     <code>-q</code>; when both are supported, q
 means ‘quiet’ but
      <code>-s</code> means ‘utterly
 silent’). Examples:
@@ -18538,7 +18489,7 @@ character, and so forth. This choice helps people who know
 an arbitrary, idiosyncratic command set would have. The only way it
 could have been bettered was by choosing key bindings associated with
 some editor significantly more widely used than
-  <em>Emacs</em> ; and among Netscape's original user
+  <em>Emacs</em>; and among Netscape's original user
 population there was no such animal.
 </p>
 <p>
@@ -19825,17 +19776,10 @@ Simulating pipelines is easy; the more sophisticated IPC mechanisms
 required for engine/interface pairs are hard.)
 </p>
 <p>
-  Owen Taylor, maintainer of the GTK+ library widely used for
-writing user interfaces under X, beautifully brings out the
-engineering benefits of this kind of partitioning at the end of his
-note
-  <a href="http://www.gtk.org/setuid.html">
-   Why GTK_MODULES is
-not a security hole</a>
-  ; he finishes by writing "[T]he
-secure setuid program is a 500 line program that does only what it
-needs to, rather than a 500,000 line library whose essential task is
-user interfaces".
+  Owen Taylor, maintainer of the GTK+ library widely used for writing user interfaces under X, beautifully brings out
+  the engineering benefits of this kind of partitioning at the end of his note <a href="http://www.gtk.org/setuid.html">
+  Why GTK_MODULES is not a security hole</a>; he finishes by writing "[T]he secure setuid program is a 500 line program
+  that does only what it needs to, rather than a 500,000 line library whose essential task is user interfaces".
 </p>
 <p>
   This is not a new idea. Xerox PARC's
@@ -23270,18 +23214,12 @@ specifically with C++ or both remains unclear, though there is reason
 to suspect both are implicated <sup><a href="#Hatton98" title="[Hatton98]">[Hatton98]</a></sup>.
 </p>
 <p>
-  In recent years, C++ has incorporated some important non-OO
-ideas.  It has exceptions similar to those in
-Lisp
-  ; that is,
-it is possible to throw an object or value up the call stack until it
-is caught by a handler.  STL (Standard Template Library) provides
-generic programming; that is, it is possible to code algorithms that
-are independent of the type signature of their data and have them
-compiled to do the right thing at runtime. (Only languages that do
-compile-time static type-checking need this; more dynamic languages
-simply pass around typeless references and support type identification
-at runtime.)
+  In recent years, C++ has incorporated some important non-OO ideas.  It has exceptions similar to those in Lisp; that
+  is, it is possible to throw an object or value up the call stack until it is caught by a handler.  STL (Standard
+  Template Library) provides generic programming; that is, it is possible to code algorithms that are independent of the
+  type signature of their data and have them compiled to do the right thing at runtime. (Only languages that do
+  compile-time static type-checking need this; more dynamic languages simply pass around typeless references and support
+  type identification at runtime.)
 </p>
 <p>
   Efficient compiled language; upward-compatible with C;
@@ -24036,7 +23974,7 @@ subdirectory of the ibiblio archive</a>.
 </p>
 <p>
   The dynamic string handling and sophisticated regular-expression matching required would have made <em>imgsizer</em>
-  quite painful to write in C or C++ ; that version would also have been much larger and harder to read. Java would have
+  quite painful to write in C or C++; that version would also have been much larger and harder to read. Java would have
   solved the implicit memory-management problem, but is hardly more expressive than C or C++ at text pattern matching.
 </p>
 <h5 id="id2977085"><a href="#id2977085">§</a>A Medium-Sized Python Case Study: fetchmailconf</h5>
@@ -25121,7 +25059,7 @@ systems. There are several variants with extended features, notably
   <em>vim</em>,
   <em>vile</em>,
   <em>elvis</em>, and
-  <em>xvi</em> ;
+  <em>xvi</em>;
 of these
   <em>vim</em> is probably the most popular
 and is found on many Linux
@@ -25136,16 +25074,9 @@ Windows operating systems
   and MacOS.
 </p>
 <p>
-  Most introductory Unix books include a chapter describing basic
-  <em>vi</em> usage. One place a
-  <em>vi</em> FAQ is available
-is the
-  <a href="http://www.faqs.org/faqs/editor-faq/vi/">
-   Editor
-FAQ/vi</a>
-  ; you can find many other copies with a WWW keyword
-search for page titles including “vi” and
-“FAQ”.
+  Most introductory Unix books include a chapter describing basic <em>vi</em> usage. One place a <em>vi</em> FAQ is
+  available is the <a href="http://www.faqs.org/faqs/editor-faq/vi/"> Editor FAQ/vi</a>; you can find many other copies
+  with a WWW keyword search for page titles including “vi” and “FAQ”.
 </p>
 <h4 id="id2979540"><a href="#id2979540">§</a>Useful Things to Know about Emacs</h4>
 <p>
@@ -25172,25 +25103,15 @@ comparable to (and in many ways surpassing) those of conventional
 IDEs.
 </p>
 <p>
-  The standard Emacs, universally
-available on modern Unixes, is
-  <em>GNU Emacs</em> ;
-this is what generally runs if you type <code>emacs</code> to a
-Unix shell prompt. GNU Emacs sources and documentation are available
-at the <a href="ftp://gnu.org/pub/gnu"> Free Software Foundation archive site</a>.
+  The standard Emacs, universally available on modern Unixes, is <em>GNU Emacs</em>; this is what generally runs if you
+  type <code>emacs</code> to a Unix shell prompt. GNU Emacs sources and documentation are available at the <a
+  href="ftp://gnu.org/pub/gnu"> Free Software Foundation archive site</a>.
 </p>
 <p>
-  The only major variant is called
-  <em>XEmacs</em> ; it has a better X interface but
-otherwise quite similar capabilities (it forked from Emacs
-19).
-  <em>XEmacs</em> has a
-  <a href="http://www.xemacs.org">
-   home page</a>.
-Emacs (and Emacs Lisp) is universally
-available under modern Unixes. It has been ported to MS-DOS (where it
-works poorly) and Windows 95 and NT (where it is said to work
-reasonably well).
+  The only major variant is called <em>XEmacs</em>; it has a better X interface but otherwise quite similar capabilities
+  (it forked from Emacs 19). <em>XEmacs</em> has a <a href="http://www.xemacs.org"> home page</a>. Emacs (and Emacs
+  Lisp) is universally available under modern Unixes. It has been ported to MS-DOS (where it works poorly) and Windows
+  95 and NT (where it is said to work reasonably well).
 </p>
 <p>
   Emacs includes its own interactive
@@ -25662,21 +25583,12 @@ command files or databases that can automatically be re-executed to
 build your application.
 </p>
 <p>
-  Unix's
-make(1)
-program, the original of all these facilities, was designed
-specifically to help C programmers manage these recipes. It lets you
-write down the dependencies between files in a project in one or more
-‘makefiles’. Each makefile consists of a series of
-  <em>productions</em>
-  ; each one tells
-  <em>make</em> that some given target file depends on
-some set of source files, and says what to do if any of the sources
-are newer than the target. You don't actually have to write down all
-dependencies, as the
-  <em>make</em> program can
-deduce a lot of the obvious ones from filenames and
-extensions.
+  Unix's make(1) program, the original of all these facilities, was designed specifically to help C programmers manage
+  these recipes. It lets you write down the dependencies between files in a project in one or more ‘makefiles’. Each
+  makefile consists of a series of <em>productions</em>; each one tells <em>make</em> that some given target file
+  depends on some set of source files, and says what to do if any of the sources are newer than the target. You don't
+  actually have to write down all dependencies, as the <em>make</em> program can deduce a lot of the obvious ones from
+  filenames and extensions.
 </p>
 <p>
   For example: You might put in a makefile that the binary
@@ -29797,21 +29709,11 @@ of 1971 was a markup formatter, and is probably the oldest such
 program still in use.
 </p>
 <p>
-  Markup-centered tools still have a role because actual
-implementations of WYSIWYG tend to be broken in various ways —
-some superficial, some deep.  WYSIWYG document processors have the
-general problem with GUIs that we discussed in
-  <a href="#interfacechapter" title="Chapter 11. Interfaces">
-   Chapter 11</a>
-  ; the fact that you
-  <em>can</em>
-  visually manipulate anything tends to mean
-you
-  <em>must</em>
-  visually manipulate everything.  That
-would remain a problem even if the WYSIWIG correspondence between
-screen and printer output were perfect — but it almost never
-is.
+  Markup-centered tools still have a role because actual implementations of WYSIWYG tend to be broken in various ways —
+  some superficial, some deep.  WYSIWYG document processors have the general problem with GUIs that we discussed in <a
+  href="#interfacechapter" title="Chapter 11. Interfaces"> Chapter 11</a>; the fact that you <em>can</em> visually
+  manipulate anything tends to mean you <em>must</em> visually manipulate everything.  That would remain a problem even
+  if the WYSIWIG correspondence between screen and printer output were perfect — but it almost never is.
 </p>
 <p>
   In truth, WYSIWYG document processors aren't exactly
@@ -31760,19 +31662,10 @@ good reason — it messes up the natural human-eyeball search order and
 looks like some marketing weenie trying to be clever.
 </p>
 <p>
-  It confuses people when two different projects have the same
-stem name.  So try to check for collisions before your first release.
-Two good places to check are the
-  <a href="http://metalab.unc.edu/pub/Linux">
-   index file of ibiblio</a>
-  and the application index at
-  <a href="http://www.freshmeat.net">
-   Freshmeat</a>.  Another good place
-to check is
-  <a href="http://www.sourceforge.net">
-   SourceForge</a>
-  ;
-do a name search there.
+  It confuses people when two different projects have the same stem name.  So try to check for collisions before your
+  first release. Two good places to check are the <a href="http://metalab.unc.edu/pub/Linux"> index file of ibiblio</a>
+  and the application index at <a href="http://www.freshmeat.net"> Freshmeat</a>.  Another good place to check is
+  <a href="http://www.sourceforge.net"> SourceForge</a>; do a name search there.
 </p>
 <h4 id="develpractice"><a href="#develpractice">§</a>Good Development Practice</h4>
 <p>
@@ -32320,7 +32213,7 @@ source tarballs.
 the RPM spec file, with a production that makes RPMs from it in your
   <code>makefile</code>.  The spec file should have the
 extension
-  <code>.spec</code> ; that's how the
+  <code>.spec</code>; that's how the
   <em>rpm</em> <code>-t</code> option finds it in a
 tarball.
 </p>
@@ -32480,8 +32373,7 @@ developer list might be
    <a href="mailto:foo-friends">
     foo-friends</a>
    &gt;
-  </code>
-  ; your announcement list might be
+  </code>; your announcement list might be
   <code>
    &lt;
    <a href="mailto:foo-announce">
@@ -32774,8 +32666,7 @@ accidents have sometimes turned out to have essential utility.
 Consider as an example the ‘Silence is golden’ rule of
 Unix interface design we examined in
   <a href="#interfacechapter" title="Chapter 11. Interfaces">
-   Chapter 11</a>
-  ; it began as an adaptation to slow
+   Chapter 11</a>; it began as an adaptation to slow
 teletypes, but continued because programs with terse output could be
 combined in scripts more easily.  Today, in an environment where
 having many programs running visibly through a GUI is normal, it has a
@@ -33127,8 +33018,7 @@ information about the file type or a pointer to an associated
 application program outside the file's actual data.
 </p>
 <p>
-  More generally, everything is a byte stream
-  ; even hardware devices are byte streams.
+  More generally, everything is a byte stream; even hardware devices are byte streams.
 This metaphor was a tremendous success of early Unix, and a real
 advance over a world in which (for example) compiled programs could
 not produce output that could be fed back to the compiler.
@@ -33944,14 +33834,10 @@ choose to.
 
 
 <!-- FILE: apa.html -->
- <div class="appendix">
-  <h3 id="apa"><a href="#apa">§</a>Appendix A. Glossary of Abbreviations</h3>
-  <p>
-   The most important abbreviations and acronyms used in the main
-text are defined here.
-  </p>
-  <div class="glosslist">
-   <dl>
+<h3 id="apa"><a href="#apa">§</a>Appendix A. Glossary of Abbreviations</h3>
+<p>The most important abbreviations and acronyms used in the main text are defined here.</p>
+
+<dl>
     <dt>
      API
     </dt>
@@ -33969,18 +33855,9 @@ text are defined here.
     </dt>
     <dd>
      <p>
-      <em>Berkeley System Distribution</em>
-      ; also
-      <em>Berkeley Software Distribution</em>
-      ; sources are
-   ambiguous.
-      The generic name of the Unix
-   distributions issued by the Computer Science Research Group at the
-   University of California at
-   Berkeley
-      between
-   1976 and 1994, and of the open-source Unixes genetically descended
-   from them.
+	  <em>Berkeley System Distribution</em>; also <em>Berkeley Software Distribution</em>; sources are ambiguous. The
+	  generic name of the Unix distributions issued by the Computer Science Research Group at the University of
+	  California at Berkeley between 1976 and 1994, and of the open-source Unixes genetically descended from them.
      </p>
     </dd>
     <dt>
@@ -34233,971 +34110,955 @@ text are defined here.
      </p>
     </dd>
    </dl>
-  </div>
- </div>
 
 
 
 <!-- FILE: apb.html -->
-<div class="appendix">
-  <h3 id="apb"><a href="#apb">§</a>Appendix B. References</h3>
-  <p>
-   Event timelines of the
-   <a href="http://snap.nlc.dcccd.edu/learn/drkelly/hst-hand.htm">
-    Unix
-Industry</a>
-   and of
-   <a href="http://www.robotwisdom.com/linux/timeline.html">
-    GNU/Linux and
-Unix</a>
-   are available on the Web.  A timeline tree of
-   <a href="http://www.levenez.com/unix/">
-    Unix releases</a>
-   is also
-available.
-  </p>
+<h3 id="apb"><a href="#apb">§</a>Appendix B. References</h3>
+<p>
+	Event timelines of the
+	<a href="http://snap.nlc.dcccd.edu/learn/drkelly/hst-hand.htm">Unix Industry</a>
+	and of <a href="http://www.robotwisdom.com/linux/timeline.html">GNU/Linux and Unix</a>
+	are available on the Web.  A timeline tree of <a href="http://www.levenez.com/unix/">Unix releases</a> is also available.
+</p>
 
-	<div class="bibliography">
-	<h3 id="id3020425"><a href="#id3020425">§</a>Bibliography</h3>
-	<ul>
-		<li id="Appleton">
-			<sup>[Appleton]</sup>
-			<span class="author">Randy Appleton.</span>
-			<em class="title">Improving Context Switching Performance of Idle Tasks under Linux</em>.
-			<span class="date">2001.</span>
-			<a href="http://cs.nmu.edu/~randy/Research/Papers/Scheduler/">Available on the Web</a>.
-		</li>
-		<li id="Baldwin-Clark">
-			<sup>[Baldwin-Clark]</sup>
-			<span class="author">Carliss Baldwin and Kim Clark.</span>
-			<em class="title">Design Rules, Vol 1: The Power of Modularity.</em>
-			<span class="date">2000.</span>
-			<span class="publisher">MIT Press.</span>
-			<span class="isbn">ISBN 0-262-024667.</span>
-		</li>
-		<li id="Bentley">
-			<sup>[Bentley]</sup>
-			<span class="author">Jon Bentley.</span>
-			<em class="title">Programming Pearls.</em>
-			<span class="edition">2nd Edition.</span>
-			<span class="date">2000.</span>
-			<span class="publisher">Addison-Wesley.</span>
-			<span class="isbn">ISBN 0-201-65788-0.</span>
-			The third essay in this book, “Data Structures Programs”, argues a case similar to that of
-			<a href="#generationchapter" title="Chapter 9. Generation"> Chapter 9</a> with
-			Bentley's characteristic eloquence.  Some of the book is
-			<a href="http://www.cs.bell-labs.com/cm/cs/pearls/"> available on the Web</a>.
-		</li>
-		<li id="BlaauwBrooks">
-			<sup>[BlaauwBrooks]</sup>
-			<span class="author">Gerrit A. Blaauw and Frederick P. Brooks.</span>
-			<em class="title">Computer Architecture: Concepts and Evolution.</em>
-			<span class="date">1997.</span>
-			<span class="isbn">ISBN 0-201-10557-8.</span>
-			<span class="publisher">Addison-Wesley.</span>
-		</li>
-		<li id="Bolinger-Bronson">
-			<sup>[Bolinger-Bronson]</sup>
-			<span class="author">Dan Bolinger and Tan Bronson.</span>
-			<em class="title">Applying RCS and SCCS.</em>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">1995.</span>
-			<span class="isbn">ISBN 1-56592-117-8.</span>
-			Not just a cookbook, this also surveys the design issues in version-control systems.
-		</li>
-		<li id="Brokken">
-			<sup>[Brokken]</sup>
-			<span class="author">Frank Brokken.</span>
-			<em class="title">C++ Annotations Version.</em>
-			<span class="date">2002.</span>
-			<a href="http://www.icce.rug.nl/documents/cplusplus/cplusplus.html">Available on the Web</a>.
-		</li>
-		<li id="BrooksD">
-			<sup>[BrooksD]</sup>
-			<span class="author">David Brooks.</span>
-			<em class="title">Converting a UNIX .COM Site to Windows.</em>
-			<span class="date">2000.</span>
-			<a href="http://www.securityoffice.net/mssecrets/hotmail.html#_Toc491601819">Available on the Web</a>.
-		</li>
-		<li id="Brooks">
-			<sup>[Brooks]</sup>
-			<span class="author">Frederick P. Brooks.</span>
-			<em class="title">The Mythical Man-Month.</em>
-			<span class="edition">20th Anniversary Edition.</span>
-			<span class="publisher">Addison-Wesley.</span>
-			<span class="date">1995.</span>
-			<span class="isbn">ISBN 0-201-83595-9.</span>
-		</li>
-		<li id="Boehm">
-			<sup>[Boehm]</sup>
-			<span class="author">Hans Boehm.</span>
-			<em class="title">Advantages and Disadvantages of Conservative Garbage Collection.</em>
-			Thorough discussion of tradeoffs between garbage-collected and non-garbage-collected environments.
-			<a href="http://www.hpl.hp.com/personal/Hans_Boehm/gc/issues.html">Available on the Web</a>.
-		</li>
-		<li id="Cameron">
-			<sup>[Cameron]</sup>
-			<span class="author">Debra Cameron, Bill Rosenblatt, and Eric Raymond.</span>
-			<em class="title">Learning GNU Emacs.</em>
-			<span class="edition">2nd Edition.</span>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">1996.</span>
-			<span class="isbn">ISBN 1-56592-152-6.</span>
-		</li>
-		<li id="Cannon">
-			<sup>[Cannon]</sup>
-			<span class="author">L. W. Cannon, R. A. Elliot, L. W. Kirchhoff, J. A. Miller, J. M. Milner, R. W. Mitzw, E. P. Schan, N. O. Whittington, Henry Spencer, David Keppel, and Mark Brader.</span>
-			<em class="title">Recommended C Style and Coding Standards.</em>
-			<span class="date">1990.</span>
-			An updated version of the <em>Indian Hill C Style and Coding Standards</em> paper, with modifications by the last
-			three authors. It describes a recommended coding standard for C programs.
-			<a href="http://www.apocalypse.org/pub/u/paul/docs/cstyle/cstyle.htm">Available on the Web</a>.
-		</li>
-		<li id="Christensen">
-			<sup>[Christensen]</sup>
-			<span class="author">Clayton Christensen.</span>
-			<em class="title">The Innovator's Dilemma.</em>
-			<span class="publisher">HarperBusiness.</span>
-			<span class="date">2000.</span>
-			<span class="isbn">ISBN 0-066-62069-4.</span>
-			The book that introduced the term “disruptive technology”.  A fascinating and lucid examination of how and why
-			technology companies doing everything right get mugged by upstarts.  A business book technical people should read.
-		</li>
-		<li id="Comer">
-			<sup>[Comer]</sup>
-			<span class="biblioset">
-			<em>Unix Review</em>.
-			</span>
-			<span class="biblioset">
-			<span class="author">Douglas Comer.</span>
-			“Pervasive Unix: Cause for Celebration”.
-			<span class="date">October 1985.</span>
-			<span class="pagenums">
-			p. 42.
-			</span>
-			</span>
-		</li>
-		<li id="Cooper">
-			<sup>[Cooper]</sup>
-			<span class="author">Alan Cooper.</span>
-			<em class="title">The Inmates Are Running the Asylum.</em>
-			<span class="publisher">Sams.</span>
-			<span class="date">1999.</span>
-			<span class="isbn">ISBN 0-672-31649-8.</span>
-			Despite some occasional quirks and crotchets, this 
-			book is a trenchant and brilliant analysis of what's wrong with 
-			software interface designs, and how to put it right.
-		</li>
-		<li id="Coram-Lee">
-			<sup>[Coram-Lee]</sup>
-			<span class="author">Tod Coram and Ji Lee.</span>
-			<em class="title">Experiences — A Pattern Language for User Interface Design.</em>
-			<span class="date">1996.</span>
-			<a href="http://www.maplefish.com/todd/papers/Experiences.html">Available on the Web</a>.
-		</li>
-		<li id="DuBois">
-			<sup>[DuBois]</sup>
-			<span class="author">Paul DuBois.</span>
-			<em class="title">Software Portability with Imake.</em>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">1993.</span>
-			<span class="isbn">ISBN 1-56592-055-4.</span>
-		</li>
-		<li id="Eckel">
-			<sup>[Eckel]</sup>
-			<span class="author">Bruce Eckel.</span>
-			<em class="title">Thinking in Java.</em>
-			<span class="edition">3rd Edition.</span>
-			<span class="publisher">Prentice-Hall.</span>
-			<span class="date">2003.</span>
-			<span class="isbn">ISBN 0-13-100287-2.</span>
-			<a href="http://www.mindview.net/Books/TIJ/">Available on the Web</a>.
-		</li>
-		<li id="Feller-Fitzgerald">
-			<sup>[Feller-Fitzgerald]</sup>
-			<span class="author">Joseph Feller and Brian Fitzgerald.</span>
-			<em class="title">Understanding Open Source Software.</em>
-			<span class="date">2002.</span>
-			<span class="isbn">ISBN 0-201-73496-6.</span>
-			<span class="publisher">Addison-Wesley.</span>
-		</li>
-		<li id="FlanaganJava">
-			<sup>[FlanaganJava]</sup>
-			<span class="author">David Flanagan.</span>
-			<em class="title">Java in a Nutshell.</em>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">1997.</span>
-			<span class="isbn">ISBN 1-56592-262-X.</span>
-		</li>
-		<li id="FlanaganJavaScript">
-			<sup>[FlanaganJavaScript]</sup>
-			<span class="author">David Flanagan.</span>
-			<em class="title">JavaScript: The Definitive Guide.</em>
-			<span class="edition">4th Edition.</span>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">2002.</span>
-			<span class="isbn">ISBN 1-596-00048-0.</span>
-		</li>
-		<li id="Fowler">
-			<sup>[Fowler]</sup>
-			<span class="author">Martin Fowler.</span>
-			<em class="title">Refactoring.</em>
-			<span class="publisher">Addison-Wesley.</span>
-			<span class="date">1999.</span>
-			<span class="isbn">ISBN 0-201-48567-2.</span>
-		</li>
-		<li id="Friedl">
-			<sup>[Friedl]</sup>
-			<span class="author">Jeffrey Friedl.</span>
-			<em class="title">Mastering Regular Expressions.</em>
-			<span class="edition">2nd Edition.</span>
-			<span class="date">2002.</span>
-			<span class="isbn">ISBN  0-596-00289-0.</span>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="pagenums">
-			484pp..
-			</span>
-		</li>
-		<li id="Fuzz">
-			<sup>[Fuzz]</sup>
-			<span class="author">Barton Miller, David Koski, Cjin Pheow Lee, Vivekananda Maganty, Ravi Murthy, Ajitkumar Natarajan, and Jeff Steidl.</span>
-			<em class="title">Fuzz Revisited: A Re-examination of the Reliability of Unix Utilities and Services.</em>
-			<span class="date">2000.</span>
-			<a href="http://www.opensource.org/advocacy/fuzz-revisited.pdf">Available on the Web</a>.
-		</li>
-		<li id="Gabriel">
-			<sup>[Gabriel]</sup>
-			<span class="author">Richard Gabriel.</span>
-			<em class="title">Good News, Bad News, and How to Win Big.</em>
-			<span class="date">1990.</span>
-			<a href="http://www.dreamsongs.com/WorseIsBetter.html">Available on the Web</a>.
-		</li>
-		<li id="Gancarz">
-			<sup>[Gancarz]</sup>
-			<span class="author">Mike Gancarz.</span>
-			<em class="title">The Unix Philosophy.</em>
-			<span class="publisher">Digital Press.</span>
-			<span class="date">1995.</span>
-			<span class="isbn">ISBN 1-55558-123-4.</span>
-		</li>
-		<li id="GangOfFour">
-			<sup>[GangOfFour]</sup>
-			<span class="author">Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.</span>
-			<em class="title">Design Patterns: Elements of Reusable Object-Oriented Software.</em>
-			<span class="publisher">Addison-Wesley.</span>
-			<span class="date">1997.</span>
-			<span class="isbn">ISBN 0-201-63361-2.</span>
-		</li>
-		<li id="Garfinkel">
-			<sup>[Garfinkel]</sup>
-			<span class="author">Simson Garfinkel, Daniel Weise, and Steve Strassman.</span>
-			<em class="title">The Unix Hater's Handbook.</em>
-			<span class="publisher">IDG Books.</span>
-			<span class="date">1994.</span>
-			<span class="isbn">ISBN 1-56884-203-1.</span>
-			<a href="http://research.microsoft.com/~daniel/unix-haters.html">Available on the Web</a>.
-		</li>
-		<li id="Gentner-Nielsen">
-			<sup>[Gentner-Nielsen]</sup>
-			<span class="biblioset">
-			<em>Communications of the ACM</em>.
-			<span class="publisher">Association for Computing Machinery.</span>
-			</span>
-			<span class="biblioset">
-			<span class="author">Don Gentner and Jacob Nielsen.</span>
-			“The Anti-Mac Interface”.
-			<span class="date">August 1996.</span>
-			<a href="http://www.acm.org/cacm/AUG96/antimac.htm">Available on the Web</a>.
-			</span>
-		</li>
-		<li id="Gettys">
-			<sup>[Gettys]</sup>
-			<span class="author">Jim Gettys.</span>
-			<em class="title">The Two-Edged Sword.</em>
-			<span class="date">1998.</span>
-			<a href="http://freshmeat.net/articles/view/122/">
-			Available on the Web</a>.
-		</li>
-		<li id="Glickstein">
-			<sup>[Glickstein]</sup>
-			<span class="author">Bob Glickstein.</span>
-			<em class="title">Writing GNU Emacs Extensions.</em>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">1997.</span>
-			<span class="isbn">ISBN 1-56592-261-1.</span>
-		</li>
-		<li id="Graham">
-			<sup>[Graham]</sup>
-			<span class="author">Paul Graham.</span>
-			<em class="title">A Plan for Spam.</em>
-			<a href="http://www.paulgraham.com/spam.html">Available on the Web</a>.
-		</li>
-		<li id="Harold-Means">
-			<sup>[Harold-Means]</sup>
-			<span class="author">Elliotte Rusty Harold and W. Scott Means.</span>
-			<em class="title">XML in a Nutshell.</em>
-			<span class="edition">2nd Edition.</span>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">2002.</span>
-			<span class="isbn">ISBN 0-596-00292-0.</span>
-		</li>
-		<li id="Hatton97">
-			<sup>[Hatton97]</sup>
-			<span class="biblioset">
-			<em>IEEE Software</em>.
-			</span>
-			<span class="biblioset">
-			<span class="author">Les Hatton.</span>
-			“Re-examining the Defect-Density versus Component Size Distribution”.
-			<span class="date">March/April 1997.</span>
-			<a href="http://www.cs.ukc.ac.uk/people/staff/lh8/pubs/pubis697/Ubend_IS697.pdf.gz">
-				Available
-			on the Web</a>.
-			</span>
-		</li>
-		<li id="Hatton98">
-			<sup>[Hatton98]</sup>
-			<span class="biblioset">
-			<em>IEEE Software</em>.
-			</span>
-			<span class="biblioset">
-			<span class="author">Les Hatton.</span>
-			“Does OO Sync with the Way We Think?”.
-			<span class="volumenum">
-			15.
-			</span>
-			<span class="issuenum">
-			(3).
-			</span>
-			<a href="http://www.cs.ukc.ac.uk/people/staff/lh8/pubs/pubis698/OO_IS698.pdf.gz">
-				Available
-			on the Web</a>.
-			</span>
-		</li>
-		<li id="Hauben">
-			<sup>[Hauben]</sup>
-			<span class="author">Ronda Hauben.</span>
-			<em class="title">History of UNIX.</em>
-			<a href="http://www.dei.isep.ipp.pt/docs/unix.html">
-			Available on the Web</a>.
-		</li>
-		<li id="Heller">
-			<sup>[Heller]</sup>
-			<span class="author">Steve Heller.</span>
-			<em class="title">C++: A Dialog.</em>
-			<span class="subtitle">
-			Programming with the C++ Standard Library.
-			</span>
-			<span class="publisher">Prentice-Hall.</span>
-			<span class="date">2003.</span>
-			<span class="isbn">ISBN 0-13-009402-1.</span>
-		</li>
-		<li id="Hunt-Thomas">
-			<sup>[Hunt-Thomas]</sup>
-			<span class="author">Andrew Hunt and David Thomas.</span>
-			<em class="title">The Pragmatic Programmer: From Journeyman to Master.</em>
-			<span class="publisher">Addison-Wesley.</span>
-			<span class="date">2000.</span>
-			<span class="isbn">ISBN 0-201-61622-X.</span>
-		</li>
-		<li id="Kernighan95">
-			<sup>[Kernighan95]</sup>
-			<span class="author">Brian Kernighan.</span>
-			<em class="title">Experience with Tcl/Tk for Scientific and Engineering Visualization.</em>
-			<span class="publisher">USENIX Association Tcl/Tk Workshop Proceedings.</span>
-			<span class="date">1995.</span>
-			<a href="http://www.usenix.org/publications/library/proceedings/tcl95/full_papers/kernighan.txt">
+<h3 id="id3020425"><a href="#id3020425">§</a>Bibliography</h3>
+<ul>
+	<li id="Appleton">
+		<sup>[Appleton]</sup>
+		<span class="author">Randy Appleton.</span>
+		<em class="title">Improving Context Switching Performance of Idle Tasks under Linux</em>.
+		<span class="date">2001.</span>
+		<a href="http://cs.nmu.edu/~randy/Research/Papers/Scheduler/">Available on the Web</a>.
+	</li>
+	<li id="Baldwin-Clark">
+		<sup>[Baldwin-Clark]</sup>
+		<span class="author">Carliss Baldwin and Kim Clark.</span>
+		<em class="title">Design Rules, Vol 1: The Power of Modularity.</em>
+		<span class="date">2000.</span>
+		<span class="publisher">MIT Press.</span>
+		<span class="isbn">ISBN 0-262-024667.</span>
+	</li>
+	<li id="Bentley">
+		<sup>[Bentley]</sup>
+		<span class="author">Jon Bentley.</span>
+		<em class="title">Programming Pearls.</em>
+		<span class="edition">2nd Edition.</span>
+		<span class="date">2000.</span>
+		<span class="publisher">Addison-Wesley.</span>
+		<span class="isbn">ISBN 0-201-65788-0.</span>
+		The third essay in this book, “Data Structures Programs”, argues a case similar to that of
+		<a href="#generationchapter" title="Chapter 9. Generation"> Chapter 9</a> with
+		Bentley's characteristic eloquence.  Some of the book is
+		<a href="http://www.cs.bell-labs.com/cm/cs/pearls/"> available on the Web</a>.
+	</li>
+	<li id="BlaauwBrooks">
+		<sup>[BlaauwBrooks]</sup>
+		<span class="author">Gerrit A. Blaauw and Frederick P. Brooks.</span>
+		<em class="title">Computer Architecture: Concepts and Evolution.</em>
+		<span class="date">1997.</span>
+		<span class="isbn">ISBN 0-201-10557-8.</span>
+		<span class="publisher">Addison-Wesley.</span>
+	</li>
+	<li id="Bolinger-Bronson">
+		<sup>[Bolinger-Bronson]</sup>
+		<span class="author">Dan Bolinger and Tan Bronson.</span>
+		<em class="title">Applying RCS and SCCS.</em>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">1995.</span>
+		<span class="isbn">ISBN 1-56592-117-8.</span>
+		Not just a cookbook, this also surveys the design issues in version-control systems.
+	</li>
+	<li id="Brokken">
+		<sup>[Brokken]</sup>
+		<span class="author">Frank Brokken.</span>
+		<em class="title">C++ Annotations Version.</em>
+		<span class="date">2002.</span>
+		<a href="http://www.icce.rug.nl/documents/cplusplus/cplusplus.html">Available on the Web</a>.
+	</li>
+	<li id="BrooksD">
+		<sup>[BrooksD]</sup>
+		<span class="author">David Brooks.</span>
+		<em class="title">Converting a UNIX .COM Site to Windows.</em>
+		<span class="date">2000.</span>
+		<a href="http://www.securityoffice.net/mssecrets/hotmail.html#_Toc491601819">Available on the Web</a>.
+	</li>
+	<li id="Brooks">
+		<sup>[Brooks]</sup>
+		<span class="author">Frederick P. Brooks.</span>
+		<em class="title">The Mythical Man-Month.</em>
+		<span class="edition">20th Anniversary Edition.</span>
+		<span class="publisher">Addison-Wesley.</span>
+		<span class="date">1995.</span>
+		<span class="isbn">ISBN 0-201-83595-9.</span>
+	</li>
+	<li id="Boehm">
+		<sup>[Boehm]</sup>
+		<span class="author">Hans Boehm.</span>
+		<em class="title">Advantages and Disadvantages of Conservative Garbage Collection.</em>
+		Thorough discussion of tradeoffs between garbage-collected and non-garbage-collected environments.
+		<a href="http://www.hpl.hp.com/personal/Hans_Boehm/gc/issues.html">Available on the Web</a>.
+	</li>
+	<li id="Cameron">
+		<sup>[Cameron]</sup>
+		<span class="author">Debra Cameron, Bill Rosenblatt, and Eric Raymond.</span>
+		<em class="title">Learning GNU Emacs.</em>
+		<span class="edition">2nd Edition.</span>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">1996.</span>
+		<span class="isbn">ISBN 1-56592-152-6.</span>
+	</li>
+	<li id="Cannon">
+		<sup>[Cannon]</sup>
+		<span class="author">L. W. Cannon, R. A. Elliot, L. W. Kirchhoff, J. A. Miller, J. M. Milner, R. W. Mitzw, E. P. Schan, N. O. Whittington, Henry Spencer, David Keppel, and Mark Brader.</span>
+		<em class="title">Recommended C Style and Coding Standards.</em>
+		<span class="date">1990.</span>
+		An updated version of the <em>Indian Hill C Style and Coding Standards</em> paper, with modifications by the last
+		three authors. It describes a recommended coding standard for C programs.
+		<a href="http://www.apocalypse.org/pub/u/paul/docs/cstyle/cstyle.htm">Available on the Web</a>.
+	</li>
+	<li id="Christensen">
+		<sup>[Christensen]</sup>
+		<span class="author">Clayton Christensen.</span>
+		<em class="title">The Innovator's Dilemma.</em>
+		<span class="publisher">HarperBusiness.</span>
+		<span class="date">2000.</span>
+		<span class="isbn">ISBN 0-066-62069-4.</span>
+		The book that introduced the term “disruptive technology”.  A fascinating and lucid examination of how and why
+		technology companies doing everything right get mugged by upstarts.  A business book technical people should read.
+	</li>
+	<li id="Comer">
+		<sup>[Comer]</sup>
+		<span class="biblioset">
+		<em>Unix Review</em>.
+		</span>
+		<span class="biblioset">
+		<span class="author">Douglas Comer.</span>
+		“Pervasive Unix: Cause for Celebration”.
+		<span class="date">October 1985.</span>
+		<span class="pagenums">
+		p. 42.
+		</span>
+		</span>
+	</li>
+	<li id="Cooper">
+		<sup>[Cooper]</sup>
+		<span class="author">Alan Cooper.</span>
+		<em class="title">The Inmates Are Running the Asylum.</em>
+		<span class="publisher">Sams.</span>
+		<span class="date">1999.</span>
+		<span class="isbn">ISBN 0-672-31649-8.</span>
+		Despite some occasional quirks and crotchets, this 
+		book is a trenchant and brilliant analysis of what's wrong with 
+		software interface designs, and how to put it right.
+	</li>
+	<li id="Coram-Lee">
+		<sup>[Coram-Lee]</sup>
+		<span class="author">Tod Coram and Ji Lee.</span>
+		<em class="title">Experiences — A Pattern Language for User Interface Design.</em>
+		<span class="date">1996.</span>
+		<a href="http://www.maplefish.com/todd/papers/Experiences.html">Available on the Web</a>.
+	</li>
+	<li id="DuBois">
+		<sup>[DuBois]</sup>
+		<span class="author">Paul DuBois.</span>
+		<em class="title">Software Portability with Imake.</em>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">1993.</span>
+		<span class="isbn">ISBN 1-56592-055-4.</span>
+	</li>
+	<li id="Eckel">
+		<sup>[Eckel]</sup>
+		<span class="author">Bruce Eckel.</span>
+		<em class="title">Thinking in Java.</em>
+		<span class="edition">3rd Edition.</span>
+		<span class="publisher">Prentice-Hall.</span>
+		<span class="date">2003.</span>
+		<span class="isbn">ISBN 0-13-100287-2.</span>
+		<a href="http://www.mindview.net/Books/TIJ/">Available on the Web</a>.
+	</li>
+	<li id="Feller-Fitzgerald">
+		<sup>[Feller-Fitzgerald]</sup>
+		<span class="author">Joseph Feller and Brian Fitzgerald.</span>
+		<em class="title">Understanding Open Source Software.</em>
+		<span class="date">2002.</span>
+		<span class="isbn">ISBN 0-201-73496-6.</span>
+		<span class="publisher">Addison-Wesley.</span>
+	</li>
+	<li id="FlanaganJava">
+		<sup>[FlanaganJava]</sup>
+		<span class="author">David Flanagan.</span>
+		<em class="title">Java in a Nutshell.</em>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">1997.</span>
+		<span class="isbn">ISBN 1-56592-262-X.</span>
+	</li>
+	<li id="FlanaganJavaScript">
+		<sup>[FlanaganJavaScript]</sup>
+		<span class="author">David Flanagan.</span>
+		<em class="title">JavaScript: The Definitive Guide.</em>
+		<span class="edition">4th Edition.</span>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">2002.</span>
+		<span class="isbn">ISBN 1-596-00048-0.</span>
+	</li>
+	<li id="Fowler">
+		<sup>[Fowler]</sup>
+		<span class="author">Martin Fowler.</span>
+		<em class="title">Refactoring.</em>
+		<span class="publisher">Addison-Wesley.</span>
+		<span class="date">1999.</span>
+		<span class="isbn">ISBN 0-201-48567-2.</span>
+	</li>
+	<li id="Friedl">
+		<sup>[Friedl]</sup>
+		<span class="author">Jeffrey Friedl.</span>
+		<em class="title">Mastering Regular Expressions.</em>
+		<span class="edition">2nd Edition.</span>
+		<span class="date">2002.</span>
+		<span class="isbn">ISBN  0-596-00289-0.</span>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="pagenums">
+		484pp..
+		</span>
+	</li>
+	<li id="Fuzz">
+		<sup>[Fuzz]</sup>
+		<span class="author">Barton Miller, David Koski, Cjin Pheow Lee, Vivekananda Maganty, Ravi Murthy, Ajitkumar Natarajan, and Jeff Steidl.</span>
+		<em class="title">Fuzz Revisited: A Re-examination of the Reliability of Unix Utilities and Services.</em>
+		<span class="date">2000.</span>
+		<a href="http://www.opensource.org/advocacy/fuzz-revisited.pdf">Available on the Web</a>.
+	</li>
+	<li id="Gabriel">
+		<sup>[Gabriel]</sup>
+		<span class="author">Richard Gabriel.</span>
+		<em class="title">Good News, Bad News, and How to Win Big.</em>
+		<span class="date">1990.</span>
+		<a href="http://www.dreamsongs.com/WorseIsBetter.html">Available on the Web</a>.
+	</li>
+	<li id="Gancarz">
+		<sup>[Gancarz]</sup>
+		<span class="author">Mike Gancarz.</span>
+		<em class="title">The Unix Philosophy.</em>
+		<span class="publisher">Digital Press.</span>
+		<span class="date">1995.</span>
+		<span class="isbn">ISBN 1-55558-123-4.</span>
+	</li>
+	<li id="GangOfFour">
+		<sup>[GangOfFour]</sup>
+		<span class="author">Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.</span>
+		<em class="title">Design Patterns: Elements of Reusable Object-Oriented Software.</em>
+		<span class="publisher">Addison-Wesley.</span>
+		<span class="date">1997.</span>
+		<span class="isbn">ISBN 0-201-63361-2.</span>
+	</li>
+	<li id="Garfinkel">
+		<sup>[Garfinkel]</sup>
+		<span class="author">Simson Garfinkel, Daniel Weise, and Steve Strassman.</span>
+		<em class="title">The Unix Hater's Handbook.</em>
+		<span class="publisher">IDG Books.</span>
+		<span class="date">1994.</span>
+		<span class="isbn">ISBN 1-56884-203-1.</span>
+		<a href="http://research.microsoft.com/~daniel/unix-haters.html">Available on the Web</a>.
+	</li>
+	<li id="Gentner-Nielsen">
+		<sup>[Gentner-Nielsen]</sup>
+		<span class="biblioset">
+		<em>Communications of the ACM</em>.
+		<span class="publisher">Association for Computing Machinery.</span>
+		</span>
+		<span class="biblioset">
+		<span class="author">Don Gentner and Jacob Nielsen.</span>
+		“The Anti-Mac Interface”.
+		<span class="date">August 1996.</span>
+		<a href="http://www.acm.org/cacm/AUG96/antimac.htm">Available on the Web</a>.
+		</span>
+	</li>
+	<li id="Gettys">
+		<sup>[Gettys]</sup>
+		<span class="author">Jim Gettys.</span>
+		<em class="title">The Two-Edged Sword.</em>
+		<span class="date">1998.</span>
+		<a href="http://freshmeat.net/articles/view/122/">
+		Available on the Web</a>.
+	</li>
+	<li id="Glickstein">
+		<sup>[Glickstein]</sup>
+		<span class="author">Bob Glickstein.</span>
+		<em class="title">Writing GNU Emacs Extensions.</em>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">1997.</span>
+		<span class="isbn">ISBN 1-56592-261-1.</span>
+	</li>
+	<li id="Graham">
+		<sup>[Graham]</sup>
+		<span class="author">Paul Graham.</span>
+		<em class="title">A Plan for Spam.</em>
+		<a href="http://www.paulgraham.com/spam.html">Available on the Web</a>.
+	</li>
+	<li id="Harold-Means">
+		<sup>[Harold-Means]</sup>
+		<span class="author">Elliotte Rusty Harold and W. Scott Means.</span>
+		<em class="title">XML in a Nutshell.</em>
+		<span class="edition">2nd Edition.</span>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">2002.</span>
+		<span class="isbn">ISBN 0-596-00292-0.</span>
+	</li>
+	<li id="Hatton97">
+		<sup>[Hatton97]</sup>
+		<span class="biblioset">
+		<em>IEEE Software</em>.
+		</span>
+		<span class="biblioset">
+		<span class="author">Les Hatton.</span>
+		“Re-examining the Defect-Density versus Component Size Distribution”.
+		<span class="date">March/April 1997.</span>
+		<a href="http://www.cs.ukc.ac.uk/people/staff/lh8/pubs/pubis697/Ubend_IS697.pdf.gz">
 			Available
-			on the Web</a>.
-		</li>
-		<li id="Kernighan-Pike84">
-			<sup>[Kernighan-Pike84]</sup>
-			<span class="author">Brian Kernighan and Rob Pike.</span>
-			<em class="title">The Unix Programming Environment.</em>
-			<span class="publisher">Prentice-Hall.</span>
-			<span class="date">1984.</span>
-			<span class="isbn">ISBN 0-13-937681-X.</span>
-		</li>
-		<li id="Kernighan-Pike99">
-			<sup>[Kernighan-Pike99]</sup>
-			<span class="author">Brian Kernighan and Rob Pike.</span>
-			<em class="title">The Practice of Programming.</em>
-			<span class="date">1999.</span>
-			<span class="isbn">ISBN 0-201-61586-X.</span>
-			<span class="publisher">Addison-Wesley.</span>
-			An excellent treatise on writing high-quality programs,
-			surely destined to become a classic of the field.
-		</li>
-		<li id="Kernighan-Plauger">
-			<sup>[Kernighan-Plauger]</sup>
-			<span class="author">Brian Kernighan and P. J. Plauger.</span>
-			<em class="title">Software Tools.</em>
-			<span class="publisher">Addison-Wesley.</span>
-			<span class="date">1976.</span>
-			<span class="isbn">ISBN 201-03669-X.</span>
-		</li>
-		<li id="Kernighan-Ritchie">
-			<sup>[Kernighan-Ritchie]</sup>
-			<span class="author">Brian Kernighan and Dennis Ritchie.</span>
-			<em class="title">The C Programming Language.</em>
-			<span class="edition">2nd Edition.</span>
-			<span class="publisher">Prentice-Hall Software Series.</span>
-			<span class="date">1988.</span>
-			<span class="isbn">ISBN 0-13-110362-8.</span>
-		</li>
-		<li id="Lampson">
-			<sup>[Lampson]</sup>
-			<span class="biblioset">
-			<em>ACM Operating Systems Review</em>.
-			<span class="publisher">Association for Computing Machinery.</span>
-			</span>
-			<span class="biblioset">
-			<span class="author">Butler Lampson.</span>
-			“Hints for Computer System Design”.
-			<span class="date">October 1983.</span>
-			<a href="http://research.microsoft.com/~lampson/33-Hints/WebPage.html">
-				Available
-			on the Web</a>.
-			</span>
-		</li>
-		<li id="Lapin">
-			<sup>[Lapin]</sup>
-			<span class="author">J. E. Lapin.</span>
-			<em class="title">Portable C and Unix Systems Programming.</em>
-			<span class="publisher">Prentice-Hall.</span>
-			<span class="date">1987.</span>
-			<span class="isbn">ISBN 0-13-686494-5.</span>
-		</li>
-		<li id="Leonard">
-			<sup>[Leonard]</sup>
-			<span class="author">Andrew Leonard.</span>
-			<em class="title">BSD Unix: Power to the People, from the Code.</em>
-			<span class="date">2000.</span>
-			<a href="http://dir.salon.com/tech/fsp/2000/05/16/chapter_2_part_one/index.html">
-			Available on the Web</a>.
-		</li>
-		<li id="Levy">
-			<sup>[Levy]</sup>
-			<span class="author">Steven Levy.</span>
-			<em class="title">Hackers: Heroes of the Computer Revolution.</em>
-			<span class="publisher">Anchor/Doubleday.</span>
-			<span class="date">1984.</span>
-			<span class="isbn">ISBN 0-385-19195-2.</span>
-			<a href="http://www.stanford.edu/group/mmdd/SiliconValley/Levy/Hackers.1984.book/contents.html">
-			Available on the Web</a>.
-		</li>
-		<li id="Lewine">
-			<sup>[Lewine]</sup>
-			<span class="author">Donald Lewine.</span>
-			<em class="title">POSIX Programmer's Guide: Writing Portable Unix Programs.</em>
-			<span class="date">1992.</span>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="isbn">ISBN 0-937175-73-0.</span>
-			<span class="pagenums">
-			607pp..
-			</span>
-		</li>
-		<li id="Libes-Ressler">
-			<sup>[Libes-Ressler]</sup>
-			<span class="author">Don Libes and Sandy Ressler.</span>
-			<em class="title">Life with Unix.</em>
-			<span class="date">1989.</span>
-			<span class="isbn">ISBN 0-13-536657-7.</span>
-			<span class="publisher">Prentice-Hall.</span>
-			This book gives a more detailed version of Unix's
-			early history. It's particularly strong for the period
-			1979–1986.
-		</li>
-		<li id="Lions">
-			<sup>[Lions]</sup>
-			<span class="author">John Lions.</span>
-			<em class="title">Lions's Commentary on Unix 6th Edition.</em>
-			<span class="date">1996.</span>
-			<span class="isbn">1-57398-013-7.</span>
-			<span class="publisher">Peer-To-Peer Communications.</span>
-			PostScript rendering of Lions's original floats around 
-			the Web.
-			<a href="http://www.upl.cs.wisc.edu/~epaulson/lionc.ps">
-			This URL may
-			be unstable</a>.
-		</li>
-		<li id="Loukides-Oram">
-			<sup>[Loukides-Oram]</sup>
-			<span class="author">Mike Loukides and Andy Oram.</span>
-			<em class="title">Programming with GNU Software.</em>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">1996.</span>
-			<span class="isbn">ISBN 1-56592-112-7.</span>
-		</li>
-		<li id="Lutz">
-			<sup>[Lutz]</sup>
-			<span class="author">Mark Lutz.</span>
-			<em class="title">Programming Python.</em>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">1996.</span>
-			<span class="isbn">ISBN 1-56592-197-6.</span>
-		</li>
-		<li id="McIlroy78">
-			<sup>[McIlroy78]</sup>
-			<span class="biblioset">
-			<em>The Bell System Technical Journal</em>.
-			<span class="publisher">Bell Laboratories.</span>
-			</span>
-			<span class="biblioset">
-			<span class="author">M. D. McIlroy, E. N. Pinson, and B. A. Tague.</span>
-			“Unix Time-Sharing System Forward”.
-			<span class="date">1978.</span>
-			<span class="issuenum">
-			57 (6, part 2).
-			</span>
-			<span class="pagenums">
-			p. 1902.
-			</span>
-			</span>
-		</li>
-		<li id="McIlroy91">
-			<sup>[McIlroy91]</sup>
-			<span class="biblioset">
-			<em>Proc. Virginia Computer Users Conference</em>.
-			<span class="volumenum">
-			Volume 21.
-			</span>
-			</span>
-			<span class="biblioset">
-			<span class="author">M. D. McIlroy.</span>
-			“Unix on My Mind”.
-			<span class="pagenums">
-			p. 1-6.
-			</span>
-			</span>
-		</li>
-		<li id="Miller">
-			<sup>[Miller]</sup>
-			<span class="biblioset">
-			<em>The Psychological Review</em>.
-			</span>
-			<span class="biblioset">
-			<span class="author">George Miller.</span>
-			“The Magical Number Seven, Plus or Minus Two”.
-			<span class="subtitle">
-			Some limits on our capacity for processing information.
-			</span>
-			<span class="date">1956.</span>
-			<span class="issuenum">
-			63.
-			</span>
-			<span class="pagenums">
-			pp. 81-97.
-			</span>
-			<a href="http://www.well.com/user/smalin/miller.html">
-				Available on the
-			Web</a>.
-			</span>
-		</li>
-		<li id="Mumon">
-			<sup>[Mumon]</sup>
-			<span class="author">Mumon.</span>
-			<em class="title">The Gateless Gate.</em>
-			<a href="http://www.ibiblio.org/zen/cgi-bin/koan-index.pl">
-			A good modern translation is available on the Web</a>.
-		</li>
-		<li id="OpenSources">
-			<sup>[OpenSources]</sup>
-			<span class="author">Sam Ockman and Chris DiBona.</span>
-			<em class="title">Open Sources: Voices from the Open Source Revolution.</em>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">1999.</span>
-			<span class="isbn">ISBN 1-56592-582-3.</span>
-			<span class="pagenums">
-			280pp..
-			</span>
-			<a href="http://www.oreilly.com/catalog/opensources/book/toc.html">
-			Available on the Web</a>.
-		</li>
-		<li id="Oram-Talbot">
-			<sup>[Oram-Talbot]</sup>
-			<span class="author">Andrew Oram and Steve Talbot.</span>
-			<em class="title">Managing Projects with Make.</em>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">1991.</span>
-			<span class="isbn">ISBN 0-937175-90-0.</span>
-		</li>
-		<li id="Ousterhout94">
-			<sup>[Ousterhout94]</sup>
-			<span class="author">John Ousterhout.</span>
-			<em class="title">Tcl and the Tk Toolkit.</em>
-			<span class="publisher">Addison-Wesley.</span>
-			<span class="date">1994.</span>
-			<span class="isbn">ISBN 0-201-63337-X.</span>
-		</li>
-		<li id="Ousterhout96">
-			<sup>[Ousterhout96]</sup>
-			<span class="author">John Ousterhout.</span>
-			<em class="title">Why Threads Are a Bad Idea (for most purposes).</em>
-			<span class="date">1996.</span>
-			An invited talk at USENIX 1996. There is no written paper
-			that corresponds to it, but the slide presentation is
-			<a href="http://home.pacbell.net/ouster/threads.pdf">
-			available on
-			the Web</a>.
-		</li>
-		<li id="Padlipsky">
-			<sup>[Padlipsky]</sup>
-			<span class="author">Michael Padlipsky.</span>
-			<em class="title">The Elements of Networking Style.</em>
-			<span class="publisher">iUniverse.com.</span>
-			<span class="date">2000.</span>
-			<span class="isbn">ISBN 0-595-08879-1.</span>
-		</li>
-		<li id="Parnas">
-			<sup>[Parnas]</sup>
-			<span class="biblioset">
-			<em>Communications of the ACM</em>.
-			</span>
-			<span class="biblioset">
-			<span class="author">Parnas L. David.</span>
-			“On the Criteria to Be Used in Decomposing Systems into Modules”.
-			Available on the Web at the
-			<a href="http://www.acm.org/classics/may96/">
-				ACM Classics
-			page</a>.
-			</span>
-		</li>
-		<li id="Pike">
-			<sup>[Pike]</sup>
-			<span class="author">Rob Pike.</span>
-			<em class="title">Notes on Programming in C.</em>
-			This
-			document is popular on the Web; a title search is sure to find
-			several copies.
-			<a href="http://www.lysator.liu.se/c/pikestyle.html">
-			Here is one</a>.
-		</li>
-		<li id="Prechelt">
-			<sup>[Prechelt]</sup>
-			<span class="author">Lutz Prechelt.</span>
-			<em class="title"><a href="http://www.ubka.uni-karlsruhe.de/cgi-bin/psview?document=ira/2000/5"> An Empirical Comparison of C, C++, Java, Perl, Python, Rexx, and Tcl for a Search/String-Processing Program </a>.</em>
-		</li>
-		<li id="Raskin">
-			<sup>[Raskin]</sup>
-			<span class="author">Jef Raskin.</span>
-			<em class="title">The Humane Interface.</em>
-			<span class="publisher">Addison-Wesley.</span>
-			<span class="date">2000.</span>
-			<span class="isbn">ISBN 0-201-37937-6.</span>
-			A summary is
-			<a href="http://humane.sourceforge.net/humane_interface/summary_of_thi.html">
-			available
-			on the Web</a>.
-		</li>
-		<li id="Ravenbrook">
-			<sup>[Ravenbrook]</sup>
-			<em class="title">The Memory Management Reference.</em>
-			<a href="http://www.memorymanagement.org/">
-			Available on
-			the Web</a>.
-		</li>
-		<li id="Raymond96">
-			<sup>[Raymond96]</sup>
-			<span class="editor">
-			Eric S. Raymond.
-			</span>
-			<em class="title">The New Hacker's Dictionary.</em>
-			<span class="edition">3rd Edition.</span>
-			<span class="date">1996.</span>
-			<span class="isbn">ISBN 0-262-68092-0.</span>
-			<span class="publisher">MIT Press.</span>
-			<span class="pagenums">
-			547pp..
-			</span>
-			Available on the Web at
-			<a href="http://www.catb.org/~esr/jargon">
-			Jargon File
-			Resource Page</a>.
-		</li>
-		<li id="Raymond01">
-			<sup>[Raymond01]</sup>
-			<span class="author">Eric S. Raymond.</span>
-			<em class="title">The Cathedral and the Bazaar.</em>
-			<span class="edition">2nd Edition.</span>
-			<span class="date">1999.</span>
-			<span class="isbn">ISBN 0-596-00131-2.</span>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="pagenums">
-			240pp..
-			</span>
-		</li>
-		<li id="Reps-Senzaki">
-			<sup>[Reps-Senzaki]</sup>
-			<span class="author">Paul Reps and Nyogen Senzaki.</span>
-			<em class="title">Zen Flesh, Zen Bones.</em>
-			<span class="date">1994.</span>
-			<span class="publisher">Shambhala Publications.</span>
-			<span class="isbn">ISBN 1-570-62063-6.</span>
-			<span class="pagenums">
-			285pp..
-			</span>
-			A superb anthology of Zen primary sources, presented just as
-			they are.
-		</li>
-		<li id="Ritchie79">
-			<sup>[Ritchie79]</sup>
-			<span class="author">Dennis M. Ritchie.</span>
-			<em class="title">The Evolution of the Unix Time-Sharing System.</em>
-			<span class="date">1979.</span>
-			<a href="http://cm.bell-labs.com/cm/cs/who/dmr/hist.html">
-			Available on the Web</a>.
-		</li>
-		<li id="Ritchie93">
-			<sup>[Ritchie93]</sup>
-			<span class="author">Dennis M. Ritchie.</span>
-			<em class="title">The Development of the C Language.</em>
-			<span class="date">1993.</span>
-			<a href="http://cm.bell-labs.com/cm/cs/who/dmr/chist.html">
-			Available on the Web</a>.
-		</li>
-		<li id="RitchieQED">
-			<sup>[RitchieQED]</sup>
-			<span class="author">Dennis M. Ritchie.</span>
-			<em class="title">An Incomplete History of the QED Text Editor.</em>
-			<span class="date">2003.</span>
-			<a href="http://cm.bell-labs.com/cm/cs/who/dmr/qed.html">
-			Available on the Web</a>.
-		</li>
-		<li id="Ritchie-Thompson">
-			<sup>[Ritchie-Thompson]</sup>
-			<em class="title">The Unix Time-Sharing System.</em>
-			<span class="author">Dennis M. Ritchie and Ken Thompson.</span>
-			<a href="http://cm.bell-labs.com/cm/cs/who/dmr/cacm.html">
-			Available on the Web</a>.
-		</li>
-		<li id="Saltzer">
-			<sup>[Saltzer]</sup>
-			<span class="biblioset">
-			<em>ACM Transactions on Computer Systems</em>.
-			<span class="publisher">Association for Computing Machinery.</span>
-			</span>
-			<span class="biblioset">
-			<span class="author">James. H. Saltzer, David P. Reed, and David D. Clark.</span>
-			“End-to-End Arguments in System Design”.
-			<span class="date">November 1984.</span>
-			<a href="http://web.mit.edu/Saltzer/www/publications/endtoend/endtoend.pdf">
-				Available on the Web</a>.
-			</span>
-		</li>
-		<li id="Salus">
-			<sup>[Salus]</sup>
-			<span class="author">Peter H. Salus.</span>
-			<em class="title">A Quarter-Century of Unix.</em>
-			<span class="publisher">Addison-Wesley.</span>
-			<span class="date">1994.</span>
-			<span class="isbn">ISBN 0-201-54777-5.</span>
-			An excellent overview of Unix history, explaining many of the
-			design decisions in the words of the people who made them.
-		</li>
-		<li id="Schaffer-Wolf">
-			<sup>[Schaffer-Wolf]</sup>
-			<span class="author">Evan Schaffer and Mike Wolf.</span>
-			<em class="title">The Unix Shell as a Fourth-Generation Language.</em>
-			<span class="date">1991.</span>
-			<a href="http://www.rdb.com/lib/4gl.pdf">
-			Available on the Web</a>.  An open-source implementation,
-			<em>NoSQL</em>, is available and readily turned up
-		by a Web search.
-		</li>
-		<li id="Schwartz-Christiansen">
-			<sup>[Schwartz-Christiansen]</sup>
-			<span class="author">Randal Schwartz and Tom Phoenix.</span>
-			<em class="title">Learning Perl.</em>
-			<span class="edition">3rd Edition.</span>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">2001.</span>
-			<span class="isbn">ISBN 0-596-00132-0.</span>
-		</li>
-		<li id="Spinellis">
-			<sup>[Spinellis]</sup>
-			<span class="biblioset">
-			<em>Journal of Systems and Software</em>.
-			</span>
-			<span class="biblioset">
-			<span class="author">Diomidis Spinellis.</span>
-			“Notable Design Patterns for Domain-Specific Languages”.
-			<span class="volumenum">
-			56.
-			</span>
-			<span class="issuenum">
-			(1).
-			</span>
-			<span class="date">February 2001.</span>
-			<span class="pagenums">
-			p. 91-99.
-			</span>
-			</span>
-		</li>
-		<li id="Stallman">
-			<sup>[Stallman]</sup>
-			<span class="author">Richard M. Stallman.</span>
-			<em class="title">The GNU Manifesto.</em>
-			<a href="http://www.gnu.org/gnu/manifesto.html">
-			Available on
-			the Web</a>.
-		</li>
-		<li id="Stephenson">
-			<sup>[Stephenson]</sup>
-			<span class="author">Neal Stephenson.</span>
-			<em class="title">In the Beginning Was the Command Line.</em>
-			<span class="date">1999.</span>
-			<a href="http://www.cryptonomicon.com/beginning.html">
-			Available on the Web</a>,
-			and also as a trade paperback from Avon Books.
-		</li>
-		<li id="Stevens90">
-			<sup>[Stevens90]</sup>
-			<span class="author">W. Richard Stevens.</span>
-			<em class="title">Unix Network Programming.</em>
-			<span class="publisher">Prentice-Hall.</span>
-			<span class="date">1990.</span>
-			<span class="isbn">ISBN 0-13-949876-1.</span>
-			The classic on this topic. Note: Some later editions of this
-			book omit coverage of the Version 6 networking facilities like
-			<em>mx()</em>.
-		</li>
-		<li id="Stevens92">
-			<sup>[Stevens92]</sup>
-			<span class="author">W. Richard Stevens.</span>
-			<em class="title">Advanced Programming in the Unix Environment.</em>
-			<span class="date">1992.</span>
-			<span class="isbn">ISBN 0-201-56317-7.</span>
-			<span class="publisher">Addison-Wesley.</span>
-			Stevens's comprehensive guide to the Unix API.  A feast for
-			the experienced programmer or the bright novice, and a worthy 
-			companion to
-			<em>Unix Network Programming</em>.
-		</li>
-		<li id="Stroustrup">
-			<sup>[Stroustrup]</sup>
-			<span class="author">Bjarne Stroustrup.</span>
-			<em class="title">The C++ Programming Language.</em>
-			<span class="publisher">Addison-Wesley.</span>
-			<span class="date">1991.</span>
-			<span class="isbn">ISBN 0-201-53992-6.</span>
-		</li>
-		<li id="Tanenbaum-VanRenesse">
-			<sup>[Tanenbaum-VanRenesse]</sup>
-			<span class="author">Andrew S. Tanenbaum and Robbert van Renesse.</span>
-			<em class="title">A Critique of the Remote Procedure Call Paradigm.</em>
-			<span class="publisher">EUTECO'88 Proceedings, Participants Edition.</span>
-			<span class="date">1988.</span>
-			<span class="pagenums">
-			pp. 775-783.
-			</span>
-		</li>
-		<li id="Tidwell">
-			<sup>[Tidwell]</sup>
-			<span class="author">Doug Tidwell.</span>
-			<em class="title">XSLT: Mastering XML Transformations.</em>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">2001.</span>
-			<span class="isbn">ISBN 1-596-00053-7.</span>
-		</li>
-		<li id="Torvalds">
-			<sup>[Torvalds]</sup>
-			<span class="author">Linus Torvalds and David Diamond.</span>
-			<em class="title">Just for Fun.</em>
-			<span class="subtitle">
-			The Story of an Accidental Revolutionary.
-			</span>
-			<span class="publisher">HarperBusiness.</span>
-			<span class="date">2001.</span>
-			<span class="isbn">ISBN 0-06-662072-4.</span>
-		</li>
-		<li id="Vaughan">
-			<sup>[Vaughan]</sup>
-			<span class="author">Gary V. Vaughan, Tom Tromey, and Ian Lance Taylor.</span>
-			<em class="title">GNU Autoconf, Automake, and Libtool.</em>
-			<span class="publisher">New Riders Publishing.</span>
-			<span class="date">2000.</span>
-			<span class="pagenums">
-			390 p..
-			</span>
-			<span class="isbn">ISBN 1-578-70190-2.</span>
-			A user's guide to the GNU autoconfiguration tools.
-			<a href="http://sources.redhat.com/autobook/">
-			Available on the Web</a>.
-		</li>
-		<li id="Vo">
-			<sup>[Vo]</sup>
-			<span class="biblioset">
-			<em>Software Practice &amp; Experience</em>.
-			</span>
-			<span class="biblioset">
-			<span class="author">Kiem-Phong Vo.</span>
-			“The Discipline and Method Architecture for Reusable Libraries”.
-			<span class="date">2000.</span>
-			<span class="volumenum">
-			30.
-			</span>
-			<span class="pagenums">
-			p. 107-128.
-			</span>
-			<a href="http://www.research.att.com/sw/tools/vcodex/dm-spe.ps">
-				Available
-			on the Web</a>.
-			</span>
-		</li>
-		<li id="Wall2000">
-			<sup>[Wall2000]</sup>
-			<span class="author">Larry Wall, Tom Christiansen, and Jon Orwant.</span>
-			<em class="title">Programming Perl.</em>
-			<span class="edition">3rd Edition.</span>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">2000.</span>
-			<span class="isbn">ISBN  0-596-00027-8.</span>
-		</li>
-		<li id="Welch">
-			<sup>[Welch]</sup>
-			<span class="author">Brent Welch.</span>
-			<em class="title">Practical Programming in Tcl and Tk.</em>
-			<span class="publisher">Prentice-Hall.</span>
-			<span class="date">1999.</span>
-			<span class="isbn">ISBN 0-13-022028-0.</span>
-		</li>
-		<li id="Williams">
-			<sup>[Williams]</sup>
-			<span class="author">Sam Williams.</span>
-			<em class="title">Free as in Freedom.</em>
-			<span class="publisher">O'Reilly &amp; Associates.</span>
-			<span class="date">2002.</span>
-			<span class="isbn">ISBN 0-596-00287-4.</span>
-			<a href="http://www.oreilly.com/openbook/freedom/index.html">
+		on the Web</a>.
+		</span>
+	</li>
+	<li id="Hatton98">
+		<sup>[Hatton98]</sup>
+		<span class="biblioset">
+		<em>IEEE Software</em>.
+		</span>
+		<span class="biblioset">
+		<span class="author">Les Hatton.</span>
+		“Does OO Sync with the Way We Think?”.
+		<span class="volumenum">
+		15.
+		</span>
+		<span class="issuenum">
+		(3).
+		</span>
+		<a href="http://www.cs.ukc.ac.uk/people/staff/lh8/pubs/pubis698/OO_IS698.pdf.gz">
 			Available
-			on the Web</a>.
-		</li>
-		<li id="Yourdon">
-			<sup>[Yourdon]</sup>
-			<span class="author">Edward Yourdon.</span>
-			<em class="title">Death March.</em>
-			<span class="subtitle">
-			The Complete Software Developer's Guide to Surviving “Mission Impossible” Projects.
-			</span>
-			<span class="publisher">Prentice-Hall.</span>
-			<span class="date">1997.</span>
-			<span class="isbn">ISBN 0-137-48310-4.</span>
-		</li>
-	</ul>
-	</div>
-</div>
+		on the Web</a>.
+		</span>
+	</li>
+	<li id="Hauben">
+		<sup>[Hauben]</sup>
+		<span class="author">Ronda Hauben.</span>
+		<em class="title">History of UNIX.</em>
+		<a href="http://www.dei.isep.ipp.pt/docs/unix.html">
+		Available on the Web</a>.
+	</li>
+	<li id="Heller">
+		<sup>[Heller]</sup>
+		<span class="author">Steve Heller.</span>
+		<em class="title">C++: A Dialog.</em>
+		<span class="subtitle">
+		Programming with the C++ Standard Library.
+		</span>
+		<span class="publisher">Prentice-Hall.</span>
+		<span class="date">2003.</span>
+		<span class="isbn">ISBN 0-13-009402-1.</span>
+	</li>
+	<li id="Hunt-Thomas">
+		<sup>[Hunt-Thomas]</sup>
+		<span class="author">Andrew Hunt and David Thomas.</span>
+		<em class="title">The Pragmatic Programmer: From Journeyman to Master.</em>
+		<span class="publisher">Addison-Wesley.</span>
+		<span class="date">2000.</span>
+		<span class="isbn">ISBN 0-201-61622-X.</span>
+	</li>
+	<li id="Kernighan95">
+		<sup>[Kernighan95]</sup>
+		<span class="author">Brian Kernighan.</span>
+		<em class="title">Experience with Tcl/Tk for Scientific and Engineering Visualization.</em>
+		<span class="publisher">USENIX Association Tcl/Tk Workshop Proceedings.</span>
+		<span class="date">1995.</span>
+		<a href="http://www.usenix.org/publications/library/proceedings/tcl95/full_papers/kernighan.txt">
+		Available
+		on the Web</a>.
+	</li>
+	<li id="Kernighan-Pike84">
+		<sup>[Kernighan-Pike84]</sup>
+		<span class="author">Brian Kernighan and Rob Pike.</span>
+		<em class="title">The Unix Programming Environment.</em>
+		<span class="publisher">Prentice-Hall.</span>
+		<span class="date">1984.</span>
+		<span class="isbn">ISBN 0-13-937681-X.</span>
+	</li>
+	<li id="Kernighan-Pike99">
+		<sup>[Kernighan-Pike99]</sup>
+		<span class="author">Brian Kernighan and Rob Pike.</span>
+		<em class="title">The Practice of Programming.</em>
+		<span class="date">1999.</span>
+		<span class="isbn">ISBN 0-201-61586-X.</span>
+		<span class="publisher">Addison-Wesley.</span>
+		An excellent treatise on writing high-quality programs,
+		surely destined to become a classic of the field.
+	</li>
+	<li id="Kernighan-Plauger">
+		<sup>[Kernighan-Plauger]</sup>
+		<span class="author">Brian Kernighan and P. J. Plauger.</span>
+		<em class="title">Software Tools.</em>
+		<span class="publisher">Addison-Wesley.</span>
+		<span class="date">1976.</span>
+		<span class="isbn">ISBN 201-03669-X.</span>
+	</li>
+	<li id="Kernighan-Ritchie">
+		<sup>[Kernighan-Ritchie]</sup>
+		<span class="author">Brian Kernighan and Dennis Ritchie.</span>
+		<em class="title">The C Programming Language.</em>
+		<span class="edition">2nd Edition.</span>
+		<span class="publisher">Prentice-Hall Software Series.</span>
+		<span class="date">1988.</span>
+		<span class="isbn">ISBN 0-13-110362-8.</span>
+	</li>
+	<li id="Lampson">
+		<sup>[Lampson]</sup>
+		<span class="biblioset">
+		<em>ACM Operating Systems Review</em>.
+		<span class="publisher">Association for Computing Machinery.</span>
+		</span>
+		<span class="biblioset">
+		<span class="author">Butler Lampson.</span>
+		“Hints for Computer System Design”.
+		<span class="date">October 1983.</span>
+		<a href="http://research.microsoft.com/~lampson/33-Hints/WebPage.html">
+			Available
+		on the Web</a>.
+		</span>
+	</li>
+	<li id="Lapin">
+		<sup>[Lapin]</sup>
+		<span class="author">J. E. Lapin.</span>
+		<em class="title">Portable C and Unix Systems Programming.</em>
+		<span class="publisher">Prentice-Hall.</span>
+		<span class="date">1987.</span>
+		<span class="isbn">ISBN 0-13-686494-5.</span>
+	</li>
+	<li id="Leonard">
+		<sup>[Leonard]</sup>
+		<span class="author">Andrew Leonard.</span>
+		<em class="title">BSD Unix: Power to the People, from the Code.</em>
+		<span class="date">2000.</span>
+		<a href="http://dir.salon.com/tech/fsp/2000/05/16/chapter_2_part_one/index.html">
+		Available on the Web</a>.
+	</li>
+	<li id="Levy">
+		<sup>[Levy]</sup>
+		<span class="author">Steven Levy.</span>
+		<em class="title">Hackers: Heroes of the Computer Revolution.</em>
+		<span class="publisher">Anchor/Doubleday.</span>
+		<span class="date">1984.</span>
+		<span class="isbn">ISBN 0-385-19195-2.</span>
+		<a href="http://www.stanford.edu/group/mmdd/SiliconValley/Levy/Hackers.1984.book/contents.html">
+		Available on the Web</a>.
+	</li>
+	<li id="Lewine">
+		<sup>[Lewine]</sup>
+		<span class="author">Donald Lewine.</span>
+		<em class="title">POSIX Programmer's Guide: Writing Portable Unix Programs.</em>
+		<span class="date">1992.</span>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="isbn">ISBN 0-937175-73-0.</span>
+		<span class="pagenums">
+		607pp..
+		</span>
+	</li>
+	<li id="Libes-Ressler">
+		<sup>[Libes-Ressler]</sup>
+		<span class="author">Don Libes and Sandy Ressler.</span>
+		<em class="title">Life with Unix.</em>
+		<span class="date">1989.</span>
+		<span class="isbn">ISBN 0-13-536657-7.</span>
+		<span class="publisher">Prentice-Hall.</span>
+		This book gives a more detailed version of Unix's
+		early history. It's particularly strong for the period
+		1979–1986.
+	</li>
+	<li id="Lions">
+		<sup>[Lions]</sup>
+		<span class="author">John Lions.</span>
+		<em class="title">Lions's Commentary on Unix 6th Edition.</em>
+		<span class="date">1996.</span>
+		<span class="isbn">1-57398-013-7.</span>
+		<span class="publisher">Peer-To-Peer Communications.</span>
+		PostScript rendering of Lions's original floats around 
+		the Web.
+		<a href="http://www.upl.cs.wisc.edu/~epaulson/lionc.ps">
+		This URL may
+		be unstable</a>.
+	</li>
+	<li id="Loukides-Oram">
+		<sup>[Loukides-Oram]</sup>
+		<span class="author">Mike Loukides and Andy Oram.</span>
+		<em class="title">Programming with GNU Software.</em>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">1996.</span>
+		<span class="isbn">ISBN 1-56592-112-7.</span>
+	</li>
+	<li id="Lutz">
+		<sup>[Lutz]</sup>
+		<span class="author">Mark Lutz.</span>
+		<em class="title">Programming Python.</em>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">1996.</span>
+		<span class="isbn">ISBN 1-56592-197-6.</span>
+	</li>
+	<li id="McIlroy78">
+		<sup>[McIlroy78]</sup>
+		<span class="biblioset">
+		<em>The Bell System Technical Journal</em>.
+		<span class="publisher">Bell Laboratories.</span>
+		</span>
+		<span class="biblioset">
+		<span class="author">M. D. McIlroy, E. N. Pinson, and B. A. Tague.</span>
+		“Unix Time-Sharing System Forward”.
+		<span class="date">1978.</span>
+		<span class="issuenum">
+		57 (6, part 2).
+		</span>
+		<span class="pagenums">
+		p. 1902.
+		</span>
+		</span>
+	</li>
+	<li id="McIlroy91">
+		<sup>[McIlroy91]</sup>
+		<span class="biblioset">
+		<em>Proc. Virginia Computer Users Conference</em>.
+		<span class="volumenum">
+		Volume 21.
+		</span>
+		</span>
+		<span class="biblioset">
+		<span class="author">M. D. McIlroy.</span>
+		“Unix on My Mind”.
+		<span class="pagenums">
+		p. 1-6.
+		</span>
+		</span>
+	</li>
+	<li id="Miller">
+		<sup>[Miller]</sup>
+		<span class="biblioset">
+		<em>The Psychological Review</em>.
+		</span>
+		<span class="biblioset">
+		<span class="author">George Miller.</span>
+		“The Magical Number Seven, Plus or Minus Two”.
+		<span class="subtitle">
+		Some limits on our capacity for processing information.
+		</span>
+		<span class="date">1956.</span>
+		<span class="issuenum">
+		63.
+		</span>
+		<span class="pagenums">
+		pp. 81-97.
+		</span>
+		<a href="http://www.well.com/user/smalin/miller.html">
+			Available on the
+		Web</a>.
+		</span>
+	</li>
+	<li id="Mumon">
+		<sup>[Mumon]</sup>
+		<span class="author">Mumon.</span>
+		<em class="title">The Gateless Gate.</em>
+		<a href="http://www.ibiblio.org/zen/cgi-bin/koan-index.pl">
+		A good modern translation is available on the Web</a>.
+	</li>
+	<li id="OpenSources">
+		<sup>[OpenSources]</sup>
+		<span class="author">Sam Ockman and Chris DiBona.</span>
+		<em class="title">Open Sources: Voices from the Open Source Revolution.</em>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">1999.</span>
+		<span class="isbn">ISBN 1-56592-582-3.</span>
+		<span class="pagenums">
+		280pp..
+		</span>
+		<a href="http://www.oreilly.com/catalog/opensources/book/toc.html">
+		Available on the Web</a>.
+	</li>
+	<li id="Oram-Talbot">
+		<sup>[Oram-Talbot]</sup>
+		<span class="author">Andrew Oram and Steve Talbot.</span>
+		<em class="title">Managing Projects with Make.</em>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">1991.</span>
+		<span class="isbn">ISBN 0-937175-90-0.</span>
+	</li>
+	<li id="Ousterhout94">
+		<sup>[Ousterhout94]</sup>
+		<span class="author">John Ousterhout.</span>
+		<em class="title">Tcl and the Tk Toolkit.</em>
+		<span class="publisher">Addison-Wesley.</span>
+		<span class="date">1994.</span>
+		<span class="isbn">ISBN 0-201-63337-X.</span>
+	</li>
+	<li id="Ousterhout96">
+		<sup>[Ousterhout96]</sup>
+		<span class="author">John Ousterhout.</span>
+		<em class="title">Why Threads Are a Bad Idea (for most purposes).</em>
+		<span class="date">1996.</span>
+		An invited talk at USENIX 1996. There is no written paper
+		that corresponds to it, but the slide presentation is
+		<a href="http://home.pacbell.net/ouster/threads.pdf">
+		available on
+		the Web</a>.
+	</li>
+	<li id="Padlipsky">
+		<sup>[Padlipsky]</sup>
+		<span class="author">Michael Padlipsky.</span>
+		<em class="title">The Elements of Networking Style.</em>
+		<span class="publisher">iUniverse.com.</span>
+		<span class="date">2000.</span>
+		<span class="isbn">ISBN 0-595-08879-1.</span>
+	</li>
+	<li id="Parnas">
+		<sup>[Parnas]</sup>
+		<span class="biblioset">
+		<em>Communications of the ACM</em>.
+		</span>
+		<span class="biblioset">
+		<span class="author">Parnas L. David.</span>
+		“On the Criteria to Be Used in Decomposing Systems into Modules”.
+		Available on the Web at the
+		<a href="http://www.acm.org/classics/may96/">
+			ACM Classics
+		page</a>.
+		</span>
+	</li>
+	<li id="Pike">
+		<sup>[Pike]</sup>
+		<span class="author">Rob Pike.</span>
+		<em class="title">Notes on Programming in C.</em>
+		This
+		document is popular on the Web; a title search is sure to find
+		several copies.
+		<a href="http://www.lysator.liu.se/c/pikestyle.html">
+		Here is one</a>.
+	</li>
+	<li id="Prechelt">
+		<sup>[Prechelt]</sup>
+		<span class="author">Lutz Prechelt.</span>
+		<em class="title"><a href="http://www.ubka.uni-karlsruhe.de/cgi-bin/psview?document=ira/2000/5"> An Empirical Comparison of C, C++, Java, Perl, Python, Rexx, and Tcl for a Search/String-Processing Program </a>.</em>
+	</li>
+	<li id="Raskin">
+		<sup>[Raskin]</sup>
+		<span class="author">Jef Raskin.</span>
+		<em class="title">The Humane Interface.</em>
+		<span class="publisher">Addison-Wesley.</span>
+		<span class="date">2000.</span>
+		<span class="isbn">ISBN 0-201-37937-6.</span>
+		A summary is
+		<a href="http://humane.sourceforge.net/humane_interface/summary_of_thi.html">
+		available
+		on the Web</a>.
+	</li>
+	<li id="Ravenbrook">
+		<sup>[Ravenbrook]</sup>
+		<em class="title">The Memory Management Reference.</em>
+		<a href="http://www.memorymanagement.org/">
+		Available on
+		the Web</a>.
+	</li>
+	<li id="Raymond96">
+		<sup>[Raymond96]</sup>
+		<span class="editor">
+		Eric S. Raymond.
+		</span>
+		<em class="title">The New Hacker's Dictionary.</em>
+		<span class="edition">3rd Edition.</span>
+		<span class="date">1996.</span>
+		<span class="isbn">ISBN 0-262-68092-0.</span>
+		<span class="publisher">MIT Press.</span>
+		<span class="pagenums">
+		547pp..
+		</span>
+		Available on the Web at
+		<a href="http://www.catb.org/~esr/jargon">
+		Jargon File
+		Resource Page</a>.
+	</li>
+	<li id="Raymond01">
+		<sup>[Raymond01]</sup>
+		<span class="author">Eric S. Raymond.</span>
+		<em class="title">The Cathedral and the Bazaar.</em>
+		<span class="edition">2nd Edition.</span>
+		<span class="date">1999.</span>
+		<span class="isbn">ISBN 0-596-00131-2.</span>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="pagenums">
+		240pp..
+		</span>
+	</li>
+	<li id="Reps-Senzaki">
+		<sup>[Reps-Senzaki]</sup>
+		<span class="author">Paul Reps and Nyogen Senzaki.</span>
+		<em class="title">Zen Flesh, Zen Bones.</em>
+		<span class="date">1994.</span>
+		<span class="publisher">Shambhala Publications.</span>
+		<span class="isbn">ISBN 1-570-62063-6.</span>
+		<span class="pagenums">
+		285pp..
+		</span>
+		A superb anthology of Zen primary sources, presented just as
+		they are.
+	</li>
+	<li id="Ritchie79">
+		<sup>[Ritchie79]</sup>
+		<span class="author">Dennis M. Ritchie.</span>
+		<em class="title">The Evolution of the Unix Time-Sharing System.</em>
+		<span class="date">1979.</span>
+		<a href="http://cm.bell-labs.com/cm/cs/who/dmr/hist.html">
+		Available on the Web</a>.
+	</li>
+	<li id="Ritchie93">
+		<sup>[Ritchie93]</sup>
+		<span class="author">Dennis M. Ritchie.</span>
+		<em class="title">The Development of the C Language.</em>
+		<span class="date">1993.</span>
+		<a href="http://cm.bell-labs.com/cm/cs/who/dmr/chist.html">
+		Available on the Web</a>.
+	</li>
+	<li id="RitchieQED">
+		<sup>[RitchieQED]</sup>
+		<span class="author">Dennis M. Ritchie.</span>
+		<em class="title">An Incomplete History of the QED Text Editor.</em>
+		<span class="date">2003.</span>
+		<a href="http://cm.bell-labs.com/cm/cs/who/dmr/qed.html">
+		Available on the Web</a>.
+	</li>
+	<li id="Ritchie-Thompson">
+		<sup>[Ritchie-Thompson]</sup>
+		<em class="title">The Unix Time-Sharing System.</em>
+		<span class="author">Dennis M. Ritchie and Ken Thompson.</span>
+		<a href="http://cm.bell-labs.com/cm/cs/who/dmr/cacm.html">
+		Available on the Web</a>.
+	</li>
+	<li id="Saltzer">
+		<sup>[Saltzer]</sup>
+		<span class="biblioset">
+		<em>ACM Transactions on Computer Systems</em>.
+		<span class="publisher">Association for Computing Machinery.</span>
+		</span>
+		<span class="biblioset">
+		<span class="author">James. H. Saltzer, David P. Reed, and David D. Clark.</span>
+		“End-to-End Arguments in System Design”.
+		<span class="date">November 1984.</span>
+		<a href="http://web.mit.edu/Saltzer/www/publications/endtoend/endtoend.pdf">
+			Available on the Web</a>.
+		</span>
+	</li>
+	<li id="Salus">
+		<sup>[Salus]</sup>
+		<span class="author">Peter H. Salus.</span>
+		<em class="title">A Quarter-Century of Unix.</em>
+		<span class="publisher">Addison-Wesley.</span>
+		<span class="date">1994.</span>
+		<span class="isbn">ISBN 0-201-54777-5.</span>
+		An excellent overview of Unix history, explaining many of the
+		design decisions in the words of the people who made them.
+	</li>
+	<li id="Schaffer-Wolf">
+		<sup>[Schaffer-Wolf]</sup>
+		<span class="author">Evan Schaffer and Mike Wolf.</span>
+		<em class="title">The Unix Shell as a Fourth-Generation Language.</em>
+		<span class="date">1991.</span>
+		<a href="http://www.rdb.com/lib/4gl.pdf">
+		Available on the Web</a>.  An open-source implementation,
+		<em>NoSQL</em>, is available and readily turned up
+	by a Web search.
+	</li>
+	<li id="Schwartz-Christiansen">
+		<sup>[Schwartz-Christiansen]</sup>
+		<span class="author">Randal Schwartz and Tom Phoenix.</span>
+		<em class="title">Learning Perl.</em>
+		<span class="edition">3rd Edition.</span>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">2001.</span>
+		<span class="isbn">ISBN 0-596-00132-0.</span>
+	</li>
+	<li id="Spinellis">
+		<sup>[Spinellis]</sup>
+		<span class="biblioset">
+		<em>Journal of Systems and Software</em>.
+		</span>
+		<span class="biblioset">
+		<span class="author">Diomidis Spinellis.</span>
+		“Notable Design Patterns for Domain-Specific Languages”.
+		<span class="volumenum">
+		56.
+		</span>
+		<span class="issuenum">
+		(1).
+		</span>
+		<span class="date">February 2001.</span>
+		<span class="pagenums">
+		p. 91-99.
+		</span>
+		</span>
+	</li>
+	<li id="Stallman">
+		<sup>[Stallman]</sup>
+		<span class="author">Richard M. Stallman.</span>
+		<em class="title">The GNU Manifesto.</em>
+		<a href="http://www.gnu.org/gnu/manifesto.html">
+		Available on
+		the Web</a>.
+	</li>
+	<li id="Stephenson">
+		<sup>[Stephenson]</sup>
+		<span class="author">Neal Stephenson.</span>
+		<em class="title">In the Beginning Was the Command Line.</em>
+		<span class="date">1999.</span>
+		<a href="http://www.cryptonomicon.com/beginning.html">
+		Available on the Web</a>,
+		and also as a trade paperback from Avon Books.
+	</li>
+	<li id="Stevens90">
+		<sup>[Stevens90]</sup>
+		<span class="author">W. Richard Stevens.</span>
+		<em class="title">Unix Network Programming.</em>
+		<span class="publisher">Prentice-Hall.</span>
+		<span class="date">1990.</span>
+		<span class="isbn">ISBN 0-13-949876-1.</span>
+		The classic on this topic. Note: Some later editions of this
+		book omit coverage of the Version 6 networking facilities like
+		<em>mx()</em>.
+	</li>
+	<li id="Stevens92">
+		<sup>[Stevens92]</sup>
+		<span class="author">W. Richard Stevens.</span>
+		<em class="title">Advanced Programming in the Unix Environment.</em>
+		<span class="date">1992.</span>
+		<span class="isbn">ISBN 0-201-56317-7.</span>
+		<span class="publisher">Addison-Wesley.</span>
+		Stevens's comprehensive guide to the Unix API.  A feast for
+		the experienced programmer or the bright novice, and a worthy 
+		companion to
+		<em>Unix Network Programming</em>.
+	</li>
+	<li id="Stroustrup">
+		<sup>[Stroustrup]</sup>
+		<span class="author">Bjarne Stroustrup.</span>
+		<em class="title">The C++ Programming Language.</em>
+		<span class="publisher">Addison-Wesley.</span>
+		<span class="date">1991.</span>
+		<span class="isbn">ISBN 0-201-53992-6.</span>
+	</li>
+	<li id="Tanenbaum-VanRenesse">
+		<sup>[Tanenbaum-VanRenesse]</sup>
+		<span class="author">Andrew S. Tanenbaum and Robbert van Renesse.</span>
+		<em class="title">A Critique of the Remote Procedure Call Paradigm.</em>
+		<span class="publisher">EUTECO'88 Proceedings, Participants Edition.</span>
+		<span class="date">1988.</span>
+		<span class="pagenums">
+		pp. 775-783.
+		</span>
+	</li>
+	<li id="Tidwell">
+		<sup>[Tidwell]</sup>
+		<span class="author">Doug Tidwell.</span>
+		<em class="title">XSLT: Mastering XML Transformations.</em>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">2001.</span>
+		<span class="isbn">ISBN 1-596-00053-7.</span>
+	</li>
+	<li id="Torvalds">
+		<sup>[Torvalds]</sup>
+		<span class="author">Linus Torvalds and David Diamond.</span>
+		<em class="title">Just for Fun.</em>
+		<span class="subtitle">
+		The Story of an Accidental Revolutionary.
+		</span>
+		<span class="publisher">HarperBusiness.</span>
+		<span class="date">2001.</span>
+		<span class="isbn">ISBN 0-06-662072-4.</span>
+	</li>
+	<li id="Vaughan">
+		<sup>[Vaughan]</sup>
+		<span class="author">Gary V. Vaughan, Tom Tromey, and Ian Lance Taylor.</span>
+		<em class="title">GNU Autoconf, Automake, and Libtool.</em>
+		<span class="publisher">New Riders Publishing.</span>
+		<span class="date">2000.</span>
+		<span class="pagenums">
+		390 p..
+		</span>
+		<span class="isbn">ISBN 1-578-70190-2.</span>
+		A user's guide to the GNU autoconfiguration tools.
+		<a href="http://sources.redhat.com/autobook/">
+		Available on the Web</a>.
+	</li>
+	<li id="Vo">
+		<sup>[Vo]</sup>
+		<span class="biblioset">
+		<em>Software Practice &amp; Experience</em>.
+		</span>
+		<span class="biblioset">
+		<span class="author">Kiem-Phong Vo.</span>
+		“The Discipline and Method Architecture for Reusable Libraries”.
+		<span class="date">2000.</span>
+		<span class="volumenum">
+		30.
+		</span>
+		<span class="pagenums">
+		p. 107-128.
+		</span>
+		<a href="http://www.research.att.com/sw/tools/vcodex/dm-spe.ps">
+			Available
+		on the Web</a>.
+		</span>
+	</li>
+	<li id="Wall2000">
+		<sup>[Wall2000]</sup>
+		<span class="author">Larry Wall, Tom Christiansen, and Jon Orwant.</span>
+		<em class="title">Programming Perl.</em>
+		<span class="edition">3rd Edition.</span>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">2000.</span>
+		<span class="isbn">ISBN  0-596-00027-8.</span>
+	</li>
+	<li id="Welch">
+		<sup>[Welch]</sup>
+		<span class="author">Brent Welch.</span>
+		<em class="title">Practical Programming in Tcl and Tk.</em>
+		<span class="publisher">Prentice-Hall.</span>
+		<span class="date">1999.</span>
+		<span class="isbn">ISBN 0-13-022028-0.</span>
+	</li>
+	<li id="Williams">
+		<sup>[Williams]</sup>
+		<span class="author">Sam Williams.</span>
+		<em class="title">Free as in Freedom.</em>
+		<span class="publisher">O'Reilly &amp; Associates.</span>
+		<span class="date">2002.</span>
+		<span class="isbn">ISBN 0-596-00287-4.</span>
+		<a href="http://www.oreilly.com/openbook/freedom/index.html">
+		Available
+		on the Web</a>.
+	</li>
+	<li id="Yourdon">
+		<sup>[Yourdon]</sup>
+		<span class="author">Edward Yourdon.</span>
+		<em class="title">Death March.</em>
+		<span class="subtitle">
+		The Complete Software Developer's Guide to Surviving “Mission Impossible” Projects.
+		</span>
+		<span class="publisher">Prentice-Hall.</span>
+		<span class="date">1997.</span>
+		<span class="isbn">ISBN 0-137-48310-4.</span>
+	</li>
+</ul>
 
 
 <!-- FILE: apc.html -->
-<div class="appendix">
-  <h3 id="apc"><a href="#apc">§</a>Appendix C. Contributors</h3>
-  <blockquote class="epigraph">
-   <p>Anyone who has attended a USENIX conference in a fancy hotel can tell you that a sentence like “You're one of
-   those computer people, aren't you?” is roughly equivalent to “Look, another amazingly mobile form of slime mold!” in
-   the mouth of a hotel cocktail waitress.</p>
-   <span>– Elizabeth Zwicky</span>
-  </blockquote>
+<h3 id="apc"><a href="#apc">§</a>Appendix C. Contributors</h3>
+<blockquote class="epigraph">
+	<p>Anyone who has attended a USENIX conference in a fancy hotel can tell you that a sentence like “You're one of
+	those computer people, aren't you?” is roughly equivalent to “Look, another amazingly mobile form of slime mold!” in
+	the mouth of a hotel cocktail waitress.</p>
+	<span>– Elizabeth Zwicky</span>
+</blockquote>
 
   <p>
    <em>Ken Arnold</em>
@@ -35271,7 +35132,6 @@ available.
   <p>
    <em>Ken Thompson</em> invented Unix.
   </p>
-</div>
 
 <!-- FILE: none -->
 <h2 id="revhistory"><a href="#revhistory">§</a>Revision History</h2>
@@ -35292,26 +35152,21 @@ Public HTML draft, first four chapters only.<br>
 
 
 <!-- FILE: unix_koans.html -->
-<div class="appendix">
-  <h3 id="unix_koans"><a href="#unix_koans">§</a>Appendix D. Rootless Root</h3>
-  <div class="center">
-   <img alt src="data:image/png;base64,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"/>
-  </div>
- </div>
+<h3 id="unix_koans"><a href="#unix_koans">§</a>Appendix D. Rootless Root</h3>
+<div class="center">
+	<img alt src="data:image/png;base64,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"/>
+</div>
 
 
 
 <!-- FILE: introduction.html -->
 <h3 id="introduction"><a href="#introduction">§</a>Editor's Introduction</h3>
 <p>
-  The discovery of the collection of koans known as the
-  <em>Rootless Root</em>, apparently preserved for decades
-in the dry upper air of the Western Mountains, has ignited great
-controversy in scholarly circles.  Are these authentic documents
-shedding new light on the teaching of the early Unix patriarchs?  Or
-are they clever pastiches from a later age, commanding the authority
-of semi-mythical figures such as the Patriarchs Thompson, Ritchie and
-McIlroy for doctrines which evolved closer to our own era?
+  The discovery of the collection of koans known as the <em>Rootless Root</em>, apparently preserved for decades in the
+  dry upper air of the Western Mountains, has ignited great controversy in scholarly circles.  Are these authentic
+  documents shedding new light on the teaching of the early Unix patriarchs?  Or are they clever pastiches from a later
+  age, commanding the authority of semi-mythical figures such as the Patriarchs Thompson, Ritchie and McIlroy for
+  doctrines which evolved closer to our own era?
 </p>
 <p>
   It is impossible to say for certain.  All sides in the dispute
