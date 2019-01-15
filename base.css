@@ -192,6 +192,7 @@ h1 a, h2 a, h3 a {
 
 #page #header a { margin: 0 0.5em; }
 
+.footnote { padding: 0 .2em; }
 .footnotes {
 	margin-left: -1em;
 	margin-right: -0.5em;
