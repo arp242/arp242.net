@@ -16,7 +16,7 @@ conducive for readability.
 
 I `wget --mirror`’d it to my drive, and started out with a simple [script][fix]
 to join everything to a single page, but eventually ended up rewriting a lot of
-the HTML from crappy 2004 docbook-generated tagsoup to more modern standards,
+the HTML from crappy 2003 docbook-generated tagsoup to more modern standards,
 and I slapped on some CSS to make it more readable.
 
 The results are fairly nice, and it should work well in any version of any
@@ -33,7 +33,7 @@ phone and read it on a plane or whatnot.
 
 ---
 
-Why spend so much work on an IT book from 2004? I think a substantial part of
+Why spend so much work on an IT book from 2003? I think a substantial part of
 the book still applies very much today, for *all* programmers (not just Unix
 programmers). For example the [Basics of the Unix Philosophy][phil] was good
 advice in 1972, is still good advice in 2019, and will continue to be good
