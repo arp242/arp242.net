@@ -1188,22 +1188,14 @@ sections on
   <em>Flexibility in Depth</em> were directly inspired by
 their review. Russell J. Nelson contributed the material on Bernstein
 chaining in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
-   Chapter 7</a>.
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">Chapter 7</a>.
 Jay Maynard contributed most of the material in the MVS case study in
-  <a href="contrastchapter.html" title="Chapter 3. Contrasts">
+  <a href="#contrastchapter" title="Chapter 3. Contrasts">
    Chapter 3</a>.  Les Hatton provided many helpful
-comments on the
-  <em>Languages</em> chapter and motivated
-the portion of
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
-   Chapter 4</a>
-  on
-  <em>Optimal Module Size</em>. David A. Wheeler
-contributed many perceptive criticisms and some case-study material,
-especially in the Design part.  Russ Cox helped develop the survey of
-Plan 9. Dennis Ritchie corrected me on some historical points about
-C.
+comments on the <em>Languages</em> chapter and motivated
+the portion of <a href="#modularitychapter" title="Chapter 4. Modularity">Chapter 4</a> on <em>Optimal Module Size</em>.
+  David A. Wheeler contributed many perceptive criticisms and some case-study material, especially in the Design part.
+  Russ Cox helped develop the survey of Plan 9. Dennis Ritchie corrected me on some historical points about C.
  </p>
  <p>
   Hundreds of Unix programmers, far too many to list here,
@@ -1464,7 +1456,7 @@ even by a decade of vendor mismanagement.  Today the Unix community
 itself has taken control of the technology and marketing, and is
 rapidly and visibly solving Unix's problems (in ways we'll examine in
 more detail in
-  <a href="futurechapter.html" title="Chapter 20. Futures">
+  <a href="#futurechapter" title="Chapter 20. Futures">
    Chapter 20</a>).
  </p>
 
@@ -1486,8 +1478,7 @@ irrevocable.  The Unix security model is arguably too primitive.  Job
 control is botched.  There are too many different kinds of names for
 things.  Having a file system at all may have been the wrong choice.
 We will discuss these technical issues in
-  <a href="futurechapter.html" title="Chapter 20. Futures">
-   Chapter 20</a>.
+  <a href="#futurechapter" title="Chapter 20. Futures">Chapter 20</a>.
  </p>
  <p>
   But perhaps the most enduring objections to Unix are consequences of
@@ -1938,7 +1929,7 @@ frequently going to be big, don't get fancy. (Even if
 they're much harder to implement. Use simple algorithms as well as
 simple data structures.
   </p>
-  <p>
+  <p id="rule5">
    Rule 5. Data dominates. If you've chosen the right data
 structures and organized things well, the algorithms will almost
 always be self-evident. Data structures, not algorithms, are central
@@ -2198,9 +2189,7 @@ API.  This opens up the possibility that the application can be called
 by linkage, or that multiple interfaces can be glued on it for different tasks.
  </p>
  <p>
-  (We discuss these issues in detail in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
-   Chapter 7</a>.)
+  (We discuss these issues in detail in <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">Chapter 7</a>.)
  </p>
  <h4 id="id2877777">
   Rule of Separation: Separate policy from mechanism;
@@ -2247,19 +2236,16 @@ this pattern is the
 an embedded Lisp
   interpreter to control editing
 primitives written in C.  We discuss this style of design in
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
-   Chapter 11</a>.
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">Chapter 11</a>.
  </p>
  <p>
   Another way is to separate your application into cooperating
 front-end and back-end processes communicating through a specialized
 application protocol over sockets
   ; we discuss this kind of design in
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
-   Chapter 5</a>
+  <a href="#textualitychapter" title="Chapter 5. Textuality">Chapter 5</a>
   and
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
-   Chapter 7</a>.  The front end implements policy; the
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">Chapter 7</a>.  The front end implements policy; the
 back end, mechanism.  The global complexity of the pair will often be
 far lower than that of a single-process monolith implementing the same
 functions, reducing your vulnerability to bugs and lowering life-cycle
@@ -2331,8 +2317,7 @@ overinvestment in approaches that are failed or suboptimal.
  <p>
   (We'll examine the issue of the right size of software in more
 detail in
-  <a href="complexitychapter.html" title="Chapter 13. Complexity">
-   Chapter 13</a>.)
+  <a href="#complexitychapter" title="Chapter 13. Complexity">Chapter 13</a>.)
  </p>
  <h4 id="id2878054">
   Rule of Transparency: Design for visibility to make
@@ -2455,8 +2440,7 @@ table with an equivalent switch statement. The difference in
 transparency
   and
 clarity is dramatic. See Rob Pike's
-  <a href="ch01s06.html#rule5">
-   Rule 5</a>.
+  <a href="#rule5">Rule 5</a>.
  </p>
  <p>
   Data is more tractable than program logic. It follows that where
@@ -2478,8 +2462,7 @@ to embody in more elaborate procedures.
  </p>
  <p>
   (We also cover these techniques in
-  <a href="generationchapter.html" title="Chapter 9. Generation">
-   Chapter 9</a>.)
+  <a href="#generationchapter" title="Chapter 9. Generation">Chapter 9</a>.)
  </p>
  <h4 id="id2878339">
   Rule of Least Surprise: In interface design, always do
@@ -2518,11 +2501,9 @@ Learn and use them.
  </p>
  <p>
   (We'll cover many of these traditions in
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
-   Chapter 5</a>
+  <a href="#textualitychapter" title="Chapter 5. Textuality">Chapter 5</a>
   and
-  <a href="configurationchapter.html" title="Chapter 10. Configuration">
-   Chapter 10</a>.)
+  <a href="#configurationchapter" title="Chapter 10. Configuration">Chapter 10</a>.)
  </p>
  <blockquote>
   <p>
@@ -2578,8 +2559,7 @@ when necessary.
  <p>
   (We'll discuss the Rule of Silence and the reasons for it in
 more detail at the end of
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
-   Chapter 11</a>.)
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">Chapter 11</a>.)
  </p>
  <h4 id="id2878538">
   Rule of Repair: Repair what you can — but when you
@@ -2697,8 +2677,7 @@ newer ones.
  </p>
  <p>
   (We cover these techniques in
-  <a href="generationchapter.html" title="Chapter 9. Generation">
-   Chapter 9</a>.)
+  <a href="#generationchapter" title="Chapter 9. Generation">Chapter 9</a>.)
  </p>
  <h4 id="rule_of_optimization">
   Rule of Optimization:
@@ -2798,8 +2777,7 @@ existence may be the delete key.
  </blockquote>
  <p>
   (We'll go into a bit more depth about related ideas in
-  <a href="optimizationchapter.html" title="Chapter 12. Optimization">
-   Chapter 12</a>.)
+  <a href="#optimizationchapter" title="Chapter 12. Optimization">Chapter 12</a>.)
  </p>
  <h4 id="id2879078">
   Rule of Diversity: Distrust all claims for 
@@ -3133,10 +3111,8 @@ simulation that involved navigating a rocket through the solar
 system. Unix began its life on a scavenged
 PDP-7
   minicomputer<sup><a href="#ftn.id2881412" id="id2881412">[14]</a></sup>
-  like the one shown in
-  <a href="ch02s01.html#pdp7" title="Figure 2.1. The PDP-7.">
-   Figure 2.1</a>, as a platform for the Space Travel game and a
-testbed for Thompson's ideas about operating system design.
+  like the one shown in Figure 2.1, as a platform for the Space Travel game and a testbed for Thompson's ideas about
+  operating system design.
  </p>
  <div class="figure">
   <p class="title">
@@ -4265,13 +4241,8 @@ popularized the term “free software”, which was the first
 attempt to label the product of the entire hacker culture. He wrote
 the General Public License (GPL), which was to become both a rallying
 point and a focus of great controversy, for reasons we will examine in
-  <a href="reusechapter.html" title="Chapter 16. Reuse">
-   Chapter 16</a>. You can learn more
-about RMS's position and the Free Software
-Foundation
-  at the
-  <a href="http://www.gnu.org">
-   GNU website</a>.
+  <a href="#reusechapter" title="Chapter 16. Reuse">Chapter 16</a>. You can learn more
+about RMS's position and the Free Software Foundation at the <a href="http://www.gnu.org">GNU website</a>.
  </p>
  <p>
   The term “free software” was partly a description
@@ -4428,11 +4399,9 @@ inadvertently supplied this lack in 1997 as a result of trying to
 understand why Linux's development had not collapsed in confusion
 years before. The technical conclusions of my published papers <sup><a href="#Raymond01" title="[Raymond01]">[Raymond01]</a></sup>
   will be summarized in
-  <a href="opensourcechapter.html" title="Chapter 19. Open Source">
-   Chapter 19</a>. For this historical sketch, it will be
-sufficient to note the impact of the first one's central formula:
-“Given a sufficiently large number of eyeballs, all bugs are
-shallow”.
+  <a href="#opensourcechapter" title="Chapter 19. Open Source">Chapter 19</a>. For this historical sketch, it will be
+sufficient to note the impact of the first one's central formula: “Given a sufficiently large number of eyeballs, all
+bugs are shallow”.
  </p>
  <p>
   This observation implied something nobody in the hacker culture had
@@ -4581,8 +4550,7 @@ language.  Many
 disgruntled Windows developers joined them in hopes of maintaining at
 least some nominal independence from Microsoft.  But Sun's handling of
 Java was (as we discuss in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
-   Chapter 14</a>) clumsy and alienating on several levels.
+  <a href="#languageschapter" title="Chapter 14. Languages">Chapter 14</a>) clumsy and alienating on several levels.
 Many Java developers liked what they saw in the nascent open-source
 movement, and followed Netscape's lead into Linux and open source just
 as they had previously followed Netscape into Java.
@@ -4814,9 +4782,7 @@ of multitasking.
 inter-process communication (IPC) makes a whole ecology of small
 tools, pipes, and
 filters possible.  We'll explore this ecology in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
-   Chapter 7</a>
-  ; here, we need to point out some
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">Chapter 7</a>; here, we need to point out some
 consequences of expensive process-spawning and IPC.
  </p>
  <blockquote>
@@ -4911,8 +4877,7 @@ of.
  </blockquote>
  <p>
   We'll return to this theme in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
-   Chapter 7</a>.
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">Chapter 7</a>.
  </p>
  <p>
   To design the perfect anti-Unix, make process-spawning very
@@ -4992,8 +4957,7 @@ tools like text editors cannot read properly.
  </p>
  <p>
   File attributes can be useful, but (as we will see in
-  <a href="futurechapter.html" title="Chapter 20. Futures">
-   Chapter 20</a>) can raise some awkward semantic issues in a
+  <a href="#futurechapter" title="Chapter 20. Futures">Chapter 20</a>) can raise some awkward semantic issues in a
 world of byte-stream-oriented tools and
 pipes.  When file
 attributes are supported at the operating-system level, they
@@ -5017,8 +4981,7 @@ data within it.
 (such as user-account records) it is likely that no tradition of
 readable textual formats for applications will develop.  We explain in
 more detail why this is a problem in
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
-   Chapter 5</a>.  For now it's sufficient to note the
+  <a href="#textualitychapter" title="Chapter 5. Textuality">Chapter 5</a>.  For now it's sufficient to note the
 following consequences:
  </p>
  <div>
@@ -5049,11 +5012,8 @@ and opaque, and require heavyweight tools to read and edit them.
  </h4>
  <p>
   In
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
-   Chapter 11</a>
-  we
-will develop in some detail the consequences of the differences
-between
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">Chapter 11</a>
+  we will develop in some detail the consequences of the differences between
   <em>command-line interfaces</em> (CLIs) and
   <em>graphical user interfaces</em> (GUIs).  Which kind
 an operating system's designers choose as its normal mode of
@@ -5216,8 +5176,7 @@ impossible.
 readers without Unix experience, a pipe is a way of connecting the
 output of one program to the input of another.  We'll explore the ways
 this idea can be used to help programs cooperate in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
-   Chapter 7</a>.
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">Chapter 7</a>.
  </p>
 
  <p><sup><a href="#id2892115" id="ftn.id2892115">[21]</a></sup>
@@ -5261,15 +5220,10 @@ features of different operating systems.<sup><a href="#ftn.id2888666" id="id2888
   </div>
  </div>
  <p>
-  <a href="ch03s02.html#os-history" title="Figure 3.1. Schematic history of timesharing.">
-   Figure 3.1</a>
-  indicates the genetic relationships
-among the timesharing operating systems we'll survey.  A few other
-operating systems (marked in gray, and not necessarily timesharing)
-are included for context.  Sytems in solid boxes are still live.  The
-‘birth’ are dates of first shipment;<sup><a href="#ftn.id2888745" id="id2888745">[25]</a></sup>
-  the ‘death’ dates are generally
-when the system was end-of-lifed by its vendor.
+  Figure 3.1 indicates the genetic relationships among the timesharing operating systems we'll survey.  A few other
+  operating systems (marked in gray, and not necessarily timesharing) are included for context.  Sytems in solid boxes
+  are still live.  The ‘birth’ are dates of first shipment;<sup><a href="#ftn.id2888745" id="id2888745">[25]</a></sup>
+  the ‘death’ dates are generally when the system was end-of-lifed by its vendor.
  </p>
  <p>
   Solid arrows indicate a genetic relationship or very strong
@@ -5459,8 +5413,7 @@ mainly because very few people are motivated to crack it.
 Unix programmers; that is, they work from the interface inward, rather
 than from the engine outward (we'll discuss some of the implications
 of this choice in
-  <a href="futurechapter.html" title="Chapter 20. Futures">
-   Chapter 20</a>).
+  <a href="#futurechapter" title="Chapter 20. Futures">Chapter 20</a>).
 Everything in the design of the MacOS conspires to encourage
 this.
  </p>
@@ -5770,7 +5723,7 @@ window system to any other running application.  And any buffer
 overrun or crack in the GUI or webserver can be exploited to take
 control of the entire system.
  </p>
- <p>
+ <p id="dll_hell">
   Because Windows does not handle library versioning
 properly, it suffers from a chronic configuration problem called
 “DLL hell”, in which installing new programs can randomly
@@ -6242,9 +6195,7 @@ ideas from non-Unix operating systems to a degree that makes
 traditional Unixes look rather insular.  Linux applications using
 Windows .INI format files for configuration is a minor example we'll
 cover in
-  <a href="configurationchapter.html" title="Chapter 10. Configuration">
-   Chapter 10</a>
-  ;
+  <a href="#configurationchapter" title="Chapter 10. Configuration"> Chapter 10</a>;
 Linux 2.5's incorporation of extended file attributes, which among
 other things can be used to emulate the semantics of the Macintosh
 resource fork, is a recent major one at time of writing.
@@ -6281,8 +6232,7 @@ counterparts under proprietary Unix do not experience.
  <p>
   These trends have implications for the future of Unix as a
 whole, a topic we'll return to in
-  <a href="futurechapter.html" title="Chapter 20. Futures">
-   Chapter 20</a>.
+  <a href="#futurechapter" title="Chapter 20. Futures">Chapter 20</a>.
  </p>
 
 <div class="footnotes"><strong>Footnotes</strong>
@@ -6421,8 +6371,7 @@ independent of the Unix tradition.
  </p>
  <p>
   We pointed out Unix's strengths in
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
-   Chapter 1</a>, and they are certainly part of the
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">Chapter 1</a>, and they are certainly part of the
 explanation.  But it's actually more instructive to look at the
 obverse of that answer and ask which weaknesses in Unix's competitors
 did them in.
@@ -6655,8 +6604,7 @@ second, because this is a book about the art of
   What we will do here is examine more specifically what the Unix
 tradition teaches us about how to follow the Rule of Modularity.  In
 this chapter, our examples will live within process units.  Later, in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
-   Chapter 7</a>, we'll
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">Chapter 7</a>, we'll
 examine the circumstances under which partitioning programs into
 multiple cooperating processes is a good idea, and discuss more
 specific techniques for doing that partitioning.
@@ -6706,19 +6654,13 @@ your software systems as hierarchies of nested modules, with the grain
 size of the modules at each level held to a minimum.
  </p>
  <p>
-  It is possible, however, to push this kind of decomposition too
-hard and make your modules too small.  There is evidence <sup><a href="#Hatton97" title="[Hatton97]">[Hatton97]</a></sup> that when one plots defect density versus module
-size, the curve is U-shaped and concave upwards (see
-  <a href="ch04s01.html#hatton" title="Figure 4.1. Qualitative plot of defect count and
-density vs. module size.">
-   Figure 4.1</a>).  Very small and very large modules are associated
-with more bugs than those of intermediate size. A different way of
-viewing the same data is to plot lines of code per module versus total
-bugs.  The curve looks roughly logarithmic up to a ‘sweet
-spot’ where it flattens (corresponding to the minimum in the
-defect density curve), after which it goes up as the square of the
-number of the lines of code (which is what one might intuitively
-expect for the whole curve, following Brooks's
+  It is possible, however, to push this kind of decomposition too hard and make your modules too small.  There is
+  evidence <sup><a href="#Hatton97" title="[Hatton97]">[Hatton97]</a></sup> that when one plots defect density versus
+  module size, the curve is U-shaped and concave upwards (see Figure 4.1).  Very small and very large modules are
+  associated with more bugs than those of intermediate size. A different way of viewing the same data is to plot lines
+  of code per module versus total bugs.  The curve looks roughly logarithmic up to a ‘sweet spot’ where it flattens
+  (corresponding to the minimum in the defect density curve), after which it goes up as the square of the number of the
+  lines of code (which is what one might intuitively expect for the whole curve, following Brooks's
 Law<sup><a href="#ftn.id2894437" id="id2894437">[41]</a></sup>).
  </p>
  <div class="figure">
@@ -6742,8 +6684,7 @@ the nonlinearity is that at small module grain sizes, the increasing
 complexity of the interfaces becomes the dominating term; it's
 difficult to read the code because you have to understand everything
 before you can understand anything.  In
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
-   Chapter 7</a>
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">Chapter 7</a>
   we'll examine more advanced forms of
 program partitioning; there, too, the complexity of interface
 protocols comes to dominate the total complexity of the system as the
@@ -6870,42 +6811,16 @@ programmer have to remember more than seven entry points?  Anything
 larger than this is unlikely to be strictly compact.
  </p>
  <p>
-  Among Unix tools,
-make(1)
-is compact;
-autoconf(1)
-and
-automake(1)
-are not.  Among markup languages, HTML is semi-compact, but DocBook (a
-documentation markup language we shall discuss in
-  <a href="documentationchapter.html" title="Chapter 18. Documentation">
-   Chapter 18</a>) is not.  The
-man(7)
-macros are compact, but
-troff(1)
-markup is not.
+  Among Unix tools, make(1) is compact; autoconf(1) and automake(1) are not.  Among markup languages, HTML is
+  semi-compact, but DocBook (a documentation markup language we shall discuss in
+  <a href="#documentationchapter" title="Chapter 18. Documentation">Chapter 18</a>) is not.  The
+man(7) macros are compact, but troff(1) markup is not.
  </p>
  <p>
-  Among general-purpose programming languages,
-C
-  and
-Python
-  are
-semi-compact; 
-Perl,
-Java, Emacs
-Lisp, and
-shell
-  are
-not (especially since serious shell programming requires you to know
-half-a-dozen other tools like
-sed(1)
-and
-awk(1)).
-C++
-  is
-anti-compact — the language's designer has admitted that he
-doesn't expect any one programmer to ever understand it all.
+  Among general-purpose programming languages, C and Python are semi-compact; Perl, Java, Emacs Lisp, and shell are not
+  (especially since serious shell programming requires you to know half-a-dozen other tools like sed(1) and awk(1)). C++
+  is anti-compact — the language's designer has admitted that he doesn't expect any one programmer to ever understand it
+  all.
  </p>
  <p>
   Some designs that are not compact have enough internal
@@ -6980,7 +6895,7 @@ implicitly and at least as importantly, about orthogonality.
 other things as side effects, provided supporting those other things
 doesn't raise the complexity of the program and its vulnerability
 to bugs.  In
-  <a href="generationchapter.html" title="Chapter 9. Generation">
+  <a href="#generationchapter" title="Chapter 9. Generation">
    Chapter 9</a>
   we'll
 examine a program called
@@ -7161,7 +7076,7 @@ particular
   <em>kinds</em>
   of SPOT are very much part of the
 tradition.  We'll survey these techniques in
-  <a href="generationchapter.html" title="Chapter 9. Generation">
+  <a href="#generationchapter" title="Chapter 9. Generation">
    Chapter 9</a>.
  </p>
  <h4 id="id2895445">
@@ -7236,7 +7151,7 @@ grep(1)
 utility for selecting lines out of files by pattern matching is a
 simple wrapper around a formal algebra of regular-expression patterns
 (see
-     <a href="ch08s02.html#regexps" title="Case Study: Regular Expressions">
+     <a href="#regexps" title="Case Study: Regular Expressions">
       the section called “Case Study: Regular Expressions”</a>
      for discussion).  If it had
 lacked this consistent mathematical model, it would probably look like
@@ -7355,13 +7270,10 @@ violation.
  </p>
 
  <p><sup><a href="#id2895368" id="ftn.id2895368">[44]</a></sup>
-  An
-archetypal example of bad caching is the
-  <code>rehash</code> directive in csh(1); type <code>man 1 csh</code>
-  for details.  See
-  <a href="ch12s04.html#binary_caches" title="Caching Operation Results">
-   the section called “Caching Operation Results”</a>
-  for another example.
+  An archetypal example of bad caching is the <code>rehash</code> directive in csh(1); type <code>man 1 csh</code> for
+  details.  See
+  <a href="#binary_caches" title="Caching Operation Results">
+   the section called “Caching Operation Results”</a> for another example.
  </p>
 
  <p><sup><a href="#id2899522" id="ftn.id2899522">[45]</a></sup>
@@ -7644,7 +7556,7 @@ and detachment (from the machine architecture on which it was
 originally designed), it also has the important quality of
 transparency
   that we will discuss in
-  <a href="transparencychapter.html" title="Chapter 6. Transparency">
+  <a href="#transparencychapter" title="Chapter 6. Transparency">
    Chapter 6</a>. The few language designs since that
 are arguably better have needed to make large changes (like
 introducing garbage collection) in order to get enough functional
@@ -7695,7 +7607,7 @@ working reference implementation
   <em>before</em>
   you
 standardize.  We'll return to this point in
-  <a href="portabilitychapter.html" title="Chapter 17. Portability">
+  <a href="#portabilitychapter" title="Chapter 17. Portability">
    Chapter 17</a>
   when we discuss the evolution of C and
 Unix standards.
@@ -7813,9 +7725,7 @@ but not about the GUI.
 “libgimp” for use by other programs).  This means that C
 programs called “plugins” can be dynamically loaded by
 GIMP and call the library to do image manipulation, effectively taking
-over control at the same level as the GUI (see
-  <a href="ch04s04.html#libgimp" title="Figure 4.2. Caller/callee relationships in GIMP with a plugin loaded.">
-   Figure 4.2</a>).
+over control at the same level as the GUI (see Figure 4.2).
  </p>
  <div class="figure">
   <p class="title">
@@ -7843,7 +7753,7 @@ C
 also possible to write a plugin that exposes the library API to a
 scripting language
   ; we'll discuss this possibility in
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>
   when we examine
 the ‘polyvalent program’ pattern.
@@ -7880,7 +7790,7 @@ as the One True Solution to the software-complexity problem.  But
 there is something else behind it as well, an issue which is worth
 exploring as background before we evaluate specific OO
 (object-oriented) languages in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>.  It will also help throw some
 characteristics of the Unix style of non-OO programming into sharper
 relief.
@@ -7993,7 +7903,7 @@ design.
  <p>
   We'll return to some of these points and apply them when we
 discuss object-oriented languages in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>.
  </p>
 
@@ -8080,7 +7990,7 @@ transparency,
 and
 discoverability
   in
-  <a href="transparencychapter.html" title="Chapter 6. Transparency">
+  <a href="#transparencychapter" title="Chapter 6. Transparency">
    Chapter 6</a>.
  </p>
 
@@ -8225,7 +8135,7 @@ large.
   Historically, Unix has related but different sets of conventions
 for these two kinds of representation.  The conventions for run
 control files are surveyed in
-  <a href="configurationchapter.html" title="Chapter 10. Configuration">
+  <a href="#configurationchapter" title="Chapter 10. Configuration">
    Chapter 10</a>
   ; only conventions for data files are
 examined in this chapter.
@@ -8238,12 +8148,12 @@ examined in this chapter.
  <p>
   Pipes and sockets will pass binary data as well as text. But
 there are good reasons the examples we'll see in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>
   are textual: reasons that hark back
 to Doug McIlroy's
   advice quoted in
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">
    Chapter 1</a>. Text streams are a valuable universal
 format because they're easy for human beings to read, write, and edit
 without specialized tools.  These formats are (or can be designed to
@@ -8255,7 +8165,7 @@ encapsulation. By discouraging elaborate representations with rich,
 densely encoded structure, text streams also discourage programs from
 being promiscuous with each other about their internal states and help
 enforce encapsulation.  We'll return to this point at the end of
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>
   when we discuss RPC.
  </p>
@@ -8375,10 +8285,7 @@ database. Under Unix, by contrast, it's a text file with records one
 per line and colon-separated fields.
  </p>
  <p>
-  <a href="ch05s01.html#passwd" title="Example 5.1. Password file example.">
-   Example 5.1</a>
-  consists of some randomly-chosen
-example lines:
+  Example 5.1 consists of some randomly-chosen example lines:
  </p>
  <div class="example">
   <p class="title">
@@ -8475,10 +8382,7 @@ have been seen by the calling user.  Though it is named like a
 run-control file, it is not only read at startup but typically updated
 at the end of the newsreader run.  The
   <code>.newsrc</code> format has been fixed since the first newsreaders around 1980.
-  <a href="ch05s01.html#newsrc" title="Example 5.2. A .newsrc example.">
-   Example 5.2</a>
-  is a representative section from a
-  <code>.newsrc</code> file.
+   Example 5.2 is a representative section from a <code>.newsrc</code> file.
  </p>
  <div class="example">
   <p class="title">
@@ -8817,13 +8721,8 @@ fortune(1)
 program for its database of random quotes.  It is appropriate for
 records that are just bags of unstructured text.  It simply uses newline
 followed by
-  <code>%%</code> (or sometimes newline followed by
-  <code>%</code>) as a record
-separator.
-  <a href="ch05s02.html#fortune" title="Example 5.3. A fortune file example.">
-   Example 5.3</a>
-  is an example section from a
-file of email signature quotes:
+  <code>%%</code> (or sometimes newline followed by <code>%</code>) as a record separator. Example 5.3
+  is an example section from a file of email signature quotes:
  </p>
  <div class="example">
   <p class="title">
@@ -8886,9 +8785,7 @@ metaformat for records, yielding a format we'll call
 ‘record-jar’. If you need a textual format that will
 support multiple records with a variable repertoire of explicit
 fieldnames, one of the least surprising and human-friendliest ways to
-do it would look like
-  <a href="ch05s02.html#planets" title="Example 5.4. Basic data for three planets in a record-jar format.">
-   Example 5.4</a>.
+do it would look like Example 5.4.
  </p>
  <div class="example">
   <p class="title">
@@ -8971,19 +8868,11 @@ eliminates most of these issues.
   </span>
  </blockquote>
  <p>
-  <a href="ch05s02.html#xml_example" title="Example 5.5. An XML example.">
-   Example 5.5</a>
-  is a simple example of an
-XML-based configuration file.  It is part of the
-  <em>kdeprint</em> tool shipped with the open-source
-KDE office suite hosted under Linux.  It describes options for an
-image-to-PostScript filtering operation, and how to map them into
-arguments for a filter command.  For another instructive example, see
-the discussion of
-  <em>Glade</em> in
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
-   Chapter 8</a>.
- </p>
+   Example 5.5 is a simple example of an XML-based configuration file.  It is part of the <em>kdeprint</em> tool shipped
+   with the open-source KDE office suite hosted under Linux.  It describes options for an image-to-PostScript filtering
+   operation, and how to map them into arguments for a filter command.  For another instructive example, see the
+   discussion of
+  <em>Glade</em> in <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">Chapter 8</a>. </p>
  <div class="example">
   <p class="title">
    <b>
@@ -8991,7 +8880,6 @@ the discussion of
    </b>
   </p>
   <pre class="programlisting">
-
 &lt;?xml version="1.0"?&gt;
 &lt;kprintfilter name="imagetops"&gt;
     &lt;filtercommand 
@@ -9029,7 +8917,6 @@ the discussion of
         &lt;filterarg name="pipe" format="" /&gt;
     &lt;/filteroutput&gt;
 &lt;/kprintfilter&gt;
-
 </pre>
  </div>
  <p>
@@ -9048,7 +8935,7 @@ data amidst all the markup.
   One application area in which XML is clearly winning is in
 markup formats for document files (we'll have more to say about this
 in
-  <a href="documentationchapter.html" title="Chapter 18. Documentation">
+  <a href="#documentationchapter" title="Chapter 18. Documentation">
    Chapter 18</a>).
 Tagging in such documents tends to be relatively sparse among large
 blocks of plain text; thus, traditional Unix tools still work fairly
@@ -9077,21 +8964,11 @@ principle in mind.
   Windows INI Format
  </h4>
  <p>
-  Many Microsoft Windows
-  programs use a textual data format that
-looks like
-  <a href="ch05s02.html#ini_example" title="Example 5.6. A .INI file example.">
-   Example 5.6</a>. This example associates
-optional resources named
-  <code>account</code>,
-  <code>directory</code>,
-  <code>numeric_id</code>, and
-  <code>developer</code> with named projects
-  <code>python</code>,
-  <code>sng</code>,
-  <code>fetchmail</code>, and
-  <code>py-howto</code>.  The DEFAULT entry supplies values
-that will be used when a named entry fails to supply them.
+  Many Microsoft Windows programs use a textual data format that looks like Example 5.6. This example associates
+  optional resources named
+  <code>account</code>, <code>directory</code>, <code>numeric_id</code>, and <code>developer</code> with named projects
+  <code>python</code>, <code>sng</code>, <code>fetchmail</code>, and <code>py-howto</code>.  The DEFAULT entry supplies
+  values that will be used when a named entry fails to supply them.
  </p>
  <div class="example">
   <p class="title">
@@ -9150,7 +9027,7 @@ conventions unless you have strong and specific reasons to do otherwise.
  </p>
  <p>
   In
-  <a href="configurationchapter.html" title="Chapter 10. Configuration">
+  <a href="#configurationchapter" title="Chapter 10. Configuration">
    Chapter 10</a>
   we
 will discuss a different set of conventions used for program
@@ -9421,7 +9298,7 @@ and take a second look.
  <h3 id="ch05s03">Application Protocol Design</h3>
  <p>
   In
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>,
 we'll discuss the advantages of breaking complicated applications up
 into cooperating processes speaking an application-specific command
@@ -9440,7 +9317,7 @@ inetd(8)
 in such a way that the server sees commands on standard input and
 ships responses to standard output.  We describe this “CLI
 server” pattern in more detail in
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>.
  </p>
  <p>
@@ -9458,7 +9335,7 @@ authentication; this paper provides some good conceptual tools for
 thinking about them. Yet a third issue is designing application
 protocols for good performance.  We'll cover that issue in more detail
 in
-  <a href="optimizationchapter.html" title="Chapter 12. Optimization">
+  <a href="#optimizationchapter" title="Chapter 12. Optimization">
    Chapter 12</a>.
  </p>
  <p>
@@ -9482,23 +9359,9 @@ using similar techniques.
   Case Study: SMTP, the Simple Mail Transfer Protocol
  </h4>
  <p>
-  <a href="ch05s03.html#smtp_example" title="Example 5.7. An SMTP session example.">
-   Example 5.7</a>
-  is an example transaction in SMTP
-(Simple Mail Transfer Protocol), which is described by RFC 2821. In
-the example,
-  <em>C:</em>
-  lines are sent by a mail
-transport agent (MTA) sending mail, and
-  <em>S:</em>
-  lines
-are returned by the MTA receiving it. Text
-  <em>
-   emphasized like
-this
-</em>
-  is comments, not part of the actual
-transaction.
+   Example 5.7 is an example transaction in SMTP (Simple Mail Transfer Protocol), which is described by RFC 2821. In the
+   example, <em>C:</em> lines are sent by a mail transport agent (MTA) sending mail, and <em>S:</em> lines are returned
+   by the MTA receiving it. Text <em> emphasized like this </em> is comments, not part of the actual transaction.
  </p>
  <div class="example">
   <p class="title">
@@ -9554,21 +9417,11 @@ a mail-drop machine, then use a POP3 connection to pull mail
 up the wire to their personal machines.
  </p>
  <p>
-  <a href="ch05s03.html#pop_example" title="Example 5.8. A POP3 example session.">
-   Example 5.8</a>
-  is an example POP3 session. In the
-example,
-  <em>C:</em>
-  lines are sent by the client,
-and
-  <em>S:</em>
-  lines by the mail server. Observe the many
-similarities with SMTP.  This protocol is also textual and
-line-oriented, sends payload message sections terminated by a line
-consisting of a single dot followed by line terminator, and even uses
-the same exit command, QUIT. Like SMTP, each client operation is
-acknowledged by a reply line that begins with a status code and
-includes an informational message meant for human eyes.
+   Example 5.8 is an example POP3 session. In the example, <em>C:</em> lines are sent by the client, and <em>S:</em>
+   lines by the mail server. Observe the many similarities with SMTP.  This protocol is also textual and line-oriented,
+   sends payload message sections terminated by a line consisting of a single dot followed by line terminator, and even
+   uses the same exit command, QUIT. Like SMTP, each client operation is acknowledged by a reply line that begins with a
+   status code and includes an informational message meant for human eyes.
  </p>
  <div class="example">
   <p class="title">
@@ -9618,21 +9471,10 @@ metaprotocol later in this chapter) is clear.
   Case Study: IMAP, the Internet Message Access Protocol
  </h4>
  <p>
-  To complete our triptych of Internet application protocol
-examples, we'll look at IMAP, another post office protocol designed in
-a slightly different style.  See
-  <a href="ch05s03.html#imap_example" title="Example 5.9. An IMAP session example.">
-   Example 5.9</a>
-  ; as
-before,
-  <em>C:</em>
-  lines are sent by the client, and
-  <em>S:</em>
-  lines by the
-mail server.  Text
-  <em>emphasized like this</em>
-  is
-comments, not part of the actual transaction.
+  To complete our triptych of Internet application protocol examples, we'll look at IMAP, another post office protocol
+  designed in a slightly different style.  See Example 5.9; as before, <em>C:</em> lines are sent by the client, and
+  <em>S:</em> lines by the mail server.  Text <em>emphasized like this</em> is comments, not part of the actual
+  transaction.
  </p>
  <div class="example">
   <p class="title">
@@ -9735,7 +9577,7 @@ textual.  It uses single-line requests and responses, except for
 payloads which may be multiline.  Payloads are shipped either with a
 preceding length in octets or with a terminator that is the line
   <code>".\r\n"</code>. In the latter case the payload is
-  <em>byte-stuffed</em> ; all lines that start with a period get
+  <em id="byte_stuffing">byte-stuffed</em>; all lines that start with a period get
 another period prepended, and the receiver side is responsible for
 both recognizing the termination and stripping away the stuffing.
 Response lines consist of a status code followed by a human-readable
@@ -9986,7 +9828,7 @@ search.  The W3C draft specification is
  <p>
   XML-RPC and SOAP, considered as remote procedure call methods,
 have some associated risks that we discuss at the end of
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>.
  </p>
  <p>
@@ -10076,7 +9918,7 @@ of what people mean when they say a UI is ‘intuitive’;
 most of the rest is the Rule of Least Surprise.  We'll examine the
 properties that make user interfaces pleasant and effective in more
 depth in
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>.
  </p>
  <p>
@@ -10126,7 +9968,7 @@ difficult to comprehend the whole system.
 promote transparency and discoverability not just in UIs but in the
 parts users don't normally see.  We'll develop some useful rules you
 can apply to your coding and development practice.  Later on, in
-  <a href="opensourcechapter.html" title="Chapter 19. Open Source">
+  <a href="#opensourcechapter" title="Chapter 19. Open Source">
    Chapter 19</a>
   we'll see how good release-engineering
 practices (like having a
@@ -10243,15 +10085,10 @@ these, the most important — by far — is
  <p>
   When
   <code>-v</code> is on,
-  <em>fetchmail</em> dumps each one of its POP, IMAP, and SMTP transactions to standard
-output as they happen.  A developer can actually see the code doing
-protocol with remote mailservers and the mail transport program it
-forwards to, in real time.  Users can send session transcripts with
-their bug reports.
-  <a href="ch06s01.html#fetchmail_session" title="Example 6.1. An example fetchmail -v transcript.">
-   Example 6.1</a>
-  shows a
-representative session transcript.
+  <em>fetchmail</em> dumps each one of its POP, IMAP, and SMTP transactions to standard output as they happen.  A
+  developer can actually see the code doing protocol with remote mailservers and the mail transport program it forwards
+  to, in real time.  Users can send session transcripts with their bug reports. Example 6.1 shows a representative
+  session transcript.
  </p>
  <div class="example">
   <p class="title">
@@ -10261,7 +10098,6 @@ representative session transcript.
    </b>
   </p>
   <pre class="programlisting">
-
 fetchmail: 6.1.0 querying hurkle.thyrsus.com (protocol IMAP) 
               at Mon, 09 Dec 2002 08:41:37 -0500 (EST): poll started
 fetchmail: running ssh %h /usr/sbin/imapd 
@@ -10477,7 +10313,7 @@ notifications, but also easy to focus on them if you want to.
   <em>kmail</em> GUI is good user-interface
 design. It's informative, but not distracting; it gets around the
 reason we adduce in
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>
   that the best policy for Unix tools
 operating normally is usually silence.  The authors showed excellent
@@ -10547,7 +10383,6 @@ Surprise. Here is a test example:
    </b>
   </p>
   <pre class="programlisting">
-
 #SNG: This is a synthetic SNG test file
 
 # Our first test is a paletted (type 3) image.
@@ -10652,7 +10487,7 @@ as reverse video, underline, or blink.
 curses(3)
 libraries.  These underlie the “roguelike” interface
 style we discuss in
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>, and some very widely used programs such
 as
 mutt(1),
@@ -10704,7 +10539,7 @@ infocmp(1).
  </p>
  <p>
   The design superficially contradicts the advice we gave in
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
+  <a href="#textualitychapter" title="Chapter 5. Textuality">
    Chapter 5</a>
   against binary
 caches, but this is actually the extreme case in which that's a good
@@ -10848,7 +10683,7 @@ site</a>.
  </div>
  <p>
   In
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>
   we'll exhibit the Freeciv strategy game as an example of client-server
 partitioning, with the server maintaining shared state and the client
@@ -10965,7 +10800,7 @@ are manipulating with the code.
  </p>
  <p>
   In
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>
   's
 section on the value of detachment, our advice was to abstract and
@@ -11005,7 +10840,7 @@ addressing it.
  </p>
  <p>
   In
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>
   we
 criticized object-oriented programming in terms likely to prove a bit
@@ -11124,7 +10959,7 @@ impossible cognitive burden on a human maintainer.
  <p>
   The reader might find it instructive to compare these with our
 checklist questions about modularity in
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>.
  </p>
  <h4 id="id2914680">
@@ -11207,7 +11042,7 @@ they can experiment without degrading their data.
  <p>
   All the advantages of textual data-file formats that we
 discussed in
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
+  <a href="#textualitychapter" title="Chapter 5. Textuality">
    Chapter 5</a>
   also apply to the textual formats that
 sng(1),
@@ -11301,7 +11136,7 @@ application.
   After you've done this, you may well discover that it's possible
 to apply the “separated engine and interface” pattern
 (see
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>) using
 your textualizer/debugger as the engine.  All the usual benefits of
 this pattern will apply.
@@ -11423,11 +11258,11 @@ as well as the computer.
   Unix programmers have a lot of implicit knowledge available to
 them about what makes for maintainable code, because Unix hosts source
 code that goes back decades.  For reasons we'll discuss in
-  <a href="portabilitychapter.html" title="Chapter 17. Portability">
+  <a href="#portabilitychapter" title="Chapter 17. Portability">
    Chapter 17</a>, Unix programmers learn a tendency to
 scrap and rebuild rather than patching grubby code (see Rob Pike's
 meditation on this subject in
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">
    Chapter 1</a>).  Thus, any sources that have survived
 more than a decade of evolutionary pressure have been selected for
 maintainability. These old, successful, well-established projects with
@@ -11456,7 +11291,7 @@ are worth emulating.
  <p>
   One very important practice is an application of the Rule of
 Clarity: choosing simple algorithms.  In
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">
    Chapter 1</a>
   we quoted Ken Thompson: “When in
 doubt, use brute force”.  Thompson
@@ -11485,7 +11320,7 @@ of these.
  </p>
  <p>
   In
-  <a href="opensourcechapter.html" title="Chapter 19. Open Source">
+  <a href="#opensourcechapter" title="Chapter 19. Open Source">
    Chapter 19</a>
   we'll
 describe conventions that Unix developers have evolved for making
@@ -11595,7 +11430,7 @@ systems of all kinds, bugs collect at interfaces.)
  </p>
  <p>
   In
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
+  <a href="#textualitychapter" title="Chapter 5. Textuality">
    Chapter 5</a>
   we
 looked at the lower level of this design problem — how to lay
@@ -11644,7 +11479,7 @@ concurrency to improve performance. Putting that concern before
 developing a clean architecture that minimizes global complexity is
 premature optimization,
 the root of all evil (see
-  <a href="optimizationchapter.html" title="Chapter 12. Optimization">
+  <a href="#optimizationchapter" title="Chapter 12. Optimization">
    Chapter 12</a>
   for further discussion).
  </p>
@@ -11665,7 +11500,7 @@ save under dire necessity.
 programs — and your life — simpler. All the reasons for
 process partitioning are continuous with the reasons for module
 partitioning that we developed in
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>.
  </p>
  <p>
@@ -11930,19 +11765,14 @@ receiver's input format.
  <p>
   So far, we have discussed anonymous pipes
 created by the shell. There is a variant called a
-  <em>
+  <em id="named_pipes">
    named
 pipe
 </em>
-  which is a special kind of file. If two programs open
-the file, one for reading and the other for writing, a named pipe acts
-like a pipe-fitting between them. Named pipes are a bit of a
-historical relic; they have been largely displaced from use by named
-  <em>sockets</em>, which we'll discuss below. (For more
-on the history of this relic, see the discussion of
-  <a href="ch07s03.html#messages" title="System V IPC">
-   System V IPC</a>
-  below.)
+  which is a special kind of file. If two programs open the file, one for reading and the other for writing, a named
+  pipe acts like a pipe-fitting between them. Named pipes are a bit of a historical relic; they have been largely
+  displaced from use by named <em>sockets</em>, which we'll discuss below. (For more on the history of this relic, see
+  the discussion of <a href="#messages" title="System V IPC">System V IPC</a> below.)
  </p>
  <h5 id="id2916058">
   Case Study: Piping to a Pager
@@ -12002,7 +11832,7 @@ is decoupled from the programs that use it, it's possible to simply
 alias ‘more’ to ‘less’ in your shell, set the
 environment variable
   <code>PAGER</code> to ‘less’ (see
-  <a href="configurationchapter.html" title="Chapter 10. Configuration">
+  <a href="#configurationchapter" title="Chapter 10. Configuration">
    Chapter 10</a>), and get
 all the benefits of a better pager with all properly-written Unix
 programs.
@@ -12034,16 +11864,9 @@ input.
   Case Study: pic2graph
  </h5>
  <p>
-  Shell source code for the program
-pic2graph(1)
-ships with the
-  <em>groff</em> suite of
-text-formatting tools from the Free Software
-Foundation.  It translates diagrams
-written in the PIC language to bitmap images.
-  <a href="ch07s02.html#pic2graph" title="Example 7.1. The pic2graph pipeline.">
-   Example 7.1</a>
-  shows the pipeline at the heart of this code.
+  Shell source code for the program pic2graph(1) ships with the <em>groff</em> suite of text-formatting tools from the
+  Free Software Foundation.  It translates diagrams written in the PIC language to bitmap images. Example 7.1 shows the
+  pipeline at the heart of this code.
  </p>
  <div class="example">
   <p class="title">
@@ -12053,12 +11876,10 @@ written in the PIC language to bitmap images.
    </b>
   </p>
   <pre class="programlisting">
-
 (echo ".EQ"; echo $eqndelim; echo ".EN"; echo ".PS";cat;echo ".PE")|\
      groff -e -p $groffpic_opts -Tps &gt;${tmp}.ps \
      &amp;&amp; convert -crop 0x0 $convert_opts ${tmp}.ps ${tmp}.${format} \
      &amp;&amp; cat ${tmp}.${format}
-
 </pre>
  </div>
  <p>
@@ -12093,7 +11914,7 @@ into a more modern format.
   We'll examine
 pic(1)
 more closely, as a minilanguage design, in
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>.
  </p>
  <h5 id="id2916464">
@@ -12139,7 +11960,7 @@ independently of each other.
  </p>
  <p>
   In
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>
   we
 will reexamine these programs from a slightly different example, as
@@ -12210,7 +12031,7 @@ wrapper creates a new interface for a called program, or specializes
 it.  Often, wrappers are used to hide the details of elaborate shell
 pipelines.  We'll
 discuss interface wrappers in
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>. Most specialization wrappers are quite
 simple, but nevertheless very useful.
  </p>
@@ -12391,10 +12212,10 @@ communication is tricky enough that it is normally only used when
 either (a) the implied protocol is utterly trivial, or (b) the slave
 process has been designed to speak an application protocol along the
 lines we discussed in
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
+  <a href="#textualitychapter" title="Chapter 5. Textuality">
    Chapter 5</a>.  We'll return to this issue, and ways
 to cope with it, in
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>.
  </p>
  <p>
@@ -12736,7 +12557,7 @@ them — a set of requests and responses which expresses the
 semantics of what your programs will be communicating about in a
 succinct way.  We've already discussed the some major issues in the
 design of application protocols in
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
+  <a href="#textualitychapter" title="Chapter 5. Textuality">
    Chapter 5</a>.
  </p>
  <p>
@@ -12791,7 +12612,7 @@ and whether client and server support the same dialect of SQL.
  </h6>
  <p>
   In
-  <a href="transparencychapter.html" title="Chapter 6. Transparency">
+  <a href="#transparencychapter" title="Chapter 6. Transparency">
    Chapter 6</a>, we
 introduced Freeciv as an example of transparent data formats.  But
 more critical to the way it supports multiplayer gaming is the
@@ -12892,23 +12713,14 @@ programs using it closed, and attaching new processes to an existing
 shared memory segment faked up in this way was tricky at best.
  </p>
  <p>
-  After Version 7 and the split between the
-BSD
-  and
-System V
-  lineages,
+  After Version 7 and the split between the BSD and System V lineages,
 the evolution of Unix interprocess communication took two different
 directions. The BSD direction led to
-  <a href="ch07s02.html#sockets" title="Sockets">
-   sockets</a>. The AT&amp;T lineage, on the other
+  <a href="#sockets" title="Sockets">sockets</a>. The AT&amp;T lineage, on the other
 hand, developed named pipes (as
-  <a href="ch07s02.html#named_pipes">
-   previously
-discussed</a>) and an IPC facility, specifically designed for
-passing binary data and based on shared-memory bidirectional message
-queues.  This is called ‘System V IPC’—or,
-among old timers, ‘Indian Hill’ IPC after the AT&amp;T
-facility where it was first written.
+  <a href="#named_pipes">previously discussed</a>) and an IPC facility, specifically designed for
+passing binary data and based on shared-memory bidirectional message queues.  This is called ‘System V IPC’—or, among
+old timers, ‘Indian Hill’ IPC after the AT&amp;T facility where it was first written.
  </p>
  <p>
   The upper, message-passing layer of System V IPC has largely
@@ -12943,7 +12755,7 @@ process.
 is a slight oversimplification.  See the discussion of
   <code>EDITOR</code> and
   <code>VISUAL</code> in
-  <a href="configurationchapter.html" title="Chapter 10. Configuration">
+  <a href="#configurationchapter" title="Chapter 10. Configuration">
    Chapter 10</a>
   for the rest of the
 story.
@@ -13147,7 +12959,7 @@ that is, it is difficult to query these interfaces for their
 capabilities, and difficult to monitor them in action without building
 single-use tools as complex as the programs being monitored (we
 examined some of the reasons for this in
-  <a href="transparencychapter.html" title="Chapter 6. Transparency">
+  <a href="#transparencychapter" title="Chapter 6. Transparency">
    Chapter 6</a>). They have the same version skew
 problems as libraries, but those problems are harder to track because
 they're distributed and not generally obvious at link time.
@@ -13171,7 +12983,7 @@ few simple data types.
 — that is, interfaces with a more elaborate and
 application-specific ontology of data types. But the Rule of
 Simplicity applies!  We observed in
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>
   that one of the functions of interfaces
 is as choke points that prevent the implementation details of modules
@@ -13405,7 +13217,7 @@ applications across multiple hosts.  Or it may make them suitable for
 distributed computing across the Internet (as with Freeciv). We'll
 discuss the related
   <em>CLI server</em> pattern in
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>.
  </p>
  <p>
@@ -13502,7 +13314,7 @@ run-control file (
 another with data-file formats; and another with scripting
 languages
   (which we'll survey in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>).
  </p>
  <p>
@@ -13593,7 +13405,7 @@ solution.  This chapter is not meant to be an exhaustive catalog of
 Unix languages, but rather to bring out the design principles involved
 in structuring an application around a minilanguage.  We'll have much
 more to say about languages for general-purpose programming in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>.
  </p>
  <p>
@@ -13616,14 +13428,9 @@ engineers by about a factor of 10”.
 <!-- FILE: ch08s01.html -->
  <h3 id="ch08s01">Understanding the Taxonomy of Languages</h3>
  <p>
-  All the languages in
-  <a href="ch08s01.html#taxonomy" title="Figure 8.1. Taxonomy of languages.">
-   Figure 8.1</a>
-  are described in
-case studies, either in this chapter or elsewhere in this book.  For
-the general-purpose interpreters near the right-hand side, see
-  <a href="languageschapter.html" title="Chapter 14. Languages">
-   Chapter 14</a>.
+  All the languages in Figure 8.1 are described in case studies, either in this chapter or elsewhere in this book.  For
+  the general-purpose interpreters near the right-hand side, see
+  <a href="#languageschapter" title="Chapter 14. Languages">Chapter 14</a>.
  </p>
  <div class="figure">
   <p class="title">
@@ -13637,7 +13444,7 @@ the general-purpose interpreters near the right-hand side, see
  </div>
  <p>
   In
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
+  <a href="#textualitychapter" title="Chapter 5. Textuality">
    Chapter 5</a>
   we
 looked at Unix conventions for data files.  There's a spectrum of
@@ -13666,7 +13473,7 @@ discuss
   <em>glade</em>,
   <em>yacc</em> and
   <em>lex</em> in
-  <a href="generationchapter.html" title="Chapter 9. Generation">
+  <a href="#generationchapter" title="Chapter 9. Generation">
    Chapter 9</a>.
  </p>
  <p>
@@ -13692,7 +13499,7 @@ declarative minilanguage; they set up constraints that imply actions
 performed on an interpretive context (in this case, the portion of the
 file system where the source and generated files live).  We'll return
 to makefiles in
-  <a href="toolschapter.html" title="Chapter 15. Tools">
+  <a href="#toolschapter" title="Chapter 15. Tools">
    Chapter 15</a>.
  </p>
  <p>
@@ -13730,7 +13537,7 @@ bc(1)
 and
 dc(1)
 interpreters we looked at in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>
   are good examples of specialized
 imperative minilanguages that are explicitly Turing-complete.
@@ -13759,7 +13566,7 @@ Python, and
 Java
   more
 complex ones.  We'll return to these general-purpose languages in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>.
  </p>
 
@@ -13802,7 +13609,7 @@ this chapter will consist of case studies.
  </h4>
  <p>
   In
-  <a href="transparencychapter.html" title="Chapter 6. Transparency">
+  <a href="#transparencychapter" title="Chapter 6. Transparency">
    Chapter 6</a>
   we
 looked at
@@ -13848,17 +13655,13 @@ complete treatment, see
   <em>Mastering Regular Expressions</em><sup><a href="#Friedl" title="[Friedl]">[Friedl]</a></sup>.
  </p>
  <p>
-  Regular expressions describe patterns that may either match or
-fail to match against strings.  The simplest regular-expression tool
-is grep(1), a filter that passes through to its output every 
-line in its input matching a specified regexp.
-Regexp notation is summarized in
-  <a href="ch08s02.html#regexp_table" title="Table 8.1. Regular-expression examples.">
-   Table 8.1</a>.
+  Regular expressions describe patterns that may either match or fail to match against strings.  The simplest
+  regular-expression tool is grep(1), a filter that passes through to its output every line in its input matching a
+  specified regexp. Regexp notation is summarized in Table 8.1.
  </p>
 
   <table class="border">
-	<caption>Regular-expression examples.</caption>
+	<caption>Table 8.1. Regular-expression examples.</caption>
    <thead>
     <tr>
      <th>
@@ -14097,13 +13900,9 @@ powerful than the
   </ol>
  </div>
  <p>
-  Now that we've looked at some motivating examples,
-  <a href="ch08s02.html#regexp_intro" title="Table 8.2. Introduction to regular-expression operations.">
-   Table 8.2</a>
-  is a summary of the standard regular-expression
-wildcards.  Note: we're not including the glob variant in this table,
-so a value of “All” implies only all three of the basic,
-extended/Emacs, and Perl/Python variants.<sup><a href="#ftn.id2932978" id="id2932978">[81]</a></sup>
+  Now that we've looked at some motivating examples, Table 8.2 is a summary of the standard regular-expression
+  wildcards.  Note: we're not including the glob variant in this table, so a value of “All” implies only all three of
+  the basic, extended/Emacs, and Perl/Python variants.<sup><a href="#ftn.id2932978" id="id2932978">[81]</a></sup>
  </p>
 
   <table class="border">
@@ -14318,13 +14117,8 @@ the interface.  The generated code then calls functions you write to
 supply behavior to the interface.
  </p>
  <p>
-  <em>Glade</em> 's XML format for
-describing GUIs is a good example of a simple domain-specific
-minilanguage.  See
-  <a href="ch08s02.html#glade_example" title="Example 8.1. Glade Hello, World.">
-   Example 8.1</a>
-  for a “Hello,
-world!” GUI in Glade format.
+  <em>Glade</em> 's XML format for describing GUIs is a good example of a simple domain-specific minilanguage.  See
+  Example 8.1 for a “Hello, world!” GUI in Glade format.
  </p>
  <div class="example">
   <p class="title">
@@ -14333,7 +14127,6 @@ world!” GUI in Glade format.
    </b>
   </p>
   <pre class="programlisting">
-
 &lt;?xml version="1.0"?&gt;
 &lt;GTK-Interface&gt;
 
@@ -14366,7 +14159,6 @@ world!” GUI in Glade format.
 &lt;/widget&gt;
 
 &lt;/GTK-Interface&gt;
-
 </pre>
  </div>
  <p>
@@ -14448,18 +14240,10 @@ C
 though in a rather different style.)
  </p>
  <p>
-  <a href="ch08s02.html#m4_macro" title="Example 8.2. A sample m4 macro.">
-   Example 8.2</a>
-  shows an
-  <em>m4</em> macro that directs
-  <em>m4</em> to expand each occurrence of the string
-"OS" in its input into the string "operating system" on output.  This
-is a trivial example;
-  <em>m4</em> supports macros
-with arguments that can be used to do more than transform one fixed
-string into another.  Typing <code>info m4</code> at your shell
-prompt will probably display on-line documentation for this
-language.
+   Example 8.2 shows an <em>m4</em> macro that directs <em>m4</em> to expand each occurrence of the string "OS" in its
+   input into the string "operating system" on output.  This is a trivial example; <em>m4</em> supports macros with
+   arguments that can be used to do more than transform one fixed string into another.  Typing <code>info m4</code> at
+   your shell prompt will probably display on-line documentation for this language.
  </p>
  <div class="example">
   <p class="title">
@@ -14511,8 +14295,7 @@ corresponding (much uglier) strings in the
 experience has taught minilanguage designers to be wary of macro
 expansion,<sup><a href="#ftn.id2934007" id="id2934007">[83]</a></sup>
   for reasons we'll discuss
-  <a href="ch08s03.html#macroexpansion" title="Macros — Beware!">
-   later in the chapter</a>.
+  <a href="#macroexpansion" title="Macros — Beware!">later in the chapter</a>.
  </p>
  <h4 id="id2934034">
   Case Study: XSLT
@@ -14525,7 +14308,7 @@ much more than simple macro substitution; it describes transformations
 of XML data, including query and report generation.  It is the
 language used to write XML stylesheets.  For practical applications,
 see the description of XML document processing in
-  <a href="documentationchapter.html" title="Chapter 18. Documentation">
+  <a href="#documentationchapter" title="Chapter 18. Documentation">
    Chapter 18</a>.  XSLT is described by a World Wide
 Web Consortium standard and has several open-source
 implementations.
@@ -14568,7 +14351,6 @@ or run subcommands.
    </b>
   </p>
   <pre class="programlisting">
-
 &lt;?xml version="1.0"?&gt;
 &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
                 version="1.0"&gt;
@@ -14584,24 +14366,16 @@ or run subcommands.
     &lt;/xsl:element&gt;
   &lt;/xsl:template&gt; 
 &lt;/xsl:stylesheet&gt;
-
 </pre>
  </div>
  <p>
-  The program in
-  <a href="ch08s02.html#xslt_example" title="Example 8.3. A sample XSLT program.">
-   Example 8.3</a>
-  transforms an XML
-document so that each attribute of every element is transformed into a new
-tag pair directly enclosed by that element, with the attribute
-value as the tag pair's content.
+  The program in Example 8.3 transforms an XML document so that each attribute of every element is transformed into a
+  new tag pair directly enclosed by that element, with the attribute value as the tag pair's content.
  </p>
  <p>
-  We've included a glance at XSLT here partly to illustrate the
-point that ‘declarative’ does not imply either 
-‘simple’ or ‘weak’, and mostly because
-if you have to work with XML documents, you will someday have
-to face the challenge that is XSLT.
+  We've included a glance at XSLT here partly to illustrate the point that ‘declarative’ does not imply either ‘simple’
+  or ‘weak’, and mostly because if you have to work with XML documents, you will someday have to face the challenge that
+  is XSLT.
  </p>
  <p>
   <em>XSLT: Mastering XML Transformations</em> <sup><a href="#Tidwell" title="[Tidwell]">[Tidwell]</a></sup> is a good introduction to the
@@ -14615,7 +14389,7 @@ Web.<sup><a href="#ftn.id2934184" id="id2934184">[85]</a></sup>
   The
 troff(1)
 typesetting formatter was, as we noted in
-  <a href="historychapter.html" title="Chapter 2. History">
+  <a href="#historychapter" title="Chapter 2. History">
    Chapter 2</a>, Unix's original killer application.
   <em>troff</em> is the center of a suite of
 formatting tools (collectively called Documenter's Workbench or DWB),
@@ -14629,7 +14403,7 @@ from the Free Software Foundation.
  <p>
   We'll examine
   <em>troff</em> in more detail in
-  <a href="documentationchapter.html" title="Chapter 18. Documentation">
+  <a href="#documentationchapter" title="Chapter 18. Documentation">
    Chapter 18</a>
   ; for now,
 it's sufficient to note that it is a good example of an imperative
@@ -14731,7 +14505,7 @@ WYSIWYG word processor.  There are some ways in which modern XML-based
 document markups and toolchains are still, in 2003, playing
 catch-up with capabilities that Documenter's Workbench had in 1979.
 We'll discuss these issues in more detail in
-  <a href="documentationchapter.html" title="Chapter 18. Documentation">
+  <a href="#documentationchapter" title="Chapter 18. Documentation">
    Chapter 18</a>.
  </p>
  <p>
@@ -14769,7 +14543,7 @@ Minilanguage designers should take note of this.
   All the preprocessor languages (though not troff markup itself)
 have relatively clean, shell-like syntaxes that follow many of the
 conventions we described in
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
+  <a href="#textualitychapter" title="Chapter 5. Textuality">
    Chapter 5</a>
   for the design of data-file formats.
 There are a few embarrassing exceptions; notably,
@@ -14792,21 +14566,12 @@ to the left of widget C”) and have your software compute a
 best-fit layout for A, B, and C according to those constraints.
  </p>
  <p>
-  The
-pic(1)
-program uses this approach to lay out elements for diagrams.  The
-language taxonomy diagram at
-  <a href="ch08s01.html#taxonomy" title="Figure 8.1. Taxonomy of languages.">
-   Figure 8.1</a>
+  The pic(1) program uses this approach to lay out elements for diagrams.  The language taxonomy diagram at Figure 8.1
   was produced with
 the
-  <em>pic</em> source code in
-  <a href="ch08s02.html#pic_source" title="Example 8.4. Taxonomy of languages — the pic source.">
-   Example 8.4</a><sup><a href="#ftn.id2934708" id="id2934708">[87]</a></sup>
-  run through
-  <em>pic2graph</em>, one of our case studies in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
-   Chapter 7</a>.
+  <em>pic</em> source code in Example 8.4<sup><a href="#ftn.id2934708" id="id2934708">[87]</a></sup> run through
+  <em>pic2graph</em>, one of our case studies in <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
+  Chapter 7</a>.
  </p>
  <div class="example">
   <p class="title">
@@ -14860,7 +14625,6 @@ arrow from D.w + (0, 1.2) to I.e + (0, 1.2)
 "Emacs Lisp" "JavaScript" at 0.25 between M.e and I.e
 "sh" "tcl" at 0.55 between M.e and I.e
 "Perl" "Python" "Java" at 0.8 between M.e and I.e
-
 </pre>
  </div>
  <p>
@@ -14926,7 +14690,7 @@ make it relatively easy to keep
 pic(1)
 useful outside the DWB context.  The
   <em>pic2graph</em> script we used as a case study in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>
   was an
 ad-hoc way to accomplish this, using the retrofitted PostScript
@@ -14958,10 +14722,7 @@ match those of troff.
 fetchmail Run-Control Syntax
  </h4>
  <p>
-  See
-  <a href="ch08s02.html#hogwarts" title="Example 8.5. Synthetic example of a fetchmailrc.">
-   Example 8.5</a>
-  for an example.
+  See Example 8.5 for an example.
  </p>
  <div class="example">
   <p class="title">
@@ -15031,7 +14792,7 @@ sparingly lest it obscure more than help.
  </p>
  <p>
   In
-  <a href="generationchapter.html" title="Chapter 9. Generation">
+  <a href="#generationchapter" title="Chapter 9. Generation">
    Chapter 9</a>
   we'll see how data-driven programming helps provide an elegant
 solution to the problem of editing
@@ -15056,7 +14817,7 @@ to take you to on-line documentation.
   <em>awk</em> consist of
 pattern/action pairs.  Each pattern is a
   <em>regular expression</em>, a concept we'll describe in detail in
-  <a href="generationchapter.html" title="Chapter 9. Generation">
+  <a href="#generationchapter" title="Chapter 9. Generation">
    Chapter 9</a>.  When an
   <em>awk</em> program is run, it steps through each line of the input file.  Each
 line is checked against every pattern/action pair in order.  If the
@@ -15078,11 +14839,8 @@ primarily seen use as a report generator, especially for interpreting
 and reducing tabular data.  It is seldom used standalone, but rather
 embedded in scripts.  There is an example
   <em>awk</em> program in the
-  <a href="ch09s02.html#htmlgen" title="Case Study: Generating HTML Code for a Tabular List">
-   case study on HTML generation</a>
-  included in
-  <a href="generationchapter.html" title="Chapter 9. Generation">
-   Chapter 9</a>.
+  <a href="#htmlgen" title="Case Study: Generating HTML Code for a Tabular List">case study on HTML generation</a>
+  included in <a href="#generationchapter" title="Chapter 9. Generation">Chapter 9</a>.
  </p>
  <p>
   A case study of
@@ -15245,7 +15003,7 @@ bc(1)
 and
 dc(1)
 in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>
   as a case
 study in shellouts.  They are examples of domain-specific
@@ -15295,7 +15053,7 @@ bc(1)
 an algebraic-notation calculator, very little about interactive use of
 either of these languages is going to be novel.  We'll return to the
 importance of the Rule of Least Surprise in interfaces in
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>.
  </p>
  <p>
@@ -15330,17 +15088,9 @@ simple (send a line containing an expression, get back a line
 containing a value) other programs and scripts can easily get access
 to all these capabilities by calling these programs as slave
 processes.
-  <a href="ch08s02.html#rsa" title="Example 8.6. RSA implementation using dc.">
-   Example 8.6</a>
-  is one famous example, an implementation of the
-Rivest-Shamir-Adelman public-key cipher in
-Perl
-  that
-was widely published in signature blocks and on T-shirts as a protest
-against U.S. export retrictions on cryptography, c. 1995; it shells
-out to
-  <em>dc</em> to do the unlimited-precision
-arithmetic required.
+   Example 8.6 is one famous example, an implementation of the Rivest-Shamir-Adelman public-key cipher in Perl that was
+   widely published in signature blocks and on T-shirts as a protest against U.S. export retrictions on cryptography, c.
+   1995; it shells out to <em>dc</em> to do the unlimited-precision arithmetic required.
  </p>
  <div class="example">
   <p class="title">
@@ -15363,7 +15113,7 @@ lMlN/dsM0&lt;J]dsJxp"|dc`
 specific tasks, a special-purpose interpreted language can become the
 core of an entire architecture; we'll consider the advantages and
 disadvantages of this approach in
-  <a href="complexitychapter.html" title="Chapter 13. Complexity">
+  <a href="#complexitychapter" title="Chapter 13. Complexity">
    Chapter 13</a>.  troff requests were an early example;
 today, the
   <em>Emacs</em> editor is one of the
@@ -15380,7 +15130,7 @@ it can be used for many other things besides ordinary editing.  We'll
 examine the applications of Emacs's task-specific intelligence for
 day-to-day program development (compilation, debugging, version
 control) in
-  <a href="toolschapter.html" title="Chapter 15. Tools">
+  <a href="#toolschapter" title="Chapter 15. Tools">
    Chapter 15</a>. Emacs ‘modes’
 are user-defined libraries — programs written in Emacs Lisp that
 specialize the editor for a particular job — usually, but not
@@ -15472,7 +15222,7 @@ menus) to the programs that link to it.  Under most other graphical
 operating systems, the OS supplies one toolkit that everyone uses.
 Unix and X support multiple toolkits; this is part of the separation
 of policy from mechanism that we called out as a design goal of X in
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">
    Chapter 1</a>. GTK and Qt
 are the two most popular open-source X toolkits.
  </p>
@@ -15771,7 +15521,7 @@ and receiving the results back as values in C.
 the type ontology of C and the type ontology of your scripting
 language.  Some scripting languages are designed from the ground up to
 support this.  One such is Tcl, which we'll cover in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>.  Another is
   <em>Guile</em>, an open-source dialect of the
 Lisp
@@ -15812,7 +15562,7 @@ advice about
 not you should use XML as a base syntax and specify your grammar as an
 XML document type.  This may well be the right thing for elaborately
 structured declarative minilanguages, but the same caveats we noted in
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
+  <a href="#textualitychapter" title="Chapter 5. Textuality">
    Chapter 5</a>
   about the
 design of data-file formats apply — XML might be overkill.  If
@@ -15832,7 +15582,7 @@ recursive-descent parser is trivial. Even then,
 and a
   <em>yacc</em> specification will be easier to
 modify as the language syntax evolves.  See
-  <a href="generationchapter.html" title="Chapter 9. Generation">
+  <a href="#generationchapter" title="Chapter 9. Generation">
    Chapter 9</a>
   for a look at the
   <em>yacc</em> - and
@@ -15939,7 +15689,7 @@ trouble.
   The
   <em>TeX</em> formatting
 language (see
-  <a href="documentationchapter.html" title="Chapter 18. Documentation">
+  <a href="#documentationchapter" title="Chapter 18. Documentation">
    Chapter 18</a>) well illustrates the general
 problem.
   <em>TeX</em> is intentionally
@@ -16000,7 +15750,7 @@ minilanguage engine will be called interactively by other
 programs, as a slave process.  If so, your design should probably look
 less like a conversational language for human interaction and more
 like the kind of application protocols we looked at in
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
+  <a href="#textualitychapter" title="Chapter 5. Textuality">
    Chapter 5</a>.
  </p>
  <p>
@@ -16028,7 +15778,7 @@ the right place can nonetheless eat past it.
 things with slaved minilanguages that are not carefully designed
 around this problem are prone to deadlock as the master and slave fall
 out of synchronization (a problem we first noted in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>).
  </p>
  <p>
@@ -16058,8 +15808,7 @@ extra glue layer and a place for things to go wrong.
 be a good idea to add an option that changes its conversational
 behavior to make it respond more like an application protocol, with
 unambiguous end-of-output delimiters and an analog of
-  <a href="ch05s04.html#byte_stuffing">
-   byte stuffing</a>.
+  <a href="#byte_stuffing">byte stuffing</a>.
  </p>
 
 <div class="footnotes"><strong>Footnotes</strong>
@@ -16072,7 +15821,7 @@ elsewhere.
  <p><sup><a href="#id2936490" id="ftn.id2936490">[96]</a></sup>
   <em>Kmail</em>, which we looked
 at in
-  <a href="transparencychapter.html" title="Chapter 6. Transparency">
+  <a href="#transparencychapter" title="Chapter 6. Transparency">
    Chapter 6</a>, won't
 even chase off-site links in HTML for this
 reason.
@@ -16096,7 +15845,7 @@ The Mythical Man-Month, Anniversary Edition (1975-1995), p. 103
  </blockquote>
  <p>
   In
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">
    Chapter 1</a>
   we
 observed that human beings are better at visualizing data than they
@@ -16146,17 +15895,17 @@ will get fewer lines to wreak their havoc on.
  </p>
  <p>
   In
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>
   we
 discussed the uses of domain-specific minilanguages. In
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>
   we'll make the argument for
 very-high-level languages.  In this chapter we'll look at some
 design studies in data-driven programming and a few examples of ad-hoc
 code generation; we'll look at some code-generation tools in
-  <a href="toolschapter.html" title="Chapter 15. Tools">
+  <a href="#toolschapter" title="Chapter 15. Tools">
    Chapter 15</a>.  As with minilanguages, these methods can
 enable you to drastically cut the line count of your programs, and
 correspondingly lower debugging time and maintenance costs.
@@ -16211,7 +15960,7 @@ an infinite time sink.
   At the upper end of its complexity scale, data-driven
 programming merges into writing interpreters for p-code or simple
 minilanguages of the kind we surveyed in
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>.  At other edges, it merges into code
 generation and state-machine programming.  The distinctions are not
 actually that important; the important part is moving program logic
@@ -16378,19 +16127,10 @@ a very high-level, object-oriented
   language.
  </p>
  <p>
-  In October 1997 a series of questions on the fetchmail-friends
-mailing list made it clear that end-users were having increasing
-troubles generating configuration files for
-  <em>fetchmail</em>.  The file uses a simple,
-classically-Unixy free-format syntax, but can become forbiddingly
-complicated when a user has POP3 and IMAP accounts at multiple sites.
-See
-  <a href="ch09s01.html#fetchmail_example" title="Example 9.1. Example of fetchmailrc syntax.">
-   Example 9.1</a>
-  for a somewhat simplified
-version of the
-  <em>fetchmail</em> author's
-configuration file.
+  In October 1997 a series of questions on the fetchmail-friends mailing list made it clear that end-users were having
+  increasing troubles generating configuration files for <em>fetchmail</em>.  The file uses a simple, classically-Unixy
+  free-format syntax, but can become forbiddingly complicated when a user has POP3 and IMAP accounts at multiple sites.
+  See Example 9.1 for a somewhat simplified version of the <em>fetchmail</em> author's configuration file.
  </p>
  <div class="example">
   <p class="title">
@@ -16442,7 +16182,7 @@ fair to be a maintenance nightmare.  It would have violated the SPOT
 rule
   we discussed
 in
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>
   wholesale.
  </p>
@@ -16455,12 +16195,8 @@ added a
   <code>--configdump</code> option to
   <em>fetchmail</em> that would parse
   <code>.fetchmailrc</code> and dump the result to standard
-output in the format of a Python initializer.  For the file above, the
-result would look roughly like
-  <a href="ch09s01.html#conf_dump" title="Example 9.2. Python structure dump of a fetchmail configuration.">
-   Example 9.2</a>
-  (to save
-space, some data not relevant to the example is omitted).
+output in the format of a Python initializer.  For the file above, the result would look roughly like Example 9.2 (to
+save space, some data not relevant to the example is omitted).
  </p>
  <div class="example">
   <p class="title">
@@ -16595,11 +16331,7 @@ complicated and fragile undertaking.  But Python's facilities for
 introspection and metaclass hacking are unusually accessible.
  </p>
  <p>
-  See
-  <a href="ch09s01.html#solution_code" title="Example 9.3. copy_instance metaclass code.">
-   Example 9.3</a>
-  for the solution code, from
-near line 1895 of the 1.43 version.
+  See Example 9.3 for the solution code, from near line 1895 of the 1.43 version.
  </p>
  <div class="example">
   <p class="title">
@@ -16646,12 +16378,7 @@ def copy_instance(toclass, fromdict):
                 setattr(toclass, x, fromdict[x])
 </pre>
  <p>
-  When your code is this simple, it is far more likely to be right.
-See
-  <a href="ch09s01.html#solution_caller" title="Example 9.4. Calling context for
-copy_instance.">
-   Example 9.4</a>
-  for the code that calls it.
+  When your code is this simple, it is far more likely to be right. See Example 9.4 for the code that calls it.
  </p>
  <div class="example">
   <p class="title">
@@ -16731,12 +16458,12 @@ in action.
  </p>
  <p>
   In
-  <a href="configurationchapter.html" title="Chapter 10. Configuration">
+  <a href="#configurationchapter" title="Chapter 10. Configuration">
    Chapter 10</a>,
 we'll examine the run-control syntax of
   <em>fetchmail</em> as an example of the standard shell-like metaformat for run-control
 files.  In
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>
   we'll use
   <em>fetchmailconf</em> as an example of
@@ -16751,7 +16478,7 @@ Python's strength in rapidly building GUIs.
   Unix comes equipped with some powerful special-purpose code
 generators for purposes like building lexical analyzers (tokenizers)
 and parsers; we'll survey these in
-  <a href="toolschapter.html" title="Chapter 15. Tools">
+  <a href="#toolschapter" title="Chapter 15. Tools">
    Chapter 15</a>.  But there are much simpler, lighter-weight
 sorts of code generation we can use to make life easier without having
 to know any compiler theory or write (error-prone) procedural
@@ -16765,10 +16492,7 @@ point:
   Case Study: Generating Code for the ascii Displays
  </h4>
  <p>
-  Called without arguments,
-  <em>ascii</em> generates a usage screen that looks like
-  <a href="ch09s02.html#ascii-splash" title="Example 9.5. ascii usage screen.">
-   Example 9.5</a>.
+  Called without arguments, <em>ascii</em> generates a usage screen that looks like Example 9.5.
  </p>
  <div class="example">
   <p class="title">
@@ -16905,10 +16629,8 @@ programs with correspondingly greater benefits.
   Case Study: Generating HTML Code for a Tabular List
  </h4>
  <p>
-  Let's suppose that we want to put a page of tabular data on a
-Web page.  We want the first few lines to look like
-  <a href="ch09s02.html#star_list" title="Example 9.6. Desired output format for the star table.">
-   Example 9.6</a>.
+  Let's suppose that we want to put a page of tabular data on a Web page.  We want the first few lines to look like
+  Example 9.6.
  </p>
  <div class="example">
   <p class="title">
@@ -16946,10 +16668,7 @@ server just to be able to display this list, and don't want to load
 the server with unnecessary CGI traffic?
  </p>
  <p>
-  There's a better solution.  We put the data in a tabular flat-file
-format like
-  <a href="ch09s02.html#colon_table" title="Example 9.7. Master form of the star table.">
-   Example 9.7</a>.
+  There's a better solution.  We put the data in a tabular flat-file format like Example 9.7.
  </p>
  <div class="example">
   <p class="title">
@@ -16982,18 +16701,14 @@ The old-school Unix way would revolve around the following
 nigh-unreadable sed(1) invocation
  </p>
  <pre class="programlisting">
-
 sed -e 's,^,&lt;tr&gt;&lt;td&gt;,' -e 's,$,&lt;/td&gt;&lt;/tr&gt;,' -e 's,:,&lt;/td&gt;&lt;td&gt;,g'
-
 </pre>
  <p>
   or this perhaps slightly more scrutable awk(1) program:
  </p>
  <pre class="programlisting">
-
 awk -F: '{printf("&lt;tr&gt;&lt;td&gt;%s&lt;/td&gt;&lt;td&gt;%s&lt;/td&gt;&lt;td&gt;%s&lt;/td&gt;&lt;/tr&gt;\n", \
                  $1, $2, $3)}'
-
 </pre>
  <p>
   (If either of these examples interests but mystifies, read the
@@ -17002,10 +16717,10 @@ sed(1)
 or
 awk(1).
 We
-  <a href="ch08s02.html#awk" title="Case Study: awk">
+  <a href="#awk" title="Case Study: awk">
    explained</a>
   in
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>
   that the latter has largely fallen
 out of use.  The former is still an important Unix tool that we
@@ -17019,10 +16734,8 @@ redirection.)
 on equivalent Perl:
  </p>
  <pre class="programlisting">
-
 for row in map(lambda x:x.rstrip().split(':'),sys.stdin.readlines()):
     print "&lt;tr&gt;&lt;td&gt;" + "&lt;/td&gt;&lt;td&gt;".join(row) + "&lt;/td&gt;&lt;/tr&gt;"
-
 </pre>
  <p>
   These scripts took about five minutes each to write and debug,
@@ -17109,8 +16822,7 @@ be configurable?
  <p>
   The gut-level Unix answer is “everything”.  The
 Rule of Separation that we discussed in
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
-   Chapter 1</a>
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">Chapter 1</a>
   encourages Unix programmers to build
 mechanism and defer policy decisions outward toward the user wherever
 possible.  While this tends to produce programs that are powerful and
@@ -17123,8 +16835,7 @@ configuration files sprouting like weeds.
 design for their peers and the most sophisticated users any time soon
 (we'll grapple a bit with the question of whether such a change would
 actually be desirable in
-  <a href="futurechapter.html" title="Chapter 20. Futures">
-   Chapter 20</a>).  So it's perhaps more useful to invert the
+  <a href="#futurechapter" title="Chapter 20. Futures">Chapter 20</a>).  So it's perhaps more useful to invert the
 question and ask “What things should
   <em>not</em>
   be
@@ -17202,7 +16913,7 @@ be done with a script wrapper or a trivial pipeline
 </em>.  Don't
 put complexity inside your program when you can easily enlist other
 programs to help get the work done. (Recall our discussion in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>
   of why
 ls(1)
@@ -17287,7 +16998,7 @@ systemland).
     <p>
      Run-control files (or ‘dotfiles’) in the
 user's home directory. (See
-     <a href="contrastchapter.html" title="Chapter 3. Contrasts">
+     <a href="#contrastchapter" title="Chapter 3. Contrasts">
       Chapter 3</a>
      for a discussion of this important
 concept, if it is unfamiliar.)
@@ -17377,7 +17088,7 @@ system utility of some sort.
  </p>
  <p>
   In
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
+  <a href="#textualitychapter" title="Chapter 5. Textuality">
    Chapter 5</a>
   we
 described a somewhat different set of design rules for textual data-file 
@@ -17539,12 +17250,8 @@ the
   Case Study: The .netrc File
  </h4>
  <p>
-  The
-  <code>.netrc</code> file is a good example of the
-standard rules in action.  An example, with the passwords changed to
-protect the innocent, is in
-  <a href="ch10s03.html#netrc" title="Example 10.1. A .netrc example.">
-   Example 10.1</a>.
+  The <code>.netrc</code> file is a good example of the standard rules in action.  An example, with the passwords
+  changed to protect the innocent, is in Example 10.1.
  </p>
  <div class="example">
   <p class="title">
@@ -17767,7 +17474,7 @@ for executable commands to match a name.
     <p>
      Name of the terminal type of the session console or
 terminal emulator window (see the terminfo case study in
-     <a href="transparencychapter.html" title="Chapter 6. Transparency">
+     <a href="#transparencychapter" title="Chapter 6. Transparency">
       Chapter 6</a>
      for background).  TERM is special in
 that programs to create remote sessions over the network (such as
@@ -18287,7 +17994,7 @@ ps(1).
 on-line help as memory-footprint overhead they couldn't
 afford. Instead they wrote manual pages (this shaped the man-page
 style in ways we'll discuss in
-     <a href="documentationchapter.html" title="Chapter 18. Documentation">
+     <a href="#documentationchapter" title="Chapter 18. Documentation">
       Chapter 18</a>).
     </p>
    </dd>
@@ -18930,13 +18637,9 @@ Linux
   and several other open-source Unixes.
  </p>
  <p>
-  At startup, the XFree86 server examines a systemwide
-run-control file; the exact pathname varies between X builds on
-different platforms, but the basename is XF86Config. The XF86Config
-file has a shell-like syntax as described above.
-  <a href="ch10s06.html#X_config" title="Example 10.2. X configuration example.">
-   Example 10.2</a>
-  is a sample section of an XF86Config file.
+  At startup, the XFree86 server examines a systemwide run-control file; the exact pathname varies between X builds on
+  different platforms, but the basename is XF86Config. The XF86Config file has a shell-like syntax as described above.
+  Example 10.2 is a sample section of an XF86Config file.
  </p>
  <div class="example">
   <p class="title">
@@ -19040,7 +18743,7 @@ Rule of Repair.
  <p>
   The interface of a program is the sum of all the ways that it
 communicates with human users and other programs.  In
-  <a href="configurationchapter.html" title="Chapter 10. Configuration">
+  <a href="#configurationchapter" title="Chapter 10. Configuration">
    Chapter 10</a>, we discussed the use of environment
 variables, switches, run-control files and other parts of
 start-up-time interfaces. In this chapter, we'll untangle the history
@@ -19060,7 +18763,7 @@ Surprise.
   Unix programs can give you extra power from being used in
 synergistic combinations; we discussed various methods for hooking
 together such combinations in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>. The ‘other programs’ part
 of Unix interface design is not an afterthought or a marginal case as
 it is under many other operating systems. Rather, it is a central
@@ -19166,7 +18869,7 @@ user's good.
   One implication of the Rule of Least Surprise is this: Wherever
 possible, allow the user to delegate interface functions to a familiar
 program. We already observed in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>
   that, if your program requires the
 user to edit significant amounts of text, you should write it to call
@@ -19407,8 +19110,7 @@ on-screen buttons are simpler.
   Recall that we devoted an entire earlier chapter to
 ‘transparency’.  In that chapter we touched on the idea of
 interface transparency, and gave the
-  <a href="ch06s01.html#audacity" title="Case Study: audacity">
-   <em>audacity audio editor</em></a>
+  <a href="#audacity" title="Case Study: audacity"><em>audacity audio editor</em></a>
   as one superb example of it.  But we were
 then much more interested in transparency of a different kind, one
 that relates to the structure of code rather than of user interfaces.
@@ -19449,7 +19151,7 @@ to code that has one but not the other.
   The ‘scriptability’ of an interface is the ease with
 which it can be manipulated by other programs (e.g., through the IPC
 mechanisms discussed in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>). Scriptable programs are readily
 usable as components by other programs, reducing the need for costly
 custom coding and making it relatively easy to automate repetitive
@@ -19484,7 +19186,7 @@ command-language interfaces are more expressive than visual
 interfaces, especially for complex tasks. The other is that CLI
 interfaces are highly scriptable — they readily support the
 combining of programs, as we discussed in detail in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>.  Usually (though not always) CLIs
 have an advantage in concision as well.
  </p>
@@ -19527,7 +19229,7 @@ concise and less expressive full-screen or GUI interface.
   SQL is a good example for illustrating another point.  The most
 powerful CLIs are not ad-hoc collections of commands, but imperative
 minilanguages designed along the lines we described in
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>. These minilanguages are the
 highest-power, highest-complexity end of the CLI spectrum; they
 maximize expressiveness, but minimize ease.  They are difficult to use
@@ -19554,7 +19256,7 @@ example. This is a general design problem with visual interfaces.
  </p>
  <p>
   In
-  <a href="transparencychapter.html" title="Chapter 6. Transparency">
+  <a href="#transparencychapter" title="Chapter 6. Transparency">
    Chapter 6</a>
   we
 looked at the Audacity sound file editor.  Its interface design
@@ -19598,7 +19300,7 @@ formatter such as
 processor
   is usually a
 more effective choice (see
-  <a href="documentationchapter.html" title="Chapter 18. Documentation">
+  <a href="#documentationchapter" title="Chapter 18. Documentation">
    Chapter 18</a>
   for more discussion of this
 tradeoff).
@@ -19714,9 +19416,9 @@ calculator language,
 bc(1),
 was implemented on top of dc (we used the relationship between these
 programs as a case study in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>, and again in
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>). Both of these programs use a
 CLI. You type an expression on standard input, you press enter, and
 the value of the expression is printed on standard output.
@@ -19884,7 +19586,7 @@ possible to build transparent interfaces in which the advanced
 features are present but inconspicuous.  The
   <em>audacity</em> and
   <em>kmail</em> case studies in
-  <a href="transparencychapter.html" title="Chapter 6. Transparency">
+  <a href="#transparencychapter" title="Chapter 6. Transparency">
    Chapter 6</a>
   are good examples to follow.
  </p>
@@ -20005,7 +19707,7 @@ differently.
  <p>
   When designing filters, it is well to bear in mind some
 additional rules, partly developed in
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">
    Chapter 1</a>
   :
  </p>
@@ -20274,7 +19976,7 @@ user as part of the dialog with the program.
   An actual sample
 ed(1)
 session will be included in
-  <a href="complexitychapter.html" title="Chapter 13. Complexity">
+  <a href="#complexitychapter" title="Chapter 13. Complexity">
    Chapter 13</a>.
  </p>
  <p>
@@ -20297,7 +19999,7 @@ here-document as input and ignoring output), driving
   <em>ed</em> -like programs requires a protocol, and a
 corresponding state machine in the calling process.  This raises the
 problems we noted in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>
   during the discussion of slave process
 control.
@@ -20312,18 +20014,10 @@ interface” pattern we'll describe below.
   The Roguelike Pattern
  </h4>
  <p>
-  The roguelike pattern is so named because its first example was
-the dungeon-crawling game
-rogue(1)
-(see
-  <a href="ch11s06.html#rogue" title="Figure 11.2. Screen shot of the original Rogue game.">
-   Figure 11.2</a>) under BSD
-  ; the adjective “roguelike” for
-this pattern is widely recognized in Unix tradition. Roguelike
-programs are designed to be run on a system console, an X terminal
-emulator, or a video display terminal. They use the full screen and
-support a visual interface style, but with character-cell display
-rather than graphics and a mouse.
+  The roguelike pattern is so named because its first example was the dungeon-crawling game rogue(1) (see Figure 11.2)
+  under BSD; the adjective “roguelike” for this pattern is widely recognized in Unix tradition. Roguelike programs are
+  designed to be run on a system console, an X terminal emulator, or a video display terminal. They use the full screen
+  and support a visual interface style, but with character-cell display rather than graphics and a mouse.
  </p>
  <div class="figure">
   <p class="title">
@@ -20499,7 +20193,7 @@ pattern can capture some of the best.
  </h4>
  <p>
   In
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>
   we
 argued against building monster single-process monoliths, and that it
@@ -20586,7 +20280,7 @@ easy and flexible.
 interface (often a GUI combining view and controller functions) with
 an engine (model) that contains an interpreter for a domain-specific
 minilanguage.  We examined this pattern in
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>, focusing on minilanguage design; now
 it's time to look at the different ways that such engines can form
 components of larger systems of code.
@@ -20611,7 +20305,7 @@ fetchmailconf(1)
 discoverability
   and data-driven programming and will encounter again as language case
 studies in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>) are
 a good example of a configurator/actor pair.
   <em>fetchmailconf</em> is the interactive dotfile
@@ -20716,7 +20410,7 @@ pair, the interface part supplies commands to and interprets output
 from an engine after startup; the engine has a simpler interface
 pattern. The IPC method used is an implementation detail; the engine
 may be a slave process of the driver (in the sense we discussed in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>) or the
 engine and driver may communicate through sockets, or shared memory,
 or any other IPC method. The key points are (a) the interactivity of
@@ -20916,7 +20610,7 @@ server” is my invention.
  </h4>
  <p>
   In
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>
   we
 examined domain-specific minilanguages as a means of pushing program
@@ -20960,7 +20654,7 @@ to have an ‘embedded scripting
 language’.  In the Unix world,
   <em>Emacs</em> is one of the best-known exemplars of
 this pattern; refer to our discussion of it in
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>
   for some advantages.
  </p>
@@ -21014,7 +20708,7 @@ page</a>.
  <h3 id="ch11s07">Applying Unix Interface-Design Patterns</h3>
  <p>
   To facilitate scripting and pipelining (see
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>) it is wise to choose the
 simplest interface pattern possible — that is, the pattern with the
 fewest channels to the environment and the least
@@ -21065,7 +20759,7 @@ interface’ design pattern.
  </p>
  <p>
   In fact, by combining a theme from
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>
   with this idea, we can perhaps name a
 new design pattern emerging under Linux
@@ -21282,7 +20976,7 @@ therefore tilting toward HTML, XML, and other open, text-based
 Internet standards.  This trend synergizes in interesting ways with
 the evolution of the open-source development model, which we'll survey
 in
-  <a href="opensourcechapter.html" title="Chapter 19. Open Source">
+  <a href="#opensourcechapter" title="Chapter 19. Open Source">
    Chapter 19</a>. In the
 world that the Web is creating, Unix's design tradition —
 including the approaches to interface design we've surveyed in this
@@ -21297,7 +20991,7 @@ chapter — looks more at home than ever before.
   We cannot leave the subject of interactive user interfaces
 without exploring one of the oldest and most persistent design tropes
 of Unix, the Rule of Silence.  We observed in
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">
    Chapter 1</a>
   that well-designed
 Unix programs with nothing interesting or surprising to say should
@@ -21547,7 +21241,7 @@ optimizing, measure.
  </p>
  <p>
   Recall Rob Pike's six rules in
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">
    Chapter 1</a>.  One of the lessons that the original
 Unix programmers learned early is that intuition is a poor guide to
 where the bottlenecks are, even for one who knows the code in question
@@ -21833,7 +21527,7 @@ describing DNS zones with accesses to a cache held in memory.
  </h4>
  <p>
   In
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
+  <a href="#textualitychapter" title="Chapter 5. Textuality">
    Chapter 5</a>
   we
 compared the POP3 and IMAP protocols for querying remote-mail
@@ -21947,7 +21641,7 @@ be to get all the edge cases in the caching software right.
  </blockquote>
  <p>
   At the end of
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">
    Chapter 1</a>, we summarized the Unix philosophy as
 “Keep It Simple, Stupid!”  Throughout the Design
 section, one of the continuing themes has been the importance of
@@ -21960,10 +21654,10 @@ you tell?
   We've held off on addressing this question until now because
 understanding simplicity is complicated.  It needs some of the ideas
 we developed earlier in the Design section, especially in
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>
   and
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>, as background.
  </p>
  <p>
@@ -22039,7 +21733,7 @@ it.
 in terms of the program's
   <em>interface complexity</em>.
 In
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>
   we discussed
 the quality of ease and its inverse, mnemonic load.  To a user,
@@ -22285,13 +21979,9 @@ clever.
   Mapping Complexity
  </h4>
  <p>
-  So far, we've developed two different scales for thinking about
-complexity.  These scales are actually orthogonal to each other.
-  <a href="ch13s01.html#complexity-sources" title="Figure 13.1. Sources and kinds of complexity.">
-   Figure 13.1</a>
-  may help clarify the
-relationships.  Each of the nine boxes of the figure lists a common
-source of a particular kind of complexity.
+  So far, we've developed two different scales for thinking about complexity.  These scales are actually orthogonal to
+  each other. Figure 13.1 may help clarify the relationships.  Each of the nine boxes of the figure lists a common
+  source of a particular kind of complexity.
  </p>
  <div class="figure">
   <p class="title">
@@ -22306,7 +21996,7 @@ source of a particular kind of complexity.
  <p>
   We've touched on some of these varieties of complexity earlier
 in this book, especially the accidental ones. In
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>
   we saw that accidental interface
 complexity often comes from non-orthogonality in the interface design
@@ -22326,7 +22016,7 @@ codebase size is related to choice of development tools because, if
 the feature list is held constant, the most important factor in
 codebase size is probably the choice of implementation language (as we
 implied in
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>).
  </p>
  <p>
@@ -22615,7 +22305,7 @@ not accessible.  For these reasons, every Unix includes an
   The
 sed(1)
 stream editor mentioned in
-  <a href="generationchapter.html" title="Chapter 9. Generation">
+  <a href="#generationchapter" title="Chapter 9. Generation">
    Chapter 9</a>
   is also closely related to ed; many
 of the basic commands are the same, though designed to be invoked
@@ -22692,7 +22382,7 @@ Subprocess interaction is not supported.
   <em>Sam</em> editor<sup><a href="#ftn.id2963818" id="id2963818">[118]</a></sup>
   was written by Rob Pike at Bell Labs in the mid-1980s.  Sam was
 designed for the Plan 9 operating system, which we'll survey in
-  <a href="futurechapter.html" title="Chapter 20. Futures">
+  <a href="#futurechapter" title="Chapter 20. Futures">
    Chapter 20</a>.  While the Sam editor is not widely known
 outside the Labs, it's favored by many of the original Unix developers
 who went on to work on Plan 9, including Ken Thompson himself.
@@ -22757,7 +22447,7 @@ subprocess interaction.
 powerful programmer's editor in existence. It's a big, feature-laden
 program with a great deal of flexibility and customizability. As we
 observed in the
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>
   section on Emacs Lisp, Emacs has an entire programming language inside
 it that can be used to write arbitrarily powerful editor
@@ -22809,7 +22499,7 @@ system masquerading as an editor.  That overstates the case, but
 Emacs certainly does fulfill the role
 occupied by integrated development environments (IDEs) under non-Unix
 operating systems (a theme to which we shall return in
-  <a href="toolschapter.html" title="Chapter 15. Tools">
+  <a href="#toolschapter" title="Chapter 15. Tools">
    Chapter 15</a>).
  </p>
  <p>
@@ -23016,7 +22706,7 @@ vi is so high.
  </p>
  <p>
   In
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>
   we
 described the effect of the absence of standard arrow keys on early
@@ -23037,7 +22727,7 @@ cleaner.  And it is.
 problem.  It's interface complexity, yes, but of a kind most users can
 and do ignore (the interface is semi-compact in the sense we developed
 in
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>).  The deeper problem is an
 adhocity trap. Over the years, vi has had progressively more and more
 special-purpose C code bolted onto it to perform tasks that Sam
@@ -23539,10 +23229,10 @@ fact that matching your application design with the proper
 implementation language(s) can make an immense difference in your
 productivity. Therefore the Unix tradition encourages the design of
 domain-specific languages (as we mentioned in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>
   and
-  <a href="generationchapter.html" title="Chapter 9. Generation">
+  <a href="#generationchapter" title="Chapter 9. Generation">
    Chapter 9</a>) and what are now generally
 called
   <em>scripting languages</em> —those designed specifically to
@@ -23852,7 +23542,7 @@ many of the advantages of C.
   Under modern conditions, it's perhaps best to think of C as a
 high-level assembler for the Unix virtual machine (recall the
 discussion of the success of C as a case study in
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>).  C standards have exported many of the
 facilities of this virtual machine, such as the standard I/O library,
 to other operating systems.  C is where you go when you want to get as
@@ -23870,7 +23560,7 @@ on C for people who are already programmers is still
 and usually easy, but specific areas of variation (like
 signals and process control) can be tricky to get right.  We
 highlight some of these issues in
-  <a href="portabilitychapter.html" title="Chapter 17. Portability">
+  <a href="#portabilitychapter" title="Chapter 17. Portability">
    Chapter 17</a>.  Differing C bindings on other
 operating systems can of course cause C portability problems, although
 Windows NT at least theoretically supports an ANSI/POSIX-compliant C
@@ -24000,7 +23690,7 @@ C++ to become rather baroque and excessively complicated.
 OO
   itself
 to live up to expectations.  We examined this problem in
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>, observing the tendency of OO methods to
 lead to thick glue layers and maintenance problems.  Today
 (2003), inspection of open-source archives (in which choice of
@@ -24039,7 +23729,7 @@ object-oriented platform; vehicle for cutting-edge techniques like STL
 and generics — C++ tries to be all things to all people, but the cost
 is more complexity than the mind of any individual programmer can
 handle. As we noted in
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>, the language's principal designer has
 conceded that he doesn't expect any one programmer to grasp it
 all. Unix hackers do not react well to this; one anonymous but famous
@@ -24239,7 +23929,7 @@ now
 that calls all the commands needed to render an XML-DocBook document
 as HTML, PostScript, plain text, or in any one of several other
 formats (we'll take a closer look at DocBook in
-  <a href="documentationchapter.html" title="Chapter 18. Documentation">
+  <a href="#documentationchapter" title="Chapter 18. Documentation">
    Chapter 18</a>).  It is written
 in bash.
  </p>
@@ -24834,7 +24524,7 @@ fetchmailconf
  </h5>
  <p>
   In
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>
   we
 examined the
@@ -25167,7 +24857,7 @@ the C compiler and linker,
 make(1),
 version-control systems, and symbolic debuggers; we'll discuss these
 in
-  <a href="toolschapter.html" title="Chapter 15. Tools">
+  <a href="#toolschapter" title="Chapter 15. Tools">
    Chapter 15</a>.
  </p>
  <p>
@@ -25276,14 +24966,9 @@ website</a>.
 <!-- FILE: ch14s05.html -->
  <h3 id="ch14s05">Trends for the Future</h3>
  <p>
-  <a href="ch14s05.html#lang_usage" title="Table 14.1. Language choices.">
-   Table 14.1</a>
-  gives a rough indication of today's
-distribution of language usage.  We give figures from both
-SourceForge<sup><a href="#ftn.id2978184" id="id2978184">[128]</a></sup>
-  and Freshmeat,<sup><a href="#ftn.id2978197" id="id2978197">[129]</a></sup>
-  the two most important
-new-release sites, as of March 2003.
+   Table 14.1 gives a rough indication of today's distribution of language usage.  We give figures from both
+   SourceForge<sup><a href="#ftn.id2978184" id="id2978184">[128]</a></sup> and Freshmeat,<sup><a href="#ftn.id2978197"
+   id="id2978197">[129]</a></sup> the two most important new-release sites, as of March 2003.
  </p>
  <p>
   The SourceForge figures are soft in several ways: Notably,
@@ -25524,7 +25209,7 @@ statistics</a>.
  <p>
   An issue related to choice of language is choice of X toolkit
 for GUI programming.  Recall the discussion in
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">
    Chapter 1</a>
   of how X separates mechanism from
 policy.  Each possible choice of toolkit will give you a slightly
@@ -25605,13 +25290,8 @@ platform, so applications written using it retain a native look and
 feel.
  </p>
  <p>
-  As of mid-2003 few detailed comparisons have been written, but
-a Web search for “X toolkit comparison” may turn up some
-useful hits.
-  <a href="ch14s06.html#x_toolkits" title="Table 14.2. Summary of X Toolkits.">
-   Table 14.2</a>
-  summarizes the
-state of play.
+  As of mid-2003 few detailed comparisons have been written, but a Web search for “X toolkit comparison” may turn up
+  some useful hits. Table 14.2 summarizes the state of play.
  </p>
 
   <table class="border">
@@ -25880,14 +25560,14 @@ any modern Unix system. These two editors are
   <em>vi</em> and
   <em>Emacs</em>.
 We discussed them in
-  <a href="complexitychapter.html" title="Chapter 13. Complexity">
+  <a href="#complexitychapter" title="Chapter 13. Complexity">
    Chapter 13</a>
   as part of our discussion of the right
 size of software.
  </p>
  <p>
   As we noted in
-  <a href="complexitychapter.html" title="Chapter 13. Complexity">
+  <a href="#complexitychapter" title="Chapter 13. Complexity">
    Chapter 13</a>, these two editors express sharply
 contrasting design philosophies, but both are extremely popular and
 command great loyalty from identifiable core user populations. Surveys
@@ -26089,7 +25769,7 @@ example that is carried forward in projects like GNOME's
   <em>yacc</em> and
   <em>lex</em> are tools for generating language
 parsers.  We observed in
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>
   that your first minilanguage is all
 too likely to be an accident rather than a design.  That accident is
@@ -26285,7 +25965,7 @@ symbiotic.
  <p>
   If you can implement your parser in a higher-level language than
 C (which we recommend you do; see
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>
   for discussion), then look for equivalent
 facilities like Python's PLY (which covers both
@@ -26374,7 +26054,7 @@ retrieval session with a remote site.
  <p>
   We looked at
   <em>Glade</em> in
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>
   as a good example of a
 declarative minilanguage. We also noted that its back end produces a
@@ -26601,7 +26281,7 @@ Development
  <p>
   <em>make</em> is not just useful for C/C++
 recipes, however.  Scripting languages like those we described in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>
   may not require
 conventional compilation and link steps, but there are often other
@@ -26612,7 +26292,7 @@ can help you with.
  <p>
   Suppose, for example, that you actually generate part of your
 code from a specification file, using one of the techniques from
-  <a href="generationchapter.html" title="Chapter 9. Generation">
+  <a href="#generationchapter" title="Chapter 9. Generation">
    Chapter 9</a>. You can use
   <em>make</em> to tie the spec file and the generated
 source together. This will ensure that whenever you change the spec
@@ -26624,7 +26304,7 @@ for making documentation as well as code. You'll often see this
 approach used to automatically generate PostScript or other derived
 documentation from masters written in some markup language (like HTML
 or one of the Unix document-macro languages we'll survey in
-  <a href="documentationchapter.html" title="Chapter 18. Documentation">
+  <a href="#documentationchapter" title="Chapter 18. Documentation">
    Chapter 18</a>). In fact, this sort of use is so
 common that it's worth illustrating with a case study.
  </p>
@@ -26779,7 +26459,7 @@ it's different, it usually differs by throwing away local
 configuration files that aren't part of the normal
      <code>make all</code> build sequence (such as those generated by autoconf(1);
 we'll talk about autoconf(1) in
-     <a href="portabilitychapter.html" title="Chapter 17. Portability">
+     <a href="#portabilitychapter" title="Chapter 17. Portability">
       Chapter 17</a>).
     </p>
    </dd>
@@ -27041,7 +26721,7 @@ competitor (
 more to say about
   <em>autoconf</em>, from a slightly
 different angle, in
-  <a href="portabilitychapter.html" title="Chapter 17. Portability">
+  <a href="#portabilitychapter" title="Chapter 17. Portability">
    Chapter 17</a>.
  </p>
  <h5 id="id2988205">
@@ -27497,7 +27177,7 @@ problem by designing for transparency — in particular, designing
 programs in such a way that their internal data flows are readily
 monitored with the naked eye and simple tools, and readily mentally
 modeled. This is a topic we covered in detail in
-  <a href="transparencychapter.html" title="Chapter 6. Transparency">
+  <a href="#transparencychapter" title="Chapter 6. Transparency">
    Chapter 6</a>.  Design for
 transparency is valuable both for preventing bugs and for easing the
 runtime-debugging task.
@@ -27560,7 +27240,7 @@ Knuth
   observing “Premature optimization is the root of all
 evil”
   in
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">
    Chapter 1</a>, and that
 Rob Pike
   and Ken
@@ -27609,7 +27289,7 @@ profiling support as yet.
   One of the things the Emacs editor is
 very good at is acting as a front end for other development tools (we
 discussed this from a philosophical angle in
-  <a href="complexitychapter.html" title="Chapter 13. Complexity">
+  <a href="#complexitychapter" title="Chapter 13. Complexity">
    Chapter 13</a>).  In fact, nearly every tool we've
 discussed in this chapter can be driven from within an
 Emacs editor session through front ends
@@ -28129,7 +27809,7 @@ it cannot convey all the nuances that the code embodies.
  </p>
  <p>
   In
-  <a href="transparencychapter.html" title="Chapter 6. Transparency">
+  <a href="#transparencychapter" title="Chapter 6. Transparency">
    Chapter 6</a>, we
 observed how central transparency is to good software.
 Object-code-only components destroy the transparency of a software
@@ -28182,7 +27862,7 @@ software.
 its libraries, and its associated utilities were passed around as
 source code; this openness was a vital part of the Unix culture.  We
 described in
-  <a href="historychapter.html" title="Chapter 2. History">
+  <a href="#historychapter" title="Chapter 2. History">
    Chapter 2</a>
   how,
 when this tradition was disrupted after 1984, Unix lost its initial
@@ -28218,7 +27898,7 @@ understanding of it.
 by focusing on causal and cultural relationships between Unix and open
 source.  We'll discuss the institutions and tactics of open-source
 development in
-  <a href="opensourcechapter.html" title="Chapter 19. Open Source">
+  <a href="#opensourcechapter" title="Chapter 19. Open Source">
    Chapter 19</a>. In discussing the theory and practice
 of code reuse, it's useful to think of open source more specifically,
 as a direct response to the problems we dramatized in the tale of
@@ -28266,7 +27946,7 @@ in the Unix world.
   In the remainder of this chapter, we'll survey various issues
 associated with re-using open-source code: evaluation, documentation,
 and licensing. In
-  <a href="opensourcechapter.html" title="Chapter 19. Open Source">
+  <a href="#opensourcechapter" title="Chapter 19. Open Source">
    Chapter 19</a>
   we'll discuss the open-source
 development model more generally, and examine the conventions you
@@ -28489,7 +28169,7 @@ the World Wide Web than most passive sites (the program that creates
 its Web look and feel was one of our case studies in the discussion of
 Perl
   in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>). It's also the home site of the Linux
 Documentation Project, which maintains many documents that are
 excellent resources for Unix users and developers.
@@ -28507,7 +28187,7 @@ attach reviews to releases.
 languages, but most of their content is C
   or C++. There are also sites specialized
 around some of the interpreted languages as discussed in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>.
  </p>
  <p>
@@ -28583,7 +28263,7 @@ technically capture all of a package's features) assumes that the
 reader is intimately familiar with the application domain and reading
 very carefully. There are good reasons for this, which we'll discuss
 in
-  <a href="documentationchapter.html" title="Chapter 18. Documentation">
+  <a href="#documentationchapter" title="Chapter 18. Documentation">
    Chapter 18</a>, but the
 style can present a bit of a barrier.  Fortunately, extracting value
 from it is a learnable skill.
@@ -28833,7 +28513,7 @@ BSD
  <p>
   We'll discuss these licenses in more detail, from a developer's
 point of view, in
-  <a href="opensourcechapter.html" title="Chapter 19. Open Source">
+  <a href="#opensourcechapter" title="Chapter 19. Open Source">
    Chapter 19</a>.  For the purposes of this chapter, the
 only important distinction among them is whether they are infectious
 or not.  A license is
@@ -29099,7 +28779,7 @@ science or engineering.
  </p>
  <p>
   In
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>, we
 argued that C has been successful because it acts as a layer of thin
 glue over computer hardware approximating the “standard
@@ -29388,7 +29068,7 @@ AT&amp;T
 Berkeley
   lines of
 development that we examined in
-  <a href="historychapter.html" title="Chapter 2. History">
+  <a href="#historychapter" title="Chapter 2. History">
    Chapter 2</a>.
  </p>
  <p>
@@ -29399,7 +29079,7 @@ cutting edge of Unix.  Important additions included the
   <em>vi</em> visual editor, job control facilities for managing multiple foreground
 and background tasks from a single console, and improvements in
 signals (see
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>). By far the most important addition
 was to be TCP/IP
   networking, but though Berkeley got the contract to do it in 1980,
@@ -29411,7 +29091,7 @@ development. System III reworked the Version 7 terminals interface
 into a cleaner and more elegant form that was completely incompatible
 with the Berkeley enhancements.  It retained the older (non-resetting)
 semantics of signals (again, see
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>
   for discussion of this point).  The
 January 1983 release of System V Release 1
@@ -29440,7 +29120,7 @@ introduced some subtle incompatibilities with the ancestral Version
   The 1984 divestiture of the Bell operating companies and the
 beginnings of the Unix wars
   (see
-  <a href="historychapter.html" title="Chapter 2. History">
+  <a href="#historychapter" title="Chapter 2. History">
    Chapter 2</a>) significantly complicated matters.  Sun
 Microsystems
   was leading the workstation industry in a BSD direction; AT&amp;T was
@@ -30068,7 +29748,7 @@ remarkable level of stability and cross-vendor interoperation.
  </p>
  <p>
   In
-  <a href="generationchapter.html" title="Chapter 9. Generation">
+  <a href="#generationchapter" title="Chapter 9. Generation">
    Chapter 9</a>
   we discussed the value of pushing coding up to the highest possible
 level to minimize the effects of constant defect density.  Implicit in
@@ -30192,7 +29872,7 @@ to cope.
  <p>
   The first issue in programming for portability is your choice of
 implementation language.  All the major languages we surveyed in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>
   are highly portable
 in the sense that compatible implementations are available across all
@@ -30227,7 +29907,7 @@ are obsolete or close to it in 2003.
   C portability starts to be a more serious problem near IPC,
 threads, and GUI interfaces.  We discussed IPC and threads portability
 issues in
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>. The real practical problem is GUI
 toolkits.  A number of open-source GUI toolkits are universally
 portable across modern Unixes and to Windows and classic MacOS as well
@@ -30236,7 +29916,7 @@ code and documentation readily discoverable by Web search.  But none
 of them is shipped with all platforms, and (for reasons more legal
 than technical) none of these offers the native-GUI look and feel on
 all platforms.  We gave some guidelines for coping in
-  <a href="toolschapter.html" title="Chapter 15. Tools">
+  <a href="#toolschapter" title="Chapter 15. Tools">
    Chapter 15</a>.
  </p>
  <p>
@@ -30475,7 +30155,7 @@ actually checking for the existence of
   You can often use the open-source GNU
 autoconf(1)
 we surveyed in
-  <a href="toolschapter.html" title="Chapter 15. Tools">
+  <a href="#toolschapter" title="Chapter 15. Tools">
    Chapter 15</a>
   to
 handle portability issues, do system-configuration probes, and tailor
@@ -30580,7 +30260,7 @@ unexpected) from the labor of others.
   Let's suppose, for example, you are designing image-capture
 software for a digital camera.  Why write your own format for saving
 image bits or buy proprietary code when (as we noted in
-  <a href="textualitychapter.html" title="Chapter 5. Textuality">
+  <a href="#textualitychapter" title="Chapter 5. Textuality">
    Chapter 5</a>) there is a well-tested, full-featured
 library for writing PNGs in open source?
  </p>
@@ -30716,7 +30396,7 @@ program still in use.
 implementations of WYSIWYG tend to be broken in various ways —
 some superficial, some deep.  WYSIWYG document processors have the
 general problem with GUIs that we discussed in
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>
   ; the fact that you
   <em>can</em>
@@ -30975,7 +30655,7 @@ Workbench Tools
  <p>
   We discussed the Documenter's Workbench architecture and tools
 in
-  <a href="minilanguageschapter.html" title="Chapter 8. Minilanguages">
+  <a href="#minilanguageschapter" title="Chapter 8. Minilanguages">
    Chapter 8</a>
   as an
 example of how to integrate a system of multiple minilanguages.  Now
@@ -30983,18 +30663,9 @@ we return to these tools in their functional role as a typesetting
 system.
  </p>
  <p>
-  The
-  <em>troff</em> formatter interprets a
-presentation-level markup language.  Recent implementations like the
-GNU project's
-  groff(1)
-emit PostScript by default, though it is possible to get other forms
-of output by selecting a suitable driver.  See
-  <a href="ch18s03.html#troffexample1" title="Example 18.1. groff1 markup example.">
-   Example 18.1</a>
-  for several of the
-  <em>troff</em> codes you might encounter in document
-sources.
+  The <em>troff</em> formatter interprets a presentation-level markup language.  Recent implementations like the GNU
+  project's groff(1) emit PostScript by default, though it is possible to get other forms of output by selecting a
+  suitable driver.  See Example 18.1 for several of the <em>troff</em> codes you might encounter in document sources.
  </p>
  <div class="example">
   <p class="title">
@@ -31028,17 +30699,10 @@ Paragraph filling is back on.
 </pre>
  </div>
  <p>
-  troff(1)
-has many other requests, but you are unlikely to see most of them
-directly.  Very few documents are written in bare
-  <em>troff</em>.  It supports a macro facility, and
-half a dozen macro packages are in more or less general use.  Of
-these, the overwhelmingly most common is the
-man(7)
-macro package used to write Unix manual pages.  See
-  <a href="ch18s03.html#man_example" title="Example 18.2. man markup example.">
-   Example 18.2</a>
-  for a sample.
+  troff(1) has many other requests, but you are unlikely to see most of them directly.  Very few documents are written
+  in bare <em>troff</em>.  It supports a macro facility, and half a dozen macro packages are in more or less general
+  use.  Of these, the overwhelmingly most common is the man(7) macro package used to write Unix manual pages.  See
+  Example 18.2 for a sample.
  </p>
  <div class="example">
   <p class="title">
@@ -31172,7 +30836,7 @@ attempting the much more difficult job of generating PostScript
 themselves.  The
 xmlto(1)
 front end that we discussed as a shell-programming case study in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>
   uses this tactic; so does the XML-DocBook
 toolchain we'll examine later in this chapter.
@@ -31262,7 +30926,7 @@ large, complex technical documents.  It is alone among the markup
 formats used in the Unix community in being purely structural.  The
 xmlto(1)
 tool discussed in
-  <a href="languageschapter.html" title="Chapter 14. Languages">
+  <a href="#languageschapter" title="Chapter 14. Languages">
    Chapter 14</a>
   supports rendering to HTML, XHTML,
 PostScript, PDF, Windows
@@ -31403,9 +31067,7 @@ end combines with the information in your stylesheet to produce
 formatted output.
  </p>
  <p>
-  <a href="ch18s05.html#docfig1" title="Figure 18.1. Processing structural documents.">
-   Figure 18.1</a>
-  diagrams the whole process.
+   Figure 18.1 diagrams the whole process.
  </p>
  <div class="figure">
   <p class="title">
@@ -31491,13 +31153,8 @@ bash$ ls *.ps
 foo.ps
 </pre>
  <p>
-  To turn your documents into HTML or PostScript, you need an
-engine that can apply the combination of DocBook DTD and a suitable
-stylesheet to your document.
-  <a href="ch18s05.html#docfig2" title="Figure 18.2. Present-day XML-DocBook toolchain.">
-   Figure 18.2</a>
-  illustrates how
-the open-source tools for doing this fit together.
+  To turn your documents into HTML or PostScript, you need an engine that can apply the combination of DocBook DTD and a
+  suitable stylesheet to your document. Figure 18.2 illustrates how the open-source tools for doing this fit together.
  </p>
  <div class="figure">
   <p class="title">
@@ -31579,10 +31236,7 @@ problem.  The only trouble with this approach is that it doesn't work
 — usable, but with rough edges and missing features.
  </p>
  <p>
-  <a href="ch18s05.html#docfig3" title="Figure 18.3. Future XML-DocBook toolchain with FOP.">
-   Figure 18.3</a>
-  illustrates what the FOP toolchain looks
-like.
+   Figure 18.3 illustrates what the FOP toolchain looks like.
  </p>
  <div class="figure">
   <p class="title">
@@ -31887,7 +31541,7 @@ reference material, a tutorial manual, and a FAQ (Frequently Asked
 Questions) list.  You should have a website as well, to serve as a
 central point of distribution (see the guidelines on communication 
 in
-  <a href="opensourcechapter.html" title="Chapter 19. Open Source">
+  <a href="#opensourcechapter" title="Chapter 19. Open Source">
    Chapter 19</a>).
  </p>
  <p>
@@ -31900,7 +31554,7 @@ are invoked.
  <p>
   In your source code, include the standard metainformation files
 described in the
-  <a href="opensourcechapter.html" title="Chapter 19. Open Source">
+  <a href="#opensourcechapter" title="Chapter 19. Open Source">
    Chapter 19</a>
   section on open-source release
 practices, such as
@@ -31990,13 +31644,13 @@ will become more likely to turn up in a Web search.
  </blockquote>
  <p>
   We concluded
-  <a href="historychapter.html" title="Chapter 2. History">
+  <a href="#historychapter" title="Chapter 2. History">
    Chapter 2</a>
   by observing the largest-scale pattern in
 Unix's history; it flourished when its practices most closely
 approximated open source, and stagnated when they did not.  We then
 asserted in
-  <a href="reusechapter.html" title="Chapter 16. Reuse">
+  <a href="#reusechapter" title="Chapter 16. Reuse">
    Chapter 16</a>
   that
 open-source development tools tend to be of high quality.  We'll begin
@@ -32178,7 +31832,7 @@ patch(1)
 tool to pass around incremental changes.  Many projects (and all large
 ones) have network-accessible code repositories using version-control
 systems like CVS (recall the discussion in
-  <a href="toolschapter.html" title="Chapter 15. Tools">
+  <a href="#toolschapter" title="Chapter 15. Tools">
    Chapter 15</a>). Use of automated bug- and patch-tracking
 systems is also common.
  </p>
@@ -33067,12 +32721,8 @@ a subdirectory named
   <code>foo-0.23</code>.
  </p>
  <p>
-  <a href="ch19s02.html#tar_trick" title="Example 19.1. tar archive maker production.">
-   Example 19.1</a>
-  shows a makefile trick that,
-assuming your distribution directory is named “foobar”
-and SRC contains a list of your distribution files, accomplishes
-this.
+   Example 19.1 shows a makefile trick that, assuming your distribution directory is named “foobar” and SRC contains a
+   list of your distribution files, accomplishes this.
  </p>
  <div class="example">
   <p class="title">
@@ -33330,14 +32980,9 @@ number):
 /usr/lib/qt-${ver}/include      # Where you find header files
 </pre>
  <p>
-  With this organization, multiple versions can coexist.  Client
-programs have to specify the library version they want, but that's a
-small price to pay for not having the interfaces break on them.  This
-good practice avoids the notorious
-  <a href="ch03s02.html#dll_hell">
-   “DLL
-Hell”</a>
-  failure mode of Windows.
+  With this organization, multiple versions can coexist.  Client programs have to specify the library version they want,
+  but that's a small price to pay for not having the interfaces break on them.  This good practice avoids the notorious
+  <a href="#dll_hell"> “DLL Hell”</a> failure mode of Windows.
  </p>
  <h5 id="rpms">
   Under Linux, provide RPMs.
@@ -33492,7 +33137,7 @@ on the website include:
  </div>
  <p>
   Refer to the website examples in
-  <a href="reusechapter.html" title="Chapter 16. Reuse">
+  <a href="#reusechapter" title="Chapter 16. Reuse">
    Chapter 16</a>
   for examples of what a well-educated project
 website looks like.
@@ -33564,7 +33209,7 @@ their mailboxes.
  <p>
   See the section
   <em>Where Should I Look?</em> in
-  <a href="reusechapter.html" title="Chapter 16. Reuse">
+  <a href="#reusechapter" title="Chapter 16. Reuse">
    Chapter 16</a>
   for specifics on
 the major open-source archive sites.  You should release your package
@@ -33834,7 +33479,7 @@ simple.
 accidents have sometimes turned out to have essential utility.
 Consider as an example the ‘Silence is golden’ rule of
 Unix interface design we examined in
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>
   ; it began as an adaptation to slow
 teletypes, but continued because programs with terse output could be
@@ -33880,7 +33525,7 @@ these cases may provide some clues to how Unix might adapt itself to
 future technology shifts that we cannot yet anticipate.
  </p>
  <p>
-  <a href="historychapter.html" title="Chapter 2. History">
+  <a href="#historychapter" title="Chapter 2. History">
    Chapter 2</a>
   described
 the first of these changes: the rise of internetworking, from the
@@ -33888,7 +33533,7 @@ angle of cultural history, telling how
 TCP/IP
   brought the
 original Unix and ARPANET cultures together after 1980. In
-  <a href="multiprogramchapter.html" title="Chapter 7. Multiprogramming">
+  <a href="#multiprogramchapter" title="Chapter 7. Multiprogramming">
    Chapter 7</a>, the material on obsolescent IPC and
 networking methods such as System V
   STREAMS hints at the many false starts,
@@ -33934,7 +33579,7 @@ establish one through proprietary toolkits (like Motif) failed.  Today,
 in 2003, GTK and Qt contend with each other for the role.  While the
 debate on this question is not over in 2003, the persistence of
 different UI styles that we noted in
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>
   seems telling. New-school Unix design has
 kept the command line, and dealt with the tension between GUI and CLI
@@ -33966,7 +33611,7 @@ Linux
   Whether or not Linux ever does substantially better than this,
 the nature of the Unix community's response is already clear. We
 examined it in the study of Linux in
-  <a href="contrastchapter.html" title="Chapter 3. Contrasts">
+  <a href="#contrastchapter" title="Chapter 3. Contrasts">
    Chapter 3</a>.  It includes adopting a few technologies
 (such as XML) from elsewhere, and putting a lot of effort into
 naturalizing GUIs into the Unix world.  But underneath the themed GUIs
@@ -34172,8 +33817,7 @@ hack</a>.
   Plan 9 cleans up Unix, but only really adds one new concept
 (private namespaces) to its basic set of design ideas.  But are there
 serious problems with those basic design ideas? In
-  <a href="philosophychapter.html" title="Chapter 1. Philosophy">
-   Chapter 1</a>
+  <a href="#philosophychapter" title="Chapter 1. Philosophy">Chapter 1</a>
   we touched on
 several issues that Unix arguably got wrong.  Now that the open-source
 movement has put the design future of Unix back in the hands of
@@ -34275,15 +33919,12 @@ feature.
   The Unix experience proves that using a handful of metaphors as
 the basis for a framework is a powerful strategy (recall the
 discussion of frameworks and shared context in
-  <a href="complexitychapter.html" title="Chapter 13. Complexity">
-   Chapter 13</a>).  The visual metaphor at the heart of
+  <a href="#complexitychapter" title="Chapter 13. Complexity">Chapter 13</a>).  The visual metaphor at the heart of
 modern GUIs (files represented by icons, and opened by clicking which
 invokes some designated handler program, typically able to create and
 edit these files) has proven both successful and long-lived, exerting
 a strong hold on users and interface designers ever since Xerox
-PARC
-  pioneered it
-in the 1970s.
+PARC pioneered it in the 1970s.
  </p>
  <p>
   Despite considerable recent effort, in 2003 Unix still
@@ -34308,7 +33949,7 @@ file idea.
  </blockquote>
  <p>
   We quoted Brian Kernighan and Mike Lesk to similar effect in
-  <a href="interfacechapter.html" title="Chapter 11. Interfaces">
+  <a href="#interfacechapter" title="Chapter 11. Interfaces">
    Chapter 11</a>.  But the inquiry can't stop with
 indicting the GUI, because with all its flaws there is tremendous
 demand for GUIs from end users.  Supposing we could get the metaphor
@@ -34932,7 +34573,7 @@ difficult way.
  </p>
  <p>
   In
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>
   we
 discussed the importance of throwing away limiting assumptions and
@@ -34957,7 +34598,7 @@ insularity as well.  One is the convergence that seems to be going on
 between the Unix/open-source community and the movement called
 “agile programming”.<sup><a href="#ftn.id3019774" id="id3019774">[164]</a></sup>
   We noted in
-  <a href="modularitychapter.html" title="Chapter 4. Modularity">
+  <a href="#modularitychapter" title="Chapter 4. Modularity">
    Chapter 4</a>
   that Unix programmers have seized happily
 on the concept of refactoring, one of the preoccupations of the
@@ -35134,7 +34775,7 @@ text are defined here.
       A GUI workbench for developing code, featuring facilities like
    symbolic debugging, version control, and data-structure browsing.
    These are not commonly used under Unix, for reasons discussed in
-      <a href="toolschapter.html" title="Chapter 15. Tools">
+      <a href="#toolschapter" title="Chapter 15. Tools">
        Chapter 15</a>.
      </p>
     </dd>
@@ -35236,7 +34877,7 @@ text are defined here.
    Wide Web Consortium's standard and recommended format for bitmap
    graphics images. An elegantly designed binary graphics format
    described in
-      <a href="textualitychapter.html" title="Chapter 5. Textuality">
+      <a href="#textualitychapter" title="Chapter 5. Textuality">
        Chapter 5</a>.
      </p>
     </dd>
@@ -35371,7 +35012,7 @@ available.
 			<span class="publisher">Addison-Wesley.</span>
 			<span class="isbn">ISBN 0-201-65788-0.</span>
 			The third essay in this book, “Data Structures Programs”, argues a case similar to that of
-			<a href="generationchapter.html" title="Chapter 9. Generation"> Chapter 9</a> with
+			<a href="#generationchapter" title="Chapter 9. Generation"> Chapter 9</a> with
 			Bentley's characteristic eloquence.  Some of the book is
 			<a href="http://www.cs.bell-labs.com/cm/cs/pearls/"> available on the Web</a>.
 		</li>
