@@ -8,7 +8,7 @@ readability; [read it here][taoup-mine].
 
 ---
 
-Recently I wanted to look up a quote for an article I was writing, and I was
+I recently wanted to look up a quote for an article I was writing, and I was
 fairly sure I had read it in *The Art of Unix Programming*. Eric S. Raymond
 (esr) has [kindly published it online][taoup], but it's difficult to search as
 it's distributed over many different pages, and the formatting is not exactly
