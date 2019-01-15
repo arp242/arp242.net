@@ -6,7 +6,7 @@ title: "Source code shame"
 I suspect that that many companies don't publish their source code not because
 they're against the idea of it, but because they're ashamed of the quality.
 Publishing the source – either as open source of ‘source available’ – will mean
-showing your entire customer base what a bloody mess is is.
+showing your entire customer base what a bloody mess it is.
 
 With a closed code base, you can fix most issues "silently" without too many
 customers noticing there was actually a really embarrassing bug or security
