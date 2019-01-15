@@ -2917,8 +2917,8 @@ In the Unix world they come straight from experience and lead to
 specific prescriptions, some of which we've already developed
 above. Here's a by no means exhaustive list:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      Everything that can be a source- and
@@ -4837,8 +4837,8 @@ in JCL.
 and/or process control is difficult and inflexible, you'll usually see
 all of the following consequences:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      Monster monoliths become a more natural way of programming.
@@ -5021,8 +5021,8 @@ more detail why this is a problem in
    Chapter 5</a>.  For now it's sufficient to note the
 following consequences:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      Even if a command-line interface, scripting, and
@@ -5073,8 +5073,8 @@ CLI facilities are a less obvious but equally severe deficit.
   If the CLI facilities of an operating system are weak or
 nonexistent, you'll also see the following consequences:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      Programs will not be designed to cooperate with each other in
@@ -5321,8 +5321,8 @@ Though X windows
 verbose CLI remains the most important stylistic influence on program
 design.  This has the following major implications:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      The frequency with which people use command-line functions — the more voluminously you have to type, the less you want to 
@@ -5654,8 +5654,8 @@ supported.
  <p>
   There are other consequences as well:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      The GUI facilities coexist uneasily with the weak, 
@@ -5688,8 +5688,8 @@ Unix.  Scripting facilities are weak, and the OS makes extensive use
 of binary file formats. In addition to the expected consequences we
 outlined earlier are these:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      Most programs cannot be scripted at all.  Programs rely on
@@ -5720,8 +5720,8 @@ properties registry rather than being scattered through numerous
 dotfiles and system data files as in Unix.  This also has consequences
 throughout the design:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      The registry makes the system completely non-orthogonal.
@@ -7085,8 +7085,8 @@ of your code without changing the core algorithms.  Data duplication
 sometimes appears to be forced on you.  But when you see it, here are
 some valuable questions to ask:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      If you have duplicated data in your code because it has to
@@ -7126,8 +7126,8 @@ real-world system to be modeled.
   From deeper within the Unix tradition, we can add some of our
 own corollaries of the SPOT rule:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      Are you duplicating data because you're caching intermediate
@@ -7227,8 +7227,8 @@ the central algorithm perfectly.  Other well-known examples of
 this special kind of clarity achieved through a strong central
 algorithm abound in Unix:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      The
@@ -8006,8 +8006,8 @@ discuss object-oriented languages in
 from good design.  Here are some questions to ask about any code you 
 work on that might help you improve its modularity:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      How many global variables does it have?  Global variables are
@@ -9158,8 +9158,8 @@ run-control files, but you should notice that it will share some of
 these same rules (especially about the lexical level, the rules by
 which characters are assembled into tokens).
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      <em>
@@ -11049,8 +11049,8 @@ variable-naming conventions.  These qualities have much more to do
 with code properties that are less obvious to inspection.  Here are a
 few to think about:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      What is the maximum static depth of your procedure-call
@@ -11254,8 +11254,8 @@ programs that could be driven by scripts and test harnesses.
   Writing a textualizer or browser is a valuable exercise for at
 least four reasons:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      <em>You gain an excellent learning experience.</em>
@@ -11534,8 +11534,8 @@ system encourages us to break our programs into simpler subprocesses,
 and to concentrate on the interfaces between these subprocesses. It
 does this in at least three fundamental ways:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      by making process-spawning cheap;
@@ -14543,8 +14543,8 @@ book.<sup><a href="#ftn.id2934079" id="id2934079">[84]</a></sup>
   Despite its complexity, XSLT really is a minilanguage.  It
 shares important (though not universal) characteristics of the breed:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      A restricted ontology of types, with (in particular) no analog 
@@ -17212,8 +17212,8 @@ does not have a built-in pager, or an option to invoke it).
   Here are some more general questions to consider whenever you
 find yourself thinking about adding a configuration option:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      Can I leave this feature out?  Why am I
@@ -17269,8 +17269,8 @@ problems.
   Classically, a Unix program can look for control information in
 five places in its startup-time environment:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      Run-control files under
@@ -19084,8 +19084,8 @@ interface-design problems.
   After startup, programs normally get input or commands from the
 following sources:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      Data and commands presented on the program's standard
@@ -20541,8 +20541,8 @@ interfaces led them to propose the
   pattern as an archetype for
 GUIs.
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      The “model” is what in the Unix world is usually
@@ -22430,8 +22430,8 @@ ancestry in philosophy.
 studies.  It will be helpful to bear in mind a set of benchmark
 tasks as we examine these designs:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      <em>Plain-text editing.</em>
@@ -22480,8 +22480,8 @@ editor.
 subprocesses that persist and maintain state between editor commands.
 This capability, when present, has powerful consequences:
     </p>
-    <div class="itemizedlist">
-     <ul type="circle">
+    <div>
+     <ul>
       <li>
        <p>
         It's possible to drive a version-control system
@@ -24516,8 +24516,8 @@ those programs.  Tcl had its first general public release in
   Some facilities built on top of Tcl have achieved wide use outside
 the Tcl community itself. The two most important of these are:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      The Tk toolkit, a kinder and gentler X interface that makes it
@@ -25089,8 +25089,8 @@ impossible.<sup><a href="#ftn.id2977747" id="id2977747">[127]</a></sup>
   Freenet developers envision the
 following applications:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      Uncensorable dissemination of controversial information: Freenet
@@ -26386,8 +26386,8 @@ application-code generator.  What makes it Unixy in spirit are the
 following features, which most GUI builders (especially most
 proprietary GUI builders) don't have:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      Rather than being glued together as one monster
@@ -28374,8 +28374,8 @@ precisely because they signal credibility.
   Here are some examples of what Web pages associated with
 high-quality open-source software look like:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      <a href="http://www.gimp.org/">
@@ -28669,8 +28669,8 @@ community as an articulation of the social contract among open-source
 developers. Its constraints on licensing impose the following
 requirements:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      An unlimited right to copy be granted.
@@ -30363,8 +30363,8 @@ mostly version-skew problems between JDK 1.1 and the older AWT GUI
 toolkit (on the one hand) and JDK 1.2 with the newer Swing GUI toolkit.
 There are several important reasons for these:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      Sun's AWT design was so deficient that it had to be replaced 
@@ -33456,8 +33456,8 @@ techniques.
 around your project, it should have a website.  Standard things to have
 on the website include:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      The project charter (why it exists, who the audience is, etc.).
@@ -33573,8 +33573,8 @@ to these.
  <p>
   Other important locations include:
  </p>
- <div class="itemizedlist">
-  <ul type="disc">
+ <div>
+  <ul>
    <li>
     <p>
      The
