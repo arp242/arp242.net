@@ -51,7 +51,7 @@
 			top: 0;
 			overflow-y: scroll;
 			height: 100%;
-			width: 500px;
+			max-width: 500px;
 			z-index: 10;
 			font-size: 16px;
 		}
@@ -59,11 +59,21 @@
 
 		#toc-button { display: none; }
 		.toc-fixed #toc-button {
-			background-color: #ffe;
-			display: block;
+			/* It's on the left because position: fixed is always relative to the document.
+			 * I'd prefer to put it on the right, but doing that well that works
+			 * on all screen sizes is a bit tricky.
+			 * So I'm lazy for now, and just put it on the left...
+			 */
 			position: fixed;
 			top: 0;
-			left: 400px;
+			left: 0;
+
+			border-right: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			border-radius: 2px;
+
+			background-color: #ffe;
+			display: block;
 			font-size: 100px;
 			cursor: pointer;
 			width: 90px;
