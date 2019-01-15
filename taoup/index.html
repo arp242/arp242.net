@@ -88,6 +88,7 @@
 			display: inline-block;
 			width: 100%;
 			padding-left: 5px;
+			margin-left: -5px;
 		}
 
 		#toc .active {
@@ -36074,6 +36075,7 @@ make his purr into a roar”.
 			var links = toc.getElementsByTagName('a'),
 				active = null;
 
+			window.headers = headers;
 			var scroll = function(e) {
 				// Don't run this too often.
 				window.removeEventListener('scroll', scroll);
@@ -36081,8 +36083,9 @@ make his purr into a roar”.
 					window.addEventListener('scroll', scroll, false)
 				}, 100);
 
+				console.log(e);
 				for (var i=0; i<headers.length; i++) {
-					if (headers[i].offsetTop >= e.pageY) {
+					if (headers[i].offsetTop >= window.scrollY) {
 						for (var j=0; j<links.length; j++) {
 							if (links[j].hash === '#' + headers[i].id) {
 								if (active) {
