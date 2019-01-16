@@ -35,6 +35,10 @@
 			border-collapse: collapse;
 		}
 
+		@media (max-width: 46rem) {
+			table { word-break: break-all }
+		}
+
 		.center { text-align: center; }
 
 		.author { text-align: center; }
@@ -74,11 +78,11 @@
 
 			background-color: #ffe;
 			display: block;
-			font-size: 100px;
+			font-size: 65px;
 			cursor: pointer;
-			width: 90px;
-			height: 90px;
-			line-height: 90px;
+			width: 60px;
+			height: 60px;
+			line-height: 60px;
 			text-align: center;
 			vertical-align: middle;
 			z-index: 20;
@@ -93,8 +97,13 @@
 
 		.toc-collapsed {
 			overflow: hidden;
-			width: 90px;
-			height: 90px;
+			width: 60px;
+			height: 60px;
+		}
+
+		@media (max-width: 46rem) {
+			.toc-fixed #toc-button { width: 30px; height: 30px; font-size: 35px; line-height: 30px; }
+			.toc-collapsed { width: 30px; height: 30px; }
 		}
 
 		#toc a {
@@ -164,7 +173,7 @@
 		blockquote:after {
 			content: "”";
 			position: absolute;
-			right: -30px;
+			right: -20px;
 			bottom: -5px;
 			color: #ccc;
 			font-size: 75px;
