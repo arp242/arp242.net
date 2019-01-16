@@ -39,7 +39,7 @@ reason, as something like this will "work" just fine:
 Except of course if that `else` branch is entered. It's easy to typo stuff, or
 mix stuff up.
 
-In Go, both of these problems are less of a concern. It has a good static type
+In Go, both of these problems are less of a concern. It has a static type
 system, and the focus is on simple straightforward code that is easy to
 comprehend. Even for a number of dynamic languages there are optional typing
 systems (function annotations in Python, TypeScript for JavaScript).
