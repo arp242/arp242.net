@@ -83,7 +83,7 @@ What you could do instead is to install a [custom error handler][err-h] to throw
 an exception:
 
 	set_error_handler(function($errno, $errstr, $errfile, $errline) {
-		throw new ErrorException($errstr);
+		throw new ErrorException('Error!');
 	});
 
 	try {
