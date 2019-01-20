@@ -1,33 +1,34 @@
 ---
 layout: post
 title: "PHP’s fopen() is broken"
+updated: 20 Jan 2019
 ---
 
-Yes, I know that “bashing PHP” is *sooooo 2010*. But even now many people don’t
-seem to fully realize the limitations and problems of this language.
+I know that “bashing PHP” is *so 2010*. But even now many people don’t seem to
+fully realize the limitations and problems of this language.
 
 There have been some improvements in the last few years (the sort of
 improvements that other languages have had for ages), but some problems still
 remain. Arguably the largest is the absolutely abysmal state of the standard
-library. Rather than do a [Gish gallop][gish] I’ll only focus on one basic core
+library. Rather than do a [Gish gallop][gish] I’ll focus on one basic core
 function: [`fopen()`][php-fopen].
 
 Lack of errors
 --------------
 
 On errors `fopen()` simplistically returns boolean `False` and emits an
-`E_WARNING` error; the problem here is that **there is no way to figure out what
-went wrong**.
+`E_WARNING` error; the problem here is that *there is no way to figure out what
+went wrong*.
 
-In C, you can use the `errno` variable to check what went wrong.  `EEXISTS`
+In C, you can use the `errno` variable to check what went wrong. `EEXISTS`
 indicates the path already exists, `EACCESS` indicates you don’t have
-permission, `ELOOP` indicates there are too many syminks, and so forth (there
-are many more, the [POSIX specification for `fopen()` has a list][c-fopen]).
+permission, `ELOOP` indicates there are too many syminks, and so forth. see
+[POSIX for a full list][c-fopen].
 
-This can be very useful. For example, for a `ENAMETOOLONG`, you could trim the
-pathname and try again, for `EEXISTS`, you could try adding `(1)` to the
-filename, etc. In other words: you can do something sane, rather than quit and
-say “an error occurred, unable to proceed”.
+This can be very useful. On an `ENAMETOOLONG` error you could trim the pathname
+and try again, for `EEXISTS`, you could try adding `(1)` to the filename, etc.
+In other words: you can do something sane, rather than quit and say “an error
+occurred, have a nice day”.
 
 For some algorithms, these errors are *required* to work properly. If you want
 to have a `mktemp()` with more features than the default function PHP offers,
@@ -57,8 +58,8 @@ can do this. For example in Ruby we use exceptions:
 	  # Or maybe try a different filename?
     end
 
-All other languages that I know work the same, either by exceptions (most modern
-languages), or by a return value or special `errno` variable (C, Lua, Go, etc.).
+All other languages that I know work the same, either by exceptions, or by a
+return value or special `errno` variable.
 
 ### Exceptions
 
@@ -78,26 +79,25 @@ Will still give you:
 
 And PHP will *continue happily* after this error as if nothing happened. Yikes!
 
-What you could do instead is to install a custom error handler to throw an
-Exception:
+What you could do instead is to install a [custom error handler][err-h] to throw
+an exception:
 
 	set_error_handler(function($errno, $errstr, $errfile, $errline) {
-		throw new ErrorException('error');
+		throw new ErrorException($errstr);
 	});
 
 	try {
-		$fp = fopen('/etc/shadow', 'rz');
+		$fp = fopen('/etc/shadow', 'r');
 	}
 	catch (Exception $exc) {
 		print("Error!\n");
 	}
 
 But this requires modifying the way PHP behaves. In some scenarios this is okay,
-but sometimes it’s more tricky (in small support scripts, for example), so we
-can do:
+but sometimes it’s more tricky (in libraries, for example), so we can do:
 
 	# The @ suppresses printing the error message.
-	$fp = @fopen('/etc/shadow', 'rz');
+	$fp = @fopen('/etc/shadow', 'r');
 	if (!$fp) {
 		$err = error_get_last();
 		throw new Exception($err['message']);
@@ -111,7 +111,7 @@ So what we should write, is:
 
 	try {
 		$fp = null;
-		$fp = @fopen('/etc/shadow', 'rz');
+		$fp = @fopen('/etc/shadow', 'r');
 	}
 	catch (Exception $exc) { }
 
@@ -128,13 +128,12 @@ mentioning:
 > Many fatal and recoverable fatal errors have been converted to exceptions in
 > PHP 7.
 
-Great, so one inconsistent and confusing mechanism is replaced with another
-inconsistent and confusing mechanism.
+Quite a few lower-level functions – such as `fopen()` – have not been converted.
 
 Opening directories
 -------------------
 
-Another brain-dead C copy is that you can `fopen()` directories:
+Another curious copy of C behaviour is that you can `fopen()` directories:
 
 > fopen — Opens file or URL
 >
@@ -166,9 +165,7 @@ Wait, what?! Let’s check this:
 	var_dump(flock($fp, LOCK_EX));
 	# true
 
-So you don’t even get warnings...
-
-But on mode `w` you get an error:
+Not even a warning; but on mode `w` you get an error:
 
 	$fp = fopen('/etc', 'w');
 	PHP Warning:  fopen(/etc): failed to open stream: Is a directory in php shell code on line 1
@@ -197,7 +194,7 @@ behaviour *more* high-level than PHP’s.
 Magic file objects
 ------------------
 
-`fopen()` returns a ‘magic’ ‘file object’, this:
+`fopen()` returns a ‘magic file object’, this:
 
 	var_dump(fopen('/etc/passwd', 'r'));
 
@@ -219,9 +216,8 @@ In PHP, everyone will have to invent their own API.
 Wrappers
 --------
 
-In a drunken bout of featuritis someone thought it would be a good feature to
-add “wrappers” to `fopen()` so you can use it to download files from HTTP,
-FTP, open archives, and so forth.
+`fopen()` supports the concept of “wrappers” so you can use it to download files
+from HTTP, FTP, open archives, and so forth.
 
 This may or may not work, depending on the value of `allow_url_fopen`. Every PHP
 installation behaves different!
@@ -247,8 +243,8 @@ remote code vulnerability[^1].
 What about the rest of the standard library?
 --------------------------------------------
 
-One PHP fan might reply to this article with something along the lines of: “so
-fopen may have serious shortcomings, but that’s only one function out of
+One PHP proponent might reply to this article with something along the lines of:
+“so fopen may have serious shortcomings, but that’s only one function out of
 thousands!”
 
 Well, yes, but many functions in PHP suffer from similar problems (and some,
@@ -260,21 +256,25 @@ things.
 Conclusion
 ---------
 
-PHP has made some decent progress in the area of language features (we can do
-`function_call()[1]`, woohoo!), but I believe the largest problem always has
-been – and continues to be – the lack of quality in the standard library. I’ve
-used `fopen()` as a single example here, but I could have used many others.  
+PHP has made some decent progress in the area of language features, but I
+believe the largest problem always has been – and continues to be – the lack of
+quality in the standard library. I’ve used `fopen()` as a single example here,
+but I could have used many others.
 
 The lack of good errors is a common problem, not only with `fopen()`. Other
 problems include standard library functions missing features, leaving you to
-re-implement them yourself (this is probably why PHP frameworks are so popular,
-they attempt to fix much of the standard library).
+re-implement them yourself (this is why PHP frameworks are so popular, they
+attempt to fix much of the standard library).
 
-All of this makes that PHP is not suitable for reliable & robust systems
+All of this makes that PHP is unsuitable for reliable and robust systems
 programming, or, indeed, for any sort of programming at all. Often, the
 counterparts in C are actually better, and if C has features that your
 ‘high-level’ programming language does not have, then I think you’re probably
-doing something wrong…
+doing something wrong.
+
+"This is not PHP's target environment" is a bit of a weak excuse for not doing
+things correct. It's not a whole lot more effect, so why *not* do it. Besides, a
+lot of these issues affect web programming too.
 
 Can it be fixed? Maybe. But changing public APIs is difficult. There is a lot of
 code that assumes the existing API, and if you break too much, It doesn’t matter
@@ -288,5 +288,6 @@ a [sunk-cost fallacy](http://rationalwiki.org/wiki/Sunk_cost).
 [gish]: http://www.urbandictionary.com/define.php?term=Gish%20Gallop
 [php-fopen]: http://php.net/manual/en/function.fopen.php
 [proc_open]: http://php.net/manual/en/function.proc_open.php
-[c-fopen]: http://pubs.opengroup.org/onlinepubs/9699919799/functions/fopen.html
+[c-fopen]: http://pubs.opengroup.org/onlinepubs/9699919799/functions/fopen.html#tag_16_155_05
 [mktemp]: http://arp242.net/weblog/Creating_temporary_files_in_PHP.html
+[err-h]: http://php.net/manual/en/function.set-error-handler.php
