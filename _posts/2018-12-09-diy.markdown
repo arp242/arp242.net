@@ -49,7 +49,7 @@ universe without Free Software or Open Source I would probably have written the
 same software, just for my personal needs.
 
 The term "Open source" is a broad catch-all term, which includes Free Software,
-"Source Provided Software"[^2], **DIY Software**, and probably a few more. It is
+"Source Provided Software",[^2] **DIY Software**, and probably a few more. It is
 my suspicion that the majority of open source projects aimed at developers
 (libraries, programming tools, etc.) is DIY Software, even if it isn't
 explicitly stated.

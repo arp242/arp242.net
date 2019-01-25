@@ -9,7 +9,7 @@ str, not bytes with sys.stdout.write()</a>.</em>
 
 Python 3 handles strings a bit different. Originally there was only one type for
 strings: `str`. When unicode gained traction in the '90s the new `unicode` type
-was added to handle Unicode without breaking pre-existing code[^1]. This is
+was added to handle Unicode without breaking pre-existing code.[^1] This is
 effectively the same as `str` but with multibyte support.
 
 In Python 3 there are two different types:

@@ -236,7 +236,7 @@ But much more seriously, it can be a pretty big security problem. You should of
 course always validate and/or sanitize user input, but it’s a fact of life that
 occasionally attackers find creative ways to bypass this. These stream wrappers
 will escalate the severity of these sort of attacks, not infrequently to a
-remote code vulnerability[^1].
+remote code vulnerability.[^1]
 
 [^1]: This is an even bigger problem with `include()` and friends, where these
 	  wrappers *also* work. `include($malicious_input)` will “upgrade” an

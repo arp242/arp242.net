@@ -83,7 +83,7 @@ lines? It is difficult to see "where" in the file you are because it may be off
 the screen. You’ll need to scroll up, but then you need to keep track of the
 indentation, which can be pretty hard even with indentation guides, especially
 since 2-space indentation is the norm and [tab indentation is
-forbidden][faq][^2].
+forbidden][faq].[^2]
 
 And accidentally getting the indentation wrong often isn't an error; it will
 often just deserialize to something you didn't intend. Happy debugging!

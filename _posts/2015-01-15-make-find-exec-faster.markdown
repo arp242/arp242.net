@@ -16,11 +16,11 @@ Here’s a little `find` trick that few people seem to know:
 
 	# Run the first command again, to make sure we’re not being biased by fs
     # cache or got some fluke
-	[~]% time find . -type f -exec stat {} \; > /dev/null
+	$ time find . -type f -exec stat {} \; > /dev/null
 			13.40s real             3.67s user              9.51s sys
 
 	# FYI...
-	[~]% find . -type f | wc -l
+	$ find . -type f | wc -l
 	    2641
 
 That’s quite a large difference! All we did was swap the `;` for a `+`.
@@ -55,7 +55,7 @@ Most contemporary systems have it set much higher though; Linux (3.16, x86\_64)
 defines `ARG_MAX` as 131072 (128k), while FreeBSD (10, i386) gives it as 262144
 (256k).
 
-Let’s verify this with [`truss`][truss][^1]:
+Let’s verify this with [`truss`][truss]:[^1]
 
 	# Amount of files we have
 	$ find . -type f | wc -l
