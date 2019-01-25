@@ -1,0 +1,41 @@
+---
+layout: default
+title: arp242.net
+---
+
+<div id="to-home"><a href="/">Home</a></div>
+<div id="home">
+	<p>
+		This is the archive of less interesting stuff.
+		I archive things based on “interestingness” to the general reader, rather than age.
+		“How to detect automatically generated emails” is useful if you’re creating an email system, but that’s
+		not most readers so I archived it.
+		Archived doesn’t necessarily mean old (although some is).
+	</p>
+
+	<h1 id="writings">Writings</h1>
+	<ul>{% for p in site.posts %}
+		{% if p.archive %}<li{% if p.standout %} class="s"{% endif %}><a href="{{ p.url }}">{% if p.path contains '_drafts' %}DRAFT: {% endif %}{{ p.title }}</a></li>{% endif %}{% endfor %}
+	</ul>
+
+	<h1 id="code">Code projects</h1>
+	<ul>
+		<li><a href="/code/frederick/">frederick</a>             – Web based feed reader.</li>
+		<li><a href="/code/imgzoom/">imgzoom</a>                 – Simple JavaScript image zoomer.</li>
+		<li><a href="/code/markdown-wiki/">markdown-wiki</a>     – Simple wiki.</li>
+		<li><a href="/code/nordavind/">nordavind</a>             – Web based audio player.</li>
+		<li><a href="/code/operapass/">operapass</a>             – Read opera password files (a.k.a. &#34;the wand&#34;).</li>
+		<li><a href="/code/pkg-plist/">pkg-plist</a>             – Automatically make a <code>pkg-plist</code> for a FreeBSD port.</li>
+		<li><a href="/code/pkg_sanity/">pkg_sanity</a>           – Some basic sanity checks for FreeBSD packages.</li>
+		<li><a href="/code/spamdb-curses/">spamdb-curses</a>     – Curses interface for OpenBSD&#39;s <code>spamdb(8)</code>.</li>
+	</ul>
+
+	<h2 id="vim">Vim stuff</h2>
+	<ul>
+		<li><a href="/code/auto_autoread.vim/">auto_autoread.vim</a>   – Automatically read files when they&#39;ve changed.</li>
+		<li><a href="/code/complete_email.vim/">complete_email.vim</a> – Completion of email addresses.</li>
+		<li><a href="/code/password-bunny/">password-bunny</a>         – Manage passwords with Vim.</li>
+		<li><a href="/code/powersearch.vim/">powersearch.vim</a>       – Several search-related enhancements.</li>
+	</ul>
+</div>
+

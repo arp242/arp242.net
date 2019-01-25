@@ -7,7 +7,9 @@ updated: 27 Dec 2017
 <div class="hatnote">Discussions:
 <a href="https://news.ycombinator.com/item?id=17358103">Hacker News</a>,
 <a href="https://lobste.rs/s/dwjgn1/yaml_probably_not_so_great_after_all">Lobsters</a>,
-<a href="https://www.reddit.com/r/programming/comments/8shzcu/yaml_probably_not_so_great_after_all/">/r/programming</a>
+<a href="https://www.reddit.com/r/programming/comments/8shzcu/yaml_probably_not_so_great_after_all/">/r/programming</a>.
+Feedback:
+<a href="https://github.com/Carpetsmoker/arp242.net/issues/6">#6</a>.
 </div>
 
 I previously wrote [why using JSON for human-editable configuration files is a

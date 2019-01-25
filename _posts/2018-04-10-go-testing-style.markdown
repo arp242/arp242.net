@@ -5,7 +5,7 @@ updated: 31 Jul 2018
 ---
 
 <div class="hatnote">Discussions:
-<a href="https://www.reddit.com/r/golang/comments/93jjrs/go_testing_style_guide/">/r/golang</a>
+<a href="https://www.reddit.com/r/golang/comments/93jjrs/go_testing_style_guide/">/r/golang</a>.
 </div>
 
 A small (opinionated) style guide for writing Go tests. There is much more to be

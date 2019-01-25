@@ -6,7 +6,7 @@ layout: post
 <div class="hatnote">Discussions:
 <a href="https://lobste.rs/s/vghl4j/shell_scripting_trap">Lobsters</a>,
 <a href="https://www.reddit.com/r/programming/comments/968sbv/the_shell_scripting_trap/">/r/programming</a>,
-<a href="https://www.reddit.com/r/commandline/comments/96i08f/the_shell_scripting_trap/">/r/commandline</a>
+<a href="https://www.reddit.com/r/commandline/comments/96i08f/the_shell_scripting_trap/">/r/commandline</a>.
 </div>
 
 Shell scripting is great. It is amazingly simple to create something very

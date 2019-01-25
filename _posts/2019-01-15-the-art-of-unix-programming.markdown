@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Art of Unix Programming, reformatted"
+archive: true
 ---
 
 tl;dr: I reformatted Eric S. Raymond's *The Art of Unix Programming* for

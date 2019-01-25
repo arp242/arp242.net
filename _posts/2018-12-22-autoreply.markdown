@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "How to detect automatically generated emails"
+archive: true
 ---
 
 When you send out an auto-reply from an email system you want to take care to

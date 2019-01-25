@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Minimal Apache configuration for subversion
+archive: true
 ---
 
 If you want to use subversion over HTTP you have little choice but to use

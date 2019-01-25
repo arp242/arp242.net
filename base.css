@@ -81,6 +81,16 @@ body {
 #home ul { list-style: none; padding-left: 1rem; }
 #home ul li a:first-child { display: inline-block; min-width: 11em; vertical-align: top; }
 
+#home li { position: relative; }
+#home li.s:before { /* standout */
+	content: "☞";
+	display: inline;
+	position: absolute;
+	left: -1.3em;
+	font-size: 2em;
+	text-shadow: 0 0 2px rgba(0,0,0,.2);
+}
+
 @media (max-width: 46rem) {
 	#home ul      { list-style: disc; }
 	#home ul li   { margin-bottom: 0.5rem; }
@@ -165,7 +175,12 @@ hr:after  { margin-left: 0.6em;  content: "❧"; }
 #page h2 { border-bottom: 1px solid #3a6ea5; }
 #page h1, #page h2, #page h3 { color: #3a6ea5; position: relative; }
 h1 code, h2 code, h3 code { color: #3a6ea5; background-color: transparent; }
-h1 a, h2 a, h3 a {
+h1 span {
+	font-size: 14px;
+	font-weight: normal;
+}
+
+h2 a, h3 a {
 	position: absolute;
 	left: -1em;
 	color: #3a6ea5;

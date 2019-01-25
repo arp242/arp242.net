@@ -4,6 +4,11 @@ title: "PHP’s fopen() is broken"
 updated: 20 Jan 2019
 ---
 
+<div class="hatnote">
+Discussions:
+<a href="https://www.reddit.com/r/lolphp/comments/agam6a/phps_fopen_is_broken_2017/">/r/lolphp</a>.
+</div>
+
 I know that “bashing PHP” is *so 2010*. But even now many people don’t seem to
 fully realize the limitations and problems of this language.
 

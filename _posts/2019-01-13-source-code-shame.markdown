@@ -3,6 +3,11 @@ layout: post
 title: "Source code shame"
 ---
 
+<div class="hatnote">
+Discussions:
+<a href="https://www.reddit.com/r/programming/comments/ag2h51/testing_isnt_everything/ee3f3aw/">/r/programming</a>.
+</div>
+
 I suspect that that many companies don't publish their source code not because
 they're against the idea of it, but because they're ashamed of the quality.
 Publishing the source – either as open source of ‘source available’ – will mean
