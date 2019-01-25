@@ -39,6 +39,7 @@ layout: code
 title: "{{.Name}}"
 link: "{{.LinkName}}"
 last_version: "{{.LastVersion}}"
+redirect: "https://github.com/Carpetsmoker/{{.LinkName}}"
 ---
 
 {{.READMEContents}}`))

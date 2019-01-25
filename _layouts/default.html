@@ -9,13 +9,17 @@
 	<link rel="canonical" href="https://arp242.net{{ page.url }}">
 
 	<style>
+{% include /hello-css/base.css %}
+{% include /hello-css/blockquote.css %}
+{% include /hello-css/permalink.css %}
+{% include /hello-css/postscript.css %}
 {% include /base.css %}
 	</style>
 </head>
 
 <body>
 	{{ content }}
-	<div id="disclaimer">
+	<div class="center" id="disclaimer">
 		Copyright © 2010–2018 Martin Tournoij &lt;martin@arp242.net&gt;<br>
 		This document is licensed under a
 		<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">cc-by 4.0 license</a>.

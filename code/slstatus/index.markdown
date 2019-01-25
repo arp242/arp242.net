@@ -3,6 +3,7 @@ layout: code
 title: "slstatus"
 link: "slstatus"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/slstatus"
 ---
 
 This is my configuration of [`slstatus`](https://tools.suckless.org/slstatus/).

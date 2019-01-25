@@ -3,6 +3,7 @@ layout: code
 title: "softwrap.vim"
 link: "softwrap.vim"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/softwrap.vim"
 ---
 
 Unobtrusively highlight column 81 to indicate that we may have to wrap stuff −

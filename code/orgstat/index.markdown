@@ -3,6 +3,7 @@ layout: code
 title: "orgstat"
 link: "orgstat"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/orgstat"
 ---
 
 List git author statistics for an entire GitHub organisation.

@@ -3,6 +3,7 @@ layout: code
 title: "robots"
 link: "robots"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/robots"
 ---
 
 [![This project is considered finished](https://img.shields.io/badge/Status-finished-green.svg)](https://arp242.net/status/finished)

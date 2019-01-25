@@ -3,6 +3,7 @@ layout: code
 title: "pkg-plist"
 link: "pkg-plist"
 last_version: "version_1.4"
+redirect: "https://github.com/Carpetsmoker/pkg-plist"
 ---
 
 [![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://arp242.net/status/archived)

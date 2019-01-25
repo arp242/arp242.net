@@ -3,6 +3,7 @@ layout: code
 title: "markdown-wiki"
 link: "markdown-wiki"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/markdown-wiki"
 ---
 
 **markdown-wiki** or **mdwiki** is a basic wiki.

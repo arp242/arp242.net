@@ -3,6 +3,7 @@ layout: code
 title: "nordavind"
 link: "nordavind"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/nordavind"
 ---
 
 Nordavind is a web based audio player.

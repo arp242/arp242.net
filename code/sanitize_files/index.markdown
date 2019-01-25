@@ -3,6 +3,7 @@ layout: code
 title: "sanitize_files"
 link: "sanitize_files"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/sanitize_files"
 ---
 
 [![This project is considered finished](https://img.shields.io/badge/Status-finished-green.svg)](https://arp242.net/status/finished)

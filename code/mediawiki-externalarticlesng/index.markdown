@@ -3,6 +3,7 @@ layout: code
 title: "MediaWiki-ExternalArticlesNg"
 link: "MediaWiki-ExternalArticlesNg"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/MediaWiki-ExternalArticlesNg"
 ---
 
 Project status: archived (I no longer work on this, as I don't have a MediaWiki

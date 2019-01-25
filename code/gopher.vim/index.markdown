@@ -3,6 +3,7 @@ layout: code
 title: "gopher.vim"
 link: "gopher.vim"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/gopher.vim"
 ---
 
 [![Build Status](https://travis-ci.org/Carpetsmoker/gopher.vim.svg?branch=master)](https://travis-ci.org/Carpetsmoker/gopher.vim)

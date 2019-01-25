@@ -3,6 +3,7 @@ layout: code
 title: "default2.vim"
 link: "default2.vim"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/default2.vim"
 ---
 
 The standard 256 colour scheme ported to `guifg` and `guibg`, with some minor

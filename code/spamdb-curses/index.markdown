@@ -3,6 +3,7 @@ layout: code
 title: "spamdb-curses"
 link: "spamdb-curses"
 last_version: "version_1.2"
+redirect: "https://github.com/Carpetsmoker/spamdb-curses"
 ---
 
 Project status: finished (it does what it needs to do and there are no known bugs).

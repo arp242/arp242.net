@@ -3,6 +3,7 @@ layout: code
 title: "frederick"
 link: "frederick"
 last_version: "version-2.0"
+redirect: "https://github.com/Carpetsmoker/frederick"
 ---
 
 Project status: stable

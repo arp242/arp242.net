@@ -3,6 +3,7 @@ layout: code
 title: "my-first-vimrc"
 link: "my-first-vimrc"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/my-first-vimrc"
 ---
 
 Source code for [My first vimrc](https://arp242.net/my-first-vimrc), a vimrc

@@ -3,6 +3,7 @@ layout: code
 title: "st"
 link: "st"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/st"
 ---
 
 This is my configuration of [`st`](https://st.suckless.org/). I did not write

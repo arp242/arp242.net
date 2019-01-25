@@ -3,6 +3,7 @@ layout: code
 title: "packman.vim"
 link: "packman.vim"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/packman.vim"
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)

@@ -3,6 +3,7 @@ layout: code
 title: "imgzoom"
 link: "imgzoom"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/imgzoom"
 ---
 
 imgzoom is a simple image zoomer. It will animate images to the maximum

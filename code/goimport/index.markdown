@@ -3,6 +3,7 @@ layout: code
 title: "goimport"
 link: "goimport"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/goimport"
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)

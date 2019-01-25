@@ -2,15 +2,18 @@
 layout: default
 ---
 
-<div id="to-home"><a href="/">Home</a></div>
-<div id="page">
+<div class="center" id="to-home"><a href="/">Home</a></div>
+<div class="page">
 	<div id="header">
 		<h1>{{ page.title }}</h1>
 		<p>Written on {{ page.date | date_to_string }}{% if page.updated %} − last updated on {{ page.updated }}{% endif %}.</p>
 	</div>
 	{{ content }}
-	<h2 id="feedback"><a href="#feedback">§</a>Feedback</h2>
-	<p>You can mail me at <a href="mailto:martin@arp242.net">martin@arp242.net</a> or
-		<a href="https://github.com/Carpetsmoker/arp242.net/issues/new">
-			create a GitHub issue</a> for feedback, questions, etc.</p>
+
+	<div class="postscript">
+		<strong>Feedback</strong>
+		<p>You can mail me at <a href="mailto:martin@arp242.net">martin@arp242.net</a> or
+			<a href="https://github.com/Carpetsmoker/arp242.net/issues/new">
+				create a GitHub issue</a> for feedback, questions, etc.</p>
+	</div>
 </div>

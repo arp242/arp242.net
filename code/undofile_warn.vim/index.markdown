@@ -3,6 +3,7 @@ layout: code
 title: "undofile_warn.vim"
 link: "undofile_warn.vim"
 last_version: "version-1.3"
+redirect: "https://github.com/Carpetsmoker/undofile_warn.vim"
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)

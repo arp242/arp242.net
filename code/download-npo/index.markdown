@@ -2,7 +2,7 @@
 layout: code
 title: "download-npo"
 link: "download-npo"
-last_version: "version-2.9"
+last_version: "version-2.9.1"
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
@@ -12,10 +12,10 @@ last_version: "version-2.9"
 [![codecov](https://codecov.io/gh/Carpetsmoker/download-npo/branch/master/graph/badge.svg)](https://codecov.io/gh/Carpetsmoker/download-npo)
 
 
-**Download-npo downloads videos from the Dutch npo.nl site. The rest of the
+**download-npo downloads videos from the Dutch npostart.nl site. The rest of the
 documentation is in Dutch.**
 
-Download-npo (voorheen `download-gemist`) download videos van [npo.nl][npo]. In
+download-npo (voorheen `download-gemist`) download videos van [npostart.nl][npo]. In
 principe zouden alle sites die gebruik maken van de zogeheten “NPOPlayer” zouden
 moeten werken, zoals bv. ncrv.nl of nrc.nl (al zijn deze niet allemaal getest).
 
@@ -60,7 +60,7 @@ download-npo is een commandline-tool, er is ook een grafische frontend
 
 Voorbeeld:
 
-    download-npo http://www.npo.nl/andere-tijden/23-10-2014/VPWON_1227038
+    download-npo http://www.npostart.nl/andere-tijden/23-10-2014/VPWON_1227038
 
 of met alleen de episode ID:
 
@@ -88,7 +88,7 @@ Kan ik ook een video streamen zonder het eerst op te slaan?
 -----------------------------------------------------------
 Uiteraard! Bijvoorbeeld met:
 
-	$ download-npo -f - VPWON_1227038 | mplayer -cache 4096 -cache-min 99 -
+	$ download-npo -f - VPWON_1227038 | mpv -cache 4096 -cache-min 99 -
 
 Het `play-npo` script doet dit.
 
@@ -139,7 +139,7 @@ ChangeLog
 =========
 Zie [ChangeLog.markdown](https://github.com/Carpetsmoker/download-npo/blob/master/ChangeLog.markdown).
 
-[npo]: http://www.npo.nl/
+[npo]: http://www.npostart.nl/
 [issue]: https://github.com/Carpetsmoker/download-npo/issues/new
 [mail]: mailto:martin@arp242.net
 [python]: http://python.org/

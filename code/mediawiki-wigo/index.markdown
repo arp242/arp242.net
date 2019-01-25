@@ -3,6 +3,7 @@ layout: code
 title: "MediaWiki-WIGO"
 link: "MediaWiki-WIGO"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/MediaWiki-WIGO"
 ---
 
 Project status: archived (I no longer work on this, as I don't have a MediaWiki

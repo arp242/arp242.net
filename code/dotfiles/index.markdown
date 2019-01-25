@@ -3,6 +3,7 @@ layout: code
 title: "dotfiles"
 link: "dotfiles"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/dotfiles"
 ---
 
 My dotfiles.

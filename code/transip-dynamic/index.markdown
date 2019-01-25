@@ -3,6 +3,7 @@ layout: code
 title: "transip-dynamic"
 link: "transip-dynamic"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/transip-dynamic"
 ---
 
 [![This project is considered experimental](https://img.shields.io/badge/Status-experimental-red.svg)](https://arp242.net/status/experimental)

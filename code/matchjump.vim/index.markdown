@@ -3,6 +3,7 @@ layout: code
 title: "matchjump.vim"
 link: "matchjump.vim"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/matchjump.vim"
 ---
 
 Jump to next/previous matches added with `matchaddpos()`.

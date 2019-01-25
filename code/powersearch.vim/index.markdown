@@ -3,6 +3,7 @@ layout: code
 title: "powersearch.vim"
 link: "powersearch.vim"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/powersearch.vim"
 ---
 
 powersearch.vim adds several search-related enhancements, each of which can be

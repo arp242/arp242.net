@@ -3,6 +3,7 @@ layout: code
 title: "xdg_open.vim"
 link: "xdg_open.vim"
 last_version: "version-1.0"
+redirect: "https://github.com/Carpetsmoker/xdg_open.vim"
 ---
 
 [![This project is considered finished](https://img.shields.io/badge/Status-finished-green.svg)](https://arp242.net/status/finished)

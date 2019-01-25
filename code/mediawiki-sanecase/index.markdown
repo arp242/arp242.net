@@ -3,6 +3,7 @@ layout: code
 title: "MediaWiki-SaneCase"
 link: "MediaWiki-SaneCase"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/MediaWiki-SaneCase"
 ---
 
 Project status: archived (I no longer work on this, as I don't have a MediaWiki

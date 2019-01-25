@@ -3,6 +3,7 @@ layout: code
 title: "MediaWiki-Scepticismus"
 link: "MediaWiki-Scepticismus"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/MediaWiki-Scepticismus"
 ---
 
 Project status: archived (I no longer work on this, as I don't have a MediaWiki

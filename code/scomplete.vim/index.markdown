@@ -3,6 +3,7 @@ layout: code
 title: "scomplete.vim"
 link: "scomplete.vim"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/scomplete.vim"
 ---
 
 My simple completion plugin.

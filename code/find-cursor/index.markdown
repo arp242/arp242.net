@@ -3,6 +3,7 @@ layout: code
 title: "find-cursor"
 link: "find-cursor"
 last_version: "v1.1"
+redirect: "https://github.com/Carpetsmoker/find-cursor"
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)

@@ -3,6 +3,7 @@ layout: code
 title: "sconfig"
 link: "sconfig"
 last_version: "v1.1"
+redirect: "https://github.com/Carpetsmoker/sconfig"
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)

@@ -3,6 +3,7 @@ layout: code
 title: "password-bunny"
 link: "password-bunny"
 last_version: "version-1.3"
+redirect: "https://github.com/Carpetsmoker/password-bunny"
 ---
 
 [![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://arp242.net/status/archived)

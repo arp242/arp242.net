@@ -3,6 +3,7 @@ layout: code
 title: "hubhub"
 link: "hubhub"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/hubhub"
 ---
 
 [![GoDoc](https://godoc.org/arp242.net/hubhub?status.svg)](https://godoc.org/arp242.net/hubhub)

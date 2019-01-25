@@ -3,6 +3,7 @@ layout: code
 title: "singlepage"
 link: "singlepage"
 last_version: "master"
+redirect: "https://github.com/Carpetsmoker/singlepage"
 ---
 
 [![GoDoc](https://godoc.org/arp242.net/singlepage?status.svg)](https://godoc.org/arp242.net/singlepage)

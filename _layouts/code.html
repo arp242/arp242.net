@@ -2,8 +2,13 @@
 layout: default
 ---
 
-<div id="to-home"><a href="/">Home</a></div>
-<div id="page">
+{% if page.redirect %}
+	<p><a href="https://github.com/Carpetsmoker/{{ page.link }}">Redirect</a></p>
+{% endif %}
+
+{% if page.redirect == None %}
+<div class="center" id="to-home"><a href="/">Home</a></div>
+<div class="page" id="code">
 	<div id="header">
 		<h1>{{ page.title }}</h1>
 
@@ -22,3 +27,4 @@ layout: default
 	</div>
 	{{ content }}
 </div>
+{% endif %}
