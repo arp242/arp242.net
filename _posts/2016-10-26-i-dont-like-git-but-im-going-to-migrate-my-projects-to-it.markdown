@@ -150,6 +150,13 @@ on these logistics.
 
 So let’s simply ‘go with the flow’ and use git, even though I don’t like it.
 
+---
+
+Related:
+
+- [Betamaxed](https://doriantaylor.com/betamaxed)
+
+
 [undo-amend]: http://stackoverflow.com/a/1459264/660921
 [linus-fanboys]: https://www.bloomberg.com/news/articles/2015-06-16/the-creator-of-linux-on-the-future-without-him
 [facebook-hg]: https://code.facebook.com/posts/218678814984400/scaling-mercurial-at-facebook
