@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Testing isn't everything"
+title: "Testing isn’t everything"
 ---
 
 <div class="hatnote">

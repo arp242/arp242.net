@@ -1,6 +1,6 @@
 ---
 layout: post
-title: You (probably) don't need Kubernetes
+title: You (probably) don’t need Kubernetes
 ---
 
 This may perhaps be an unpopular opinion, but the overwhelming majority of

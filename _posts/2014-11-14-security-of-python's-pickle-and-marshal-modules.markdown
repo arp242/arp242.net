@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Security of Python's pickle and marshal modules"
+title: "Security of Python’s pickle and marshal modules"
 ---
 
 <em class="hatnote">This is modified from my answer at Stack Overflow:
