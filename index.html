@@ -3,8 +3,8 @@ layout: default
 title: arp242.net
 ---
 
-<div class="center" style="text-align: right; padding-right: .5em;"><a href="/cv">Heya, I am looking for a job :-)</a></div>
-<div class="page" id="home">
+<nav class="center" style="text-align: right; padding-right: .5em;"><a href="/cv">Heya, I am looking for a job :-)</a></nav>
+<article class="page" id="home">
 	<p>This is the homepage of <strong>Martin Tournoij</strong>,
 	also known as <strong>Carpetsmoker</strong> and <strong>arp242</strong> on the web.
 	You can also find me at 
@@ -20,18 +20,11 @@ title: arp242.net
 		if you want to contact me.
 	</p>
 
-	<p>
-			Also see <strong><a href="/archive.html">the archives</a></strong>.
-		I archive things based on “interestingness” to the general reader, rather than age.
-		“How to detect automatically generated emails” is useful if you’re creating an email system, but most people
-		aren’t.
-		Archived does not mean outdated.
-	</p>
+	<p>Also see <strong><a href="/archive.html">the archives</a></strong>. I archive things based on “interestingness”
+		to the general reader, rather than age. “How to detect automatically generated emails” is useful if you’re
+		creating an email system, but most people aren’t. Archived does not mean outdated.</p>
 
 	<h1 id="writings">Writings <span>(<a href="/feed.xml">RSS feed</a>)</span></h1>
-	<!--
-	Favourites marked with <span style="font-size: 2em; line-height: 1rem; text-shadow: 0 0 2px rgba(0,0,0,.2);">☞</span>.
-	-->
 	<ul>{% for p in site.posts %}
 		{% if p.archive != true %}<li{% if p.standout %} class="s"{% endif %}><a href="{{ p.url }}">{% if p.path contains '_drafts' %}DRAFT: {% endif %}{{ p.title }}</a></li>{% endif %}{% endfor %}
 	</ul>
@@ -45,4 +38,4 @@ title: arp242.net
 		<li><a href="/best-of/">The best of the web</a> – some of the best content on the web.</a></li>
 		<li><a href="/se/">Stack Exchange gems</a> – some of the “best” posts I’ve encountered.</li>
 	</ul>
-</div>
+</article>

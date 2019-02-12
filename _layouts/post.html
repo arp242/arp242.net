@@ -2,19 +2,19 @@
 layout: default
 ---
 
-<div class="center" style="text-align: right; padding-right: .5em;"><a href="/cv" style="float: right">Heya, I am looking for a job :-)</a></div>
-<div class="center" id="to-home"><a href="/">Home</a></div>
-<div class="page">
-	<div id="header">
+<nav class="center" style="text-align: right; padding-right: .5em;"><a href="/cv" style="float: right">Heya, I am looking for a job :-)</a></nav>
+<nav class="center" id="to-home"><a href="/">Home</a></nav>
+<article class="page">
+	<header id="header">
 		<h1>{{ page.title }}</h1>
 		<p>Written on {{ page.date | date_to_string }}{% if page.updated %} − last updated on {{ page.updated }}{% endif %}.</p>
-	</div>
+	</header>
 	{{ content }}
 
-	<div class="postscript">
+	<footer class="postscript">
 		<strong>Feedback</strong>
 		<p>You can mail me at <a href="mailto:martin@arp242.net">martin@arp242.net</a> or
 			<a href="https://github.com/Carpetsmoker/arp242.net/issues/new">
 				create a GitHub issue</a> for feedback, questions, etc.</p>
-	</div>
-</div>
+	</footer>
+</article>

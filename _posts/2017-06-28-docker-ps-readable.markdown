@@ -21,7 +21,7 @@ I’m sorry folks, but I cannot call this anything other than silly interface de
 260 characters wide for a common command... It looks terrible on any vaguely
 normal sized terminal:
 
-<div style="text-align: center"><img alt="Docker xterm" src="{% base64 ./_images/docker/docker-wide.png %}"></div>
+<figure><img alt="Docker xterm" src="{% base64 ./_images/docker/docker-wide.png %}"></figure>
 
 It’s exactly 56 characters too much for even a full-screen xterm(!) Guess I’ll
 have to buy a new 32 inch 4k HD screen to run Docker?

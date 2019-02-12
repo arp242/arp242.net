@@ -14,7 +14,7 @@ What do you get when you search for ‘Firefox’ in a new Windows 10 installati
 
 A big fat ad for Microsoft Edge:
 
-<div class="border-img center-img"><img alt="Firefox in Bing" src="{% base64 ./_images/browser/ms-edge1.png %}"></div>
+<figure class="border"><img alt="Firefox in Bing" src="{% base64 ./_images/browser/ms-edge1.png %}"></figure>
 
 This is a *full-screen* screenshot on a 1920×1080 screen (right-click and select
 ‘view image’ for the full size). Firefox is juts *barely* visible at the bottom.
@@ -22,7 +22,7 @@ This is a *full-screen* screenshot on a 1920×1080 screen (right-click and selec
 It doesn’t end there, Microsoft also “helpfully” displays a warning that this
 file “could harm your computer”:
 
-<div class="border-img center-img"><img alt="Downloading Firefox" src="{% base64 ./_images/browser/ms-edge2.png %}"></div>
+<figure><img alt="Downloading Firefox" src="{% base64 ./_images/browser/ms-edge2.png %}"></figure>
 
 [According to
 Microsoft](https://support.microsoft.com/en-gb/help/2566263/a-warning-message-unexpectedly-appears-when-you-try-to-download-a-file),
@@ -33,13 +33,13 @@ Somehow I find it hard to believe that the Firefox installer fits this bill…
 Wait, there’s more! When changing the default browser from Edge to Firefox we
 get yet another ad, baked right in to the settings screen:
 
-<div class="border-img center-img"><img alt="Changing default browser" src="{% base64 ./_images/browser/ms-edge3.png %}"></div>
+<figure class="border"><img alt="Changing default browser" src="{% base64 ./_images/browser/ms-edge3.png %}"></figure>
 
 Other people – who have used Windows 10 for more than the ten minutes I used it
 – have been treated to more anti-Firefox ads:
 
-<div class="border-img center-img"><a href="https://superuser.com/q/1146123/71885"><img alt="Chrome is draining your battery faster" src="{% base64 ./_images/browser/ms-edge5.png %}"></a></div>
-<div class="border-img center-img"><a href="https://www.reddit.com/r/firefox/comments/5our4n/windows_10_now_has_builtin_adds_targeting_firefox/"><img alt="Microsoft Edge is safer than Firefox" src="{% base64 ./_images/browser/ms-edge6.png %}"></a></div>
+<figure class="border"><a href="https://superuser.com/q/1146123/71885"><img alt="Chrome is draining your battery faster" src="{% base64 ./_images/browser/ms-edge5.png %}"></a></figure>
+<figure class="border"><a href="https://www.reddit.com/r/firefox/comments/5our4n/windows_10_now_has_builtin_adds_targeting_firefox/"><img alt="Microsoft Edge is safer than Firefox" src="{% base64 ./_images/browser/ms-edge6.png %}"></a></figure>
 
 Oh, and Microsoft also
 [banned browsers from its Windows Store](https://www.bleepingcomputer.com/news/microsoft/microsoft-has-effectively-banned-third-party-browsers-from-the-windows-store/).
@@ -52,7 +52,7 @@ search](https://productforums.google.com/forum/#!topic/chrome/u_8RWVl1TzE)
 (although it looks like they have stopped doing it now). And what about enabling
 the ‘Do Not Track’ header in Chrome?
 
-<div class="border-img center-img"><img alt="Enabling Do Not Track" src="{% base64 ./_images/browser/chrome1.png %}"></div>
+<figure class="border"><img alt="Enabling Do Not Track" src="{% base64 ./_images/browser/chrome1.png %}"></figure>
 
 I’m sure that the fact that Google has a significant interest in tracking the
 hell out of everyone on the internet is purely coincidental, as is Google

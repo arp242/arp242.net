@@ -11,7 +11,7 @@ letting this person go might not be a good idea either.
 So Walter writes a list with the points in favour of "let him live" and "kill
 him".
 
-<div class="border-img center-img"><img alt="The list" src="{% base64 ./_images/writing.jpeg %}"></div>
+<figure><img alt="The list" src="{% base64 ./_images/writing.jpeg %}"></figure>
 
 The reason Walter wrote a list is because he wasn't sure *what* to think and
 wanted to *order his thoughts*.
