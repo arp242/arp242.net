@@ -108,7 +108,12 @@ If an average programmer has trouble comprehending what is in essence a handful
 of simple functions because there are so many layers of abstractions, then
 something has gone wrong. The refactor traded one tool to verify correctness
 (simplicity) with another (testing). Simplicity is hardly a guarantee to ensure
-correctness, but neither are unit tests. Ideally, we should do both.
+correctness, but neither are unit tests. Ideally, we should do both.[^1]
+
+[^1]: [This research paper](https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=1037&context=etd_coll_all)
+      found a "weak positive relationship between number of test cases and the number of bugs".
+---
+
 
 Postscript: the refactor introduced a bug and removed a feature that was useful,
 but is now harder to add, not in the least because the code is much more
@@ -203,9 +208,8 @@ unexpected ways (a "bug"), and then you're expected to debug that code. The more
 complex the code, the harder it is to debug.
 
 You should expect all code – including testing code – to go through several
-debugging cycles. Note that with debugging cycle I don't mean "there is a bug in
-the code you need to fix", but rather "I need to look at this code to fix the
-bug".
+debugging cycles. With debugging cycle I don't mean "there is a bug in the code
+you need to fix", but rather "I need to look at this code to fix the bug".
 
 In general, I already find testing code harder to debug than regular code, as
 the "code surface" tends to be larger. You have the testing code and the actual
