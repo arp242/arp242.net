@@ -10,6 +10,8 @@ updated: 27 Dec 2017
 <a href="https://www.reddit.com/r/programming/comments/8shzcu/yaml_probably_not_so_great_after_all/">/r/programming</a>.
 Feedback:
 <a href="https://github.com/Carpetsmoker/arp242.net/issues/6">#6</a>.
+Translations:
+<a href="https://linux.cn/article-10423-1.html">Chinese (汉语)</a>.
 </div>
 
 I previously wrote [why using JSON for human-editable configuration files is a

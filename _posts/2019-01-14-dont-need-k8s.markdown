@@ -3,6 +3,10 @@ layout: post
 title: You (probably) don’t need Kubernetes
 ---
 
+<div class="hatnote">Translations:
+<a href="https://linux.cn/article-10469-1.html">Chinese (汉语)</a>.
+</div>
+
 This may perhaps be an unpopular opinion, but the overwhelming majority of
 companies are probably better off not using k8s.
 
