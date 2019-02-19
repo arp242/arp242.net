@@ -2,7 +2,7 @@
 layout: code
 title: "hello-css"
 link: "hello-css"
-last_version: "master"
+last_version: "version-1.2"
 redirect: "https://github.com/Carpetsmoker/hello-css"
 ---
 
@@ -25,27 +25,33 @@ Design principles
 > —Matthew Butterick, [*Practical Typography*](https://practicaltypography.com/)
 
 1. Pleasant defaults that should work well for most websites.
-2. Text and good typography dominates.
-3. Simplicity matters; easy to extend or modify.
-4. Works on all browser, assistive technology, and screen sizes.
+2. Main focus is text and good typography.
+3. Simplicity matters: easy to extend or modify.
+4. Works on all browser, screen sizes, assistive technology, and when printed.
+
+### Example pages.
+
+<!-- <aside>Email me if you’re using it and I’ll add your site.</aside> -->
+
+- [demo/README.html](https://carpetsmoker.github.io/hello-css/demo/README.html) (just base.css);
+  [demo/README-fancy.html](https://carpetsmoker.github.io/hello-css/demo/README-fancy.html) (all files).
+- My website, [arp242.net](https://arp242.net).
+- I reformatted [The Art of Unix programming](https://arp242.net/the-art-of-unix-programming) with this template.
+- [My CV](https://arp242.net/cv).
 
 Usage
 -----
 
-There are several files, mix-and-match as you want. The
-[**demo.html**](https://carpetsmoker.github.io/hello-css/demo.html) file
-includes just `base.css`, and
-[**demo-fancy.html**](https://carpetsmoker.github.io/hello-css/demo-fancy.html)
-includes all files.
+There are several files, mix-and-match as you want.
 
 There are only a few classes (see the table below); for the most part element
 selectors are used (e.g. `blockquote { .. }` instead of `.blockquote { .. }`).
 
 The files are brief and well annotated, and a number of styles have
 commented-out alternatives. I encourage you to read and modify to your
-preference, rather than blindly copy/paste. <!-- <sup><a href="#fn-1">[1]</a></sup> -->
+preference, rather than blindly copy/paste.<!--<sup><a href="#fn-1">[1]</a></sup> -->
 
-Not every last element is styled. For some things – such as &lt;abbr&gt; – it's
+Not every last element is styled. For some things – such as &lt;abbr&gt; – it’s
 fine to rely on the browser defaults, small differences are okay.
 Other things – such as forms – tend to be quite application-specific and is a
 bit outside of the scope of this project, as the main goal is for text websites,
@@ -53,18 +59,18 @@ not interactive ones (note: I might change my mind on this later).
 
 Feel free to open an issue if you’re missing something in particular.
 
-### Example
+### HTML example
 
 A typical HTML page might look something like:
 
 ```html
 <body>
-	<div class="center">
+	<nav class="center">
 		<a href="/">Home</a>
 		<a href="/weblog">Weblog</a>
-	</div>
+	</nav>
 
-	<div class="page">
+	<article class="page">
 		<h1>Main content</h1>
 		<p>..</p>
 
@@ -74,26 +80,31 @@ A typical HTML page might look something like:
 		<div class="postscript"><strong>Feedback</strong>
 			..
 		</div>
-	</div>
+	</article>
 
-	<div class="center" style="text-align: right">
+	<footer class="center" style="text-align: right">
 		Copyright © 2010–2018 Martin Tournoij &lt;martin@arp242.net&gt;<br>
 		This document is licensed under a
 		<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
 			cc-by 4.0 license
 		</a>.
-	</div>
+	</footer>
 </body>
 ```
 
+Also see [start.html](start.html).
+
 ### Classes
 
-| Class         | File             | Purpose                                                                         |
-| ------------- | ---------------- | -------                                                                         |
-| `.center`     | `base.css`       | Center-align the main content.                                                  |
-| `.page`       | `base.css`       | Main page body.                                                                 |
-| `.full`       | `base.css`       | Put a pre or table element over the full width of a `.page`, including margins.
-| `.postscript` | `postscript.css` | Page content; for footnotes or feedback section.                                |
+| Class        | File           | Purpose                                                                                |
+| ------------ | -------------- | -------------------------------------------------------------------------------------- |
+| .center      | base.css       | Center-align the main content.                                                         |
+| .page        | base.css       | Main page body.                                                                        |
+| .page-a4     | base.css       | A4 page size; useful when producing pages where printing is high priority (e.g. a CV). |
+| .page-letter | base.css       | U.S. letter page size.                                                                 |
+| .full        | base.css       | Put a pre, table, or figure element over the full width of a .page, including margins. |
+| .border      | base.css       | Add a border around figure elements.                                                   |
+| .postscript  | postscript.css | Page content; for e.g. footnotes or feedback section.                                  |
 
 ### Included files
 
@@ -105,12 +116,43 @@ A typical HTML page might look something like:
 | postscript.css | P.S. content, such as footnotes.              |
 | permalink.css  | Permalink markers in headers.                 |
 
-License
--------
+The `dist/` directory contains versions without extensive annotations, as well
+as an `all.css` which contains all of the above files.
+
+You can use the [singlepage](https://github.com/Carpetsmoker/singlepage) tool to
+inline CSS files in to a document with `<style>` tags.
+
+### Related values (“variables”)
+
+In the interest of simplicity the project doesn’t use a CSS preprocessor (see
+[this rationale](https://arp242.net/weblog/css-vars.html)). Instead I opted for
+a KISS approach: related values are marked with `/*varname*/` just before the
+value, without a space. For example:
+
+	margin-left: /*padx*/-4em
+	width: calc(100% + /*padx*/8em);
+
+You can list all related values with something like `grep '/\*\w\+\*/' *.css`.
+Here’s a list of the used value names:
+
+| Name      | Default | Description                               |
+| --------- | ------- | ----------------------------------------- |
+| bodywidth | 54rem   | Width of main body text                   |
+| padx      | 4rem    | Padding to the side of the body           |
+| pady      | 4rem    | Padding to the top and bottom of the body |
+| bgcolor   | #fff    | Background colour of main body text       |
+| textcolor | #252525 | Colour of main body text                  |
+
+
+Credits and License
+-------------------
 
 The [Libre Baskerville font](https://github.com/impallari/Libre-Baskerville) in
-the `fonts` directory is distributed under the SIL Open Font License 1.1. See
+the fonts directory is distributed under the SIL Open Font License 1.1. See
 [fonts/LICENSE](fonts/LICENSE).
+
+The fleurons in the &lt;hr&gt; element are exports from the Deja-Vu font, which
+is in the public domain.
 
 <!--
 <aside>In my country of The Netherlands it’s not clear if it’s possible to place works in the public domain,
@@ -120,9 +162,7 @@ the `fonts` directory is distributed under the SIL Open Font License 1.1. See
 Everything else is in the public domain. I renounce all copyright, and don’t
 care what you do with it. Since this is not possible in all legal jurisdictions
 I’ve also attached a modified copy of the ISC license which replaces the
-attribution clause with the text “without any restrictions”.
-
----
+attribution clause with the text “without any restrictions”:
 
 	Copyright © 2019 Martin Tournoij
 
@@ -136,6 +176,14 @@ attribution clause with the text “without any restrictions”.
 	OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
 	TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
 	THIS SOFTWARE.
+
+---
+
+Cross-platform testing made possible by
+[BrowserStack](https://www.browserstack.com/), which provides free access for
+open source projects.
+
+[![](https://carpetsmoker.github.io/hello-css/.browserstack.svg)](https://www.browserstack.com/)
 
 <!--
 <div class="postscript">

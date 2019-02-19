@@ -3,6 +3,7 @@ layout: code
 title: "download-npo"
 link: "download-npo"
 last_version: "version-2.9.1"
+redirect: "https://github.com/Carpetsmoker/download-npo"
 ---
 
 [![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
