@@ -6,12 +6,11 @@ last_version: "master"
 redirect: "https://github.com/Carpetsmoker/nordavind"
 ---
 
+[![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://arp242.net/status/archived)
+
 Nordavind is a web based audio player.
 
-For a general impression, check out the [screenshots](https://bitbucket.org/Carpetsmoker/nordavind/wiki/Home)
-
-Current status: It's usable (I use it almost daily), but not as polished as I'd
-like it to be, which is why there isn't a `1.0 release' yet.
+Current status: It's usable  but not as polished as I'd like it to be.
 
 
 Browser support
@@ -129,15 +128,6 @@ Info
 Player
 ------
 Nothing yet...
-
-
-Changelog
-=========
-
-Version 1.0, TODO
------------------
-- Initial release
-
 
 Credits
 =======

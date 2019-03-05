@@ -6,6 +6,8 @@ last_version: "master"
 redirect: "https://github.com/Carpetsmoker/markdown-wiki"
 ---
 
+[![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://arp242.net/status/archived)
+
 **markdown-wiki** or **mdwiki** is a basic wiki.
 
 Features:
@@ -57,45 +59,6 @@ Known issues
 - The ‘preview’ functionality is imperfect, since Kramdown & the PageDown
   markdown flavours differ. In fact, it’s so imperfect that I disabled it for
   now...
-
-
-Changelog
----------
-1.0 version is to-be-released.
-
-
-TODO
-----
-
-### For 1.0:
-- Log/history/recent changes page could be a lot better...
-- File uploads.
-- Translations with gettext
-- Write Special:Help
-- Start page
-- Index now shows everything ... Maybe make this configurable/smarter
-  (perhaps collapse)?
-- Search in filenames & content; we can maybe use hg/git so we have a okay(-ish)
-  performance (?) But this won't search non-commited changes?
-- And finally ... list it here: `http://www.wikimatrix.org/wiki/become_a_maintainer`
-
-### Later:
-- More fine-grained access control; maybe some sort of glob pattern (or list of
-  them) for each user.
-- Tags; we can do this by creating a dir for each tag, and then symlinking pages
-  we want in this tag.
-
-### (Probably) much later (or perhaps never...)
-- Make it possible to use mdwiki as a public website; either by 1) generating
-  HTML, 2) Provide a "read-only mode" & a "edit mode" (or something...)
-- Proper cache headers; also make sure we're cache friendly for Varnish and
-  such... ESI?
-  https://www.varnish-cache.org/trac/wiki/VCLExampleCacheCookies
-  https://www.varnish-cache.org/trac/wiki/VCLExampleCachingLoggedInUsers
-- Kramdown can save as PDF, perhaps we want to support this?
-- Maybe allow execution of code in pages? Would be cool to write code docs.
-- Rails integration? lib/sidekiq/web.rb does something like that; this way we
-  can document a rails project, and view it with mdwiki
 
 
 [kramdown]: http://kramdown.gettalong.org/

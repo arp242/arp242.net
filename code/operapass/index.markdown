@@ -6,10 +6,7 @@ last_version: "version_1.3"
 redirect: "https://github.com/Carpetsmoker/operapass"
 ---
 
-Project status: finished (it does what it needs to do and there are no known bugs).
-[Windows binary](https://bitbucket.org/Carpetsmoker/operapass/downloads/operapass-1.2-windows.zip)
-
------------------------------------------
+[![This project is considered finished](https://img.shields.io/badge/Status-finished-green.svg)](https://arp242.net/status/finished)
 
 This software works for **Opera 12 and earlier** (the Presto-based versions),
 and **not** for the newer Blink-based versions.
@@ -67,4 +64,3 @@ Version 1.0, 2011-10-04
 
 
 [1]: https://pypi.python.org/pypi/M2Crypto
-[2]: mailto: martin@arp242.net

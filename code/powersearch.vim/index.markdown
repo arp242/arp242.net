@@ -6,6 +6,8 @@ last_version: "master"
 redirect: "https://github.com/Carpetsmoker/powersearch.vim"
 ---
 
+[![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://arp242.net/status/archived)
+
 powersearch.vim adds several search-related enhancements, each of which can be
 enabled individually:
 

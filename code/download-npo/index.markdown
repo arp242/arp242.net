@@ -6,12 +6,18 @@ last_version: "version-2.9.1"
 redirect: "https://github.com/Carpetsmoker/download-npo"
 ---
 
-[![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://arp242.net/status/stable)
-[![PyPI](https://img.shields.io/pypi/v/download-npo.svg)](https://pypi.python.org/pypi/download-npo)
-[![Build Status](https://travis-ci.org/Carpetsmoker/download-npo.svg?branch=master)](https://travis-ci.org/Carpetsmoker/download-npo)
-[![Build status](https://ci.appveyor.com/api/projects/status/72k47k6m209o2u25/branch/master?svg=true)](https://ci.appveyor.com/project/Carpetsmoker/download-npo/branch/master)
-[![codecov](https://codecov.io/gh/Carpetsmoker/download-npo/branch/master/graph/badge.svg)](https://codecov.io/gh/Carpetsmoker/download-npo)
+[![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://arp242.net/status/archived)
 
+Update 1 Maart 2019: de NPO site is nu beschermd met DRM. Wellicht dat hier
+omheen te fietsen is, maar ik gebruik dit programma zelf al jaren niet meer, en
+heb ook niet zo veel zin er zelf naar te kijken.
+
+Zie ook het [youtube-dl issue](https://github.com/rg3/youtube-dl/issues/20084).
+
+Ik review en accepteer eventuele PRs, mocht iemand anders zin/tijd hebben. Tot
+die tijd is dit gearchiveerd.
+
+---
 
 **download-npo downloads videos from the Dutch npostart.nl site. The rest of the
 documentation is in Dutch.**

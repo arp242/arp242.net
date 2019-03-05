@@ -6,7 +6,7 @@ last_version: "master"
 redirect: "https://github.com/Carpetsmoker/transip-dynamic"
 ---
 
-[![This project is considered experimental](https://img.shields.io/badge/Status-experimental-red.svg)](https://arp242.net/status/experimental)
+[![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://arp242.net/status/archived)
 
 Dynamic DNS for TransIP.
 
@@ -31,11 +31,13 @@ How to use it
 
 		go get arp242.net/transip-dynamic
 
+  This will put the binary in `~/go/bin`
+
 - Open up `config` in any 'ol text editor. Set the appropriate values.
 
 - Build and run the program: `go run transip-dynamic.go`
 
-- You probably want to run this automatically every hour orso with cron.
+- You probably want to run this automatically every hour or so with cron.
 
 Alternatives
 ============

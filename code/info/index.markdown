@@ -10,19 +10,43 @@ redirect: "https://github.com/Carpetsmoker/info"
 
 A simple GNU `info` replacement which isn't terrible.
 
-You can install it with `go get arp242.net/info`, which will put the binary at
-`~/go/bin/info`.
-
-This program displays the info pages with various formatting and free software
+This program displays the info pages as a single document in the standard pager
+(usually `less` or `more`) with various redundant formatting and free software
 propaganda removed (some pages contain more license text than actual useful
 content).
+
+You can install it with `go get arp242.net/info`, which will put the binary at
+`~/go/bin/info`.
 
 If the output is a terminal device the output will be piped to `MANPAGER` or
 `PAGER` if set. The default is to use `more -s`.
 
 `INFOPATH` is respected.
 
-There are no commandline options at this point.
+There are no commandline options at this point; all arguments starting with `-`
+are ignored.
+
+---
+
+Is this too complex? You can approximate it with something like:
+
+	info() {
+		zcat "/usr/share/info/$1.info.gz" |
+			sed -Ee "/\x1f/d; /^File: $1.info,/d; /^(Node|Ref): .*/d" |
+			cat -s |
+			less
+	}
+
+This was the original version; but it was too hard to handle stuff like info
+pages split over several files (which this snippet won't handle) so I ended up
+writing the Go tool.
+
+There's also [info2man](https://cskk.ezoshosting.com/cs/css/info2pod.html). I
+needed to make some changes to get it to work, and the output didn't look too
+great. This tool goes back to [at least
+2004](https://web.archive.org/web/20040625210730/https://cskk.ezoshosting.com/cs/css/info2pod.html).
+These criticism of Texinfo are hardly new, and the GNU folk's imperviousness to
+it isn't, either.
 
 A Texinfo rant
 --------------
@@ -37,9 +61,9 @@ still cannot navigate GNU's Texinfo.
   bindings are just nonsensical.
 
   If you're thinking "just read the manual you doofus": buzz off. Do you think I
-  have nothing better to do than learn how to use some obscure and shitty piece
-  of software just to read some fucking text? I've got about 80 years on this
-  planet, and this is *not* how I want to spend it.
+  have nothing better to do than learn how to use some obscure piece of software
+  I don't even like just to read some fecking plain text once a month? I've got
+  about 80 years in my life, and this is *not* how I want to spend it.
 
   And should the entire industry deal with this crap? How many man-hours will be
   wasted? Far too many. The only reason I sat down and wrote this in a bout of
@@ -52,7 +76,7 @@ still cannot navigate GNU's Texinfo.
   I discovered that you can use `info --subnodes page | less` after I wrote this
   tool to output to a single page. I originally tried this, but it doesn't
   work unless you pipe it; just `info --subnodes` behaves as usual and the
-  option is ignored 🤦
+  option is silently ignored 🤦
 
   It won't strip all the crap though (like now-useless navigation).
 
@@ -61,7 +85,7 @@ still cannot navigate GNU's Texinfo.
   other (sometimes info, sometimes man).
 
   Fragmentation and inconsistency has long been considered one of Unix's weak
-  points, and rightfully so. GNU info only makes this worse. Then again, "GNU's
+  points, and rightfully so. Texinfo only makes this worse. Then again, "GNU's
   not Unix" 🤷
 
 - Every page comes with an inordinate amount of free software advocacy. I want
@@ -88,24 +112,3 @@ moved on from it a decade ago.
 
 None of this means that man pages couldn't do with some enhancement – better
 referencing probably being the most prominent – but GNU info isn't the answer.
-
----
-
-Is this too complex? You can approximate it with something like:
-
-	info() {
-		zcat "/usr/share/info/$1.info.gz" |
-			sed -Ee "/\x1f/d; /^File: $1.info,/d; /^(Node|Ref): .*/d" |
-			cat -s |
-			less
-	}
-
-This was the original version; but it was too hard to handle stuff like info
-pages split over several files (which this snippet won't handle).
-
-There's also [info2man](https://cskk.ezoshosting.com/cs/css/info2pod.html). I
-needed to make some changes to get it to work, and the output didn't look too
-great. This tool goes back to [at least
-2004](https://web.archive.org/web/20040625210730/https://cskk.ezoshosting.com/cs/css/info2pod.html).
-These criticism of Texinfo are hardly new, and the GNU folk's imperviousness to
-it isn't, either.
