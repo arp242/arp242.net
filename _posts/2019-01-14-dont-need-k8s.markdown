@@ -1,14 +1,12 @@
 ---
 layout: post
 title: You (probably) don’t need Kubernetes
+updated: 5 Mar 2019
 ---
 
 <div class="hatnote">Translations:
 <a href="https://linux.cn/article-10469-1.html">Chinese (汉语)</a>.
 </div>
-
-This may perhaps be an unpopular opinion, but the overwhelming majority of
-companies are probably better off not using k8s.
 
 You know those old “Hello world according to programmer skill” jokes that start
 with `printf("hello, world\n")` for a junior programmer and end with some
@@ -34,9 +32,18 @@ engineer? This is kind of like that.
 That doesn’t mean that Kubernetes or any of these things are bad *per se*, just
 as Java or OOP aren't bad per se, but rather that they’re horribly misapplied in
 many cases, just as using several Java OOP design patterns are horribly
-misapplied to a hello world program. For most companies the sysops
-requirements are fundamentally not very complex, and applying k8s to them makes
-litle sense.
+misapplied to a hello world program. For most companies the sysops requirements
+are fundamentally not very complex, and applying k8s to them makes little sense.
+
+True story: I once saw an expensive luxury sports car (Ferrari? Maserati?
+Lamborghini? I don't recall) get stuck. In which difficult circumstances? The
+local supermarket's parking lot. The parking space was lower than the road. They
+had managed to drive in but were now struggling to get out without damage, as
+the car's clearance height was so low.
+It's undoubtedly a great well-designed car; but that doesn't mean it's the best
+car to go grocery shopping with.
+
+---
 
 Complexity creates work by its very nature, and I’m skeptical that using k8s is
 a time-saver for most users. It’s like spending a day on a script to automate
