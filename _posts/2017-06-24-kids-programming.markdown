@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why teach kids to program?
-updated: 23 Dec 2018
+updated: 2018-12-23
 ---
 
 <div class="hatnote">Discussions:

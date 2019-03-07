@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "YAML: probably not so great after all"
-updated: 27 Dec 2017
+updated: 2017-12-27
 ---
 
 <div class="hatnote">Discussions:

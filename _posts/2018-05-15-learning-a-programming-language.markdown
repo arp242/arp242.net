@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Learning a programming language"
-updated: 31 Jul 2018
+updated: 2018-07-31
 ---
 
 My advice to anyone learning a new programming language is always the same: get

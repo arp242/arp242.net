@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Go testing style guide"
-updated: 31 Jul 2018
+updated: 2018-07-31
 ---
 
 <div class="hatnote">Discussions:

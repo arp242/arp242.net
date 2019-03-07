@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "JSON as configuration files: please don’t"
-updated: 17 Dec 2016
+updated: 2016-12-17
 ---
 
 <em class="hatnote">Also see

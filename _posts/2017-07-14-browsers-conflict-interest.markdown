@@ -1,7 +1,7 @@
 ---
 title: "Browsers and conflicts of interests"
 layout: post
-updated: 22 Dec 2018
+updated: 2018-12-22
 ---
 
 <div class="hatnote">Discussions:

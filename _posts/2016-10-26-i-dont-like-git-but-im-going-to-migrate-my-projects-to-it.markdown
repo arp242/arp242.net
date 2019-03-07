@@ -1,7 +1,7 @@
 ---
 layout: post
 title: I don’t like git, but I’m going to migrate my projects to it
-updated: 4 Jan 2019
+updated: 2019-01-04
 ---
 
 I don’t like git. But I’m going to migrate my projects to it.

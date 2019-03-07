@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PHP’s fopen() is broken"
-updated: 20 Jan 2019
+updated: 2019-01-20
 ---
 
 <div class="hatnote">

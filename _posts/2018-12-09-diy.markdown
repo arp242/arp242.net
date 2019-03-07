@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Open source DIY ethics
-updated: 27 Dec 2018
+updated: 2018-12-27
 ---
 
 <div class="hatnote">Discussions:

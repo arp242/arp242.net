@@ -1,7 +1,7 @@
 ---
 layout: post
 title: You (probably) don’t need Kubernetes
-updated: 5 Mar 2019
+updated: 2019-03-05
 ---
 
 <div class="hatnote">Translations:
