@@ -129,8 +129,8 @@ effect.
 - Lots of people are familiar with git and GitHub – not so much with mercurial
   and Bitbucket. I feel I’m missing out on bug reports and patches because
   people simply can’t be bothered sending them on an unfamiliar platform. At
-  least one person "forked" my project by converting the hg repo to git and
-  uploading it to GitHub.
+  least one person "forked" my project by converting the mercurial repo to git
+  and uploading it to GitHub.
 
 - A number of tools only work with git, and either don’t want to implement
   mercurial support or sometimes even removed it.

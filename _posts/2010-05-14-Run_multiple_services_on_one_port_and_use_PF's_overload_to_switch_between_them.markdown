@@ -78,7 +78,7 @@ From [pf.conf(5)][pf.conf]:
 It took me some time to realize that if no service is running on port 80 the
 connection attempt will time out and the 3-way handshake is not completed.
 
-You can use Python to start a simple webserver that does nothing.
+You can use Python to start a simple web server that does nothing.
 
 	#!/usr/bin/env python
 
@@ -89,7 +89,7 @@ You can use Python to start a simple webserver that does nothing.
 
 	HTTPServer((host, port), BaseHTTPRequestHandler).serve_forever()
 
-Or you can use your webserver with a document root of `/var/empty/` if you prefer.
+Or you can use your web server with a document root of `/var/empty/` if you prefer.
 
 /etc/crontab
 ------------

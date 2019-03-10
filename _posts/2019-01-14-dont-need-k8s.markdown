@@ -24,7 +24,7 @@ engineer? This is kind of like that.
 <dd>Self-deployed CI pipeline to run <code>./binary</code> on EC2.</dd>
 
 <dt>Senior cloud orchestration engineer</dt>
-<dd>k8s orchestrated self-deployed CI pipeline to run <code>./binary</code> on E2C platform.</dd>
+<dd>k8s orchestrated self-deployed CI pipeline to run <code>./binary</code> on EC2 platform.</dd>
 </dl>
 
 ¯\\\_(ツ)\_/¯

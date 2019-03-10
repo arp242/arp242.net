@@ -19,13 +19,13 @@ The network setup (simplified):
 	  ~ The Internet ~
 	         |
 	         |
-	[ Public webserver ]
+	[ Public web server ]
 
-The problem is connecting to public webserver from my workstation, first I had
+The problem is connecting to public web server from my workstation, first I had
 to ssh or sftp to the Linux firewall, and from that machine connect to the
-webserver.
+web server.
 
-There has to be an easier way… And a look at the SSH manpage provided the
+There has to be an easier way… And a look at the SSH man page provided the
 answer: The `-L` option.
 
 Excerpt from [ssh(1)][ssh]:

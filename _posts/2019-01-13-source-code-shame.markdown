@@ -45,4 +45,4 @@ Programming](http://catb.org/~esr/writings/taoup/html/ch18s02.html#id3001522):
 > decline.
 
 A public issue tracker is the modern variant of maintaining a BUGS section in
-the manpage.
+the man page.

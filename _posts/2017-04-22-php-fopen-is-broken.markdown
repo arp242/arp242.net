@@ -27,7 +27,7 @@ went wrong*.
 
 In C, you can use the `errno` variable to check what went wrong. `EEXISTS`
 indicates the path already exists, `EACCESS` indicates you don’t have
-permission, `ELOOP` indicates there are too many syminks, and so forth. see
+permission, `ELOOP` indicates there are too many symlinks, and so forth. See
 [POSIX for a full list][c-fopen].
 
 This can be very useful. On an `ENAMETOOLONG` error you could trim the pathname
