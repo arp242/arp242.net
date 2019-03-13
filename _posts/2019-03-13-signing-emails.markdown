@@ -18,8 +18,8 @@ I received this email a while ago:
 >
 > Happy shopping!
 
-University of Queensland? Why would they send me anything? Where is that even?
-Australia right? That's the other side of the world! Looks like spam!
+Queensland University of Technology? Why would they send me anything? Where is
+that even? Australia right? That's the other side of the world! Looks like spam!
 
 It did look pretty good for spam, so I took a second look. And a very close
 third look, and then I decided it wasn't spam.
@@ -122,6 +122,10 @@ advice you to check for spelling
 errors](https://www.paypal.com/cs/smarthelp/article/how-to-spot-fake,-spoof,-or-phishing-emails-faq2340).
 Okay, it's good advice, but do we really want this to be the barrier between an
 attacker and your money? Or Russian hacking groups and your emails?
+
+Anyone can sign any email with any key, but "unknown signature" warnings strike
+me as a lot better UX than "carefully look for spelling errors or misleading
+domain names".
 
 The way forward is to make it straight-forward to implement signing in apps and
 then *just do it* as a developer, whether asked or not; just as you set up https
