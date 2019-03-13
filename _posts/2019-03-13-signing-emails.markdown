@@ -61,7 +61,7 @@ shipping email clients with keys for large organisations (PayPal, Google, etc.);
 like browsers do with some certificates. Or publish the keys on a DNS record.
 Even just publishing them on your website (or, if you're a bank, in local
 branches etc.) so people can manually add them to their keyrings is a lot better
-than *not signinga anything at all*!
+than *not signing anything at all*!
 
 Is it perfect? No. I understand stuff like key exchange is hard. Is it better?
 Hell yes. Would probably have avoided Podesta and the entire Democratic Party a
