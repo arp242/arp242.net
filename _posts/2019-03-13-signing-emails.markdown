@@ -113,6 +113,10 @@ There are probably a few factors that impede the implementation of signing:
   the first scenario, which is great, but probably not the most pressing problem
   to solve right now.
 
+- It's a bit of a catch-22: no one is signing their emails because client
+  support isn't that good, and client support isn't improving because no one is
+  signing emails.
+
 In the meanwhile PayPal is not solving the problem by publishing [articles which
 advice you to check for spelling
 errors](https://www.paypal.com/cs/smarthelp/article/how-to-spot-fake,-spoof,-or-phishing-emails-faq2340).
