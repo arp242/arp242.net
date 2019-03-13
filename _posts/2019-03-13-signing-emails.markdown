@@ -52,27 +52,58 @@ Yikes! If I was even remotely high-profile I'd be crazy paranoid about all
 emails I get.
 
 It seems to me that there is a fairly easy solution to verify the author of an
-email: sign it with a digital signature. Either S/MIME or PGP will do. I don't
-even care about encryption here, just signing to prevent phishing.
+email: sign it with a digital signature; PGP is probably the best existing
+solution right now[^1]. I don't even care about encryption here, just signing to
+prevent phishing.
 
-It's not hard to do; S/MIME works more or less the same as HTTPS: you get a
-certificate from the Certificate Authority Mafia, sign your email with it, and
-presto. Not very hard. Many email clients already support verifying S/MIME
-signatures (and more will implement support once people actually start using
-it). I implemented S/MIME signature verification in a Ruby on Rails app once. It
-was about ten lines of code.
+[^1]: We could probably make something better; but PGP is "good enough".
 
-PGP could also be used; we can bypass much of the key exchange dilemma by just
-shipping email clients with keys for large organisations (PayPal, Google, etc.);
-like browsers do with some certificates. Or publish the keys on a DNS record.
-Even just publishing them on your website (or, if you're a bank, in local
-branches etc.) so people can manually add them to their keyrings is a lot better
-than *not signing anything at all*!
+PGP has a reputation for being hard, but that's only for certain scenarios. A
+lot of the problems/difficulties stem from trying to accommodate the "random
+person A emails random person B" use case, but this isn't really what I care
+about here. "Large company with millions of users sends thousands of emails
+daily" is a very different use case.
 
-Is it perfect? No. I understand stuff like key exchange is hard. Is it better?
-Hell yes. Would probably have avoided Podesta and the entire Democratic Party a
-lot of trouble.
-Here's a "[sophisticated new phishing
+Much of the key exchange/web-of-trust dilemma can be bypassed by shipping email
+clients with keys for large organisations (PayPal, Google, etc.) baked in, like
+browsers do with some certificates.
+Even just publishing your key on your website (or, if you're a bank, in local
+branches etc.) is already a lot better than *not signing anything at all*.
+Right now there seems to be a catch-22 scenario: clients don't implement better
+support as very few people are using PGP, while very few companies bother
+signing their emails with PGP because so few people can benefit from it.
+
+On the end-user side, things are also not very hard; we're just conceded with
+*validating signatures*, nothing more. For this purpose PGP isn't hard.
+It's like verifying your Linux distro's package system: all of them sign their
+packages (usually with PGP) and they get verified on installation, but as an
+end-user I never see it unless something goes wrong.
+
+There are many aspects of PGP that are hard to set up and manage, but verifying
+signatures isn't one of them.
+The user-visible part of this is very limited. Remember, no one is expected to
+sign their own emails: just verify that the signature is correct (which the
+software will do). Conceptually, it's not that different from verifying a
+handwritten signature.
+
+DKIM and SPF already exist, which are useful but limited. All both do is verify
+that an email which claims to be from paypal.com is really from paypal.com. I
+can still send emails from paypal.haxx0r.ru, and it lacks the ability to show
+warnings such as "this email wasn't signed, do you want to trust it?" and "this
+signature isn't recognized, yikes!"
+
+There's also S/MIME, which has better client support and which works more or
+less the same as HTTPS: you get a certificate from the Certificate Authority
+Mafia, sign your email with it, and presto. The downside of this is that
+*anyone* can sign their emails with a valid key, which isn't necessarily telling
+you much (just because haxx0r.ru has a certificate doesn't mean it's
+trustworthy).
+
+Is it perfect? No. I understand stuff like key exchange is hard and that baking
+in keys isn't perfect.
+Is it better? Hell yes.
+Would probably have avoided Podesta and the entire Democratic Party a lot of
+trouble. Here's a "[sophisticated new phishing
 campaign](https://www.eset.com/us/about/newsroom/corporate-blog/paypal-users-targeted-in-sophisticated-new-phishing-campaign/)"
 targeted at PayPal users. How "sophisticated"? Well, by not having glaring
 stupid spelling errors, duplicating the PayPal layout in emails, duplicating the
@@ -99,30 +130,11 @@ I've been intending to write this post for years, but never quite did because
 "surely not everyone is stupid?" I'm not a crypto expert, so perhaps I'm missing
 something here, but I wouldn't know what. Let me know if I am.
 
-There are probably a few factors that impede the implementation of signing:
-
-- Conflation between "signing" and "encrypting". Two very different things, but
-  the same tools are used for both. Encryption is a lot harder as there's
-  usually zero margin for error: everyone needs to be able to decrypt your
-  emails. For signing there's more margin; it's okay if half the people never
-  verify your signatures.
-
-- Confusion between every-day "random person A emails random person B"-usage
-  versus "large company with millions of users sends thousands of emails
-  daily"-usage. Certainly for PGP/GPG a lot of the effort seems to be focused on
-  the first scenario, which is great, but probably not the most pressing problem
-  to solve right now.
-
-- It's a bit of a catch-22: no one is signing their emails because client
-  support isn't that good, and client support isn't improving because no one is
-  signing emails.
-
-In the meanwhile PayPal is not solving the problem by publishing [articles which
-advice you to check for spelling
+In the meanwhile PayPal is attempting to solve the problem by publishing
+[articles which advice you to check for spelling
 errors](https://www.paypal.com/cs/smarthelp/article/how-to-spot-fake,-spoof,-or-phishing-emails-faq2340).
 Okay, it's good advice, but do we really want this to be the barrier between an
 attacker and your money? Or Russian hacking groups and your emails?
-
 Anyone can sign any email with any key, but "unknown signature" warnings strike
 me as a lot better UX than "carefully look for spelling errors or misleading
 domain names".
@@ -130,28 +142,13 @@ domain names".
 The way forward is to make it straight-forward to implement signing in apps and
 then *just do it* as a developer, whether asked or not; just as you set up https
 whether you're asked or not. I'll write a follow-up with more technical details
-later.
+later, assuming no one pokes holes in this article :-)
 
 Response to some feedback
 -------------------------
 
-- <em id="user-friendly">"PGP is not user friendly!"</em><br>
-  Correct, but PGP doesn't need to be user-friendly just to verify signatures.
-  It's like verifying your Linux distro's package system: all of them sign their
-  packages (usually with PGP) and they get verified on installation, but as an
-  end-user I never see it.
-
-  There are many aspects of PGP that are hard to set up and manage, but
-  verifying signatures isn't one of them.
-
-- <em id="comprehensible">"This is not comprehensible to the ordinary person."</em><br>
-  Almost no one comprehends https either. Yet it seems to work well enough to
-  protect people.
-
-  The user-visible part of this is very limited. Remember, no one is expected to
-  sign their own emails: just verify that the signature is correct (which the
-  software will do). It's not that different from verifying a handwritten
-  signature.
+Some response to some feedback that I couldn't be bothered to integrate in the
+article's prose:
 
 - <em id="webmail">"You can't trust webmail with crypto!"</em><br>
   If you use webmail then you're  already trusting the email provider with
@@ -160,12 +157,6 @@ Response to some feedback
   We're not communicating state secrets over encrypted email here; we're just
   verifying the signature on "PayPal sent you a message, click here to view
   it"-kind of emails.
-
-- <em id="dkim">"What about DKIM?"</em><br>
-  DKIM is useful, but limited. All it does is verify that an email which claims
-  to be from paypal.com is really from paypal.com.  What it lacks is the ability
-  to show warnings such as "this email wasn't signed, do you want to trust it?"
-  and "this signature isn't recognized, yikes!"
 
 - <em jd="key-mgmt">"Isn't this ignoring the massive problem that is key management?"</em><br>
   Yes, it's hard problem; but that doesn't mean it can't be done. I already
