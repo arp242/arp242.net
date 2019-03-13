@@ -139,7 +139,7 @@ I've been intending to write this post for years, but never quite did because
 something here, but I wouldn't know what. Let me know if I am.
 
 In the meanwhile PayPal is attempting to solve the problem by publishing
-[articles which advice you to check for spelling
+[articles which advise you to check for spelling
 errors](https://www.paypal.com/cs/smarthelp/article/how-to-spot-fake,-spoof,-or-phishing-emails-faq2340).
 Okay, it's good advice, but do we really want this to be the barrier between an
 attacker and your money? Or Russian hacking groups and your emails?
