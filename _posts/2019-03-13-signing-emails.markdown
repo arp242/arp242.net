@@ -56,13 +56,13 @@ email: sign it with a digital signature; PGP is probably the best existing
 solution right now[^1]. I don't even care about encryption here, just signing to
 prevent phishing.
 
-[^1]: We could probably make something better; but PGP is "good enough".
+[^1]: We could make something better; PGP contians a lot of cruft. But for now PGP is "good enough".
 
-PGP has a reputation for being hard, but that's only for certain scenarios. A
-lot of the problems/difficulties stem from trying to accommodate the "random
-person A emails random person B" use case, but this isn't really what I care
-about here. "Large company with millions of users sends thousands of emails
-daily" is a very different use case.
+PGP has a well-deserved reputation for being hard, but that's only for certain
+scenarios. A lot of the problems/difficulties stem from trying to accommodate
+the "random person A emails random person B" use case, but this isn't really
+what I care about here. "Large company with millions of users sends thousands of
+emails daily" is a very different use case.
 
 Much of the key exchange/web-of-trust dilemma can be bypassed by shipping email
 clients with keys for large organisations (PayPal, Google, etc.) baked in, like
@@ -86,11 +86,19 @@ sign their own emails: just verify that the signature is correct (which the
 software will do). Conceptually, it's not that different from verifying a
 handwritten signature.
 
-DKIM and SPF already exist, which are useful but limited. All both do is verify
-that an email which claims to be from paypal.com is really from paypal.com. I
-can still send emails from paypal.haxx0r.ru, and it lacks the ability to show
-warnings such as "this email wasn't signed, do you want to trust it?" and "this
-signature isn't recognized, yikes!"
+DKIM and SPF already exist and are useful, but limited. All both do is verify
+that an email which claims to be from `amazon.com` is really from `amazon.com`.
+If I send an email from `mail.amazon-account-security.com` or `amazonn.com` then
+it just verifies that it was sent from that domain, not that it was sent from
+the organisation Amazon.
+
+What I am proposing is subtly different. In my (utopian) future every serious
+organisation will sign their email with PGP (just like every serious
+organisation uses https). Then every time I get an email which claims to be from
+Amazon I can see it’s either not signed, or not signed by a key I know. If
+adoption is broad enough we can start showing warnings such as "this email
+wasn't signed, do you want to trust it?" and "this signature isn't recognized,
+yikes!"
 
 There's also S/MIME, which has better client support and which works more or
 less the same as HTTPS: you get a certificate from the Certificate Authority
