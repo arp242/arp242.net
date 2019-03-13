@@ -3,6 +3,12 @@ layout: post
 title: "Why is no one signing their emails?"
 ---
 
+<div class="hatnote">
+Discussions:
+<a href="https://lobste.rs/s/1cxqho/why_is_no_one_signing_their_emails">Lobsters</a>,
+<a href="https://news.ycombinator.com/item?id=19376323">Hacker News</a>.
+</div>
+
 I received this email a while ago:
 
 > Queensland University of Technology sent you an Amazon.com Gift Card!
@@ -117,3 +123,42 @@ The way forward is to make it straight-forward to implement signing in apps and
 then *just do it* as a developer, whether asked or not; just as you set up https
 whether you're asked or not. I'll write a follow-up with more technical details
 later.
+
+Response to some feedback
+-------------------------
+
+- <em id="user-friendly">"PGP is not user friendly!"</em><br>
+  Correct, but PGP doesn't need to be user-friendly just to verify signatures.
+  It's like verifying your Linux distro's package system: all of them sign their
+  packages (usually with PGP) and they get verified on installation, but as an
+  end-user I never see it.
+
+  There are many aspects of PGP that are hard to set up and manage, but
+  verifying signatures isn't one of them.
+
+- <em id="comprehensible">"This is not comprehensible to the ordinary person."</em><br>
+  Almost no one comprehends https either. Yet it seems to work well enough to
+  protect people.
+
+  The user-visible part of this is very limited. Remember, no one is expected to
+  sign their own emails: just verify that the signature is correct (which the
+  software will do). It's not that different from verifying a handwritten
+  signature.
+
+- <em id="webmail">"You can't trust webmail with crypto!"</em><br>
+  If you use webmail then you're  already trusting the email provider with
+  everything. What's so bad with trusting them to verify a signature, too?
+
+  We're not communicating state secrets over encrypted email here; we're just
+  verifying the signature on "PayPal sent you a message, click here to view
+  it"-kind of emails.
+
+- <em id="dkim">"What about DKIM?"</em><br>
+  DKIM is useful, but limited. All it does is verify that an email which claims
+  to be from paypal.com is really from paypal.com.  What it lacks is the ability
+  to show warnings such as "this email wasn't signed, do you want to trust it?"
+  and "this signature isn't recognized, yikes!"
+
+- <em jd="key-mgmt">"Isn't this ignoring the massive problem that is key management?"</em><br>
+  Yes, it's hard problem; but that doesn't mean it can't be done. I already
+  mentioned some possible solutions in the article.
