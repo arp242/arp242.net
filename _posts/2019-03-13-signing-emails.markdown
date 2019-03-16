@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Why is no one signing their emails?"
+title: "Why isn't Amazon.com signing their emails?"
+updated: 2019-03-19
 ---
 
 <div class="hatnote">
