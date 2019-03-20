@@ -105,7 +105,7 @@ SourceForge *always* sucked, was *always* slow, and the only thing anyone
 really used it for was finding projects and when you found it, the first thing
 you did was click “Visit this project’s website”.
 
-As for Linus, well, remember his diving app that everyone got so exited about
+As for Linus, well, remember his diving app that everyone got so excited about
 even though most don’t actually dive? Linus also doesn’t attend user group
 meetings any more because it became a problem, [as Greg Kroah-Hartman
 explains][linus-fanboys]:
