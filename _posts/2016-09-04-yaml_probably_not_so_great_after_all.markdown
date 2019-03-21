@@ -294,11 +294,11 @@ Well, it is, but it’s *too* expressive (e.g. too complex).
 
 > YAML is easy to implement and use.
 
-	$ cat `ls -1 ~/gocode/src/github.com/go-yaml/yaml/*.go | grep -v _test` | wc -l
-	9247
+	$ wc -l ~/go/src/github.com/go-yaml/yaml/*.go~*_test.go | tail -n1
+      9566 total
 
-	$ cat /usr/lib/python3.5/site-packages/yaml/*.py | wc -l
-	5713
+	$ wc -l /usr/lib/python3.7/site-packages/yaml/*.py | tail -n1
+      5725 total
 
 Conclusion
 ----------
