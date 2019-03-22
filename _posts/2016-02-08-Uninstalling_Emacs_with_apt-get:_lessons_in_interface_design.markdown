@@ -477,7 +477,7 @@ No.
 Maybe, but it’s another *tu quoque*, and hasn’t been the case for at least
 fifteen years.
 
-[silence]: http://www.catb.org/~esr/writings/taoup/html/ch01s06.html#id2878450
+[silence]: https://arp242.net/the-art-of-unix-programming/#id2878450
 [pkg-emacs]: https://packages.debian.org/stable/editors/emacs
 [patterns]: http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man7/patterns.7
 [patterns-code]: http://cvsweb.openbsd.org/cgi-bin/cvsweb/~checkout~/src/usr.sbin/httpd/patterns.c?rev=1.4&content-type=text/plain

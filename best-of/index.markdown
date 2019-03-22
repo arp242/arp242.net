@@ -49,7 +49,7 @@ Programming
   state of software today.
 - [Simplicity is Complicated](https://www.youtube.com/watch?v=rFejpH_tAHM) <sup>▸</sup> 
 - [Why Should I Care What Color the Bikeshed Is?](http://bikeshed.com/) – applies to all of life, really.
-- [The Art of Unix Programming](http://catb.org/~esr/writings/taoup/html/) (book) – this should have been named ‘The Art
+- [The Art of Unix Programming](/the-art-of-unix-programming) (book) – this should have been named ‘The Art
   of Programming’, full stop. Useful for any programmer.
 - [Scaling Mercurial at Facebook](https://code.facebook.com/posts/218678814984400/scaling-mercurial-at-facebook) – an
   interesting case study how a ‘slower’ language can actually be faster on account of being easier to work with.

@@ -32,7 +32,7 @@ pages](http://www.collyer.net/who/geoff/history.html):
 > saying to myself "I can't write this," and fixing the code instead.
 
 Eric S. Raymond made [similar observations in The Art of Unix
-Programming](http://catb.org/~esr/writings/taoup/html/ch18s02.html#id3001522):
+Programming](https://arp242.net/the-art-of-unix-programming/#a981686791):
 
 > Unix manual pages traditionally have a section called BUGS. In other cultures,
 > technical writers try to make the product look good by omitting and skating
