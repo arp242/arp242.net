@@ -156,7 +156,7 @@ solution to *every single last problem* and should applied indiscriminately.
 This is why I use words such as "some" and "often" so frequently.
 
 ---
-
+<span id="bdd"></span>
 This brings me to the topic of testing frameworks. I have never understood what
 problem libraries such as [goblin][goblin] are solving. How is this:
 
