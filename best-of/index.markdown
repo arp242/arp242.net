@@ -3,9 +3,7 @@ layout: default
 title: arp242.net
 ---
 
-<nav class="center">
-	<a href="/" id="to-home">Home</a>
-</nav>
+<nav class="center"><a href="/">Home</a></nav>
 <div class="page" markdown="1">
 
 The World Wide Web is brilliant, but to get at anything interesting you’ll have to dig through a humongous pile
