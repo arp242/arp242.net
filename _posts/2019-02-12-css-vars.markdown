@@ -41,7 +41,7 @@ Do nothing
 ----------
 
 "Do nothing" was my first approach; the initial versions had only two related
-values, and I could mostly get away with it by just putting it next to each
+values, and I could mostly get away with it by just putting them next to each
 other.
 
 As I added some more fixes and features the total number of related values grew
@@ -55,46 +55,46 @@ CSS preprocessor
 Using a CSS preprocessor can be a good option for many projects, but I'm not so
 sure if it is for Hello CSS.
 
-- There is no standard CSS preprocessor that will be installed as part of a
-  standard IDE environment (like C's `cpp`), so users will have to install
-  something on their own.
-  To make this easy for all users accross all platforms regardless of skill
-  level is not easy.
+- There is no standard CSS preprocessor that's installed as part of the standard
+  IDE environment (like C's `cpp`), so users will have to install something on
+  their own. To make this easy for all users across all platforms regardless of
+  skill level is not easy.
 
-  There is no programming environment that is installed by default on all three
-  major platforms.
+  There's also no programming environment that is installed by default on all
+  three major platforms.
   Sure, people can install Python or Ruby or whatnot on Windows, but that's a
   lot of effort to just run a simple script maybe once or twice, especially if
   you're just looking to make a basic website.
 
-  In experience with getting non-programmers – and even programmers who are not
-  familiar with these tools – to install stuff using npm, gem, pip, and such can
-  be hard.
+  In experience it's hard getting non-programmers – and even programmers who are not
+  familiar with these tools – to install stuff using npm, gem, pip, and such.
   Joe Armstrong of Erlang fame [described his experience installing a "simple"
-  JS program](https://youtu.be/lKXe3HUG2l4?t=156). He gave up.
+  JS program](https://youtu.be/lKXe3HUG2l4?t=156). He gave up. I'd like Hello
+  CSS to be as usable as possible even for casual hobbyists.
 
   There are some GUI frontends (like [Koala](http://koala-app.com/)), but having
-  people download 82MB and familiarize themselves with a UI just to run `sed
-  s/../../g` doesn't strike me as a especially great.
+  people download 82MB and familiarize themselves with a UI just to run a search
+  and replace doesn't strike me as am especially great trade-off.
 
   I'm not even sure what the state of macOS systems is in this regard, as I am
-  not cool enough to own an Apple system.
+  not hip enough to own an Apple system.
 
 - CSS preprocessors will add a lot of syntax and complexity that's not needed.
   It will make using, debugging, and understanding everything harder, especially
   for beginners or people who are not heavily invested in the CSS ecosystem such
-  as a C programmer, a scientist with basic programming skills, etc. Not
+  as a C programmer, a scientist with basic programming skills, or just the
+  casual hobbies who wants to make a website about his stamp collection. Not
   everyone is a frontend dev.
 
   For example [using `calc()` in less is
   tricky](https://stackoverflow.com/q/17904088/660921).
 
 The concepts "simple" and "complex" are relative: spending an hour to save a
-week's work will make things simpler (probably), but spending the same hour to
-save 15 minutes of work will make things more complex.
+week's work will (probably) make things simpler, but spending the same hour to
+save 15 minutes of work will (probably) make things more complex.
 
-I'm not against these tools. I've used them extensively in the past and are
-(mostly) happy with them. It's just not the right tool for the job here. Hello
+I'm not against these tools. I've used them extensively in the past and will use
+them again in the future. It's just not the right tool for the job here. Hello
 CSS currently sits at 491 lines (294 without comments), has 5 variables, and 15
 references to them. It's a small project.
 
@@ -107,25 +107,23 @@ about 13% of your visitors](https://caniuse.com/#feat=css-variables).
 Some readers might feel the itch to protest that it's "old browsers" and that
 "IE sucks" and whatnot. All true. Also all irrelevant. Excluding 13% of visitors
 is still excluding 13% of visitors, no matter what the underlying reason is, or
-how stupid it is.[^1]
-
-[^1]: General note to the programming community: learn to be professional.
-      Professionals deal with the world as it is to the best of their ability,
-	  and don't refuse to deal with it because they don't like it.
+how stupid you think it is (General note to the programming community: learn to
+be professional. Professionals deal with the world as it is to the best of their
+ability, and don't refuse to deal with it because they don't like it.)
 
 For some projects this may be acceptable. This website is mostly visited by
-programmers since I write mostly about programming. I don't keep analytics, but
+pro&shy;gram&shy;mers since I write mostly about programming. I don't keep analytics, but
 I'll bet that CSS variables are supported by almost all visitors.
 
 But this site is just *one* application of Hello CSS. I did my best to make it
 as broadly applicable and accessible by as many people as possible, so it can
 work well for your stamp collection website too.
-Completely breaking it for 13% of visitors is not acceptable.[^2]
+Completely breaking it for 13% of visitors is not acceptable.[^1]
 
 I believe there are some preprocessors to solve this, but this gives us the
 problems in the previous section.
 
-[^2]: I did use `calc()` in a few places, which is unsupported by 11%. But when
+[^1]: I did use `calc()` in a few places, which is unsupported by 11%. But when
 	  `calc()` is unsupported some tables will be slightly less wide than
 	  intended. Not great, but the overal design is still in good working
 	  condition. Browsers that don't support CSS variables will have the entire
