@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "YAML: probably not so great after all"
-updated: 2017-12-27
+updated: 2019-04-15
 ---
 
 <div class="hatnote">Discussions:
@@ -35,14 +35,16 @@ like:
 	0
 
 Many other languages (including Ruby and PHP[^1]) are also unsafe by default.
-[Searching for `yaml.load` on GitHub](https://github.com/search?q=yaml.load&type=Code&utf8=%E2%9C%93)
-gives a whopping 2.8 million results.
-[`yaml.safe_load`](https://github.com/search?q=yaml.safe_load&type=Code&utf8=%E2%9C%93) only gives 26,000 results.
+Searching for `yaml.load` and `yaml.safe_load` on GitHub yields [215k][1] and
+[53k][2] results respectively.
+Many of those `yaml.load()`s are fine – loading a config file with `yaml.load()`
+is often okay since it’s usually (though not always!) from a ‘trusted source’,
+and many are from test files with static YAML. But still, one can’t help but
+wonder how many exploits are hidden in those 215k results (repeat for Ruby, PHP,
+Java, etc.)
 
-Mind you, many of those `yaml.load()`s are fine – loading in a config file with
-`yaml.load()` is often okay since it’s usually (though not always!) from a
-‘trusted source’, and many are from test files with static YAML. But still, one
-can’t help but wonder how many exploits are hidden in those 2.8 million results.
+[1]: https://github.com/search?q=%22yaml.load%22+language%3Apython&type=Code
+[2]: https://github.com/search?q=%22yaml.safe_load%22+language%3Apython&type=Code
 
 This is not a theoretical problem. In 2013 [every Ruby on Rails application ever
 written was found to be vulnerable][rails] to remote code execution due to
