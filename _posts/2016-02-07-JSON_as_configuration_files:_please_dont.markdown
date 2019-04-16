@@ -1,133 +1,110 @@
 ---
 layout: post
-title: "JSON as configuration files: please don’t"
-updated: 2016-12-17
+title: "The downsides of JSON for config files"
+updated: 2019-04-16
 ---
 
-<em class="hatnote">Also see
+<div class="hatnote">Discussions:
+<a href="https://news.ycombinator.com/item?id=19653834">Hacker News</a>;
+also see
 <a href="/weblog/yaml_probably_not_so_great_after_all.html">
-YAML: probably not so great after all.</a></em>
+YAML: probably not so great after all.</a>
+</div>
 
-I’ve recently witnessed the rather disturbing trend of using JSON for
-configuration files.
+I've recently witnessed the trend of using JSON for configuration files. I think
+this is not a good idea.
 
-Please don’t. Ever. Not even once. It’s a really bad idea.
-
-It’s just not what JSON was designed to do, and consequently not what it’s good
-at. JSON is intended to be a “lightweight data-interchange format”, and claims
-that it is “easy for humans to read and write” and “easy for machines to parse
-and generate”.
+It’s not what JSON was designed to do, and consequently not what it’s good at.
+JSON is intended to be a “lightweight data-interchange format”, and claims that
+it is “easy for humans to read and write” and “easy for machines to parse and
+generate”.
 
 As a data interchange format JSON is pretty okay. A human *can* read and write
 it comparatively easily, and it’s also pretty easy to parse for machines
-(although there [are problems][parse]).
-It’s a good trade-off between machine-readable and human-readable and a huge
-improvement on what it intended to replace: XML, which I consider to be
-unreadable by *both* machines and humans.
+(although there [are problems](http://seriot.ch/parsing_json.php)).
+
+It’s a good trade-off between machine-readable and human-readable and for many
+use-cases it's a good improvement over XML.
 
 Using it for other purposes is somewhat akin to saying “hey, this hammer
 works really well for driving in nails! I love it! Why not hammer in this screw
-with it!” Sure, it sort of works, but it’s very much the wrong tool for the job.
+with it!” Sure, it sort of works, but it’s the wrong tool for the job.
 
-Specific shortcomings
----------------------
+---
 
-### Lack of comments
+By far the biggest problem is that you can’t add comments. The occasional JSON
+parser supports it, but most don’t and it’s not in the standard. Comment support
+was [explicitly removed from JSON][1] for good reasons.
 
-This is by far the biggest problem: you can’t add comments in JSON files. The
-occasional JSON parser supports it, but most don’t and it’s not in the standard,
-in fact, comment support was [explicitly removed from JSON][crockford] for good
-reasons.
+[1]: https://web.archive.org/web/20120506232618/https://plus.google.com/118095276221607585885/posts/RK8qyGVaGSr
 
-This is **very** problematic.
-
-- No way to document on why settings were set to what they are.
-
-- No way to add mnemonics or describe caveats.
-
-- No way to keep a basic ChangeLog in the config file itself, documenting which
-  changes were made (which can be immensely useful).
-
-- Much more difficult to debug, as quickly commenting out a section isn’t
-  possible.
+There are many reasons you want to add comments: document why settings are set
+to the values they are, add  mnemonics or describe caveats, warn against past
+configuration mistakes, keep a basic ChangeLog in the file itself, or just for
+commenting out a section/value when debugging.
 
 One [suggested workaround](http://stackoverflow.com/a/244858/660921) is to use a
-new key, e.g.:
+new key (e.g. `{"__comment": "a comment", "actual_data": "..."}`, but this
+strikes me as pretty ugly.
 
-	{
-		"__comment": "Something to comment about",
-		"actual_data": "Hello, world"
-	}
+Other people have pointed out that you can use the commit log, but who is going
+to peruse the commit history in the off chance there is some important message
+hidden in there?
 
-But this is just damn ugly.
+Some JSON dialects – such as JSON5, Hjson, and HOCON – add support for comments,
+as do some JSON parsers. That's great and I encourage you to use it, but that's
+no longer JSON but a JSON dialect. This post is about JSON, not JSON dialects.
 
-Other people have pointed out that you can use the commit log, but this is an
-even worse idea. Consider something like `bower`:
+---
 
-	// Please be VERY CAREFUL when updating this, since this library often
-	// makes incompatible changes even in minor bugfix releases (e.g. when
-	// updating from 1.1.1 to 1.1.2).
-	'some_stupid_lib': '1.1.1'
+I also find the UX of JSON to be rather suboptimal for hand editing: you need to
+muck about with trailing commas, the semantics for quoting are annoying, and it
+lacks the ability to use multiline strings. These properties are good for JSON's
+intended usage, but not so great for editing configuration files. Is it doable?
+Of course. Is it fun? No.
 
-So, are you going to dig though the entire commit history in search for some
-important message?
+I also don't find it especially readable, as it suffers from excessive
+quotations and other syntax noise, I freely admit this is a matter of taste.
 
-Of course not.
+---
 
-### Readability
+JSON is a declarative configuration language. Declarative configuration (DC)
+works well for some problems, but not so well for others. In particular, using
+DC to control logic is often not a good idea.
 
-It’s just not *that* readable. Sure, it’s readable *for a data-interchange
-format*, but not readable for a configuration file.
+What prompted me to write this post was MediaWiki's new extension system. The
+old system used a simple PHP file to hook in to the core MediaWiki code, load
+required dependencies, etc. This was replaced with a JSON file in the new
+system. What was lost with this is the ability to be clever about stuff like
+compatibility with other plugins, or other logic.
 
-Readability counts.
+It's also much more complex to implement, previously it was just
+`require('plugin/foo/plugin.php');`, now it needs to parse a JSON file and do
+something with the contents of it. That's much more complex, and thus [harder to
+debug](/weblog/easy.html).
 
-### Strictness
+While using a JSON file for basic metadata makes sense (easier to parse and
+display on websites), using it to describe how code works strikes me as a misuse
+of DC. After all, that's what code is for.
 
-The JSON standard is fairly strict − this is good, it allows for concise and
-fast parsers that don’t have to muck about with different formats − but it also
-means it’s more difficult to write.
+---
 
-For example a trailing comma in objects or arrays is an error, and something
-that has bitten me more than once. And having to escape all instances or `"` can
-be pretty annoying if your string contains a lot of `"`s.
+A lot of people have asked me for suggestions about what to use. This is not
+an easy question to answer, as it depends on your use case, programming
+language, library environment, and social factors. There is no single "right
+answer", other than perhaps "the simplest which meets all your requirements".
 
-### Lack of programmability
+There are a few JSON dialects designed especially for human editing:
+[JSON5](https://json5.org/),
+[Hjson](http://hjson.org/), and
+[HOCON](https://github.com/lightbend/config/blob/master/HOCON.md). All of these
+seem like a reasonable step up from regular JSON, although I have not used any
+of them myself. JSON5 in particular seems like a good alternative, as it makes
+the least changes to JSON.
 
-Not always an issue, but sometimes it is, especially when JSON is used to
-configure some piece of code.
-
-For example, consider:
-
-	# This works much better on BritOS
-	if ($uname === 'BritOS')
-		$wear = 'trousers';
-	else
-		$wear = 'pants';
-
-This is an issue for example in MediaWiki’s `skin.json` file. What I wanted to
-do is *not* include some CSS if a certain plugin is loaded, and we can’t do this
-− we can (probably) work around it in the PHP file, but “working around” things
-is never good (and remember, we can’t leave a comment in the JSON file to inform
-people that we’re working around things!)
-
-The old way of doing things in MediaWiki (declaring class variables) was a lot
-better and provided much more features.
-
-Examples
---------
-
-Name and shame :-)
-
-- MediaWiki’s new [extension registration](https://www.mediawiki.org/wiki/Manual:Extension_registration)
-  system is what motivated me to write this.
-- npm’s [`package.json`](https://docs.npmjs.com/files/package.json) (which uses
-  a [somewhat silly system](http://stackoverflow.com/a/14221781/660921) for adding
-  comments).
-- Bower is full-on idiotic by saying [comments aren't useful enough to
-  support](https://github.com/bower/bower/issues/1059).
-- … Unfortunately many, many more …
-
-
-[crockford]: https://plus.google.com/+DouglasCrockfordEsq/posts/RK8qyGVaGSr
-[toml]: https://github.com/toml-lang/toml
-[parse]: http://seriot.ch/parsing_json.php
+I'm hesitant to suggest other alternatives, as I haven't done an in-depth
+evaluation of all the formats ([other than
+YAML](/weblog/yaml_probably_not_so_great_after_all.html)); potential drawbacks
+may not be obvious from just glancing the spec (YAML is a good example of this
+with a lot of subtle behaviour). I don't really have the time – or interest – to
+do a full in-depth review of all alternatives.
