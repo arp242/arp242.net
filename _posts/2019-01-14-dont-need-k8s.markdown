@@ -98,4 +98,10 @@ Or to summarize this post [with a Tweet](https://twitter.com/sahrizv/status/1018
 > 2016 - We must adopt #docker to solve all problems with microservices<br>
 > 2018 - We must adopt #kubernetes to solve all problems with docker<br>
 
-Related article: [You are not Google](https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb).
+
+<div class="postscript">
+<strong>Related articles</strong>
+<ul>
+<li><a href="https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb">You are not Google</a></li>
+</ul>
+</div>

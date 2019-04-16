@@ -150,12 +150,12 @@ on these logistics.
 
 So let’s simply ‘go with the flow’ and use git, even though I don’t like it.
 
----
-
-Related:
-
-- [Betamaxed](https://doriantaylor.com/betamaxed)
-
+<div class="postscript">
+<strong>Related articles</strong>
+<ul>
+<li><a href="https://doriantaylor.com/betamaxed">Betamaxed</a></li>
+</ul>
+</div>
 
 [undo-amend]: http://stackoverflow.com/a/1459264/660921
 [linus-fanboys]: https://www.bloomberg.com/news/articles/2015-06-16/the-creator-of-linux-on-the-future-without-him

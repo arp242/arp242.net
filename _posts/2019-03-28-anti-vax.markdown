@@ -50,8 +50,12 @@ empathy for these people, but I do think we need to intellectually em&shy;pa&shy
 with their world view and frame of reference to fix some of the problems we have
 in our society.
 
-Related article:
-[Anti-Vaxers Aren't Stupid](https://www.theatlantic.com/health/archive/2016/02/anti-vaxers-arent-stupid/462864/)
+<div class="postscript">
+<strong>Related articles</strong>
+<ul>
+<li><a href="https://www.theatlantic.com/health/archive/2016/02/anti-vaxers-arent-stupid/462864/">Anti-Vaxers Aren't Stupid</a></li>
+</ul>
+</div>
 
 
 [^1]: The original myth was that vaccines cause autism, but since then vaccines
