@@ -19,3 +19,24 @@ layout: default
 				create a GitHub issue</a> for feedback, questions, etc.</p>
 	</footer>
 </article>
+
+<script>
+	// TODO: probably want to do this in Jekyll at some point; for now this is easier.
+	(function() {
+		var go = function() {
+			document.querySelectorAll('.footnote').forEach(function(fn) {
+				fn.addEventListener('mouseenter', function(e) {
+					if (e.target.title !== '')
+						return;
+					e.target.title = document.getElementById(e.target.href.split('#')[1]).
+						innerText.replace(/↩$/, '').trim();
+				}, false);
+			});
+		};
+
+		if (document.readyState === 'complete')
+			go();
+		else
+			window.addEventListener('load', go, false);
+	})();
+</script>
