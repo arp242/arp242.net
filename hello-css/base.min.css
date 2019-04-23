@@ -108,7 +108,7 @@ a code,
 .link {
   color: #00f;
   text-decoration: none;
-  transition: all .2s;
+  transition: color .2s;
 }
 a:hover, .link:hover {
   text-decoration: underline;
@@ -214,6 +214,9 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
+table + table {
+  margin-top: 2em;
+}
 @media (min-width: 54rem) {
   table.full {
     margin-left: -3.5rem;
@@ -235,6 +238,17 @@ tfoot tr:first-child {
 td, th {
   padding: .2em .5em;
   hyphens: none;
+}
+td.left, th.left  {
+  text-align: left;
+}
+td.right, th.right {
+  text-align: right;
+}
+table td.right {
+    font-feature-settings: 'tnum' on;
+    font-variant-numeric: tabular-nums;
+    font-family: sans-serif;
 }
 hr {
   border: none;
