@@ -32,7 +32,7 @@ Books that advocate extensive testing – such as Robert C. Martin's *Clean Code
 – were written, in part, as a response to ever more complex programs, where you
 read 1,000 lines of code but still had no idea what's going on. I recently had
 to port a simple Java "emoji replacer" (:joy: ➙ 😂) to Go. To ensure
-compatibility I looked up the im&shy;ple&shy;men&shy;ta&shy;tion.
+compatibility I looked up the im­ple­men­ta­tion.
 It was a whole bunch of classes, factories, and whatnot which all just resulted
 in calling a regexp on a string. 🤷
 
@@ -146,7 +146,7 @@ or the more recent microservices vs. monolithic app one. In *principle*
 splitting everything up in small parts sounds like a great idea, but in practice
 it turns out that making all the small parts work together is a very hard
 problem. A hybrid approach seems to work best for kernels and app design,
-balancing the ad&shy;van&shy;tages and downsides of both approaches. I think the
+balancing the ad­van­tages and downsides of both approaches. I think the
 same applies to code.
 
 To be clear, I am not against unit tests or TDD and claiming we should all

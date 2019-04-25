@@ -112,7 +112,7 @@ be professional. Professionals deal with the world as it is to the best of their
 ability, and don't refuse to deal with it because they don't like it.)
 
 For some projects this may be acceptable. This website is mostly visited by
-pro&shy;gram&shy;mers since I write mostly about programming. I don't keep analytics, but
+pro­gram­mers since I write mostly about programming. I don't keep analytics, but
 I'll bet that CSS variables are supported by almost all visitors.
 
 But this site is just *one* application of Hello CSS. I did my best to make it
