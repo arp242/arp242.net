@@ -4,12 +4,13 @@ title: "YAML: probably not so great after all"
 updated: 2019-04-15
 ---
 
-<div class="hatnote">Discussions:
+<div class="hatnote">
+Follow-up:
+<a href="/weblog/flags-config.html">Configuration with flags</a>.
+Discussions:
 <a href="https://news.ycombinator.com/item?id=17358103">Hacker News</a>,
 <a href="https://lobste.rs/s/dwjgn1/yaml_probably_not_so_great_after_all">Lobsters</a>,
 <a href="https://www.reddit.com/r/programming/comments/8shzcu/yaml_probably_not_so_great_after_all/">/r/programming</a>.
-Feedback:
-<a href="https://github.com/Carpetsmoker/arp242.net/issues/6">#6</a>.
 Translations:
 <a href="https://linux.cn/article-10423-1.html">Chinese (汉语)</a>.
 </div>
@@ -305,20 +306,28 @@ Well, it is, but it’s *too* expressive (e.g. too complex).
 Conclusion
 ----------
 
-Don’t get me wrong, it’s not like YAML is absolutely terrible – it’s certainly
-not as [problematic as using JSON][json-no] – but it’s not exactly great either.
+Don’t get me wrong, it’s not like YAML is absolutely terrible – it’s probably
+better better than [using JSON][json-no] – but it’s not exactly great either.
 There are some drawbacks and surprises that are not at all obvious at first, and
 there are a number of better alternatives such as [TOML][toml] and other more
-specialized formats.
+specialized formats. Personally I’m not likely to use it again when I’ve got a
+choice.
 
-Personally, I’m not likely to use it again when I’ve got a choice.
+One good alternative might be to just [use commandline
+flags](/weblog/flags-config.html).
 
 If you *must* use YAML then I recommend you use
 [StrictYAML](https://github.com/crdoconnor/strictyaml), which removes some
 (though not all) of the more hairy parts.
 
-[^1]: In PHP you need to modify an INI setting for the safe behaviour; you can’t just call something like `yaml_safe()`. The PHP folks managed to make something stupid *even more stupid*. Congratulations.
-[^2]: Don't want to start the spaces vs. tabs debate here, but if tabs would be allowed I would be able to (temporarily) increase the tab width to a higher number to make it easier to see – this is sort of the point of tabs.
+[^1]: In PHP you need to modify an INI setting for the safe behaviour; you can’t
+      just call something like `yaml_safe()`. The PHP folks managed to make
+      something stupid *even more stupid*. Congratulations.
+
+[^2]: Don't want to start the spaces vs. tabs debate here, but if tabs would be
+      allowed I would be able to (temporarily) increase the tab width to a
+      higher number to make it easier to see – this is sort of the point of
+      tabs.
 
 [faq]: http://www.yaml.org/faq.html
 [yaml-spec]: http://yaml.org/spec/1.2/spec.pdf
@@ -326,7 +335,7 @@ If you *must* use YAML then I recommend you use
 [toml-spec]: https://github.com/toml-lang/toml
 [json-spec]: http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf
 [xml-spec]: https://www.w3.org/TR/REC-xml/
-[json-no]: http://arp242.net/weblog/JSON_as_configuration_files-_please_dont.html
+[json-no]: /weblog/JSON_as_configuration_files-_please_dont.html
 [toml]: https://github.com/toml-lang/toml
 [rails]: https://www.sitepoint.com/anatomy-of-an-exploit-an-in-depth-look-at-the-rails-yaml-vulnerability/
-[pickle]: https://arp242.net/weblog/security-of-python's-pickle-and-marshal-modules.html
+[pickle]: /weblog/security-of-python's-pickle-and-marshal-modules.html

@@ -4,11 +4,14 @@ title: "The downsides of JSON for config files"
 updated: 2019-04-16
 ---
 
-<div class="hatnote">Discussions:
-<a href="https://news.ycombinator.com/item?id=19653834">Hacker News</a>;
-also see
+<div class="hatnote">
+Follow-up:
+<a href="/weblog/flags-config.html">Configuration with flags</a>.
+Also see
 <a href="/weblog/yaml_probably_not_so_great_after_all.html">
-YAML: probably not so great after all.</a>
+YAML: probably not so great after all</a>.
+Discussions:
+<a href="https://news.ycombinator.com/item?id=19653834">Hacker News</a>;
 </div>
 
 I've recently witnessed the trend of using JSON for configuration files. I think
@@ -92,7 +95,11 @@ of DC. After all, that's what code is for.
 A lot of people have asked me for suggestions about what to use. This is not
 an easy question to answer, as it depends on your use case, programming
 language, library environment, and social factors. There is no single "right
-answer", other than perhaps "the simplest which meets all your requirements".
+answer", other than perhaps "the simplest which meets all your requirements". I
+actually wrote [an entire article about that](/weblog/negative-argument.html).
+
+One good alternative might be to just [use commandline
+flags](/weblog/flags-config.html).
 
 There are a few JSON dialects designed especially for human editing:
 [JSON5](https://json5.org/),
