@@ -49,9 +49,8 @@ Compare:
 Still a bit larger than the standard 80 columns, but only by a bit (108 in this
 specific example), which is a hell of a lot better than 260.
 
-You can add this to `~/.config/docker.json` – and the config is in [a stupid
-format](https://arp242.net/weblog/json_as_configuration_files-_please_dont) – to
-have it apply automatically:
+You can add this to `~/.config/docker.json` – [ugh][json] – to have it apply
+automatically:
 
 {% raw %}
 	{
@@ -67,3 +66,5 @@ You can check `man docker-container-ls` for the documentation on `--format`.
 
 The lesson here is to use safe and sane defaults people ... not everyone uses
 porn-sized terminal windows. Some of us have normal-sized windows!
+
+[json]: /weblog/json_as_configuration_files-_please_dont

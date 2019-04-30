@@ -29,7 +29,7 @@ The actual code
 	#!/usr/bin/env python
 	#
 	# Martin Tournoij <martin@arp242.net>
-	# http://arp242.net/weblog/Manage_Unreal_Tournament_cache_files.php
+	# http://arp242.net/weblog/ut-cache.html
 	# Free to use for whatever purpose. There are no restrictions.
 	# Version 20100624
 	#

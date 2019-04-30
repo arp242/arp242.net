@@ -338,4 +338,4 @@ If you *must* use YAML then I recommend you use
 [json-no]: /weblog/JSON_as_configuration_files-_please_dont.html
 [toml]: https://github.com/toml-lang/toml
 [rails]: https://www.sitepoint.com/anatomy-of-an-exploit-an-in-depth-look-at-the-rails-yaml-vulnerability/
-[pickle]: /weblog/security-of-python's-pickle-and-marshal-modules.html
+[pickle]: /weblog/pickle-marshal-security.html

@@ -50,7 +50,7 @@ offers, but it’s better than the PHP functions.
 	 *
 	 * This implementation is written by Martin Tournoij <martin@arp242.net>, while
 	 * peeking at FreeBSD's implementation of mkstemp (src/lib/libc/stdio/mktemp.c)
-	 * http://arp242.net/weblog/Creating_temporary_files_in_PHP.html
+	 * http://arp242.net/weblog/php-mktemp.html
 	 */
 	function mktemp($template=Null, $prefix=Null, $dir=False)
 	{
