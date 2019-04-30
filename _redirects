@@ -1,25 +1,30 @@
 # https://www.netlify.com/docs/redirects/
 
 # Old weblog titles
-/weblog/Run_multiple_services_on_one_port_and_use_PF's_overload_to_switch_between_them.html /weblog/pf-switch.html 301
-/weblog/run_multiple_services_on_one_port_and_use_pf's_overload_to_switch_between_them      /weblog/pf-switch.html 301
-/weblog/Minimal_Apache_configuration_for_subversion.html /weblog/apache-svn.html 301
-/weblog/minimal_apache_configuration_for_subversion      /weblog/apache-svn.html 301
-/weblog/Manage_Unreal_Tournament_cache_files.html /weblog/ut-cache.html 301
-/weblog/manage_unreal_tournament_cache_files      /weblog/ut-cache.html 301
-/weblog/Online_Unreal_Tournament_server_browser_with_pcntl_fork().html /weblog/ut-browser.html 301
-/weblog/online_unreal_tournament_server_browser_with_pcntl_fork()      /weblog/ut-browser.html 301
-/weblog/Tunnelling_SSH_though_a_firewall_with_ssh_-L.html /weblog/ssh-tunnel.html 301
-/weblog/tunnelling_ssh_though_a_firewall_with_ssh_-l      /weblog/ssh-tunnel.html 301
-/weblog/Creating_temporary_files_in_PHP.html /weblog/php-mktemp.html 301
-/weblog/creating_temporary_files_in_php      /weblog/php-mktemp.html 301
-/weblog/digging_for_hosts_FreeBSD_10.html /weblog/freebsd-dig.html 301
-/weblog/digging_for_hosts_freebsd_10      /weblog/freebsd-dig.html 301
-/weblog/making_flag_shih_tzu_work_well_with_formtastic.html /weblog/flagshihtzu-formtastic.html 301
-/weblog/Intercept_outgoing_mails_in_Ruby_on_Rails.html /weblog/rails-devmail.html 301
-/weblog/intercept_outgoing_mails_in_ruby_on_rails      /weblog/rails-devmail.html 301
-/weblog/uninstalling_emacs_with_apt-get-_lessons_in_interface_design      /weblog/apt-get.html 301
-/weblog/Uninstalling_Emacs_with_apt-get-_lessons_in_interface_design.html /weblog/apt-get.html 301
+/weblog/Run_multiple_services_on_one_port_and_use_PF's_overload_to_switch_between_them.html   /weblog/pf-switch.html                 301
+/weblog/run_multiple_services_on_one_port_and_use_pf's_overload_to_switch_between_them        /weblog/pf-switch.html                 301
+/weblog/Minimal_Apache_configuration_for_subversion.html                                      /weblog/apache-svn.html                301
+/weblog/minimal_apache_configuration_for_subversion                                           /weblog/apache-svn.html                301
+/weblog/Manage_Unreal_Tournament_cache_files.html                                             /weblog/ut-cache.html                  301
+/weblog/manage_unreal_tournament_cache_files                                                  /weblog/ut-cache.html                  301
+/weblog/Online_Unreal_Tournament_server_browser_with_pcntl_fork().html                        /weblog/ut-browser.html                301
+/weblog/online_unreal_tournament_server_browser_with_pcntl_fork()                             /weblog/ut-browser.html                301
+/weblog/Tunnelling_SSH_though_a_firewall_with_ssh_-L.html                                     /weblog/ssh-tunnel.html                301
+/weblog/tunnelling_ssh_though_a_firewall_with_ssh_-l                                          /weblog/ssh-tunnel.html                301
+/weblog/Creating_temporary_files_in_PHP.html                                                  /weblog/php-mktemp.html                301
+/weblog/creating_temporary_files_in_php                                                       /weblog/php-mktemp.html                301
+/weblog/digging_for_hosts_FreeBSD_10.html                                                     /weblog/freebsd-dig.html               301
+/weblog/digging_for_hosts_freebsd_10                                                          /weblog/freebsd-dig.html               301
+/weblog/making_flag_shih_tzu_work_well_with_formtastic.html                                   /weblog/flagshihtzu-formtastic.html    301
+/weblog/Intercept_outgoing_mails_in_Ruby_on_Rails.html                                        /weblog/rails-devmail.html             301
+/weblog/intercept_outgoing_mails_in_ruby_on_rails                                             /weblog/rails-devmail.html             301
+/weblog/Uninstalling_Emacs_with_apt-get-_lessons_in_interface_design.html                     /weblog/apt-get.html                   301
+/weblog/uninstalling_emacs_with_apt-get-_lessons_in_interface_design                          /weblog/apt-get.html                   301
+/weblog/generate_passwords_from_the_commandline                                               /weblog/cli-passwords.html             301
+/weblog/Generate_passwords_from_the_commandline.html                                          /weblog/cli-passwords.html             301
+/weblog/security-of-python's-pickle-and-marshal-modules.html                                  /weblog/pickle-marshal-security.html   301
+/weblog/i-dont-like-git-but-im-going-to-migrate-my-projects-to-it.html                        /weblog/git-hg.html                    301
+/weblog/weblog/some-thoughts-on-cdns.html                                                     /weblog/cdn.html                       301
 
 # Code pages, just redirect to GitHub
 /code                        /#code                                               301
