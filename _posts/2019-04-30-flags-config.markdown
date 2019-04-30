@@ -36,9 +36,8 @@ typos.
         -bar "${BAR:-default}"
 
 You can probably do something similar with systemd unit files. Personally I'd
-just call that shell script from systemd; it's just so much easier to
-understand, test, and debug (applicable: [*easy means easy to
-debug*](/weblog/easy.html)).
+just call that shell script from systemd; it's just so much [easier to
+understand, test, and debug](/weblog/easy.html).
 
 ---
 
