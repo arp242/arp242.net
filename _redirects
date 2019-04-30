@@ -1,0 +1,4 @@
+# https://www.netlify.com/docs/redirects/
+
+/weblog/Run_multiple_services_on_one_port_and_use_PF's_overload_to_switch_between_them.html /weblog/pf-switch.html 301
+/weblog/run_multiple_services_on_one_port_and_use_pf's_overload_to_switch_between_them      /weblog/pf-switch.html 301
