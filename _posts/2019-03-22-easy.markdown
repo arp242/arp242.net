@@ -3,9 +3,11 @@ layout: post
 title: "Easy means easy to debug"
 ---
 
+<!--
 <div class="hatnote">
 Follow-up: <a href="/weblog/understandable.html">How to make code easier to understand</a>
 </div>
+-->
 
 What does it mean for a framework, library, tool to be "easy"? There are many
 possible definitions one could use, but my definition is usually that it's *easy
