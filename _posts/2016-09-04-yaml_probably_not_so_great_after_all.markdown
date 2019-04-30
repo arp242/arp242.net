@@ -307,7 +307,7 @@ Conclusion
 ----------
 
 Don’t get me wrong, it’s not like YAML is absolutely terrible – it’s probably
-better better than [using JSON][json-no] – but it’s not exactly great either.
+better than [using JSON][json-no] – but it’s not exactly great either.
 There are some drawbacks and surprises that are not at all obvious at first, and
 there are a number of better alternatives such as [TOML][toml] and other more
 specialized formats. Personally I’m not likely to use it again when I’ve got a
