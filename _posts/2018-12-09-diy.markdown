@@ -67,7 +67,7 @@ contribute, rather than just trying to tell you how to run your project.
 ---
 
 To quote Neil Gaiman when talking about *A Song of Ice and Fire* fans demanding
-George R.R. Martin work harder on the next instalment of the series: "[George
+George R.R. Martin work harder on the next installment of the series: "[George
 R.R. Martin is not your bitch][bitch]". I can't help George write his book, but
 I can help with software projects, which is really neat. Not everyone is a
 computer programmer, but the vast majority of projects I've worked on are used
