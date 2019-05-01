@@ -3,10 +3,10 @@ layout: post
 title: "Why write?"
 ---
 
-At the start of *Breaking Bad* Walter is faced with a tricky situation. He
-managed to escape a murder attempt from a drug dealer and captured him in the
-process. But what to do now? Walter doesn't want to kill anyone, but just
-letting this person go might not be a good idea either.
+In *Breaking Bad* Walter is faced with a tricky situation. He managed to escape
+a murder attempt from a drug dealer and captured him in the process. But what to
+do now? Walter doesn't want to kill anyone, but just letting this person go
+might not be a good idea either.
 
 So Walter writes a list with the points in favour of "let him live" and "kill
 him".
