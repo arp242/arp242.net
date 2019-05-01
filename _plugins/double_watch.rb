@@ -1,7 +1,8 @@
 # Listen >=2.8 patch to silence duplicate directory errors. USE AT YOUR OWN RISK
 require 'listen/record/symlink_detector'
+
 class Listen::Record::SymlinkDetector
-	def _fail(_, _)
-		fail Error, "Don't watch locally-symlinked directory twice"
-	end
+  def _fail(_, _)
+    fail Error, "Don't watch locally-symlinked directory twice"
+  end
 end
