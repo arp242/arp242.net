@@ -11,4 +11,4 @@ when discovered.
 
 [All project status badges][status].
 
-[status]: /weblog/project-status-badges.html
+[status]: /project-status-badges.html

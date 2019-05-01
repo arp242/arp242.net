@@ -28,7 +28,7 @@ motivation as well as solidifying the new knowledge.
 Taking notes while reading the book also helps. I always write down key concepts
 while I’m reading about them in brief notes. I don’t often refer to them, it’s
 just useful to write things down in your own words to help your brain memorize
-them (also see [Why write?](/weblog/why-write.html))
+them (also see [Why write?](/why-write.html))
 
 For example an excerpt in my notes for Go:
 

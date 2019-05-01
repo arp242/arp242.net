@@ -5,7 +5,7 @@ title: "Easy means easy to debug"
 
 <!--
 <div class="hatnote">
-Follow-up: <a href="/weblog/understandable.html">How to make code easier to understand</a>
+Follow-up: <a href="/understandable.html">How to make code easier to understand</a>
 </div>
 -->
 
@@ -65,8 +65,8 @@ to highlight some trade-offs in "easy to use" vs. "easy to debug".
   spend quite a long time figuring out what *exactly* went wrong (as the errors
   it gave me were very confusing!)
 
-  I wrote a bit more about that in my [*Testing isn’t
-  everything*](/weblog/testing.html) post.
+  I wrote a bit more about that in my [*Testing isn’t everything*](/testing.html)
+  post.
 
 - Many JavaScript frameworks I've used can be hard to fully understand. Clever
   state keeping logic is great and all, until that state won't work as you
@@ -99,7 +99,7 @@ to highlight some trade-offs in "easy to use" vs. "easy to debug".
   5) when explaining that systemd is easy.
 
   It's not that I disagree with Poettering exactly – also see [the shell
-  scripting trap](/weblog/shell-scripting-trap.html) – but it is an incomplete
+  scripting trap](/shell-scripting-trap.html) – but it is an incomplete
   picture. The plumbing required to make unit files easy means systemd as a
   whole is much more complex, and users *do* suffer effects from this.
   Look at [this issue](https://unix.stackexchange.com/q/185495/33645) I
@@ -109,4 +109,6 @@ to highlight some trade-offs in "easy to use" vs. "easy to debug".
 
 ---
 
-**Also see my follow-up: [How to make code easier to understand](/weblog/understandable.html)**
+<!--
+**Also see my follow-up: [How to make code easier to understand](/understandable.html)**
+-->

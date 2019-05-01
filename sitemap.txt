@@ -1,0 +1,7 @@
+---
+layout: null
+---
+{%- capture nl %}
+{% endcapture -%}
+{% for post in site.posts %}{{ post.url | prepend: site.baseurl | prepend: site.url }}{% if forloop.last != true %}{{ nl }}{% endif %}{% endfor %}
+https://arp242.net/the-art-of-unix-programming/

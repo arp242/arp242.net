@@ -9,4 +9,4 @@ The author has stopped working on it, but should still work and may be useful.
 
 [All project status badges][status].
 
-[status]: /weblog/project-status-badges.html
+[status]: /project-status-badges.html

@@ -6,7 +6,7 @@ updated: 2019-04-15
 
 <div class="hatnote">
 Follow-up:
-<a href="/weblog/flags-config.html">Configuration with flags</a>.
+<a href="/flags-config.html">Configuration with flags</a>.
 Discussions:
 <a href="https://news.ycombinator.com/item?id=17358103">Hacker News</a>,
 <a href="https://lobste.rs/s/dwjgn1/yaml_probably_not_so_great_after_all">Lobsters</a>,
@@ -314,7 +314,7 @@ specialized formats. Personally I’m not likely to use it again when I’ve got
 choice.
 
 One good alternative might be to just [use commandline
-flags](/weblog/flags-config.html).
+flags](/flags-config.html).
 
 If you *must* use YAML then I recommend you use
 [StrictYAML](https://github.com/crdoconnor/strictyaml), which removes some
@@ -335,7 +335,7 @@ If you *must* use YAML then I recommend you use
 [toml-spec]: https://github.com/toml-lang/toml
 [json-spec]: http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf
 [xml-spec]: https://www.w3.org/TR/REC-xml/
-[json-no]: /weblog/JSON_as_configuration_files-_please_dont.html
+[json-no]: /json-config.html
 [toml]: https://github.com/toml-lang/toml
 [rails]: https://www.sitepoint.com/anatomy-of-an-exploit-an-in-depth-look-at-the-rails-yaml-vulnerability/
-[pickle]: /weblog/pickle-marshal-security.html
+[pickle]: /pickle-marshal-security.html

@@ -41,6 +41,6 @@ well, but it's almost trivial to run it in to the ground.
 Think about this next time you find yourself thinking "government is messing
 things up again!" Why did it fail? And *could* it have worked if there was more
 commitment?
-Also see [*Being right*](/weblog/being-right.html): just because the conclusion
+Also see [*Being right*](/being-right.html): just because the conclusion
 is correct ("government messed things up") doesn't mean the reasoning is correct
 ("it failed because government is inefficient, mismanaged, etc.")

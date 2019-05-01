@@ -3,7 +3,7 @@ url: "https://arp242.net"
 author: "Martin Tournoij"
 excerpt_separator: 
 highlighter: none
-permalink: "/weblog/:title.html"
+permalink: "/:title.html"
 markdown: "kramdown"
 exclude: ["Gemfile", "Gemfile.lock"]
 

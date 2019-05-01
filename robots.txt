@@ -1,2 +1,3 @@
 User-agent: Terminator
 Disallow: /sarah-connor
+Sitemap: https://arp242.net/sitemap.txt

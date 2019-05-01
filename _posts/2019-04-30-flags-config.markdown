@@ -76,10 +76,10 @@ needs to be a setting.
 
 <div class="postscript"><strong>Also see</strong>
 <ul>
-<li><a href="/weblog/flags-config-go.html">Using flags for configuration in Go</a></li>
+<li><a href="/flags-config-go.html">Using flags for configuration in Go</a></li>
 </ul></div>
 
-[easy]: /weblog/easy.html
-[yaml]: /weblog/yaml_probably_not_so_great_after_all.html
-[json]: /weblog/json_as_configuration_files-_please_dont
+[easy]: /easy.html
+[yaml]: /yaml-config.html
+[json]: /json-config.html
 [sconfig]: https://github.com/Carpetsmoker/sconfig

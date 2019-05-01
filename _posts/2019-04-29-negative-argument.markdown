@@ -100,6 +100,6 @@ it in cases where it was clearly never the appropriate tool.
 
 <style>blockquote sup { font-style: normal; }</style>
 
-[yaml]: /weblog/yaml_probably_not_so_great_after_all.html
-[json]: /weblog/json_as_configuration_files-_please_dont
+[yaml]: /yaml-config.html
+[json]: /json-config.html
 [atwood]: https://twitter.com/codinghorror/status/1009511858460479489

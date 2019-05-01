@@ -67,4 +67,4 @@ You can check `man docker-container-ls` for the documentation on `--format`.
 The lesson here is to use safe and sane defaults people ... not everyone uses
 porn-sized terminal windows. Some of us have normal-sized windows!
 
-[json]: /weblog/json_as_configuration_files-_please_dont
+[json]: /json-config.html

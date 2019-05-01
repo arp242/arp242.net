@@ -6,9 +6,9 @@ updated: 2019-04-16
 
 <div class="hatnote">
 Follow-up:
-<a href="/weblog/flags-config.html">Configuration with flags</a>.
+<a href="/flags-config.html">Configuration with flags</a>.
 Also see
-<a href="/weblog/yaml_probably_not_so_great_after_all.html">
+<a href="/yaml-config.html">
 YAML: probably not so great after all</a>.
 Discussions:
 <a href="https://news.ycombinator.com/item?id=19653834">Hacker News</a>;
@@ -84,7 +84,7 @@ compatibility with other plugins, or other logic.
 It's also much more complex to implement, previously it was just
 `require('plugin/foo/plugin.php');`, now it needs to parse a JSON file and do
 something with the contents of it. That's much more complex, and thus [harder to
-debug](/weblog/easy.html).
+debug](/easy.html).
 
 While using a JSON file for basic metadata makes sense (easier to parse and
 display on websites), using it to describe how code works strikes me as a misuse
@@ -96,10 +96,10 @@ A lot of people have asked me for suggestions about what to use. This is not
 an easy question to answer, as it depends on your use case, programming
 language, library environment, and social factors. There is no single "right
 answer", other than perhaps "the simplest which meets all your requirements". I
-actually wrote [an entire article about that](/weblog/negative-argument.html).
+actually wrote [an entire article about that](/negative-argument.html).
 
 One good alternative might be to just [use commandline
-flags](/weblog/flags-config.html).
+flags](/flags-config.html).
 
 There are a few JSON dialects designed especially for human editing:
 [JSON5](https://json5.org/),
@@ -110,8 +110,7 @@ of them myself. JSON5 in particular seems like a good alternative, as it makes
 the least changes to JSON.
 
 I'm hesitant to suggest other alternatives, as I haven't done an in-depth
-evaluation of all the formats ([other than
-YAML](/weblog/yaml_probably_not_so_great_after_all.html)); potential drawbacks
-may not be obvious from just glancing the spec (YAML is a good example of this
-with a lot of subtle behaviour). I don't really have the time – or interest – to
-do a full in-depth review of all alternatives.
+evaluation of all the formats ([other than YAML](/yaml-config.html)); potential
+drawbacks may not be obvious from just glancing the spec (YAML is a good example
+of this with a lot of subtle behaviour). I don't really have the time – or
+interest – to do a full in-depth review of all alternatives.

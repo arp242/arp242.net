@@ -294,5 +294,5 @@ a [sunk-cost fallacy](http://rationalwiki.org/wiki/Sunk_cost).
 [php-fopen]: http://php.net/manual/en/function.fopen.php
 [proc_open]: http://php.net/manual/en/function.proc_open.php
 [c-fopen]: http://pubs.opengroup.org/onlinepubs/9699919799/functions/fopen.html#tag_16_155_05
-[mktemp]: /weblog/php-mktemp.html
+[mktemp]: /php-mktemp.html
 [err-h]: http://php.net/manual/en/function.set-error-handler.php

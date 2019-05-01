@@ -5,7 +5,7 @@ title: "Using flags for configuration in Go"
 
 I like commandline flags for configuration. It's simple, robust, flexible, and
 generally just bullshit-free.
-See [*flags are great for configuration*](/weblog/flags-config.html).
+See [*flags are great for configuration*](/flags-config.html).
 
 The way I do it in Go is keeping a list of exported variables in a `cfg`
 package:
@@ -72,7 +72,7 @@ P.S. If you're going to use a configuration package then I recommend
 [flag]: https://golang.org/pkg/flag/
 [cobra]: https://github.com/spf13/cobra
 [sconfig]: https://github.com/Carpetsmoker/sconfig
-[easy]: /weblog/easy.html
+[easy]: /easy.html
 
 
 Generate script
