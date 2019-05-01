@@ -3,12 +3,19 @@ layout: post
 title: "Flags are great for configuration"
 ---
 
+<div class="hatnote">
+Discussions:
+<a href="https://lobste.rs/s/tm1vwk/flags_are_great_for_configuration">Lobsters</a>.
+</div>
+
 I like to configure programs with commandline flags. Why include thousands of
 lines of code to parse [confusing file formats][yaml] when you can just run
 `prog -foo`? Want to support loading from environment variables? `prog -foo
 "$ARG"`, or if you want to set a default use `prog -foo "${ARG:-default}"`. Want
 to inspect the flags the application was launched with? `ps`. Want the
-documentation? `prog -help`. Want a config file? Create a simple shell script.
+documentation? `prog -help`. Want a config file? Create a wrapper script to call
+the program with the desired flags. Want to read the documen­ta­tion? That's what
+the usage text is for.
 
 Is this suitable for everything? No, of course not. In particular config files
 will work better for apps you launch frequently and have a lot of settings such
@@ -32,9 +39,13 @@ don't think that really makes things [easier][easy].
 I've never really liked the idea of directly using environment variables for
 configuration. It's not very explicit, can be surprising (with subprocesses
 inheriting parent), there are no warnings on typos, and it's hard to inspect.
-Using flags allows you to use environment variables (for e.g. secrets) while
-fixing most of those issues: it's explicit, clear which variables are used, and
-you get errors on typos.
+Using flags allows you to use environment variables while fixing most of those
+issues: it's explicit, clear which variables are used, and you get errors on
+typos.
+
+<aside>You should mount procfs with <code>hidepid=1</code> to make sure
+<code>cmdline</code> isn't world-readable if you pass sensitive
+information like this.</aside>
 
     #!/bin/sh
 
@@ -44,8 +55,10 @@ you get errors on typos.
 
     # exec replaces the process; prevents needless /bin/sh from dangling around.
     exec prog \
-        -foo "$FOO" \
-        -bar "${BAR:-default}"
+        -a "$A"          `# Always include A from environment, error out if unset`  \
+        -b "${B:-d}"     `# Include B from environment, use "d" if unset` \
+        "${C:+-c "$C"}"  `# Only pass -c $C if $C is set, pass nothing at all if unset` \
+        "$@"             `# Include all argument passed to the shell script`
 
 You can probably do something similar with systemd unit files. Personally I'd
 just call that shell script from systemd; it's just so much [easier to
