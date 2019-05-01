@@ -44,8 +44,9 @@ issues: it's explicit, clear which variables are used, and you get errors on
 typos.
 
 <aside>You should mount procfs with <code>hidepid=1</code> to make sure
-<code>cmdline</code> isn't world-readable if you pass sensitive
-information like this.</aside>
+<code>cmdline</code> isn't world-readable if you pass sensitive information like
+this. That said, passing secrets securely is complex (and a full guide is beyond
+the scope of this post).</aside>
 
     #!/bin/sh
 
