@@ -2,15 +2,16 @@
 layout: post
 title: Making find -exec faster
 archive: true
+updated: 2019-05-03
 ---
 
 Here’s a little `find` trick that few people seem to know:
 
-	# 13 seconds...
+	# 13 seconds
 	$ time find . -type f -exec stat {} \; > /dev/null
 			13.20s real             3.94s user              9.22s sys
 
-	# 1.5 seconds! That's almost 10 times faster!
+	# 1.5 seconds; that's almost 10 times faster!
 	$ time find . -type f -exec stat {} + > /dev/null
 			1.48s real              0.68s user              0.79s sys
 
@@ -19,7 +20,7 @@ Here’s a little `find` trick that few people seem to know:
 	$ time find . -type f -exec stat {} \; > /dev/null
 			13.40s real             3.67s user              9.51s sys
 
-	# FYI...
+	# FYI
 	$ find . -type f | wc -l
 	    2641
 
@@ -37,9 +38,9 @@ Let’s see what [POSIX has to say about it][posix] (emphases mine):
 > shall be aggregated into sets. **The utility `utility_name` shall be invoked once
 > for each set of aggregated pathnames.**
 
-Or in slightly more normal English: If you use `;`, `find` will execute the
-utility once for every path; if you use `+`, it will cram as many paths as it
-can in an invocation.
+Or in plain English: if you use `;` `find` will execute the utility once for
+every path; if you use `+` it will cram as many paths as it can in an
+invocation.
 
 How many? Well, as many as `ARG_MAX` allows. [Quoting from POSIX Again][limits]:
 
@@ -76,8 +77,7 @@ Let’s verify this with [`truss`][truss]:[^1]
 	$ grep fork truss-slow | wc -l
 		2641
 
-Caveat
-------
+---
 
 There is one small caveat, this won’t work:
 
@@ -85,7 +85,7 @@ There is one small caveat, this won’t work:
     $ find . -type f -exec cp {} /tmp +
 	find: -exec: no terminating ";" or "+"
 
-	# GNU find is even more cryptic:
+	# GNU find is even more cryptic
 	$ find: missing argument to `-exec'
 
 Going [back to POSIX][posix]:
@@ -99,12 +99,16 @@ and thus gives an error.
 
 We can work around this by spawning a `sh` one-liner:
 
-	$ find . -type f -exec sh -c 'cp "$@" /tmp' {} +
+	$ find . -type f -exec sh -c 'cp "$@" /tmp' _ {} +
 
-[^1]: Linux users can use [`strace`][strace]. OpenBSD users [`ktrace`][ktrace].
+You need to pass the `_` since `sh -c` sets the special `$0` parameter from the
+first argument ([more details][reddit]).
+
+[^1]: Linux users can use [`strace`][strace]; OpenBSD users [`ktrace`][ktrace].
 
 [posix]: http://pubs.opengroup.org/onlinepubs/9699919799/utilities/find.html
 [limits]: http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/limits.h.html
 [truss]: http://www.freebsd.org/cgi/man.cgi?query=truss&apropos=0&sektion=0&manpath=FreeBSD+10.1-RELEASE&arch=default&format=html
 [strace]: http://sourceforge.net/projects/strace/
 [ktrace]: http://www.openbsd.org/cgi-bin/man.cgi?query=ktrace&apropos=0&sec=0&arch=default&manpath=OpenBSD-current
+[reddit]: https://www.reddit.com/r/commandline/comments/bk00or/making_find_exec_faster/emcqcgx/
