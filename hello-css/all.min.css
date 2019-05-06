@@ -58,7 +58,7 @@ html {
 @media (max-width: 54rem) {
   html { font-size: 14px; line-height: 160%; }
 }
-@media (max-width: 26rem) {
+@media (max-width: 27rem) {
   html { font-size: 12px; line-height: 150%; }
 }
 pre, code {

@@ -72,6 +72,12 @@
 	margin-left: -5px;
 }
 
+@media (max-width: 54rem) {
+	#toc a {
+		padding: 5px 0px 5px 5px;
+	}
+}
+
 #toc .active {
 	background-color: #ddd;
 }
