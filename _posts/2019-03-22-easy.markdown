@@ -3,6 +3,11 @@ layout: post
 title: "Easy means easy to debug"
 ---
 
+<div class="hatnote">
+Translations:
+<a href="https://velog.io/@leejh3224/Easy-means-easy-to-debug">Korean (한국어)</a>.
+</div>
+
 <!--
 <div class="hatnote">
 Follow-up: <a href="/understandable.html">How to make code easier to understand</a>
