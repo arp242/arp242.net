@@ -12,7 +12,7 @@ Discussions:
 <a href="https://lobste.rs/s/dwjgn1/yaml_probably_not_so_great_after_all">Lobsters</a>,
 <a href="https://www.reddit.com/r/programming/comments/8shzcu/yaml_probably_not_so_great_after_all/">/r/programming</a>.
 Translations:
-<a href="https://linux.cn/article-10423-1.html">Chinese (汉语)</a>.
+<a href="https://linux.cn/article-10423-1.html">Chinese (中文)</a>.
 </div>
 
 I previously wrote [why using JSON for human-editable configuration files is a

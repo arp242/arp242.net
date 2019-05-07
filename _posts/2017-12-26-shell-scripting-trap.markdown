@@ -8,7 +8,7 @@ layout: post
 <a href="https://www.reddit.com/r/programming/comments/968sbv/the_shell_scripting_trap/">/r/programming</a>,
 <a href="https://www.reddit.com/r/commandline/comments/96i08f/the_shell_scripting_trap/">/r/commandline</a>.
 Translations:
-<a href="https://linux.cn/article-10772-1.html">Chinese (汉语)</a>.
+<a href="https://linux.cn/article-10772-1.html">Chinese (中文)</a>.
 </div>
 
 Shell scripting is great. It is amazingly simple to create something very
