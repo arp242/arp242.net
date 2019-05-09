@@ -39,7 +39,14 @@ The list is in no particular order. Items with a <sup>▸</sup> are a video.
 - [Before you can be with others, first learn to be alone](https://aeon.co/ideas/before-you-can-be-with-others-first-learn-to-be-alone)
 - [What Bullets Do to Bodies](http://highline.huffingtonpost.com/articles/en/gun-violence/)
 - [History of the Amiga](https://arstechnica.com/series/history-of-the-amiga/)
-
+- [Ancient Lives](https://www.youtube.com/watch?v=hnsNwwwHm2I) <sup>▸</sup> – regular life of ancient Egyptians. Old documentary from
+  1985, but very well done. Lack of flashy CGI animations is a good thing!
+- [The Ex & Han Bennink in Ziway, Ethiopia](https://www.youtube.com/watch?v=HnxtFpfV4U4) <sup>▸</sup> – there's just
+  such a good vibe at this show! And The Ex's Ethiopian songs are always good.
+- [Traditional English Clog Maker](https://www.youtube.com/watch?v=d2BctOSZxSA) <sup>▸</sup>
+- [The Ukiyo-e Technique: Traditional Japanese Printmaking](https://www.youtube.com/watch?v=yfqsTy3Yx24) <sup>▸</sup>
+- [Jumping on eggs without breaking them](https://www.youtube.com/watch?v=wZgVkP6o6Ig) <sup>▸</sup> – The *unique* Mr.
+  Tony McGabe from Manchester!
 
 Programming
 ===========
