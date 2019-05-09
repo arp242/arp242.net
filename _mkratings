@@ -1,0 +1,119 @@
+#!/usr/bin/env python
+#
+# - Title Type Rating
+# tag: Tags (optional, space separated)
+# link (optional)
+# year (optional)
+# Notes (optional, multi-line)
+# 
+# Type can be music, film, series, game, book
+# 
+# Music can be either an album or artist.
+
+films = []
+series = []
+music = []
+
+entry = {'title': '', 'rating': '', 'tags': [], 'year': '', 'link': '', 'notes': ''}
+kind = ''
+with open('_ratings') as fp:
+    for line in fp.readlines():
+        line = line.strip()
+        if line == '':
+            entry['notes'] += '\n'
+        elif line[0] == '-':
+            if entry['title'] != '':
+                if kind == 'film':
+                    films.append(entry)
+                elif kind == 'series':
+                    series.append(entry)
+                elif kind == 'music':
+                    music.append(entry)
+                else:
+                    raise Exception('no such type: "{}"'.format(kind))
+                entry = {'title': '', 'rating': '', 'tags': [], 'year': '', 'link': '', 'notes': ''}
+ 
+            #entry['title'], kind, entry['rating'] = [s.strip() for s in line.split('|')]
+            split = [s.strip() for s in line.split(' ')]
+            entry['rating'] = split[-1]
+            kind = split[-2]
+            entry['title'] = ' '.join(split[1:-2])
+
+        elif line.startswith('link '):
+            entry['link'] += line[5:]
+        elif line.startswith('year '):
+            entry['year'] += line[5:]
+        elif line.startswith('tag '):
+            entry['tags'] += line[4:].split(' ')
+        else:
+            entry['notes'] += ' ' + line
+
+rate = {'meh': '40', 'okay': '30', 'lol': '20', 'good': '10', 'great': '01'}
+def tbl(rows):
+    rows = sorted(rows, key=lambda k: rate[k['rating']] + k['title'])
+
+    print('')
+    print('{:class="full"}')
+    print('| Title | Rating | Tags | Notes |')
+    print('| ----- | ------ | ---- | ----- |')
+    for r in rows:
+        if r['link'] != '':
+            r['title'] = '[{}]({})'.format(r['title'], r['link'])
+        if r['year'] != '':
+            r['title'] += ' <sup>({})</sup>'.format(r['year'])
+
+        r['tags'] = ', '.join(r['tags'])
+        r['notes'] = r['notes'].strip().replace('\n', '<br>')
+        print('| {title} | {rating} | {tags} | {notes} |'.format(**r))
+
+print('''---
+layout: bare
+---
+
+<style>
+.page { max-width: 70em; }
+table {
+    line-height: 1.5em;
+}
+td:first-child {
+    width: 24em;
+}
+</style>
+
+Some stuff I "rated". I keep a list here for my own purposes ("did I watch this
+before? Did I like it? What film shall we watch this evening?") and also to
+maybe lead people to interesting content.
+
+I have a simple rating system:
+
+- meh    – Didn't like it.
+- okay   – It was okay, I guess. Not bad, not great.
+- good   – I enjoyed it!
+- great  – This is really good stuff!
+- lol    – What kind of rating do you assign to *Plan 9 from Outer Space?* I
+		   assign it a "lol" rating. It's neither good nor bad, it's just lol.
+		   These films are best watched in combination with beer and/or friends.
+
+I think this is much more useful than numbers or assigning "stars".
+
+I don't extensively review stuff but do add the occasional notes. Should be
+mostly spoiler-free, in case you care about that sort of thing.
+''', end='')
+
+print('''
+Films
+-----
+''')
+tbl(films)
+
+print('''
+Series
+-----
+''')
+tbl(series)
+
+print('''
+Music
+-----
+''')
+tbl(music)
