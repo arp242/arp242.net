@@ -2,6 +2,7 @@
 layout: post
 title: "YAML: probably not so great after all"
 updated: 2019-04-15
+desc: "I was very excited when I first used YAML, but some real-world usage showed it's not so great after all"
 ---
 
 <div class="hatnote">

@@ -6,12 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ page.title }}</title>
 	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="arp242.net" href="/feed.xml">
+	<link rel="canonical" href="https://arp242.net{{ page.url }}">
+	{% if page.desc %}<meta name="description" content="{{ page.desc }}">{% endif %}
 
 	<style>
 {% include /hello-css/base.min.css %}
 	</style>
-	<link rel="alternate" type="application/rss+xml" title="arp242.net" href="/feed.xml">
-	<link rel="canonical" href="https://arp242.net{{ page.url }}">
 </head>
 
 <body>

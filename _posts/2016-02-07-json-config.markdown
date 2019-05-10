@@ -2,6 +2,7 @@
 layout: post
 title: "The downsides of JSON for config files"
 updated: 2019-04-16
+desc: "JSON was designed as a data interchange format, and not a configuration format; it works but there are downsides."
 ---
 
 <div class="hatnote">
