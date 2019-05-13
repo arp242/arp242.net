@@ -4,12 +4,8 @@ layout: bare
 
 <style>
 .page { max-width: 70em; }
-table {
-    line-height: 1.5em;
-}
-td:first-child {
-    width: 24em;
-}
+table { line-height: 1.5em; }
+td:first-child { width: 24em; }
 </style>
 
 Some stuff I "rated". I keep a list here for my own purposes ("did I watch this
@@ -30,6 +26,12 @@ I think this is much more useful than numbers or assigning "stars".
 
 I don't extensively review stuff but do add the occasional notes. Should be
 mostly spoiler-free, in case you care about that sort of thing.
+
+Index:
+<a href="#films">Films</a> |
+<a href="#series">Series</a> |
+<a href="#music">Music</a> |
+<a href="#games">Games</a>
 
 Films
 -----
@@ -111,6 +113,7 @@ Films
 | [The Death of Stalin](https://en.wikipedia.org/wiki/The_Death_of_Stalin) <sup>(2017)</sup> | great | comedy, history, politics |  |
 | [The Dreamers](https://www.rottentomatoes.com/m/dreamers/) <sup>(2004)</sup> | great |  |  |
 | [The Elephant Man](https://www.rottentomatoes.com/m/1006527-elephant_man/) <sup>(1980)</sup> | great |  |  |
+| The Exorcist | great | horror |  |
 | [The Fisher King](https://www.rottentomatoes.com/m/fisher_king/) <sup>(1991)</sup> | great |  |  |
 | [The Fog of War](https://www.rottentomatoes.com/m/the_fog_of_war_eleven_lessons_from_the_life_of_robert_s_mcnamara/) <sup>(2003)</sup> | great |  | "Eleven lessons from the life of Robert S. McNamara" |
 | [The Gatekeepers](https://www.rottentomatoes.com/m/the_gatekeepers_2012/) <sup>(2013)</sup> | great |  |  |
@@ -193,7 +196,8 @@ Films
 | [Kung Fury](https://www.rottentomatoes.com/m/kung_fury/) <sup>(2015)</sup> | lol |  |  |
 | [Re-animator](https://en.wikipedia.org/wiki/Re-Animator) | lol | horror | One of several classic Jeffrey Combs horror films. None of them are good or meaningful, but all of them are good fun. |
 | [Teeth](https://www.rottentomatoes.com/m/teeth/) <sup>(2007)</sup> | lol |  |  |
-| [The Captains](https://en.wikipedia.org/wiki/The_Captains_(film)) | lol | docu | A ridiculous ego project from William Shatner to make sure the world knows how brilliant he is. If you like Star Trek then you should probably watch this, preferably with a beer or 4 and several of your Trekkie buddies, as the results are (unintentionally) hilarious. |
+| [The Captains](https://en.wikipedia.org/wiki/The_Captains_(film)) | lol | docu | A ridiculous ego project from William Shatner to make sure the world knows how brilliant he is. If you like Star Trek then you should probably watch this, preferably with a few beers and several of your Trekkie buddies, as the results are (unintentionally) hilarious. |
+| Zombeavers | lol | comedy, horror | Zombie beavers. 'nuff said. |
 | 9 | okay |  | Great visuals. Boring story. |
 | [Ant-Man](https://www.rottentomatoes.com/m/antman/) <sup>(2015)</sup> | okay |  |  |
 | Apocalypse Now Redux | okay |  |  |
@@ -302,6 +306,7 @@ Music
 | Hazmat Modine - Bahamut <sup>(2006)</sup> | great |  |  |
 | Howlin' Wolf - Moanin' in the Moonlight <sup>(1965)</sup> | great |  |  |
 | Huun-Huur-Tu - 60 Horses in My Herd: Old Songs and Tunes of Tuva <sup>(1993)</sup> | great |  |  |
+| Iced Earth - Alive in Athens | great | metal, live | Most songs are better than the studio versions. Iced Earth has always had a bit of a recording quality problem IMHO, and this is one of the few albums that sound really good. |
 | Inquisition - Invoking the Majestic Throne of Satan <sup>(2002)</sup> | great |  |  |
 | Insect Warfare - World Extermination <sup>(2007)</sup> | great |  |  |
 | Iron Maiden - The Number of the Beast <sup>(1982)</sup> | great |  |  |
@@ -340,6 +345,7 @@ Music
 | The Paul Butterfield Blues Band - The Paul Butterfield Blues Band <sup>(1965)</sup> | great |  |  |
 | Van der Graaf Generator - H to He, Who Am the Only One <sup>(2005)</sup> | great |  |  |
 | Van der Graaf Generator - Pawn Hearts <sup>(2005)</sup> | great |  |  |
+| Vektor | great | metal | Everything Vektor has released to date has been awesome, *Outer Isolation* probably being the best. Very much reminds me of Destruction's better moments, but, well, even better :-) |
 | Vektor - Black Future <sup>(2009)</sup> | great |  |  |
 | Vektor - Outer Isolation <sup>(2011)</sup> | great |  |  |
 | 8 Eyed Spy | good |  |  |
@@ -365,8 +371,116 @@ Music
 | Agent Steel - Skeptics Apocalypse <sup>(1985)</sup> | okay |  |  |
 | Beyond Fear - Beyond Fear <sup>(2006)</sup> | okay |  |  |
 | Blue Öyster Cult - Fire of Unknown Origin <sup>(1981)</sup> | okay |  |  |
+| Iced Earth - The Glorious Burden | okay | metal | When I first, ehm, downloaded this album when it was released I thought I had downloaded a shitty MP3 rip. Not so, the album just sounds like shit. This is unfortunate as there's some really good material here and I really like Tim Owens' vocals on this one. |
 | Shadows Fall - The Art of Balance <sup>(2002)</sup> | okay |  |  |
 | Adrenaline Mob - Omertá <sup>(2012)</sup> | meh |  |  |
 | Johnnygoody - Introducing <sup>(2012)</sup> | meh |  | Former coworker of mine. Sorry Luutzen, I have a different taste in music :-( |
 | Kodaline - In a Perfect World <sup>(2013)</sup> | meh |  | Went to a live show in Luxembourg with ex-gf. Worst show I ever attended haha. |
 | The Crüxshadows - Dreamcypher <sup>(2007)</sup> | meh |  |  |
+
+Games
+-----
+
+
+{:class="full"}
+| Title | Rating | Tags | Notes |
+| ----- | ------ | ---- | ----- |
+| Alan Wake | great |  |  |
+| Arcanum: Of Steamworks and Magick Obscura | great |  |  |
+| Baldur's Gate | great |  | *"Get my out of this hell hole!"* |
+| Baldur's Gate II | great |  | Lacks the true depth of some other RPGs, but it makes up for it by being more fun in many other areas.<br> *"You must gather your party before venturing forth"* |
+| Deponia series | great |  | The first three games were really good. I liked the fourth one less. |
+| Fallout 2 | great |  | Improves on the original in every way. |
+| Grim Fandango | great |  |  |
+| Hotline Miami | great |  |  |
+| I Have No Mouth And I Must Scream | great |  | Professional curmudgeon Harlan Ellison does a game based on several of his stories. If you liked Ellison's writing then you'll like this. Not your average point-and-click; much of the game is quite disturbing. |
+| Jagged Alliance 2 | great |  | Still the best game in its genre. |
+| Monkey Island series | great |  | Classic point-and-click adventures. Get me some grog! |
+| Pillars of Eternity | great |  | What do you get if you mix the fun of *Baldurs's Gate 2* and the writing of *Planescape: Torement*? Probably something very similar to *Pillars of Eternity*. |
+| Planescape: Torment | great | rpg | Rightfully considered one of the best RPGs of its time, and I think it holds up very well by modern standards. |
+| S2: Silent Storm | great |  | Almost as good as JA2 |
+| Shovel Knight | great |  | Mega-man, but with a shovel. |
+| The Dig | great |  | Not as light-hearted as some of the other LucalArts point-and-click adventures, but you get a pretty neat sci-fi story in return. It's a good trade-off. |
+| Thief 2 | great |  |  |
+| Tyranny | great |  | Great RPG with some good writing. I was slightly disappointed with the story progression; in the start you feel like a regular soldier part of a big war in which you don't have much control. Unfortunately it progresses to the more standard "you're the centre of the universe" model like so many RPGs a bit later on.<br> Still a great game though. |
+| Vampire: The Masquerade - Bloodlines | great | rpg | Great story-driven FPS/RPG. |
+| Wadjet Eye Games | great |  | All point-and-click adventures from Wadjet Eye are really good, although some are a bit short (especially the earlier ones).<br> *Blackwell*, *Shardlight*, *Gemini Rue*, *Primordia*, *The Shivah*, *A Golden Wake*, *Technobabylon*, *Unavowed*, *Resonance*. |
+| *Hollow Knight* | good |  | Fun side-scrolling and exploring. |
+| 10tons top-down shooters | good |  | All these games (*Crimsonland*, *Tesla vs. Lovecraft*, *Neon Chrome*) are essentially the same game, although many details differ.<br> All are good shooters, and remain fun for a quick game longer than many others. |
+| Age of Wonders | good |  |  |
+| Age of Wonders: Shadow Magic | good |  | Probably the best Age of Wonders game? |
+| [Beneath a Steel Sky](https://www.gog.com/game/beneath_a_steel_sky) | good |  | Surprisingly good, especially considering it's free. |
+| Brigador: Up-Armored Edition | good |  | Walk around in a mech, shoot stuff. Pretty fun, but levels are rather long and gets a bit repetitive. |
+| Brutal Legend | good |  | It's a bit silly, but good fun.<br> Major annoyance: the music stops playing in far too many cases! Since there is some sort of interaction every minute or two it means it won't finish many songs! |
+| Build engine games | good | fps | Classic Build Engine shooters *Duke Nukem 3D*, *Shadow Warrior*, and *Blood*. I played them as a child in the 90s, but then mostly forgot until last year. All three are similar enough to review in one go.<br> The good: fun shooter without taking itself too serious.<br> Not so good: walking through a level 6 times because you missed a button somewhere. |
+| Desktop Dungeons | good |  | Pretty fun puzzle RPG. Takes a bit too much time/effort to progress past a certain level for my liking though. |
+| Dex | good |  | Side-scrolling action RPG. Works pretty well. |
+| Expeditions: Conquistador | good |  |  |
+| FTL: Faster Than Light | good |  |  |
+| Fallout | good |  |  |
+| Gone Home | good |  |  |
+| Guacamelee! | good |  |  |
+| Hotline Miami 2 | good |  |  |
+| Icewind Dale | good |  | Lacks the extensive story and non-linearity of some of the other Infinity Engine games (BG, PST), but still pretty good. I felt the visuals and general atmosphere was better done than Baldur's Gate 2. |
+| Nox | good |  |  |
+| [Prince of Persia](https://www.gog.com/game/prince_of_persia) | good |  | 2008 version. |
+| Prison Architect | good |  |  |
+| Rogue Legacy | good |  |  |
+| Slain: Back from Hell | good |  |  |
+| Stasis | good |  | Point and click horror adventure. |
+| SteamWorld Dig 1 & 2 | good |  | The first Steamworld Dig was short and fun. The second was longer and better in most ways. |
+| System Shock 2 | good |  |  |
+| Theme Hospital | good |  |  |
+| Thief | good |  |  |
+| Unepic | good |  |  |
+| Victor Vran | good |  | Fun action RPG which doesn't take itself too serious. A better version of *Diablo*. |
+| War for the Overworld | good |  | Dungeon Keeper, but better. |
+| Wasteland 2 | good |  |  |
+| Gabriel Knight 2: The Beast Within | lol |  | Playing this game is like watching *The Room*. |
+| Braid | okay |  | It's okay, but tedious. |
+| Door Kickers | okay |  |  |
+| [Door Kickers: Action Squad](https://www.gog.com/game/door_kickers_action_squad) | okay |  | Fun shooter for a little bit. Gets a bit boring quite fast. |
+| Enter the Gungeon | okay |  | Not sure how to rate this one. On one hand, it's pretty good fun. On the other hand, progressing is really hard and time-consuming. Certainly much more time-consuming than I'm willing to put in to an action game. |
+| Fallout tactics | okay |  |  |
+| Gabriel Knight: Sins of the Fathers | okay |  |  |
+| Hard West | okay |  |  |
+| Kingpin: life of crime | okay |  |  |
+| Luftrausers | okay |  |  |
+| [Mana Spark](https://www.gog.com/game/mana_spark) | okay |  | Walk around, kill monsters, die, repeat. |
+| Shadowrun | okay |  | *Shadowrun returns*, *Shadowrun: Dragonfall*, and *Shadowrun Hong Kong*. They're all ... okay. I dislike the "play level, talk to all characters, play level, talk to characters"-cycle. |
+| Soldak RPGs | okay |  | All these games (*Din's Curse*, *Drox Operative*, *Depths of Peril*) are essentially the same. It's a little fun for a bit, then it gets repetitive. |
+| SteamWorld Heist | okay |  | Tactical shooter. It's okay, but not too hard and fairly repetitive. |
+| Stronghold HD, Stronghold Crusader HD | okay |  | I like the idea, but the enemy AI is too stupid and it gets repetitive. |
+| Surgeon Simulator 2013 | okay |  | Fun for a bit. |
+| World of Goo | okay |  |  |
+| A Bird Story | meh |  |  |
+| Alien Rampage | meh |  |  |
+| Alien Shooter | meh |  |  |
+| Another World | meh |  | I know it's supposed to be a "classic", but I mostly thought it's just tedious. |
+| Barony | meh |  |  |
+| BloodNet | meh |  | Seems pretty cool in theory, but controls and interface is confusing and tedious, and takes the fun out of it. |
+| Costume Quest | meh |  |  |
+| Crusader: No Remorse and No Regret | meh |  | I have fond memories of these games, and was excited to see them on GoG. Unfortunately they have not aged well at all. The controls in particular and annoying and tedious. |
+| Don't Starve | meh |  | I wanted to like this so much, and I tried. But it's just too tedious and I need to spend far too much time in it to progress. |
+| Driftmoon | meh |  | Really boring RPG. |
+| Duke Nukem 1 & 2 | meh |  | Not particularly great side-scrolling shooters. |
+| Halcyon 6: Starbase Commander | meh |  |  |
+| Halfway | meh |  | Pretty repetitive. |
+| Human Resource Machine | meh |  |  |
+| Indiana Jones and the Fate of Atlantis | meh |  | I tried a few times, but could never  get in to this LucasArt adventure. |
+| Little Big Adventure | meh |  | Tried both the first and second ones. Didn't like either much. |
+| Megabyte Punch | meh |  |  |
+| Pray for Death | meh |  | Horrible controls. |
+| Reigns | meh |  | Gets very boring very fast. |
+| S.T.A.L.K.E.R. | meh |  | The camera moves so much during walking that it made me dizzy. There is no way to disable it so 🤷 |
+| Serpent in the Staglands | meh |  | Lack of story development and high difficulty just made this tedious and boring. |
+| Syndicate | meh |  | I loved this game when I was younger, but feel it hasn't aged well. The UI is just clunky. |
+| Teenagent | meh |  |  |
+| The Final Station | meh |  |  |
+| To The Moon | meh |  | Terrible pacing with mediocre writing |
+| Torchlight | meh |  | Another boring RPG. |
+| Transistor | meh |  |  |
+| Two Worlds Epic Edition | meh |  |  |
+| Volgarr the Viking | meh |  | This game is profoundly stupid. The controls are bad and feel clunky, and the developers seem to have confused difficulty with providing a fun playing experience.<br> Genuinely one of the worst games I've ever had the displeasure of paying for, and I would ask my money back if I could. |
+| Wasteland 1 | meh |  | Has not aged well. |
+| else Heart.Break() | meh |  |  |

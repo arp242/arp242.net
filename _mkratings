@@ -10,43 +10,59 @@
 # 
 # Music can be either an album or artist.
 
+import sys
+
+
 films = []
 series = []
 music = []
+games = []
 
 entry = {'title': '', 'rating': '', 'tags': [], 'year': '', 'link': '', 'notes': ''}
 kind = ''
-with open('_ratings') as fp:
-    for line in fp.readlines():
-        line = line.strip()
-        if line == '':
-            entry['notes'] += '\n'
-        elif line[0] == '-':
-            if entry['title'] != '':
-                if kind == 'film':
-                    films.append(entry)
-                elif kind == 'series':
-                    series.append(entry)
-                elif kind == 'music':
-                    music.append(entry)
-                else:
-                    raise Exception('no such type: "{}"'.format(kind))
-                entry = {'title': '', 'rating': '', 'tags': [], 'year': '', 'link': '', 'notes': ''}
- 
-            #entry['title'], kind, entry['rating'] = [s.strip() for s in line.split('|')]
-            split = [s.strip() for s in line.split(' ')]
-            entry['rating'] = split[-1]
-            kind = split[-2]
-            entry['title'] = ' '.join(split[1:-2])
 
-        elif line.startswith('link '):
-            entry['link'] += line[5:]
-        elif line.startswith('year '):
-            entry['year'] += line[5:]
-        elif line.startswith('tag '):
-            entry['tags'] += line[4:].split(' ')
-        else:
-            entry['notes'] += ' ' + line
+def procline(line):
+    global entry, kind, films, series, music, games
+
+    if line == '':
+        entry['notes'] += '\n'
+    elif line[0] == '-':
+        if entry['title'] != '':
+            if kind == 'film':
+                films.append(entry)
+            elif kind == 'series':
+                series.append(entry)
+            elif kind == 'music':
+                music.append(entry)
+            elif kind == 'game':
+                games.append(entry)
+            else:
+                raise Exception('no such type: "{}"'.format(kind))
+            entry = {'title': '', 'rating': '', 'tags': [], 'year': '', 'link': '', 'notes': ''}
+
+        #entry['title'], kind, entry['rating'] = [s.strip() for s in line.split('|')]
+        split = [s.strip() for s in line.split(' ')]
+        entry['rating'] = split[-1]
+        kind = split[-2]
+        entry['title'] = ' '.join(split[1:-2])
+
+    elif line.startswith('link '):
+        entry['link'] += line[5:]
+    elif line.startswith('year '):
+        entry['year'] += line[5:]
+    elif line.startswith('tag '):
+        entry['tags'] += line[4:].split(' ')
+    else:
+        entry['notes'] += ' ' + line
+
+with open('_ratings') as fp:
+    for i, line in enumerate(fp.readlines()):
+        line = line.strip()
+        try:
+            procline(line)
+        except Exception as exc:
+            print('line {}: {}: {}'.format(i, line, exc), file=sys.stderr)
+            raise
 
 rate = {'meh': '40', 'okay': '30', 'lol': '20', 'good': '10', 'great': '01'}
 def tbl(rows):
@@ -72,12 +88,8 @@ layout: bare
 
 <style>
 .page { max-width: 70em; }
-table {
-    line-height: 1.5em;
-}
-td:first-child {
-    width: 24em;
-}
+table { line-height: 1.5em; }
+td:first-child { width: 24em; }
 </style>
 
 Some stuff I "rated". I keep a list here for my own purposes ("did I watch this
@@ -98,6 +110,12 @@ I think this is much more useful than numbers or assigning "stars".
 
 I don't extensively review stuff but do add the occasional notes. Should be
 mostly spoiler-free, in case you care about that sort of thing.
+
+Index:
+<a href="#films">Films</a> |
+<a href="#series">Series</a> |
+<a href="#music">Music</a> |
+<a href="#games">Games</a>
 ''', end='')
 
 print('''
@@ -117,3 +135,9 @@ Music
 -----
 ''')
 tbl(music)
+
+print('''
+Games
+-----
+''')
+tbl(games)
