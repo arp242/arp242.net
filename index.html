@@ -24,6 +24,8 @@ title: arp242.net
 		creating an email system, but most people aren’t. Archived does not mean outdated.</p>
 
 	<h1 id="writings">Writings <span>(<a href="/feed.xml">RSS feed</a>)</span></h1>
+	<div class="newsbox floatbox">{% include _newsletter.html %}</div>
+
 	<ul>{% for p in site.posts %}
 		{% if p.archive != true %}<li{% if p.standout %} class="s"{% endif %}><a href="{{ p.url }}">{% if p.path contains '_drafts' %}DRAFT: {% endif %}{{ p.title }}</a></li>{% endif %}{% endfor %}
 	</ul>
@@ -34,7 +36,6 @@ title: arp242.net
 		<li><a href="https://github.com/arp242/aurgit/">aurgit</a>                   – A simple way to manage AUR packages.</li>
 		<li><a href="https://github.com/arp242/autofox/">autofox</a>                 – Automatically configure Firefox.</li>
 		<li><a href="https://github.com/arp242/dotfiles/">dotfiles</a>               – My configuration files.</li>
-		<li><a href="https://github.com/arp242/download-npo/">download-npo</a>       – Download episodes from npo.nl</li>
 		<li><a href="https://github.com/arp242/find-cursor/">find-cursor</a>         – Highlight the cursor position.</li>
 		<li><a href="https://github.com/arp242/hello-css/">hello-css</a>             – A CSS template focused on readability.</li>
 		<li><a href="https://github.com/arp242/imgzoom/">imgzoom</a>                 – Simple JavaScript image zoomer.</li>
@@ -48,20 +49,19 @@ title: arp242.net
 		<li><a href="https://github.com/arp242/uni/">uni</a>                         – Query the Unicode database from the commandline.</li>
 	</ul>
 
-	<p id="go">Go libraries and tools.</p>
+	<h2 id="go">Go libraries and tools</h2>
 	<ul>
 		<li><a href="https://github.com/arp242/goimport/">goimport</a>               – Add, remove, or replace imports in Go files.</li>
 		<li><a href="https://github.com/arp242/hubhub/">hubhub</a>                   – Set of utility functions for working with the GitHub API.</li>
-		<li><a href="https://github.com/arp242/log/">log</a>                         – Simple Go logging library.</li>
-		<li><a href="https://github.com/arp242/mhttp/">mhttp</a>                     – Martin's HTTP package.</li>
 		<li><a href="https://github.com/arp242/sconfig/">sconfig</a>                 – A simple and functional configuration file parser for Go.</li>
+		<li><a href="https://github.com/zgo.at/zhttp/">zhttp</a>                     – Martin's HTTP package.</li>
+		<li><a href="https://github.com/zgo.at/zlog/">zlog</a>                       – Go logging library.</li>
 	</ul>
 
-	<p id="teamwork">Go libraries I created/maintained at my previous employer; I still try to
-		maintain these (as I continue to use many of these packages myself).</p>
+	<p id="teamwork">Things I created/maintained at my previous employer; I still try to
+		maintain these (as I continue to use some of these packages myself).</p>
 	<ul>
 		<li><a href="https://github.com/teamwork/asbyte">asbyte</a>           – Print data as Go byte slices.</li>
-		<li><a href="https://github.com/teamwork/easytpl">easytpl</a>         – A very simple template system.</li>
 		<li><a href="https://github.com/teamwork/godocgen">godocgen</a>       – Generate self-contained HTML documentation with godoc.</li>
 		<li><a href="https://github.com/teamwork/guru">guru</a>               – Go errors with a Guru Meditation Number.</li>
 		<li><a href="https://github.com/teamwork/kommentaar">kommentaar</a>   – Generate documentation for Go APIs.</li>

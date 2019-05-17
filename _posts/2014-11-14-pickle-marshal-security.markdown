@@ -3,10 +3,6 @@ layout: post
 title: "Security of Python’s pickle and marshal modules"
 ---
 
-<em class="hatnote">This is modified from my answer at Stack Overflow:
-<a href="http://stackoverflow.com/q/26931919/660921">Marshal unserialization -
-not secure</a>.</em>
-
 Both the [`pickle`][pickle] and [`marshal`][marshal] modules come with a similar
 big red warning:
 

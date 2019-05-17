@@ -1,12 +1,10 @@
 ---
 layout: post
 title: "Flags are great for configuration"
+hatnote: |
+ Discussions:
+ <a href="https://lobste.rs/s/tm1vwk/flags_are_great_for_configuration">Lobsters</a>.
 ---
-
-<div class="hatnote">
-Discussions:
-<a href="https://lobste.rs/s/tm1vwk/flags_are_great_for_configuration">Lobsters</a>.
-</div>
 
 I like to configure programs with commandline flags. Why include thousands of
 lines of code to parse [confusing file formats][yaml] when you can just run

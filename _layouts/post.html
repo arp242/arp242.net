@@ -10,14 +10,17 @@ layout: default
 		{% if page.updated %} − last updated on {{ page.updated | date_to_string }}
 		<sup><a href="https://github.com/arp242/arp242.net/commits/master/{{ page.path }}">history</a></sup>{% endif %}</p>
 	</header>
+	{% if page.hatnote %}<div class="hatnote">{{ page.hatnote }}</div>{% endif %}
+	<div class="newsbox floatbox">{% include _newsletter.html %}</div>
 	{{ content }}
 
 	<footer class="postscript">
 		<strong>Feedback</strong>
-		<p>You can mail me at <a href="mailto:martin@arp242.net">martin@arp242.net</a> or
+		<p>Mail me at <a href="mailto:martin@arp242.net">martin@arp242.net</a> or
 			<a href="https://github.com/arp242/arp242.net/issues/new">
 				create a GitHub issue</a> for feedback, questions, etc.</p>
 	</footer>
+	<div class="newsbox">{% include _newsletter.html %}</div>
 </article>
 
 <script>

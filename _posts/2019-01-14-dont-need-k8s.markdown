@@ -3,11 +3,10 @@ layout: post
 title: You (probably) don’t need Kubernetes
 updated: 2019-03-05
 desc: "K8s is overkill for many cases and comes with the serious downside of adding a lot of complexity"
+hatnote: |
+ Translations:
+ <a href="https://linux.cn/article-10469-1.html">Chinese (中文)</a>.
 ---
-
-<div class="hatnote">Translations:
-<a href="https://linux.cn/article-10469-1.html">Chinese (中文)</a>.
-</div>
 
 You know those old “Hello world according to programmer skill” jokes that start
 with `printf("hello, world\n")` for a junior programmer and end with some

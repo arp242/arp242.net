@@ -3,17 +3,15 @@ layout: post
 title: "The downsides of JSON for config files"
 updated: 2019-04-16
 desc: "JSON was designed as a data interchange format, and not a configuration format; it works but there are downsides."
+hatnote: |
+ Follow-up:
+ <a href="/flags-config.html">Configuration with flags</a>.
+ Also see:
+ <a href="/yaml-config.html">
+ YAML: probably not so great after all</a>.
+ Discussions:
+ <a href="https://news.ycombinator.com/item?id=19653834">Hacker News</a>;
 ---
-
-<div class="hatnote">
-Follow-up:
-<a href="/flags-config.html">Configuration with flags</a>.
-Also see
-<a href="/yaml-config.html">
-YAML: probably not so great after all</a>.
-Discussions:
-<a href="https://news.ycombinator.com/item?id=19653834">Hacker News</a>;
-</div>
 
 I've recently witnessed the trend of using JSON for configuration files. I think
 this is not a good idea.

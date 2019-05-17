@@ -3,7 +3,7 @@ module Jekyll
     safe true
 
     def generate(site)
-      pkgs = %w{log sconfig autofox goimport goimport/goimport hubhub info mhttp
+      pkgs = %w{sconfig autofox goimport goimport/goimport hubhub info
         orgstat singlepage trackwall transip-dynamic uni}
       pkgs.each do |p|
         site.pages << GoPage.new(site, site.source, p)

@@ -2,11 +2,10 @@
 layout: post
 title: Open source DIY ethics
 updated: 2018-12-27
+hatnote: |
+ Discussions:
+ <a href="http://lists.suckless.org/dev/1812/33045.html">suckless</a>.
 ---
-
-<div class="hatnote">Discussions:
-<a href="http://lists.suckless.org/dev/1812/33045.html">suckless</a>.
-</div>
 
 I moved to New Zealand last week, and as a proper Dutch person one of the first
 things I did after arriving was getting a bicycle.

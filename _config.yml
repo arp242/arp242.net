@@ -8,7 +8,7 @@ markdown: "kramdown"
 exclude: ["Gemfile", "Gemfile.lock"]
 
 # Copy for Netlify.
-include: ["_redirects"]
+include: ["_redirects", ".well-known"]
 
 # Always publish all posts, some posts may be considered in the "future" by the
 # deploy pipline as that's in the US, but I'm in New Zealand, so that's almost a

@@ -1,8 +1,12 @@
-#header    { text-align: center; margin-bottom: 2em; }     /* WEBLOG HEADER */
+#header    { text-align: center; margin-bottom: 2em; }     /* POST TITLE, DATE */
 #header h1 { margin: 0; }
 #header p  { margin: 0; padding: 0; }
 
-nav { padding-left: .5em; font-weight: bold; }             /* TOP NAVIGATION */
+.hatnote { font-size: .8em; font-style: italic; margin-bottom: 14px; } /* HATNOTE */
+
+nav { padding-left: .5em;                                  /* TOP NAVIGATION */
+      display: flex; justify-content: space-between; }
+nav a { font-weight: bold; }
 
 #disclaimer {                                              /* COPYRIGHT NOTICE */
 	font-size: 14px;
@@ -10,8 +14,6 @@ nav { padding-left: .5em; font-weight: bold; }             /* TOP NAVIGATION */
 	color: #666;
 	padding-right: 1em;
 }
-
-.hatnote { font-size: 0.8em; font-style: italic; }         /* HATNOTE */
 
 #home ul { list-style: none; padding-left: 1rem; }         /* HOME PAGE */
 #home ul li a:first-child {
@@ -28,7 +30,17 @@ nav { padding-left: .5em; font-weight: bold; }             /* TOP NAVIGATION */
 #home h1, #home h2 { text-align: left; padding-bottom: 0; border-bottom: none; }
 #home h1 a         { color: #00f; font-size: 1em; }
 #home h1 a:after   { content: ""; }
-#home h1 span {
-	font-size: 14px;
-	font-weight: normal;
+#home h1 span      { font-size: 14px; font-weight: normal; }
+
+.newsbox {                                                 /* NEWSLETTER */
+	padding: .5em; margin-bottom: 4px;
+	text-align: center;
+	border: 3px outset #e18ade; border-radius: 2px;
+}
+.floatbox          { float: right; margin-left: 8px; }
+.floatbox + p      { hyphens: auto; }
+input, button      { border: 1px solid #ccc; padding: 3px 6px; }
+input              { width: 13em; }
+@media (max-width: 30rem) {
+	.floatbox { float: none; margin-left: 0; }
 }
