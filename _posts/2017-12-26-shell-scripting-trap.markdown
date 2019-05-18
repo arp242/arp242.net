@@ -64,7 +64,7 @@ start, you would have spent some more time writing the original version, but
 would have spent *much* less time maintaining it, while almost certainly having
 fewer bugs.
 
-Take my [packman.vim](https://github.com/Carpetsmoker/packman.vim) script for
+Take my [packman.vim](https://github.com/arp242/packman.vim) script for
 example. It started out as a simple `for` loop over all directories and a `git
 pull` and has grown from there.
 At about 200 lines it's hardly the most complex script, but had I written it in

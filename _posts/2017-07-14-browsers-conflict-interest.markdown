@@ -7,7 +7,7 @@ updated: 2018-12-22
 <div class="hatnote">Discussions:
 <a href="https://www.reddit.com/r/firefox/comments/8avev2/browsers_and_conflicts_of_interests/">/r/firefox</a>.
 Feedback:
-<a href="https://github.com/Carpetsmoker/arp242.net/issues/2">#2</a>.
+<a href="https://github.com/arp242/arp242.net/issues/2">#2</a>.
 </div>
 
 What do you get when you search for ‘Firefox’ in a new Windows 10 installation?

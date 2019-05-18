@@ -71,7 +71,7 @@ P.S. If you're going to use a configuration package then I recommend
 [viper]: https://github.com/spf13/viper
 [flag]: https://golang.org/pkg/flag/
 [cobra]: https://github.com/spf13/cobra
-[sconfig]: https://github.com/Carpetsmoker/sconfig
+[sconfig]: https://github.com/arp242/sconfig
 [easy]: /easy.html
 
 

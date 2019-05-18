@@ -82,4 +82,4 @@ needs to be a setting.
 [easy]: /easy.html
 [yaml]: /yaml-config.html
 [json]: /json-config.html
-[sconfig]: https://github.com/Carpetsmoker/sconfig
+[sconfig]: https://github.com/arp242/sconfig

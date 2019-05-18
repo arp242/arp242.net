@@ -35,7 +35,8 @@ communication.
 CV
 --
 
-- [PDF](CV-MartinTournoij.pdf); recommended.
-- [PDF, redacted of personal information](CV-MartinTournoij-redacted.pdf)
+- [PDF](CV-MartinTournoij.pdf) (A4 size); recommended.
+- [PDF redacted of personal information](CV-MartinTournoij-redacted.pdf), for
+  recruiters etc.
 - [HTML source](CV-MartinTournoij.html) (not extensively tested on different
   platforms/browsers, primarily intended to render PDF).

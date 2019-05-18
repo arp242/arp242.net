@@ -8,7 +8,7 @@ Discussions:
 <a href="https://news.ycombinator.com/item?id=18907912">Hacker News</a>,
 <a href="https://www.reddit.com/r/programming/comments/ag2h51/testing_isnt_everything/">/r/programming</a>.
 Feedback:
-<a href="https://github.com/Carpetsmoker/arp242.net/issues/11">#11</a>.
+<a href="https://github.com/arp242/arp242.net/issues/11">#11</a>.
 </div>
 
 <div class="hatnote">
