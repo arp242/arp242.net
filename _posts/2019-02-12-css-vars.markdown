@@ -3,8 +3,8 @@ layout: post
 title: "Why Hello CSS doesn’t use CSS variables"
 ---
 
-When I announced my [Hello, CSS!](https://github.com/carpetsmoker/hello-css)
-project last week most of the responses were pretty positive. Hurray!
+When I announced my [Hello, CSS!](https://github.com/arp242/hello-css) project
+last week most of the responses were pretty positive. Hurray!
 
 One person did criticize it:
 

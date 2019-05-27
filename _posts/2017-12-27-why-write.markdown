@@ -38,7 +38,6 @@ I thought, or I just lose interest. That's okay; it was still good practice, and
 in the process I usually manage to learn more about the topic at hand.
 
 This is also the reason I answer questions on Stack Overflow and its sister
-sites. When I started on the [Vi and
-Vim](https://vi.stackexchange.com/users/51/carpetsmoker) site I didn't actually
-know all that much about Vim; I learned much of it by researching and answering
-questions from other users.
+sites. When I started on the [Vi and Vim](https://vi.stackexchange.com/users/51)
+site I didn't actually know all that much about Vim; I learned much of it by
+researching and answering questions from other users.
