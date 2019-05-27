@@ -3,7 +3,7 @@ Disallow: /sarah-connor
 
 User-agent: *
 Disallow: /code
-Disallow: /weblog
+#Disallow: /weblog
 Disallow: /cv
 Disallow: /keybase.txt
 
