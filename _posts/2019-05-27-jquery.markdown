@@ -73,21 +73,26 @@ something else unless there's a compelling reason to?
 
 ---
 
-Some readers might wonder *"why don't you use Vue.js, React, or some other
-modern framework?"* There are a few reasons, but the primary one is that I want
-to build webpages that are fast, use the simplest feasible code, and are
-accessible by as many people as possible.
+Some readers might wonder *"but what about Vue.js, React, or some other modern
+framework?"* The intent of this post is to compare vanilla JavaScript with
+jQuery, not to propose a Grand Unified Theory of Frontend Development™.
 
+That being said, I think there are a few reasons to stick with simple
+JavaScript; primarily because I want to build webpages that are fast, use the
+simplest feasible code, and are accessible by as many people as possible.
 In my experience server-side generated templates lightly sprinkled with
-"progressive enhancement"-style JavaScript are still the best way to do that.
-Those apps are easier to develop, tend to be faster, tend to have fewer bugs,
-and your laptop's fan won't wake the neighbours.
+"progressive enhancement"-style JavaScript are often the best way to do that.
+It's often easier to develop, tends to be faster, tends to have fewer bugs, and
+your laptop's fan won't wake the neighbours.
 
-Does that mean that these web frameworks are *always* bad? Probably not, but it
-is for many purposes. Fundamentally, I think the web is a system to view
-documents, rather than an operating system. Even for many "web apps" (whatever
-you mean with that) a document approach works quite well (this is a topic worthy
-of its own post ... at some point in the future).
+Does that mean that these web frameworks are *always* bad? No, few things are
+"always" bad (or good), but it does come with a set of trade-offs (as does
+jQuery, obviously).
+
+Fundamentally, I think the web is a system to view documents, rather than an
+operating system. Even for many "web apps" (whatever you mean with that) a
+document approach works quite well (this is a topic worthy of its own post ...
+at some point in the future).
 
 [^sel]: I know you can use `jQuery(sel)`, or `window.jq = jQuery`, but I'm not
         programming in a vacuum and would prefer idiomatic/standard code, and
