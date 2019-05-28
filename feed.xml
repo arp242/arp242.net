@@ -5,7 +5,7 @@ layout: null
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>arp242.net</title>
-	<description>Website of Martin Tournoij/arp242/arp242. I write about stuff, occasionally.</description>
+	<description>Website of Martin Tournoij/arp242/Carpetsmoker. I write about stuff, occasionally.</description>
     <link>{{ site.url }}{{ site.baseurl }}/</link>
     <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
