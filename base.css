@@ -35,6 +35,7 @@ nav a { font-weight: bold; }
 .newsbox {                                                 /* NEWSLETTER */
 	padding: .5em; margin-bottom: 4px;
 	text-align: center;
+	background-color: #fff;  /* So the border-bottom from header at same height won't show */
 	border: 3px outset #e18ade; border-radius: 2px;
 }
 .floatbox          { float: right; margin-left: 8px; }
