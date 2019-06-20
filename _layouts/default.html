@@ -26,7 +26,12 @@
 		<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">cc-by 4.0 license</a>.
 	</footer>
 	<script>
-		(function(src) {
+		(function() {
+			// Don't run on test/development environment.
+			if (window.location.hostname.indexOf('localhost') > -1) {
+				return;
+			}
+
 			var script = document.createElement('script');
 			window.counter = 'http://arp242.goatcounter.com/count'
 			script.async = 1;
