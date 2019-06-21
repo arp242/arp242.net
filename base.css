@@ -42,6 +42,7 @@ nav a { font-weight: bold; }
 .floatbox + p      { hyphens: auto; }
 input, button      { border: 1px solid #ccc; padding: 3px 6px; }
 input              { width: 13em; }
+#nl-turing-test    { display: none; }
 @media (max-width: 30rem) {
 	.floatbox { float: none; margin-left: 0; }
 }
