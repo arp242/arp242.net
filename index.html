@@ -27,7 +27,8 @@ title: arp242.net
 	<div class="newsbox floatbox">{% include _newsletter.html %}</div>
 
 	<ul>{% for p in site.posts %}
-		{% if p.archive != true %}<li{% if p.standout %} class="s"{% endif %}><a href="{{ p.url }}">{% if p.path contains '_drafts' %}DRAFT: {% endif %}{{ p.title }}</a></li>{% endif %}{% endfor %}
+		{% unless p.archive or p.path contains '_drafts' %}<li{% if p.standout %} class="s"{% endif %}><a href="{{ p.url }}">{{ p.title }}</a></li>{% endunless %}{% endfor %}
+		{% for p in site.posts %}{% if p.path contains '_drafts' %}<li><a style="color: red" href="{{ p.url }}">{{ p.title }}</a></li>{% endif %}{% endfor %}
 	</ul>
 
 	<h1 id="code">Code projects</h1>

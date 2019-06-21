@@ -14,5 +14,3 @@ include: ["_redirects", ".well-known"]
 # deploy pipline as that's in the US, but I'm in New Zealand, so that's almost a
 # full day behind.
 future: true
-
-
