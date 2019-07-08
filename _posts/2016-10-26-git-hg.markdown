@@ -154,6 +154,7 @@ So let’s simply ‘go with the flow’ and use git, even though I don’t like
 <strong>Related articles</strong>
 <ul>
 <li><a href="https://doriantaylor.com/betamaxed">Betamaxed</a></li>
+<li><a href="https://sungo.wtf/2018/04/20/a-rant-about-git.html">A Rant About Git</a></li>
 </ul>
 </div>
 
