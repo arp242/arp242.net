@@ -11,6 +11,8 @@ A small (opinionated) style guide for writing Go tests. There is much more to be
 said about writing good tests than what I’ve written here. Most of this focuses
 on *style*, rather than *technique*.
 
+Also see [Testing isn’t everything](/testing.html).
+
 Use table-drive tests, and consistently use `tt` for a test case
 ----------------------------------------------------------------
 
