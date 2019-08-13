@@ -25,8 +25,7 @@ title: arp242.net
 
 	<h1 id="writings">Writings</h1>
 	<div class="newsbox floatbox">{% include _newsletter.html %}</div>
-
-	<ul>{% for p in site.posts %}
+	<ul class="posts">{% for p in site.posts %}
 		{% unless p.archive or p.path contains '_drafts' %}<li{% if p.standout %} class="s"{% endif %}><a href="{{ p.url }}">{{ p.title }}</a></li>{% endunless %}{% endfor %}
 		{% for p in site.posts %}{% if p.path contains '_drafts' %}<li><a style="color: red" href="{{ p.url }}">{{ p.title }}</a></li>{% endif %}{% endfor %}
 	</ul>
@@ -56,6 +55,7 @@ title: arp242.net
 		<li><a href="https://github.com/arp242/goimport/">goimport</a>               – Add, remove, or replace imports in Go files.</li>
 		<li><a href="https://github.com/arp242/hubhub/">hubhub</a>                   – Set of utility functions for working with the GitHub API.</li>
 		<li><a href="https://github.com/arp242/sconfig/">sconfig</a>                 – A simple and functional configuration file parser for Go.</li>
+		<li><a href="https://github.com/monoculum/formam/">formam</a>                – Scan HTML forms in to a struct.</li>
 		<li><a href="https://github.com/zgo.at/zhttp/">zhttp</a>                     – Martin's HTTP package.</li>
 		<li><a href="https://github.com/zgo.at/zlog/">zlog</a>                       – Go logging library.</li>
 	</ul>
