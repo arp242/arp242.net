@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>VimLog – a ChangeLog for Vim</title>
+	<link rel="canonical" href="https://arp242.net/vimlog">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext">
+	<link rel="icon" type="image/png" href="/favicon.png">
+	<link rel="stylesheet" href="/hello-css/all.min.css">
+	<style>
+		html       { font: 16px/140% Lato, sans-serif; }
+		header     { text-align: center; width: 100%; background-color: #ebe7c3; padding-bottom: 1em; }
+		h1         { margin-bottom: .2em; }
+		h2         { background-color: #ebe7c3; width: 100%; text-align: center; padding: .5em 0; margin-top: .5em; border-bottom: 0; }
+		h1, h2, h3 { font-variant-ligatures: no-discretionary-ligatures; font-feature-settings: 'dlig' off; }
+		p          { margin: 0; }
+		body > p   { text-align: center; padding-bottom: 1em; }
+		.ta-center { text-align: center; }
+
+		section             { background-color: #fff; margin-bottom: 1em; box-shadow: 0 0 6px rgba(0,0,0,.2); }
+		section div         { display: flex; justify-content: space-between; padding: .2em .5em; }
+		h3                  { font-size: 1rem; margin: 0; }
+		section div p       { margin: 0; }
+		section > p         { padding: .2em .5em; padding-left: 2em; }
+        .help-option        { color: seagreen;  /* Type, 2 */ }
+        .help-key           { color: slateblue; /* Special, 5 */ }
+        .help-tag           { color: darkcyan;  /* Identifier, 6 */ }
+		table               { border-collapse: collapse; display: flex; justify-content: space-between; }
+		tbody               { padding: 0 10px; /* IE11 fix: */ float: left; }
+		tbody tr:last-child { border-bottom: none; }
+		td, th              { padding: .2em .5em; }
+		th                  { text-align: left; }
+	</style>
+</head>
+
+<body>
+	<header class="center">
+		<h1>VimLog</h1>
+		<strong>A ChangeLog for Vim</strong>
+	</header>
+	<p class="center">
+		By <a href="https://arp242.net" target="_blank">Martin Tournoij</a>
+		|
+		<a href="https://github.com/arp242/vimlog" target="_blank">Source</a>
+		|
+		<a href="https://www.patreon.com/arp242">Support my work</a>
+	</p>
+	<p class="center">This doesn't list all changes, just the most useful and notable ones.<br>
+		Changes from Vim 8.0 (September 2016) up to 8.1.1890 (Aug 19) are listed.</p>
+
+	<div class="center ta-center"><strong>Compatability table</strong></div>
+	<table class="center">
+		<tbody>
+			<tr title="disco"><th>Ubuntu 19.04</th><td>Vim 8.1.0320</td><td>Neovim 0.3.4</td></tr>
+			<tr title="cosmic"><th>Ubuntu 18.10</th><td>Vim 8.0.1766</td><td>Neovim 0.3.1</td></tr>
+			<tr title="bionic"><th>Ubuntu 18.04 LTS</th><td>Vim 8.0.1453</td><td>Neovim 0.2.2</td></tr>
+		</tbody>
+		<tbody>
+			<tr title="xenial"><th>Ubuntu 16.04 LTS</th><td>Vim 7.4.1689</td><td>(no package)</td></tr>
+			<tr title="stretch"><th>Debian 9</th><td>Vim 8.0.0197</td><td>Neovim 0.1.7</td></tr>
+			<tr title="buster"><th>Debian 10</th><td>Vim 8.1.0875</td><td>Neovim 0.3.4</td></tr>
+		</tbody>
+	</table>
+	<div class="center ta-center"><small>Debian and Ubuntu are the most common distros with old Vim versions.</small></div>
+
+	<main class="center"><h2>2019</h2>
+<section><div><h3>popup in <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'completeopt'">'completeopt'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/576a4a6ff14da876d7c4418e5f27e926fcfa8d2a">8.1.1880</a>, <a target="_blank" href="https://github.com/vim/vim/commit/62a0cb443c3184f24a6dac73d3505f9056cf6056">8.1.1882</a> <sup>(Aug 18)</sup></p></div><p>Show extra completion info in popup window (as an alternative to the
+        preview window).</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/spell.txt.html#:spellrare">:spellrare</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/08cc374dabd2a02785129fa1c0100f7745c244ad">8.1.1838</a> <sup>(Aug 11)</sup></p></div><p>Mark words as rare in the spellfile.</p></section>
+<section><div><h3>-&gt; operator</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/ac92e25a33c37ec5becbfffeccda136c73b761ac">8.1.1803</a>, <a target="_blank" href="https://github.com/vim/vim/commit/a74e4946de074d2916e3d6004f7fa1810d12dda9">8.1.1809</a>, <a target="_blank" href="https://github.com/vim/vim/commit/22a0c0c4ecd23b6c43f79ba9b92899ca0b426e29">8.1.1834</a>, <a target="_blank" href="https://github.com/vim/vim/commit/fd8ca21b3ff207e44891aef922935d4adcd140cf">8.1.1835</a>, <a target="_blank" href="https://github.com/vim/vim/commit/073e4b92e613d22ce7b16e0fbf5c0e40cb5f9b2c">8.1.1888</a> <sup>(Aug 18)</sup></p></div><p><code>expr-&gt;fun(args)</code> is a shortcut for <code>fun(expr,
+        args)</code> to improve readability:<br><code>[1, 2]-&gt;map({_, v -&gt;
+        v + 1})</code>. See <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#method">method</a>.</p></section>
+<section><div><h3>Popup windows</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/5c017b2de28d19dfa4af58b8973e32f31bb1477e">8.1.1364</a>, <a target="_blank" href="https://github.com/vim/vim/commit/4d784b21d14fc66e98a2b07f70343cdd4acd62aa">8.1.1391</a>, <a target="_blank" href="https://github.com/vim/vim/commit/749fa0af85232be1d44b77a09161f71cdbace62c">8.1.1799</a> <sup>(Aug 3)</sup></p></div><p>Popup windows are like the completion window, but can be controlled
+        in VimScript to a much greater degree. See <a target="_blank" class="help-tag" href="https://vimhelp.org/popup.txt.html#popup">popup</a>, <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'previewpopup'">'previewpopup'</a>.
+        This is still an experimental feature.</p></section>
+<section><div><h3><a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'completeslash'">'completeslash'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/ac3150d385e6e3f3fe76642aac3cda954d30583f">8.1.1769</a> <sup>(Jul 28)</sup></p></div><p>Override <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'shellslash'">'shellslash'</a> for completion.</p></section>
+<section><div><h3>#{} dict notation</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/d5abb4c87727eecb71b0e8ffdda60fc9598272f3">8.1.1683</a>, <a target="_blank" href="https://github.com/vim/vim/commit/b8be54dcc517c9d57b62409945b7d4b90b6c3071">8.1.1692</a>, <a target="_blank" href="https://github.com/vim/vim/commit/4c6d90458baae843463f930fdc3fe4a7a2191d27">8.1.1705</a> <sup>(Jul 16)</sup></p></div><p>The <code>#{}</code> notation is the same as the regular
+        <code>{}</code> dict notation, except that the key values don't need
+        quoting:<br><code>#{foo: "bar"}</code>.</p></section>
+<section><div><h3>Sound functions</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/427f5b66ce0abe19daed9291b1693f6e8aae6552">8.1.1502</a>, <a target="_blank" href="https://github.com/vim/vim/commit/9b283523f2f75b45feef902b8713808e883d9c19">8.1.1565</a> <sup>(Jun 17)</sup></p></div><p>Ability to play sound; see <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#sound_playevent()">sound_playevent()</a>.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#v:option_command">v:option_command</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#v:option_oldlocal">v:option_oldlocal</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#v:option_oldglobal">v:option_oldglobal</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/d7c968794710f338d491072171df48f96612cf72">8.1.1542</a> <sup>(Jun 15)</sup></p></div><p>Improvements for the <a target="_blank" class="help-tag" href="https://vimhelp.org/autocmd.txt.html#OptionSet">OptionSet</a> event.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#:const">:const</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/9937a055437ef67b57a1bdec8f0799b669c9dbf0">8.1.1539</a> <sup>(Jun 15)</sup></p></div><p>Constants; same as <code>:let v = 1 | :lockvar v</code></p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#win_execute()">win_execute()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/868b7b6712ea4f2232eeeae18c5cbbbddf2ee84d">8.1.1418</a> <sup>(May 29)</sup></p></div><p><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#execute()">execute()</a> in the context of a specific window.</p></section>
+<section><div><h3><a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'wincolor'">'wincolor'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/4d784b21d14fc66e98a2b07f70343cdd4acd62aa">8.1.1391</a> <sup>(May 25)</sup></p></div><p>Highlight group to use instead of <a target="_blank" class="help-tag" href="https://vimhelp.org/syntax.txt.html#hl-Normal">hl-Normal</a> for this window.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/options.txt.html#g:actual_curwin">g:actual_curwin</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/options.txt.html#g:statusline_winid">g:statusline_winid</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/1c6fd1e100fd0457375642ec50d483bcc0f61bb2">8.1.1372</a> <sup>(May 23)</sup></p></div><p>Temporarily set when running expressions inside the <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'statusline'">'statusline'</a> (<code>%{expr}</code>).</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#:let=<<">:let=<<</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/f5842c5a533346c4ff41ff666e465c85f1de35d5">8.1.1354</a> <sup>(May 19)</sup></p></div><p>Heredoc assignment:<pre>let text =<< trim END
+	text
+END</pre></p></section>
+<section><div><h3>Text properties</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/98aefe7c3250bb5d4153b994f878594d1745424e">8.1.0579</a>, <a target="_blank" href="https://github.com/vim/vim/commit/bfd451283f8c37926f4b0aa22b74b534bd84e482">8.1.1340</a>, <a target="_blank" href="https://github.com/vim/vim/commit/80e737cc6ab6b68948f6765348b6881be861b200">8.1.1341</a> <sup>(May 17)</sup></p></div><p>Assign metadata to text in a buffer, as an alternative to Vim's syntax highlighting.
+            See <a target="_blank" class="help-tag" href="https://vimhelp.org/textprop.txt.html#textprop">textprop</a>. This is still an experimental feature.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#listener_add()">listener_add()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/6d2399bd1053b367e13cc2b8991d3ff0bf724c7c">8.1.1320</a>, <a target="_blank" href="https://github.com/vim/vim/commit/a334772967de25764ed7b11d768e8b977818d0c6">8.1.1321</a>, <a target="_blank" href="https://github.com/vim/vim/commit/fe1ade0a78a70a4c7ddaebb6964497f037f4997a">8.1.1332</a> <sup>(May 14)</sup></p></div><p>Add a callback that will be invoked when changed have been made to a buffer.</p></section>
+<section><div><h3>Default values for function arguments</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/42ae78cfff171fbd7412306083fe200245d7a7a6">8.1.1310</a> <sup>(May 9)</sup></p></div><p>e.g. <code>function Fun(value=10)</code>. See <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#optional-function-argument">optional-function-argument</a>.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/various.txt.html#:xrestore">:xrestore</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/d4aa83af1d691fdabbc8e6aab36db2c96ea4d4b6">8.1.1307</a> <sup>(May 9)</sup></p></div><p>Reconnect to X server after restart.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#environ()">environ()</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#getenv()">getenv()</a>, and <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#setenv()">setenv()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/691ddeefb545d8488e5a495af61caba2e57b3de9">8.1.1305</a> <sup>(May 9)</sup></p></div><p>Deal with environment variables.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#chdir()">chdir()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/1063f3d2008f22d02ccfa9dab83a23db52febbdc">8.1.1291</a> <sup>(May 7)</sup></p></div><p>Change directory with scope and ability to restore.</p></section>
+<section><div><h3>:cbefore, <a target="_blank" class="help-tag" href="https://vimhelp.org/quickfix.txt.html#:cafter">:cafter</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/cf6a55c4b0cbf38b0c3fbed5ffd9a3fd0d2ede0e">8.1.1275</a> <sup>(May 5)</sup></p></div><p>Navigate to errors before/after the cursor.</p></section>
+<section><div><h3>Show match position when searching</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/9dfa3139198b38b28673e251a3756430065914e9">8.1.1270</a> <sup>(May 4)</sup></p></div><p>Show "3/44" when using <a target="_blank" class="help-tag" href="https://vimhelp.org/pattern.txt.html#n">n</a> and "S" is not in <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'shortmess'">'shortmess'</a>.</p></section>
+<section><div><h3>:cabove, :cbelow, :labove, <a target="_blank" class="help-tag" href="https://vimhelp.org/quickfix.txt.html#:lbelow">:lbelow</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/3ff33114d70fc0f7e9c3187c5fec9028f6499cf3">8.1.1256</a> <sup>(May 3)</sup></p></div><p>Navigate through errors relative to the cursor.</p></section>
+<section><div><h3>Control font weight on Windows'</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/f720d0a77e393990b2171a77210565bdc82064f2">8.1.1224</a> <sup>(Apr 28)</sup></p></div><p>Use "W" in <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'guifont'">'guifont'</a> to control font weight on Windows. See <a target="_blank" class="help-tag" href="https://vimhelp.org/gui.txt.html#gui-font">gui-font</a>. </p></section>
+<section><div><h3>Tab-local directory</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/00aa069db8132851a91cfc5ca7f58ef945c75c73">8.1.1218</a> <sup>(Apr 27)</sup></p></div><p> See :tcd. Similar to the window-local directory with :lcd. </p></section>
+<section><div><h3>v: prefix is required</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/d2e716e6dfd50b605867c7c684373384c8edf707">8.1.1188</a> <sup>(Apr 20)</sup></p></div><p>Previously e.g. <code>count</code> would also work. The
+        <code>v:</code> prefix is mandatory when :scriptversion is 3 or
+        higher.</p></section>
+<section><div><h3>Add more arguments to <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#winnr()">winnr()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/46ad288b9b2a6eb0430cf802ff5ce68a58629897">8.1.1140</a> <sup>(Apr 8)</sup></p></div><p>To find out what neighbors a window has.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/autocmd.txt.html#CompleteChanged">CompleteChanged</a> event</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/d7f246c68cfb97406bcd4b098a2df2d870b3ef92">8.1.1138</a> <sup>(Apr 8)</sup></p></div><p>After each time the Insert mode completion menu changed.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#str2list()">str2list()</a> and <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#list2str()">list2str()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/9d40128afd7fcd038ff6532722b55b1a8c189ce8">8.1.1122</a> <sup>(Apr 6)</sup></p></div><p>Convert a string to a list of byte, or the reverse.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#readdir()">readdir()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/543c9b1921d7605498b54afdef518e312f1b4515">8.1.1120</a> <sup>(Apr 5)</sup></p></div><p>Get contents of a directory.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/repeat.txt.html#:scriptversion">:scriptversion</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/558ca4ae55096f8763ab8515a304cda9c57f18a7">8.1.1116</a> <sup>(Apr 4)</sup></p></div><p>Specify VimScript compatibility level.</p></section>
+<section><div><h3><code>..</code> operator</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/0f248b006c2574abc00c9aa7886d8f33620eb822">8.1.1114</a> <sup>(Apr 4)</sup></p></div><p>String concatenation operator, as <code>.</code> is ambiguous.
+        <code>'a' .. 'b'</code> and <code>'a' . 'b'</code> are identical.
+        Also adds <code>..=</code>.</p></section>
+<section><div><h3><code>++once</code> argument for <a target="_blank" class="help-tag" href="https://vimhelp.org/autocmd.txt.html#:autocmd">:autocmd</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/eb93f3f0e2b2ae65c5c3f55be3e62d64e3066f35">8.1.1113</a> <sup>(Apr 4)</sup></p></div><p>Run an autocommand just once, e.g. <code>au CursorMoved * ++once :echom 'ONCE'</code>.</p></section>
+<section><div><h3>Add window ID argument to <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#matchdelete()">matchdelete()</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#clearmatches()">clearmatches()</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#getmatches()">getmatches()</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#setmatches()">setmatches()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/aff749145e23c0f20b5158d1d3a942948ed138e3">8.1.1084</a> <sup>(Mar 30)</sup></p></div><p> </p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#complete_info()">complete_info()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/fd133323d4e1cc9c0e61c0ce357df4d36ea148e3">8.1.1068</a> <sup>(Mar 29)</sup></p></div><p>Get information about current completion.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#rubyeval()">rubyeval()</a> </h3><p><a target="_blank" href="https://github.com/vim/vim/commit/e99be0e6d28fad96efd2b2be23fa38e7559e80e1">8.1.1056</a> <sup>(Mar 26)</sup></p></div><p>Evaluate a Ruby expression.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/windows.txt.html#CTRL-W_gt">CTRL-W_gt</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/windows.txt.html#CTRL-W_gT">CTRL-W_gT</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/72e83c1ae535e2ebc35b114d34d0a811eb62b068">8.1.0972</a> <sup>(Feb 22)</sup></p></div><p>Switch tabs, like <a target="_blank" class="help-tag" href="https://vimhelp.org/tabpage.txt.html#gt">gt</a> and <a target="_blank" class="help-tag" href="https://vimhelp.org/tabpage.txt.html#gT">gT</a>. Mainly useful to switch from terminal window.</p></section>
+<section><div><h3><code>*=</code>, <code>/=</code>, <code>%=</code> </h3><p><a target="_blank" href="https://github.com/vim/vim/commit/ff697e6cef8ced7717a21fd525ab3200b2f1724f">8.1.0902</a> <sup>(Feb 12)</sup></p></div><p>e.g. <code>let var *= 2</code></p></section>
+<section><div><h3><code>a:</code> variables are immutable</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/31b816042fca879b11965ddd75287732563ba698">8.1.0888</a>, <a target="_blank" href="https://github.com/vim/vim/commit/05c00c038bc16e862e17f9e5c8d5a72af6cf7788">8.1.0897</a> <sup>(Feb 11)</sup></p></div><p>Previously it was possible to change <code>a:</code> variables in some cases.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/pattern.txt.html#[:ident:]">[:ident:]</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/pattern.txt.html#[:keyword:]">[:keyword:]</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/pattern.txt.html#[:fname:]">[:fname:]</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/221cd9f4dd866503777b2fffa721c1403716ad63">8.1.0862</a> <sup>(Jan 31)</sup></p></div><p></p></section>
+<section><div><h3>Allow for a third character for "tab:" in <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'listchars'">'listchars'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/83a52171ba00b2b9fd2d1d22a07e38fc9fc69c1e">8.1.0759</a> <sup>(Jan 16)</sup></p></div><p>Third character is set as the last one for a tab, e.g. <code>set listchars=tab:(_)</code> shows a tab as <code>(______)</code>.</p></section>
+<section><div><h3>Blob type</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/6e5ea8d2a995b32bbc5972edc4f827b959f2702f">8.1.0735</a>, <a target="_blank" href="https://github.com/vim/vim/commit/3d28b58c519c9fc3427587201423c74746cc219e">8.1.0756</a>, <a target="_blank" href="https://github.com/vim/vim/commit/d89682477cd01ec60edd6d88093b95b12e180127">8.1.0757</a> <sup>(Jan 15)</sup></p></div><p>A blob stores binary data. Blob literals start with <code>0z</code>, e.g. <code>0zDEADBEEF</code>. See <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#blob">blob</a>.</p></section>
+<section><div><h3>"p" flag in <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'formatoptions'">'formatoptions'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/c3c3158756ae074052b0db2a3e3a7ba192df5330">8.1.0728</a> <sup>(Jan 11)</sup></p></div><p>Don't break lines at single spaces that follow periods.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/various.txt.html#:redrawtabline">:redrawtabline</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/e12bab3144af8943937bd0ff4bc57f04e53037b3">8.1.0706</a> <sup>(Jan 8)</sup></p></div><p>Redraw tabline after changing <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'tabline'">'tabline'</a> (mainly useful for plugins).</p></section>
+
+<h2>2018</h2>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/sign.txt.html#sign_place()">sign_place()</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/sign.txt.html#sign_unplace()">sign_unplace()</a>, etc</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/162b71479bd4dcdb3a2ef9198a1444f6f99e6843">8.1.0614</a>, <a target="_blank" href="https://github.com/vim/vim/commit/7d83bf4f2b785b46d87c7bc376fc9d0a862af782">8.1.0658</a> <sup>(Dec 29)</sup></p></div><p>Functions for defining and placing signs.</p></section>
+<section><div><h3>Allow functions and commands to redefine themselves</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/ded5f1bed7ff2d138b3ee0f9610d17290b62692d">8.1.0515</a>, <a target="_blank" href="https://github.com/vim/vim/commit/55d46913084745a48749d7ac4f48930852e1d87e">8.1.0573</a> <sup>(Dec 8)</sup></p></div><p>Previously a <code>!</code> always had to be added to <code>function</code>
+        to overwrite a function with the same name. Now Vim is smarter and
+        allows a function to overwrite itself. This means that using
+        <code>function!</code> in your vimrc or plugin's autoload is almost
+        never required any more.
+    </p></section>
+<section><div><h3>:filter support for more commands</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/0751f51a5b428805a8c1e9fe529693d032bec991">8.0.1651</a>, <a target="_blank" href="https://github.com/vim/vim/commit/4cde86c2ef885e82fff3d925dee9fb5671c025cf">8.1.0165</a>, <a target="_blank" href="https://github.com/vim/vim/commit/f86db78fed78541cefdb706e4779ce5ae9ca7820">8.1.0495</a> <sup>(Oct 25)</sup></p></div><p> </p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/gui.txt.html#:tlmenu">:tlmenu</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/4c5d815256099b50eca2ec5bf8f9aaa67a890211">8.1.0487</a> <sup>(Oct 19)</sup></p></div><p>Popup menu for terminal.</p></section>
+<section><div><h3>Include the xdiff library</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/e828b7621cf9065a3582be0c4dd1e0e846e335bf">8.1.0360</a>, <a target="_blank" href="https://github.com/vim/vim/commit/785fc6567f572b8caefbc89ec29bbd8b801464ae">8.1.0393</a> <sup>(Sep 15)</sup></p></div><p>Include diff library instead of relying on external tools to improve
+        diff quality. Many new <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'diffopt'">'diffopt'</a> settings (e.g. <code>set
+        diffopt+=internal,algorithm:patience</code> would be a good setting for
+        many).</p></section>
+<section><div><h3> "\ </h3><p><a target="_blank" href="https://github.com/vim/vim/commit/67f8ab829911c7901c534ef2bf19cc34b622936f">8.1.0369</a> <sup>(Sep 11)</sup></p></div><p>Comments in line continuations; see <a target="_blank" class="help-tag" href="https://vimhelp.org/repeat.txt.html#line-continuation-comment">line-continuation-comment</a>: <pre>
+au FileType git
+            "\ Go to commit.
+            \  nnoremap &lt;Leader&gt;g :exe printf(":!cd ~/src/vim && git diff %s^\!", split(getline('.'), ' ')[1])&lt;CR&gt;
+            "\ Delete commit.
+            \| nnoremap &lt;Leader&gt;d :call search('^commit ', 'bc') \| :exe 'd' . (search('^commit ', 'n') - line('.'))&lt;CR&gt;
+</pre>
+            </p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/quickfix.txt.html#cfilter-plugin">cfilter-plugin</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/8c5e0093c9badced73e382915fb024a5c3ea463b">8.1.0311</a> <sup>(Aug 21)</sup></p></div><p>Filter quickfix/location list</p></section>
+<section><div><h3><a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'vartabstop'">'vartabstop'</a>, <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'varsofttabstop'">'varsofttabstop'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/04958cbaf25eea27eceedaa987adfb354ad5f7fd">8.1.0105</a> <sup>(Jun 23)</sup></p></div><p>TODO</p></section>
+<section><div><h3>promp buffer</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/f273245f6433d5d43a5671306b520a3230c35787">8.1.0027</a>, <a target="_blank" href="https://github.com/vim/vim/commit/6d41c78e353b630bc1a72cbff9160311d2a81e8c">8.1.0035</a> <sup>(Jun 6)</sup></p></div><p>Mainly useful to feed user input to a job.</p></section>
+<section><div><h3>Allow :unlet $ENV</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/137374fd6538cf9dee0cb22907728d8fdecb5832">8.0.1832</a> <sup>(May 13)</sup></p></div><p>Previously there was no way to truly unset an environment variable
+            (just set it to an empty string).</p></section>
+<section><div><h3>CTRL-R CTRL-L</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/e2c8d8392684a940cc5608acc73ff47486bd7b92">8.0.1787</a> <sup>(May 1)</sup></p></div><p>Insert line from buffer in commandline</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/channel.txt.html#job_info()">job_info()</a> without argument lists all jobs</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/e1fc51558dc14906a8d9f6a6e7bb1ac2a6ba8f3d">8.0.1742</a> <sup>(Apr 21)</sup></p></div><p></p></section>
+<section><div><h3>mkdir('p') won't fail fail if the directory already exists</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/78a16b0f2a142aae1fdc96c50ab0f25194d0e755">8.0.1708</a> <sup>(Apr 14)</sup></p></div><p> </p></section>
+<section><div><h3>Add the terminal API.</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/8fbaeb195d9298c3a2a80300b5f96f1adddd2f59">8.0.1641</a> <sup>(Mar 25)</sup></p></div><p>See <a target="_blank" class="help-tag" href="https://vimhelp.org/terminal.txt.html#terminal-api">terminal-api</a>.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#trim()">trim()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/295ac5ab5e840af6051bed5ec9d9acc3c73445de">8.0.1630</a> <sup>(Mar 22)</sup></p></div><p>Clean whitespace; had to use <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#substitute()">substitute()</a> before.</p></section>
+<section><div><h3>Add "!" to <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'guioptions'">'guioptions'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/135682517bc378cfdb63fe3a6e3553935f69f6ce">8.0.1609</a>, <a target="_blank" href="https://github.com/vim/vim/commit/f05fa378229004fb64493b411b864709ce7da453">8.0.1616</a> <sup>(Mar 18)</sup></p></div><p>Use a Vim terminal window for :! shell commands.</p></section>
+<section><div><h3>Menus in terminal</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/aef8c3da2ba59285b7cfde559ae21cdce6ba6919">8.0.1558</a>, <a target="_blank" href="https://github.com/vim/vim/commit/29a2c08d792e4458a0af8371f5341394829fce29">8.0.1570</a> <sup>(Mar 5)</sup></p></div><p>Make :popup and right-click work in terminal.</p></section>
+<section><div><h3>24 bit colors in Windows console</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/cafafb381a04e33f3ce9cd15dd9f94b73226831f">8.0.1531</a> <sup>(Feb 22)</sup></p></div><p>See <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'termguicolors'">'termguicolors'</a>.</p></section>
+<section><div><h3><a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'pumwidth'">'pumwidth'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/a8f04aa275984183bab5bb583b128f38c64abb69">8.0.1491</a> <sup>(Feb 10)</sup></p></div><p>Minimum width of completion menu.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/autocmd.txt.html#DirChanged">DirChanged</a> event</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/b7407d3fc9496f9048fb65ab17b5ba3444965c0e">8.0.1459</a> <sup>(Feb 3)</sup></p></div><p>When directory changed (with :cd, :lcd, etc.)</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/autocmd.txt.html#CmdlineChanged">CmdlineChanged</a> event</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/153b704e20f9c269450a7d3ea8cafcf942579ab7">8.0.1445</a> <sup>(Jan 31)</sup></p></div><p>After a change was made to the text in the command line.</p></section>
+
+<h2>2017</h2>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/autocmd.txt.html#TextYankPost">TextYankPost</a> event</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/7e1652c63c96585b9e2235c195a3c322b1f11595">8.0.1394</a> <sup>(Dec 16)</sup></p></div><p>After yanking or deleting text.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#win_screenpos()">win_screenpos()</a>.</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/22044dc31788d9f1c2da7725269884d9923b4795">8.0.1364</a> <sup>(Dec 2)</sup></p></div><p>Get winow position.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/autocmd.txt.html#CmdlineEnter">CmdlineEnter</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/autocmd.txt.html#CmdlineLeave">CmdlineLeave</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/fafcf0dd59fd9c4ef743bb333ae40d1d322b6079">8.0.1206</a> <sup>(Oct 19)</sup></p></div><p>When entering and leaving the commandline.</p></section>
+<section><div><h3>:terminal </h3><p><a target="_blank" href="https://github.com/vim/vim/commit/e4f25e4a8db2c8a8a71a4ba2a68540b3ab341e42">8.0.0693</a>, <a target="_blank" href="https://github.com/vim/vim/commit/8c0095c59a34ef74fb873036cfbf1aa90be449f3">8.0.0730</a>, <a target="_blank" href="https://github.com/vim/vim/commit/5a1feb809191e236cadd2884a5f57ad26cd213a3">8.0.0744</a>, <a target="_blank" href="https://github.com/vim/vim/commit/91d348abfc0d7ac9b5b19cde0112de8ae4335602">8.0.0804</a>, <a target="_blank" href="https://github.com/vim/vim/commit/2438ae3d678288c4726d2e393d1c66fd5cc52623">8.0.0929</a>, <a target="_blank" href="https://github.com/vim/vim/commit/69fbc9e1dab176f345719436cd89d854df0a2abd">8.0.1108</a> <sup>(Sep 14)</sup></p></div><p>Terminal buffer.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/starting.txt.html#--clean">--clean</a>, <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'viminfofile'">'viminfofile'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/c4da113ef98dcfd6f2a088b1693c0317dcb5bf42">8.0.0716</a> <sup>(Jul 15)</sup></p></div><p>Start Vim with the default settings and without plugins.</p></section>
+<section><div><h3>E flag in <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'cinoptions'">'cinoptions'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/7720ba8599162fbbb8f7fc034f674a2ccd3ca7f1">8.0.0431</a> <sup>(Mar 8)</sup></p></div><p>Set indent for extern block.</p></section>
+<section><div><h3><a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'pyxversion'">'pyxversion'</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/if_pyth.txt.html#:pythonx">:pythonx</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/f42dd3c3901ea0ba38e67a616aea9953cae81b8d">8.0.0251</a> <sup>(Jan 28)</sup></p></div><p>Make it easier to run Python code in both Python 2 and 3, depending
+        on what is available.</p></section>
+</main>
+
+	<script>
+		(function() {
+			if (window.location.hostname.indexOf('localhost') > -1) {
+				return;
+			}
+
+			var script = document.createElement('script');
+			window.counter = 'https://vimlog.goatcounter.com/count'
+			script.async = 1;
+			script.src = '//static.goatcounter.com/count.min.js';
+
+			var ins = document.getElementsByTagName('script')[0];
+			ins.parentNode.insertBefore(script, ins)
+		})();
+	</script>
+</body>
+</html>

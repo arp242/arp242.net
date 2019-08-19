@@ -90,8 +90,8 @@ last week alone includes:
 - GoatLetter (unreleased, hopefully in a few months) – a newsletter service,
   with a similar design ethic as GoatCounter.
 
-- VimLog (unreleased, probably next week) – a more useful ChangeLog for Vim
-  (there's much more new stuff happening than you'd might think!)
+- [VimLog](/vimlog) – a more useful ChangeLog for Vim (there's much more new
+  stuff happening than you'd might think!)
 
 - Unnamed recipe site (unreleased, unplanned) – loads of 'em suck; I have some
   pretty clear ideas how to do it better. This was also my original idea that
