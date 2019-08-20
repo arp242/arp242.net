@@ -49,7 +49,7 @@
 	<p class="center">This doesn't list all changes, just the most useful and notable ones.<br>
 		Changes from Vim 8.0 (September 2016) up to 8.1.1890 (Aug 19) are listed.</p>
 
-	<div class="center ta-center"><strong>Compatability table</strong></div>
+	<div class="center ta-center"><strong>Compatibility table</strong></div>
 	<table class="center">
 		<tbody>
 			<tr title="disco"><th>Ubuntu 19.04</th><td>Vim 8.1.0320</td><td>Neovim 0.3.4</td></tr>
@@ -146,7 +146,8 @@ au FileType git
 </pre>
             </p></section>
 <section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/quickfix.txt.html#cfilter-plugin">cfilter-plugin</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/8c5e0093c9badced73e382915fb024a5c3ea463b">8.1.0311</a> <sup>(Aug 21)</sup></p></div><p>Filter quickfix/location list</p></section>
-<section><div><h3><a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'vartabstop'">'vartabstop'</a>, <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'varsofttabstop'">'varsofttabstop'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/04958cbaf25eea27eceedaa987adfb354ad5f7fd">8.1.0105</a> <sup>(Jun 23)</sup></p></div><p>TODO</p></section>
+<section><div><h3><a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'vartabstop'">'vartabstop'</a>, <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'varsofttabstop'">'varsofttabstop'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/04958cbaf25eea27eceedaa987adfb354ad5f7fd">8.1.0105</a> <sup>(Jun 23)</sup></p></div><p>Variable tabstop widths, e.g. <code>set vartabstop=4,8</code> makes
+            the first tab 4 spaces, and the rest 8.</p></section>
 <section><div><h3>promp buffer</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/f273245f6433d5d43a5671306b520a3230c35787">8.1.0027</a>, <a target="_blank" href="https://github.com/vim/vim/commit/6d41c78e353b630bc1a72cbff9160311d2a81e8c">8.1.0035</a> <sup>(Jun 6)</sup></p></div><p>Mainly useful to feed user input to a job.</p></section>
 <section><div><h3>Allow :unlet $ENV</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/137374fd6538cf9dee0cb22907728d8fdecb5832">8.0.1832</a> <sup>(May 13)</sup></p></div><p>Previously there was no way to truly unset an environment variable
             (just set it to an empty string).</p></section>
@@ -172,21 +173,5 @@ au FileType git
 <section><div><h3><a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'pyxversion'">'pyxversion'</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/if_pyth.txt.html#:pythonx">:pythonx</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/f42dd3c3901ea0ba38e67a616aea9953cae81b8d">8.0.0251</a> <sup>(Jan 28)</sup></p></div><p>Make it easier to run Python code in both Python 2 and 3, depending
         on what is available.</p></section>
 </main>
-
-	<script>
-		(function() {
-			if (window.location.hostname.indexOf('localhost') > -1) {
-				return;
-			}
-
-			var script = document.createElement('script');
-			window.counter = 'https://vimlog.goatcounter.com/count'
-			script.async = 1;
-			script.src = '//static.goatcounter.com/count.min.js';
-
-			var ins = document.getElementsByTagName('script')[0];
-			ins.parentNode.insertBefore(script, ins)
-		})();
-	</script>
 </body>
 </html>
