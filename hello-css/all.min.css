@@ -59,7 +59,7 @@ html {
   html { font-size: 14px; line-height: 160%; }
 }
 @media (max-width: 26em) {
-  html { font-size: 12px; line-height: 150%; }
+  html { font-size: 14px; line-height: 150%; }
 }
 pre, code {
   font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Consolas', monospace;
@@ -100,7 +100,7 @@ html, body {
 @media (max-width: 54em) {
   .page, .center {
     max-width: 100%;
-    padding: 0 1rem;
+    padding: .5rem 1rem;
   }
 }
 @page {
