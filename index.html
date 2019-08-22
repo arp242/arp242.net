@@ -19,12 +19,13 @@ title: arp242.net
 		if you want to contact me. Also see <a href="/cv/">my CV</a>.
 	</p>
 
-	<p>Also see <strong><a href="/archive.html">the archives</a></strong>. I archive things based on “interestingness”
-		to the general reader, rather than age. “How to detect automatically generated emails” is useful if you’re
-		creating an email system, but most people aren’t. Archived does not mean outdated.</p>
+	<p>Also see <strong><a href="/archive.html">the archives</a></strong>. I archive things based on
+		“interestingness” to the general reader, rather than age. “How to detect automatically
+		generated emails” is useful if you’re creating an email system, but most people aren’t.
+		Archived does not mean outdated.</p>
 
 	<h1 id="writings">Writings</h1>
-	<div class="newsbox floatbox">{% include _newsletter.html %}</div>
+	<div class="floatbox">{% include _newsletter.html %}</div>
 	<ul class="posts">{% for p in site.posts %}
 		{% unless p.archive or p.path contains '_drafts' %}<li{% if p.standout %} class="s"{% endif %}><a href="{{ p.url }}">{{ p.title }}</a></li>{% endunless %}{% endfor %}
 		{% for p in site.posts %}{% if p.path contains '_drafts' %}<li><a style="color: red" href="{{ p.url }}">{{ p.title }}</a></li>{% endif %}{% endfor %}

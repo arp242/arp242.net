@@ -2,11 +2,7 @@
 layout: default
 ---
 
-<nav class="center">
-	<a href="/">Home</a>
-	<div style="margin: 0 1em">I launched <a href="https://www.goatcounter.com">GoatCounter</a>: privacy-aware web
-		statistics</div>
-</nav>
+<nav class="center"><a href="/">Home</a></nav>
 <article class="page">
 	<header id="header">
 		<h1>{{ page.title }}</h1>
@@ -15,7 +11,7 @@ layout: default
 		<sup><a href="https://github.com/arp242/arp242.net/commits/master/{{ page.path }}">history</a></sup>{% endif %}</p>
 	</header>
 	{% if page.hatnote %}<div class="hatnote">{{ page.hatnote }}</div>{% endif %}
-	<div class="newsbox floatbox">{% include _newsletter.html %}</div>
+	<div class="floatbox">{% include _newsletter.html %}</div>
 	{{ content }}
 	<footer class="postscript">
 		<strong>Feedback</strong>
@@ -23,7 +19,7 @@ layout: default
 			<a href="https://github.com/arp242/arp242.net/issues/new">
 				create a GitHub issue</a> for feedback, questions, etc.</p>
 	</footer>
-	<div class="newsbox">{% include _newsletter.html %}</div>
+	{% include _newsletter.html %}
 </article>
 
 <script>

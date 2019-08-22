@@ -35,16 +35,21 @@ nav a { font-weight: bold; }
 .posts li:nth-child(1), .posts li:nth-child(2), .posts li:nth-child(3) { max-width: 29em; }
 
 .newsbox {                                                 /* NEWSLETTER */
-	padding: .5em; margin-bottom: 4px;
+	padding: .5em;
+	/*
+	margin-bottom: 4px;
+	*/
 	text-align: center;
 	background-color: #fff;  /* So the border-bottom from header at same height won't show */
 	border: 3px outset #e18ade; border-radius: 2px;
 }
-.floatbox          { float: right; margin-left: 8px; }
+.newsbox + .newsbox { margin-top: -3px; }
+
+.floatbox          { float: right; clear: right; margin-left: 8px; width: 15em; }
 .floatbox + p      { hyphens: auto; }
 input, button      { border: 1px solid #ccc; padding: 3px 6px; }
-input              { width: 13em; }
+input              { width: 12em; }
 #nl-turing-test    { display: none; }
 @media (max-width: 30rem) {
-	.floatbox { float: none; margin-left: 0; }
+	.floatbox { float: none; margin-left: 0; width: auto; }
 }
