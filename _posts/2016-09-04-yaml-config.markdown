@@ -245,8 +245,8 @@ While Ruby outputs:
 
 The reason for this is that there are multiple YAML documents in a single file
 (`---` start the document). In Python there is the `load_all()` function to
-parse all documents. Ruby’s `load()` just loads the first document, and as near
-as I can tell, doesn’t have a way to load multiple documents.
+parse all documents. Ruby’s `load()` just loads the first document, and you'll
+need to use `load_stream()` to load multiple documents.
 
 There are [many more incompatibilities between implementations][yaml-sucks].
 
