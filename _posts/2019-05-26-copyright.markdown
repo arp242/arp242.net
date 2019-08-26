@@ -15,9 +15,10 @@ Did you know that Anne Frank's diaries are still copyrighted and can't be
 published without paying royalties to the Anne Frank Foundation (AFF)? The legal
 issues are somewhat complex, but in short:
 
-- Anne Frank rewrote her diary with the intent to publish it after the war.
-  Otto Frank – Anne's father – combined and copyedited the two versions and
-  published it in 1947, which is the version most people have read.
+- Anne Frank rewrote her diary with the intent to publish it after the war. Otto
+  Frank – Anne's father – combined and copyedited the original and rewritten
+  versions and published the result in 1947, which is the version most people
+  have read.
 
   Anne Frank died in 1945; Otto Frank died in 1980. The AFF claims that Otto
   should be considered an author and that the "life plus 70 years" copyright

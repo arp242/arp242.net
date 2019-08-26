@@ -25,16 +25,12 @@ who would rather not be insulted will stop coming back, and now *those* people
 I mostly stopped posting on Reddit's /r/programming after being called a
 "moron", "idiot", "retard", "you must have an IQ lower than 65", "fucking suck
 at making software (and I guess generally anything)", "you're like the
-anti-vaxxer of front-end development", and was told that my opinion was "hate
-speech" in two separate recent incidents (both over a technical disagreement,
-wtf?!).
+anti-vaxxer of front-end development", and was told that my fairly nuanced views
+were "hate speech" in two separate recent incidents.
 
-It's not that I'm that sensitive, but if you spend a lot of time writing an
-article, make some software, or even spend some time making a (hopefully
-thoughtful) comment and you get told any of the above (which are all real
-quotes) then that's … not great. I don't get angry or "offended" but it's also
-not my idea of fun. If it happens a few times I'll stop coming back, as happened
-on /r/programming.
+I'm that sensitive or get offended easily, but I engaging with people like that
+is also not my idea of fun. If it happens a few times I'll stop coming back, as
+happened on /r/programming.
 
 Constructive dialogue can only happen if everyone feels respected, and can
 participate without the fear of being mistreated (belittling, aggressive
@@ -50,11 +46,11 @@ workplace, and pretty much any other group/community setting.
 
 I stopped engaging on my local newspaper's website *years* ago because the same
 small super-active group kept ranting about "the Muslims" on what felt like
-every fucking story, even when it had nothing to do it. I engaged in good faith
-at first, but it got very tiresome very fast. For these people, *everything*
-seems to be about the Muslims, and there seems little interest to engage in
-constructive discussion. So at some point I just gave up. I'm almost certainly
-not the only one.
+every fucking story, even when it had nothing to do immigration or religion. I
+engaged in good faith at first, but it got very tiresome very fast. For these
+people, *everything* seems to be about the Muslims, and there seems little
+interest to engage in constructive discussion. So at some point I just gave up.
+I'm almost certainly not the only one.
 
 The general pattern is something like:
 
