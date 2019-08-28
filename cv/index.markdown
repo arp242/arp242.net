@@ -5,15 +5,15 @@ layout: bare
 Martin Tournoij
 ===============
 
-I am currently (February 2019) looking for a new challenging position to help
-build a neat project.
+<!--I am currently (February 2019) looking for a new challenging position to help
+build a neat project. -->
 I have experience with a wide variety of tools and languages. My favourites are
 **Go** and **Python**. I have also written programs in PHP, Ruby, Tcl,
 JavaScript, C, Perl, Scheme, Haskell, and Lua.
 
-I am a Dutch citizen, currently living in New Zealand and working remote. I'm
-willing to consider relocating to more or less any location for the right
-position.
+<!-- I am a Dutch citizen, currently living in New Zealand and working remote.
+I'm willing to consider relocating to more or less any location for the right
+position. -->
 
 ---
 
