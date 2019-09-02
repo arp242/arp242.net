@@ -96,7 +96,7 @@ provide an answer"* would make a *huge* difference.
 ---
 
 Every time these kind of topics get brought up on Meta people get *very*
-defensive and shout "quality!" As if you need to a dick to people to maintain
+defensive and shout "quality!" As if you need to be a dick to maintain
 "quality". It's a false dichotomy: you can have quality *and* be nice, but there
 is a complete unwillingness to even discus it.
 
@@ -131,7 +131,7 @@ Also see: [The other kind of censorship](/censorship.html).
 
 ---
 
-Here's another thing I'm complete fed up with: the "know-it-better". People
+Here's another thing I'm completely fed up with: the "know-it-better". People
 who just *love* to show they actually know stuff better. Here's a recent example
 on a Go question (entire comment):
 
