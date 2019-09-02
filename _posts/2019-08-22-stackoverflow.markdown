@@ -10,8 +10,10 @@ There are many reasons for this â€“ not all of them are Stack Overflow's fault â
 but what prompted this post was a [basic but valid question][wtf] getting
 downvoted to -4 (it's now -3, since I added an upvote):
 
-> Is there a way to list all standard Go packages? I have a list of packages
-> and I want to figure out if this is a standard package.
+<blockquote style="max-width: 26em;">
+Is there a way to list all standard Go packages? I have a list of packages
+and I want to figure out if this is a standard package.
+</blockquote>
 
 Seems like a pretty valid question to me, so why is it downvoted to -4? Stack
 Overflow is intended to [build a collection of useful question to the
