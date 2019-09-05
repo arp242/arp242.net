@@ -1,6 +1,16 @@
 ---
 layout: post
 title: "Tired of Stack Overflow"
+hatnote: |
+ Discussions:
+ <a href="https://lobste.rs/s/pmldds/tired_stack_overflow">Lobsters</a>,
+ <a href="https://news.ycombinator.com/item?id=20859332">Hacker News</a>,
+ <a href="https://www.reddit.com/r/programming/comments/cysae4/tired_of_stack_overflow/">/r/programming</a>.
+ <br><br>
+ Note: this post is something of a rant, and uses strong and emotional language.
+ It's born out of a years-long frustration with seeing almost every single
+ suggestion to make Stack Overflow a friendlier place not just rejected, but met
+ with hostility.
 ---
 
 I've been active on Stack Overflow in some form or the other since 2011, and
@@ -8,7 +18,10 @@ I've grown increasingly tired of it.
 
 There are many reasons for this – not all of them are Stack Overflow's fault –
 but what prompted this post was a [basic but valid question][wtf] getting
-downvoted to -4 (it's now -3, since I added an upvote):
+downvoted to -4 (it's now -3, since I added an upvote)[^vote]:
+
+[^vote]: The question has reached a significant amount of votes after this post
+         went to the frontpage of Hacker News and /r/programming.
 
 <blockquote style="max-width: 26em;">
 Is there a way to list all standard Go packages? I have a list of packages

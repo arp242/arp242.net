@@ -7,8 +7,10 @@ hatnote: |
  Follow-up:
  <a href="/flags-config.html">Configuration with flags</a>.
  Discussions:
- <a href="https://news.ycombinator.com/item?id=17358103">Hacker News</a>,
- <a href="https://lobste.rs/s/dwjgn1/yaml_probably_not_so_great_after_all">Lobsters</a>,
+ <a href="https://lobste.rs/s/dwjgn1/yaml_probably_not_so_great_after_all">Lobsters</a>
+   (<a href="https://lobste.rs/s/82tiyp/yaml_probably_not_so_great_after_all">again</a>),
+ <a href="https://news.ycombinator.com/item?id=17358103">Hacker News</a>
+   (<a href="https://news.ycombinator.com/item?id=20731160">again</a>),
  <a href="https://www.reddit.com/r/programming/comments/8shzcu/yaml_probably_not_so_great_after_all/">/r/programming</a>.
  Translations:
  <a href="https://linux.cn/article-10423-1.html">Chinese (中文)</a>.
