@@ -85,7 +85,7 @@ Note: use `go run cfg/gen.go > cfg/cfg.go` the first time since the
 work.
 
 {% raw %}
-    // +build generate
+    // +build go_run_only
 
     package main
 
