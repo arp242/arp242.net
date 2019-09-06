@@ -28,9 +28,9 @@ at making software (and I guess generally anything)", "you're like the
 anti-vaxxer of front-end development", and was told that my fairly nuanced views
 were "hate speech" in two separate recent incidents.
 
-I'm that sensitive or get offended easily, but I engaging with people like that
-is also not my idea of fun. If it happens a few times I'll stop coming back, as
-happened on /r/programming.
+I'm not that sensitive or get offended easily, but engaging with people like
+that is also not my idea of fun. If it happens a few times I'll stop coming
+back, as happened on /r/programming.
 
 Constructive dialogue can only happen if everyone feels respected, and can
 participate without the fear of being mistreated (belittling, aggressive
