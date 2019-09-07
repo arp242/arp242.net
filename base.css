@@ -33,15 +33,27 @@ nav a { font-weight: bold; }
 #home h1 span      { font-size: 14px; font-weight: normal; }
 
 /* Hack to make space for the newsletter box in case of very long titles. */
-.posts li:nth-child(1), .posts li:nth-child(2), .posts li:nth-child(3) { max-width: 29em; }
+.posts li:nth-child(1), .posts li:nth-child(2), .posts li:nth-child(3), .posts li:nth-child(4),
+.posts li:nth-child(5), .posts li:nth-child(6), .posts li:nth-child(7), .posts li:nth-child(8) {
+	max-width: 29em;
+}
 @media (max-width: 43rem) {
-	.posts li:nth-child(1), .posts li:nth-child(2), .posts li:nth-child(3) { max-width: 20em; }
+	.posts li:nth-child(1), .posts li:nth-child(2), .posts li:nth-child(3), .posts li:nth-child(4),
+	.posts li:nth-child(5), .posts li:nth-child(6), .posts li:nth-child(7), .posts li:nth-child(8) {
+		max-width: 20em;
+	}
 }
 @media (max-width: 35rem) {
-	.posts li:nth-child(1), .posts li:nth-child(2), .posts li:nth-child(3) { max-width: 16em; }
+	.posts li:nth-child(1), .posts li:nth-child(2), .posts li:nth-child(3), .posts li:nth-child(4),
+	.posts li:nth-child(5), .posts li:nth-child(6), .posts li:nth-child(7), .posts li:nth-child(8) {
+		max-width: 16em;
+	}
 }
 @media (max-width: 30rem) {
-	.posts li:nth-child(1), .posts li:nth-child(2), .posts li:nth-child(3) { max-width: none; }
+	.posts li:nth-child(1), .posts li:nth-child(2), .posts li:nth-child(3), .posts li:nth-child(4),
+	.posts li:nth-child(5), .posts li:nth-child(6), .posts li:nth-child(7), .posts li:nth-child(8) {
+		max-width: none;
+	}
 }
 
 .newsbox {                                                 /* NEWSLETTER */
