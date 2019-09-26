@@ -1,4 +1,4 @@
--
+---
 layout: bare
 title: "Project status: stable"
 ---
