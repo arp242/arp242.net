@@ -92,3 +92,10 @@ That being said, I generally recommend Python, as it’s a good general purpose
 language with a helpful and positive community. But if you think C#, Java, PHP,
 Ruby, C++, JavaScript, or something else better fits your needs or preferences
 then by all means go for it.
+
+<div class="postscript">
+<strong>Related articles</strong>
+<ul>
+<li><a href="https://eddyerburgh.me/how-i-take-notes-from-technical-books">How I take notes from technical books</a></li>
+</ul>
+</div>
