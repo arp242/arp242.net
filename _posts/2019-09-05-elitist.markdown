@@ -5,8 +5,8 @@ title: "It’s fine to be elitist, sometimes"
 
 Last year I gave a simple and short presentation at a local Go meetup group
 based on [Go testing style guide](/go-testing-style.html). One attendee who
-didn't know *any* Go kept asking really basic questions about Go since I had
-written the presentation assuming people actually knew the basics of Go.
+didn't know *any* Go kept asking really basic questions about Go. I had written
+the presentation assuming people actually knew the basics of Go.
 
 I didn't show it, but I was rather annoyed at this. I came to the *Go* meetup to
 talk to fellow experts, not to be recruited as an (unpaid) teacher.
@@ -20,25 +20,23 @@ started daemonforums.org, have more Stack Overflow points than most, have been a
 mentor in the local code meetup, etc. I will gladly go out of my way to try and
 explain things to new programmers. But not always, not at every place. I want to
 do it on *my* terms, when *I* feel like it, and reject that I have an obligation
-so do so all the time.
+to do so all the time.
 
 ---
 
 People have called this "elitist". Yes, it is, and I don't think there's
 anything wrong with that. Experienced programmers are experts and there's
 nothing wrong in wanting to talk only to fellow experts. Do graduated doctors
-have to constantly entertain basic medical questions from first-year students at
-every turn?
+have to constantly entertain basic medical questions from first-year students?
 
 *Important note*: elitism is not the same as being condescending, treating
 people as idiots, or otherwise acting like an asshole. It's simply about
 accepting that sometimes experts want to talk to experts, and not beginners.
 
-A lot of discussion surrounding programming happens on the internet, in spaces
+A lot of discussion surrounding programming happens on the internet in spaces
 where everyone is free to join. This is really great for many reasons, but it
-does almost always have the side-effect that every space becomes a "help new
-users out" space, whether it's desired or not, especially those focused on a
-specific topic.
+does have the side-effect that many spaces becomes a "help new users out" space,
+whether it's desired or not.
 
 Even projects and communities which are very explicitly aimed towards expert
 users – such as [suckless](https://suckless.org/philosophy/) – will get a fair

@@ -15,16 +15,16 @@ nav a { font-weight: bold; }
 	padding-right: 1em;
 }
 
-#home ul { list-style: none; padding-left: 1rem; }         /* HOME PAGE */
+#home ul { list-style: none; padding-left: 0; }            /* HOME PAGE */
 #home ul li a:first-child {
 	display: inline-block;
 	min-width: 11em;
 	vertical-align: top;
 }
 @media (max-width: 46rem) {
-	#home ul      { list-style: disc; }
+	#home ul      { list-style: disc; padding-left: 1rem; }
 	#home ul li   { margin-bottom: 0.5rem; }
-	#home ul li a { min-width: auto; }
+	#home ul li a:first-child { min-width: auto; }
 }
 
 #home h1, #home h2 { text-align: left; padding-bottom: 0; border-bottom: none; }
