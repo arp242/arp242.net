@@ -1,7 +1,7 @@
 ---
 layout: post
 title: I don’t like git, but I’m going to migrate my projects to it
-updated: 2019-01-04
+updated: 2019-10-17
 ---
 
 I don’t like git. But I’m going to migrate my projects to it.
@@ -131,6 +131,11 @@ effect.
   people simply can’t be bothered sending them on an unfamiliar platform. At
   least one person "forked" my project by converting the mercurial repo to git
   and uploading it to GitHub.
+
+  This was observed [as early as 2011](https://forum.dlang.org/post/iv524m$98r$1@digitalmars.com):
+
+  > When the dmd/phobos sources switched to github the level of participation by
+  > collaborators on improving the source increased probably by a factor of 10.
 
 - A number of tools only work with git, and either don’t want to implement
   mercurial support or sometimes even removed it.
