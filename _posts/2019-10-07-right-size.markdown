@@ -3,6 +3,7 @@ layout: post
 title: "On being the right size"
 ---
 
+
 There's this pattern: *"everything should be done in small easy to understand
 units, which can easily be combined to form larger more complex systems"*.
 Examples include microkernels, microservices, small packages, and small
@@ -59,6 +60,8 @@ than just writing a many simple functions.
 
 As [Haldane already observed many years ago][haldane], the "right" size isn't
 the smallest (or the largest). It's the right one.
+
+<!-- https://www.joelonsoftware.com/2001/01/18/big-macs-vs-the-naked-chef/ -->
 
 [testing]: /testing.html
 [fp-why]: https://stackoverflow.com/a/2835936/660921
