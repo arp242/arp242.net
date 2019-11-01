@@ -12,16 +12,21 @@ General
 -------
 
 - Use **`is` instead of `==`**. Like PHP and JavaScript `==` will coerce types
-  (`'0' == 0`). The `is` operator is Vim's version of `===`. 
+  (`'0' == 0`). The `is` operator doesn't, like `===`. You do need to be careful
+  when comparing entire lists or dicts, since `is` will test *identity* rather
+  than *value*.
 
   For string comparison **use `is#` or `is?`**, as the behaviour of `is` and
   `==` are affected by the `ignorecase` setting. In general, it's a good
   practice to just always use `is#` instead of `==`; it will work fine for other
   types as well.
 
+<!-- Controversial, and may not work like I think it did. Comment out for now
+     until I have more time to properly investigate.
 - Use **explicit variable scope**. `let foo = 1` can refer to `l:foo`, `s:foo`,
   or `g:foo`. You should use explicit scope for the same reason as you should
   always use `var` or `let` in JavaScript.
+-->
 
 - **`abort` functions**. Without it Vim will keep executing code after an error,
   which rarely what you want. Use the `abort` keyword to abort function
@@ -48,6 +53,39 @@ General
       finally
         let &setting = l:old_setting
       endtry
+
+  This also applies to saving and restoring the view with
+  `winsaveview()`/`winrestview()`.
+
+- Be careful when **modifying lists and dicts**. Many operations change the
+  value of a list or dict *in place* but *also* return the new value. This leads
+  to code like:
+
+      let g:plugin_default = ['a', '_a', 'b', '_b']
+
+      fun! s:do_stuff() abort
+          let l:filtered = filter(g:plugin_default, {_, v -> v[0] isnot# '_'})
+          [..]
+      endfun
+
+  `l:filtered` will be `['a', 'b']`, but so will `g:plugin_default`, which is
+  probably not what you wanted! Use `copy()` or `deepcopy()` instead:
+
+      let l:filtered = filter(copy(g:plugin_default), {_, v -> v[0] isnot# '_'})
+
+  This is also an issue when passing lists or dicts as arguments; since they're
+  passed by *reference* rather than value, modifications are not local to just
+  the function:
+
+      fun! Test(list_arg)
+          let l:mapped = map(a:list_arg, {_, v -> 'XXX-' . l:v})
+          [..]
+      endfun
+
+      :let l = ['hello']
+      :call Test(l)
+      :echo l
+      ['XXX-hello']
 
 - Prefer **`printf()` over string concatenation**; e.g. `echo printf('x: %s',
   [42])` will work, whereas `echo 'x: ' . [42]` will give you a useless error.
