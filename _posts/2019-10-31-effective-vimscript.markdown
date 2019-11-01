@@ -65,7 +65,9 @@ Plugins
   files.
 
   Just moving `plugin/myplugin.vim` to `ftplugin/python.vim` is often all that's
-  needed. Alternatively, use a `FileType` autocmd.
+  needed; this will only load the file when that filetype is set. Alternatively,
+  you can use a `FileType` autocmd if your plugin works for many different
+  filetypes.
 
 - Use **autoload**. VimScript in the `plugin` and `ftplugin` directory will
   always be loaded on startup. Code in the `autoload` directory will be loaded
