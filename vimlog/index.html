@@ -52,7 +52,7 @@
 	</p>
 
 	<p class="center">This doesn't list all changes, just the most useful and notable ones.<br>
-		Changes from Vim 8.0 (September 2016) up to 8.1.2216 (Oct 25) are listed.</p>
+		Changes from Vim 8.0 (September 2016) up to 8.1.2237 (Oct 31 2019) are listed.</p>
 
 	<div class="center ta-center"><strong>Compatibility table</strong></div>
 	<table class="center">
@@ -70,6 +70,10 @@
 	<div class="center ta-center"><small>Debian and Ubuntu are the most common distros with old Vim versions.</small></div>
 
 	<main class="center"><h2>2019</h2>
+<section><div><h3>v:argv</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/69bf634858a2a75f2984e42b1e4017bc529a040a">8.1.2233</a> <sup>(Oct 29)</sup></p></div><p>Get commandline arguments Vim was invoked with.</p></section>
+<section><div><h3>Add gM</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/8b530c1ff91f07cf6b0289a536992b7dfbc86598">8.1.2231</a> <sup>(Oct 28)</sup></p></div><p>Move to middle of line.</p></section>
+<section><div><h3>hl-LineNrAbove, hl-LineNrBelow</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/efae76ab1a43d5a628d8c2fa4218ace6ba597f5d">8.1.2229</a> <sup>(Oct 27)</sup></p></div><p>Highlight line numbers above and below the cursor when
+        <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'relativenumber'">'relativenumber'</a> is set.</p></section>
 <section><div><h3>border and align in <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'completepopup'">'completepopup'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/bd483b3f577ee1af7c8c8bf440f5d81613336975">8.1.1902</a>, <a target="_blank" href="https://github.com/vim/vim/commit/258cef59d8c53a5b1c04937c826dc133ad5710e2">8.1.1904</a> <sup>(Aug 21)</sup></p></div><p>More option to control completion popup menu.</p></section>
 <section><div><h3>popup in <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'completeopt'">'completeopt'</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/576a4a6ff14da876d7c4418e5f27e926fcfa8d2a">8.1.1880</a>, <a target="_blank" href="https://github.com/vim/vim/commit/62a0cb443c3184f24a6dac73d3505f9056cf6056">8.1.1882</a> <sup>(Aug 18)</sup></p></div><p>Show extra completion info in popup window (as an alternative to the
         preview window).</p></section>
@@ -137,7 +141,11 @@ END</pre></p></section>
         <code>function!</code> in your vimrc or plugin's autoload is almost
         never required any more.
     </p></section>
-<section><div><h3>:filter support for more commands</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/0751f51a5b428805a8c1e9fe529693d032bec991">8.0.1651</a>, <a target="_blank" href="https://github.com/vim/vim/commit/4cde86c2ef885e82fff3d925dee9fb5671c025cf">8.1.0165</a>, <a target="_blank" href="https://github.com/vim/vim/commit/f86db78fed78541cefdb706e4779ce5ae9ca7820">8.1.0495</a> <sup>(Oct 25)</sup></p></div><p> </p></section>
+
+<h2>2019</h2>
+<section><div><h3>:filter support for more commands</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/0751f51a5b428805a8c1e9fe529693d032bec991">8.0.1651</a>, <a target="_blank" href="https://github.com/vim/vim/commit/4cde86c2ef885e82fff3d925dee9fb5671c025cf">8.1.0165</a>, <a target="_blank" href="https://github.com/vim/vim/commit/f86db78fed78541cefdb706e4779ce5ae9ca7820">8.1.0495</a>, <a target="_blank" href="https://github.com/vim/vim/commit/8fc42964363087025a27e8c80276c706536fc4e3">8.1.2221</a> <sup>(Oct 26)</sup></p></div><p> </p></section>
+
+<h2>2018</h2>
 <section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/gui.txt.html#:tlmenu">:tlmenu</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/4c5d815256099b50eca2ec5bf8f9aaa67a890211">8.1.0487</a> <sup>(Oct 19)</sup></p></div><p>Popup menu for terminal.</p></section>
 <section><div><h3>Include the xdiff library</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/e828b7621cf9065a3582be0c4dd1e0e846e335bf">8.1.0360</a>, <a target="_blank" href="https://github.com/vim/vim/commit/785fc6567f572b8caefbc89ec29bbd8b801464ae">8.1.0393</a> <sup>(Sep 15)</sup></p></div><p>Include diff library instead of relying on external tools to improve
         diff quality. Many new <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'diffopt'">'diffopt'</a> settings (e.g. <code>set
