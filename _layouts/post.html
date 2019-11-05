@@ -2,25 +2,28 @@
 layout: default
 ---
 
-<nav class="center"><a href="/">Home</a></nav>
-<article class="page">
-	<header id="header">
-		<h1>{{ page.title }}</h1>
-		<p>Written on {{ page.date | date_to_string }}
-		{% if page.updated %} − last updated on {{ page.updated | date_to_string }}
-		<sup><a href="https://github.com/arp242/arp242.net/commits/master/{{ page.path }}">history</a></sup>{% endif %}</p>
-	</header>
-	{% if page.hatnote %}<div class="hatnote">{{ page.hatnote }}</div>{% endif %}
-	<div class="floatbox">{% include _newsletter.html %}</div>
-	{{ content }}
-	<footer class="postscript">
-		<strong>Feedback</strong>
-		<p>Mail me at <a href="mailto:martin@arp242.net">martin@arp242.net</a> or
-			<a href="https://github.com/arp242/arp242.net/issues/new">
-				create a GitHub issue</a> for feedback, questions, etc.</p>
-	</footer>
-	{% include _newsletter.html %}
-</article>
+<nav><a href="/">Home</a></nav>
+<div class="center-flex">
+	<article class="page">
+		<header id="header">
+			<h1>{{ page.title }}</h1>
+			<p>Written on {{ page.date | date_to_string }}
+			{% if page.updated %} − last updated on {{ page.updated | date_to_string }}
+			<sup><a href="https://github.com/arp242/arp242.net/commits/master/{{ page.path }}">history</a></sup>{% endif %}</p>
+		</header>
+		{% if page.hatnote %}<div class="hatnote">{{ page.hatnote }}</div>{% endif %}
+
+		{{ content }}
+		<footer class="postscript">
+			<strong>Feedback</strong>
+			<p>Mail me at <a href="mailto:martin@arp242.net">martin@arp242.net</a> or
+				<a href="https://github.com/arp242/arp242.net/issues/new">
+					create a GitHub issue</a> for feedback, questions, etc.</p>
+		</footer>
+	</article>
+
+	{% include _side.html %}
+</div>
 
 <script>
 	// TODO: probably want to do this in Jekyll at some point; for now this is easier.

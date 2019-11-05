@@ -65,14 +65,34 @@ html, body {
 }
 .center, .page {
   max-width: 54rem;
-  margin: .5rem auto;
   position: relative;
 }
+.center {
+  margin: .5rem auto;
+}
+.center-flex {
+	display: flex;
+	justify-content: center;
+	margin: .5rem 0;
+}
+@media (max-width: 46em) {
+	.center-flex {
+		display: block;
+	}
+}
+
 .page {
   padding: 1rem 4rem;
   background-color: #fff;
   box-shadow: 0 0 6px rgba(0,0,0,.2);
 }
+@media (max-width: 65em) {
+  .page, .center {
+    padding: .5rem 1rem;
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 54em) {
   .page, .center {
     max-width: 100%;

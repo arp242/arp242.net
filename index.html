@@ -3,106 +3,89 @@ layout: default
 title: arp242.net
 ---
 
-<article id="home">
-	<div class="page">
-		<div class="floatbox">{% include _newsletter.html %}</div>
-		<p>This is the homepage of <strong>Martin Tournoij</strong>,
-		also known as <strong>arp242</strong> and <strong>Carpetsmoker</strong> on the web.
-		You can also find me at
-			<a rel="me" href="https://github.com/arp242">GitHub</a>,
-			<a rel="me" href="https://stackoverflow.com/users/660921/carpetsmoker">Stack Overflow</a>,
-			<a rel="me" href="https://www.couchsurfing.com/people/carpetsmoker">couchsurfing</a>,
-			<a rel="me" href="https://keybase.io/carpetsmoker">Keybase</a>,
-			<a rel="me" href="https://lobste.rs/u/arp242">Lobste.rs</a>,
-			<a rel="me" href="https://news.ycombinator.com/user?id=Carpetsmoker">Hacker News</a>, and
-			<a rel="me" href="https://www.reddit.com/user/arp242">reddit</a>. Send an email to
-			<a rel="me" href="mailto:martin@arp242.net">martin@arp242.net</a> or
-			<a href="https://github.com/arp242/arp242.net/issues/new">create a GitHub issue</a>
-			if you want to contact me. Also see <a href="/cv/">my CV</a>.
-		</p>
-		<div style="clear: both"></div>
-	</div>
+<div class="center-flex">
+	<article id="home">
+		<div class="page">
+			<h1 id="writings">Writings</h1>
+			<ul class="posts">{% for p in site.posts %}
+				{% unless p.archive  %}<li{% if p.standout %} class="s"{% endif %}><span>{{ p.date |date_to_string_space }}</span> <a href="{{ p.url }}">{{ p.title }}</a></li> {% endunless %}{% endfor %}
+			</ul>
+		</div>
 
-	<hr>
+		<hr>
 
-	<div class="page">
-		<h1 id="writings">Writings</h1>
-		<ul class="posts">{% for p in site.posts %}
-			{% unless p.archive  %}<li{% if p.standout %} class="s"{% endif %}><span>{{ p.date |date_to_string_space }}</span> <a href="{{ p.url }}">{{ p.title }}</a></li> {% endunless %}{% endfor %}
-		</ul>
-	</div>
+		<div class="page">
+			<h1 id="code">Code projects</h1>
+			<p>See <a href="https://github.com/arp242/">GitHub</a> for a full list.</p>
+			<ul class="code">
+				<li><a href="https://github.com/arp242/find-cursor/">find-cursor</a>         – Highlight the cursor position.</li>
+				<li><a href="https://github.com/arp242/hello-css/">hello-css</a>             – A CSS template focused on readability.</li>
+				<li><a href="https://github.com/arp242/imgzoom/">imgzoom</a>                 – Simple JavaScript image zoomer.</li>
+				<li><a href="https://github.com/arp242/info/">info</a>                       – Texinfo made palatable.</li>
+				<li><a href="https://github.com/arp242/pkg_clearleaves/">pkg_clearleaves</a> – Remove packages on which no other packages depend.</li>
+				<li><a href="https://github.com/arp242/readon.js/">readon.js</a>             – Continue reading a web page from where you left last time.</li>
+				<li><a href="https://github.com/arp242/sanitize_files/">sanitize_files</a>   – Basic cleanup of your code.</li>
+				<li><a href="https://github.com/arp242/singlepage/">singlepage</a>           – Bundle external assets in a HTML file.</li>
+				<li><a href="https://github.com/arp242/uni/">uni</a>                         – Query the Unicode database from the commandline.</li>
+			</ul>
 
-	<hr>
+			<h2 id="go">Go libraries and tools</h2>
+			<ul class="code">
+				<li><a href="https://github.com/monoculum/formam/">formam</a>         – Scan HTML forms in to a struct.</li>
+				<li><a href="https://github.com/arp242/goimport/">goimport</a>        – Add, remove, or replace imports in Go files.</li>
+				<li><a href="https://github.com/teamwork/guru">guru</a>               – Go errors with a Guru Meditation Number.</li>
+				<li><a href="https://github.com/arp242/hubhub/">hubhub</a>            – Set of utility functions for working with the GitHub API.</li>
+				<li><a href="https://github.com/teamwork/mailaddress">mailaddress</a> – Mail address parsing library for Go.</li>
+				<li><a href="https://github.com/arp242/sconfig/">sconfig</a>          – A simple and functional configuration file parser for Go.</li>
+				<li><a href="https://github.com/teamwork/reload">reload</a>           – Lightweight automatic application reloading for Go.</li>
+				<li><a href="https://github.com/teamwork/spamc">spamc</a>             – Go client for SpamAssassin.</li>
+				<li><a href="https://github.com/zgoat/utils">utils</a>                – Collection of often used extensions to Go's standard library.</li>
+				<li><a href="https://github.com/zgoat/validate">validate</a>          – Simple validation.</li>
+				<li><a href="https://github.com/zgoat/zhttp/">zhttp</a>               – Martin's HTTP package.</li>
+				<li><a href="https://github.com/zgoat/zlog/">zlog</a>                 – Go logging library.</li>
+			</ul>
 
-	<div class="page">
-		<h1 id="code">Code projects</h1>
-		<p>See <a href="https://github.com/arp242/">GitHub</a> for a full list.</p>
-		<ul class="code">
-			<li><a href="https://github.com/arp242/find-cursor/">find-cursor</a>         – Highlight the cursor position.</li>
-			<li><a href="https://github.com/arp242/hello-css/">hello-css</a>             – A CSS template focused on readability.</li>
-			<li><a href="https://github.com/arp242/imgzoom/">imgzoom</a>                 – Simple JavaScript image zoomer.</li>
-			<li><a href="https://github.com/arp242/info/">info</a>                       – Texinfo made palatable.</li>
-			<li><a href="https://github.com/arp242/pkg_clearleaves/">pkg_clearleaves</a> – Remove packages on which no other packages depend.</li>
-			<li><a href="https://github.com/arp242/readon.js/">readon.js</a>             – Continue reading a web page from where you left last time.</li>
-			<li><a href="https://github.com/arp242/sanitize_files/">sanitize_files</a>   – Basic cleanup of your code.</li>
-			<li><a href="https://github.com/arp242/singlepage/">singlepage</a>           – Bundle external assets in a HTML file.</li>
-			<li><a href="https://github.com/arp242/uni/">uni</a>                         – Query the Unicode database from the commandline.</li>
-		</ul>
+			<h2 id="vim">Vim stuff</h2>
+			<ul class="code">
+				<li><a href="https://github.com/arp242/dotfiles/tree/master/vim"><code>~/.vim</code></a> – All sorts of stuff.</li>
+				<li><a href="https://github.com/arp242/my-first-vimrc/">My first vimrc</a> – A simple vimrc generator for new users; see <a href="https://arp242.net/my-first-vimrc">/my-first-vimrc</a>.</li>
+				<li><a href="https://github.com/arp242/vimlog/">VimLog</a> – A ChangeLog for vim; see <a href="https://arp242.net/vimlog">/vimlog</a>.</li>
+			</ul>
 
-		<h2 id="go">Go libraries and tools</h2>
-		<ul class="code">
-			<li><a href="https://github.com/monoculum/formam/">formam</a>         – Scan HTML forms in to a struct.</li>
-			<li><a href="https://github.com/arp242/goimport/">goimport</a>        – Add, remove, or replace imports in Go files.</li>
-			<li><a href="https://github.com/teamwork/guru">guru</a>               – Go errors with a Guru Meditation Number.</li>
-			<li><a href="https://github.com/arp242/hubhub/">hubhub</a>            – Set of utility functions for working with the GitHub API.</li>
-			<li><a href="https://github.com/teamwork/mailaddress">mailaddress</a> – Mail address parsing library for Go.</li>
-			<li><a href="https://github.com/arp242/sconfig/">sconfig</a>          – A simple and functional configuration file parser for Go.</li>
-			<li><a href="https://github.com/teamwork/reload">reload</a>           – Lightweight automatic application reloading for Go.</li>
-			<li><a href="https://github.com/teamwork/spamc">spamc</a>             – Go client for SpamAssassin.</li>
-			<li><a href="https://github.com/zgoat/utils">utils</a>                – Collection of often used extensions to Go's standard library.</li>
-			<li><a href="https://github.com/zgoat/validate">validate</a>          – Simple validation.</li>
-			<li><a href="https://github.com/zgoat/zhttp/">zhttp</a>               – Martin's HTTP package.</li>
-			<li><a href="https://github.com/zgoat/zlog/">zlog</a>                 – Go logging library.</li>
-		</ul>
+			<ul class="code">
+				<!-- <li><a href="https://github.com/arp242/git.vim/">git.vim</a>                       – Small Vim git plugin.</li> -->
+				<li><a href="https://github.com/arp242/auto_mkdir2.vim/">auto_mkdir2.vim</a>       – Automatically create directories.</li>
+				<li><a href="https://github.com/arp242/confirm_quit.vim/">confirm_quit.vim</a>     – Ask for confirmation before quitting Vim.</li>
+				<li><a href="https://github.com/arp242/default2.vim/">default2.vim</a>             – Vim's default colour scheme with some small enhancements.</li>
+				<li><a href="https://github.com/arp242/globedit.vim/">globedit.vim</a>             – Use globbing patterns for :edit, :tabedit, etc.</li>
+				<li><a href="https://github.com/arp242/gopher.vim/">gopher.vim</a>                 – Plugin for the Go programming language.</li>
+				<li><a href="https://github.com/arp242/helplink.vim/">helplink.vim</a>             – Link to Vim help pages with ease.</li>
+				<li><a href="https://github.com/arp242/jumpy.vim/">jumpy.vim</a>                   – Filetype-specific mappings for <code>[[</code> and <code>]]</code>.</li>
+				<li><a href="https://github.com/arp242/packman.vim/">packman.vim</a>               – A simple Vim plugin/package manager.</li>
+				<li><a href="https://github.com/arp242/startscreen.vim/">startscreen.vim</a>       – Customize Vim&#39;s start screen.</li>
+				<li><a href="https://github.com/arp242/switchy.vim/">switchy.vim</a>               – Switch to related files.</li>
+				<li><a href="https://github.com/arp242/testing.vim/">testing.vim</a>               – Small testing framework for Vim.</li>
+				<li><a href="https://github.com/arp242/undofile_warn.vim/">undofile_warn.vim</a>   – Warn when using the undofile.</li>
+				<li><a href="https://github.com/arp242/xdg_open.vim/">xdg_open.vim</a>             – Run xdg-open from Vim; re-implements netrw&#39;s gx.</li>
+			</ul>
 
-		<h2 id="vim">Vim stuff</h2>
-		<ul class="code">
-			<li><a href="https://github.com/arp242/dotfiles/tree/master/vim"><code>~/.vim</code></a> – All sorts of stuff.</li>
-			<li><a href="https://github.com/arp242/my-first-vimrc/">My first vimrc</a> – A simple vimrc generator for new users; see <a href="https://arp242.net/my-first-vimrc">/my-first-vimrc</a>.</li>
-			<li><a href="https://github.com/arp242/vimlog/">VimLog</a> – A ChangeLog for vim; see <a href="https://arp242.net/vimlog">/vimlog</a>.</li>
-		</ul>
+			<h2>Other</h2>
+			<ul class="code">
+				<li><a href="https://bestasciitable.com/">bestasciitable.com</a>             – Or, why does Ctrl+i insert a Tab in my terminal?</li>
+				<li><a href="https://github.com/arp242/dotfiles/">dotfiles</a>               – My configuration files.</li>
+				<li><a href="/the-art-of-unix-programming">The Art of Unix Programming</a>   – Reformatted version.</li>
+			</ul>
+		</div>
 
-		<ul class="code">
-			<!-- <li><a href="https://github.com/arp242/git.vim/">git.vim</a>                       – Small Vim git plugin.</li> -->
-			<li><a href="https://github.com/arp242/auto_mkdir2.vim/">auto_mkdir2.vim</a>       – Automatically create directories.</li>
-			<li><a href="https://github.com/arp242/confirm_quit.vim/">confirm_quit.vim</a>     – Ask for confirmation before quitting Vim.</li>
-			<li><a href="https://github.com/arp242/default2.vim/">default2.vim</a>             – Vim's default colour scheme with some small enhancements.</li>
-			<li><a href="https://github.com/arp242/globedit.vim/">globedit.vim</a>             – Use globbing patterns for :edit, :tabedit, etc.</li>
-			<li><a href="https://github.com/arp242/gopher.vim/">gopher.vim</a>                 – Plugin for the Go programming language.</li>
-			<li><a href="https://github.com/arp242/helplink.vim/">helplink.vim</a>             – Link to Vim help pages with ease.</li>
-			<li><a href="https://github.com/arp242/jumpy.vim/">jumpy.vim</a>                   – Filetype-specific mappings for <code>[[</code> and <code>]]</code>.</li>
-			<li><a href="https://github.com/arp242/packman.vim/">packman.vim</a>               – A simple Vim plugin/package manager.</li>
-			<li><a href="https://github.com/arp242/startscreen.vim/">startscreen.vim</a>       – Customize Vim&#39;s start screen.</li>
-			<li><a href="https://github.com/arp242/switchy.vim/">switchy.vim</a>               – Switch to related files.</li>
-			<li><a href="https://github.com/arp242/testing.vim/">testing.vim</a>               – Small testing framework for Vim.</li>
-			<li><a href="https://github.com/arp242/undofile_warn.vim/">undofile_warn.vim</a>   – Warn when using the undofile.</li>
-			<li><a href="https://github.com/arp242/xdg_open.vim/">xdg_open.vim</a>             – Run xdg-open from Vim; re-implements netrw&#39;s gx.</li>
-		</ul>
+		<hr>
 
-		<h2>Other</h2>
-		<ul class="code">
-			<li><a href="https://bestasciitable.com/">bestasciitable.com</a>             – Or, why does Ctrl+i insert a Tab in my terminal?</li>
-			<li><a href="https://github.com/arp242/dotfiles/">dotfiles</a>               – My configuration files.</li>
-			<li><a href="/the-art-of-unix-programming">The Art of Unix Programming</a>   – Reformatted version.</li>
-		</ul>
-	</div>
+		<div class="page">
+			<p>Also see <strong><a href="/archive.html">the archives</a></strong>. I archive things based on
+				“interestingness” to the general reader, rather than age. “How to detect automatically
+				generated emails” is useful if you’re creating an email system, but most people aren’t.
+				Archived does not mean outdated.</p>
+		</div>
+	</article>
 
-	<hr>
-
-	<div class="page">
-		<p>Also see <strong><a href="/archive.html">the archives</a></strong>. I archive things based on
-			“interestingness” to the general reader, rather than age. “How to detect automatically
-			generated emails” is useful if you’re creating an email system, but most people aren’t.
-			Archived does not mean outdated.</p>
-	</div>
-</article>
+	{% include _side.html %}
+</div>

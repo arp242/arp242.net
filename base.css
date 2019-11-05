@@ -4,15 +4,48 @@
 
 .hatnote { font-size: .8em; font-style: italic; margin-bottom: 14px; } /* HATNOTE */
 
-nav { padding-left: .5em;                                  /* TOP NAVIGATION */
-      display: flex; justify-content: space-between; }
+nav   { padding-left: .5em;  max-width: 69rem; margin: .5rem auto; }   /* TOP NAVIGATION */
 nav a { font-weight: bold; }
+
+.side   { width: 15em; margin-left: 1em; margin-right: 1em; flex-shrink: 0; } /* SIDEBAR */
+.side p { hyphens: auto; }
+
+.side figure { position: relative; margin: 0; line-height: 0; }  /* Picture */
+.shadow      { box-shadow: inset 0 0 10px rgba(0,0,0,.1); position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+
+.support   { text-align: center; hyphens: none; }
+.support a { font-weight: bold; background-color: #e5e5e5; border: 1px solid #aaa;
+		     padding: .4em 1em; border-radius: 2px; display: inline-block; }
+.side-sep { border-top: 1px solid #aaa; }
+
+@media (max-width: 46em) {
+	.side       { margin-top: 2em; width: auto; display: flex; justify-content: space-between; }
+	.side > div { margin: 0 1em; }
+	.side img   { width: 500px; }
+
+	.side > div > p:first-child,
+	.side > div > div:first-child { margin-top: 0; padding-top: 0; }
+}
+@media (max-width: 46em) and (min-width: 35em) {
+	.side > div > div:last-child  { display: none; }
+}
+@media (max-width: 35em) {
+	/*
+	.side > div:first-child { flex-shrink: .2; }
+	*/
+	.side        { flex-wrap: wrap; text-align: center; }
+	.side > div  { margin: 0 auto; }
+	.side figure { margin-bottom: 1em; }
+	.side img    { max-width: 20em; }
+}
 
 #disclaimer {                                              /* COPYRIGHT NOTICE */
 	font-size: 14px;
-	text-align: right;
 	color: #666;
-	padding-right: 1em;
+	padding-left: 1em;
+
+	max-width: 69rem;
+	margin: .5rem auto;
 }
 
 #home ul { list-style: none; padding-left: 0; }            /* HOME PAGE */
@@ -39,20 +72,15 @@ nav a { font-weight: bold; }
 
 .newsbox {                                                 /* NEWSLETTER */
 	padding: .5em;
+	text-align: center;
 	/*
 	margin-bottom: 4px;
-	*/
-	text-align: center;
-	background-color: #fff;  /* So the border-bottom from header at same height won't show */
+	background-color: #fff; 
 	border: 3px outset #e18ade; border-radius: 2px;
+	*/
 }
-.newsbox + .newsbox { margin-top: -3px; }
 
-.floatbox          { float: right; clear: right; margin-left: 8px; width: 15em; }
-.floatbox + p      { hyphens: auto; }
-input, button      { border: 1px solid #ccc; padding: 3px 6px; }
+input, button      { border: 1px solid #aaa; padding: 3px 6px; }
+button             { background-color: #e5e5e5; }
 input              { width: 12em; }
 #nl-turing-test    { display: none; }
-@media (max-width: 30rem) {
-	.floatbox { float: none; margin-left: 0; width: auto; }
-}
