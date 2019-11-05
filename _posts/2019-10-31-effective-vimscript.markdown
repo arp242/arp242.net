@@ -1,5 +1,6 @@
 ---
 layout: post
+updated: 2019-11-06
 title: "Effective VimScript"
 ---
 
@@ -54,8 +55,8 @@ General
         let &setting = l:old_setting
       endtry
 
-  This also applies to saving and restoring the view with
-  `winsaveview()`/`winrestview()`.
+  Other common use cases are restoring the view with
+  `winsaveview()` / `winrestview()` and changing the directory with `:cd`.
 
 - Be careful when **modifying lists and dicts**. Many operations change the
   value of a list or dict *in place* but *also* return the new value. This leads
@@ -93,6 +94,11 @@ General
 - Use **`execute()`** rather than `redir`. It's a lot less clumsy. Many older
   Stack Overflow answers and the like recommend `:redir`, but `execute()` is
   available since Vim 7.4.2008 (July 2016).
+
+- Use **lambda expressions** rather than string functions when supported (e.g.
+  `map()` and `filter()`).
+  This allows syntax highlighting and avoids ugly string escaping. This is
+  available since Vim 7.4.2044 (July 2016).
 
 
 Plugins
