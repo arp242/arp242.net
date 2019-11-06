@@ -34,6 +34,8 @@ nav a { font-weight: bold; }
 #home h1 a         { color: #00f; font-size: 1em; }
 #home h1 a:after   { content: ""; }
 #home h1 span      { font-size: 14px; font-weight: normal; }
+#home h2           { font-size: 1.1em; margin-bottom: .2em; }
+#home h2 + ul      { margin-top: 0; padding-top: 0; }
 
 .newsbox {                                                 /* NEWSLETTER */
 	padding: .5em;
