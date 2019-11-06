@@ -14,8 +14,8 @@ title: arp242.net
 	</p>
 
 	<h1 id="writings">Writings</h1>
-	<ul>{% for p in site.posts %}
-		{% if p.archive %}<li{% if p.standout %} class="s"{% endif %}><a href="{{ p.url }}">{% if p.path contains '_drafts' %}DRAFT: {% endif %}{{ p.title }}</a></li>{% endif %}{% endfor %}
+	<ul class="posts">{% for p in site.posts %}
+		{% if p.archive  %}<li{% if p.standout %} class="s"{% endif %}><span>{{ p.date |date_to_string_space }}</span> <a href="{{ p.url }}">{{ p.title }}</a></li> {% endif %}{% endfor %}
 	</ul>
 
 	<h1 id="code">Code projects</h1>

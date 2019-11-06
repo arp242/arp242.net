@@ -27,14 +27,13 @@ title: arp242.net
 	<h1 id="writings">Writings</h1>
 	<div class="floatbox">{% include _newsletter.html %}</div>
 	<ul class="posts">{% for p in site.posts %}
-		{% unless p.archive or p.path contains '_drafts' %}<li{% if p.standout %} class="s"{% endif %}><a href="{{ p.url }}">{{ p.title }}</a></li>{% endunless %}{% endfor %}
-		{% for p in site.posts %}{% if p.path contains '_drafts' %}<li><a style="color: red" href="{{ p.url }}">{{ p.title }}</a></li>{% endif %}{% endfor %}
+		{% unless p.archive  %}<li{% if p.standout %} class="s"{% endif %}><span>{{ p.date |date_to_string_space }}</span> <a href="{{ p.url }}">{{ p.title }}</a></li> {% endunless %}{% endfor %}
 	</ul>
 
 	<h1 id="code">Code projects</h1>
 	<p>See <a href="https://github.com/arp242/">GitHub</a> for a full list.</p>
-	<ul>
-		<li><a href="https://bestasciitable.com/">bestasciitable.com</a>             – Or, why does Ctrl+i insert a Tab in my terminal? </li>
+	<ul class="code">
+		<li><a href="https://bestasciitable.com/">bestasciitable.com</a>             – Or, why does Ctrl+i insert a Tab in my terminal?</li>
 		<li><a href="https://github.com/arp242/dotfiles/">dotfiles</a>               – My configuration files.</li>
 		<li><a href="https://github.com/arp242/find-cursor/">find-cursor</a>         – Highlight the cursor position.</li>
 		<li><a href="https://github.com/arp242/hello-css/">hello-css</a>             – A CSS template focused on readability.</li>
@@ -48,7 +47,7 @@ title: arp242.net
 	</ul>
 
 	<h2 id="go">Go libraries and tools</h2>
-	<ul>
+	<ul class="code">
 		<li><a href="https://github.com/monoculum/formam/">formam</a>         – Scan HTML forms in to a struct.</li>
 		<li><a href="https://github.com/arp242/goimport/">goimport</a>        – Add, remove, or replace imports in Go files.</li>
 		<li><a href="https://github.com/teamwork/guru">guru</a>               – Go errors with a Guru Meditation Number.</li>
@@ -64,14 +63,14 @@ title: arp242.net
 	</ul>
 
 	<h2 id="vim">Vim stuff</h2>
-	<ul>
+	<ul class="code">
 		<li><a href="https://github.com/arp242/dotfiles/tree/master/vim">My <code>~/.vim</code> directory</a> – All sorts of stuff.</li>
 		<li><a href="https://github.com/arp242/my-first-vimrc/">My first vimrc</a> – A simple vimrc generator for new users; see <a href="https://arp242.net/my-first-vimrc">/my-first-vimrc</a>.</li>
 		<li><a href="https://github.com/arp242/vimlog/">VimLog</a> – A ChangeLog for vim; see <a href="https://arp242.net/vimlog">/vimlog</a>.</li>
 	</ul>
 
 	<strong>Plugins</strong>
-	<ul>
+	<ul class="code">
 		<!-- <li><a href="https://github.com/arp242/git.vim/">git.vim</a>                       – My small Vim git plugin.</li> -->
 		<li><a href="https://github.com/arp242/auto_mkdir2.vim/">auto_mkdir2.vim</a>       – Automatically create directories.</li>
 		<li><a href="https://github.com/arp242/confirm_quit.vim/">confirm_quit.vim</a>     – Ask for confirmation before quitting Vim.</li>
