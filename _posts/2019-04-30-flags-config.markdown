@@ -41,11 +41,6 @@ Using flags allows you to use environment variables while fixing most of those
 issues: it's explicit, clear which variables are used, and you get errors on
 typos.
 
-<aside>You should mount procfs with <code>hidepid=1</code> to make sure
-<code>cmdline</code> isn't world-readable if you pass sensitive information like
-this. That said, passing secrets securely is complex (and a full guide is beyond
-the scope of this post).</aside>
-
     #!/bin/sh
 
     # Error out on undefined variables to catch typos or other errors such as env
@@ -62,6 +57,11 @@ the scope of this post).</aside>
 You can probably do something similar with systemd unit files. Personally I'd
 just call that shell script from systemd; it's just so much [easier to
 understand, test, and debug][easy].
+
+The biggest issue is that secrets may appear in `ps` output. Mounting procfs
+with `hidepid=1` fixes the worst of it. That said, passing secrets securely is
+complex and most methods are not completely secure (a full guide is beyond the
+scope of this post).
 
 ---
 

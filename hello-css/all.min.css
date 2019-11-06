@@ -1,27 +1,3 @@
-
-/* FILE: ./aside.css */
-aside {
-  hyphens: auto;
-}
-aside {
-  position: absolute;
-  left: -15em;
-  width: 14em;
-  text-align: right;
-  font-size: .9em;
-}
-@media (max-width: 83em) {
-  aside {
-    position: static;
-    width: auto;
-    text-align: left;
-    background-color: #f7f7f7;
-    padding: .4em 2em;
-    border: 1px solid #b7b7b7;
-    hyphens: none;
-  }
-}
-
 /* FILE: ./base.css */
 @font-face {
   font-family: 'Libre Baskerville';
@@ -147,19 +123,6 @@ form {
   margin: 0;
   padding: 0;
 }
-.link {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-  font: inherit;
-  line-height: 1rem;
-  display: inline;
-  -moz-user-select: inherit;
-  -webkit-appearance: none;
-}
 h1 {
   text-align: center;
   padding: .5em 0;
@@ -194,16 +157,6 @@ figure.border {
   padding: 5px;
   margin: -5px;
 }
-@media (min-width: 54em) {
-  figure.full {
-    margin-left: -4rem;
-    width: calc(100% + 8rem);
-  }
-  figure.full.border {
-    border-left: none;
-    border-right: none;
-  }
-}
 code, pre, kbd, samp {
   background-color: #f5f5f5;
   color: #000;
@@ -215,12 +168,6 @@ pre {
   border-radius: 2px;
   border-top: 1px solid #d5d5d5;
   border-bottom: 1px solid #d5d5d5;
-}
-@media (min-width: 54em) {
-  pre.full {
-    margin-left: -4rem;
-    width: calc(100% + 8rem);
-  }
 }
 code, kbd, samp {
   padding: 1px 2px;
@@ -234,46 +181,6 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
   background-color: transparent;
   box-shadow: none;
   color: inherit;
-}
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-table + table {
-  margin-top: 2em;
-}
-@media (min-width: 54em) {
-  table.full {
-    margin-left: -3.5rem;
-    width: calc(100% + 7rem);
-  }
-}
-caption {
-  font-weight: bold;
-}
-tr {
-  border-bottom: 1px solid #ddd;
-}
-table > tr:last-child, tbody tr:last-child, tfoot tr:last-child {
-  border-bottom: none;
-}
-tfoot tr:first-child {
-  border-top: 1px solid #ddd;
-}
-td, th {
-  padding: .2em .5em;
-  hyphens: none;
-}
-td.left, th.left  {
-  text-align: left;
-}
-td.right, th.right {
-  text-align: right;
-}
-table td.right {
-    font-feature-settings: 'tnum' on;
-    font-variant-numeric: tabular-nums;
-    font-family: sans-serif;
 }
 sup, sub {
   height: 0;
