@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Launching GoatCounter; or: let's try and make a living from this Open Source thing"
+title: "Launching GoatCounter"
 ---
 
 So I made a thing, called [GoatCounter](https://www.GoatCounter.com). It's a web
