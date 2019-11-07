@@ -1,6 +1,10 @@
+# Netlify sets cache to 0 to allow rollbacks, but this content isn't going to
+# change so just cache it.
 [[headers]]
-	# Fonts are not going to change, cache them so navigating is more smooth
-	# since the browser won't have to revalidate.
 	for = "*.woff2"
 	[headers.values]
 		Cache-Control = "public, max-age=7776000"  # 90 days
+[[headers]]
+	for = "*.jpg"
+	[headers.values]
+		Cache-Control = "public, max-age=1209600"  # 14 days
