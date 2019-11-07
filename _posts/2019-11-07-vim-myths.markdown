@@ -1,0 +1,87 @@
+---
+layout: post
+title: "Vim myths"
+---
+
+Vim has a vertical learning curve
+---------------------------------
+
+Okay, Vim isn't the easiest program to get started with; but it's not as hard as
+it's made out to be. The welcome screen helpfully provides useful information:
+
+
+                type  :q<Enter>               to exit
+                type  :help<Enter>  or  <F1>  for on-line help
+                type  :help version8<Enter>   for version info
+
+Press `:help<Enter>` will get you some basic information to get started. In
+particular:
+
+    Getting started:  Do the Vim tutor, a 20 minute interactive training for the
+                        basic commands, see vimtutor.
+
+
+The `vimtutor` program is brilliant. Run it. It will take about 30 minutes and
+you will be productive in Vim afterwards. There is a lot of information in
+`vimtutor` and there is no shame in running it several times.
+
+Here's a great thing about Vim: everything you learn about it is for life. Vim
+is extremely stable, and its developers place a high value on backwards
+compatibility. While this can have the occasional drawbacks, the upshot of it is
+that Vim changes on only one condition: when you want it to.
+
+In the 15 years I've used Vim Firefox has seen more redesigns than I can count;
+but the Vim experience from 15 years ago is remarkably similar to what it is
+today.
+
+hjkl is so much faster
+----------------------
+
+Some people claim that using `hjkl` instead of moving the arrow keys is a great
+time-saver. I'm skeptical; sure, moving yours hands from the home row to the
+arrow keys take some time, but does it really take *that* much time?
+
+More importantly, I cringe whenever *new users* are told to use hjkl like Real™
+Vim users. There are many ways to improve efficiency in Vim, and many of them –
+motions, macros, change/jumplist, registers, autocmds, etc. etc. – will give new
+users a better cost/benefit ratio than re-learning to use the arrow keys. It's a
+micro-optimisation.
+
+Unfortunately, some guides recommend to "disable arrow keys from the start" to
+new users, and even the otherwise excellent `vimtutor` starts with it:
+
+    NOTE: The cursor keys should also work.  But using hjkl you will be able to
+        move around much faster, once you get used to it.  Really!
+
+Also see e.g.: [What are easy to learn things that massively improve speed and
+productivity in vim?][speed]
+
+Vim is an editor, not an IDE!
+-----------------------------
+
+This really reminds me of all the silly discussions about whether Cradle of
+Filth is "extreme metal", "symphonic black metal", "extreme gothic metal", or
+some other metal subgenre. Yes, people have [lengthy discussions about
+this][cof]. No one really cares, and it doesn't really change anything, so 🤷
+
+Vim has most features that you'd expect from an IDE: tools to analyse source
+code, completion, integration with build systems, debugging tools, etc. By
+depending more on external tools and/or plugins Vim has a different approach
+than some other IDEs – which can can be considered either a good or bad thing –
+but that doesn't mean it's "not an IDE".
+
+Vim is more efficient than $other_tool
+--------------------------------------
+
+In my observation, when averaged out over the period of weeks or months, it
+doesn't really matter which editor/IDE you use: when properly mastered, all
+mainstream tools are roughly equally efficient.
+
+Sure, Vim is faster at some tasks, but slower at others. In general, I find that
+the most time is spent in thinking about what to write, rather than sending
+input to your computer. In the end, it comes down to a matter of personal taste
+more than anything else.
+
+
+[speed]: https://www.reddit.com/r/vim/comments/4cjro1/what_are_easy_to_learn_things_that_massively/
+[cof]: https://en.wikipedia.org/wiki/Talk:Cradle_of_Filth/Archive_1#Opening_Statement_-_Genre_Discussions
