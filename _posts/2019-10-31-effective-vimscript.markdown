@@ -2,6 +2,9 @@
 layout: post
 updated: 2019-11-06
 title: "Effective VimScript"
+hatnote: |
+ Discussions:
+ <a href="https://www.reddit.com/r/vim/comments/dpmnd1/effective_vimscript/">/r/vim</a>.
 ---
 
 The VimScript language is rather idiosyncratic, and because few people – if

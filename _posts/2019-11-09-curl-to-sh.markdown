@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Curl to shell isn't so bad"
+hatnote: |
+ Discussions:
+ <a href="https://news.ycombinator.com/item?id=21490151">Hacker News</a>.
 ---
 
 [Piping curl to s(hell)][shell] claims that using `curl example.com/install.sh |
