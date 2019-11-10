@@ -118,6 +118,10 @@ examples:
   stuff" like `rm -r ~/$undefined` deleting user's home dir ([not a theoretical
   problem](https://github.com/ValveSoftware/steam-for-linux/issues/3671)).
 
+- Small typos can have [large
+  consequences](https://github.com/MrMEEE/bumblebee-Old-and-abbandoned/issues/123)
+  in ways that don't for most other languages.
+
 - Everything is a string. Some shells add arrays, which works but the syntax is
   obscure and ugly. Numeric computations with fractions remain tricky and rely
   on external tools such as `bc` or `dc` (`$(( .. ))` expansion only works for
