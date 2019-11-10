@@ -1,168 +1,95 @@
-<!DOCTYPE html>
-<!--
-Copyright © 2012-2016 Martin Tournoij <martin@arp242.net>
-MIT license applies. http://opensource.org/licenses/MIT
+<!doctype html><meta charset=utf-8><title>Robots!</title><style>html{margin:0;padding:0;font-family:monospace;font-size:14px}body{margin:0;padding:10px}p{text-align:justify}a,a:visited{display:inline-block;background-color:#eee;color:#000;text-decoration:none;border:1px solid #666;padding:.2em .3em;margin-bottom:.2em}a:hover,a:visited:hover{background-color:#ddd}#aboutwindow p>a{background-color:transparent;text-decoration:underline;border:0;padding:0}label{display:inline-block;width:10em}input,select{border:1px solid #b7b7b7;padding:.3em;margin-bottom:.3em}input.small{width:2em}#grid{z-index:1;border:2px solid #666}#restart{position:absolute;left:20px;top:20px;border:1px solid #666;background-color:#fff;padding:.5em}#restart .score{display:inline-block;width:5em}#restart .row{display:block}#restart .cur{font-weight:700}#menu .box{float:left;width:160px}#menu #keybinds1{display:none}.window{z-index:20;display:none;position:absolute;top:40px;left:110px;width:626px;background-color:#fff;border:1px solid #666}.window p{padding:.5em 1em;margin:0}.window .toolbar{margin:0;padding:.3em;border-top:1px solid #b7b7b7;background-color:#aaa}.window .help{display:block;margin-left:12.5em;margin-bottom:1em;font-size:.9em;font-style:italic}#layover{z-index:10;position:absolute;left:0;top:0;width:100%;height:100%;background-color:#000;opacity:.5}#oldbrowser{padding:.5em;border:1px solid #666;background-color:#eee;margin-bottom:1em;width:814px}.clearfix{clear:both}</style><div id=wrapper><canvas id=grid width=826 height=308></canvas><div id=menu><div class=box>Score: <span id=score>0</span><br><a id=help href=#>Help</a><br><a id=options href=#>Options</a><br><a id=about href=#>About</a></div><div class=box id=keybinds0>Keys:<br>7 8 9<br> \|/<br>4- -6<br> /|\<br>1 2 3<br><br>5: Do nothing<br>w: Wait for end<br>t: Teleport</div><div class=box id=keybinds1>Keys:<br>y k u<br> \|/<br>h- -l<br> /|\<br>b j n<br><br>.: Do nothing<br>w: Wait for end<br>t: Teleport</div><div class=box>Legend:<br>+: robot<br>*: junk heap<br>@: you</div><div class=clearfix></div></div><div id=helpwindow class=window><p>The robots game pits you against evil robots, who are trying to kill you
+(which is why they are evil). Fortunately for you, even though they are
+evil, they are not very bright and have a habit of bumping into each
+other, thus destroying themselves. In order to survive, you must get
+them to kill each other off, since you have no offensive weaponry.<p>Since you are stuck without offensive weaponry, you are endowed with one
+piece of defensive weaponry: a teleportation device. When two robots run
+into each other or a junk pile, they die. If a robot runs into you, you
+die. When a robot dies, you get 10 points, and when all the robots die,
+you start on the next field. This keeps up until they finally get you.<p>Robots are represented on the screen by a ‘+’, the junk heaps from their
+collisions by a ‘*’, and you (the good guy) by a ‘@’.<p>You can move around with the numpad. You can also choose the classic hjkl keys (if you
+don’t know what they are, you don’t want them).<br>Unlike the original robots, you can *not* precede the commands with a count or “run” with
+shift.<p>If you use the ‘w’ command and survive to the next level, you will get a
+bonus of 10% for each robot which died after you decided to wait. If you
+die, however, you get nothing. For all other commands, the program will
+save you from typos by stopping short of being eaten. However, with ‘w’
+you take the risk of dying by miscalculation.<div class=toolbar><a href=# class=close>Close</a></div></div><div id=optionswindow class=window><p><label for=keyset>Keyset</label>
+<select id=keyset>
+<option>Keyset 1 (Numpad)
+<option>Keyset 2 (Classic hjkl keys)</select><br><label for=graphics>Graphics</label>
+<select id=graphics>
+<option>Classic &#34;ASCII Art&#34;
+<option>Daleks
+<option>Cybermen</select><br><label for=autoteleport>Auto-teleport</label>
+<input type=checkbox id=autoteleport><br><span class=help>Automatically teleport if there is no other option remaining.</span>
+<label for=hardcore>Hardcode mode</label>
+<input type=checkbox id=hardcore><br><span class=help>With this option enabled, the game will *not* prevent you from making a move that would mean
+certain death. This significantly increases the difficulty.</span><div class=toolbar><a href=# class=save>Save</a>
+<a href=# class=close>Close</a></div></div><div id=aboutwindow class=window><p>Robots is a reproduction of the 1980
+<a href=http://en.wikipedia.org/wiki/Robots_(computer_game)>“classic” robots game for BSD UNIX</a>.<p>Copyright © 2012-2016 Martin Tournoij &lt;<a href=mailto:martin@arp242.net>martin@arp242.net</a>&gt;<br>The original robots was created by Ken Arnold.<p><a href=https://code.arp242.net/robots>Source code</a><br><div class=toolbar><a href=# class=close>Close</a></div></div></div><script>(function(){var CheckBrowser,ClearGrid,CloseAllWindows,DestroyRobots,Die,DrawAllSprites,DrawGrid,DrawJunk,DrawPlayer,DrawRobot,DrawSprite,Flash,GetRandomCoord,HandleKeyboard,HandleMouse,InitGame,InitGame2,InitRobots,JunkAtPosition,LoadOptions,MovePlayer,MovePossible,MoveRobots,NextLevel,RobotAtPosition,SetPosition,ShowWindow,Teleport,UpdateScore,Wait,_autoteleport,_boxsize,_dead,_grid,_gridcon,_gridheight,_gridsizex,_gridsizey,_gridwidth,_hardcore,_junk,_keybinds,_level,_loaded,_maxlevels,_numrobots,_playerpos,_robots,_sprite,_spritesize,_waiting,log,indexOf=[].indexOf||function(item){for(var i=0,l=this.length;i<l;i++){if(i in this&&this[i]===item)return i;}return-1;};_boxsize=14;_gridsizex=59;_gridsizey=22;_gridheight=_gridsizey*_boxsize;_gridwidth=_gridsizex*_boxsize;_grid=document.getElementById('grid');_gridcon=_grid.getContext('2d');_playerpos=[0,0];_junk=[];_robots=[];_level=0;_numrobots=10;_maxlevels=4;_waiting=false;_keybinds=null;_spritesize=14;_dead=false;_sprite=null;_loaded=false;_hardcore=false;_autoteleport=false;LoadOptions=function(){var _graphics;_hardcore=localStorage.getItem('hardcore')==='true'?true:false;_autoteleport=localStorage.getItem('autoteleport')==='true'?true:false;_graphics=localStorage.getItem('graphics');if(!_graphics){_graphics=(parseInt(Math.random()*3)+1)+'';}
+_sprite=new Image;_loaded=false;_sprite.onload=function(){return _loaded=true;};if(_graphics==='1'){_sprite.src='graphics/classic.png';}else if(_graphics==='2'){_sprite.src='graphics/dalek.png';}else if(_graphics==='3'){_sprite.src='graphics/cybermen.png';}
+document.getElementById('graphics').selectedIndex=parseInt(_graphics,10)-1;document.getElementById('autoteleport').checked=_autoteleport;document.getElementById('hardcore').checked=_hardcore;if(localStorage.getItem('keybinds')==='1'){document.getElementById('keybinds0').style.display='none';document.getElementById('keybinds1').style.display='block';document.getElementById('keyset').selectedIndex=1;return _keybinds=[[121,function(){return MovePlayer(['up','left']);}],[107,function(){return MovePlayer(['up']);}],[117,function(){return MovePlayer(['up','right']);}],[104,function(){return MovePlayer(['left']);}],[108,function(){return MovePlayer(['right']);}],[98,function(){return MovePlayer(['down','left']);}],[106,function(){return MovePlayer(['down']);}],[110,function(){return MovePlayer(['down','right']);}],[46,function(){return MovePlayer([]);}],[119,function(){return Wait();}],[116,function(){return Teleport();}]];}else{document.getElementById('keybinds0').style.display='block';document.getElementById('keybinds1').style.display='none';document.getElementById('keyset').selectedIndex=0;return _keybinds=[[55,function(){return MovePlayer(['up','left']);}],[56,function(){return MovePlayer(['up']);}],[57,function(){return MovePlayer(['up','right']);}],[52,function(){return MovePlayer(['left']);}],[54,function(){return MovePlayer(['right']);}],[49,function(){return MovePlayer(['down','left']);}],[50,function(){return MovePlayer(['down']);}],[51,function(){return MovePlayer(['down','right']);}],[53,function(){return MovePlayer([]);}],[119,function(){return Wait();}],[116,function(){return Teleport();}]];}};DrawGrid=function(bgcolor){if(bgcolor==null){bgcolor='#fff';}
+_gridcon.fillStyle=bgcolor;return _gridcon.fillRect(0,0,_gridwidth,_gridheight);};InitRobots=function(){var i,k,ref,results,x,y;results=[];for(i=k=1,ref=_numrobots;1<=ref?k<=ref:k>=ref;i=1<=ref?++k:--k){while(true){x=GetRandomCoord('x');y=GetRandomCoord('y');if(!RobotAtPosition(x,y)&&(x!==_playerpos[0]&&y!==_playerpos[1])){break;}}
+results.push(DrawRobot(null,x,y));}
+return results;};DrawSprite=function(num,x,y){return _gridcon.drawImage(_sprite,_spritesize*num,0,_spritesize,_spritesize,x*_boxsize,y*_boxsize,_boxsize,_boxsize);};DrawRobot=function(num,x,y){if(_robots[num]===null){return;}
+if(num===null){num=_robots.length;_robots.push([x,y]);}else{ClearGrid(_robots[num][0],_robots[num][1]);}
+DrawSprite(1,x,y);return _robots[num]=[x,y];};DestroyRobots=function(x,y){var i,k,len,r,results;ClearGrid(x,y);DrawJunk(x,y);_junk.push([x,y]);i=0;results=[];for(k=0,len=_robots.length;k<len;k++){r=_robots[k];if(r&&r[0]===x&&r[1]===y){_robots[i]=null;_numrobots-=1;UpdateScore();}
+results.push(i+=1);}
+return results;};DrawJunk=function(x,y){return DrawSprite(2,x,y);};MoveRobots=function(){var c,i,k,len,len1,m,r,x,y;i=0;for(i=k=0,len=_robots.length;k<len;i=++k){r=_robots[i];if(r===null){continue;}
+x=r[0];y=r[1];if(_playerpos[0]>x){x+=1;}else if(_playerpos[0]<x){x-=1;}
+if(_playerpos[1]>y){y+=1;}else if(_playerpos[1]<y){y-=1;}
+if(RobotAtPosition(_playerpos[0],_playerpos[1])){return Die();}else if(JunkAtPosition(x,y)){ClearGrid(_robots[i][0],_robots[i][1]);_robots[i]=[x,y];DestroyRobots(x,y);}else{DrawRobot(i,x,y);}}
+for(i=m=0,len1=_robots.length;m<len1;i=++m){r=_robots[i];if(r===null){continue;}
+c=RobotAtPosition(r[0],r[1],true);if(c!==false&&c!==i){DestroyRobots(r[0],r[1]);}}
+return DrawAllSprites();};DrawPlayer=function(x,y){ClearGrid(_playerpos[0],_playerpos[1]);DrawSprite(0,x,y);return _playerpos=[x,y];};GetRandomCoord=function(axis){axis=axis==='x'?_gridsizex:_gridsizey;return parseInt(Math.random()*(axis-1)+1,10);};SetPosition=function(obj,x,y){obj.style.left=x+'px';return obj.style.top=y+'px';};HandleKeyboard=function(event){var action,code,k,keyCode,len,ref,results;if(event.ctrlKey||event.altKey){return;}
+code=event.keyCode||event.charCode;if(code===27){return CloseAllWindows();}
+results=[];for(k=0,len=_keybinds.length;k<len;k++){ref=_keybinds[k],keyCode=ref[0],action=ref[1];if(keyCode===code){event.preventDefault();results.push(action());}else{results.push(void 0);}}
+return results;};HandleMouse=function(event){var wait_until_loaded;if(event.target.id==='options'){return ShowWindow('options');}else if(event.target.id==='help'){return ShowWindow('help');}else if(event.target.id==='about'){return ShowWindow('about');}else if(event.target.className==='close'){return CloseAllWindows();}else if(event.target.className==='save'){localStorage.setItem('keybinds',document.getElementById('keyset').selectedIndex);localStorage.setItem('graphics',document.getElementById('graphics').selectedIndex+1);localStorage.setItem('autoteleport',document.getElementById('autoteleport').checked);localStorage.setItem('hardcore',document.getElementById('hardcore').checked);LoadOptions();CloseAllWindows();DrawGrid();return wait_until_loaded=setInterval(function(){if(_loaded){clearInterval(wait_until_loaded);return DrawAllSprites();}},100);}};DrawAllSprites=function(){var i,j,k,len,len1,m,r,results;DrawPlayer(_playerpos[0],_playerpos[1]);for(i=k=0,len=_robots.length;k<len;i=++k){r=_robots[i];if(r!==null){DrawRobot(i,r[0],r[1]);}}
+results=[];for(m=0,len1=_junk.length;m<len1;m++){j=_junk[m];results.push(DrawJunk(j[0],j[1]));}
+return results;};CloseAllWindows=function(){var k,l,len,ref,results,win;l=document.getElementById('layover');if(l){l.parentNode.removeChild(l);}
+ref=document.getElementsByClassName('window');results=[];for(k=0,len=ref.length;k<len;k++){win=ref[k];results.push(win.style.display='none');}
+return results;};ShowWindow=function(name){var div;div=document.createElement('div');div.id='layover';document.body.appendChild(div);return document.getElementById(name+'window').style.display='block';};Wait=function(){_waiting=true;while(true){MoveRobots();if(RobotAtPosition(_playerpos[0],_playerpos[1])){return Die();}
+if(_numrobots===0){NextLevel();break;}}
+return _waiting=false;};Teleport=function(){var x,y;x=GetRandomCoord('x');y=GetRandomCoord('y');if(RobotAtPosition(x,y)||JunkAtPosition(x,y)){return Die();}
+DrawPlayer(x,y);return MoveRobots();};MovePlayer=function(dir){var dangerous,i,j,k,m,x,y;x=_playerpos[0];y=_playerpos[1];if(indexOf.call(dir,'left')>=0){x-=1;}else if(indexOf.call(dir,'right')>=0){x+=1;}
+if(indexOf.call(dir,'up')>=0){y-=1;}else if(indexOf.call(dir,'down')>=0){y+=1;}
+if(x<0||x>_gridsizex-1){return false;}
+if(y<0||y>_gridsizey-1){return false;}
+dangerous=false;for(i=k=-1;k<=1;i=++k){for(j=m=-1;m<=1;j=++m){if(x+i<0||x+i>_gridsizex-1){continue;}
+if(y+j<0||y+j>_gridsizey-1){continue;}
+if(RobotAtPosition(x+i,y+j)){dangerous=true;}}}
+if(!_hardcore&&dangerous){if(!MovePossible()){Flash();}
+return false;}
+if(JunkAtPosition(x,y)){return false;}
+DrawPlayer(x,y);MoveRobots();if(_numrobots<=0){return NextLevel();}
+if(!_hardcore&&!MovePossible()){if(_autoteleport){return Teleport();}else{return Flash();}}};Flash=function(){DrawGrid('#333');DrawAllSprites();return setTimeout(function(){DrawGrid('#fff');return DrawAllSprites();},100);};MovePossible=function(){var dangerous,k,m,n,o,x1,x2,y1,y2;for(x1=k=-1;k<=1;x1=++k){for(y1=m=-1;m<=1;y1=++m){dangerous=false;if(_playerpos[0]+x1<0||_playerpos[0]+x1>_gridsizex-1){continue;}
+if(_playerpos[1]+y1<0||_playerpos[1]+y1>_gridsizey-1){continue;}
+for(x2=n=-1;n<=1;x2=++n){for(y2=o=-1;o<=1;y2=++o){if(RobotAtPosition(_playerpos[0]+x1+x2,_playerpos[1]+y1+y2)){dangerous=true;}}}
+if(!dangerous){return true;}}}
+return false;};RobotAtPosition=function(x,y,retnum){var i,k,len,r;for(i=k=0,len=_robots.length;k<len;i=++k){r=_robots[i];if(r&&r[0]===x&&r[1]===y){if(retnum){return i;}else{return true;}}}
+return false;};JunkAtPosition=function(x,y){var j,k,len;for(k=0,len=_junk.length;k<len;k++){j=_junk[k];if(j[0]===x&&j[1]===y){return true;}}
+return false;};ClearGrid=function(x,y){return _gridcon.fillRect(x*_boxsize,y*_boxsize,_boxsize,_boxsize);};Die=function(){var curscore,d,k,len,restart,s,scores;if(_dead){return;}
+_dead=true;ClearGrid(_playerpos[0],_playerpos[1]);DrawSprite(3,_playerpos[0],_playerpos[1]);curscore=parseInt(document.getElementById('score').innerHTML,10);scores=localStorage.getItem('scores');scores=JSON.parse(scores);if(!scores){scores=[];}
+d=new Date;d=d.toLocaleDateString();scores.push([curscore,d,true]);scores.sort(function(a,b){if(a[0]>b[0]){return-1;}
+if(a[0]<b[0]){return 1;}
+return 0;});scores=scores.slice(0,5);restart=document.createElement('div');restart.id='restart';if(_sprite.src.search('cybermen')!==-1){restart.innerHTML='Upgraded!';}else if(_sprite.src.search('dalek')!==-1){restart.innerHTML='Exerminated!';}else{restart.innerHTML='AARRrrgghhhh....';}
+restart.innerHTML+='<br><br>'+'Your highscores:<br>';for(k=0,len=scores.length;k<len;k++){s=scores[k];restart.innerHTML+='<span class="row'+(s[2]?' cur':'')+'">'+'<span class="score">'+s[0]+'</span>'+s[1]+'</span>';}
+restart.innerHTML+='<br>Press any key to try again.';document.body.appendChild(restart);scores=scores.map(function(s){s[2]=false;return s;});localStorage.setItem('scores',JSON.stringify(scores));document.body.removeEventListener('keypress',HandleKeyboard,false);return window.addEventListener('keypress',(function(e){if(e.ctrlKey||e.altKey){return;}
+e.preventDefault();return window.location.reload();}),false);};UpdateScore=function(){var score;score=parseInt(document.getElementById('score').innerHTML,10);score+=10;if(_waiting){score+=1;}
+return document.getElementById('score').innerHTML=score;};log=function(msg){if(console&&console.log){return console.log(msg);}};NextLevel=function(){_level+=1;_numrobots=10+_level*10;_waiting=false;_junk=[];DrawGrid();DrawPlayer(GetRandomCoord('x'),GetRandomCoord('y'));return InitRobots();};CheckBrowser=function(){var div,old;old=false;if(window.opera){if(parseFloat(window.opera.version())<11.60){old=true;}}else if(window.chrome){if(parseInt(navigator.appVersion.match(/Chrome\/(\d+)/)[1],10)<18){old=true;}}else if(navigator.vendor&&navigator.vendor.match(/[aA]pple/)){if(parseFloat(navigator.appVersion.match(/Version\/(\d+\.\d+)/)[1])<5){old=true;}}else if(navigator.userAgent.match(/Firefox\/\d+/)){if(parseFloat(navigator.userAgent.match(/Firefox\/([\d\.]+)/)[1])<10){old=true;}}else if(navigator.appName==='Microsoft Internet Explorer'){if(parseInt(navigator.appVersion.match(/MSIE (\d+)/)[1],10)<9){old=true;}}
+if(old){div=document.createElement('div');div.id='oldbrowser';div.innerHTML='Robots requires a fairly new browser with support for canvas, JSON, localStorage, etc.<br>'+'Almost all modern browsers support this, but a few may not (IE8, for example, does not).<br>'+'Tested versions are Opera 12, Firefox 14, Chrome 20, Internet Explorer 9';return document.body.insertBefore(div,_grid);}};InitGame=function(){var sleep;_numrobots=10;LoadOptions();return sleep=setInterval(function(){if(_loaded){clearInterval(sleep);return InitGame2();}},100);};InitGame2=function(){DrawGrid();DrawPlayer(GetRandomCoord('x'),GetRandomCoord('y'));InitRobots();window.addEventListener('keypress',HandleKeyboard,false);return window.addEventListener('click',HandleMouse,false);};CheckBrowser();InitGame();}).call(this);</script><script>
+			(function() {
+				// Don't run on test/development environment.
+				if (window.location.hostname.indexOf('localhost') > -1) {
+					return;
+				}
 
-http://arp242.net/robots/
--->
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Robots!</title>
-		<link type="text/css" rel="stylesheet" href="robots.css">
-	</head>
+				var script = document.createElement('script');
+				window.counter = 'https://arp242.goatcounter.com/count'
+				script.async = 1;
+				script.src = 'https://static.goatcounter.com/count.min.js';
 
-	<body>
-		<div id="wrapper">
-			<canvas id="grid" width="826" height="308"></canvas>
-
-			<div id="menu">
-				<div class="box">
-					Score: <span id="score">0</span><br>
-					<a id="help" href="#">Help</a><br>
-					<a id="options" href="#">Options</a><br>
-					<a id="about" href="#">About</a>
-				</div>
-
-				<div class="box" id="keybinds0">
-					Keys:<br>
-					7 8 9<br>
-					&nbsp;\|/<br>
-					4- -6<br>
-					&nbsp;/|\<br>
-					1 2 3<br>
-					<br>
-					5: Do nothing<br>
-					w: Wait for end<br>
-					t: Teleport
-				</div>
-
-				<div class="box" id="keybinds1">
-					Keys:<br>
-					y k u<br>
-					&nbsp;\|/<br>
-					h- -l<br>
-					&nbsp;/|\<br>
-					b j n<br>
-					<br>
-					.: Do nothing<br>
-					w: Wait for end<br>
-					t: Teleport
-				</div>
-
-				<div class="box">
-					Legend:<br>
-					+: robot<br>
-					*: junk heap<br>
-					@: you
-				</div>
-				<div class="clearfix"></div>
-			</div>
-
-			<div id="helpwindow" class="window">
-					<p>
-						The robots game pits you against evil robots, who are trying to kill you
-						(which is why they are evil). Fortunately for you, even though they are
-						evil, they are not very bright and have a habit of bumping into each
-						other, thus destroying themselves. In order to survive, you must get
-						them to kill each other off, since you have no offensive weaponry.
-					</p>
-
-					<p>
-						Since you are stuck without offensive weaponry, you are endowed with one
-						piece of defensive weaponry: a teleportation device.  When two robots run
-						into each other or a junk pile, they die.  If a robot runs into you, you
-						die.  When a robot dies, you get 10 points, and when all the robots die,
-						you start on the next field.  This keeps up until they finally get you.
-					</p>
-
-					<p>
-						Robots are represented on the screen by a ‘+’, the junk heaps from their
-						collisions by a ‘*’, and you (the good guy) by a ‘@’.
-					</p>
-
-					<p>
-						You can move around with the numpad. You can also choose the classic hjkl keys (if you
-						don’t know what they are, you don’t want them).<br>
-						Unlike the original robots, you can *not* precede the commands with a count or “run” with
-						shift.
-					</p>
-
-					<p>
-						If you use the ‘w’ command and survive to the next level, you will get a
-						bonus of 10% for each robot which died after you decided to wait. If you
-						die, however, you get nothing.  For all other commands, the program will
-						save you from typos by stopping short of being eaten. However, with ‘w’
-						you take the risk of dying by miscalculation.
-					</p>
-
-
-				<div class="toolbar">
-					<a href="#" class="close">Close</a>
-				</div>
-			</div>
-
-			<div id="optionswindow" class="window">
-				<p>
-					<label for="keyset">Keyset</label>
-					<select id="keyset">
-						<option>Keyset 1 (Numpad)</option>
-						<option>Keyset 2 (Classic hjkl keys)</option>
-					</select><br>
-
-					<label for="graphics">Graphics</label>
-					<select id="graphics">
-						<!--<option name="0">Random for each level</option>-->
-						<option>Classic "ASCII Art"</option>
-						<option>Daleks</option>
-						<option>Cybermen</option>
-					</select><br>
-
-					<label for="autoteleport">Auto-teleport</label>
-					<input type="checkbox" id="autoteleport"><br>
-					<span class="help">Automatically teleport if there is no other option remaining.</span>
-
-					<label for="hardcore">Hardcode mode</label>
-					<input type="checkbox" id="hardcore"><br>
-					<span class="help">With this option enabled, the game will *not* prevent you from making a move that would mean
-						certain death. This significantly increases the difficulty.</span>
-
-					<!--
-					<label for="gridsizex">Grid size X</label>
-					<input type="text" id="gridsizex" class="small" value="59"><br>
-					
-					<label for="gridsizey">Grid size Y</label>
-					<input type="text" id="gridsizey" class="small" value="59">
-					-->
-				</p>
-
-				<div class="toolbar">
-					<a href="#" class="save">Save</a>
-					<a href="#" class="close">Close</a>
-				</div>
-			</div>
-
-			<div id="aboutwindow" class="window">
-				<p>
-					Robots is a reproduction of the 1980
-					<a href="http://en.wikipedia.org/wiki/Robots_(computer_game)">“classic” robots game for BSD UNIX</a>.
-				</p>
-
-				<p>
-					Copyright © 2012-2016 Martin Tournoij &lt;<a href="mailto:martin@arp242.net">martin@arp242.net</a>&gt;<br>
-					The original robots was created by Ken Arnold.
-				</p>
-
-				<p>
-					<a href="https://code.arp242.net/robots">Source code</a><br>
-				</p>
-
-				<div class="toolbar">
-					<a href="#" class="close">Close</a>
-				</div>
-			</div>
-		</div>
-
-		<script src="robots.js"></script>
-	</body>
-</html>
+				var ins = document.getElementsByTagName('script')[0];
+				ins.parentNode.insertBefore(script, ins)
+			})();
+		</script>
