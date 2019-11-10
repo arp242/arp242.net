@@ -5,7 +5,14 @@ excerpt_separator:
 highlighter: none
 permalink: "/:title.html"
 markdown: "kramdown"
-exclude: ["Gemfile", "Gemfile.lock"]
+exclude: [
+  "Gemfile",
+  "Gemfile.lock",
+  "README.markdown",
+  "the-art-of-unix-programming/base.css",
+  "the-art-of-unix-programming/base.js",
+  "the-art-of-unix-programming/hello-css.min.css",
+  "the-art-of-unix-programming/readon.js"]
 
 # Copy for Netlify.
 include: ["_redirects", ".well-known"]
