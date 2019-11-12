@@ -7,4 +7,4 @@ Disallow: /code
 Disallow: /cv
 Disallow: /keybase.txt
 
-Sitemap: https://arp242.net/sitemap.txt
+Sitemap: https://www.arp242.net/sitemap.txt
