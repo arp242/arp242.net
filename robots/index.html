@@ -79,15 +79,10 @@ e.preventDefault();return window.location.reload();}),false);};UpdateScore=funct
 return document.getElementById('score').innerHTML=score;};log=function(msg){if(console&&console.log){return console.log(msg);}};NextLevel=function(){_level+=1;_numrobots=10+_level*10;_waiting=false;_junk=[];DrawGrid();DrawPlayer(GetRandomCoord('x'),GetRandomCoord('y'));return InitRobots();};CheckBrowser=function(){var div,old;old=false;if(window.opera){if(parseFloat(window.opera.version())<11.60){old=true;}}else if(window.chrome){if(parseInt(navigator.appVersion.match(/Chrome\/(\d+)/)[1],10)<18){old=true;}}else if(navigator.vendor&&navigator.vendor.match(/[aA]pple/)){if(parseFloat(navigator.appVersion.match(/Version\/(\d+\.\d+)/)[1])<5){old=true;}}else if(navigator.userAgent.match(/Firefox\/\d+/)){if(parseFloat(navigator.userAgent.match(/Firefox\/([\d\.]+)/)[1])<10){old=true;}}else if(navigator.appName==='Microsoft Internet Explorer'){if(parseInt(navigator.appVersion.match(/MSIE (\d+)/)[1],10)<9){old=true;}}
 if(old){div=document.createElement('div');div.id='oldbrowser';div.innerHTML='Robots requires a fairly new browser with support for canvas, JSON, localStorage, etc.<br>'+'Almost all modern browsers support this, but a few may not (IE8, for example, does not).<br>'+'Tested versions are Opera 12, Firefox 14, Chrome 20, Internet Explorer 9';return document.body.insertBefore(div,_grid);}};InitGame=function(){var sleep;_numrobots=10;LoadOptions();return sleep=setInterval(function(){if(_loaded){clearInterval(sleep);return InitGame2();}},100);};InitGame2=function(){DrawGrid();DrawPlayer(GetRandomCoord('x'),GetRandomCoord('y'));InitRobots();window.addEventListener('keypress',HandleKeyboard,false);return window.addEventListener('click',HandleMouse,false);};CheckBrowser();InitGame();}).call(this);</script><script>
 			(function() {
-				// Don't run on test/development environment.
-				if (window.location.hostname.indexOf('localhost') > -1) {
-					return;
-				}
-
 				var script = document.createElement('script');
 				window.counter = 'https://arp242.goatcounter.com/count'
 				script.async = 1;
-				script.src = 'https://static.goatcounter.com/count.min.js';
+				script.src = 'https://gc.zgo.at/count.min.js';
 
 				var ins = document.getElementsByTagName('script')[0];
 				ins.parentNode.insertBefore(script, ins)
