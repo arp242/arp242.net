@@ -14,8 +14,8 @@ nav a { font-weight: bold; }
 .shadow      { box-shadow: inset 0 0 10px rgba(0,0,0,.1); position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
 
 .support   { text-align: center; hyphens: none; }
-.support a { font-weight: bold; background-color: #e5e5e5; border: 1px solid #aaa;
-		     padding: .4em 1em; border-radius: 2px; display: inline-block; }
+.support a { font-weight: bold; background-color: #fff; box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+		     padding: .4em 1em; border-radius: 2px; display: inline-block; width: 100%; }
 .side-sep { border-top: 1px solid #aaa; }
 
 @media (max-width: 46em) {
@@ -73,14 +73,16 @@ nav a { font-weight: bold; }
 .newsbox {                                                 /* NEWSLETTER */
 	padding: .5em;
 	text-align: center;
-	/*
-	margin-bottom: 4px;
-	background-color: #fff; 
-	border: 3px outset #e18ade; border-radius: 2px;
-	*/
 }
 
 input, button      { border: 1px solid #aaa; padding: 3px 6px; }
 button             { background-color: #e5e5e5; }
 input              { width: 12em; }
 #nl-turing-test    { display: none; }
+
+#codefund {
+	background-color: #fff;
+	margin-bottom: 1em;
+	box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+	min-height: 150px;  /* Prevent flickering/moving of content too much */
+}
