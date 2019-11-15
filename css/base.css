@@ -84,5 +84,5 @@ input              { width: 12em; }
 	background-color: #fff;
 	margin-bottom: 1em;
 	box-shadow: 0 0 6px rgba(0, 0, 0, .2);
-	min-height: 150px;  /* Prevent flickering/moving of content too much */
+	/*min-height: 150px;*/  /* Prevent flickering/moving of content too much */
 }
