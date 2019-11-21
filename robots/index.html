@@ -80,7 +80,7 @@ return document.getElementById('score').innerHTML=score;};log=function(msg){if(c
 if(old){div=document.createElement('div');div.id='oldbrowser';div.innerHTML='Robots requires a fairly new browser with support for canvas, JSON, localStorage, etc.<br>'+'Almost all modern browsers support this, but a few may not (IE8, for example, does not).<br>'+'Tested versions are Opera 12, Firefox 14, Chrome 20, Internet Explorer 9';return document.body.insertBefore(div,_grid);}};InitGame=function(){var sleep;_numrobots=10;LoadOptions();return sleep=setInterval(function(){if(_loaded){clearInterval(sleep);return InitGame2();}},100);};InitGame2=function(){DrawGrid();DrawPlayer(GetRandomCoord('x'),GetRandomCoord('y'));InitRobots();window.addEventListener('keypress',HandleKeyboard,false);return window.addEventListener('click',HandleMouse,false);};CheckBrowser();InitGame();}).call(this);</script><script>
 			(function() {
 				var script = document.createElement('script');
-				window.counter = 'https://arp242.goatcounter.com/count'
+				window.counter = 'https://stats.arp242.net/count'
 				script.async = 1;
 				script.src = 'https://gc.zgo.at/count.min.js';
 

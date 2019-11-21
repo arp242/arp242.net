@@ -57,7 +57,7 @@ if(hash['show-all']==='1'){$('#toggle-all-explainers').attr('checked',true);}
 populate_settings();window.onhashchange({oldURL:{hash:''},newURL:{hash:window.location.hash}});generate_vimrc();$('#toggle-intro').on('click',function(){return toggle_hash('hide-intro');});$('#add-explainers').on('click',function(){return toggle_hash('add-explainers');});$('#toggle-all-explainers').on('change',function(){return toggle_hash('show-all');});$('#toggle-wizard').on('change',function(){toggle_hash('wizard-active');return init_hash('wizard-step','0');});$('#wizard-next').on('click',function(){return set_hash('wizard-step',parseInt(get_hash()['wizard-step'],10)+1);});$('#wizard-prev').on('click',function(){return set_hash('wizard-step',parseInt(get_hash()['wizard-step'],10)-1);});$('#settings').on('click','.toggle-explainer',toggle_explain);return $('#settings').on('change','input',function(e){return set_hash('options',$('#settings input').toArray().map(function(x){if(x.checked){return '1';}else{return '0';}}).join(''));});});}).call(this);</script><script>
 		(function() {
 			var script = document.createElement('script');
-			window.counter = 'https://arp242.goatcounter.com/count'
+			window.counter = 'https://stats.arp242.net/count'
 			script.async = 1;
 			script.src = 'https://gc.zgo.at/count.min.js';
 
