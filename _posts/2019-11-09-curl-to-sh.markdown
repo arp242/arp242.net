@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Curl to shell isn't so bad"
+title: 'Curl to shell isn’t so bad'
 hatnote: |
  Discussions:
  <a href="https://lobste.rs/s/lz7tit/curl_shell_isn_t_so_bad">Lobsters</a>,

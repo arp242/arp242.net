@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why I'm still using jQuery in 2019"
+title: 'Why I’m still using jQuery in 2019'
 hatnote: |
  Discussions:
  <a href="https://news.ycombinator.com/item?id=20021289">Hacker News</a>.

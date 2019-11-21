@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why isn't Amazon.com signing their emails?"
+title: 'Why isn’t Amazon.com signing their emails?'
 updated: 2019-03-19
 hatnote: |
  Discussions:
