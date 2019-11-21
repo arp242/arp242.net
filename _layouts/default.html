@@ -25,16 +25,6 @@
 		This document is licensed under a
 		<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">cc-by 4.0 license</a>.
 	</footer>
-	<script>
-		(function() {
-			var script = document.createElement('script');
-			window.counter = 'https://arp242.goatcounter.com/count'
-			script.async = 1;
-			script.src = 'https://gc.zgo.at/count.min.js';
-
-			var ins = document.getElementsByTagName('script')[0];
-			ins.parentNode.insertBefore(script, ins)
-		})();
-	</script>
+	{% include _count.html %}
 </body>
 </html>
