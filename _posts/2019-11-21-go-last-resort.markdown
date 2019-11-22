@@ -1,6 +1,10 @@
 ---
 layout: post
 title: 'Go’s features of last resort'
+hatnote: |
+ Discussions:
+ <a href="https://lobste.rs/s/bq4nxd/go_s_features_last_resort">Lobsters</a>,
+ <a href="https://www.reddit.com/r/golang/comments/dzihk6/gos_features_of_last_resort/">/r/golang</a>.
 ---
 
 A "Feature of Last Resort" (FOLR) is a useful feature which solves certain
@@ -104,10 +108,10 @@ The `panic()` builtin displays a message, stack trace, and halts the program,
 unless `recover()`'d.
 
 **Why it exists and when to use** – sometimes the program really cannot continue
-and the only thing left to do is to "panic". It's also a way to indicate that
-something impossible has happened, such as exiting an infinite loop,
-initialisation error (*"can't find foo.html"*), or some types of programmer
-error on startup (*"can't pass empty string"*).
+and the only thing left to do is to "panic". It's a way to indicate that
+something impossible has happened (e.g. exiting an infinite loop),
+initialisation errors (*"can't find foo.html"*), or some types of programmer
+errors (*"can't pass empty string"*).
 
 I think "never use panic", or even "never use panic in libraries" is too strict.
 Using panics to signal initialisation errors is often convenient, especially for
