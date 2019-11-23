@@ -254,3 +254,10 @@ but those ideas are ... rather misguided).
 [tidd]: http://david.heinemeierhansson.com/2014/test-induced-design-damage.html
 [goblin]: https://github.com/franela/goblin
 [ginkgo]: https://github.com/onsi/ginkgo
+
+<div class="postscript">
+<strong>Related articles</strong>
+<ul>
+<li><a href="https://news.ycombinator.com/item?id=21533376">Ask HN: Do you write tests before the implementation?</a></li>
+</ul>
+</div>
