@@ -6,6 +6,7 @@
 
 # Convenience
 /devlog                                 /devlog.html                 301
+/color-design.html                      /colour-design.html          301
 
 # Renamed
 /learning-a-programming-language.html   /learning-programming.html   301

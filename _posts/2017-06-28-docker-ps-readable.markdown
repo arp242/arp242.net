@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Make docker ps work on normal sized terminals"
-tags: []
 archive: true
 ---
 

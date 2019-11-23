@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Better UX when reading from stdin"
-tags: ['Unix']
+tags: ['Unix', 'UX']
 ---
 
 At some point you've probably typed `grep foo` instead of `grep foo file` or
