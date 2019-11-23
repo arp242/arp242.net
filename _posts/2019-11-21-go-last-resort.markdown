@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'Go’s features of last resort'
+tags: ['Go']
 hatnote: |
  Discussions:
  <a href="https://lobste.rs/s/bq4nxd/go_s_features_last_resort">Lobsters</a>,

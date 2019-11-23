@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Open source DIY ethics
+tags: ['Community', 'Open source']
 updated: 2018-12-27
 hatnote: |
  Discussions:

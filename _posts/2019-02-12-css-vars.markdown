@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Why Hello CSS doesn’t use CSS variables"
+tags: ['Web']  # CSS
 ---
 
 When I announced my [Hello, CSS!](https://github.com/arp242/hello-css) project

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Vested interest in mismanaging government"
+tags: ['Politics']
 ---
 
 The United States government shutdown has been over for a few weeks, and many

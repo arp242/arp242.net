@@ -8,7 +8,7 @@ title: arp242.net
 		<div class="page">
 			<h1 id="writings">Writings</h1>
 			<ul class="posts">{% for p in site.posts %}
-				{% unless p.archive  %}<li{% if p.standout %} class="s"{% endif %}><span>{{ p.date |date_to_string_space }}</span> <a href="{{ p.url }}">{{ p.title }}</a></li> {% endunless %}{% endfor %}
+				{% unless p.archive  %}<li{% if p.standout %} class="s"{% endif %}><span>{{ p.date |date_to_string_space }}</span> <a href="{{ p.url }}">{{ p.title }}</a></li>{% endunless %}{% endfor %}
 			</ul>
 		</div>
 
@@ -80,10 +80,8 @@ title: arp242.net
 		<hr>
 
 		<div class="page">
-			<p>Also see <strong><a href="/archive.html">the archives</a></strong>. I archive things based on
-				“interestingness” to the general reader, rather than age. “How to detect automatically
-				generated emails” is useful if you’re creating an email system, but most people aren’t.
-				Archived does not mean outdated.</p>
+			<p>Also see <strong><a href="/archive.html">the archives</a></strong> for some outdated
+			and not-especially-interesting-after-all stuff.</p>
 		</div>
 	</article>
 

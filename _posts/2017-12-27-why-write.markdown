@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Why write?"
+tags: ['Politics']
 ---
 
 In *Breaking Bad* Walter is faced with a tricky situation. He managed to escape

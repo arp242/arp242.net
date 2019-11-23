@@ -1,6 +1,7 @@
 ---
-title: "The shell scripting trap"
 layout: post
+title: "The shell scripting trap"
+tags: ['Unix']  # Shell
 hatnote: |
  Discussions:
  <a href="https://lobste.rs/s/vghl4j/shell_scripting_trap">Lobsters</a>,

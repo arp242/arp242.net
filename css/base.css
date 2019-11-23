@@ -48,7 +48,7 @@ nav a { font-weight: bold; }
 	margin: .5rem auto;
 }
 
-#home ul { list-style: none; padding-left: 0; }            /* HOME PAGE */
+ul.posts, ul.code { list-style: none; padding-left: 0; }            /* HOME PAGE */
 #home ul li a:first-child {
 	display: inline-block;
 	min-width: 11em;
@@ -86,3 +86,5 @@ input              { width: 12em; }
 	box-shadow: 0 0 6px rgba(0, 0, 0, .2);
 	/*min-height: 150px;*/  /* Prevent flickering/moving of content too much */
 }
+
+.page + .page { margin-top: 2em; }

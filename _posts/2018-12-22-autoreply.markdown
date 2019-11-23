@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to detect automatically generated emails"
-archive: true
+tags: ['Email']
 ---
 
 When you send out an autoreply from an email system you want to take care to

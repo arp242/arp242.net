@@ -1,6 +1,7 @@
 ---
 layout: post
 title: You (probably) don’t need Kubernetes
+#tags: ['DevOps']
 updated: 2019-03-05
 desc: "K8s is overkill for many cases and comes with the serious downside of adding a lot of complexity"
 hatnote: |

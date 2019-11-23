@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'Why isn’t Amazon.com signing their emails?'
+tags: ['Security', 'Email']
 updated: 2019-03-19
 hatnote: |
  Discussions:

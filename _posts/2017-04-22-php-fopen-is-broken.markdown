@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "PHP’s fopen() is broken"
+tags: ['PHP']
 updated: 2019-01-20
 desc: "Even essential standard library functions such as fopen() suffer from some serious shortcomings in PHP"
 hatnote: |

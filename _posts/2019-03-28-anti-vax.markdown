@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Anti-vaxers are not evil"
+tags: ['Politics']
 ---
 
 The anti-vaccination crowd wants the same thing as the rest of us: good health,

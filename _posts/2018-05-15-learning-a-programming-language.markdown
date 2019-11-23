@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Learning a programming language"
+tags: ['Community']
 updated: 2018-07-31
 ---
 

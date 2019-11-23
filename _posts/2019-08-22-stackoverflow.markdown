@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Tired of Stack Overflow"
+tags: ['Community']
 hatnote: |
  Discussions:
  <a href="https://lobste.rs/s/pmldds/tired_stack_overflow">Lobsters</a>,

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why teach kids to program?
+tags: ['Politics']
 updated: 2018-12-23
 Discussions:
 hatnote: |

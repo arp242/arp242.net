@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Some thoughts on CDNs
+tags: ['Security']
 ---
 
 “Of course you should use a CDN to deliver your JavaScript and CSS content” is

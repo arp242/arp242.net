@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Making FlagShihTzu work well with Formtastic
-archive: true
+tags: ['Ruby', 'Ruby on Rails']
 ---
 
 [FlagShihTzu][flag] & [Formtastic][formtastic] don’t work together

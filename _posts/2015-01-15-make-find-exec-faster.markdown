@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Making find -exec faster
-archive: true
+tags: ['Unix']
 updated: 2019-05-03
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Vim myths"
+tags: ['Vim']
 ---
 
 Vim has a vertical learning curve

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Generate passwords from the commandline
+tags: ['Unix', 'Security']
 ---
 
 I needed to generate a random password from a shell script, I figured that this

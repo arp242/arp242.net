@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Go testing style guide"
+tags: ['Go']
 updated: 2018-07-31
 hatnote: |
  Discussions:

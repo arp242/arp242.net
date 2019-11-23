@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Using flags for configuration in Go"
+tags: ['Go', 'Unix', 'Config']
 ---
 
 I like commandline flags for configuration. It's simple, robust, flexible, and

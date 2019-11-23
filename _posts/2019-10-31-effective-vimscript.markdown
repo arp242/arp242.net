@@ -2,6 +2,7 @@
 layout: post
 updated: 2019-11-06
 title: "Effective VimScript"
+tags: ['Vim']
 hatnote: |
  Discussions:
  <a href="https://www.reddit.com/r/vim/comments/dpmnd1/effective_vimscript/">/r/vim</a>.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Being right"
+tags: ['Politics']
 ---
 
 After almost 400 years it turned out that [*Fermat's last theorem*][1] was

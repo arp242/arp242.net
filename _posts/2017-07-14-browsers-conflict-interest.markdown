@@ -1,7 +1,8 @@
 ---
-title: "Browsers and conflicts of interests"
 layout: post
+title: "Browsers and conflicts of interests"
 updated: 2018-12-22
+tags: ['Web', 'Politics']
 hatnote: |
  Discussions:
  <a href="https://www.reddit.com/r/firefox/comments/8avev2/browsers_and_conflicts_of_interests/">/r/firefox</a>.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Launching GoatCounter"
+tags: ['GoatCounter', 'Open source']
 ---
 
 So I made a thing, called [GoatCounter](https://www.GoatCounter.com). It's a web

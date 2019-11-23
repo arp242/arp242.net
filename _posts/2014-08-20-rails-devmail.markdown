@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Intercept outgoing mails in Ruby on Rails
-archive: true
+tags: ['Ruby', 'Ruby on Rails', 'Email']
 ---
 
 There already are a bunch of solutions for this; including the

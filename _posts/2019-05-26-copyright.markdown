@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Copyright, culture, and democracy"
+tags: ['Politics']
 hatnote: |
  Discussions:
  <a href="https://www.reddit.com/r/slatestarcodex/comments/bt6mrv/copyright_culture_and_democracy/">/r/slatestarcodex</a>

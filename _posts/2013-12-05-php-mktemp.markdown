@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Creating temporary files in PHP
-archive: true
+tags: ['PHP']
 ---
 
 Creating temporary files in PHP is not as straightforward as it “should” be in a

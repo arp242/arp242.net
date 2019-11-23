@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The other kind of censorship"
+tags: ['Community']
 ---
 
 I often see discussions about what level of civility should or shouldn't be

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The value of negative arguments"
+tags: ['Community']
 ---
 
 Somehow people end up on my website. I'm not sure how because I typically don't

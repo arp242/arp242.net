@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "A primer on the str and bytes types in Python 3"
+tags: ['Python']
 ---
 
 Python 3 handles strings a bit different. Originally there was only one type for

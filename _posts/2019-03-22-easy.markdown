@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Easy means easy to debug"
+tags: ['Dev']
 hatnote: |
  Translations:
  <a href="https://velog.io/@leejh3224/Easy-means-easy-to-debug">Korean (한국어)</a>.

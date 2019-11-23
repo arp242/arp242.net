@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "It’s fine to be elitist, sometimes"
+tags: ['Community']
 ---
 
 Last year I gave a simple and short presentation at a local Go meetup group

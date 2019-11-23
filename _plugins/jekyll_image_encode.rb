@@ -16,8 +16,8 @@ class Jekyll::Tags::ImageEncodeTag < Liquid::Tag
   include ImageEncodeCache
 
   def initialize(tag_name, path, options)
-      @path = path.strip
-      super
+    @path = path.strip
+    super
   end
 
   def render(context)
