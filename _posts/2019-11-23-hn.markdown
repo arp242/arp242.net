@@ -1,0 +1,48 @@
+---
+layout: post
+title: "HN gamble"
+---
+
+<figure class="border"><img alt="" src="{% base64 ./_images/hn.png %}"></figure>
+
+https://medium.com/hacking-and-gonzo/how-hacker-news-ranking-algorithm-works-1d9b0cf2c08d
+
+https://towardsdatascience.com/how-to-get-upvoted-on-hacker-news-692360e85ef8
+
+> Publish on week-ends, around 12 pacific
+
+https://www.quora.com/When-is-the-best-time-to-post-on-Hacker-News-to-get-and-stay-long-on-the-front-page
+
+> After reading through the submissions and doing the research, it looks like
+> 7-10 AM Eastern is best, with Wednesdays being the best day of the week.  I
+> guess my usual habit of posting on Friday nights isn't a good one!
+
+http://research.patico.pro/
+
+https://web.archive.org/web/20140304215343/http://nathanael.hevenet.com/the-best-time-to-post-on-hacker-news-a-comprehensive-answer/
+
+> 9 to 10 AM EST. Generally speaking, 7 AM to noon is better than any other
+> time.
+
+http://www.righto.com/2013/11/how-hacker-news-ranking-really-works.html
+
+---
+
+    select
+        count(*) as num_stories,
+        avg(score) as avg_score,
+        format_timestamp("%A %H", time_ts) as time
+    from `bigquery-public-data.hacker_news.stories`
+    group by time
+    order by avg_score desc;
+
+
+
+
+    select
+        count(score) as n,
+        score
+    from `bigquery-public-data.hacker_news.stories`
+    where format_timestamp("%A %H", time_ts) = "Sunday 14"
+    group by score
+    order by score desc;
