@@ -1,7 +1,9 @@
 <aside class="side">
 	<div>
-		<script src="https://app.codefund.io/properties/625/funder.js" async="async"></script>
-		<div id="codefund"><!-- fallback content --></div>
+		{% if jekyll.environment == "production" %}
+			<script src="https://app.codefund.io/properties/625/funder.js" async="async"></script>
+			<div id="codefund"></div>
+		{% endif %}
 		<figure><img alt="This page's author" src="images/me.jpg"><div class="shadow"></div></figure>
 	</div>
 
