@@ -2,6 +2,7 @@
 layout: post
 title: 'Go’s features of last resort'
 tags: ['Go']
+updated: 2019-11-24
 hatnote: |
  Discussions:
  <a href="https://lobste.rs/s/bq4nxd/go_s_features_last_resort">Lobsters</a>,
@@ -65,10 +66,10 @@ satisfied by any type.
 **Why it exists and when to use** – sometimes you really need to accept any
 type (but this is not very common for most types of programs).
 
-**Problems** – no compile-time type checks; limited tooling support. Reflection
-is hard, may be quite slow, and often incomplete (are you sure
-`map[string]map[int][]struct{}` will work for your function that accepts "any"
-type?)
+**Problems** – no compile-time type checks; limited tooling support. It often
+leads to using reflection, which is hard, may be quite slow, and often buggy or
+incomplete. If you do use `interface{}`, then do your best to stick to type
+assertions if at all possible.
 
 **Alternatives** – this is the *Great Go Generics Debate*. Alternatives include:
 
@@ -88,9 +89,8 @@ Imports can be aliased as `b "foo/bar"`, so that instead of `bar.X` you use
 `. "foo/bar"`, in which case you'd use just `X`.
 
 **Why it exists and when to use** – sometimes you need to alias packages to
-prevent conflicts. Ideally package names should be unique, but sometimes it
-happens when combining third-party packages. It's also needed when a directory
-name contains invalid identifier characters (e.g. `go-pkg`).
+prevent conflicts (e.g. `math/rand` and `crypto/rand`). It's also needed when a
+directory name contains invalid identifier characters (e.g. `go-pkg`).
 
 The dot-imports exist mostly for tests that run outside the package they're
 testing ([`pkg_test` packages][test]).
@@ -123,13 +123,15 @@ functions which would otherwise not have error returns.
 mistake I've seen new Go programmers make. It's understandable (I did it
 myself!), but it's not how Go is expected to be used.
 
-Panics *can* be used like exceptions, but this does not fit Go's
-design aesthetics very well. Exceptions are generally considered to not be worth
-the cost; see e.g. [Exception Handling Considered Harmful][exceptions].
+Panics can *sort-of* be used like exceptions if you squint enough, but there is
+no easy way to recover() just a few lines of code (just functions), or
+recover()-ing only specific errors (leading to "Pokemon exceptions", *"gotta
+catch 'em all"*). In other words, they're not *really* exceptions. Go doesn't
+implement exceptions since they're [generally considered to not be worth the
+cost][exceptions] ([see also][exceptions2]).
 
-Panics are a bit tricky to recover from and are often unexpected since it's not
-the standard way to deal with errors in Go. In general it's best to forget that
-`recover()` exists and consider panics as a shortcut for:
+In general it's best to forget that `recover()` exists and consider panics as a
+shortcut for:
 
     fmt.Fprintln(os.Stderr, "oh noes!")
     debug.PrintStack()
@@ -230,6 +232,7 @@ While not exactly features of last resort", an additional (opinionated) list of
 [hg]: https://www.mercurial-scm.org/wiki/FeaturesOfLastResort
 [generics]: https://docs.google.com/document/d/1vrAy9gMpMoS3uaVphB32uVXX4pi-HnNjkMEgyAHX4N4/edit
 [test]: https://golang.org/cmd/go/#hdr-Test_packages
-[exceptions]: http://www.lighterra.com/papers/exceptionsharmful/
+[exceptions]: https://golang.org/doc/faq#exceptions
+[exceptions2]: http://www.lighterra.com/papers/exceptionsharmful/
 [modern-go]: https://peter.bourgon.org/blog/2017/06/09/theory-of-modern-go.html
 [cgo]: https://dave.cheney.net/2016/01/18/cgo-is-not-go
