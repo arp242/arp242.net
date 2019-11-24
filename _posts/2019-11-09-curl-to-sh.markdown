@@ -2,6 +2,7 @@
 layout: post
 title: 'Curl to shell isn’t so bad'
 tags: ['Security', 'Unix']
+updated: 2019-11-24
 hatnote: |
  Discussions:
  <a href="https://lobste.rs/s/lz7tit/curl_shell_isn_t_so_bad">Lobsters</a>,
@@ -13,7 +14,9 @@ hatnote: |
 sh` to install software is a "glaring security vulnerability". I've seen this
 claim many times in other places as well, with strong terms like "malpractice".
 
-I don't get it. you're not running some random shell script from a random
+[shell]: https://0x46.net/thoughts/2019/04/27/piping-curl-to-shell/
+
+I don't get it. You're not running some random shell script from a random
 author, you're running it from a software vendor who you *already trust* to run
 software. Are you going to audit all of oh-my-zsh? Probably not. So why give
 extra gravity to their install script? If you trust oh-my-zsh, then why distrust
@@ -41,11 +44,21 @@ or "malpractice".
         [yarn](https://github.com/yarnpkg/website/blob/master/install.sh),
         [rust](https://github.com/rust-lang/rustup.rs/blob/master/rustup-init.sh).
 
-The only real difference I see is that `curl | sh`  is a very direct way to run
-code from the internet, whereas the other methods are running code from the
-internet, but with extra steps. It may "feel" different, but in reality it's
-just the same. In the end it's still just running code you didn't personally
-audit on your computer, and a matter of trust.
+Package managers are more secure due to checksums, signing, and
+auditing.[^audit] You should use a package if available (often it's not, hence
+these scripts). `curl | sh` is certainly not a *perfectly secure* method, just
+no different than `git clone && cd dir && make`, and I don't see anyone issue
+warnings against that.
+
+[^audit]: Not *all* packages are audited though. Anyone can publish a package on
+          npm, Rubygems, Pypy, etc.
+
+
+The only real security difference I see is that `curl | sh`  is a very direct
+way to run code from the internet, whereas the other methods are running code
+from the internet, but with extra steps. It may "feel" different, but in reality
+it's just the same. In the end it's still just running code you didn't
+personally audit on your computer, and a matter of trust.
 
 ---
 
@@ -99,12 +112,12 @@ To break down the bullet points in the article in some more detail:
 
 - *Not knowing what the script is going to do*.
 
-  This is valid and I tend to avoid these kind of scripts (or read them) for
-  exactly this reason; I wish scripts would clearly state what *exactly* they're
-  going to do in the docs.
+  I tend to avoid these kind of scripts for exactly this reason, but this is a
+  personal preference and not a security issue. (For reasons I don't fully
+  understand myself I am somewhat irrationally obsessed with keeping my system
+  as "light" as possible, almost to the point of [stupid light][stupid-light].)
 
-  But this is a UX issue and not a security one. It's fine to not like these
-  scripts, but that doesn't make them "glaring security vulnerability" or
-  "malpractice".
+  It's fine to not like these scripts, but that doesn't make them "glaring
+  security vulnerability" or "malpractice".
 
-[shell]: https://0x46.net/thoughts/2019/04/27/piping-curl-to-shell/
+  [stupid-light]: https://www.reddit.com/r/vim/comments/cmjib2/using_vim_with_40_keyboards/ew2pg38/
