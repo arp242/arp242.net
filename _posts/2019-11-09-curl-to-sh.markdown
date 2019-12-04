@@ -121,3 +121,7 @@ To break down the bullet points in the article in some more detail:
   security vulnerability" or "malpractice".
 
   [stupid-light]: https://www.reddit.com/r/vim/comments/cmjib2/using_vim_with_40_keyboards/ew2pg38/
+
+<!--
+TODO: https://utcc.utoronto.ca/~cks/space/blog/sysadmin/CurlToShellManagementProblem
+-->
