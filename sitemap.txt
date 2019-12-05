@@ -1,10 +1,10 @@
 ---
 layout: null
 ---
+{%- capture nl %}
+{% endcapture -%}
+{% for post in site.posts %}{{ post.url | prepend: site.baseurl | prepend: site.url }}{% if forloop.last != true %}{{ nl }}{% endif %}{% endfor %}
 https://www.arp242.net
 https://www.arp242.net/the-art-of-unix-programming
 https://www.arp242.net/vimlog
 https://www.arp242.net/archive
-{%- capture nl %}
-{% endcapture -%}
-{% for post in site.posts %}{{ post.url | prepend: site.baseurl | prepend: site.url }}{% if forloop.last != true %}{{ nl }}{% endif %}{% endfor %}
