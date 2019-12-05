@@ -1,0 +1,21 @@
+---
+layout: bare
+title: Send to WhatsApp
+---
+
+<p>You can send messages to people on WhatsApp by using a special "API" link; this way you don't
+have to add them as contacts in your phone:
+<code>https://web.whatsapp.com/send?phone=[..]</code>.
+You can also use api.whatsapp.com for the desktop/phone app.</p>
+
+<form method="get" action="https://web.whatsapp.com/send">
+	<strong>Web</strong>
+	<input type="text" name="phone">
+	<button>Go</button>
+</form>
+
+<form method="get" action="https://api.whatsapp.com/send">
+	<strong>API</strong>
+	<input type="text" name="phone">
+	<button>Go</button>
+</form>
