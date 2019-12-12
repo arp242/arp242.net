@@ -123,6 +123,17 @@ I've been collecting examples for a while.
 </style>
 
 <div class="examples">
+<div><span>Waffling:</span>
+<pre>// This block represents the list of errors that could be raised when using the webhook package.</pre>
+<pre>// Possible errors when validating a webhook.</pre>
+</div>
+
+<div><span>Waffling:</span>
+<pre>// DefaultTolerance indicates that signatures older than this will be rejected by ConstructEvent.</pre>
+<pre>// Reject signatures older than this.</pre>
+</div>
+
+
 <div><span>Awkward English:</span>
 <pre># we want the modal to be draggable except if it's a fixed one</pre>
 <pre># The modal should be draggable unless it's fixed.</pre>
