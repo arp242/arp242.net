@@ -31,26 +31,29 @@ The downside is that actually using it in a pipe looks a bit ugly:
          cpoint  dec    utf-8       html       name
     'x'  U+0078  120    78          &#x78;     LATIN SMALL LETTER X (Lowercase_Letter)
 
+We can further improve on this by only showing this message if stdin is a
+terminal:
 
-We can further improve on this by erasing the message after reading from stdin:
+    if isatty.IsTerminal(os.Stdin.Fd()) { // https://github.com/mattn/go-isatty
+        fmt.Fprintf(os.Stderr, "%s: reading from stdin...\n", filepath.Base(os.Args[0]))
+    }
 
-    fmt.Fprintf(os.Stderr, "%s: reading from stdin...", filepath.Base(os.Args[0]))
-    // Flush output buffers; may not happen when there's no NL. 
-    os.Stderr.Sync()
-
-    // Note this reads everything in memory, you may want to use a slightly more
-    // sophisticated approach if you care about processing arbitrary large inputs.
 	stdin, err := ioutil.ReadAll(os.Stdin)
 	if err != nil {
 		panic(fmt.Errorf("read stdin: %s", err))
 	}
 
-    // Return cursor to the first column.
-	fmt.Fprintf(stderr, "\r")
+Or, alternatively, erasing the message after reading from stdin:
 
-I originally also suppressed this output on non-terminal devices, but then `prog
-| less` will still hang without a message, which is not great. I would encourage
-suppressing this output with a `-q` or `-quiet` flag.
+    fmt.Fprintf(os.Stderr, "%s: reading from stdin...", filepath.Base(os.Args[0]))
+    os.Stderr.Sync()
+
+	stdin, err := ioutil.ReadAll(os.Stdin)
+	if err != nil {
+		panic(fmt.Errorf("read stdin: %s", err))
+	}
+
+	fmt.Fprintf(stderr, "\r")
 
 One thing to be careful of is that `\r` won't erase anything; it just puts the
 cursor in the first column so new output will overwrite what's there. You can
