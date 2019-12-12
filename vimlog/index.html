@@ -52,7 +52,7 @@
 	</p>
 
 	<p class="center">This doesn't list all changes, just the most useful and notable ones.<br>
-		Changes from Vim 8.0 (September 2016) up to 8.1.2339 (Nov 24 2019) are listed.</p>
+		Changes from Vim 8.0 (September 2016) up to 8.2.0000 (Dec 12 2019) are listed.</p>
 
 	<div class="center ta-center"><strong>Compatibility table</strong></div>
 	<table class="center">
@@ -70,7 +70,9 @@
 	<div class="center ta-center"><small>Debian and Ubuntu are the most common distros with old Vim versions.</small></div>
 
 	<main class="center"><h2>2019</h2>
-<section><div><h3>strptime()</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/10455d43fef041309ce0613fa792c635dd71e3a8">8.1.2326</a> <sup>(Nov 21)</sup></p></div><p>Parse a time string</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#rand()">rand()</a> and <a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#srand()">srand()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/06b0b4bc27077013e9b4b48fd1d9b33e543ccf99">8.1.2342</a>, <a target="_blank" href="https://github.com/vim/vim/commit/07e4a197953d12902fb97beb48830a5323a52280">8.1.2343</a> <sup>(Nov 26)</sup></p></div><p>Generate random numbers.</p></section>
+<section><div><h3>interupt()</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/67a2deb9cb4ac2224cb1e4d240a5d0659f036264">8.1.2341</a> <sup>(Nov 25)</sup></p></div><p>Abort a running script.</p></section>
+<section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/eval.txt.html#strptime()">strptime()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/10455d43fef041309ce0613fa792c635dd71e3a8">8.1.2326</a> <sup>(Nov 21)</sup></p></div><p>Parse a time string</p></section>
 <section><div><h3>:term ++shell</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/197c6b7da3ad4c3e3942a553f5dbc35722a4a349">8.1.2251</a>, <a target="_blank" href="https://github.com/vim/vim/commit/2d6d76f9cd3c5dca0676491d7d60ff7685942487">8.1.2255</a> <sup>(Nov 4)</sup></p></div><p>Run :term commands in the shell.</p></section>
 <section><div><h3>v:argv</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/69bf634858a2a75f2984e42b1e4017bc529a040a">8.1.2233</a> <sup>(Oct 29)</sup></p></div><p>Get commandline arguments Vim was invoked with.</p></section>
 <section><div><h3>Add gM</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/8b530c1ff91f07cf6b0289a536992b7dfbc86598">8.1.2231</a> <sup>(Oct 28)</sup></p></div><p>Move to middle of line.</p></section>
@@ -143,11 +145,7 @@ END</pre></p></section>
         <code>function!</code> in your vimrc or plugin's autoload is almost
         never required any more.
     </p></section>
-
-<h2>2019</h2>
-<section><div><h3>:filter support for more commands</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/0751f51a5b428805a8c1e9fe529693d032bec991">8.0.1651</a>, <a target="_blank" href="https://github.com/vim/vim/commit/4cde86c2ef885e82fff3d925dee9fb5671c025cf">8.1.0165</a>, <a target="_blank" href="https://github.com/vim/vim/commit/f86db78fed78541cefdb706e4779ce5ae9ca7820">8.1.0495</a>, <a target="_blank" href="https://github.com/vim/vim/commit/8fc42964363087025a27e8c80276c706536fc4e3">8.1.2221</a> <sup>(Oct 26)</sup></p></div><p> </p></section>
-
-<h2>2018</h2>
+<section><div><h3>:filter support for more commands</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/0751f51a5b428805a8c1e9fe529693d032bec991">8.0.1651</a>, <a target="_blank" href="https://github.com/vim/vim/commit/4cde86c2ef885e82fff3d925dee9fb5671c025cf">8.1.0165</a>, <a target="_blank" href="https://github.com/vim/vim/commit/f86db78fed78541cefdb706e4779ce5ae9ca7820">8.1.0495</a> <sup>(Oct 25)</sup></p></div><p> </p></section>
 <section><div><h3><a target="_blank" class="help-tag" href="https://vimhelp.org/gui.txt.html#:tlmenu">:tlmenu</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/4c5d815256099b50eca2ec5bf8f9aaa67a890211">8.1.0487</a> <sup>(Oct 19)</sup></p></div><p>Popup menu for terminal.</p></section>
 <section><div><h3>Include the xdiff library</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/e828b7621cf9065a3582be0c4dd1e0e846e335bf">8.1.0360</a>, <a target="_blank" href="https://github.com/vim/vim/commit/785fc6567f572b8caefbc89ec29bbd8b801464ae">8.1.0393</a> <sup>(Sep 15)</sup></p></div><p>Include diff library instead of relying on external tools to improve
         diff quality. Many new <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#'diffopt'">'diffopt'</a> settings (e.g. <code>set
