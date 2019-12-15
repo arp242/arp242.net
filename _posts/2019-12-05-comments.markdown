@@ -1,53 +1,40 @@
 ---
 layout: post
-title: "Good comments are to the point and flow well"
+title: "Good comments read well and are to the point"
+updated: "2019-12-15"
 tags: ["Dev"]
 ---
 
-Good comments are as short as possible, to the point, and don't faff about with
+Good comments should read well, be to the point, and don't faff about with
 needless verbiage. This [applies to any writing][better-writer] but doubly so
 for technical documentation and triply so for comments.
 
-Quick example I found today when writing a Stripe integration; the
-[default][stripe]:
+Quick example I found today:
 
-    // For card errors resulting from a card issuer decline, a short string
-    // indicating the card issuer’s reason for the decline if they provide
-    // one.
-    DeclinedCode string
+    // This block represents the list of errors that could be raised when using
+    // the webhook package.
 
-Can be condensed to a single line which conveys exactly the same information:
+Can be rephrased as:
 
-    // Card issuer's reason for declining a card, if provided.
-    DeclinedCode string
+    // Possible errors when validating a webhook.
 
-I don't want to pick on Stripe here. This is just a nice example I encountered
-today. The default comment is *adequate*, but:
-
-- It's three lines. If you have a lot of fields it quickly adds up.
-
-- Takes longer to read and mentally parse; there is often *more* chance of
-  confusion.
-
-- I often find it distracting. Part of the reason for this is that comments
-  [*stand out* on my editor, rather than be relegated to background
-  noise][syntax].
+The default comment is *adequate*, but is a bit of a mouthful and can easily be
+rephrased to contain the exact same information. Why use more words if you don't
+need to? It's only distracting from the actual information you want to convey.
 
 I don't want to make the case to "use comment as little as possible" here –
-that's a different discussion – just that comments should be direct, and not
-faff about.
-
-The worst offenders are fluff like *"Okay, let me explain what this function
-does [..]"*, *"This function will [..]"*, *"This setting will control [..]"*,
-*"Now that we are here [..]"*. None of that adds any value.
+that's a different discussion – just that comments should be to the point, and
+not faff about. The worst offenders is fluff like *"Okay, let me explain what
+this function does [..]"*, *"This function will [..]"*, *"This setting will
+control [..]"*, *"Now that we are here [..]"*. None of that adds any value.
 
 ---
 
-It's important to form sentences that flow well. *"if this condition is true,
+It's important to form sentences that read well. *"if this condition is true,
 then do something"* makes sense if you follow the code, but "*do something if
-condition"* is both shorter and usually flows more naturally. Comments sometimes
+condition"* is both shorter and usually reads more naturally. Comments sometimes
 seem like an unedited "stream of consciousness" that the programmer made while
-writing the code, which were never edited to more standard language after being
+writing the code which were never edited to more standard language after being
 written.
 
 Writing is hard and takes practice, but being attentive improves much of it and
@@ -56,30 +43,30 @@ often sub-optimal or downright bad, and requires some effort to get it right.
 Reading comments out loud helps a lot (this, again, is [general writing
 advice][read-aloud]).
 
-Avoid slang, and it's probably best to avoid sayings, idioms, literary imagery,
-etc. as well. Your goal is to convey ideas, not to write an entertaining novel.
-I worked for an Irish company for three years, and was hella confused by all the
+It's probably best to avoid slang, sayings, idioms, literary imagery, etc. as
+well. Your goal is to convey ideas, not to write an entertaining novel. I worked
+for an Irish company for three years, and was hella confused by all the
 [craic][craic] my Irish coworkers wrote in the comments.
 
-Spell check your comments. Yeah, spelling "request" as "requst" isn't a huge
+Spell check your comments. Yeah, misspelling "request" as "requst" isn't a huge
 deal, but it does impede readability. Might as well get it right.
 
 Code reviews should address comments just as the code, although I wouldn't
-recommend being *too* pedantic about this.
+recommend being *too* pedantic about this. In the end, there is quit a lot of
+subjectivity involved in "good" writing.
 
 ---
 
-While I don't really want to enter the debate on *when* to comment here, some
-comments are truly redundant. One of the silliest comments I have ever seen
-looked like this (in C):
+While I don't really want to enter the debate on *when* to comment in depth,
+some comments are truly redundant. Some of the silliest examples I have seen:
 
 	char buf[BUF_SIZE]; /* create an array of characters */
 
-Or in Go:
+<!-- -->
 
     transaction.Commit() // commit the transaction
 
-Or reminders that `while` start a loop:
+<!-- -->
 
 	// Start the loop.
 	while ( have_posts() ) : the_post();
@@ -88,8 +75,6 @@ Or reminders that `while` start a loop:
 
 	// End the loop.
 	endwhile;
-
-Yeah, thanks for that. I forgot how to program.
 
 ----
 
@@ -109,10 +94,10 @@ While this example is obvious (even [made it to The Daily WTF][tdwtf]), most are
 more subtle.
 
 
-Big bag of examples
--------------------
+Some examples
+-------------
 
-I've been collecting examples for a while.
+Some random examples I encountered.
 
 <style>
 .examples > div { margin-top: 1em; }
@@ -124,8 +109,10 @@ I've been collecting examples for a while.
 
 <div class="examples">
 <div><span>Waffling:</span>
-<pre>// This block represents the list of errors that could be raised when using the webhook package.</pre>
-<pre>// Possible errors when validating a webhook.</pre>
+<pre>// For card errors resulting from a card issuer decline, a short string
+// indicating the card issuer’s reason for the decline if they provide
+// one.</pre>
+<pre>// Card issuer's reason for declining a card, if provided.</pre>
 </div>
 
 <div><span>Waffling:</span>
