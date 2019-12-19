@@ -177,7 +177,7 @@ what it's trying to say</span>
 <pre>" get count of the motion. This should be done before all the normal
 " expressions below as those reset this value(because they have zero
 " count!). We abstract -1 because the index starts from 0 in motion.</pre>
-<pre>" Get motion count; done here here as some commands later on will reset it.
+<pre>" Get motion count; done here as some commands later on will reset it.
 " -1 because the index starts from 0 in motion.</pre>
 </div>
 
