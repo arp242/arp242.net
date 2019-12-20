@@ -4,9 +4,6 @@
 # https://arp242.netlify.com/* https://www.arp242.net/:splat 301!
 # https://arp242.net/*         https://www.arp242.net/:splat 301!
 
-# Redirect old /weblog/ paths.
-/weblog/* /:splat 301
-
 # Old weblog titles; some seem borked but that's because Jekyll generated them
 # like this sometimes :-/
 /weblog/Run_multiple_services_on_one_port_and_use_PF's_overload_to_switch_between_them.html   /weblog/pf-switch.html                 301
@@ -37,6 +34,10 @@
 /weblog/yaml_probably_not_so_great_after_all.html                                             /weblog/yaml-config.html               301
 /weblog/JSON_as_configuration_files-_please_dont.html                                         /weblog/json-config.html               301
 /weblog/json_as_configuration_files-_please_dont                                              /weblog/json-config.html               301
+
+# Redirect old /weblog/ paths. Keep this after the other /weblog/* redirects to
+# make sure it matches last!
+/weblog/* /:splat 301
 
 # Code pages, just redirect to GitHub
 /code                        /#code                                         301
