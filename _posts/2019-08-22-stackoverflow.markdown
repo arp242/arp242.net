@@ -24,10 +24,8 @@ downvoted to -4 (it's now -3, since I added an upvote)[^vote]:
 [^vote]: The question has reached a significant amount of votes after this post
          went to the frontpage of Hacker News and /r/programming.
 
-<blockquote style="max-width: 26em;">
-Is there a way to list all standard Go packages? I have a list of packages
-and I want to figure out if this is a standard package.
-</blockquote>
+> Is there a way to list all standard Go packages? I have a list of packages and
+> I want to figure out if this is a standard package.
 
 Seems like a pretty valid question to me, so why is it downvoted to -4? Stack
 Overflow is intended to [build a collection of useful question to the
