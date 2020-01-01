@@ -2,6 +2,10 @@
 layout: post
 title: "Choosing a license for GoatCounter"
 tags: ['GoatCounter', 'Open source']
+updated: '2020-01-01'
+hatnote: |
+ Discussions:
+ <a href="https://news.ycombinator.com/item?id=21914245">Hacker News</a>.
 ---
 
 Choosing a license has always been easy: MIT. It's the best-known "do what you
@@ -50,10 +54,19 @@ alternative copyleft licenses. My requirements:
   of Code, etc.)
 
   (Aside: I don't really like that the OSI is the *One True Authority* of "Open
-  source" now; the term was around for a long time before the OSI was started
-  and there are many licenses that are perfectly fine according to the Open
-  Source Definition, but the OSI just hasn't approved them. See e.g. [Don’t Rely
-  on OSI Approval][osi-approval]. But it is what it is.)
+  source" now; the term was around for a long time before the OSI was
+  started[^oss] and there are many licenses that are perfectly fine according to
+  the Open Source Definition, but the OSI just hasn't approved them. See e.g.
+  [Don’t Rely on OSI Approval][osi-approval]. But it is what it is.)
+
+[^oss]: Examples from
+        [1993](https://groups.google.com/forum/#!msg/comp.os.ms-windows.programmer.win32/WoBvPB0U9Co/wXfpq5nEJTYJ),
+        [1996](http://www.xent.com/FoRK-archive/fall96/0269.html).
+        Furthermore, the term "Open" was in wide use before the OSI (e.g.
+        OpenBSD, X/Open, etc.)<br>
+        I'm not suggesting that Christine Peterson is lying when she claims to
+        have coined "Open Source"; it could be coined independently on several
+        occasions, or perhaps she had seen the term but merely forgot about it.
 
 A number of projects have been experimenting with "almost open source" licenses,
 such as the [Commons Clause][commons]. There are a number of advantages and I'm
@@ -126,8 +139,8 @@ my purposes):
 - <strong class="b">Bad</strong>: [fails
   DFSG](https://lists.debian.org/debian-legal/2003/11/msg00178.html) because of
   overly strong patent clause.
-- Didn't investigate beyond these two issues; the attribution clause especially
-  is not what I want.
+- <strong class="n">Note</strong>: Didn't investigate beyond these two issues;
+  the attribution clause especially is not what I want.
 
 ### IBM Public License Version 1.0 (IPL)
 
