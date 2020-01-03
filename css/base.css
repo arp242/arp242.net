@@ -87,4 +87,5 @@ input              { width: 12em; }
 	/*min-height: 150px;*/  /* Prevent flickering/moving of content too much */
 }
 
-.page + .page { margin-top: 2em; }
+.page + .page         { margin-top: 2em; }
+.related-posts .posts { margin-top: 0; }

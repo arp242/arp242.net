@@ -11,7 +11,7 @@ class Jekyll::Tags::ListRelatedPostsTag < Liquid::Tag
         '</ul>'
     end.join('')
 
-    '<div class="page">' + list + '</div>' if list.length > 0
+    '<div class="page related-posts">' + list + '</div>' if list.length > 0
   end
 
   def fmt_date date
