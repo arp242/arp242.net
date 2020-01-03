@@ -70,11 +70,11 @@ bending over backwards to avoid jQuery? Yeh nah. Just use jQuery!
 *"unjQuery all the things"*.
 
 I'm not married to jQuery, and I'll happily use a "jQuery light" which patches
-over the JS API with something more palatable. [Zepto was recommended][zepto],
-but have not yet had a chance to try it myself. YMNJQ recommends [bonzo][bonzo]
-and [$dom][$dom], and several others for AJAX and such, but many seem
-unmaintained. Besides, everyone already knows jQuery. Why replace it with
-something else unless there's a compelling reason to?
+over the JS API with something more palatable. There are a few projects, such as
+[bonzo][bonzo], [$dom][$dom], [zepto][zepto], and several others for AJAX and
+such, but many seem unmaintained. Besides, everyone already knows jQuery. Why
+replace it with something else unless there's a compelling reason to? Saving
+10-20K doesn't seem worth it.
 
 ---
 
@@ -111,4 +111,4 @@ at some point in the future).
 [bloat2]: http://danluu.com/web-bloat/
 [bonzo]: https://github.com/ded/bonzo
 [$dom]: https://github.com/julienw/dollardom
-[zepto]: https://github.com/arp242/arp242.net/issues/22
+[zepto]: https://zeptojs.com
