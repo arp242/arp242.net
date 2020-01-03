@@ -107,7 +107,7 @@ Putting it all together:
 
     tmux new-session -d -s site
 
-    tmux new-window -d -t '=site' -n server -c _site
+    tmux new-window -d -t '=site' -n server -c ~/code/arp242.net/_site
     tmux send-keys -t '=site:=server' 'python -mhttp.server' Enter
 
     tmux new-window -d -t '=site' -n jekyll
