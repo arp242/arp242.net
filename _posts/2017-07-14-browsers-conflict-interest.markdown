@@ -49,14 +49,7 @@ Oh, and Microsoft also
 It doesn’t end with Microsoft. For years [Google displayed a Chrome
 advertisements on Google
 search](https://productforums.google.com/forum/#!topic/chrome/u_8RWVl1TzE)
-(although it looks like they have stopped doing it now). And what about enabling
-the ‘Do Not Track’ header in Chrome?
-
-<figure class="border"><img alt="Enabling Do Not Track" src="{% base64 ./_images/browser/chrome1.png %}"></figure>
-
-I’m sure that the fact that Google has a significant interest in tracking the
-hell out of everyone on the internet is purely coincidental, as is Google
-[banning extensions that disrupt its business model][1].
+(although it looks like they have stopped doing it now). 
 
 Chrome’s [new ad blocker][2] (or ‘ad filter’ as they call it) is also rather
 suspect. We now have Google – whose primary revenue comes in through ads –
@@ -69,7 +62,6 @@ option for it in a later version, but by default "clear all cookies" will still
 retain Google-related cookies. It also won't clear local storage, meaning that
 "clear browsing data" is rather ineffectual to prevent tracking.
 
-[1]: https://www.bleepingcomputer.com/news/google/google-bans-adnauseam-from-chrome-the-ad-blocker-that-clicks-on-all-ads/
 [2]: https://theintercept.com/2017/06/05/be-careful-celebrating-googles-new-ad-blocker-heres-whats-really-going-on/
 [3]: https://bugzilla.mozilla.org/show_bug.cgi?id=975444
 
