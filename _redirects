@@ -4,6 +4,9 @@
 # https://arp242.netlify.com/* https://www.arp242.net/:splat 301!
 # https://arp242.net/*         https://www.arp242.net/:splat 301!
 
+
+/learning-a-programming-language.html /learning-programming.html 301
+
 # Old weblog titles; some seem borked but that's because Jekyll generated them
 # like this sometimes :-/
 /weblog/Run_multiple_services_on_one_port_and_use_PF's_overload_to_switch_between_them.html   /weblog/pf-switch.html                 301
