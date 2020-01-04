@@ -3,6 +3,9 @@ layout: post
 title: "Tmux workspaces"
 title: "Scripting tmux"
 tags: ['Unix']
+hatnote: |
+ Discussions:
+ <a href="https://news.ycombinator.com/item?id=21951679">Hacker News</a>.
 ---
 
 I often want to start similar workspaces in tmux; for example I always want to
