@@ -4,6 +4,11 @@ title: "Colour design of commandline interfaces"
 tags: ['Unix', 'UX']
 ---
 
+https://git.busybox.net/busybox/tree/coreutils/ls.c#n84
+https://git.busybox.net/busybox/tree/coreutils/ls.c#n372
+
+
+
 Here's what `git log` looks like for me:
 
 <figure class="border"><img alt="Output of 'git log'" src="{% base64 ./_images/colour/git.png %}"></figure>
