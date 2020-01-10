@@ -15,10 +15,10 @@ fairly sure I had read it in *The Art of Unix Programming*. Eric S. Raymond
 it's distributed over many different pages, and the formatting is not exactly
 conducive for readability.
 
-I `wget --mirror`’d it to my drive, and started out with a simple [script][fix]
-to join everything to a single page, but eventually ended up rewriting a lot of
-the HTML from crappy 2003 docbook-generated tagsoup to more modern standards,
-and I slapped on some CSS to make it more readable.
+I `wget --mirror`’d it to my drive, and started out with a simple script to join
+everything to a single page, but eventually ended up rewriting a lot of the HTML
+from crappy 2003 docbook-generated tagsoup to more modern standards, and I
+slapped on some CSS to make it more readable.
 
 The results are fairly nice, and it should work well in any version of any
 browser.
@@ -57,4 +57,3 @@ email esr and ask nicely. Another project, for another weekend :-)
 [phil]: /the-art-of-unix-programming#ch01s06
 [taoup]: http://catb.org/~esr/writings/taoup/html/
 [taoup-mine]: /the-art-of-unix-programming/
-[fix]: /the-art-of-unix-programming/fix-taoup.py
