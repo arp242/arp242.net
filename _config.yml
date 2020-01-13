@@ -5,6 +5,7 @@ excerpt_separator:
 highlighter: none
 permalink: "/:title.html"
 markdown: "kramdown"
+collections: ['posts', 'devlog']
 exclude: [
   "Gemfile",
   "Gemfile.lock",
