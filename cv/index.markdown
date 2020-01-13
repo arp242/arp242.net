@@ -1,5 +1,6 @@
 ---
 layout: bare
+title: "CV Martin Tournoij"
 ---
 
 Martin Tournoij
