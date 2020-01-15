@@ -1,4 +1,7 @@
 <script>
-window.counter = 'https://stats.arp242.net/count';
+window.counter = (location.hostname === 'new.arp242.net')
+	? 'http://arp242.goatcounter.localhost:8081/count'
+	: 'https://stats.arp242.net/count';
+
 {% include _count.js %}
 </script>
