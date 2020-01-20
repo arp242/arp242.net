@@ -1,0 +1,28 @@
+---
+layout: null
+---
+
+Been a busy week; the announcements on Lobsters and HN were received quite well,
+with loads of feedback and reports. I was a bit worried about this after my
+[first announcement][hn] on HN was mostly ignored back in August 😅 The HN
+gamble is such a fun game.
+
+The biggest visible change this week is that you can now [filter pages][filter].
+It only affects the page list (and not the browser/size/location stats) at the
+bottom, as they're stored in a way that makes it impossible to adjust right now.
+I'm not sure if that's a huge problem.
+
+Most of the other changes have been fairly small bug fixes or improvements, most
+of them prompted by feedback (chat, email. GitHub, HN thread). Nothing
+especially spectacular.
+
+The [site code could be a lot better][code]; there is no reason to build the
+`<script>` tag dynamically; can just use `<script src="..">` with some tricks.
+The patch should be ready, just want to test it a bit more (unfortunately I
+haven't been able to find a JavaScript testing solution that I like, so no
+automated tests 😞).
+
+
+[hn]: https://news.ycombinator.com/item?id=20706335
+[filter]: https://github.com/zgoat/goatcounter/pull/106
+[code]: https://github.com/zgoat/goatcounter/pull/122
