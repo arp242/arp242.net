@@ -9,7 +9,8 @@ title: arp242 devlog
 			<h1>Devlog</h1>
 			<p>Weekly development updates. <a href="/devlog.xml">Feed</a>.</p>
 
-			{% for p in site.devlog %}
+			{% assign sorted = site.devlog | reverse%}
+			{% for p in sorted %}
 				<h2 id="{{ p.date | date: '%Y-%m-%d' }}">
 					{{ p.date | date_to_string_space }}
 					<a href="#{{ p.date | date: '%Y-%m-%d' }}"></a>
