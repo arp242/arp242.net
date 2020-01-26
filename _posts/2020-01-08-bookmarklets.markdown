@@ -5,7 +5,7 @@ tags: ['Web']
 ---
 
 I have two [bookmarklets][bookmarklet] which I use frequently: `r` ("readable")
-to to improve the readability of text, and `f` ("fixed") one to remove fixed
+to improve the readability of text, and `f` ("fixed") one to remove fixed
 navigation and banners. I put them in my toolbar as `r` and `f` so it doesn't
 take up too much space.
 
