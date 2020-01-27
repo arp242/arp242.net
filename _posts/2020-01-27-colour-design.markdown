@@ -4,10 +4,12 @@ title: "Colour design of commandline interfaces"
 tags: ['Unix', 'UX']
 ---
 
-https://git.busybox.net/busybox/tree/coreutils/ls.c#n84
-https://git.busybox.net/busybox/tree/coreutils/ls.c#n372
+A commandline interface (CLI) is a user interface. Like all user interfaces the
+best ones are carefully designed with the user in mind. There are many aspects
+on CLI user design; this will focus on colour design, as I feel that's what a
+significant number of CLI program get wrong.
 
-
+---
 
 Here's what `git log` looks like for me:
 
@@ -43,19 +45,22 @@ mix text and background colour:
 This still makes the error stand out, and ensures the text is always readable.
 
 The original 8/16 colours (8 colours, each having a "bright" variant) are not
-exactly defined. For example colour "4" is "blue", but it can be lightblue or
-darkblue.  In practice different terminal emulators use [different colour
-shades][8c], so you can never be quite sure if something is readable.
+exactly defined. For example colour "4" is "blue", but the exact shade of blue
+is [up to the implementation][8c]. You can never be quite sure if something is
+readable.
 
-This is fixed in 256 and true colour mode which define exact colours. [^display]
-True colours are displayed in the standard RGB and the 256 colour are exactly
-defined as well.
+This is fixed in 256 and true colour mode which define exact colours (although
+you still can't be sure how it's perceived by your users because of differences
+in computer screens, ambient light, human vision, etc. This is why it's usually
+wise to take wide margins when it comes to contrast ratios and the like).
 
+https://git.busybox.net/busybox/tree/coreutils/ls.c#n84
 
-[^display]: Although you still can't be sure how it's perceived by your users
-            because of differences in computer screens, ambient light, human
-            vision, etc. This is why it's usually wise to take wide margins when
-            it comes to contrast ratios and the like.
+> Saying yes here will turn coloring on by default, even if no "--color" option
+> is given to the ls command. This is not recommended, since the colors are not
+> configurable, and the output may not be legible on many output screens.
+
+But then the default is `y` 🤔 The result of which is that I need 
 
 [8c]: https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
 
@@ -72,13 +77,12 @@ widespread][tc-support].
 ---
 
 Colours add a new dimension of information to text; this can be very helpful,
-but when there are too many colours it becomes useless.
+but when there are too many colours it becomes useless:
 
 <figure class="border"><img alt="Output of 'exa'" src="{% base64 ./_images/colour/exa.png %}"></figure>
 
 Aside from the yellow being truly hard to read, there are so many colours here
-that it loses any information. The same colour is used to mark directories and
-highlight a column.
+that it loses any information.
 
 <!--
 The [example on the homepage is even more colour dense][exa]
@@ -88,8 +92,18 @@ The [example on the homepage is even more colour dense][exa]
 {:class="x"}
 **Minimize colour usage for highest effectiveness**
 
+Colours add an extra information dimension to text, but just as too much text
+will overwhelm, so will too many colours. It just looked cluttered, rather than
+organized.
+
+There are no hard rules on what is "too many colours"; it depends on what
+information you want to convey: if you want to direct attention, then fewer is
+probably better. If you want to group, then it can be okay to use more colours.
+
 {:class="x"}
 **Decide what to use colours for**
+
+Mixing usages isn't uncommon.
 
 Group information: many colors *might* be okay.
 
@@ -103,13 +117,17 @@ Popup: probably not.
   - Subdue less important information.
   - UI elements (e.g. popup menu)
   - Syntax highlighting: spot errors.
--->
 
 "angry fruit salad"
 "Christmas tree"
 "unicorn vomit"
 
-https://colorusage.arc.nasa.gov/clutter.php
+- https://homepages.cwi.nl/~steven/Talks/2019/11-21-dijkstra/
+  "red shapes"
+  Easy to group: not easy to stand out.
+-->
+
+TODO
 
 ---
 
@@ -131,25 +149,8 @@ for example by using [`NO_COLOR`][no-color].
 
 [no-color]: https://no-color.org/
 
----
-
-
 <!--
-
-A commandline interface (CLI) is a user interface.
-
-There are many aspects on CLI user design; this will focus on colour design, as
-I think that's what far too many CLI program get wrong.
-
-- Adding colour is almost always a trade-off. For example in your screenshot the
-  root would stand out a lot more if the permissions were just the default
-  colour. Exactly how much colour to add is some matter of taste. Your choices
-  are still reasonable, but some projects – like exa – take it really far.
-
-- https://homepages.cwi.nl/~steven/Talks/2019/11-21-dijkstra/
-  "red shapes"
-  Easy to group: not easy to stand out.
-
+https://colorusage.arc.nasa.gov/clutter.php
 -->
 
 <style>.x { max-width: 35em; margin: .5em auto; text-align: center; font-style: italic; padding: 1em 0;
