@@ -3,43 +3,41 @@
 // v1.2, which can be found in the LICENSE file or at http://eupl12.zgo.at
 
 // See /bin/proxy on how to test this locally.
-(function() { 
+(function() {
 	'use strict';
 
-	var VARS = {};
-	if (window.goatcounter)
-		VARS = window.goatcounter.vars || {};
-	else if (window.vars)  // TODO: temporary compatibility.
-		VARS = window.vars || {};
+	if (window.vars)  // TODO: temporary compatibility.
+		window.goatcounter = window.vars;
+	else if (window.goatcounter && window.goatcounter.vars)
+		window.goatcounter = window.goatcounter.vars;
+	else
+		window.goatcounter = window.goatcounter || {};
 
 	// Get all data we're going to send off to the counter endpoint.
 	var get_data = function(count_vars) {
 		var results = {
-			p: count_vars.path     || VARS.path,
-			r: count_vars.referrer || VARS.referrer,
-			t: count_vars.title    || VARS.title,
-			d: count_vars.domain   || VARS.domain,
+			p: count_vars.path     || goatcounter.path,
+			r: count_vars.referrer || goatcounter.referrer,
+			t: count_vars.title    || goatcounter.title,
+			e: count_vars.event    || goatcounter.event,
 		};
 
 		// Save callbacks.
-		var rcb, pcb, tcb, dcb;
+		var rcb, pcb, tcb;
 		if (typeof(results.r) === 'function') rcb = results.r;
 		if (typeof(results.t) === 'function') tcb = results.t;
-		if (typeof(results.d) === 'function') dcb = results.d;
 		if (typeof(results.p) === 'function') pcb = results.p;
 
 		// Get the values unless explicitly given.
 		if (is_empty(results.r)) results.r = document.referrer;
 		if (is_empty(results.t)) results.t = document.title;
-		if (is_empty(results.d)) results.d = location.hostname;
 		if (is_empty(results.p)) {
 			var loc = location,
 				c = document.querySelector('link[rel="canonical"][href]');
 			// Parse in a tag to a Location object (canonical URL may be relative).
 			if (c) {
-				var a = document.createElement('a');
-				a.href = c.href;
-				loc = a;
+				loc = document.createElement('a');
+				loc.href = c.href;
 			}
 			results.p = (loc.pathname + loc.search) || '/';
 		}
@@ -47,7 +45,6 @@
 		// Apply callbacks.
 		if (rcb) results.r = rcb(results.r);
 		if (tcb) results.t = tcb(results.t);
-		if (tcb) results.d = tcb(results.d);
 		if (pcb) results.p = pcb(results.p);
 
 		return results;
@@ -75,6 +72,14 @@
 		if ('visibilityState' in document && document.visibilityState === 'prerender')
 			return;
 
+		// Find the tag used to load this script.
+		var script = document.querySelector('script[data-goatcounter]'),
+			endpoint;
+		if (script)
+			endpoint = script.dataset.goatcounter;
+		else  // TODO: temporary compat.
+			endpoint = window.counter;
+
 		// Don't track private networks.
 		if (location.hostname.match(/localhost$/) ||
 			location.hostname.match(/^(127\.|10\.|172\.16\.|192\.168\.)/))
@@ -91,26 +96,24 @@
 		var img = document.createElement('img');
 		img.setAttribute('alt', '');
 		img.setAttribute('aria-hidden', 'true');
-		img.src = window.counter + to_params(data);
+		img.src = endpoint + to_params(data);
 		img.addEventListener('load', function() { document.body.removeChild(img) }, false);
 
 		// Remove the image after 3s if the onload event is never triggered.
 		setTimeout(function() {
 			if (!img.parentNode)
 				return;
-			img.src = ''; 
+			img.src = '';
 			document.body.removeChild(img)
 		}, 3000);
 
-		document.body.appendChild(img);  
+		document.body.appendChild(img);
 	};
 
 	// Expose public API.
-	if (!window.goatcounter)
-		window.goatcounter = {};
 	window.goatcounter.count = count;
 
-	if (!VARS.no_onload) {
+	if (!goatcounter.no_onload) {
 		if (document.body === null)
 			document.addEventListener('DOMContentLoaded', function() { count(); }, false);
 		else

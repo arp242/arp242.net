@@ -1,0 +1,29 @@
+---
+layout: null
+---
+
+Quietly churning along with a bunch of new features: the [site code is a lot
+simpler][122], you can [ignore your own views][128], [link to the page in the
+overview][138], configure [data retention][134] and the [thousands
+separator][132]. Also fixed various smaller issues, and Lukas Murdock
+[contributed a logo][139], so it looks all professional and stuff :-)
+
+The most exciting update is that GoatCounter will be funded by the [NGI Zero PET
+fund][pet]. This has been in the works for a while, but things are close to
+being finalized. This will give me €25,000 so I won't have to worry too much
+about the financials for a while, and can just focus on building a great service
+(rather than spending time marketing it).
+
+I'll write a more detailed overview about the financials later, although it's
+mostly fairly uninteresting: I currently get about €70/month in total from
+subscription and Patreon, hosting costs are about €30/month, and I spent about 6
+months working on this full-time, so I invested about €30k of my own money.
+
+
+[pet]: https://nlnet.nl/PET/
+[132]: https://github.com/zgoat/goatcounter/pull/132
+[134]: https://github.com/zgoat/goatcounter/pull/134
+[122]: https://github.com/zgoat/goatcounter/pull/122
+[128]: https://github.com/zgoat/goatcounter/pull/128
+[138]: https://github.com/zgoat/goatcounter/pull/138
+[139]: https://github.com/zgoat/goatcounter/pull/139
