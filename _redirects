@@ -16,6 +16,7 @@
 /weblog/run_multiple_services_on_one_port_and_use_pf's_overload_to_switch_between_them        /weblog/pf-switch.html                 301
 /weblog/Minimal_Apache_configuration_for_subversion.html                                      /weblog/apache-svn.html                301
 /weblog/minimal_apache_configuration_for_subversion                                           /weblog/apache-svn.html                301
+/weblog/Minimal_Apache_configuration_for_subversion.php                                       /weblog/apache-svn.html                301
 /weblog/Manage_Unreal_Tournament_cache_files.html                                             /weblog/ut-cache.html                  301
 /weblog/manage_unreal_tournament_cache_files                                                  /weblog/ut-cache.html                  301
 /weblog/Online_Unreal_Tournament_server_browser_with_pcntl_fork().html                        /weblog/ut-browser.html                301
