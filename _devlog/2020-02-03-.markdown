@@ -1,0 +1,28 @@
+---
+layout: null
+---
+
+Like most programmers, I don't like dealing with timezones, and this week
+didn't make me like them any more.
+
+GoatCounter can now display the charts in any timezones; adding the code for
+that wasn't *too* hard; getting the UI to select the timezone was. I don't think
+that selecting a zone name like `Europe/London` or `Asia/Makassar` is great UX,
+so instead it's sorted by country name first, and timezone second.
+
+Still some work to be done: some better filtering and formatting of the
+`<select>` with some JS might be nice, and it could support aliases better (e.g.
+Ethiopia shows as `Africa/Nairobi (EAT)`, but it would be more appropriate to
+show – or at least add – the `Africa/Addis_Ababa` zone as well). Unfortunately
+getting all this information from the IANA tzdb is a bit tricky.
+
+This is also the first deploy that really went wrong >_< The initial version
+didn't work when there was no TZ set yet. I fixed that quickly, and then it
+turned out that browsers don't always send the canonical timezone but also send
+various various aliases/deprecated versions, so it was erroring out on that :-/
+I just rolled everything back and fixed it this morning instead of yesterday
+evening.
+
+Other than that, a few small fixes, the rests run against both SQLite and
+PostgreSQL now, you can now run a TLS server with `-tls [..]`, and there are a
+number of improvements to the "admin" page (which only affects me).
