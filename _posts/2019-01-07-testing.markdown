@@ -260,5 +260,6 @@ but those ideas are ... rather misguided).
 <strong>Related articles</strong>
 <ul>
 <li><a href="https://news.ycombinator.com/item?id=21533376">Ask HN: Do you write tests before the implementation?</a></li>
+<li><a href="https://danmux.com/posts/the_cult_of_go_test/">The Cult of Go Test</a></li>
 </ul>
 </div>
