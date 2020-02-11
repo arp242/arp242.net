@@ -30,14 +30,14 @@ class Jekyll::Tags::ImageEncodeTag < Liquid::Tag
       next self.cached_base64_codes[@path]
     end
 
-      type = case @path.split('.').last
-               when 'png'
-                 'image/png'
-               when 'jpg', 'jpeg'
-                 'image/jpeg'
-               else
-                 raise 'Unknown type'
-               end
+    type = case @path.split('.').last
+             when 'png'
+               'image/png'
+             when 'jpg', 'jpeg'
+               'image/jpeg'
+             else
+               raise 'Unknown type'
+             end
 
     return "data:#{type};base64,#{encoded}"
   end
