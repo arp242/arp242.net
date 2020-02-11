@@ -80,12 +80,13 @@ button             { background-color: #e5e5e5; }
 input              { width: 12em; }
 #nl-turing-test    { display: none; }
 
-#codefund {
-	background-color: #fff;
-	margin-bottom: 1em;
-	box-shadow: 0 0 6px rgba(0, 0, 0, .2);
-	/*min-height: 150px;*/  /* Prevent flickering/moving of content too much */
-}
-
 .page + .page         { margin-top: 2em; }
 .related-posts .posts { margin-top: 0; }
+
+#codefund                 { background-color: #fff; margin-bottom: 1em; box-shadow: 0 0 6px rgba(0, 0, 0, .2); }    /* CODEFUND */
+#codefund .cf-wrapper     { font: 14px/1.4 Helvetica, Arial, sans-serif; padding: 15px; text-align: center; }
+#codefund a               { display: block; color: #252525; text-decoration: none; }
+#codefund a.cf-powered-by { margin-top: 5px; font-size: 11px; color: #678; }
+#codefund .cf-text        { margin: 0 6px; }
+#codefund .cf-header      { font-size: 12px; color: #678; display: block; }
+#codefund .cf-header:before, #codefund .cf-header:after { content: "-"; margin: 0 .5em; opacity: .5; }
