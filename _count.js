@@ -3,7 +3,7 @@
 
 (function() {
 	window.goatcounter = (window.goatcounter && goatcounter.vars)  // Compatibility
-		? goatcounter.vars : (window.goatcounter || {})
+		? goatcounter.vars : (window.goatcounter || {});
 
 	// Get all data we're going to send off to the counter endpoint.
 	var get_data = function(count_vars) {
@@ -13,7 +13,7 @@
 			t: count_vars.title    || goatcounter.title,
 			e: !!(count_vars.event || goatcounter.event),
 			s: [window.screen.width, window.screen.height, (window.devicePixelRatio || 1)],
-		}
+		};
 
 		var rcb, pcb, tcb  // Save callbacks so they can be applied after getting the defaults.
 		if (typeof(data.r) === 'function') rcb = data.r
@@ -24,7 +24,7 @@
 		if (is_empty(data.t)) data.t = document.title
 		if (is_empty(data.p)) {
 			var loc = location,
-			    c   = document.querySelector('link[rel="canonical"][href]')
+			    c   = document.querySelector('link[rel="canonical"][href]');
 			if (c) {  // May be relative.
 				loc = document.createElement('a')
 				loc.href = c.href
@@ -56,7 +56,7 @@
 			return
 
 		var script   = document.querySelector('script[data-goatcounter]'),
-		    endpoint = window.counter  // Compatibility
+		    endpoint = window.counter;  // Compatibility
 		if (script)
 			endpoint = script.dataset.goatcounter
 
