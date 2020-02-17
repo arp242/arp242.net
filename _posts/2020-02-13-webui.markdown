@@ -11,7 +11,7 @@ toolkit" exactly *because* of its typesetting roots; it provides some features
 that few other GUI environments give us.
 
 [^1]: Are there problems too? Yeah, of course. But everyone else is already
-      complaning about them, so I'll omit them here 😅
+      complaining about them, so I'll omit them here 😅
 
 Some things that work really well that are often hard in native GUI toolkits:
 
