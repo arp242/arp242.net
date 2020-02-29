@@ -44,7 +44,7 @@ I slapped on the AGPL 3.0 because I wanted to start shipping, and not get too
 bogged down in these kind of license details. I recently looked for some
 alternative copyleft licenses. My requirements:
 
-- Have a "strong" copyleft, including the so-called "network protection", which
+- Have a copyleft which includes the so-called "network protection", which
   mandates that people submit changes even if they operate the code as a service
   (rather than sending people binaries).
 
@@ -96,8 +96,8 @@ my purposes):
 ### AGPL
 
 {:class="cmp"}
-- <strong class="g">Good</strong>: Strong copyleft with network protection,
-  requires badactor.com to submit code when running a SaaS.
+- <strong class="g">Good</strong>: Copyleft with network protection, requires
+  badactor.com to submit code when running a SaaS.
 - <strong class="g">Good</strong>: well known.
 - <strong class="b">Bad</strong>: long and dense language. it's 5174 words,
   which is about half an hour of reading time (probably more to properly grok
@@ -153,7 +153,7 @@ my purposes):
 ### European Union Public License 1.2 (EUPL)
 
 {:class="cmp"}
-- <strong class="g">Good</strong>: includes network protection..
+- <strong class="g">Good</strong>: includes network protection.
 - <strong class="g">Good</strong>: is drafted specifically to work with EU law,
   and has official translations to all the EU jurisdictions, which is better
   for me as an EU citizen. The translations also make it easier for non-native
@@ -208,7 +208,7 @@ my purposes):
 - <strong class="g">Good</strong>: has a plain-language introduction, making it
   clear what the requirements are without legalese.
 - <strong class="g">Good</strong>: Makes a distinction between "personal use"
-  and other use. The strong copyleft doesn't apply for personal use.
+  and other use. The copyleft doesn't apply for personal use.
 - <strong class="b">Bad</strong>: Almost as long as AGPL (4957 words), although
   the introduction makes it more palpatable.
 - <strong class="b">Bad</strong>: OSI-approved, but not considered "free" by FSF:
