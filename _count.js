@@ -70,7 +70,7 @@
 			endpoint = script.dataset.goatcounter;
 
 		// Don't track private networks.
-		if (!goatcounter.allow_local && location.hostname.match(/(localhost$|^127\.|^10\.|^172\.16\.|^192\.168\.)/))
+		if (!goatcounter.allow_local && location.hostname.match(/(localhost$|^127\.|^10\.|^172\.(1[6-9]|2[0-9]|3[0-1])\.|^192\.168\.)/))
 			return;
 
 		var data = get_data(count_vars || {});
@@ -90,8 +90,17 @@
 		document.body.appendChild(img);
 	};
 
+	// Get an URL parameter.
+	var get_query = function(name) {
+		var s = location.search.substr(1).split('&');
+		for (var i = 0; i < s.length; i++)
+			if (s[i].toLowerCase().indexOf(name.toLowerCase() + '=') === 0)
+				return s[i].substr(name.length + 1)
+	};
+
 	// Expose public API.
-	window.goatcounter.count = count;
+	window.goatcounter.count     = count;
+	window.goatcounter.get_query = get_query
 
 	if (!goatcounter.no_onload) {
 		if (document.body === null)
