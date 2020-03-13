@@ -100,7 +100,7 @@
 
 	if (!goatcounter.no_onload)
 		if (document.body === null)
-			document.addEventListener('DOMContentLoaded', function() { count() }, false)
+			document.addEventListener('DOMContentLoaded', function() { goatcounter.count() }, false)
 		else
-			count()
+			goatcounter.count()
 })();
