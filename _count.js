@@ -17,31 +17,26 @@
 			s: [window.screen.width, window.screen.height, (window.devicePixelRatio || 1)],
 		}
 
-		// Save callbacks.
-		var rcb, pcb, tcb
+		var rcb, pcb, tcb  // Save callbacks to apply later.
 		if (typeof(data.r) === 'function') rcb = data.r
 		if (typeof(data.t) === 'function') tcb = data.t
 		if (typeof(data.p) === 'function') pcb = data.p
 
-		// Get the values unless explicitly given.
 		if (is_empty(data.r)) data.r = document.referrer
 		if (is_empty(data.t)) data.t = document.title
 		if (is_empty(data.p)) {
 			var loc = location,
-				c = document.querySelector('link[rel="canonical"][href]')
-			// Parse in a tag to a Location object (canonical URL may be relative).
-			if (c) {
+			    c = document.querySelector('link[rel="canonical"][href]')
+			if (c) {  // May be relative.
 				loc = document.createElement('a')
 				loc.href = c.href
 			}
 			data.p = (loc.pathname + loc.search) || '/'
 		}
 
-		// Apply callbacks.
 		if (rcb) data.r = rcb(data.r)
 		if (tcb) data.t = tcb(data.t)
 		if (pcb) data.p = pcb(data.p)
-
 		return data
 	}
 
@@ -58,26 +53,20 @@
 
 	// Count a hit.
 	window.goatcounter.count = function(count_vars) {
-		// Don't track pages fetched with the browser's prefetch algorithm.
-		// See https://github.com/usefathom/fathom/issues/13
 		if ('visibilityState' in document && document.visibilityState === 'prerender')
 			return
-
-		// Find the tag used to load this script.
-		var script = document.querySelector('script[data-goatcounter]'),
-			endpoint = window.counter  // Compatability
-		if (script)
-			endpoint = script.dataset.goatcounter
-
-		// Don't track private networks.
 		if (!goatcounter.allow_local && location.hostname.match(/(localhost$|^127\.|^10\.|^172\.(1[6-9]|2[0-9]|3[0-1])\.|^192\.168\.)/))
 			return
 
+		var script   = document.querySelector('script[data-goatcounter]'),
+		    endpoint = window.counter  // Compatibility
+		if (script)
+			endpoint = script.dataset.goatcounter
+
 		var data = get_data(count_vars || {})
-		if (data.p === null)  // null returned from user callback.
+		if (data.p === null)  // null from user callback.
 			return
 
-		// Add image to send request.
 		var img = document.createElement('img'),
 		    rm  = function() { if (img && img.parentNode) img.parentNode.removeChild(img) }
 		img.src = endpoint + to_params(data)
@@ -85,12 +74,12 @@
 		img.setAttribute('alt', '')
 		img.setAttribute('aria-hidden', 'true')
 
-		setTimeout(rm, 3000) // In case the onload isn't triggered.
+		setTimeout(rm, 3000)  // In case the onload isn't triggered.
 		img.addEventListener('load', rm, false)
 		document.body.appendChild(img)
 	}
 
-	// Get an URL parameter.
+	// Get a query parameter.
 	window.goatcounter.get_query = function(name) {
 		var s = location.search.substr(1).split('&')
 		for (var i = 0; i < s.length; i++)
