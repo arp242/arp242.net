@@ -2,6 +2,11 @@
 layout: post
 title: "The web as a GUI toolkit"
 tags: ['Web']
+updated: 2020-04-02
+hatnote: |
+ Discussions:
+ <a href="https://lobste.rs/s/vrb7qh/web_as_gui_toolkit">Lobsters</a>,
+ <a href="https://news.ycombinator.com/item?id=22319489">Hacker News</a>.
 ---
 
 The web is kinda weird because it was originally created as a typesetting
@@ -34,9 +39,19 @@ Some things that work really well that are often hard in native GUI toolkits:
   this has huge benefits in the form of e.g. [some simple
   bookmarklets](/bookmarklets.html) or your adblocker.
 
+- Unlike desktop applications, everything is sandboxed. If you think persistent
+  tracking and fingerprinting on the web is bad: it's even easier on the
+  desktop. Something like hash(/etc/passwd) should do the trick to generate a
+  persistent unique device ID.
+
+- Very compatible; the [first website][first] last modified somewhere in the
+  early 90s still works in your Firefox or Chrome today.
+
 These are all things that aren't available in your standard GTK/Qt/Cocoa/MFC
 applications unless you specifically program them, which most apps don't. The
 web gives them by default.
+
+[first]: http://info.cern.ch/hypertext/WWW/TheProject.html
 
 ---
 

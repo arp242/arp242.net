@@ -1,3 +1,8 @@
+{% if site.source == '/home/martin/code/arp242.net' %}
+<script>window.goatcounter = {allow_local: true}</script>
+<script data-goatcounter="http://arp242.goatcounter.localhost:8081/count">
+{% else %}
 <script data-goatcounter="https://stats.arp242.net/count">
+{% endif %}
 {% include _count.js %}
 </script>

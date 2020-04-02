@@ -17,10 +17,10 @@ line of trivial jQuery code gets replaced with 10 lines of vanilla JS code!
 
 Much of the JavaScript API – especially the DOM API – offends my sense of
 aesthetics, which is just a nice way of saying that I think it sucks.
-`el.insertAdjacentElement('afterend', other)` undoubtedly works, but
-`$(el).after(other)` is actually palatable. While I have never been a huge fan
-of how the `$()` function looks[^sel], it's massively better than what the DOM
-gives us
+`el.insertAdjacentElement('afterend', other)` undoubtedly works, but I find
+`$(el).after(other)` actually palatable. While I have never been a huge fan of
+how the `$()` function looks[^sel], it's massively better than what the DOM
+gives us.
 
 Quick: how do you get an element's sibling? Is it `nextSibling` or
 `nextElementSibling`? What's the difference? Which browsers support which? While
@@ -29,7 +29,7 @@ you're busy trying to remember and checking MDN just to be sure I'll just use
 
 Many common operations in the standard JavaScript APIs are awkward; I could
 include a list here, but that *You might not need jQuery* (YMNJQ) page actually
-does a pretty good job at it
+does a pretty good job at it.
 
 You will *still* need helper functions for various common tasks. Again, that
 *YMNJQ* page lists a number of them. Using jQuery is a standard way to include
@@ -48,11 +48,11 @@ uncommon stuff 23K, and a build which uses querySelector instead of SizzleJS is
 17K. Both the original 30K and optimized 17K seem pretty acceptable to me for
 many purposes.
 
-You can look at [Bootstrap removing jQuery][bootstrap] for an example of how
-much effort it can be to use vanilla JS: they wrote their own helpers, had to
-drop IE support as it was too hard to add, made the API incompatible (*"we broke
-everything"*), and spent a year and a half working on it. If I look at the end
-result, I can't really say it's that much better.
+[Bootstrap removing jQuery][bootstrap] is a good example of how much effort it
+can be to use vanilla JS: they wrote their own helpers, had to drop IE support
+as it was too hard to add, made the API incompatible (*"we broke everything"*),
+and spent a year and a half working on it. If I look at the end result, I can't
+really say it's that much better.
 
 I understand why they did it; people want to use Bootstrap with Vue.js and
 whatnot and using both Vue.js and jQuery is a bit silly. I'm very much in favour
@@ -63,9 +63,9 @@ over a megabyte of JavaScript for a site like Medium or the New York Times then
 web hipsters get defensive (*"what, are you stuck on a 56k line or
 something?!"*), but the 17K of jQuery is an insufferable burden?
 
-There are some good reasons to *not* use jQuery: if you're writing code that you
-want to be re-used by others, or if you're writing just a small function. But
-bending over backwards to avoid jQuery? Yeh nah. Just use jQuery!
+There are some good reasons to *not* use jQuery: if you're writing generic code
+that you want to be re-used by others, or if you're writing just a small
+function. But bending over backwards to avoid jQuery? Yeh nah. Just use jQuery!
 *"jQuery all the things"* was probably not a good idea, but neither is
 *"unjQuery all the things"*.
 
