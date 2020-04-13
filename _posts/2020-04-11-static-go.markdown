@@ -6,7 +6,7 @@ tags: ['Go']
 
 Go creates static binaries by default unless you use cgo to call C code, in
 which case it will create a dynamically linked library. Turns out that using cgo
-is more common that many people assume as the `os/user` and `net` packages use
+is more common than many people assume as the `os/user` and `net` packages use
 cgo by default, so importing either (directly or indirectly) will result in a
 non-static binary.
 
