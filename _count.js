@@ -15,6 +15,7 @@
 			t: (vars.title    === undefined ? goatcounter.title    : vars.title),
 			e: !!(vars.event || goatcounter.event),
 			s: [window.screen.width, window.screen.height, (window.devicePixelRatio || 1)],
+			b: is_bot(),
 		}
 
 		var rcb, pcb, tcb  // Save callbacks to apply later.
@@ -43,6 +44,20 @@
 	// Check if a value is "empty" for the purpose of get_data().
 	var is_empty = function(v) { return v === null || v === undefined || typeof(v) === 'function' }
 
+	// See if this loads like a headless browser, which is usually a bot.
+	var is_bot = function() {
+		var w = window
+		if (w.callPhantom || w._phantom || w.phantom)
+			return 50
+		if (w.__nightmare)
+			return 51
+		if (navigator.webdriver)
+			return 52
+		if (document.__selenium_unwrapped || document.__webdriver_evaluate || document.__driver_evaluate)
+			return 53
+		return 0
+	}
+
 	// Object to urlencoded string, starting with a ?.
 	var to_params = function(obj) {
 		var p = []
@@ -56,11 +71,13 @@
 	window.goatcounter.count = function(vars) {
 		if ('visibilityState' in document && document.visibilityState === 'prerender')
 			return
+		if (location !== parent.location)  // Frame
+			return
 		if (!goatcounter.allow_local && location.hostname.match(/(localhost$|^127\.|^10\.|^172\.(1[6-9]|2[0-9]|3[0-1])\.|^192\.168\.)/))
 			return
 
 		var script   = document.querySelector('script[data-goatcounter]'),
-		    endpoint = window.counter  // Compatibility
+		    endpoint = (window.goatcounter.endpoint || window.counter)  // counter is for compat; don't use.
 		if (script)
 			endpoint = script.dataset.goatcounter
 
@@ -96,7 +113,7 @@
 			var send = function() {
 				goatcounter.count({
 					event:    true,
-					path:     (elem.dataset.goatcounterClick || elem.name || elem.id || elem.href || ''),
+					path:     (elem.dataset.goatcounterClick || elem.name || elem.id || ''),
 					title:    (elem.dataset.goatcounterTitle || elem.title || (elem.innerHTML || '').substr(0, 200) || ''),
 					referral: (elem.dataset.goatcounterReferral || ''),
 				})
@@ -106,11 +123,16 @@
 		})
 	}
 
-	if (!goatcounter.no_events)
-		goatcounter.bind_events()
-	if (!goatcounter.no_onload)
-		if (document.body === null)
-			document.addEventListener('DOMContentLoaded', function() { goatcounter.count() }, false)
-		else
+	if (!goatcounter.no_onload) {
+		var go = function() {
 			goatcounter.count()
+			if (!goatcounter.no_events)
+				goatcounter.bind_events()
+		}
+
+		if (document.body === null)
+			document.addEventListener('DOMContentLoaded', function() { go() }, false)
+		else
+			go()
+	}
 })();
