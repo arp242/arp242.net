@@ -6,15 +6,17 @@ title: "CV Martin Tournoij"
 Martin Tournoij
 ===============
 
-<!--I am currently (February 2019) looking for a new challenging position to help
-build a neat project. -->
+- <a data-goatcounter-click="click-cv-pdf"  href="CV-MartinTournoij.pdf">PDF</a>
+  (A4 size); recommended.
+- <a data-goatcounter-click="click-cv-html" href="CV-MartinTournoij.html">HTML source</a>
+  (not extensively tested on different platforms/browsers, primarily intended to
+  render PDF).
+
+---
+
 I have experience with a wide variety of tools and languages. My favourites are
 **Go** and **Python**. I have also written programs in PHP, Ruby, Tcl,
 JavaScript, C, Perl, Scheme, Haskell, and Lua.
-
-<!-- I am a Dutch citizen, currently living in New Zealand and working remote.
-I'm willing to consider relocating to more or less any location for the right
-position. -->
 
 ---
 
@@ -30,12 +32,3 @@ the best for the product and company and take ownership / responsibility for
 aspects where I think it will benefit the product.
 I place a high value on emotional intelligence, positivity, and empathic
 communication.
-
----
-
-CV
---
-
-- [PDF](CV-MartinTournoij.pdf) (A4 size); recommended.
-- [HTML source](CV-MartinTournoij.html) (not extensively tested on different
-  platforms/browsers, primarily intended to render PDF).

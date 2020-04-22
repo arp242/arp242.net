@@ -6,7 +6,12 @@ title: arp242.net
 <div class="center-flex">
 	<article id="home">
 		<div class="page">
-			<h1 id="writings">Writings</h1>
+			<h1 id="writings">Writings
+				<sup style="text-align: top">
+					By: <a href="/tags.html">tag</a>, <a href="/popular.html">popularity</a>
+				</sup>
+			</h1>
+
 			<ul class="posts">{% for p in site.posts %}
 				{% unless p.archive %}<li{% if p.standout %} class="s"{% endif %}><span>{{ p.date | date_to_string_space }}</span> <a href="{{ p.url }}">{{ p.title }}</a></li>{% endunless %}{% endfor %}
 			</ul>
@@ -18,9 +23,10 @@ title: arp242.net
 			<h1 id="code">Code projects</h1>
 			<p>See <a href="https://github.com/arp242/">GitHub</a> for a full list.</p>
 			<ul class="code">
-				<li><a href="https://github.com/zgoat/goatcounter">GoatCounter</a>           – Simple web statistics. No tracking of personal data.</li>
-				<li><a href="https://github.com/arp242/uni/">uni</a>                         – Query the Unicode database from the commandline.</li>
+				<li><a href="https://github.com/arp242/border/">border</a>                   – Simple commandline tool to add a border around PNG images </li>
+				<li><a href="https://github.com/arp242/cantuse/">cantuse</a>                 – List browsers in which a feature *won't* work.</li>
 				<li><a href="https://github.com/arp242/find-cursor/">find-cursor</a>         – Highlight the cursor position.</li>
+				<li><a href="https://github.com/zgoat/goatcounter">GoatCounter</a>           – Web analytics platform.</li>
 				<li><a href="https://github.com/arp242/hello-css/">hello-css</a>             – A CSS template focused on readability.</li>
 				<li><a href="https://github.com/arp242/imgzoom/">imgzoom</a>                 – Simple JavaScript image zoomer.</li>
 				<li><a href="https://github.com/arp242/info/">info</a>                       – Texinfo made palatable.</li>
@@ -28,24 +34,29 @@ title: arp242.net
 				<li><a href="https://github.com/arp242/readon.js/">readon.js</a>             – Continue reading a web page from where you left last time.</li>
 				<li><a href="https://github.com/arp242/sanitize_files/">sanitize_files</a>   – Basic cleanup of your code.</li>
 				<li><a href="https://github.com/arp242/singlepage/">singlepage</a>           – Bundle external assets in a HTML file.</li>
+				<li><a href="https://github.com/arp242/uni/">uni</a>                         – Query the Unicode database from the commandline.</li>
+				<li><a href="https://github.com/zgoat/zsrc">zsrv</a>                        –  Static file server which packs all data in the binary.</li>
 			</ul>
 
 			<h2 id="go">Go libraries and tools</h2>
 			<ul class="code">
-				<li><a href="https://github.com/monoculum/formam">formam</a>          – Scan HTML forms in to a struct.</li>
-				<li><a href="https://github.com/arp242/goimport">goimport</a>         – Add, remove, or replace imports in Go files.</li>
-				<li><a href="https://github.com/teamwork/guru">guru</a>               – Go errors with a Guru Meditation Number.</li>
+				<li><a href="https://github.com/arp242/gogo-release">gogo-release</a> – Build cross-platform binaries.<li>
+				<li><a href="https://github.com/arp242/goimport">goimport</a>         – Add, remove, or replace imports.</li>
 				<li><a href="https://github.com/arp242/hubhub">hubhub</a>             – Utility functions for working with the GitHub API.</li>
+				<li><a href="https://github.com/arp242/sconfig">sconfig</a>           – A simple and functional configuration file parser.</li>
+				<li><a href="https://github.com/monoculum/formam">formam</a>          – Scan HTML forms in to a struct.</li>
+				<li><a href="https://github.com/teamwork/guru">guru</a>               – Go errors with a Guru Meditation Number.</li>
 				<li><a href="https://github.com/teamwork/mailaddress">mailaddress</a> – Mail address parsing library for Go.</li>
-				<li><a href="https://github.com/arp242/sconfig">sconfig</a>           – A simple and functional configuration file parser for Go.</li>
-				<li><a href="https://github.com/teamwork/reload">reload</a>           – Lightweight automatic application reloading for Go.</li>
+				<li><a href="https://github.com/teamwork/reload">reload</a>           – Lightweight automatic application reloading.</li>
 				<li><a href="https://github.com/teamwork/spamc">spamc</a>             – Go client for SpamAssassin.</li>
+				<li><a href="https://github.com/zgoat/isbot">isbot</a>                – Detect HTTP bots.</li>
 				<li><a href="https://github.com/zgoat/utils">utils</a>                – Collection of often used extensions to Go’s standard library.</li>
 				<li><a href="https://github.com/zgoat/zhttp">zhttp</a>                – Martin’s HTTP package.</li>
 				<li><a href="https://github.com/zgoat/zlog">zlog</a>                  – Logging library.</li>
-				<li><a href="https://github.com/zgoat/zpack">zpack</a>                – Pack static data in Go binaries.</li>
+				<li><a href="https://github.com/zgoat/zpack">zpack</a>                – Pack static data in binaries.</li>
 				<li><a href="https://github.com/zgoat/zstripe">zstripe</a>            – Utility functions for working with the Stripe API.</li>
-				<li><a href="https://github.com/zgoat/zvalidate">zvalidate</a>        – Simple validation.</li>
+				<li><a href="https://github.com/zgoat/ztest">ztest</a>                – Testing helpers.</li>
+				<li><a href="https://github.com/zgoat/zvalidate">zvalidate</a>        – Static validation that returns parsed values .</li>
 			</ul>
 
 			<h2 id="vim">Vim stuff</h2>
@@ -67,9 +78,10 @@ title: arp242.net
 				<li><a href="https://github.com/arp242/packman.vim/">packman.vim</a>               – A simple Vim plugin/package manager.</li>
 				<li><a href="https://github.com/arp242/startscreen.vim/">startscreen.vim</a>       – Customize Vim’s start screen.</li>
 				<li><a href="https://github.com/arp242/switchy.vim/">switchy.vim</a>               – Switch to related files.</li>
-				<li><a href="https://github.com/arp242/testing.vim/">testing.vim</a>               – Small testing framework for Vim.</li>
+				<li><a href="https://github.com/arp242/testing.vim/">testing.vim</a>               – Testing framework for Vim.</li>
 				<li><a href="https://github.com/arp242/undofile_warn.vim/">undofile_warn.vim</a>   – Warn when using the undofile.</li>
 				<li><a href="https://github.com/arp242/xdg_open.vim/">xdg_open.vim</a>             – Run xdg-open from Vim; re-implements netrw&#39;s gx.</li>
+				<li><a href="https://github.com/arp242/zev.vim/">zev.vim</a>                        – Easily apply predefined substitute patterns </li>
 			</ul>
 
 			<h2>Other</h2>

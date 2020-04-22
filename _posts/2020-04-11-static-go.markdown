@@ -7,8 +7,8 @@ tags: ['Go']
 Go creates static binaries by default unless you use cgo to call C code, in
 which case it will create a dynamically linked library. Turns out that using cgo
 is more common than many people assume as the `os/user` and `net` packages use
-cgo by default, so importing either (directly or indirectly) will result in a
-non-static binary.
+cgo, so importing either (directly or indirectly) will result in a dynamic
+binary.
 
 The easiest way to check if your program is statically compiled is to run `file`
 on it:
@@ -54,14 +54,13 @@ You can verify that a binary runs without external dependencies with `chroot`
     chroot: failed to run command './test.dynamic': No such file or directory
 
 The "No such file or directory" error is a bit obscure, but it means that the
-dynamic linker (`ld-linux`) wasn't found. Unfortunately this is the exact same
+dynamic linker (`ld-linux`) isn't found. Unfortunately this is the exact same
 message as when the `test.dynamic` itself isn't found, so make sure you didn't
 typo it. I'm not sure if there's any way to get Linux to emit a more useful
-message for this.[^1]
+message for this.[^h]
 
-[^1]: It's a common source of confusion with a `#!` hashbang set to a program
-      that the user doesn't have installed, or has installed at a different
-      location.
+[^h]: It's a common source of confusion when a hashbang (`#!/bin/prog`) is set
+      to a program that doesn't exist at that location.
 
 ---
 
@@ -70,20 +69,20 @@ There are two packages in the standard library that use cgo:
 - `os/user` contains cgo code to use the standard C library to map user and
   group ids to user and group names. There is also a Go implementation which
   parses `/etc/passwd` and `/etc/group`. The advantage of using the C library is
-  that the C library can also get user information from LDAP or NIS. If you
-  don't use that – most people don't – then there is no real difference.
+  that it can also get user information from LDAP or NIS. If you don't use that
+  – most people don't – then there is no real difference.
 
-  On Windows, there is only a Go implementation, and this doesn't apply.
+  On Windows there is only a Go implementation, and this doesn't apply.
 
 - `net` can use the C standard library to resolve domain names, but by default
   it uses the Go client. The C library has a few more features (e.g. you can
   configure `getaddrinfo()` with `/etc/gai.conf`) and some platforms don't have
-  a `resolv.conf` (e.g. Android), but for most uses the Go library should
-  work well.
+  a `resolv.conf` (e.g. Android), but for most cases the Go library should work
+  well.
 
-Your binary will no longer be statically linked if you use one of those two
-libraries, by importing them directly or having one of your dependencies import
-them. Especially the `net` one is quite common.
+Your binary will no longer be statically linked if your program imports one of
+those two packages, either directly through a dependency. Especially the `net`
+one is quite common.
 
 You can use the `osusergo` and `netgo` build tags to skip building the cgo
 parts:
@@ -106,7 +105,11 @@ statically link with `-extldflags`:
     $ go build -ldflags="-extldflags=-static"
 
 The nested `-`s look a bit confusing and are easy to forget, so be sure to pay
-attention (or maybe that's just me... 🤦‍♂️).
+attention (or maybe that's just me... 🤦‍♂️).[^f]
+
+[^f]: The value of `-ldflags` is passed to `go tool link`, which passes the
+      value of `-extldflags` to the C compiler.
+      There's [an issue to make this easier](https://github.com/golang/go/issues/26492).
 
 Some packages – such as SQLite – may produce warnings:
 
@@ -118,12 +121,12 @@ Some packages – such as SQLite – may produce warnings:
     for linking
 
 `dlopen()` loads shared libraries at runtime; looking at the SQLite source code
-it's only used only for [dynamically loading extensions][loadext]; this is not a
-commonly used feature, so this warning can be safely ignored for most programs
+it's only used only for [dynamically loading extensions][loadext]. This is not a
+commonly used feature so this warning can be safely ignored for most programs
 (you can verify with the chroot mentioned earlier). 
 
-The go-sqlite3 package does [provide a build flag to disable this][goext], if
-you want to make the warnings go away and ensure this feature isn't used:
+The go-sqlite3 package [provides a build flag to disable this][goext], if you
+want to make the warnings go away and ensure this feature isn't used:
 
     $ go build -ldflags="-extldflags=-static" -tags sqlite_omit_load_extension
 
@@ -132,8 +135,8 @@ The `os/user` and `net` packages will give you a similar warnings about the
 configurations. You can use the tags mentioned earlier to make sure the Go code
 is used.
 
-For other packages/functions you may use, you'll have to check if the warnings
-are significant or not in the package's source code.
+Other cgo packages may emit similar warnings; you'll have to check the
+documentation or source code to see if they're significant or not.
 
 [loadext]: https://www.sqlite.org/loadext.html
 [goext]: https://github.com/mattn/go-sqlite3/#feature--extension-list
@@ -142,7 +145,7 @@ are significant or not in the package's source code.
 
 One of Go's nicer features is that you can cross-compile to any
 system/architecture combination from any system by just setting setting `GOOS`
-and `GOARCH`. I can build Windows binaries on OpenBSD just with `GOOS=windows
+and `GOARCH`. I can build Windows binaries on OpenBSD with `GOOS=windows
 GOARCH=amd64 go build`. Neat!
 
 With cgo cross-compiling gets a bit trickier as cross-compiling C code is
@@ -162,7 +165,7 @@ an overview.
 
 I'm very 😎 so I use Void Linux, and for extra 😎 I want to use musl libc, so
 that's what I'll use in this example to cross-compile to ARM and ARM64; let me
-know if you have the commands for other systems and I'll add them as well.[^2]
+know if you have the commands for other systems and I'll add them as well.[^p]
 
     # Replace musl with gnu if you want to use GNU libc.
     $ xbps-install cross-aarch64-linux-musl cross-armv7l-linux-musleabihf
@@ -185,16 +188,16 @@ date()` from a `:memory:` SQLite database:
 
 Huzzah!
 
-[^2]: Figuring them out just from the package index is a bit too much
+[^p]: Figuring them out just from the package index is a bit too much
       work/hassle, and also untested so it may errors or silly typos.
 
 ---
 
 Finally, to make releasing binaries a bit easier I wrote a small script:
-[gogo-release][gogo]. It's really just as glorified `for` loop (a lot of
-software is, really) to make the above a bit easier. For non-cgo projects the
-defaults settings should work without problems. This is what I use to build
-GoatCounter:
+[gogo-release][gogo]. It's just a glorified `for` loop (a lot of software is,
+really) to make the above a bit easier. For non-cgo projects the defaults
+settings should work without problems. This is what I use to build GoatCounter
+(which includes SQLite):
 
     matrix="
     linux amd64
