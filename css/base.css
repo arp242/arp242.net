@@ -89,3 +89,11 @@ input              { width: 12em; }
 #codefund .cf-text        { margin: 0 6px; }
 #codefund .cf-header      { font-size: 12px; color: #678; display: block; }
 #codefund .cf-header:before, #codefund .cf-header:after { content: "-"; margin: 0 .5em; opacity: .5; }
+
+/* Prevent long <pre> from breaking layout in between mobile and desktop. */
+@media (max-width: 68rem) {
+	pre { white-space: pre-wrap; }
+}
+@media (max-width: 46em) {
+	pre { white-space: pre; }
+}
