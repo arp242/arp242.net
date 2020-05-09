@@ -16,6 +16,7 @@
 			e: !!(vars.event || goatcounter.event),
 			s: [window.screen.width, window.screen.height, (window.devicePixelRatio || 1)],
 			b: is_bot(),
+			q: location.search,
 		}
 
 		var rcb, pcb, tcb  // Save callbacks to apply later.
@@ -44,17 +45,19 @@
 	// Check if a value is "empty" for the purpose of get_data().
 	var is_empty = function(v) { return v === null || v === undefined || typeof(v) === 'function' }
 
-	// See if this loads like a headless browser, which is usually a bot.
+	// See if this looks like a bot; there is some additional filtering on the
+	// backend, but these properties can't be fetched from there.
 	var is_bot = function() {
-		var w = window
+		// Headless browsers are probably a bot.
+		var w = window, d = document
 		if (w.callPhantom || w._phantom || w.phantom)
-			return 50
+			return 150
 		if (w.__nightmare)
-			return 51
+			return 151
+		if (d.__selenium_unwrapped || d.__webdriver_evaluate || d.__driver_evaluate)
+			return 152
 		if (navigator.webdriver)
-			return 52
-		if (document.__selenium_unwrapped || document.__webdriver_evaluate || document.__driver_evaluate)
-			return 53
+			return 153
 		return 0
 	}
 
@@ -109,17 +112,24 @@
 
 	// Track click events.
 	window.goatcounter.bind_events = function() {
-		document.querySelectorAll("*[data-goatcounter-click]").forEach(function(elem) {
-			var send = function() {
+		var send = function(elem) {
+			return function() {
 				goatcounter.count({
 					event:    true,
 					path:     (elem.dataset.goatcounterClick || elem.name || elem.id || ''),
 					title:    (elem.dataset.goatcounterTitle || elem.title || (elem.innerHTML || '').substr(0, 200) || ''),
-					referral: (elem.dataset.goatcounterReferral || ''),
+					referrer: (elem.dataset.goatcounterReferrer || elem.dataset.goatcounterReferral || ''),
 				})
 			}
-			elem.addEventListener('click', send, false)
-			elem.addEventListener('auxclick', send, false)  // Middle click.
+		}
+
+		document.querySelectorAll("*[data-goatcounter-click]").forEach(function(elem) {
+			if (elem.dataset.goatcounterBound)
+				return
+			var f = send(elem)
+			elem.addEventListener('click', f, false)
+			elem.addEventListener('auxclick', f, false)  // Middle click.
+			elem.dataset.goatcounterBound = 'true'
 		})
 	}
 
