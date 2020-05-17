@@ -2,6 +2,9 @@
 layout: post
 title: "Experiences with email-based login"
 tags: ['GoatCounter', 'Email', 'UX']
+hatnote: |
+ Discussions:
+ <a href="https://lobste.rs/s/kjm4nu/experiences_with_email_based_login">Lobsters</a>.
 ---
 
 GoatCounter 1.2 (due to be released later today or tomorrow) will switch from
@@ -32,11 +35,15 @@ Some problems I encountered:
 - If you lose access to your email, you lose access to your account.
 
   One issue I had is people misspelling their email during signup, so they were
-  immediately locked out of their account. It's pretty hard to test if an email
-  is deliverable without sending an actual email (and even then you don't know,
-  as the receiving server may silently drop it or classify it as spam).
+  immediately locked out of their account. This is an issue especially on
+  GoatCouner since people choose a domain code (`mycode.goatcounter.com`) during
+  signup, and this code is now "taken" if they choose to re-register.
 
-  I got quite a bit of "undeliverable email" returns from the "please set a
+  It's pretty hard to test if an email is deliverable without sending an actual
+  email (and even then you don't know, as the receiving server may silently drop
+  it or classify it as spam).
+
+  I got quite a few "undeliverable email" returns from the "please set a
   password"-announcement I sent this morning, and these people will never be
   able to login unless they email me and ask me to change their email manually.
   I presume these are inactive accounts, but still...
@@ -63,13 +70,17 @@ Some problems I encountered:
   when using `-dev` so I didn't have to copy it from the GoatCounter logs, but
   meh.
 
-- The signin links don't always work: they're valid only once and I *think* some
-  "preview" or "prefetch" logic accessed the URL and invalidated it, but I never
-  quite got to the bottom of it in spite of quite a bit of effort (I never
+- The signin links doesn't always work: they're valid only once and I *think*
+  some "preview" or "prefetch" logic accessed the URL and invalidated it, but I
+  never quite got to the bottom of it in spite of quite a bit of effort (I never
   experienced it myself, just got user reports).
 
   This is fixable by allowing the link to be re-used within 15 minutes or so,
   but this was really the straw that made me implement the password auth.
+
+In some other use cases it might work better, but for GoatCounter it didn't
+really work very well (the Lobsters thread linked above has some people report
+different experiences).
 
 ---
 
