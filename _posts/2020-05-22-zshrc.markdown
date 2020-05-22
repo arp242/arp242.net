@@ -179,7 +179,7 @@ it to make piping stdout and stderr to less or Vim a bit easier:
 
 And then use:
 
-    `alias -g VV=' |& vim +S -)
+    alias -g VV=' |& vim +S -'
 
 Use `:S` from Vim to make it a regular buffer again.
 
