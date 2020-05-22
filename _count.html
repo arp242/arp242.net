@@ -1,5 +1,10 @@
+<!-- TODO: I'd like to replace this with something more light-weight when I have the time, but for
+	now this allows me to catch any errors in the goatcounter script.
+-->
+<script src="https://browser.sentry-cdn.com/5.15.5/bundle.min.js" integrity="sha384-wF7Jc4ZlWVxe/L8Ji3hOIBeTgo/HwFuaeEfjGmS3EXAG7Y+7Kjjr91gJpJtr+PAT" crossorigin="anonymous"></script>
+<script>Sentry.init({dsn: 'https://d60897c3d9704ccbbb227de6c3f154cb@o173209.ingest.sentry.io/5250263'});</script>
+
 {% if site.source == '/home/martin/code/arp242.net' %}
-<script>window.goatcounter = {allow_local: true}</script>
 <script data-goatcounter="http://arp242.goatcounter.localhost:8081/count">
 {% else %}
 <script data-goatcounter="https://stats.arp242.net/count">
