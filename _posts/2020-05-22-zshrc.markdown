@@ -2,6 +2,7 @@
 layout: post
 title: "Some zshrc tricks"
 tags: ['Unix']
+hatnote: |
  Discussions:
  <a href="https://lobste.rs/s/tgmzke/some_zshrc_tricks">Lobsters</a>.
 ---
