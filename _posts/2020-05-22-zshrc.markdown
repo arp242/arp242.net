@@ -2,6 +2,8 @@
 layout: post
 title: "Some zshrc tricks"
 tags: ['Unix']
+ Discussions:
+ <a href="https://lobste.rs/s/tgmzke/some_zshrc_tricks">Lobsters</a>.
 ---
 
 Some useful "tricks" from my `~/.zshrc`; [full version here][zshrc]. Not all of
@@ -71,14 +73,14 @@ checks if the path exists so it's easier to write a portable zshrc:
 
     _prepath() {
         for dir in "$@"; do
-            [[ -L "$dir" ]] && dir=$(/usr/bin/readlink -f "$dir")
+            dir=${dir:A}
             [[ ! -d "$dir" ]] && return
             path=("$dir" $path[@])
         done
     }
     _postpath() {
         for dir in "$@"; do
-            [[ -L "$dir" ]] && dir=$(/usr/bin/readlink -f "$dir")
+            dir=${dir:A}
             [[ ! -d "$dir" ]] && return
             path=($path[@] "$dir")
         done
@@ -103,9 +105,10 @@ checks if the path exists so it's easier to write a portable zshrc:
 Easier alias
 ------------
 
-Adding a little `_exist` helper is similarly useful for a portable zshrc:
+Adding a little `_exist` helper to check if a binary exists is similarly useful
+for a portable zshrc:
 
-    _exists() { hash $1 2>/dev/null }
+    _exists() { (( $+commands[$1] )) }
 
     _exists vim      && export EDITOR=vim
     _exists less     && export PAGER=less
