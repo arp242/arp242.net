@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Some zshrc tricks"
-tags: ['Unix', 'CLI']
+tags: ['Unix']
 ---
 
 Some useful "tricks" from my `~/.zshrc`; ([full version here][zshrc]). Not all
