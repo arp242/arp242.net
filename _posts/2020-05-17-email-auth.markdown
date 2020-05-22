@@ -36,8 +36,8 @@ Some problems I encountered:
 
   One issue I had is people misspelling their email during signup, so they were
   immediately locked out of their account. This is an issue especially on
-  GoatCouner since people choose a domain code (`mycode.goatcounter.com`) during
-  signup, and this code is now "taken" if they choose to re-register.
+  GoatCounter since people choose a domain code (`mycode.goatcounter.com`)
+  during signup, and this code is now "taken" if they choose to re-register.
 
   It's pretty hard to test if an email is deliverable without sending an actual
   email (and even then you don't know, as the receiving server may silently drop

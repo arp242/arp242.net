@@ -4,13 +4,13 @@ title: "Some zshrc tricks"
 tags: ['Unix']
 ---
 
-Some useful "tricks" from my `~/.zshrc`; ([full version here][zshrc]). Not all
-of this is "copy paste ready", but it should give you some inspiration to build
+Some useful "tricks" from my `~/.zshrc`; [full version here][zshrc]. Not all of
+this is "copy/paste ready" but it should give you some inspiration to build
 your own stuff :-)
 
 I found the [User's Guide to ZSH][guide] very helpful when learning about zsh.
 It hasn't been updated in a while and isn't even finished, but found it's quite
-well-written and useful.
+well-written and useful. Go read it!
 
 [zshrc]: https://github.com/arp242/dotfiles/blob/master/zsh/zshrc
 [guide]: http://zsh.sourceforge.net/Guide/
@@ -29,6 +29,9 @@ Define directory shortcuts with `hash -d` so you can use `cd ~x` and `vim
     hash -d go=/usr/lib/go/src
     hash -d c=$HOME/code
     hash -d gc=$HOME/code/goatcounter
+
+So if I have an idea for a new post here I just type `vi ~d/$(td)-idea.markdown`
+and presto (td is `alias td='echo $(date +%Y-%m-%d)'`).
 
 If you put `%~` in your `PROMPT` then the short version will show up there, too:
 
@@ -60,7 +63,7 @@ Easier PATH
 -----------
 
 Many systems link `/bin` to `/usr/bin`, and storing all of those in PATH isn't
-too useful. Some helper functiosn to prepend or append to `PATH` which also
+too useful. Some helper functions to prepend or append to `PATH` which also
 checks if the path exists so it's easier to write a portable zshrc:
 
     typeset -U path  # No duplicates
@@ -135,6 +138,10 @@ Vim:
     $ age pattern
     [open in Vim]
 
+This will also search for the pattern with `/pattern` in Vim and move to the
+first match for every tab (yes, I use Vim tabs, in spite of Vim-purist
+philosophy that they're bad)
+
 Caveat: the Vim regexp syntax isn't quite the same as extended POSIX or PCRE, so
 the pattern doesn't always work as expect in Vim. It works most of the time
 though.
@@ -161,6 +168,20 @@ it to make piping stdout and stderr to less or Vim a bit easier:
 
     $ ls LL
     $ go test -v VV
+
+*Bonus Vim tip*: convert a buffer to "scratch" with:
+
+    " Convert buffer to and from scratch.
+    command S
+        \  if &buftype is# 'nofile' | setl swapfile buftype= bufhidden=
+        \| else                     | setl noswapfile buftype=nofile bufhidden=hide | endif
+        \| echo printf('swapfile=%s buftype=%s bufhidden=%s', &swapfile, &buftype, &bufhidden)
+
+And then use:
+
+    `alias -g VV=' |& vim +S -)
+
+Use `:S` from Vim to make it a regular buffer again.
 
 Playground environment
 ----------------------
