@@ -132,6 +132,9 @@
 
 	// Track click events.
 	window.goatcounter.bind_events = function() {
+		if (!document.querySelectorAll)  // Just in case someone uses an ancient browser.
+			return
+
 		var send = function(elem) {
 			return function() {
 				goatcounter.count({

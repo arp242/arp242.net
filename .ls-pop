@@ -2,7 +2,7 @@
 
 psql goatcounter --no-align -Etqc \
 	"select \
-		count(path) as count, \
+		count(first_visit) as count, \
 		path, \
 		(select title from hit_stats where site=1 and event=0 and hit_stats.path=hits.path order by day desc limit 1) \
 	from hits \
