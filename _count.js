@@ -143,7 +143,7 @@
 			}
 		}
 
-		document.querySelectorAll("*[data-goatcounter-click]").forEach(function(elem) {
+		Array.prototype.slice.call(document.querySelectorAll("*[data-goatcounter-click]")).forEach(function(elem) {
 			if (elem.dataset.goatcounterBound)
 				return
 			var f = send(elem)
