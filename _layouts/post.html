@@ -34,7 +34,7 @@ layout: default
 	// TODO: probably want to do this in Jekyll at some point; for now this is easier.
 	(function() {
 		var go = function() {
-			document.querySelectorAll('.footnote').forEach(function(fn) {
+			Array.prototype.slice.call(document.querySelectorAll('.footnote')).forEach(function(fn) {
 				fn.addEventListener('mouseenter', function(e) {
 					if (e.target.title !== '')
 						return;
