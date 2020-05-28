@@ -129,11 +129,20 @@ Edit ag and grep results
 "ag edit" and "grep edit" to quickly open stuff found with `ag` or `grep` in
 Vim:
 
+    # "ag edit" and "grep edit".
     age() {
-        vim +'/\v'"$1" +':silent tabdo :1 | normal! n' +':tabfirst' -p $(ag "$@" | cut -d: -f1 | sort -u)
+        vim \
+            +'/\v'"${1/\//\\/}" \
+            +':silent tabdo :1 | normal! n' \
+            +':tabfirst' \
+            -p $(ag "$@" | cut -d: -f1 | sort -u)
     }
     grepe() {
-        vim +'/\v'"$1" +':silent tabdo :1 | normal! n' +':tabfirst' -p $(grep "$@" | cut -d: -f1 | sort -u)
+        vim \
+            +'/\v'"${1/\//\\/}" \
+            +':silent tabdo :1 | normal! n' \
+            +':tabfirst' \
+            -p $(grep "$@" | cut -d: -f1 | sort -u)
     }
 
     $ ag pattern

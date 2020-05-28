@@ -67,15 +67,15 @@ sure if it is for Hello CSS.
   lot of effort to just run a simple script maybe once or twice, especially if
   you're just looking to make a basic website.
 
-  In experience it's hard getting non-programmers – and even programmers who are not
-  familiar with these tools – to install stuff using npm, gem, pip, and such.
-  Joe Armstrong of Erlang fame [described his experience installing a "simple"
-  JS program](https://youtu.be/lKXe3HUG2l4?t=156). He gave up. I'd like Hello
-  CSS to be as usable as possible even for casual hobbyists.
+  In mu experience it's hard getting non-programmers – and even programmers who
+  are not familiar with these tools – to install stuff using npm, gem, pip, and
+  such. Joe Armstrong of Erlang fame [described his experience installing a
+  "simple" JS program](https://youtu.be/lKXe3HUG2l4?t=156). He gave up. I'd like
+  Hello CSS to be as usable as possible even for casual hobbyists.
 
   There are some GUI frontends (like [Koala](http://koala-app.com/)), but having
   people download 82MB and familiarize themselves with a UI just to run a search
-  and replace doesn't strike me as am especially great trade-off.
+  and replace doesn't strike me as an especially great trade-off.
 
   I'm not even sure what the state of macOS systems is in this regard, as I am
   not hip enough to own an Apple system.
@@ -84,15 +84,15 @@ sure if it is for Hello CSS.
   It will make using, debugging, and understanding everything harder, especially
   for beginners or people who are not heavily invested in the CSS ecosystem such
   as a C programmer, a scientist with basic programming skills, or just the
-  casual hobbies who wants to make a website about his stamp collection. Not
-  everyone is a frontend dev.
+  casual hobbyists who wants to make a website about their stamp collection. Not
+  everyone is a frontend dev (or indeed, a dev at all).
 
   For example [using `calc()` in less is
   tricky](https://stackoverflow.com/q/17904088/660921).
 
 The concepts "simple" and "complex" are relative: spending an hour to save a
-week's work will (probably) make things simpler, but spending the same hour to
-save 15 minutes of work will (probably) make things more complex.
+week's work will probably make things simpler, but spending the same hour to
+save 15 minutes of work will probably make things more complex.
 
 I'm not against these tools. I've used them extensively in the past and will use
 them again in the future. It's just not the right tool for the job here. Hello
@@ -105,11 +105,11 @@ CSS variables
 CSS variables are tempting, except for one problem: [your site won't work for
 about 13% of your visitors](https://caniuse.com/#feat=css-variables).
 
-Some readers might feel the itch to protest that it's "old browsers" and that
-"IE sucks" and whatnot. All true. Also all irrelevant. Excluding 13% of visitors
-is still excluding 13% of visitors, no matter what the underlying reason is, or
-how stupid you think it is (General note to the programming community: learn to
-be professional. Professionals deal with the world as it is to the best of their
+Some might simple hand-wave them away as "old browsers" and that "IE sucks" and
+whatnot. All true. Also all irrelevant. Excluding 13% of visitors is still
+excluding 13% of visitors, no matter what the underlying reason is, or how
+stupid you think it is. (General note to the programming community: learn to be
+professional. Professionals deal with the world as it is to the best of their
 ability, and don't refuse to deal with it because they don't like it.)
 
 For some projects this may be acceptable. This website is mostly visited by
@@ -150,4 +150,4 @@ considering the different solutions this seems to be the best – or rather,
 *least bad* – choice for Hello CSS at this time.
 
 This might change in the future: when CSS variables gain broader adoption, or if
-I find a CSS processor that avoids some of the problems I outlined.
+I find a CSS processor that avoids the problems I outlined.
