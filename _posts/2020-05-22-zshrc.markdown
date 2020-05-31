@@ -4,16 +4,17 @@ title: "Some zshrc tricks"
 tags: ['Unix']
 hatnote: |
  Discussions:
- <a href="https://lobste.rs/s/tgmzke/some_zshrc_tricks">Lobsters</a>.
+ <a href="https://lobste.rs/s/tgmzke/some_zshrc_tricks">Lobsters</a>,
+ <a href="https://www.reddit.com/r/commandline/comments/gofuh1/some_zshrc_tricks/">/r/commandline</a>
 ---
 
 Some useful "tricks" from my `~/.zshrc`; [full version here][zshrc]. Not all of
 this is "copy/paste ready" but it should give you some inspiration to build
 your own stuff :-)
 
-I found the [User's Guide to ZSH][guide] very helpful when learning about zsh.
-It hasn't been updated in a while and isn't even finished, but found it's quite
-well-written and useful. Go read it!
+General tip: I found the [User's Guide to ZSH][guide] very helpful when learning
+about zsh. It hasn't been updated in a while and isn't even finished, but found
+it's quite well-written and useful. Go read it!
 
 [zshrc]: https://github.com/arp242/dotfiles/blob/master/zsh/zshrc
 [guide]: http://zsh.sourceforge.net/Guide/
@@ -38,10 +39,21 @@ and presto (td is `alias td='echo $(date +%Y-%m-%d)'`).
 
 If you put `%~` in your `PROMPT` then the short version will show up there, too:
 
-    $ PROMPT='%~ '
-    $~ cd ~/.cache/vim/pack/plugins/start
-    ~/.cache/vim/pack/plugins/start$ hash -d pack=$HOME/.cache/vim/pack/plugins/start
-    ~pack$
+    $ PROMPT='[%~]$ '
+    [~]$ cd ~/.cache/vim/pack/plugins/start
+    [~/.cache/vim/pack/plugins/start]$ hash -d pack=$HOME/.cache/vim/pack/plugins/start
+    [~pack]$
+
+A related little helper I have is `hashcwd`, to quickly add the current
+directory in case you find yourself in a (very) long path taking up all your
+screen space:
+
+    hashcwd() { hash -d "$1"="$PWD" }
+
+And then:
+
+    [~/.cache/go-path/pkg/mod/golang.org/x/tools@v0.0.0-20200519205726-57a9e4404bf7/go/analysis]$ hashcwd a
+    [~a]$ 
 
 Filter history completion with what you typed
 ---------------------------------------------
@@ -62,12 +74,16 @@ if you type `ls` and press up it will only find history entries that start with
 
 I use this a lot, and is the #1 thing I miss if it's not available.
 
+You can also use `history-incremental-search-backward` to search the entire
+commandline, but I never cared for it much as `ls` will match a**ls**amixer,
+too**ls**, t**ls**, tota**ls**, docker **ls**, and probably more.
+
 Easier PATH
 -----------
 
-Many systems link `/bin` to `/usr/bin`, and storing all of those in PATH isn't
+Many systems link `/bin` to `/usr/bin` and storing all of those in PATH isn't
 too useful. Some helper functions to prepend or append to `PATH` which also
-checks if the path exists so it's easier to write a portable zshrc:
+check if the path exists so it's easier to write a portable zshrc:
 
     typeset -U path  # No duplicates
     path=()
@@ -106,8 +122,8 @@ checks if the path exists so it's easier to write a portable zshrc:
 Easier alias
 ------------
 
-Adding a little `_exist` helper to check if a binary exists is similarly useful
-for a portable zshrc:
+A little `_exist` helper to check if a binary exists is similarly useful for a
+portable zshrc:
 
     _exists() { (( $+commands[$1] )) }
 
@@ -153,13 +169,13 @@ Vim:
 
 This will also search for the pattern with `/pattern` in Vim and move to the
 first match for every tab (yes, I use Vim tabs, in spite of Vim-purist
-philosophy that they're bad)
+philosophy that they're bad).
 
 Caveat: the Vim regexp syntax isn't quite the same as extended POSIX or PCRE, so
 the pattern doesn't always work as expect in Vim. It works most of the time
 though.
 
-Caveat 2: sometimes I use this to check if I have the right results:
+Caveat 2: sometimes I use this to check if I have the expected results:
 
     $ ag pattern | less
 
