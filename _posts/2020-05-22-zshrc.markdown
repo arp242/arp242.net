@@ -46,13 +46,13 @@ If you put `%~` in your `PROMPT` then the short version will show up there, too:
 
 A related little helper I have is `hashcwd`, to quickly add the current
 directory in case you find yourself in a (very) long path taking up all your
-screen space:
+screen space or want to make a temporary "bookmark":
 
     hashcwd() { hash -d "$1"="$PWD" }
 
 And then:
 
-    [~/.cache/go-path/pkg/mod/golang.org/x/tools@v0.0.0-20200519205726-57a9e4404bf7/go/analysis]$ hashcwd a
+    [~/go/pkg/mod/golang.org/x/tools@v0.0.0-20200519205726-57a9e4404bf7/go/analysis]$ hashcwd a
     [~a]$ 
 
 Filter history completion with what you typed
