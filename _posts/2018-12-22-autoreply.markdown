@@ -145,9 +145,9 @@ What you need to set on your auto-response
 The specifics for this will vary depending on what sort of mails you're sending.
 This is what we use for autoreply emails:
 
-	Auto-Submitted: auto-replied
-	X-Auto-Response-Suppress: All
-	Precedence: auto_reply
+    Auto-Submitted: auto-replied
+    X-Auto-Response-Suppress: All
+    Precedence: auto_reply
 
 [rfc2076]: http://www.faqs.org/rfcs/rfc2076.html
 [rfc2919]: https://tools.ietf.org/html/rfc2919)

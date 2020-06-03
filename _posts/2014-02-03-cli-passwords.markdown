@@ -15,9 +15,9 @@ The date ain’t random, buddy
 
 The most obviously wrong are:
 
-	$ date +%s | sha256sum | base64 | head -c32
-	$ date | md5sum
-	$ ping -c 1 yahoo.com | md5 | head -c8
+    $ date +%s | sha256sum | base64 | head -c32
+    $ date | md5sum
+    $ ping -c 1 yahoo.com | md5 | head -c8
 
 To paraphrase a quote from <del>holy scripture</del> The Hitchhikers guide to
 the Galaxy: *“This is obviously some strange usage of the word ‘random’ that I
@@ -42,11 +42,11 @@ random byte stream also being a valid UTF-8 character stream are small.
 
 Yet, it appears to work on Linux with GNU `tr`. Why? Here’s a clue:
 
-	$ echo 'I løv€ π' | tr '[:lower:]' '[:upper:]'
-	I LøV€ π
+    $ echo 'I løv€ π' | tr '[:lower:]' '[:upper:]'
+    I LøV€ π
 
-	$ echo 'I løv€ π' | tr øπ€ X
-	I lXXvXXX XX
+    $ echo 'I løv€ π' | tr øπ€ X
+    I lXXvXXX XX
 
 We would expect the ø and π to be uppercased, but they’re not, and the ø, π, and
 € getting replaced by 2 or 3 X’s?
@@ -58,19 +58,19 @@ somewhat disappointing, since it’s 2014, not 1974.
 FreeBSD, for example, does this correctly, it also gives an error message on
 invalid UTF-8 sequences:
 
-	$ echo 'I løv€ π' | tr '[:lower:]' '[:upper:]'
-	I LØV€ Π
+    $ echo 'I løv€ π' | tr '[:lower:]' '[:upper:]'
+    I LØV€ Π
 
-	$ echo 'I løv€ π' | tr øπ€ X
-	I lXvX X
+    $ echo 'I løv€ π' | tr øπ€ X
+    I lXvX X
 
-	$ head -c5 /dev/urandom | tr X Y
-	tr: Illegal byte sequence
+    $ head -c5 /dev/urandom | tr X Y
+    tr: Illegal byte sequence
 
-	$ setenv LC_CTYPE C
+    $ setenv LC_CTYPE C
 
-	$ head -c5 /dev/urandom | tr X Y
-	f��!�
+    $ head -c5 /dev/urandom | tr X Y
+    f��!�
 
 The moral here is: **byte streams are not character streams**, don’t use ’em as
 such. It may work for now, but whenever someone adds multibyte support to GNU
@@ -81,13 +81,13 @@ Other problems
 
 While I’m whining anyway…
 
-	$ openssl rand -base64 8 | md5 | head -c8
+    $ openssl rand -base64 8 | md5 | head -c8
 
 Using `openssl rand` is a good idea, but piping it to md5 isn’t. base64 gives me
 64 characters, md5 gives me 16, making the password *a lot* easier to brute
 force. Also, 8 characters is too short, use at least 15.
 
-	$ curl -s http://sensiblepassword.com/?harder=1
+    $ curl -s http://sensiblepassword.com/?harder=1
 
 Getting a random password from the internet is spectacularly stupid & naive.
 Someone now knows:
@@ -105,9 +105,9 @@ Just don’t do this. Ever. Randomly banging on the keyboard is a lot better.
 Good solutions
 --------------
 
-	$ strings -n 1 < /dev/urandom | tr -d '[:space:]' | head -c15
-	$ openssl rand -base64 15
-	$ gpg2 --armor --gen-random 1 15
+    $ strings -n 1 < /dev/urandom | tr -d '[:space:]' | head -c15
+    $ openssl rand -base64 15
+    $ gpg2 --armor --gen-random 1 15
 
 The first solution could be considered slightly better, since it includes more
 characters (92 instead of 64). It also doesn’t require external tools (although

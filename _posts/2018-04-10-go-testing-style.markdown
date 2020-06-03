@@ -29,12 +29,12 @@ Also see [TableDrivenTests](https://github.com/golang/go/wiki/TableDrivenTests).
 
 Example:
 
-	tests := []struct {
-		// ...
-	}{}
+    tests := []struct {
+        // ...
+    }{}
 
-	for _, tt := range tests {
-	}
+    for _, tt := range tests {
+    }
 
 Use subtests
 ------------
@@ -51,18 +51,18 @@ Also see [Using Subtests and Sub-benchmarks](https://blog.golang.org/subtests).
 
 Example:
 
-	tests := []struct {
-		// ...
-	}{}
+    tests := []struct {
+        // ...
+    }{}
 
-	for i, tt := range tests {
-		t.Run(fmt.Sprintf("%d", i), func(t *testing.T) {
-			got := TestFunction(tt.input)
-			if got != tt.want {
-				t.Errorf("failed for %v ...", tt.input)
-			}
-		})
-	}
+    for i, tt := range tests {
+        t.Run(fmt.Sprintf("%d", i), func(t *testing.T) {
+            got := TestFunction(tt.input)
+            if got != tt.want {
+                t.Errorf("failed for %v ...", tt.input)
+            }
+        })
+    }
 
 Don’t ignore errors
 -------------------
@@ -134,8 +134,9 @@ This is better:
 
 With the downside that it’s hard to see what exactly failed:
 
-	--- FAIL: TestX (0.00s)
-			a_test.go:9: wrong output for test foo, want this string!; got this string
+{:class="ft-NONE"}
+    --- FAIL: TestX (0.00s)
+            a_test.go:9: wrong output for test foo, want this string!; got this string
 
 When aligned, this is a lot easier:
 
@@ -148,11 +149,12 @@ When aligned, this is a lot easier:
 
 <!-- -->
 
-	--- FAIL: TestX (0.00s)
-		--- FAIL: TestX/test_foo (0.00s)
-			a_test.go:10: wrong output
-					got:  "this string!"
-					want: "this string"
+{:class="ft-NONE"}
+    --- FAIL: TestX (0.00s)
+        --- FAIL: TestX/test_foo (0.00s)
+            a_test.go:10: wrong output
+                    got:  "this string!"
+                    want: "this string"
 
 Notice the two spaces after `got:` to make it aligned with `want`. If I had used
 `expected` I would have to use six spaces.
@@ -163,18 +165,19 @@ trailing whitespace or unprintable characters more clearly.
 Use a diff when comparing larger objects; for example with
 [go-cmp](https://github.com/google/go-cmp):
 
-	if d := cmp.Diff(got, tt.want); d != "" {
-		t.Errorf("(-got +want)\n:%s", d)
-	}
+    if d := cmp.Diff(got, tt.want); d != "" {
+        t.Errorf("(-got +want)\n:%s", d)
+    }
 
 <!-- -->
 
-	--- FAIL: TestParseFilter (0.00s)
-		--- FAIL: TestParseFilter/alias (0.00s)
-			query_test.go:717: (-got +want)
-				:{jsonapi.Filter}.Alias:
-					-: "fail"
-					+: "alias"
+{:class="ft-NONE"}
+    --- FAIL: TestParseFilter (0.00s)
+        --- FAIL: TestParseFilter/alias (0.00s)
+            query_test.go:717: (-got +want)
+                :{jsonapi.Filter}.Alias:
+                    -: "fail"
+                    +: "alias"
 
 Make it clear what is being tested
 ----------------------------------
@@ -185,17 +188,17 @@ fixed? Is the test even correct?
 
 Example:
 
-	cases := []struct {
-		name string
-	}{
-		{
-			"space after @",
-		},
-		{
-			"unicode space before @",
-		},
-		// ...
-	}
+    cases := []struct {
+        name string
+    }{
+        {
+            "space after @",
+        },
+        {
+            "unicode space before @",
+        },
+        // ...
+    }
 
 If adding `name` to existing test cases is too much work then comment can be
 fine too.

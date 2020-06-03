@@ -14,18 +14,18 @@ hatnote: |
 Shell scripting is great. It is amazingly simple to create something very
 useful. Even a simple no-brainer command such as:
 
-	# Official way of naming Go-related things:
-	$ grep -i ^go /usr/share/dict/* | cut -d: -f2 | sort -R | head -n1
-	goldfish
+    # Official way of naming Go-related things:
+    $ grep -i ^go /usr/share/dict/* | cut -d: -f2 | sort -R | head -n1
+    goldfish
 
 Takes several lines of code and a lot more brainpower in many programming
 languages. For example in Ruby:
 
-	puts(Dir['/usr/share/dict/*-english'].map do |f|
-	  File.open(f)
-	    .readlines
-	    .select { |l| l[0..1].downcase == 'go' }
-	end.flatten.sample.chomp)
+    puts(Dir['/usr/share/dict/*-english'].map do |f|
+      File.open(f)
+        .readlines
+        .select { |l| l[0..1].downcase == 'go' }
+    end.flatten.sample.chomp)
 
 The Ruby version isn't that long, or even especially complicated. But the shell
 script version was so simple that I didn't even need to actually test it to make
@@ -35,10 +35,10 @@ didn't make a mistake. It's also twice as long and looks a lot more dense.
 This is why people use shell scripts, it's so easy to make something useful.
 Here's is another example:
 
-	curl https://nl.wikipedia.org/wiki/Lijst_van_Nederlandse_gemeenten |
-		grep '^<li><a href=' |
-		sed -r 's|<li><a href="/wiki/.+" title=".+">(.+)</a>.*</li>|\1|' |
-		grep -Ev '(^Tabel van|^Lijst van|Nederland)'
+    curl https://nl.wikipedia.org/wiki/Lijst_van_Nederlandse_gemeenten |
+        grep '^<li><a href=' |
+        sed -r 's|<li><a href="/wiki/.+" title=".+">(.+)</a>.*</li>|\1|' |
+        grep -Ev '(^Tabel van|^Lijst van|Nederland)'
 
 This gets a list of all Dutch municipalities. I actually wrote this as a quick
 one-shot script to populate a database years ago, but it still works fine today,

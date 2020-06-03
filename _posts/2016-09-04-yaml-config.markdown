@@ -27,15 +27,15 @@ Insecure by default
 YAML is insecure by default. Loading a user-provided (untrusted) YAML string
 needs careful consideration.
 
-	!!python/object/apply:os.system
-	args: ['ls /']
+    !!python/object/apply:os.system
+    args: ['ls /']
 
 Running it with `print(yaml.load(open('a.yaml')))` should give you something
 like:
 
-	bin   etc   lib    lost+found  opt   root  sbin  tmp  var sys
-	boot  dev   efi    home        lib64 mnt   proc  run  srv usr
-	0
+    bin   etc   lib    lost+found  opt   root  sbin  tmp  var sys
+    boot  dev   efi    home        lib64 mnt   proc  run  srv usr
+    0
 
 Many other languages (including Ruby and PHP[^1]) are also unsafe by default.
 Searching for `yaml.load` and `yaml.safe_load` on GitHub yields [215k][1] and
@@ -71,19 +71,20 @@ larger.
 
 A good example of this are Ruby on Rails’ translation files; for example:
 
-	en:
-	   formtastic:
-		 labels:
-		   title: "Title"  # Default global value
-		   article:
-			 body: "Article content"
-		   post:
-			 new:
-			   title: "Choose a title..."
-			   body: "Write something..."
-			 edit:
-			   title: "Edit title"
-			   body: "Edit body"
+{:class="ft-yaml"}
+    en:
+      formtastic:
+        labels:
+          title: "Title"  # Default global value
+          article:
+            body: "Article content"
+          post:
+            new:
+              title: "Choose a title..."
+              body: "Write something..."
+            edit:
+              title: "Edit title"
+              body: "Edit body"
 
 This still looks okay, right? But what if this file has 100 lines? Or 1,000
 lines? It is difficult to see "where" in the file you are because it may be off
@@ -137,37 +138,43 @@ mine):
 What does this parse to (examples courtesy of
 [Colm O'Connor](https://github.com/crdoconnor/strictyaml/blob/master/FAQ.rst#what-is-wrong-with-implicit-typing)):
 
-	- Don Corleone: Do you have faith in my judgment?
-	- Clemenza: Yes
-	- Don Corleone: Do I have your loyalty?
+{:class="ft-yaml"}
+    - Don Corleone: Do you have faith in my judgment?
+    - Clemenza: Yes
+    - Don Corleone: Do I have your loyalty?
 
 Yup!
 
-	[
-		{'Don Corleone': 'Do you have faith in my judgment?'},
-		{'Clemenza': True},
-		{'Don Corleone': 'Do I have your loyalty?'}
-	]
+{:class="ft-yaml"}
+    [
+        {'Don Corleone': 'Do you have faith in my judgment?'},
+        {'Clemenza': True},
+        {'Don Corleone': 'Do I have your loyalty?'}
+    ]
 
 Or what about:
 
-	python: 3.5.3
-	postgres: 9.3
+{:class="ft-yaml"}
+    python: 3.5.3
+    postgres: 9.3
 
 `3.5.3` gets recognized as as string, but `9.3` gets recognized as a number
 instead of a string:
 
-	{'python': '3.5.3', 'postgres': 9.3}
+{:class="ft-yaml"}
+    {'python': '3.5.3', 'postgres': 9.3}
 
 Or what about:
 
-	Effenaar: Eindhoven
-	013: Tilburg
+{:class="ft-yaml"}
+    Effenaar: Eindhoven
+    013: Tilburg
 
 013 is a popular music Venue in Tilburg, but YAML will send you the wrong way
 since it’s parsed as an octal number:
 
-	{11: 'Tilburg', 'Effenaar': 'Eindhoven'}
+{:class="ft-yaml"}
+    {11: 'Tilburg', 'Effenaar': 'Eindhoven'}
 
 All of this – and more – is why many experienced YAMLers will often quote all
 strings, even when it's not strictly required. Many people don’t use quotes, and
@@ -179,43 +186,44 @@ by other people – doesn’t use quotes.
 Because it’s so complex, its claims of portability have been greatly
 exaggerated. For example consider this example taken from the YAML spec:
 
-	? - Detroit Tigers
-	  - Chicago cubs
-	:
-	  - 2001-07-23
+{:class="ft-yaml"}
+    ? - Detroit Tigers
+      - Chicago cubs
+    :
+      - 2001-07-23
 
-	? [ New York Yankees,
-		Atlanta Braves ]
-	: [ 2001-07-02, 2001-08-12,
-		2001-08-14 ]
+    ? [ New York Yankees,
+        Atlanta Braves ]
+    : [ 2001-07-02, 2001-08-12,
+        2001-08-14 ]
 
 Aside from the fact that most readers of this probably won’t even know what this
 does, try parsing it in Python with PyYAML:
 
-	yaml.constructor.ConstructorError: while constructing a mapping
-	  in "a.yaml", line 1, column 1
-	found unhashable key
-	  in "a.yaml", line 1, column 3
+    yaml.constructor.ConstructorError: while constructing a mapping
+      in "a.yaml", line 1, column 1
+    found unhashable key
+      in "a.yaml", line 1, column 3
 
 In Ruby it works:
 
-	{
-		["Detroit Tigers", "Chicago cubs"] => [
-			#<Date: 2001-07-23 ((2452114j,0s,0n),+0s,2299161j)>
-		],
-		["New York Yankees", "Atlanta Braves"] => [
-			#<Date: 2001-07-02 ((2452093j,0s,0n),+0s,2299161j)>,
-			#<Date: 2001-08-12 ((2452134j,0s,0n),+0s,2299161j)>,
-			#<Date: 2001-08-14 ((2452136j,0s,0n),+0s,2299161j)>
-		]
-	}
+    {
+        ["Detroit Tigers", "Chicago cubs"] => [
+            #<Date: 2001-07-23 ((2452114j,0s,0n),+0s,2299161j)>
+        ],
+        ["New York Yankees", "Atlanta Braves"] => [
+            #<Date: 2001-07-02 ((2452093j,0s,0n),+0s,2299161j)>,
+            #<Date: 2001-08-12 ((2452134j,0s,0n),+0s,2299161j)>,
+            #<Date: 2001-08-14 ((2452136j,0s,0n),+0s,2299161j)>
+        ]
+    }
 
 The reason for this is because you can’t use a list as a dict key in Python:
 
-	>>> {['a']: 'zxc'}
-	Traceback (most recent call last):
-	  File "<stdin>", line 1, in <module>
-	  TypeError: unhashable type: 'list'
+    >>> {['a']: 'zxc'}
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      TypeError: unhashable type: 'list'
 
 And this restriction is not unique to Python; common languages such as PHP,
 JavaScript, and Go all share this restriction.
@@ -224,27 +232,28 @@ So use this in a YAML file, and you won’t be able to read it in most languages
 
 Here’s another example again taken from the examples section of the YAML spec:
 
-	# Ranking of 1998 home runs
-	---
-	- Mark McGwire
-	- Sammy Sosa
-	- Ken Griffey
+{:class="ft-yaml"}
+    # Ranking of 1998 home runs
+    ---
+    - Mark McGwire
+    - Sammy Sosa
+    - Ken Griffey
 
-	# Team ranking
-	---
-	- Chicago Cubs
-	- St Louis Cardinals
+    # Team ranking
+    ---
+    - Chicago Cubs
+    - St Louis Cardinals
 
 Python says:
 
-	yaml.composer.ComposerError: expected a single document in the stream
-	  in "a.yaml", line 3, column 1
-	but found another document
-	  in "a.yaml", line 8, column 1
+    yaml.composer.ComposerError: expected a single document in the stream
+      in "a.yaml", line 3, column 1
+    but found another document
+      in "a.yaml", line 8, column 1
 
 While Ruby outputs:
 
-	["Mark McGwire", "Sammy Sosa", "Ken Griffey"]
+    ["Mark McGwire", "Sammy Sosa", "Ken Griffey"]
 
 The reason for this is that there are multiple YAML documents in a single file
 (`---` start the document). In Python there is the `load_all()` function to
@@ -299,10 +308,10 @@ Well, it is, but it’s *too* expressive (e.g. too complex).
 
 > YAML is easy to implement and use.
 
-	$ wc -l ~/go/src/github.com/go-yaml/yaml/*.go~*_test.go | tail -n1
+    $ wc -l ~/go/src/github.com/go-yaml/yaml/*.go~*_test.go | tail -n1
       9566 total
 
-	$ wc -l /usr/lib/python3.7/site-packages/yaml/*.py | tail -n1
+    $ wc -l /usr/lib/python3.7/site-packages/yaml/*.py | tail -n1
       5725 total
 
 Conclusion

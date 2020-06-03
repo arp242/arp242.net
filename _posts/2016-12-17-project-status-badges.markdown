@@ -39,13 +39,13 @@ Here they are:
 And the Markdown:
 
 - <input type="text" style="width: 98%;"
-	value="[![This project is considered experimental](https://img.shields.io/badge/Status-experimental-red.svg)](https://www.arp242.net/status/experimental)">
+    value="[![This project is considered experimental](https://img.shields.io/badge/Status-experimental-red.svg)](https://www.arp242.net/status/experimental)">
 - <input type="text" style="width: 98%"
-	value="[![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://www.arp242.net/status/stable)">
+    value="[![This project is considered stable](https://img.shields.io/badge/Status-stable-green.svg)](https://www.arp242.net/status/stable)">
 - <input type="text" style="width: 98%"
-	value="[![This project is considered finished](https://img.shields.io/badge/Status-finished-green.svg)](https://www.arp242.net/status/finished)">
+    value="[![This project is considered finished](https://img.shields.io/badge/Status-finished-green.svg)](https://www.arp242.net/status/finished)">
 - <input type="text" style="width: 98%"
-	value="[![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://www.arp242.net/status/archived)">
+    value="[![This project is archived](https://img.shields.io/badge/Status-archived-red.svg)](https://www.arp242.net/status/archived)">
 
 I didn’t create any of the images myself. It’s the
 [shields.io](http://shields.io/#your-badge) service. If you want, you can modify

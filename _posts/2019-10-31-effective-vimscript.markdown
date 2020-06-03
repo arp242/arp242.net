@@ -3,6 +3,7 @@ layout: post
 updated: 2019-11-06
 title: "Effective VimScript"
 tags: ['Vim']
+filetype: vim
 hatnote: |
  Discussions:
  <a href="https://www.reddit.com/r/vim/comments/dpmnd1/effective_vimscript/">/r/vim</a>.
@@ -42,7 +43,7 @@ General
 
       let l:old_setting = &setting
 
-      [.. do work ..]
+      " [.. do work ..]
 
       let &setting = l:old_setting
 
@@ -54,7 +55,7 @@ General
       try
         let l:old_setting = &setting
 
-        [.. do work ..]
+        " [.. do work ..]
       finally
         let &setting = l:old_setting
       endtry
@@ -70,7 +71,7 @@ General
 
       fun! s:do_stuff() abort
           let l:filtered = filter(g:plugin_default, {_, v -> v[0] isnot# '_'})
-          [..]
+          " [..]
       endfun
 
   `l:filtered` will be `['a', 'b']`, but so will `g:plugin_default`, which is

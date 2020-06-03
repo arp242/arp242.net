@@ -10,16 +10,16 @@ Maybe this will save someone else some time ;-)
 
 The network setup (simplified):
 
-	  [ Workstation ]
-	         |
-	         |
-	   [ Firewall ]
-	         |
-	         |
-	  ~ The Internet ~
-	         |
-	         |
-	[ Public web server ]
+      [ Workstation ]
+             |
+             |
+       [ Firewall ]
+             |
+             |
+      ~ The Internet ~
+             |
+             |
+    [ Public web server ]
 
 The problem is connecting to public web server from my workstation, first I had
 to ssh or sftp to the Linux firewall, and from that machine connect to the
@@ -30,15 +30,15 @@ answer: The `-L` option.
 
 Excerpt from [ssh(1)][ssh]:
 
-	-L [bind_address:]port:host:hostport
-		Specifies that the given port on the local (client) host is to be
-		forwarded to the given host and port on the remote side. This
-		works by allocating a socket to listen to port on the local side,
-		optionally bound to the specified bind_address.
+    -L [bind_address:]port:host:hostport
+        Specifies that the given port on the local (client) host is to be
+        forwarded to the given host and port on the remote side. This
+        works by allocating a socket to listen to port on the local side,
+        optionally bound to the specified bind_address.
 
 Example on how to create the tunnel:
 
-	$ ssh -f -N -p 22 username@firewall -L 2844/webserver.example.com/22
+    $ ssh -f -N -p 22 username@firewall -L 2844/webserver.example.com/22
 
 To briefly explain what the other options mean:
 
@@ -48,8 +48,8 @@ To briefly explain what the other options mean:
 
 You can now connect with ssh, sftp, or scp through `localhost:2844`
 
-	$ ssh -p 2844 myusername@localhost
-	$ scp -P 2844 file.tar.gz myusername@localhost:file.tar.gz
+    $ ssh -p 2844 myusername@localhost
+    $ scp -P 2844 file.tar.gz myusername@localhost:file.tar.gz
 
 [ssh(1)][ssh] requires `-p` and [scp(1)][scp] `-P`.
 
@@ -59,11 +59,11 @@ Testing
 For debugging, don’t forget you can specify `-v` up to three times to get more
 information about what’s going on. A quick `telnet` test is also useful:
 
-	$ telnet localhost 2844
-	Trying ::1...
-	Connected to localhost.
-	Escape character is '^]'.
-	SSH-2.0-OpenSSH_5.1p1 FreeBSD-20080901
+    $ telnet localhost 2844
+    Trying ::1...
+    Connected to localhost.
+    Escape character is '^]'.
+    SSH-2.0-OpenSSH_5.1p1 FreeBSD-20080901
 
 If you don’t see the last line, something is wrong.
 
@@ -73,10 +73,10 @@ Bonus tip
 As a free complimentary bonus tip, it’s also easy to setup a convenient shortcut
 in `~/.ssh/config`:
 
-	Host webserver
-		Hostname localhost
-		Port 2844
-		User myusername
+    Host webserver
+        Hostname localhost
+        Port 2844
+        User myusername
 
 Further reading
 ---------------

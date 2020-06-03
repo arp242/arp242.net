@@ -97,3 +97,17 @@ input              { width: 12em; }
 @media (max-width: 46em) {
 	pre { white-space: pre; }
 }
+
+/* SYNTAX */
+pre      { background-color: #fff; border: 2px solid #d5d5d5; box-shadow: inset 0px 0px 2px rgba(0, 0, 0, .2); }
+pre code { background-color: inherit; }
+
+.Statement  { color: #af5f00; }
+.Comment    { color: #0000ee; }
+.Constant   { color: #cd0000; }
+.Type       { color: #00cd00; }
+.Special    { color: #cd00cd; }
+.PreProc    { color: #cd00cd; }
+.Identifier { color: #008787; }
+
+.output    { color: #666; }

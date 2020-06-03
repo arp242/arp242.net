@@ -2,6 +2,7 @@ name: "arp242.net"
 url: "https://www.arp242.net"
 author: "Martin Tournoij"
 excerpt_separator: 
+strict_front_matter: true
 highlighter: none
 permalink: "/:title.html"
 markdown: "kramdown"
@@ -13,7 +14,8 @@ exclude: [
   "the-art-of-unix-programming/base.css",
   "the-art-of-unix-programming/base.js",
   "the-art-of-unix-programming/hello-css.min.css",
-  "the-art-of-unix-programming/readon.js"]
+  "the-art-of-unix-programming/readon.js",
+  '.vim-hl']
 
 # Copy for Netlify.
 include: ["_redirects", ".well-known"]
