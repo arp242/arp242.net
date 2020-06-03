@@ -99,8 +99,13 @@ input              { width: 12em; }
 }
 
 /* SYNTAX */
-pre      { background-color: #fff; border: 2px solid #d5d5d5; box-shadow: inset 0px 0px 2px rgba(0, 0, 0, .2); }
-pre code { background-color: inherit; }
+.pre-wrap { position: relative; }
+pre       { background-color: #fff; border: 2px solid #d5d5d5; box-shadow: inset 0px 0px 2px rgba(0, 0, 0, .2); }
+pre code  { background-color: inherit; text-decoration: none; }
+.pre-copy { position: absolute; top: 2px; padding: 0em .6em;
+	        border-bottom: 2px solid #d5d5d5; border-left: 2px solid #d5d5d5; border-radius: 2px;
+	        font: 14px/26px sans-serif; color: #000; }
+.pre-copy:hover { color: inherit; text-decoration: none; background-color: #f9f9f9; }
 
 .Statement  { color: #af5f00; }
 .Comment    { color: #0000ee; }
@@ -109,5 +114,4 @@ pre code { background-color: inherit; }
 .Special    { color: #cd00cd; }
 .PreProc    { color: #cd00cd; }
 .Identifier { color: #008787; }
-
-.output    { color: #666; }
+.output     { color: #666; }

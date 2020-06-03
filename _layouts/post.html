@@ -33,20 +33,51 @@ layout: default
 <script>
 	// TODO: probably want to do this in Jekyll at some point; for now this is easier.
 	(function() {
+		var q = function(s) { return Array.prototype.slice.call(document.querySelectorAll(s)) }
 		var go = function() {
-			Array.prototype.slice.call(document.querySelectorAll('.footnote')).forEach(function(fn) {
+			// Add title attribute to the footnotes.
+			q('.footnote').forEach(function(fn) {
 				fn.addEventListener('mouseenter', function(e) {
 					if (e.target.title !== '')
-						return;
+						return
 					e.target.title = document.getElementById(e.target.href.split('#')[1]).
-						innerText.replace(/↩$/, '').trim();
-				}, false);
-			});
-		};
+						innerText.replace(/↩$/, '').trim()
+				}, false)
+			})
+
+			// Add "Copy" link to pre tags with a lot of text.
+			q('pre').forEach(function(pre) {
+				if (pre.clientHeight > pre.scrollHeight - 6)
+					return
+
+				var btn = document.createElement('a')
+				btn.href = '#'
+				btn.className = 'pre-copy'
+				btn.style.right = (pre.offsetWidth - pre.clientWidth - 2) + 'px'
+				btn.innerHTML = '📋 Copy'
+				btn.addEventListener('click', function(e) {
+					e.preventDefault()
+
+					var t = document.createElement('textarea')
+					t.value = pre.innerText
+					t.style.position = 'absolute'
+					document.body.appendChild(t)
+
+					t.select()
+					t.setSelectionRange(0, pre.innerText.length)
+					document.execCommand('copy')
+					document.body.removeChild(t)
+
+					btn.innerHTML = '📋 Done'
+					setTimeout(function() { btn.innerHTML = '📋 Copy' }, 1000)
+				}, false)
+				pre.parentNode.appendChild(btn)
+			})
+		}
 
 		if (document.readyState === 'complete')
-			go();
+			go()
 		else
-			window.addEventListener('load', go, false);
-	})();
+			window.addEventListener('load', go, false)
+	})()
 </script>
