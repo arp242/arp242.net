@@ -1,0 +1,13 @@
+<span class="Identifier">en</span><span class="Special">:</span>
+  <span class="Identifier">formtastic</span><span class="Special">:</span>
+    <span class="Identifier">labels</span><span class="Special">:</span>
+      <span class="Identifier">title</span><span class="Special">:</span> <span class="Constant">&quot;</span><span class="Constant">Title</span><span class="Constant">&quot;</span> <span class="Comment"> # Default global value</span>
+      <span class="Identifier">article</span><span class="Special">:</span>
+        <span class="Identifier">body</span><span class="Special">:</span> <span class="Constant">&quot;</span><span class="Constant">Article content</span><span class="Constant">&quot;</span>
+      <span class="Identifier">post</span><span class="Special">:</span>
+        <span class="Identifier">new</span><span class="Special">:</span>
+          <span class="Identifier">title</span><span class="Special">:</span> <span class="Constant">&quot;</span><span class="Constant">Choose a title...</span><span class="Constant">&quot;</span>
+          <span class="Identifier">body</span><span class="Special">:</span> <span class="Constant">&quot;</span><span class="Constant">Write something...</span><span class="Constant">&quot;</span>
+        <span class="Identifier">edit</span><span class="Special">:</span>
+          <span class="Identifier">title</span><span class="Special">:</span> <span class="Constant">&quot;</span><span class="Constant">Edit title</span><span class="Constant">&quot;</span>
+          <span class="Identifier">body</span><span class="Special">:</span> <span class="Constant">&quot;</span><span class="Constant">Edit body</span><span class="Constant">&quot;</span>

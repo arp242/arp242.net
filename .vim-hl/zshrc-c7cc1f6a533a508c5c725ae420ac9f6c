@@ -1,0 +1,9 @@
+<span class="Statement">autoload</span> -Uz up-line-or-beginning-search down-line-or-beginning-search
+
+<span class="Statement">zle</span> -N up-line-or-beginning-search
+<span class="Statement">zle</span> -N down-line-or-beginning-search
+
+<span class="Statement">bindkey</span> <span class="Constant">'</span><span class="Constant">^[[A</span><span class="Constant">'</span>  up-line-or-beginning-search<span class="Comment">    # Arrow up</span>
+<span class="Statement">bindkey</span> <span class="Constant">'</span><span class="Constant">^[OA</span><span class="Constant">'</span>  up-line-or-beginning-search
+<span class="Statement">bindkey</span> <span class="Constant">'</span><span class="Constant">^[[B</span><span class="Constant">'</span>  down-line-or-beginning-search<span class="Comment">  # Arrow down</span>
+<span class="Statement">bindkey</span> <span class="Constant">'</span><span class="Constant">^[OB</span><span class="Constant">'</span>  down-line-or-beginning-search

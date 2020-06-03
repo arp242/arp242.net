@@ -39,7 +39,7 @@ mode:
 
     $ tmux new-window
 
-	<C-b>:new-window
+    <C-b>:new-window
 
 Many commands accept parameters, for example for `new-window` we can use `-t` to
 specify the target index. You can use `<C-b>?` (`list-keys` command) to get a
@@ -82,15 +82,16 @@ We can now repeat this for the next window:
 
 And finally, attach the new session:
 
-	$ [ -n "${TMUX:-}" ] &&
-		tmux switch-client -t '=site' ||
-		tmux attach-session -t '=site'
+    $ [ -n "${TMUX:-}" ] &&
+        tmux switch-client -t '=site' ||
+        tmux attach-session -t '=site'
 
 The test is to ensure it works from both outside tmux and inside another tmux
 session.
 
 Putting it all together:
 
+{:class="ft-sh"}
     #!/bin/sh
 
     set -euC
@@ -131,9 +132,9 @@ options (e.g. `-session-name`). Short options are great for typing on the
 commandline since it's, well, short. But long options are much more useful for
 scripts, especially for options you don't use every day. Compare:
 
-	$ tmux new-session -d -s site -n server
+    $ tmux new-session -d -s site -n server
 
-	$ tmux new-session -detached -session-name site -window-name server
+    $ tmux new-session -detached -session-name site -window-name server
 
 The second one has a self-documenting property that the first one lacks. I guess
 this is one important reason why there are so many wrapper scripts which use

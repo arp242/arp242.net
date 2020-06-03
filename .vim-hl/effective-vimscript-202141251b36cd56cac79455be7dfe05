@@ -1,0 +1,7 @@
+<span class="Statement">try</span>
+  <span class="Statement">let</span> <span class="Identifier">l:old_setting</span> <span class="Statement">=</span> &amp;setting
+
+<span class="Comment">  &quot; [.. do work ..]</span>
+<span class="Statement">finally</span>
+  <span class="Statement">let</span> <span class="Identifier">&amp;setting</span> <span class="Statement">=</span> <span class="Identifier">l:old_setting</span>
+<span class="Statement">endtry</span>

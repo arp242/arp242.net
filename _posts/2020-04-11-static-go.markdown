@@ -13,6 +13,7 @@ binary.
 The easiest way to check if your program is statically compiled is to run `file`
 on it:
 
+{:class="ft-cli"}
     $ file test.dynamic | tr , '\n'
     test.dynamic: ELF 64-bit LSB executable
      x86-64
@@ -33,6 +34,7 @@ on it:
 Notice the "dynamically linked" and "statically linked". You can also run `ldd`,
 but note this only works if the binary matches your system's architecture:
 
+{:class="ft-cli"}
     $ ldd test.dynamic
     test.dynamic:
             linux-vdso.so.1 (0x00007ffe00302000)
@@ -47,6 +49,7 @@ but note this only works if the binary matches your system's architecture:
 You can verify that a binary runs without external dependencies with `chroot`
 (this requires root on most platforms):
 
+{:class="ft-cli"}
     $ chroot . ./test.static
     Hello, world!
 
@@ -87,6 +90,7 @@ one is quite common.
 You can use the `osusergo` and `netgo` build tags to skip building the cgo
 parts:
 
+{:class="ft-cli"}
     $ go build -tags osusergo
     $ go build -tags netgo
     $ go build -tags osusergo,netgo
@@ -94,6 +98,7 @@ parts:
 For simple cases where you don't use any other cgo code it's probably easier to
 just disable cgo, since the cgo code is protected with `+build cgo`:
 
+{:class="ft-cli"}
     $ CGO_ENABLED=0 go build
 
 ---
@@ -102,6 +107,7 @@ What if we want to use the cgo versions of the above? Or what if we want to use
 a cgo package such as SQLite? In those cases you can tell the C linker to
 statically link with `-extldflags`:
 
+{:class="ft-cli"}
     $ go build -ldflags="-extldflags=-static"
 
 The nested `-`s look a bit confusing and are easy to forget, so be sure to pay
@@ -113,6 +119,7 @@ attention (or maybe that's just me... 🤦‍♂️).[^f]
 
 Some packages – such as SQLite – may produce warnings:
 
+{:class="ft-cli"}
     $ go build -ldflags="-extldflags=-static"
     # test
     /usr/bin/ld: /tmp/go-link-400285317/000010.o: in function `unixDlOpen':
@@ -128,6 +135,7 @@ commonly used feature so this warning can be safely ignored for most programs
 The go-sqlite3 package [provides a build flag to disable this][goext], if you
 want to make the warnings go away and ensure this feature isn't used:
 
+{:class="ft-cli"}
     $ go build -ldflags="-extldflags=-static" -tags sqlite_omit_load_extension
 
 The `os/user` and `net` packages will give you a similar warnings about the
@@ -167,6 +175,7 @@ I'm very 😎 so I use Void Linux, and for extra 😎 I want to use musl libc, s
 that's what I'll use in this example to cross-compile to ARM and ARM64; let me
 know if you have the commands for other systems and I'll add them as well.[^p]
 
+{:class="ft-cli"}
     # Replace musl with gnu if you want to use GNU libc.
     $ xbps-install cross-aarch64-linux-musl cross-armv7l-linux-musleabihf
 
@@ -180,6 +189,7 @@ aarch64 and arm64 are the same thing, just with a different name, just as x86_64
 and amd64. To confirm that it works, you can use QEMU; for example with `select
 date()` from a `:memory:` SQLite database:
 
+{:class="ft-cli"}
     $ qemu-aarch64 ./test.arm64
     <nil> 2020-04-11
 
@@ -199,6 +209,7 @@ really) to make the above a bit easier. For non-cgo projects the defaults
 settings should work without problems. This is what I use to build GoatCounter
 (which includes SQLite):
 
+{:class="ft-sh"}
     matrix="
     linux amd64
     linux arm   CC=armv7l-linux-musleabihf-gcc

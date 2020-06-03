@@ -1,0 +1,5 @@
+<span class="Comment">#!/usr/bin/env python3</span>
+<span class="PreProc">import</span> http.server
+h = http.server.SimpleHTTPRequestHandler
+h.extensions_map = {<span class="Constant">''</span>: <span class="Constant">'</span><span class="Constant">text/html</span><span class="Constant">'</span>, <span class="Constant">'</span><span class="Constant">.wasm</span><span class="Constant">'</span>: <span class="Constant">'</span><span class="Constant">application/wasm</span><span class="Constant">'</span>, <span class="Constant">'</span><span class="Constant">.js</span><span class="Constant">'</span>: <span class="Constant">'</span><span class="Constant">application/javascript</span><span class="Constant">'</span>}
+http.server.HTTPServer((<span class="Constant">'</span><span class="Constant">127.0.0.1</span><span class="Constant">'</span>, <span class="Constant">2000</span>), h).serve_forever()

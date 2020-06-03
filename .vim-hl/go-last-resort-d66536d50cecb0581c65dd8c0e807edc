@@ -1,0 +1,7 @@
+<span class="Statement">var</span> geodb = <span class="Statement">func</span>() *geoip2.Reader {
+    g, err := geoip2.FromBytes(pack.GeoDB)
+    <span class="Statement">if</span> err != <span class="Constant">nil</span> {
+        <span class="Statement">panic</span>(err)
+    }
+    <span class="Statement">return</span> g
+}()

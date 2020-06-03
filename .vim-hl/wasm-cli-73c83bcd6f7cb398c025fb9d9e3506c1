@@ -1,0 +1,32 @@
+<span class="Identifier">&lt;</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="Special">    fetch</span>(<span class="Constant">'main.wasm'</span>)<span class="Special">.then</span>(<span class="Special">response =&gt; response.arrayBuffer</span>())<span class="Special">.then</span>(<span class="Identifier">function</span>(<span class="Special">bin</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="Special">            input.addEventListener</span>(<span class="Constant">'keydown'</span><span class="Special">, </span><span class="Identifier">function</span>(<span class="Special">e</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="Special">                </span><span class="Statement">if</span><span class="Special"> </span>(<span class="Special">e.keyCode !== </span>13)<span class="Special">  </span><span class="Comment">// Enter</span>
+<span class="Special">                    </span><span class="Statement">return</span><span class="Special">;</span>
+
+<span class="Special">                e.preventDefault</span>()<span class="Special">;</span>
+
+<span class="Special">                </span><span class="Statement">const</span><span class="Special"> go = </span><span class="Statement">new</span><span class="Special"> Go</span>()<span class="Special">;</span>
+<span class="Special">                go.argv = </span><span class="Identifier">[</span><span class="Constant">'uni'</span><span class="Identifier">]</span><span class="Special">.concat</span>(<span class="Identifier">this</span><span class="Special">.value.split</span>(<span class="Constant">' '</span>))<span class="Special">;</span>
+<span class="Special">                </span><span class="Identifier">this</span><span class="Special">.value = </span><span class="Constant">''</span><span class="Special">;</span>
+
+<span class="Special">                </span><span class="Comment">// Write stdout to terminal.</span>
+<span class="Special">                </span><span class="Identifier">let</span><span class="Special"> outputBuf = </span><span class="Constant">''</span><span class="Special">;</span>
+<span class="Special">                </span><span class="Statement">const</span><span class="Special"> decoder = </span><span class="Statement">new</span><span class="Special"> TextDecoder</span>(<span class="Constant">&quot;utf-8&quot;</span>)<span class="Special">;</span>
+<span class="Special">                global.fs.writeSync = </span><span class="Identifier">function</span>(<span class="Special">fd, buf</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="Special">                    outputBuf += decoder.decode</span>(<span class="Special">buf</span>)<span class="Special">;</span>
+<span class="Special">                    </span><span class="Statement">const</span><span class="Special"> nl = outputBuf.lastIndexOf</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>)<span class="Special">;</span>
+<span class="Special">                    </span><span class="Statement">if</span><span class="Special"> </span>(<span class="Special">nl != </span>-1)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="Special">                        </span><span class="Statement">window</span><span class="Special">.output.innerText += outputBuf.substr</span>(0<span class="Special">, nl + </span>1)<span class="Special">;</span>
+<span class="Special">                        </span><span class="Statement">window</span><span class="Special">.scrollTo</span>(0<span class="Special">, </span><span class="Statement">document</span><span class="Special">.body.scrollHeight</span>)<span class="Special">;</span>
+<span class="Special">                        outputBuf = outputBuf.substr</span>(<span class="Special">nl + </span>1)<span class="Special">;</span>
+<span class="Special">                    </span><span class="Identifier">}</span>
+<span class="Special">                    </span><span class="Statement">return</span><span class="Special"> buf.length;</span>
+<span class="Special">                </span><span class="Identifier">}</span><span class="Special">;</span>
+
+<span class="Special">                WebAssembly</span><span class="Statement">.</span><span class="Special">instantiate</span><span class="Statement">(</span><span class="Special">bin</span><span class="Statement">,</span><span class="Special"> go</span><span class="Statement">.</span><span class="Special">importObject</span><span class="Statement">).</span><span class="Statement">then</span><span class="Statement">((</span><span class="Special">result</span><span class="Statement">)</span><span class="Special"> </span><span class="Statement">=&gt;</span><span class="Special"> {</span>
+<span class="Special">                    go</span><span class="Statement">.</span><span class="Special">run</span><span class="Statement">(</span><span class="Special">result</span><span class="Statement">.</span><span class="Special">instance</span><span class="Statement">)</span><span class="Special">;</span>
+<span class="Special">                }</span><span class="Statement">)</span><span class="Special">;</span>
+<span class="Special">            }</span><span class="Statement">)</span><span class="Special">;</span>
+<span class="Special">        }</span><span class="Statement">)</span><span class="Special">;</span>
+<span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>

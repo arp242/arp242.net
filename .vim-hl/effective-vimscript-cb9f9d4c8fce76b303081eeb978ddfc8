@@ -1,0 +1,9 @@
+<span class="Statement">fun</span>! Test<span class="Special">(</span>list_arg<span class="Special">)</span>
+    <span class="Statement">let</span> <span class="Identifier">l:mapped</span> <span class="Statement">=</span> <span class="Identifier">map</span><span class="Special">(</span><span class="Identifier">a:list_arg</span>, <span class="Special">{</span>_, v <span class="Statement">-&gt;</span> <span class="Constant">'XXX-'</span> <span class="Statement">.</span> l:v<span class="Special">}</span><span class="Special">)</span>
+    [<span class="Statement">..</span>]
+<span class="Statement">endfun</span>
+
+:<span class="Statement">let</span> <span class="Identifier">l</span> <span class="Statement">=</span> [<span class="Constant">'hello'</span>]
+:<span class="Statement">call</span> Test<span class="Special">(</span>l<span class="Special">)</span>
+:<span class="Statement">echo</span> <span class="Identifier">l</span>
+[<span class="Constant">'XXX-hello'</span>]

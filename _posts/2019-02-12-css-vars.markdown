@@ -19,14 +19,14 @@ question, and something I spent some time thinking about during development.
 Some sort of support to track related values is useful. For example for the page
 padding:
 
-	.page {
-		padding: 1rem 4rem;
-	}
+    .page {
+        padding: 1rem 4rem;
+    }
 
-	figure.full {
-		margin-left: -4rem;
-		width: calc(100% + 8rem);
-	}
+    figure.full {
+        margin-left: -4rem;
+        width: calc(100% + 8rem);
+    }
 
 Change the `4rem` in `.page` and you'll need to change the `figure.full` too,
 and some other places as well.
@@ -125,10 +125,10 @@ I believe there are some preprocessors to solve this, but this gives us the
 problems in the previous section.
 
 [^1]: I did use `calc()` in a few places, which is unsupported by 11%. But when
-	  `calc()` is unsupported some tables will be slightly less wide than
-	  intended. Not great, but the overal design is still in good working
-	  condition. Browsers that don't support CSS variables will have the entire
-	  page render completely wrong.
+      `calc()` is unsupported some tables will be slightly less wide than
+      intended. Not great, but the overal design is still in good working
+      condition. Browsers that don't support CSS variables will have the entire
+      page render completely wrong.
 
 Comments
 --------
@@ -136,14 +136,14 @@ Comments
 This leaves us with the last option: mark related values with a comment, which
 is what I ended up doing. The above snippet becomes:
 
-	.page {
-		padding: /*pady*/1rem /*padx*/4rem;
-	}
+    .page {
+        padding: /*pady*/1rem /*padx*/4rem;
+    }
 
-	figure.full {
-		margin-left: /*padx*/-4rem;
-		width: calc(100% + /*padx*/8rem);
-	}
+    figure.full {
+        margin-left: /*padx*/-4rem;
+        width: calc(100% + /*padx*/8rem);
+    }
 
 I am not wildly enthusiastic about this solution, but after carefully
 considering the different solutions this seems to be the best – or rather,

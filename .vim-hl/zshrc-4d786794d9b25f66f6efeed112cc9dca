@@ -1,0 +1,8 @@
+insert_doas() { <span class="Statement">zle</span> beginning-of-line; <span class="Statement">zle</span> -U <span class="Constant">&quot;</span><span class="Constant">doas </span><span class="Constant">&quot;</span> }
+replace_rm()  { <span class="Statement">zle</span> beginning-of-line; <span class="Statement">zle</span> delete-word; <span class="Statement">zle</span> -U <span class="Constant">&quot;</span><span class="Constant">rm </span><span class="Constant">&quot;</span> }
+
+<span class="Statement">zle</span> -N insert-doas insert_doas
+<span class="Statement">zle</span> -N replace-rm replace_rm
+
+<span class="Statement">bindkey</span> <span class="Constant">'</span><span class="Constant">^s</span><span class="Constant">'</span>    insert-doas
+<span class="Statement">bindkey</span> <span class="Constant">'</span><span class="Constant">^r</span><span class="Constant">'</span>    replace-rm

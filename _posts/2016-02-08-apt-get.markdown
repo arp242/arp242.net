@@ -15,27 +15,27 @@ post. It was the straw that broke the camel’s back.
 
 So, lets remove Emacs:
 
-	$ sudo apt-get remove emacs24
-	Reading package lists... Done
-	Building dependency tree
-	Reading state information... Done
-	The following extra packages will be installed:
-	  emacs24-lucid xaw3dg
-	The following packages will be REMOVED
-	  emacs24
-	The following NEW packages will be installed
-	  emacs24-lucid xaw3dg
-	0 to upgrade, 2 to newly install, 1 to remove and 0 not to upgrade.
-	Need to get 3,534 kB of archives.
-	After this operation, 531 kB of additional disk space will be used.
-	Do you want to continue? [Y/n]
+    $ sudo apt-get remove emacs24
+    Reading package lists... Done
+    Building dependency tree
+    Reading state information... Done
+    The following extra packages will be installed:
+      emacs24-lucid xaw3dg
+    The following packages will be REMOVED
+      emacs24
+    The following NEW packages will be installed
+      emacs24-lucid xaw3dg
+    0 to upgrade, 2 to newly install, 1 to remove and 0 not to upgrade.
+    Need to get 3,534 kB of archives.
+    After this operation, 531 kB of additional disk space will be used.
+    Do you want to continue? [Y/n]
 
 Wait, it wants to install another version of Emacs? Meh. The reason for this is
 because *another* package has been “manually installed” and that `emacs24` is
 merely an “autoinstalled dependency”. In fact, the [Emacs package][pkg-emacs]
 doesn’t really install anything, it just defines these dependencies:
 
-	Depends: emacs24 | emacs24-lucid | emacs24-nox
+    Depends: emacs24 | emacs24-lucid | emacs24-nox
 
 The `|` means ‘or’, and any one will suffice, removing `emacs24` will trigger
 `apt-get` to try and look for alternatives to it.
@@ -49,18 +49,18 @@ intent*. In this case, it guessed my intent wrong.
 
 No really, what’s wrong with this:
 
-	$ sudo apt-get remove emacs24
-	WARNING: Package emacs depends on emacs24.
-	  Found two alternatives: emacs24-lucid, emacs24-nox.
-	  Installing emacs24-lucid.
+    $ sudo apt-get remove emacs24
+    WARNING: Package emacs depends on emacs24.
+      Found two alternatives: emacs24-lucid, emacs24-nox.
+      Installing emacs24-lucid.
 
-	The following extra packages will be installed:
-	  emacs24-lucid xaw3dg
-	The following packages will be REMOVED
-	  emacs24
+    The following extra packages will be installed:
+      emacs24-lucid xaw3dg
+    The following packages will be REMOVED
+      emacs24
 
-	This will download 3,534 kB and use 531 kB of disk space.
-	Do you want to continue? [Y/n]
+    This will download 3,534 kB and use 531 kB of disk space.
+    Do you want to continue? [Y/n]
 
 - Remove useless `Reading package lists`-cruft. I don’t need to know this.
   Please, include a `--verbose` switch to spit out as much information as
@@ -103,26 +103,26 @@ course), this is what tools like `yum` do.
 
 Lets move on and try removing `emacs`:
 
-	$ sudo apt-get remove emacs
-	Reading package lists... Done
-	Building dependency tree
-	Reading state information... Done
-	The following packages will be REMOVED
-	  emacs
-	0 to upgrade, 0 to newly install, 1 to remove and 0 not to upgrade.
-	After this operation, 25.6 kB disk space will be freed.
-	Do you want to continue? [Y/n] y
-	(Reading database ... 364398 files and directories currently installed.)
-	Removing emacs (46.1) ...
+    $ sudo apt-get remove emacs
+    Reading package lists... Done
+    Building dependency tree
+    Reading state information... Done
+    The following packages will be REMOVED
+      emacs
+    0 to upgrade, 0 to newly install, 1 to remove and 0 not to upgrade.
+    After this operation, 25.6 kB disk space will be freed.
+    Do you want to continue? [Y/n] y
+    (Reading database ... 364398 files and directories currently installed.)
+    Removing emacs (46.1) ...
 
 Okay, that worked. But ... did it remove `emacs24`? Lets see:
 
-	$ dpkg -l | grep ^ii | grep -i emacs
-	ii  emacs24                                                     24.5+1-1ubuntu2                                       amd64        GNU Emacs editor (with GTK+ GUI support)
-	ii  emacs24-bin-common                                          24.5+1-1ubuntu2                                       amd64        GNU Emacs editor's shared, architecture dependent files
-	ii  emacs24-common                                              24.5+1-1ubuntu2                                       all          GNU Emacs editor's shared, architecture independent infrastructure
-	ii  emacs24-common-non-dfsg                                     24.4+1-2                                              all          GNU Emacs common non-DFSG items, including the core documentation
-	ii  emacsen-common                                              2.0.8                                                 all          Common facilities for all emacsen
+    $ dpkg -l | grep ^ii | grep -i emacs
+    ii  emacs24                                                     24.5+1-1ubuntu2                                       amd64        GNU Emacs editor (with GTK+ GUI support)
+    ii  emacs24-bin-common                                          24.5+1-1ubuntu2                                       amd64        GNU Emacs editor's shared, architecture dependent files
+    ii  emacs24-common                                              24.5+1-1ubuntu2                                       all          GNU Emacs editor's shared, architecture independent infrastructure
+    ii  emacs24-common-non-dfsg                                     24.4+1-2                                              all          GNU Emacs common non-DFSG items, including the core documentation
+    ii  emacsen-common                                              2.0.8                                                 all          Common facilities for all emacsen
 
 Now, this `dpkg` command is a wtf on its own. Why do we need a new tool? Why do
 we need two `grep` invocations? Why is the output 200 columns wide (guaranteeing
@@ -135,10 +135,10 @@ Ubuntu](http://askubuntu.com/q/17823)).
 Removing a package will, of course, not remove its dependencies.  To do this, we
 have `apt-get autoremove`.
 
-	autoremove
-		autoremove is used to remove packages that were automatically
-		installed to satisfy dependencies for other packages and are now no
-		longer needed.
+    autoremove
+        autoremove is used to remove packages that were automatically
+        installed to satisfy dependencies for other packages and are now no
+        longer needed.
 
 But oh boy, is this a dangerous command! I’ve had it remove several *wanted*
 packages on more than one occasion. Not installed directly does *not* equal
@@ -146,133 +146,133 @@ unwanted; this is why I wanted to remove the `emacs24` package directly.
 
 But lets try it:
 
-	$ sudo apt-get autoremove
-	Reading package lists... Done
-	Building dependency tree
-	Reading state information... Done
-	0 to upgrade, 0 to newly install, 0 to remove and 0 not to upgrade.
+    $ sudo apt-get autoremove
+    Reading package lists... Done
+    Building dependency tree
+    Reading state information... Done
+    0 to upgrade, 0 to newly install, 0 to remove and 0 not to upgrade.
 
 I have no idea why this doesn’t work. Lets try and remove the `emacs24` packages
 directly; surly a wildcard like `*` will work?
 
-	$ sudo apt-get remove emacs\*
-	Reading package lists... Done
-	Building dependency tree
-	Reading state information... Done
-	Note, selecting 'emacsen-common' for regex 'emacs*'
-	Note, selecting 'qml-module-qtqml-statemachine' for regex 'emacs*'
-	Note, selecting 'emacs23-bin-common' for regex 'emacs*'
-	Note, selecting 'acl2-emacs' for regex 'emacs*'
-	Note, selecting 'emacs24-nox' for regex 'emacs*'
-	Note, selecting 'emacs-snapshot-gtk' for regex 'emacs*'
-	Note, selecting 'emacspeak-espeak-server' for regex 'emacs*'
-	Note, selecting 'emacs24-el' for regex 'emacs*'
-	Note, selecting 'emacspeak-ss' for regex 'emacs*'
-	Note, selecting 'emacs-goodies-el' for regex 'emacs*'
-	Note, selecting 'xemacs21-gnome-mule' for regex 'emacs*'
-	Note, selecting 'qemacs' for regex 'emacs*'
-	Note, selecting 'xemacs21-supportel' for regex 'emacs*'
-	Note, selecting 'cxref-emacs' for regex 'emacs*'
-	Note, selecting 'xemacs21-gnome-mule-canna-wnn' for regex 'emacs*'
-	Note, selecting 'xemacs21-mule' for regex 'emacs*'
-	Note, selecting 'trac-includemacro' for regex 'emacs*'
-	Note, selecting 'xemacs21-support' for regex 'emacs*'
-	Note, selecting 'emacs-intl-fonts' for regex 'emacs*'
-	Note, selecting 'xemacs21-bin' for regex 'emacs*'
-	Note, selecting 'xemacs21-mule-canna-wnn' for regex 'emacs*'
-	Note, selecting 'emacs20' for regex 'emacs*'
-	Note, selecting 'emacs-chess' for regex 'emacs*'
-	Note, selecting 'emacs21' for regex 'emacs*'
-	Note, selecting 'emacs22' for regex 'emacs*'
-	Note, selecting 'emacs-snapshot' for regex 'emacs*'
-	Note, selecting 'emacs23' for regex 'emacs*'
-	Note, selecting 'emacs24' for regex 'emacs*'
-	Note, selecting 'emacs-goodies-extra-el' for regex 'emacs*'
-	Note, selecting 'emacspeak' for regex 'emacs*'
-	Note, selecting 'emacsen' for regex 'emacs*'
-	Note, selecting 'emacspeak-dt-tcl' for regex 'emacs*'
-	Note, selecting 'emacs23-lucid' for regex 'emacs*'
-	Note, selecting 'emacspeak-bs-tcl' for regex 'emacs*'
-	Note, selecting 'notmuch-emacs' for regex 'emacs*'
-	Note, selecting 'emacs24-common-non-dfsg' for regex 'emacs*'
-	Note, selecting 'emacs24-nox-dbg' for regex 'emacs*'
-	Note, selecting 'python-ropemacs' for regex 'emacs*'
-	Note, selecting 'xemacs21' for regex 'emacs*'
-	Note, selecting 'xemacs21-basesupport' for regex 'emacs*'
-	Note, selecting 'emacs24-lucid' for regex 'emacs*'
-	Note, selecting 'xemacs21-mulesupport-el' for regex 'emacs*'
-	Note, selecting 'xemacs' for regex 'emacs*'
-	Note, selecting 'maxima-emacs' for regex 'emacs*'
-	Note, selecting 'emacs-calfw' for regex 'emacs*'
-	Note, selecting 'timemachine' for regex 'emacs*'
-	Note, selecting 'emacs24-lucid-dbg' for regex 'emacs*'
-	Note, selecting 'xemacs21-gnome-nomule' for regex 'emacs*'
-	Note, selecting 'emacs-wiki' for regex 'emacs*'
-	Note, selecting 'emacs24-bin-common' for regex 'emacs*'
-	Note, selecting 'xemacs21-nomule' for regex 'emacs*'
-	Note, selecting 'emacs24-common' for regex 'emacs*'
-	Note, selecting 'xemacs21-basesupport-el' for regex 'emacs*'
-	Note, selecting 'emacs-calfw-howm' for regex 'emacs*'
-	Note, selecting 'xemacs-support' for regex 'emacs*'
-	Package 'emacs20' is not installed, so not removed
-	Package 'xemacs-widget' is not installed, so not removed
-	Package 'xemacs-support' is not installed, so not removed
-	Package 'emacs-snapshot-gtk' is not installed, so not removed
-	Package 'emacs-snapshot-nonx' is not installed, so not removed
-	Package 'emacs' is not installed, so not removed
-	Package 'emacs-goodies-el' is not installed, so not removed
-	Package 'emacs24-dbg' is not installed, so not removed
-	Package 'emacs24-el' is not installed, so not removed
-	Package 'emacs24-lucid-dbg' is not installed, so not removed
-	Package 'emacs24-nox' is not installed, so not removed
-	Package 'emacs24-nox-dbg' is not installed, so not removed
-	Package 'acl2-emacs' is not installed, so not removed
-	Package 'cxref-emacs' is not installed, so not removed
-	Package 'emacs-calfw' is not installed, so not removed
-	Package 'emacs-calfw-howm' is not installed, so not removed
-	Package 'emacs-intl-fonts' is not installed, so not removed
-	Package 'emacs-jabber' is not installed, so not removed
-	Package 'emacs-mozc' is not installed, so not removed
-	Package 'emacs-mozc-bin' is not installed, so not removed
-	Package 'emacs-nox' is not installed, so not removed
-	Package 'emacs-window-layout' is not installed, so not removed
-	Package 'emacs24-lucid' is not installed, so not removed
-	Package 'emacspeak' is not installed, so not removed
-	Package 'emacspeak-espeak-server' is not installed, so not removed
-	Package 'emacspeak-ss' is not installed, so not removed
-	Package 'maxima-emacs' is not installed, so not removed
-	Package 'notmuch-emacs' is not installed, so not removed
-	Package 'python-ropemacs' is not installed, so not removed
-	Package 'qml-module-qtqml-statemachine' is not installed, so not removed
-	Package 'supercollider-emacs' is not installed, so not removed
-	Package 'timemachine' is not installed, so not removed
-	Package 'trac-includemacro' is not installed, so not removed
-	Package 'trac-wikitablemacro' is not installed, so not removed
-	Package 'xemacs21' is not installed, so not removed
-	Package 'xemacs21-basesupport' is not installed, so not removed
-	Package 'xemacs21-basesupport-el' is not installed, so not removed
-	Package 'xemacs21-bin' is not installed, so not removed
-	Package 'xemacs21-gnome-mule' is not installed, so not removed
-	Package 'xemacs21-gnome-mule-canna-wnn' is not installed, so not removed
-	Package 'xemacs21-gnome-nomule' is not installed, so not removed
-	Package 'xemacs21-mule' is not installed, so not removed
-	Package 'xemacs21-mule-canna-wnn' is not installed, so not removed
-	Package 'xemacs21-mulesupport' is not installed, so not removed
-	Package 'xemacs21-mulesupport-el' is not installed, so not removed
-	Package 'xemacs21-nomule' is not installed, so not removed
-	Package 'xemacs21-support' is not installed, so not removed
-	Package 'xemacs21-supportel' is not installed, so not removed
-	Some packages could not be installed. This may mean that you have
-	requested an impossible situation or if you are using the unstable
-	distribution that some required packages have not yet been created
-	or been moved out of Incoming.
-	The following information may help to resolve the situation:
+    $ sudo apt-get remove emacs\*
+    Reading package lists... Done
+    Building dependency tree
+    Reading state information... Done
+    Note, selecting 'emacsen-common' for regex 'emacs*'
+    Note, selecting 'qml-module-qtqml-statemachine' for regex 'emacs*'
+    Note, selecting 'emacs23-bin-common' for regex 'emacs*'
+    Note, selecting 'acl2-emacs' for regex 'emacs*'
+    Note, selecting 'emacs24-nox' for regex 'emacs*'
+    Note, selecting 'emacs-snapshot-gtk' for regex 'emacs*'
+    Note, selecting 'emacspeak-espeak-server' for regex 'emacs*'
+    Note, selecting 'emacs24-el' for regex 'emacs*'
+    Note, selecting 'emacspeak-ss' for regex 'emacs*'
+    Note, selecting 'emacs-goodies-el' for regex 'emacs*'
+    Note, selecting 'xemacs21-gnome-mule' for regex 'emacs*'
+    Note, selecting 'qemacs' for regex 'emacs*'
+    Note, selecting 'xemacs21-supportel' for regex 'emacs*'
+    Note, selecting 'cxref-emacs' for regex 'emacs*'
+    Note, selecting 'xemacs21-gnome-mule-canna-wnn' for regex 'emacs*'
+    Note, selecting 'xemacs21-mule' for regex 'emacs*'
+    Note, selecting 'trac-includemacro' for regex 'emacs*'
+    Note, selecting 'xemacs21-support' for regex 'emacs*'
+    Note, selecting 'emacs-intl-fonts' for regex 'emacs*'
+    Note, selecting 'xemacs21-bin' for regex 'emacs*'
+    Note, selecting 'xemacs21-mule-canna-wnn' for regex 'emacs*'
+    Note, selecting 'emacs20' for regex 'emacs*'
+    Note, selecting 'emacs-chess' for regex 'emacs*'
+    Note, selecting 'emacs21' for regex 'emacs*'
+    Note, selecting 'emacs22' for regex 'emacs*'
+    Note, selecting 'emacs-snapshot' for regex 'emacs*'
+    Note, selecting 'emacs23' for regex 'emacs*'
+    Note, selecting 'emacs24' for regex 'emacs*'
+    Note, selecting 'emacs-goodies-extra-el' for regex 'emacs*'
+    Note, selecting 'emacspeak' for regex 'emacs*'
+    Note, selecting 'emacsen' for regex 'emacs*'
+    Note, selecting 'emacspeak-dt-tcl' for regex 'emacs*'
+    Note, selecting 'emacs23-lucid' for regex 'emacs*'
+    Note, selecting 'emacspeak-bs-tcl' for regex 'emacs*'
+    Note, selecting 'notmuch-emacs' for regex 'emacs*'
+    Note, selecting 'emacs24-common-non-dfsg' for regex 'emacs*'
+    Note, selecting 'emacs24-nox-dbg' for regex 'emacs*'
+    Note, selecting 'python-ropemacs' for regex 'emacs*'
+    Note, selecting 'xemacs21' for regex 'emacs*'
+    Note, selecting 'xemacs21-basesupport' for regex 'emacs*'
+    Note, selecting 'emacs24-lucid' for regex 'emacs*'
+    Note, selecting 'xemacs21-mulesupport-el' for regex 'emacs*'
+    Note, selecting 'xemacs' for regex 'emacs*'
+    Note, selecting 'maxima-emacs' for regex 'emacs*'
+    Note, selecting 'emacs-calfw' for regex 'emacs*'
+    Note, selecting 'timemachine' for regex 'emacs*'
+    Note, selecting 'emacs24-lucid-dbg' for regex 'emacs*'
+    Note, selecting 'xemacs21-gnome-nomule' for regex 'emacs*'
+    Note, selecting 'emacs-wiki' for regex 'emacs*'
+    Note, selecting 'emacs24-bin-common' for regex 'emacs*'
+    Note, selecting 'xemacs21-nomule' for regex 'emacs*'
+    Note, selecting 'emacs24-common' for regex 'emacs*'
+    Note, selecting 'xemacs21-basesupport-el' for regex 'emacs*'
+    Note, selecting 'emacs-calfw-howm' for regex 'emacs*'
+    Note, selecting 'xemacs-support' for regex 'emacs*'
+    Package 'emacs20' is not installed, so not removed
+    Package 'xemacs-widget' is not installed, so not removed
+    Package 'xemacs-support' is not installed, so not removed
+    Package 'emacs-snapshot-gtk' is not installed, so not removed
+    Package 'emacs-snapshot-nonx' is not installed, so not removed
+    Package 'emacs' is not installed, so not removed
+    Package 'emacs-goodies-el' is not installed, so not removed
+    Package 'emacs24-dbg' is not installed, so not removed
+    Package 'emacs24-el' is not installed, so not removed
+    Package 'emacs24-lucid-dbg' is not installed, so not removed
+    Package 'emacs24-nox' is not installed, so not removed
+    Package 'emacs24-nox-dbg' is not installed, so not removed
+    Package 'acl2-emacs' is not installed, so not removed
+    Package 'cxref-emacs' is not installed, so not removed
+    Package 'emacs-calfw' is not installed, so not removed
+    Package 'emacs-calfw-howm' is not installed, so not removed
+    Package 'emacs-intl-fonts' is not installed, so not removed
+    Package 'emacs-jabber' is not installed, so not removed
+    Package 'emacs-mozc' is not installed, so not removed
+    Package 'emacs-mozc-bin' is not installed, so not removed
+    Package 'emacs-nox' is not installed, so not removed
+    Package 'emacs-window-layout' is not installed, so not removed
+    Package 'emacs24-lucid' is not installed, so not removed
+    Package 'emacspeak' is not installed, so not removed
+    Package 'emacspeak-espeak-server' is not installed, so not removed
+    Package 'emacspeak-ss' is not installed, so not removed
+    Package 'maxima-emacs' is not installed, so not removed
+    Package 'notmuch-emacs' is not installed, so not removed
+    Package 'python-ropemacs' is not installed, so not removed
+    Package 'qml-module-qtqml-statemachine' is not installed, so not removed
+    Package 'supercollider-emacs' is not installed, so not removed
+    Package 'timemachine' is not installed, so not removed
+    Package 'trac-includemacro' is not installed, so not removed
+    Package 'trac-wikitablemacro' is not installed, so not removed
+    Package 'xemacs21' is not installed, so not removed
+    Package 'xemacs21-basesupport' is not installed, so not removed
+    Package 'xemacs21-basesupport-el' is not installed, so not removed
+    Package 'xemacs21-bin' is not installed, so not removed
+    Package 'xemacs21-gnome-mule' is not installed, so not removed
+    Package 'xemacs21-gnome-mule-canna-wnn' is not installed, so not removed
+    Package 'xemacs21-gnome-nomule' is not installed, so not removed
+    Package 'xemacs21-mule' is not installed, so not removed
+    Package 'xemacs21-mule-canna-wnn' is not installed, so not removed
+    Package 'xemacs21-mulesupport' is not installed, so not removed
+    Package 'xemacs21-mulesupport-el' is not installed, so not removed
+    Package 'xemacs21-nomule' is not installed, so not removed
+    Package 'xemacs21-support' is not installed, so not removed
+    Package 'xemacs21-supportel' is not installed, so not removed
+    Some packages could not be installed. This may mean that you have
+    requested an impossible situation or if you are using the unstable
+    distribution that some required packages have not yet been created
+    or been moved out of Incoming.
+    The following information may help to resolve the situation:
 
-	The following packages have unmet dependencies.
-	apturl : Depends: gir1.2-webkit2-4.0 but it is not going to be installed or
-					gir1.2-webkit-3.0 but it is not going to be installed
-	E: Error, pkgProblemResolver::Resolve generated breaks, this may be caused by held packages.
-	Exit 100
+    The following packages have unmet dependencies.
+    apturl : Depends: gir1.2-webkit2-4.0 but it is not going to be installed or
+                    gir1.2-webkit-3.0 but it is not going to be installed
+    E: Error, pkgProblemResolver::Resolve generated breaks, this may be caused by held packages.
+    Exit 100
 
 Ugh. wtf?
 
@@ -321,51 +321,51 @@ to install ... I have no idea why.
 
 So, `^emacs24`:
 
-	$ sudo apt-get remove ^emacs24
-	Reading package lists... Done
-	Building dependency tree
-	Reading state information... Done
-	Note, selecting 'emacs24-nox' for regex '^emacs24'
-	Note, selecting 'emacs24-el' for regex '^emacs24'
-	Note, selecting 'emacs24' for regex '^emacs24'
-	Note, selecting 'emacs24-common-non-dfsg' for regex '^emacs24'
-	Note, selecting 'emacs24-nox-dbg' for regex '^emacs24'
-	Note, selecting 'emacs24-lucid' for regex '^emacs24'
-	Note, selecting 'emacs24-lucid-dbg' for regex '^emacs24'
-	Note, selecting 'emacs24-bin-common' for regex '^emacs24'
-	Note, selecting 'emacs24-common' for regex '^emacs24'
-	Note, selecting 'emacs24-dbg' for regex '^emacs24'
-	Package 'emacs24-dbg' is not installed, so not removed
-	Package 'emacs24-el' is not installed, so not removed
-	Package 'emacs24-lucid-dbg' is not installed, so not removed
-	Package 'emacs24-nox' is not installed, so not removed
-	Package 'emacs24-nox-dbg' is not installed, so not removed
-	Package 'emacs24-lucid' is not installed, so not removed
-	The following packages will be REMOVED
-	  emacs24 emacs24-bin-common emacs24-common emacs24-common-non-dfsg
-	0 to upgrade, 0 to newly install, 4 to remove and 0 not to upgrade.
-	After this operation, 88.4 MB disk space will be freed.
-	Do you want to continue? [Y/n] y
-	(Reading database ... 301957 files and directories currently installed.)
-	Removing emacs24 (24.5+1-1ubuntu2) ...
-	Remove dictionaries-common for emacs24
-	remove/dictionaries-common: Purging byte-compiled files for flavour emacs24
-	Remove emacsen-common for emacs24
-	emacsen-common: Handling removal of emacsen flavor emacs24
-	Remove cmake-data for emacs24
-	remove/cmake-data: Purging byte-compiled files for emacs24
-	Removing emacs24-bin-common (24.5+1-1ubuntu2) ...
-	Removing emacs24-common (24.5+1-1ubuntu2) ...
-	Removing emacs24-common-non-dfsg (24.4+1-2) ...
-	Processing triggers for man-db (2.7.4-1) ...
-	Processing triggers for gnome-menus (3.13.3-6ubuntu1) ...
-	Processing triggers for bamfdaemon (0.5.2~bzr0+15.10.20150627.1-0ubuntu1) ...
-	Rebuilding /usr/share/applications/bamf-2.index...
-	Processing triggers for desktop-file-utils (0.22-1ubuntu3) ...
-	Processing triggers for mime-support (3.58ubuntu1) ...
-	Processing triggers for menu (2.1.47ubuntu1) ...
-	Processing triggers for install-info (6.0.0.dfsg.1-3) ...
-	Processing triggers for hicolor-icon-theme (0.15-0ubuntu1) ...
+    $ sudo apt-get remove ^emacs24
+    Reading package lists... Done
+    Building dependency tree
+    Reading state information... Done
+    Note, selecting 'emacs24-nox' for regex '^emacs24'
+    Note, selecting 'emacs24-el' for regex '^emacs24'
+    Note, selecting 'emacs24' for regex '^emacs24'
+    Note, selecting 'emacs24-common-non-dfsg' for regex '^emacs24'
+    Note, selecting 'emacs24-nox-dbg' for regex '^emacs24'
+    Note, selecting 'emacs24-lucid' for regex '^emacs24'
+    Note, selecting 'emacs24-lucid-dbg' for regex '^emacs24'
+    Note, selecting 'emacs24-bin-common' for regex '^emacs24'
+    Note, selecting 'emacs24-common' for regex '^emacs24'
+    Note, selecting 'emacs24-dbg' for regex '^emacs24'
+    Package 'emacs24-dbg' is not installed, so not removed
+    Package 'emacs24-el' is not installed, so not removed
+    Package 'emacs24-lucid-dbg' is not installed, so not removed
+    Package 'emacs24-nox' is not installed, so not removed
+    Package 'emacs24-nox-dbg' is not installed, so not removed
+    Package 'emacs24-lucid' is not installed, so not removed
+    The following packages will be REMOVED
+      emacs24 emacs24-bin-common emacs24-common emacs24-common-non-dfsg
+    0 to upgrade, 0 to newly install, 4 to remove and 0 not to upgrade.
+    After this operation, 88.4 MB disk space will be freed.
+    Do you want to continue? [Y/n] y
+    (Reading database ... 301957 files and directories currently installed.)
+    Removing emacs24 (24.5+1-1ubuntu2) ...
+    Remove dictionaries-common for emacs24
+    remove/dictionaries-common: Purging byte-compiled files for flavour emacs24
+    Remove emacsen-common for emacs24
+    emacsen-common: Handling removal of emacsen flavor emacs24
+    Remove cmake-data for emacs24
+    remove/cmake-data: Purging byte-compiled files for emacs24
+    Removing emacs24-bin-common (24.5+1-1ubuntu2) ...
+    Removing emacs24-common (24.5+1-1ubuntu2) ...
+    Removing emacs24-common-non-dfsg (24.4+1-2) ...
+    Processing triggers for man-db (2.7.4-1) ...
+    Processing triggers for gnome-menus (3.13.3-6ubuntu1) ...
+    Processing triggers for bamfdaemon (0.5.2~bzr0+15.10.20150627.1-0ubuntu1) ...
+    Rebuilding /usr/share/applications/bamf-2.index...
+    Processing triggers for desktop-file-utils (0.22-1ubuntu3) ...
+    Processing triggers for mime-support (3.58ubuntu1) ...
+    Processing triggers for menu (2.1.47ubuntu1) ...
+    Processing triggers for install-info (6.0.0.dfsg.1-3) ...
+    Processing triggers for hicolor-icon-theme (0.15-0ubuntu1) ...
 
 And we’re finished ... *finally*!
 
@@ -386,62 +386,62 @@ More examples
 
 Some other examples of similar surprising `apt-get` behaviour:
 
-	$ apt-get remove compiz-gnome
-	Reading package lists... Done
-	Building dependency tree
-	Reading state information... Done
-	The following extra packages will be installed:
-	  compiz-kde compizconfig-backend-kconfig kdelibs5-data libattica0.3 libdlrestrictions1 libkdecore5 libkdeui5
-	Suggested packages:
-	  hspell
-	The following packages will be REMOVED
-	  compiz compiz-gnome unity
-	The following NEW packages will be installed
-	  compiz-kde compizconfig-backend-kconfig kdelibs5-data libattica0.3 libdlrestrictions1 libkdecore5 libkdeui5
-	0 to upgrade, 7 to newly install, 3 to remove and 0 not to upgrade.
-	Need to get 5,375 kB of archives.
-	After this operation, 11.7 MB of additional disk space will be used.
-	Do you want to continue [Y/n]?
+    $ apt-get remove compiz-gnome
+    Reading package lists... Done
+    Building dependency tree
+    Reading state information... Done
+    The following extra packages will be installed:
+      compiz-kde compizconfig-backend-kconfig kdelibs5-data libattica0.3 libdlrestrictions1 libkdecore5 libkdeui5
+    Suggested packages:
+      hspell
+    The following packages will be REMOVED
+      compiz compiz-gnome unity
+    The following NEW packages will be installed
+      compiz-kde compizconfig-backend-kconfig kdelibs5-data libattica0.3 libdlrestrictions1 libkdecore5 libkdeui5
+    0 to upgrade, 7 to newly install, 3 to remove and 0 not to upgrade.
+    Need to get 5,375 kB of archives.
+    After this operation, 11.7 MB of additional disk space will be used.
+    Do you want to continue [Y/n]?
 
 Here’s another:
 
-	$ apt-get install consolekit:i386
+    $ apt-get install consolekit:i386
 
-	Reading package lists...
-	Building dependency tree...
-	Reading state information...
-	The following packages were automatically installed and are no longer required:
-	  python-mutagen python-mmkeys python-cddb
-	Use 'apt-get autoremove' to remove them.
-	The following extra packages will be installed:
-	  docbook-xml libck-connector0:i386 libpam-ck-connector:i386 libpam0g:i386
-	  libpolkit-gobject-1-0:i386 sgml-data synaptic
-	Suggested packages:
-	  docbook docbook-dsssl docbook-xsl docbook-defguide libpam-doc:i386 perlsgml
-	  doc-html-w3 opensp dwww deborphan
-	Recommended packages:
-	  rarian-compat
-	The following packages will be REMOVED
-	  acpi-support aptdaemon apturl colord consolekit dell-recovery
-	  gnome-bluetooth gnome-control-center gnome-power-manager gnome-system-log
-	  gnome-user-share hplip indicator-datetime indicator-power indicator-sound
-	  jockey-common jockey-gtk landscape-client-ui-install language-selector-gnome
-	  libcanberra-pulse libck-connector0 libnm-gtk0 libpam-ck-connector
-	  manage-distro-upgrade nautilus-share network-manager-gnome policykit-1
-	  policykit-1-gnome printer-driver-postscript-hp pulseaudio
-	  pulseaudio-module-bluetooth pulseaudio-module-gconf pulseaudio-module-x11
-	  python-aptdaemon python-aptdaemon.gtk3widgets python-aptdaemon.pkcompat
-	  sessioninstaller software-center software-properties-gtk
-	  ubuntu-system-service ubuntuone-control-panel-common
-	  ubuntuone-control-panel-qt ubuntuone-installer update-manager
-	  update-notifier xul-ext-ubufox
-	  The following NEW packages will be installed
-	  consolekit:i386 docbook-xml libck-connector0:i386 libpam-ck-connector:i386
-	  libpam0g:i386 libpolkit-gobject-1-0:i386 sgml-data synaptic
-	0 to upgrade, 8 to newly install, 46 to remove and 0 not to upgrade.
-	Need to get 3,432 kB of archives.
-	After this operation, 20.6 MB disk space will be freed.
-	Do you want to continue [Y/n]?
+    Reading package lists...
+    Building dependency tree...
+    Reading state information...
+    The following packages were automatically installed and are no longer required:
+      python-mutagen python-mmkeys python-cddb
+    Use 'apt-get autoremove' to remove them.
+    The following extra packages will be installed:
+      docbook-xml libck-connector0:i386 libpam-ck-connector:i386 libpam0g:i386
+      libpolkit-gobject-1-0:i386 sgml-data synaptic
+    Suggested packages:
+      docbook docbook-dsssl docbook-xsl docbook-defguide libpam-doc:i386 perlsgml
+      doc-html-w3 opensp dwww deborphan
+    Recommended packages:
+      rarian-compat
+    The following packages will be REMOVED
+      acpi-support aptdaemon apturl colord consolekit dell-recovery
+      gnome-bluetooth gnome-control-center gnome-power-manager gnome-system-log
+      gnome-user-share hplip indicator-datetime indicator-power indicator-sound
+      jockey-common jockey-gtk landscape-client-ui-install language-selector-gnome
+      libcanberra-pulse libck-connector0 libnm-gtk0 libpam-ck-connector
+      manage-distro-upgrade nautilus-share network-manager-gnome policykit-1
+      policykit-1-gnome printer-driver-postscript-hp pulseaudio
+      pulseaudio-module-bluetooth pulseaudio-module-gconf pulseaudio-module-x11
+      python-aptdaemon python-aptdaemon.gtk3widgets python-aptdaemon.pkcompat
+      sessioninstaller software-center software-properties-gtk
+      ubuntu-system-service ubuntuone-control-panel-common
+      ubuntuone-control-panel-qt ubuntuone-installer update-manager
+      update-notifier xul-ext-ubufox
+      The following NEW packages will be installed
+      consolekit:i386 docbook-xml libck-connector0:i386 libpam-ck-connector:i386
+      libpam0g:i386 libpolkit-gobject-1-0:i386 sgml-data synaptic
+    0 to upgrade, 8 to newly install, 46 to remove and 0 not to upgrade.
+    Need to get 3,432 kB of archives.
+    After this operation, 20.6 MB disk space will be freed.
+    Do you want to continue [Y/n]?
 
 There are so many things wrong with this output that it hurts (and remember
 `yes` is the default, so pressing `Y` here will effectively hose the system).

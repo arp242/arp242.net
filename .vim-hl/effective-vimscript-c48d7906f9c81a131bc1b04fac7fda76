@@ -1,0 +1,1 @@
+<span class="Statement">nnoremap</span> <span class="Special">&lt;</span><span class="Special">Plug</span><span class="Special">&gt;</span>(myplugin-action) :call myplugin#action('arg', 2)<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>

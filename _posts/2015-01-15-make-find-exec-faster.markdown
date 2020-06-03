@@ -7,22 +7,22 @@ updated: 2019-05-03
 
 Here’s a little `find` trick that few people seem to know:
 
-	# 13 seconds
-	$ time find . -type f -exec stat {} \; > /dev/null
-			13.20s real             3.94s user              9.22s sys
+    # 13 seconds
+    $ time find . -type f -exec stat {} \; > /dev/null
+            13.20s real             3.94s user              9.22s sys
 
-	# 1.5 seconds; that's almost 10 times faster!
-	$ time find . -type f -exec stat {} + > /dev/null
-			1.48s real              0.68s user              0.79s sys
+    # 1.5 seconds; that's almost 10 times faster!
+    $ time find . -type f -exec stat {} + > /dev/null
+            1.48s real              0.68s user              0.79s sys
 
-	# Run the first command again, to make sure we’re not being biased by fs
+    # Run the first command again, to make sure we’re not being biased by fs
     # cache or got some fluke
-	$ time find . -type f -exec stat {} \; > /dev/null
-			13.40s real             3.67s user              9.51s sys
+    $ time find . -type f -exec stat {} \; > /dev/null
+            13.40s real             3.67s user              9.51s sys
 
-	# FYI
-	$ find . -type f | wc -l
-	    2641
+    # FYI
+    $ find . -type f | wc -l
+        2641
 
 That’s quite a large difference! All we did was swap the `;` for a `+`.
 
@@ -58,35 +58,35 @@ defines `ARG_MAX` as 131072 (128k), while FreeBSD (10, i386) gives it as 262144
 
 Let’s verify this with [`truss`][truss]:[^1]
 
-	# Amount of files we have
-	$ find . -type f | wc -l
-	    2641
+    # Amount of files we have
+    $ find . -type f | wc -l
+        2641
 
-	$ truss find . -type f -exec stat {} \; >& truss-slow
-	$ truss find . -type f -exec stat {} + >& truss-fast
+    $ truss find . -type f -exec stat {} \; >& truss-slow
+    $ truss find . -type f -exec stat {} + >& truss-fast
 
-	# Less than ARG_MAX, so we expect one fork()
-	$ find . -type f | xargs | wc -c
-		119528
+    # Less than ARG_MAX, so we expect one fork()
+    $ find . -type f | xargs | wc -c
+        119528
 
-	# Yup!
-	$ grep fork truss-fast | wc -l
-		1
+    # Yup!
+    $ grep fork truss-fast | wc -l
+        1
 
-	# And we fork() once for every file
-	$ grep fork truss-slow | wc -l
-		2641
+    # And we fork() once for every file
+    $ grep fork truss-slow | wc -l
+        2641
 
 ---
 
 There is one small caveat, this won’t work:
 
-	# FreeBSD find
+    # FreeBSD find
     $ find . -type f -exec cp {} /tmp +
-	find: -exec: no terminating ";" or "+"
+    find: -exec: no terminating ";" or "+"
 
-	# GNU find is even more cryptic
-	$ find: missing argument to `-exec'
+    # GNU find is even more cryptic
+    $ find: missing argument to `-exec'
 
 Going [back to POSIX][posix]:
 
@@ -99,7 +99,7 @@ and thus gives an error.
 
 We can work around this by spawning a `sh` one-liner:
 
-	$ find . -type f -exec sh -c 'cp "$@" /tmp' _ {} +
+    $ find . -type f -exec sh -c 'cp "$@" /tmp' _ {} +
 
 You need to pass the `_` since `sh -c` sets the special `$0` parameter from the
 first argument ([more details][reddit]).

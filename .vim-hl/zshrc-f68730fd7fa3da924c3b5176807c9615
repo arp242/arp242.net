@@ -1,0 +1,8 @@
+<span class="Comment"># Directory shortcuts</span>
+<span class="Statement">hash</span> -d pack=<span class="PreProc">$HOME</span>/.cache/vim/pack/plugins/start
+<span class="Statement">hash</span> -d vim=/usr/share/vim/vim82
+<span class="Statement">hash</span> -d d=<span class="PreProc">$HOME</span>/code/arp242.net/_drafts
+<span class="Statement">hash</span> -d p=<span class="PreProc">$HOME</span>/code/arp242.net/_posts
+<span class="Statement">hash</span> -d go=/usr/lib/go/src
+<span class="Statement">hash</span> -d c=<span class="PreProc">$HOME</span>/code
+<span class="Statement">hash</span> -d gc=<span class="PreProc">$HOME</span>/code/goatcounter

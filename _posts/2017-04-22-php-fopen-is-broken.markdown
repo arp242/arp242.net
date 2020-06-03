@@ -2,6 +2,7 @@
 layout: post
 title: "PHP’s fopen() is broken"
 tags: ['PHP']
+filetype: php
 updated: 2019-01-20
 desc: "Even essential standard library functions such as fopen() suffer from some serious shortcomings in PHP"
 hatnote: |
@@ -53,14 +54,15 @@ Every other language that I know of
 [except Bourne shell scripting](http://stackoverflow.com/q/27152022/660921)
 can do this. For example in Ruby we use exceptions:
 
+{:class="ft-ruby"}
     begin
       File.open '/etc/passwd', 'w'
     rescue Errno::EACCESS
       puts 'Access denied'
       exit 1
       # Or maybe ask user for different filename and try again?
-	  # Or maybe execute myself again with sudo?
-	  # Or maybe try a different filename?
+      # Or maybe execute myself again with sudo?
+      # Or maybe try a different filename?
     end
 
 All other languages that I know work the same, either by exceptions, or by a
@@ -70,43 +72,46 @@ return value or special `errno` variable.
 
 `fopen()` never raises an exception, this code:
 
-	try {
-		$fp = fopen('/etc/shadow', 'r');
-	}
-	catch (Exception $exc) {
-		print("Error!\n");
-	}
-	print("Okay!\n");
+    <?php
+    try {
+        $fp = fopen('/etc/shadow', 'r');
+    }
+    catch (Exception $exc) {
+        print("Error!\n");
+    }
+    print("Okay!\n");
 
 Will still give you:
 
-	PHP Warning: fopen(/etc/shadow): failed to open stream: Permission denied in /home/martin/test.php on line 4
+    PHP Warning: fopen(/etc/shadow): failed to open stream: Permission denied in /home/martin/test.php on line 4
 
 And PHP will *continue happily* after this error as if nothing happened. Yikes!
 
 What you could do instead is to install a [custom error handler][err-h] to throw
 an exception:
 
-	set_error_handler(function($errno, $errstr, $errfile, $errline) {
-		throw new ErrorException('Error!');
-	});
+    <?php
+    set_error_handler(function($errno, $errstr, $errfile, $errline) {
+        throw new ErrorException('Error!');
+    });
 
-	try {
-		$fp = fopen('/etc/shadow', 'r');
-	}
-	catch (Exception $exc) {
-		print("Error!\n");
-	}
+    try {
+        $fp = fopen('/etc/shadow', 'r');
+    }
+    catch (Exception $exc) {
+        print("Error!\n");
+    }
 
 But this requires modifying the way PHP behaves. In some scenarios this is okay,
 but sometimes it’s more tricky (in libraries, for example), so we can do:
 
-	# The @ suppresses printing the error message.
-	$fp = @fopen('/etc/shadow', 'r');
-	if (!$fp) {
-		$err = error_get_last();
-		throw new Exception($err['message']);
-	}
+    <?php
+    # The @ suppresses printing the error message.
+    $fp = @fopen('/etc/shadow', 'r');
+    if (!$fp) {
+        $err = error_get_last();
+        throw new Exception($err['message']);
+    }
 
 But what if you’re using this in a larger piece of code, and some other code
 installed an error handler to throw an exception (as is somewhat common to do
@@ -114,16 +119,17 @@ these days)?
 
 So what we should write, is:
 
-	try {
-		$fp = null;
-		$fp = @fopen('/etc/shadow', 'r');
-	}
-	catch (Exception $exc) { }
+    <?php
+    try {
+        $fp = null;
+        $fp = @fopen('/etc/shadow', 'r');
+    }
+    catch (Exception $exc) { }
 
-	if (!$fp) {
-		$err = error_get_last();
-		throw new Exception($err['message']);
-	}
+    if (!$fp) {
+        $err = error_get_last();
+        throw new Exception($err['message']);
+    }
 
 Ugh.
 
@@ -150,45 +156,48 @@ Another curious copy of C behaviour is that you can `fopen()` directories:
 
 Wait, what?! Let’s check this:
 
-	$fp = fopen('/etc', 'r');
+    <?php
+    $fp = fopen('/etc', 'r');
 
-	var_dump($fp);
-	# resource(4) of type (stream)
+    var_dump($fp);
+    # resource(4) of type (stream)
 
-	var_dump(fread($fp, 1024));
-	# string(0) ""
+    var_dump(fread($fp, 1024));
+    # string(0) ""
 
-	var_dump(file_get_contents('/etc'));
-	# string(0) ""
+    var_dump(file_get_contents('/etc'));
+    # string(0) ""
 
-	var_dump(readdir($fp));
-	# PHP Warning:  readdir(): 5 is not a valid Directory resource in php shell code on line 1
+    var_dump(readdir($fp));
+    # PHP Warning:  readdir(): 5 is not a valid Directory resource in php shell code on line 1
 
-	var_dump(fstat($fp));
-	# array(26) {
+    var_dump(fstat($fp));
+    # array(26) {
 
-	var_dump(flock($fp, LOCK_EX));
-	# true
+    var_dump(flock($fp, LOCK_EX));
+    # true
 
 Not even a warning; but on mode `w` you get an error:
 
-	$fp = fopen('/etc', 'w');
-	PHP Warning:  fopen(/etc): failed to open stream: Is a directory in php shell code on line 1
+    <?php
+    $fp = fopen('/etc', 'w');
+    PHP Warning:  fopen(/etc): failed to open stream: Is a directory in php shell code on line 1
 
 In Unix/C a directory is really a file; and originally you could open and read
 it like any ol’ file. This is how you got the directory entries back in the day!
 
 Here’s an example:
 
-	# Doesn't work on Linux. Try it on BSD!
-	$ hexdump -C testdir
-	00000000  e9 0c 03 00 0c 00 04 01  2e 00 00 00 d6 3d 02 00  |.............=..|
-	00000010  0c 00 04 02 2e 2e 00 00  ea 0c 03 00 10 00 08 05  |................|
-	00000020  66 69 6c 65 31 00 4a c6  eb 0c 03 00 10 00 08 05  |file1.J.........|
-	00000030  66 69 6c 65 32 00 4a c6  ec 0c 03 00 10 00 0a 05  |file2.J.........|
-	00000040  6c 69 6e 6b 31 00 4a c6  ed 0c 03 00 b8 01 04 04  |link1.J.........|
-	00000050  64 69 72 31 00 00 00 00  00 00 00 00 00 00 00 00  |dir1............|
-	00000060  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+{:class="ft-cli"}
+    # Doesn't work on Linux. Try it on BSD!
+    $ hexdump -C testdir
+    00000000  e9 0c 03 00 0c 00 04 01  2e 00 00 00 d6 3d 02 00  |.............=..|
+    00000010  0c 00 04 02 2e 2e 00 00  ea 0c 03 00 10 00 08 05  |................|
+    00000020  66 69 6c 65 31 00 4a c6  eb 0c 03 00 10 00 08 05  |file1.J.........|
+    00000030  66 69 6c 65 32 00 4a c6  ec 0c 03 00 10 00 0a 05  |file2.J.........|
+    00000040  6c 69 6e 6b 31 00 4a c6  ed 0c 03 00 b8 01 04 04  |link1.J.........|
+    00000050  64 69 72 31 00 00 00 00  00 00 00 00 00 00 00 00  |dir1............|
+    00000060  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
 
 In `testdir` there are 4 entries: 2 files, a symlink, and a directory.
 
@@ -201,11 +210,11 @@ Magic file objects
 
 `fopen()` returns a ‘magic file object’, this:
 
-	var_dump(fopen('/etc/passwd', 'r'));
+    var_dump(fopen('/etc/passwd', 'r'));
 
 Will give you:
 
-	resource(5) of type (stream)
+    resource(5) of type (stream)
 
 So how do we use this? How do I implement my own “type (steam)” that can be used
 with `fread()`? This is not at all obvious. It looks like a
@@ -239,11 +248,11 @@ will escalate the severity of these sort of attacks, not infrequently to a
 remote code vulnerability.[^1]
 
 [^1]: This is an even bigger problem with `include()` and friends, where these
-	  wrappers *also* work. `include($malicious_input)` will “upgrade” an
-	  information disclosure bug (which is already serious) to a remote code
-	  exploit. Botnet operators of the world rejoice! Thankfully, this behaviour
-	  is now off by default, but it took the PHP folk a while to realize this
-	  was even a problem since `allow_url_include` wasn't introduced until 2006.
+      wrappers *also* work. `include($malicious_input)` will “upgrade” an
+      information disclosure bug (which is already serious) to a remote code
+      exploit. Botnet operators of the world rejoice! Thankfully, this behaviour
+      is now off by default, but it took the PHP folk a while to realize this
+      was even a problem since `allow_url_include` wasn't introduced until 2006.
 
 What about the rest of the standard library?
 --------------------------------------------

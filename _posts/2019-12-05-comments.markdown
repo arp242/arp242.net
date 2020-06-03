@@ -60,7 +60,7 @@ subjectivity involved in "good" writing.
 While I don't really want to enter the debate on *when* to comment in depth,
 some comments are truly redundant. Some of the silliest examples I have seen:
 
-	char buf[BUF_SIZE]; /* create an array of characters */
+    char buf[BUF_SIZE]; /* create an array of characters */
 
 <!-- -->
 
@@ -68,27 +68,27 @@ some comments are truly redundant. Some of the silliest examples I have seen:
 
 <!-- -->
 
-	// Start the loop.
-	while ( have_posts() ) : the_post();
+    // Start the loop.
+    while ( have_posts() ) : the_post();
 
-	[..]
+    [..]
 
-	// End the loop.
-	endwhile;
+    // End the loop.
+    endwhile;
 
 ----
 
 Keep comments updated. If the code is updated, then also update the comment.
 Here’s some code I once encountered:
 
-	/**
-	 * Please be careful when modifying this function. This is really advanced code.
-	 * @return bool
-	 */
-	public static function initResources()
-	{
-		return true;
-	}
+    /**
+     * Please be careful when modifying this function. This is really advanced code.
+     * @return bool
+     */
+    public static function initResources()
+    {
+        return true;
+    }
 
 While this example is obvious (even [made it to The Daily WTF][tdwtf]), most are
 more subtle.

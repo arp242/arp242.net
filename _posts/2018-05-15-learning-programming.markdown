@@ -33,38 +33,38 @@ them (also see [Why write?](/why-write.html))
 
 For example an excerpt in my notes for Go:
 
-	Strings
-	-------
+    Strings
+    -------
 
-		// utf-8 by default
-		s := "€e"
+        // utf-8 by default
+        s := "€e"
 
-		// But many operations operate on bytes, and not characters:
-		fmt.Println(s[0:3])
+        // But many operations operate on bytes, and not characters:
+        fmt.Println(s[0:3])
 
-		// Array of runes
-		x := []rune(s)
+        // Array of runes
+        x := []rune(s)
 
-		// Array of bytes
-		y := []byte(s)
+        // Array of bytes
+        y := []byte(s)
 
-		// Unlike strings these are not immutable!
-		y[3] = 'X'
-		x[1] = 'X'
-		fmt.Println(s, string(x), string(y))  // €e €X €X
+        // Unlike strings these are not immutable!
+        y[3] = 'X'
+        x[1] = 'X'
+        fmt.Println(s, string(x), string(y))  // €e €X €X
 
-		// 8364, 226
-		fmt.Println(x[0], y[0])
+        // 8364, 226
+        fmt.Println(x[0], y[0])
 
-		// €
-		fmt.Println(string(x[0]))
+        // €
+        fmt.Println(string(x[0]))
 
-		// Useful packages:
-		// bytes, strings, strconv, unicode
-		// var buf bytes.Buffer
+        // Useful packages:
+        // bytes, strings, strconv, unicode
+        // var buf bytes.Buffer
 
-		// Convert
-		s := string(byteArray)
+        // Convert
+        s := string(byteArray)
 
 ---
 

@@ -13,17 +13,17 @@ Why I don't like git
 My chief gripe with git is its user interface. With ‘user interface’ I mean the
 commandline user interface. Let me show by example:
 
-	$ git help commit | wc -l
-	506
-	$ hg help commit | wc -l
-	59
-	$ hg help commit -v | wc -l
-	96
+    $ git help commit | wc -l
+    506
+    $ hg help commit | wc -l
+    59
+    $ hg help commit -v | wc -l
+    96
 
 Currently my git installation has 169 “core” commands:
 
-	$ find /usr/lib/git-core -maxdepth 1 -type f -executable | wc -l
-	169
+    $ find /usr/lib/git-core -maxdepth 1 -type f -executable | wc -l
+    169
 
 Compare this to mercurial’s 50 built-in commands (from `hg help`), a number
 which has remained constant since I wrote this article (whereas git had 160
@@ -52,27 +52,27 @@ git to get by, but not enough to deal with rare exceptional situations that
 occur only a few times a year. For example consider this error I made a while
 ago:
 
-	# Do work
-	$ git checkout -b feature-branch
-	$ git commit -m 'Best code ever!'
-	$ git push
+    # Do work
+    $ git checkout -b feature-branch
+    $ git commit -m 'Best code ever!'
+    $ git push
 
-	# Okay, work here is done so let's check out master again.
-	$ git checkout master
+    # Okay, work here is done so let's check out master again.
+    $ git checkout master
 
-	# Go have dinner. Discover I forgot something after dinner, fix it.
-	# Let's just ammend that commit instead of making a new one!
-	$ git commit --amend
+    # Go have dinner. Discover I forgot something after dinner, fix it.
+    # Let's just ammend that commit instead of making a new one!
+    $ git commit --amend
 
-	# But wait, I forgot I switched back to master >_<
+    # But wait, I forgot I switched back to master >_<
 
 It’s not so easy to undo the amend ([the solutions listed here][undo-amend] undo
 *everything*, not only the `--amend`).
 
 Compare with `hg`:
 
-	% hg ci --amend
-	abort: cannot amend public changesets
+    % hg ci --amend
+    abort: cannot amend public changesets
 
 This makes much more sense, since you typically don’t want to do this. There are
 exceptions, but those are rare and far in between.

@@ -21,107 +21,107 @@ Note: these directives are written for Apache 2.2 on FreeBSD. They *may* or
 systems. On Linux you may need to change `libexec/apache22` to something else
 (for example `modules/` on Red Hat based systems).
 
-	# Modules to load
-	LoadModule alias_module libexec/apache22/mod_alias.so
-	LoadModule auth_basic_module libexec/apache22/mod_auth_basic.so
-	LoadModule auth_digest_module libexec/apache22/mod_auth_digest.so
-	LoadModule authn_file_module libexec/apache22/mod_authn_file.so
-	LoadModule authz_default_module libexec/apache22/mod_authz_default.so
-	LoadModule authz_host_module libexec/apache22/mod_authz_host.so
-	LoadModule authz_user_module libexec/apache22/mod_authz_user.so
-	LoadModule dav_module libexec/apache22/mod_dav.so
-	LoadModule deflate_module libexec/apache22/mod_deflate.so
-	LoadModule ssl_module libexec/apache22/mod_ssl.so
+    # Modules to load
+    LoadModule alias_module libexec/apache22/mod_alias.so
+    LoadModule auth_basic_module libexec/apache22/mod_auth_basic.so
+    LoadModule auth_digest_module libexec/apache22/mod_auth_digest.so
+    LoadModule authn_file_module libexec/apache22/mod_authn_file.so
+    LoadModule authz_default_module libexec/apache22/mod_authz_default.so
+    LoadModule authz_host_module libexec/apache22/mod_authz_host.so
+    LoadModule authz_user_module libexec/apache22/mod_authz_user.so
+    LoadModule dav_module libexec/apache22/mod_dav.so
+    LoadModule deflate_module libexec/apache22/mod_deflate.so
+    LoadModule ssl_module libexec/apache22/mod_ssl.so
 
-	# SVN modules
-	LoadModule dav_svn_module libexec/apache22/mod_dav_svn.so
-	LoadModule authz_svn_module libexec/apache22/mod_authz_svn.so
+    # SVN modules
+    LoadModule dav_svn_module libexec/apache22/mod_dav_svn.so
+    LoadModule authz_svn_module libexec/apache22/mod_authz_svn.so
 
-	# ServerRoot: The top of the directory tree under which the server's
-	# configuration, error, and log files are kept
-	# Do not add a slash at the end of the directory path
-	ServerRoot "/usr/local"
+    # ServerRoot: The top of the directory tree under which the server's
+    # configuration, error, and log files are kept
+    # Do not add a slash at the end of the directory path
+    ServerRoot "/usr/local"
 
-	# Only listen on one IP
-	Listen 94.142.244.51:443
+    # Only listen on one IP
+    Listen 94.142.244.51:443
 
-	# Make sure the Apache process can write to your SVN dir if you want to allow
-	# files to be commited
-	User apache
-	Group apache
+    # Make sure the Apache process can write to your SVN dir if you want to allow
+    # files to be commited
+    User apache
+    Group apache
 
-	# We do not want to serve anything other than svn
-	# NOTE:
-	# Some Linux systems seem to store files in /var/empty/ (Which part of "empty"
-	# is difficult to understand is something I cannot even begin to phantom)
-	# I recommend making a "/var/reallyempty/" and setting the immutable flag with
-	# chattr(1)
-	DocumentRoot "/var/empty/"
+    # We do not want to serve anything other than svn
+    # NOTE:
+    # Some Linux systems seem to store files in /var/empty/ (Which part of "empty"
+    # is difficult to understand is something I cannot even begin to phantom)
+    # I recommend making a "/var/reallyempty/" and setting the immutable flag with
+    # chattr(1)
+    DocumentRoot "/var/empty/"
 
-	# Not a busy server, so don't fork too many server
-	StartServers 2
-	MinSpareServers 1
-	MaxSpareServers 2
+    # Not a busy server, so don't fork too many server
+    StartServers 2
+    MinSpareServers 1
+    MaxSpareServers 2
 
-	# The location of the error log file
-	ErrorLog "/var/log/httpd-error.log"
+    # The location of the error log file
+    ErrorLog "/var/log/httpd-error.log"
 
-	# Control the number of messages logged to the error_log
-	# Possible values: debug, info, notice, warn, error, crit, alert, emerg
-	LogLevel warn
+    # Control the number of messages logged to the error_log
+    # Possible values: debug, info, notice, warn, error, crit, alert, emerg
+    LogLevel warn
 
-	# The default MIME type the server will use for a document
-	DefaultType text/plain
+    # The default MIME type the server will use for a document
+    DefaultType text/plain
 
-	# Enable SSL
-	SSLEngine on
+    # Enable SSL
+    SSLEngine on
 
-	# PEM encoded certificate, key is also loaded from this file
-	SSLCertificateFile "/usr/local/etc/ssl/svn.pem"
+    # PEM encoded certificate, key is also loaded from this file
+    SSLCertificateFile "/usr/local/etc/ssl/svn.pem"
 
-	<Location /svn>
-			# This is a SVN dir
-			DAV svn
-			SVNParentPath /home/svn
+    <Location /svn>
+            # This is a SVN dir
+            DAV svn
+            SVNParentPath /home/svn
 
-			# Only allow from authenticated users
-			AuthType Basic
+            # Only allow from authenticated users
+            AuthType Basic
 
-			AuthName "Subversion repository"
-			AuthUserFile /usr/local/etc/svn-auth-file
-			Require valid-user
+            AuthName "Subversion repository"
+            AuthUserFile /usr/local/etc/svn-auth-file
+            Require valid-user
 
-			# Allow from everyone
-			Order allow,deny
-			Allow from all
+            # Allow from everyone
+            Order allow,deny
+            Allow from all
 
-			# Use compression
-			SetOutputFilter DEFLATE
-			SetInputFilter DEFLATE
-	</Location>
+            # Use compression
+            SetOutputFilter DEFLATE
+            SetInputFilter DEFLATE
+    </Location>
 
 The default configuration:
 
-	[/usr/local/etc/apache22]# wc -l httpd.conf extra/httpd-ssl.conf
-		481 httpd.conf
-		231 extra/httpd-ssl.conf
-		712 total
-	[/usr/local/etc/apache22]# grep -Ev '(^#|^$)' httpd.conf extra/httpd-ssl.conf | wc -l
-		256
+    [/usr/local/etc/apache22]# wc -l httpd.conf extra/httpd-ssl.conf
+        481 httpd.conf
+        231 extra/httpd-ssl.conf
+        712 total
+    [/usr/local/etc/apache22]# grep -Ev '(^#|^$)' httpd.conf extra/httpd-ssl.conf | wc -l
+        256
 
 Compared to the above file:
 
-	[/usr/local/etc/apache22]# wc -l httpd.conf
-		72 httpd.conf
-	[/usr/local/etc/apache22]# grep -Ev '(^#|^$)' httpd.conf | wc -l
-		41
+    [/usr/local/etc/apache22]# wc -l httpd.conf
+        72 httpd.conf
+    [/usr/local/etc/apache22]# grep -Ev '(^#|^$)' httpd.conf | wc -l
+        41
 
 Additional setup
 ----------------
 
 You can generate a basic self-signed SSL certificate with:
 
-	$ openssl req -new -x509 -keyout svn.pem -out svn.pem -days 365 -nodes
+    $ openssl req -new -x509 -keyout svn.pem -out svn.pem -days 365 -nodes
 
 When OpenSSL asks for your name, enter the server’s hostname, not your name.
 
@@ -130,8 +130,8 @@ It is recommended you chown it to the user you run the Apache server as
 
 The `AuthUserFile` `/usr/local/etc/svn-auth-file` can be created/modified with the `htpasswd` command.
 
-	$ touch /usr/local/etc/svn-auth-file
-	$ htpasswd -s /usr/local/etc/svn-auth-file lovecraft dunwich
+    $ touch /usr/local/etc/svn-auth-file
+    $ htpasswd -s /usr/local/etc/svn-auth-file lovecraft dunwich
 
 Further reading
 ---------------

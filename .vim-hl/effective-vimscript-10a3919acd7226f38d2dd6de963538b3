@@ -1,0 +1,1 @@
+<span class="Statement">nmap</span> <span class="Special">&lt;</span><span class="Special">Leader</span><span class="Special">&gt;</span>d <span class="Special">&lt;</span><span class="Special">Plug</span><span class="Special">&gt;</span>(myplugin-action)

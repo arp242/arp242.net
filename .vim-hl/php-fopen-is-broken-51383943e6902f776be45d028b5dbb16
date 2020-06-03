@@ -1,0 +1,3 @@
+<span class="Special">&lt;?php</span>
+<span class="Statement">$</span><span class="Identifier">fp</span> <span class="Statement">=</span> <span class="Identifier">fopen</span><span class="Special">(</span><span class="Constant">'/etc'</span>, <span class="Constant">'w'</span><span class="Special">)</span>;
+PHP Warning<span class="Statement">:</span>  <span class="Identifier">fopen</span><span class="Special">(</span><span class="Statement">/</span>etc<span class="Special">)</span><span class="Statement">:</span> failed to open stream<span class="Statement">:</span> Is a <span class="Identifier">directory</span> in php shell code on line <span class="Constant">1</span>

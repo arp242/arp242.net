@@ -21,21 +21,21 @@ etc.
 
 `config/environments/development.rb`:
 
-	YourApp::Application.configure do
-		# [...]
-		config.action_mailer.delivery_method = :sendmail
-		config.action_mailer.sendmail_settings = {
-			location: "#{Rails.root}/script/fake-sendmail",
-			arguments: "'#{Rails.root}/tmp/mail.mbox'",
-		}
-	end
+    YourApp::Application.configure do
+        # [...]
+        config.action_mailer.delivery_method = :sendmail
+        config.action_mailer.sendmail_settings = {
+            location: "#{Rails.root}/script/fake-sendmail",
+            arguments: "'#{Rails.root}/tmp/mail.mbox'",
+        }
+    end
 
 `script/fake-sendmail` (don’t forget to make this executable):
 
-	#!/bin/sh
-	echo "From FAKE-SENDMAIL $(date)" >> "$1"
-	cat /dev/stdin >> "$1"
-	echo >> "$1"
+    #!/bin/sh
+    echo "From FAKE-SENDMAIL $(date)" >> "$1"
+    cat /dev/stdin >> "$1"
+    echo >> "$1"
 
 You can read the mbox file from the commandline with `mail -f tmp/mail.mbox` or
 `mutt -f tmp/mail.mbox`.
@@ -57,18 +57,18 @@ This will only forward all mails to another email address.
 
 `config/environments/development.rb`:
 
-	YourApp::Application.configure do
-		# [...]
-		config.action_mailer.delivery_method = :sendmail
-		config.action_mailer.sendmail_settings = {
-			location: "#{Rails.root}/script/fake-sendmail",
-			arguments: 'martin+rails@arp242.net',
-		}
-	end
+    YourApp::Application.configure do
+        # [...]
+        config.action_mailer.delivery_method = :sendmail
+        config.action_mailer.sendmail_settings = {
+            location: "#{Rails.root}/script/fake-sendmail",
+            arguments: 'martin+rails@arp242.net',
+        }
+    end
 
 `script/fake-sendmail` (don’t forget to make this executable):
 
-	#!/bin/sh
-	sendmail -if fake_sendmail@example.com "$1" < /dev/stdin
+    #!/bin/sh
+    sendmail -if fake_sendmail@example.com "$1" < /dev/stdin
 
 [po]: https://github.com/bluerail/post_office

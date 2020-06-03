@@ -38,10 +38,10 @@ in calling a regexp on a string. 🤷
 In dynamic languages like Ruby and Python tests are important for a different
 reason, as something like this will "work" just fine:
 
-	if condition:
-	    print('w00t')
-	else:
-	    nonexistent_function()
+    if condition:
+        print('w00t')
+    else:
+        nonexistent_function()
 
 Except of course if that `else` branch is entered. It's easy to typo stuff, or
 mix stuff up.
@@ -159,18 +159,18 @@ This is why I use words such as "some" and "often" so frequently.
 This brings me to the topic of testing frameworks. I have never understood what
 problem libraries such as [goblin][goblin] are solving. How is this:
 
-	Expect(err).To(nil)
-	Expect(out).To(test.wantOut)
+    Expect(err).To(nil)
+    Expect(out).To(test.wantOut)
 
 An improvement over this?
 
-	if err != nil {
-		t.Fatal(err)
-	}
+    if err != nil {
+        t.Fatal(err)
+    }
 
-	if out != tt.want {
-		t.Errorf("out:  %q\nwant: %q", out, tt.want)
-	}
+    if out != tt.want {
+        t.Errorf("out:  %q\nwant: %q", out, tt.want)
+    }
 
 What's wrong with `if` and `==`? Why do we need to abstract it? Note that with
 table-driven tests you're only typing these checks *once*, so you're saving just

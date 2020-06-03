@@ -1,0 +1,9 @@
+<span class="Statement">var</span> geodb *geoip2.Reader
+
+<span class="Statement">func</span> init() {
+    <span class="Statement">var</span> err <span class="Type">error</span>
+    geodb, err = geoip2.FromBytes(pack.GeoDB)
+    <span class="Statement">if</span> err != <span class="Constant">nil</span> {
+        <span class="Statement">panic</span>(err)
+    }
+}

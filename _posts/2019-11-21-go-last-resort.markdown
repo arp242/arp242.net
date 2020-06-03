@@ -2,6 +2,7 @@
 layout: post
 title: 'Go’s features of last resort'
 tags: ['Go']
+filetype: go
 updated: 2019-11-24
 hatnote: |
  Discussions:

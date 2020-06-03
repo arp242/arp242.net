@@ -1,0 +1,6 @@
+<span class="Statement">let</span> <span class="Identifier">g:plugin_default</span> <span class="Statement">=</span> [<span class="Constant">'a'</span>, <span class="Constant">'_a'</span>, <span class="Constant">'b'</span>, <span class="Constant">'_b'</span>]
+
+<span class="Statement">fun</span>! <span class="Special">s:</span>do_stuff<span class="Special">()</span> abort
+    <span class="Statement">let</span> <span class="Identifier">l:filtered</span> <span class="Statement">=</span> <span class="Identifier">filter</span><span class="Special">(</span>g:plugin_default, <span class="Special">{</span>_, v <span class="Statement">-&gt;</span> v[<span class="Constant">0</span>] <span class="Statement">isnot#</span> <span class="Constant">'_'</span><span class="Special">}</span><span class="Special">)</span>
+<span class="Comment">    &quot; [..]</span>
+<span class="Statement">endfun</span>

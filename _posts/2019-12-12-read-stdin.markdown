@@ -38,22 +38,22 @@ terminal:
         fmt.Fprintf(os.Stderr, "%s: reading from stdin...\n", filepath.Base(os.Args[0]))
     }
 
-	stdin, err := ioutil.ReadAll(os.Stdin)
-	if err != nil {
-		panic(fmt.Errorf("read stdin: %s", err))
-	}
+    stdin, err := ioutil.ReadAll(os.Stdin)
+    if err != nil {
+        panic(fmt.Errorf("read stdin: %s", err))
+    }
 
 Or, alternatively, erasing the message after reading from stdin:
 
     fmt.Fprintf(os.Stderr, "%s: reading from stdin...", filepath.Base(os.Args[0]))
     os.Stderr.Sync()
 
-	stdin, err := ioutil.ReadAll(os.Stdin)
-	if err != nil {
-		panic(fmt.Errorf("read stdin: %s", err))
-	}
+    stdin, err := ioutil.ReadAll(os.Stdin)
+    if err != nil {
+        panic(fmt.Errorf("read stdin: %s", err))
+    }
 
-	fmt.Fprintf(stderr, "\r")
+    fmt.Fprintf(stderr, "\r")
 
 One thing to be careful of is that `\r` won't erase anything; it just puts the
 cursor in the first column so new output will overwrite what's there. You can
@@ -62,7 +62,7 @@ see this with something like `printf 'Hello\ra\n'`, which appears as `aello`.
 For many applications this is fine, but if the first line of output might be
 shorter than the stdin message you can erase the line with an escape sequence:
 
-	fmt.Fprintf(stderr, "\r\x1b[0K")
+    fmt.Fprintf(stderr, "\r\x1b[0K")
 
 ---
 

@@ -1,0 +1,40 @@
+<span class="Special">&lt;?php</span>
+<span class="Identifier">error_reporting</span><span class="Special">(</span><span class="Constant">E_ALL</span><span class="Special">)</span>;
+<span class="Identifier">ini_set</span><span class="Special">(</span><span class="Constant">'display_errors'</span>, <span class="Constant">'on'</span><span class="Special">)</span>;
+
+<span class="Statement">foreach</span> <span class="Special">(</span><span class="Identifier">range</span><span class="Special">(</span><span class="Constant">0</span>, <span class="Constant">10</span><span class="Special">)</span> <span class="Statement">as</span> <span class="Statement">$</span><span class="Identifier">i</span><span class="Special">)</span> <span class="Special">{</span>
+    <span class="Statement">try</span> <span class="Special">{</span>
+        mktemp<span class="Special">(</span><span class="Constant">'nonexistent'</span>, <span class="Constant">'/nonexistent'</span><span class="Special">)</span>;
+        <span class="PreProc">print</span><span class="Special">(</span><span class="Constant">&quot;We excpected an exception</span><span class="Special">\n</span><span class="Constant">&quot;</span><span class="Special">)</span>;
+        <span class="Statement">exit</span><span class="Special">(</span><span class="Constant">1</span><span class="Special">)</span>;
+    <span class="Special">}</span>
+    <span class="Statement">catch</span> <span class="Special">(</span>MktempError <span class="Statement">$</span><span class="Identifier">exc</span><span class="Special">)</span> <span class="Special">{</span> <span class="Special">}</span>
+
+    <span class="Statement">try</span> <span class="Special">{</span>
+        mktemp<span class="Special">(</span><span class="Constant">'NoXCharacters'</span><span class="Special">)</span>;
+        <span class="PreProc">print</span><span class="Special">(</span><span class="Constant">&quot;We excpected an exception</span><span class="Special">\n</span><span class="Constant">&quot;</span><span class="Special">)</span>;
+        <span class="Statement">exit</span><span class="Special">(</span><span class="Constant">1</span><span class="Special">)</span>;
+    <span class="Special">}</span>
+    <span class="Statement">catch</span> <span class="Special">(</span>MktempError <span class="Statement">$</span><span class="Identifier">exc</span><span class="Special">)</span> <span class="Special">{</span> <span class="Special">}</span>
+
+    <span class="Statement">try</span> <span class="Special">{</span>
+        mktemp<span class="Special">(</span><span class="Constant">'ohnoes.XXXXXX'</span>, <span class="Constant">'../../../../../etc/passwd'</span><span class="Special">)</span>;
+        <span class="PreProc">print</span><span class="Special">(</span><span class="Constant">&quot;We excpected an exception</span><span class="Special">\n</span><span class="Constant">&quot;</span><span class="Special">)</span>;
+        <span class="Statement">exit</span><span class="Special">(</span><span class="Constant">1</span><span class="Special">)</span>;
+    <span class="Special">}</span>
+    <span class="Statement">catch</span> <span class="Special">(</span>MktempError <span class="Statement">$</span><span class="Identifier">exc</span><span class="Special">)</span> <span class="Special">{</span> <span class="Special">}</span>
+
+    <span class="Statement">$</span><span class="Identifier">path</span> <span class="Statement">=</span> mktemp<span class="Special">(</span><span class="Constant">'hello XXXXXX world'</span><span class="Special">)</span>;
+    <span class="PreProc">print</span> <span class="Constant">&quot;</span><span class="Statement">$</span><span class="Identifier">path</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Identifier">unlink</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">path</span><span class="Special">)</span>;
+
+    <span class="Statement">$</span><span class="Identifier">dir</span> <span class="Statement">=</span> mktemp<span class="Special">(</span><span class="Constant">'dir.XXXXX'</span>, <span class="Type">Null</span>, <span class="Constant">True</span><span class="Special">)</span>;
+    <span class="PreProc">print</span> <span class="Constant">&quot;</span><span class="Statement">$</span><span class="Identifier">dir</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Identifier">rmdir</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">dir</span><span class="Special">)</span>;
+
+    <span class="Statement">$</span><span class="Identifier">path</span> <span class="Statement">=</span> mktemp<span class="Special">(</span><span class="Constant">&quot;-&gt; XXX TEST XXXX &lt;- &amp;|</span><span class="Special">\n</span><span class="Constant">    asdf XXXX&quot;</span><span class="Special">)</span>;
+    <span class="PreProc">print</span> <span class="Constant">&quot;</span><span class="Statement">$</span><span class="Identifier">path</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+    <span class="Identifier">unlink</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">path</span><span class="Special">)</span>;
+
+    <span class="PreProc">print</span> <span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>;
+<span class="Special">}</span>

@@ -1,0 +1,5 @@
+<span class="Comment">&quot; Convert buffer to and from scratch.</span>
+<span class="Statement">command</span> S
+<span class="Special">    \</span>  <span class="Statement">if</span> <span class="Identifier">&amp;buftype</span> <span class="Statement">is#</span> <span class="Constant">'nofile'</span> | <span class="Statement">setl</span> <span class="PreProc">swapfile</span> <span class="PreProc">buftype</span>= <span class="PreProc">bufhidden</span>=
+<span class="Special">    \</span>| <span class="Statement">else</span>                     | <span class="Statement">setl</span> <span class="PreProc">noswapfile</span> <span class="PreProc">buftype</span>=nofile <span class="PreProc">bufhidden</span>=hide <span class="Statement">|</span> <span class="Statement">endif</span>
+<span class="Special">    \</span>| <span class="Statement">echo</span> <span class="Identifier">printf</span>(<span class="Constant">'swapfile=%s buftype=%s bufhidden=%s'</span>, <span class="Identifier">&amp;swapfile</span>, <span class="Identifier">&amp;buftype</span>, <span class="Identifier">&amp;bufhidden</span>)
