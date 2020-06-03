@@ -1,0 +1,11 @@
+<span class="Special">&lt;?php</span>
+<span class="Statement">try</span> <span class="Special">{</span>
+    <span class="Statement">$</span><span class="Identifier">fp</span> <span class="Statement">=</span> <span class="Type">null</span>;
+    <span class="Statement">$</span><span class="Identifier">fp</span> <span class="Statement">=</span> @<span class="Identifier">fopen</span><span class="Special">(</span><span class="Constant">'/etc/shadow'</span>, <span class="Constant">'r'</span><span class="Special">)</span>;
+<span class="Special">}</span>
+<span class="Statement">catch</span> <span class="Special">(</span><span class="Identifier">Exception</span> <span class="Statement">$</span><span class="Identifier">exc</span><span class="Special">)</span> <span class="Special">{</span> <span class="Special">}</span>
+
+<span class="Statement">if</span> <span class="Special">(</span><span class="Statement">!</span><span class="Statement">$</span><span class="Identifier">fp</span><span class="Special">)</span> <span class="Special">{</span>
+    <span class="Statement">$</span><span class="Identifier">err</span> <span class="Statement">=</span> error_get_last<span class="Special">()</span>;
+    <span class="Statement">throw</span> <span class="PreProc">new</span> <span class="Identifier">Exception</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">err</span><span class="Special">[</span><span class="Constant">'message'</span><span class="Special">])</span>;
+<span class="Special">}</span>

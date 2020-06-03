@@ -1,0 +1,3 @@
+fmt.Fprintln(os.Stderr, <span class="Constant">&quot;oh noes!&quot;</span>)
+debug.PrintStack()
+os.Exit(<span class="Constant">1</span>)

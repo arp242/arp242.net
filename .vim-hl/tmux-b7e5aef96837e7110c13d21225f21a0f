@@ -1,0 +1,26 @@
+<span class="Comment">#!/bin/sh</span>
+
+<span class="Statement">set</span><span class="Identifier"> </span><span class="Special">-euC</span>
+
+<span class="Statement">cd</span> ~/code/arp242.net
+
+<span class="Identifier">att() {</span>
+    <span class="Statement">[</span> <span class="Statement">-n</span> <span class="Statement">&quot;</span><span class="PreProc">${</span><span class="PreProc">TMUX</span><span class="Statement">:-</span><span class="PreProc">}</span><span class="Special">&quot;</span> <span class="Statement">]</span> <span class="Statement">&amp;&amp;</span>
+        tmux switch-client <span class="Special">-t</span> <span class="Statement">'</span><span class="Constant">=site</span><span class="Statement">'</span> <span class="Statement">||</span>
+        tmux attach-session <span class="Special">-t</span> <span class="Statement">'</span><span class="Constant">=site</span><span class="Statement">'</span>
+<span class="Identifier">}</span>
+
+<span class="Statement">if </span>tmux has-session <span class="Statement">-t</span> <span class="Statement">'</span><span class="Constant">=site</span><span class="Statement">'</span> <span class="Constant">2</span><span class="Statement">&gt;</span> /dev/null<span class="Statement">;</span> <span class="Statement">then</span>
+    att
+    <span class="Statement">exit</span> <span class="Constant">0</span>
+<span class="Statement">fi</span>
+
+tmux new-session <span class="Special">-d</span> <span class="Special">-s</span> site
+
+tmux new-window <span class="Special">-d</span> <span class="Special">-t</span> <span class="Statement">'</span><span class="Constant">=site</span><span class="Statement">'</span> <span class="Special">-n</span> server <span class="Special">-c</span> ~/code/arp242.net/_site
+tmux send-keys <span class="Special">-t</span> <span class="Statement">'</span><span class="Constant">=site:=server</span><span class="Statement">'</span> <span class="Statement">'</span><span class="Constant">python -mhttp.server</span><span class="Statement">'</span> Enter
+
+tmux new-window <span class="Special">-d</span> <span class="Special">-t</span> <span class="Statement">'</span><span class="Constant">=site</span><span class="Statement">'</span> <span class="Special">-n</span> jekyll
+tmux send-keys <span class="Special">-t</span> <span class="Statement">'</span><span class="Constant">=site:=jekyll</span><span class="Statement">'</span> <span class="Statement">'</span><span class="Constant">JEKYLL_NO_BUNDLER_REQUIRE=1 jekyll build -w</span><span class="Statement">'</span> Enter
+
+att

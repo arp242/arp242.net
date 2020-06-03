@@ -1,0 +1,1 @@
+<span class="Statement">call</span> do_something<span class="Special">(</span><span class="Identifier">get</span><span class="Special">(</span>g:, <span class="Constant">'plugin_setting'</span>, <span class="Constant">'default value'</span><span class="Special">))</span>

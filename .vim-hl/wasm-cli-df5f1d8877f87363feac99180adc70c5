@@ -1,0 +1,19 @@
+<span class="Identifier">&lt;</span><span class="Statement">input</span><span class="Identifier"> </span><span class="Type">id</span><span class="Identifier">=</span><span class="Constant">&quot;input&quot;</span><span class="Identifier"> </span><span class="Type">style</span><span class="Identifier">=</span><span class="Constant">&quot;font: 16px monospace&quot;</span><span class="Identifier">&gt;</span>
+<span class="Identifier">&lt;</span><span class="Statement">script</span><span class="Identifier"> </span><span class="Type">src</span><span class="Identifier">=</span><span class="Constant">&quot;wasm_exec.js&quot;</span><span class="Identifier">&gt;</span><span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="Identifier">&lt;</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="Special">    fetch</span>(<span class="Constant">'main.wasm'</span>)<span class="Special">.then</span>(<span class="Special">response =&gt; response.arrayBuffer</span>())<span class="Special">.then</span>(<span class="Identifier">function</span>(<span class="Special">bin</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="Special">            input.addEventListener</span>(<span class="Constant">'keydown'</span><span class="Special">, </span><span class="Identifier">function</span>(<span class="Special">e</span>)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="Special">                </span><span class="Statement">if</span><span class="Special"> </span>(<span class="Special">e.keyCode !== </span>13)<span class="Special">  </span><span class="Comment">// Enter</span>
+<span class="Special">                    </span><span class="Statement">return</span><span class="Special">;</span>
+
+<span class="Special">                e.preventDefault</span>()<span class="Special">;</span>
+
+<span class="Special">                </span><span class="Statement">const</span><span class="Special"> go = </span><span class="Statement">new</span><span class="Special"> Go</span>()<span class="Special">;</span>
+<span class="Special">                go.argv = </span><span class="Identifier">[</span><span class="Constant">'uni'</span><span class="Identifier">]</span><span class="Special">.concat</span>(<span class="Identifier">this</span><span class="Special">.value.split</span>(<span class="Constant">' '</span>))<span class="Special">;</span>
+<span class="Special">                </span><span class="Identifier">this</span><span class="Special">.value = </span><span class="Constant">''</span><span class="Special">;</span>
+<span class="Special">                WebAssembly.instantiate</span>(<span class="Special">bin, go.importObject</span>)<span class="Special">.then</span>((<span class="Special">result</span>)<span class="Special"> =&gt; </span><span class="Identifier">{</span>
+<span class="Special">                    go.run</span>(<span class="Special">result.instance</span>)<span class="Special">;</span>
+<span class="Special">                </span><span class="Identifier">}</span>)<span class="Special">;</span>
+<span class="Special">            </span><span class="Identifier">}</span>)<span class="Special">;</span>
+<span class="Special">        </span><span class="Identifier">}</span>)<span class="Special">;</span>
+<span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>

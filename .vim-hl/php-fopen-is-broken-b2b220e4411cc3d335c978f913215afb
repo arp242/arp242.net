@@ -1,0 +1,11 @@
+<span class="Special">&lt;?php</span>
+<span class="Identifier">set_error_handler</span><span class="Special">(</span><span class="PreProc">function</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">errno</span>, <span class="Statement">$</span><span class="Identifier">errstr</span>, <span class="Statement">$</span><span class="Identifier">errfile</span>, <span class="Statement">$</span><span class="Identifier">errline</span><span class="Special">)</span> <span class="Special">{</span>
+    <span class="Statement">throw</span> <span class="PreProc">new</span> <span class="Identifier">ErrorException</span><span class="Special">(</span><span class="Constant">'Error!'</span><span class="Special">)</span>;
+<span class="Special">})</span>;
+
+<span class="Statement">try</span> <span class="Special">{</span>
+    <span class="Statement">$</span><span class="Identifier">fp</span> <span class="Statement">=</span> <span class="Identifier">fopen</span><span class="Special">(</span><span class="Constant">'/etc/shadow'</span>, <span class="Constant">'r'</span><span class="Special">)</span>;
+<span class="Special">}</span>
+<span class="Statement">catch</span> <span class="Special">(</span><span class="Identifier">Exception</span> <span class="Statement">$</span><span class="Identifier">exc</span><span class="Special">)</span> <span class="Special">{</span>
+    <span class="PreProc">print</span><span class="Special">(</span><span class="Constant">&quot;Error!</span><span class="Special">\n</span><span class="Constant">&quot;</span><span class="Special">)</span>;
+<span class="Special">}</span>

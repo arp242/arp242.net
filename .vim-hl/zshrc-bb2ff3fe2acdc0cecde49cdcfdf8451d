@@ -1,0 +1,13 @@
+_exists() { (( <span class="PreProc">$+commands</span>[<span class="PreProc">$1</span>] )) }
+
+_exists vim      &amp;&amp; <span class="Statement">export</span> EDITOR=vim
+_exists less     &amp;&amp; <span class="Statement">export</span> PAGER=less
+_exists bsdtar   &amp;&amp; <span class="Statement">alias</span> tar=<span class="Constant">'</span><span class="Constant">bsdtar</span><span class="Constant">'</span>
+_exists htop     &amp;&amp; <span class="Statement">alias</span> top=<span class="Constant">'</span><span class="Constant">htop</span><span class="Constant">'</span>
+
+<span class="Statement">if</span> _exists vim; <span class="Statement">then</span>
+    <span class="Statement">alias</span> vim=<span class="Constant">&quot;</span><span class="Constant">vim -p</span><span class="Constant">&quot;</span>
+    <span class="Statement">alias</span> vi=<span class="Constant">&quot;</span><span class="Constant">vim</span><span class="Constant">&quot;</span>
+<span class="Statement">fi</span>
+
+<span class="Statement">unfunction</span> _exists

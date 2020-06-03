@@ -1,0 +1,14 @@
+<span class="Identifier">&lt;</span><span class="Statement">html</span><span class="Identifier">&gt;</span>
+<span class="Identifier">&lt;</span><span class="Statement">head</span><span class="Identifier">&gt;</span>
+<span class="PreProc">    </span><span class="Identifier">&lt;</span><span class="Statement">meta</span><span class="Identifier"> </span><span class="Type">charset</span><span class="Identifier">=</span><span class="Constant">&quot;utf-8&quot;</span><span class="Identifier">&gt;</span>
+<span class="Identifier">&lt;/</span><span class="Statement">head</span><span class="Identifier">&gt;</span>
+<span class="Identifier">&lt;</span><span class="Statement">body</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Statement">script</span><span class="Identifier"> </span><span class="Type">src</span><span class="Identifier">=</span><span class="Constant">&quot;wasm_exec.js&quot;</span><span class="Identifier">&gt;</span><span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="Special">        </span><span class="Statement">const</span><span class="Special"> go = </span><span class="Statement">new</span><span class="Special"> Go</span>()<span class="Special">;</span>
+<span class="Special">        WebAssembly.instantiateStreaming</span>(<span class="Special">fetch</span>(<span class="Constant">&quot;main.wasm&quot;</span>)<span class="Special">, go.importObject</span>)<span class="Special">.then</span>((<span class="Special">result</span>)<span class="Special"> =&gt; </span><span class="Identifier">{</span>
+<span class="Special">            go.run</span>(<span class="Special">result.instance</span>)<span class="Special">;</span>
+<span class="Special">        </span><span class="Identifier">}</span>)<span class="Special">;</span>
+<span class="Special">    </span><span class="Identifier">&lt;/</span><span class="Statement">script</span><span class="Identifier">&gt;</span>
+<span class="Identifier">&lt;/</span><span class="Statement">body</span><span class="Identifier">&gt;</span>
+<span class="Identifier">&lt;/</span><span class="Statement">html</span><span class="Identifier">&gt;</span>

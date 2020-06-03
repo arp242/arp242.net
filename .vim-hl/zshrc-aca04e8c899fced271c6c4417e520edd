@@ -1,0 +1,13 @@
+tgo() {
+    tmp=<span class="Constant">&quot;</span><span class="PreProc">$(</span><span class="Constant">mktemp -p /tmp -d </span><span class="Constant">&quot;</span><span class="Constant">tgo_</span><span class="PreProc">$(</span><span class="Constant">date +</span><span class="Special">%Y%m%d</span><span class="PreProc">)</span><span class="Constant">_XXXXXXXX</span><span class="Constant">&quot;</span><span class="PreProc">)</span><span class="Constant">&quot;</span>
+    <span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">package main\n\nfunc main() {\n\n}\n</span><span class="Constant">'</span> <span class="Statement">&gt;</span> <span class="Constant">&quot;</span><span class="PreProc">$tmp</span><span class="Constant">/main.go</span><span class="Constant">&quot;</span>
+    <span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">package main\n\nfunc TestMain(t *testing.T) {\n\n}\n\n</span><span class="Constant">'</span> <span class="Statement">&gt;</span> <span class="Constant">&quot;</span><span class="PreProc">$tmp</span><span class="Constant">/main_test.go</span><span class="Constant">&quot;</span>
+    <span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">func BenchmarkMain(b *testing.B) {\n\tb.ReportAllocs()\n\tfor n := 0; n &lt; b.N; n++ {\n\t}\n}\n</span><span class="Constant">'</span> <span class="Statement">&gt;&gt;</span> <span class="Constant">&quot;</span><span class="PreProc">$tmp</span><span class="Constant">/main_test.go</span><span class="Constant">&quot;</span>
+
+    <span class="Statement">printf</span> <span class="Constant">'</span><span class="Constant">module %s\n</span><span class="Constant">'</span> <span class="Constant">&quot;</span><span class="PreProc">$(</span><span class="Constant">basename </span><span class="Constant">&quot;</span><span class="PreProc">$tmp</span><span class="Constant">&quot;</span><span class="PreProc">)</span><span class="Constant">&quot;</span> <span class="Statement">&gt;</span> <span class="Constant">&quot;</span><span class="PreProc">$tmp</span><span class="Constant">/go.mod</span><span class="Constant">&quot;</span>
+    (
+        <span class="Statement">cd</span> <span class="Constant">&quot;</span><span class="PreProc">$tmp</span><span class="Constant">&quot;</span>
+        vim -p main.go main_test.go
+        <span class="Statement">echo</span> <span class="Constant">&quot;</span><span class="PreProc">$tmp</span><span class="Constant">&quot;</span>
+    )
+}

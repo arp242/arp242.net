@@ -1,0 +1,2 @@
+<span class="Statement">alias</span> -g VV=<span class="Constant">'</span><span class="Constant"> |&amp; vim -</span><span class="Constant">'</span>
+<span class="Statement">alias</span> -g LL=<span class="Constant">'</span><span class="Constant"> |&amp; less</span><span class="Constant">'</span>

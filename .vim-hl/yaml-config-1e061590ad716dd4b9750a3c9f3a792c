@@ -1,0 +1,5 @@
+<span class="Special">[</span>
+    <span class="Special">{</span><span class="Constant">'</span><span class="Constant">Don Corleone</span><span class="Constant">'</span><span class="Special">:</span> <span class="Constant">'</span><span class="Constant">Do you have faith in my judgment?</span><span class="Constant">'</span><span class="Special">}</span>,
+    <span class="Special">{</span><span class="Constant">'</span><span class="Constant">Clemenza</span><span class="Constant">'</span><span class="Special">:</span> <span class="Constant">True</span><span class="Special">}</span>,
+    <span class="Special">{</span><span class="Constant">'</span><span class="Constant">Don Corleone</span><span class="Constant">'</span><span class="Special">:</span> <span class="Constant">'</span><span class="Constant">Do I have your loyalty?</span><span class="Constant">'</span><span class="Special">}</span>
+<span class="Special">]</span>

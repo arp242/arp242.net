@@ -1,0 +1,11 @@
+sql() {
+    cmd=<span class="Constant">&quot;</span><span class="Constant">psql -X -P linestyle=unicode -P null=NULL goatcounter</span><span class="Constant">&quot;</span>
+    f=<span class="Constant">&quot;</span><span class="PreProc">$HOME</span><span class="Constant">/docs/sql/scripts/</span><span class="PreProc">$1</span><span class="Constant">&quot;</span>
+    <span class="Statement">if</span> [[ -f <span class="Constant">&quot;</span><span class="PreProc">$f</span><span class="Constant">&quot;</span> ]]; <span class="Statement">then</span>
+        <span class="Statement">eval</span> <span class="Constant">&quot;</span><span class="PreProc">$cmd</span><span class="Constant">&quot;</span> <span class="Statement">&lt;</span> <span class="Constant">&quot;</span><span class="PreProc">$HOME</span><span class="Constant">/docs/sql/scripts/</span><span class="PreProc">$1</span><span class="Constant">&quot;</span> <span class="Statement">|</span> less -S
+    <span class="Statement">else</span>
+        <span class="Statement">eval</span> <span class="Constant">&quot;</span><span class="PreProc">$cmd</span><span class="Constant">&quot;</span> <span class="Statement">&lt;&lt;&lt;</span> <span class="Constant">&quot;</span><span class="PreProc">$1</span><span class="Constant">&quot;</span> <span class="Statement">|</span> less -S
+    <span class="Statement">fi</span>
+}
+_sql() { _files -W ~/docs/sql/scripts }
+compdef _sql sql

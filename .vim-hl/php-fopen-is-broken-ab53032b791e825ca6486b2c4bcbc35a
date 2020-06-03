@@ -1,0 +1,20 @@
+<span class="Special">&lt;?php</span>
+<span class="Statement">$</span><span class="Identifier">fp</span> <span class="Statement">=</span> <span class="Identifier">fopen</span><span class="Special">(</span><span class="Constant">'/etc'</span>, <span class="Constant">'r'</span><span class="Special">)</span>;
+
+<span class="Identifier">var_dump</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">fp</span><span class="Special">)</span>;
+<span class="Comment"># resource(4) of type (stream)</span>
+
+<span class="Identifier">var_dump</span><span class="Special">(</span><span class="Identifier">fread</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">fp</span>, <span class="Constant">1024</span><span class="Special">))</span>;
+<span class="Comment"># string(0) &quot;&quot;</span>
+
+<span class="Identifier">var_dump</span><span class="Special">(</span><span class="Identifier">file_get_contents</span><span class="Special">(</span><span class="Constant">'/etc'</span><span class="Special">))</span>;
+<span class="Comment"># string(0) &quot;&quot;</span>
+
+<span class="Identifier">var_dump</span><span class="Special">(</span><span class="Identifier">readdir</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">fp</span><span class="Special">))</span>;
+<span class="Comment"># PHP Warning:  readdir(): 5 is not a valid Directory resource in php shell code on line 1</span>
+
+<span class="Identifier">var_dump</span><span class="Special">(</span><span class="Identifier">fstat</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">fp</span><span class="Special">))</span>;
+<span class="Comment"># array(26) {</span>
+
+<span class="Identifier">var_dump</span><span class="Special">(</span><span class="Identifier">flock</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">fp</span>, LOCK_EX<span class="Special">))</span>;
+<span class="Comment"># true</span>

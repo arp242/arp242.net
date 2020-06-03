@@ -1,0 +1,1 @@
+hashcwd() { <span class="Statement">hash</span> -d <span class="Constant">&quot;</span><span class="PreProc">$1</span><span class="Constant">&quot;</span>=<span class="Constant">&quot;</span><span class="PreProc">$PWD</span><span class="Constant">&quot;</span> }

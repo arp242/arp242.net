@@ -1,0 +1,9 @@
+<span class="Statement">begin</span>
+  <span class="Type">File</span>.open <span class="Special">'</span><span class="Constant">/etc/passwd</span><span class="Special">'</span>, <span class="Special">'</span><span class="Constant">w</span><span class="Special">'</span>
+<span class="Statement">rescue</span> <span class="Type">Errno</span>::<span class="Type">EACCESS</span>
+  puts <span class="Special">'</span><span class="Constant">Access denied</span><span class="Special">'</span>
+  <span class="Statement">exit</span> <span class="Constant">1</span>
+  <span class="Comment"># Or maybe ask user for different filename and try again?</span>
+  <span class="Comment"># Or maybe execute myself again with sudo?</span>
+  <span class="Comment"># Or maybe try a different filename?</span>
+<span class="Statement">end</span>

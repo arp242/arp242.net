@@ -41,7 +41,10 @@ Jekyll::Hooks.register :posts, :post_render do |post|
 
     cache = "./.vim-hl/#{post.id.sub(/\//, '')}-#{Digest::MD5.hexdigest(ft+code)}"
     if not File.file?(cache)
-      p "Writing #{cache} with ft=#{ft}"
+      # Don't build anything on Netlify, as it doesn't have Vim.
+      next m unless ENV['NETLIFY'].nil?
+
+      puts "Writing #{cache} with ft=#{ft}"
       code = code.gsub(/&amp;/, '&').gsub(/&gt;/, '>').gsub(/&lt;/, '<')
 
       # TODO: use proper tmp file and cleanup.
