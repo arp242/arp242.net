@@ -128,13 +128,13 @@ Final precaution: limit the number of replies
 ---------------------------------------------
 
 Even when following all of the above advice you may still encounter an email
-program that will slip through. This can very dangerous, as email systems that
+program that will slip through. This can very dangerous as email systems that
 simply `IF email THEN send_email` have the potential to cause infinite email
 loops.
 
 For this reason I recommend keeping track of which emails you've sent an
-autoreply to and rate limiting this to at most *n* emails in *n* minutes. This
-will break the back-and-forth chain.
+autoreply to and rate limiting this to at most *n* emails in *n* minutes per
+email address. This will break the back-and-forth chain.
 
 We use one email per five minutes, but something less strict will probably also
 work well.
@@ -148,6 +148,10 @@ This is what we use for autoreply emails:
     Auto-Submitted: auto-replied
     X-Auto-Response-Suppress: All
     Precedence: auto_reply
+
+Also please don't forget to set `In-Reply-To: <Message-ID of original message>`;
+this ensures the emails are threaded properly (a surprising number of
+autoresponders seem to forget this).
 
 [rfc2076]: http://www.faqs.org/rfcs/rfc2076.html
 [rfc2919]: https://tools.ietf.org/html/rfc2919)
