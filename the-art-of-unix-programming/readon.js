@@ -49,6 +49,9 @@
 	};
 
 	var ready = function() {
+		if (!window.localStorage || !window.localStorage.getItem)
+			return;
+
 		if (opts.autoID)
 			generateIDs(
 				typeof opts.autoID === 'string' ? opts.autoID : null,

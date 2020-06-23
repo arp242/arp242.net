@@ -1,4 +1,6 @@
 // GoatCounter: https://www.goatcounter.com
+// This file (and *only* this file) is released under the ISC license:
+// https://opensource.org/licenses/ISC
 (function() {
 	'use strict';
 
@@ -29,11 +31,9 @@
 		if (is_empty(data.p)) {
 			var loc = location,
 			    c = document.querySelector('link[rel="canonical"][href]')
-			if (c) {  // May be relative or point to different domain.
-				var a = document.createElement('a')
-				a.href = c.href
-				if (a.hostname.replace(/^www\./, '') === location.hostname.replace(/^www\./, ''))
-					loc = a
+			if (c) {  // May be relative.
+				loc = document.createElement('a')
+				loc.href = c.href
 			}
 			data.p = (loc.pathname + loc.search) || '/'
 		}
@@ -88,7 +88,7 @@
 			return 'frame'
 		if (!goatcounter.allow_local && location.hostname.match(/(localhost$|^127\.|^10\.|^172\.(1[6-9]|2[0-9]|3[0-1])\.|^192\.168\.)/))
 			return 'local'
-		if (localStorage.getItem('skipgc') === 't')
+		if (localStorage && localStorage.getItem('skipgc') === 't')
 			return 'disabled with #toggle-goatcounter'
 		return false
 	}
