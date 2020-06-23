@@ -31,9 +31,11 @@
 		if (is_empty(data.p)) {
 			var loc = location,
 			    c = document.querySelector('link[rel="canonical"][href]')
-			if (c) {  // May be relative.
-				loc = document.createElement('a')
-				loc.href = c.href
+			if (c) {  // May be relative or point to different domain.
+				var a = document.createElement('a')
+				a.href = c.href
+				if (a.hostname.replace(/^www\./, '') === location.hostname.replace(/^www\./, ''))
+					loc = a
 			}
 			data.p = (loc.pathname + loc.search) || '/'
 		}
@@ -128,7 +130,7 @@
 
 		var img = document.createElement('img')
 		img.src = url
-		img.style.float = 'right'  // Affect layout less.
+		img.style.position = 'absolute'  // Affect layout less.
 		img.setAttribute('alt', '')
 		img.setAttribute('aria-hidden', 'true')
 
