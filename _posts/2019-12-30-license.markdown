@@ -2,7 +2,7 @@
 layout: post
 title: "Choosing a license for GoatCounter"
 tags: ['GoatCounter', 'Open source']
-updated: '2020-01-01'
+updated: '2020-07-01'
 hatnote: |
  Discussions:
  <a href="https://news.ycombinator.com/item?id=21914245">Hacker News</a>.
@@ -83,7 +83,7 @@ Licenses
 
 Looking at the available licenses, there are unfortunately not very many. Some
 notes about various licenses (not intended as a comprehensive comparison; for
-some I stopped after I encountered something that made it cleary unsuitable for
+some I stopped after I encountered something that made it clearly unsuitable for
 my purposes):
 
 ### GPL (any version)
@@ -99,7 +99,7 @@ my purposes):
 - <strong class="g">Good</strong>: Copyleft with network protection, requires
   badactor.com to submit code when running a SaaS.
 - <strong class="g">Good</strong>: well known.
-- <strong class="b">Bad</strong>: long and dense language. it's 5174 words,
+- <strong class="b">Bad</strong>: long and dense language. It's 5174 words,
   which is about half an hour of reading time (probably more to properly grok
   it).
 - <strong class="b">Bad</strong>: preamble needs to complain about others taking
@@ -170,24 +170,15 @@ my purposes):
 - <strong class="b">Bad</strong>: not very widely known (yet), making it harder
   to re-use. GitHub for example lacks a "quick overview" for the EUPL (something
   I'll try and fix).
-- <strong class="b">Bad</strong>: The text version from the official website is
-  ugly; it seems like an automatic conversion from the PDF and has weird
-  spacing, line breaks, etc.
-
-  This may seem like minor issues, but I spent quite some time reformatting it
-  so people can conveniently read it from the standard LICENSE plain text file.
-
-  Another small practical detail is that there is no short URL to the license
-  text (I created one at eupl12.zgo.at), which makes it annoying to link in
-  source code.
-
-  I'll try and contact the maintainers to see if this can be improved.
 - <strong class="b">Bad</strong>: Like with AGPL, I don't like that it imposes
   restrictions on non-commercial users.
-
 - <strong class="n">Note</strong>: OSI and FSF approved, but no judgement on
   DFSG compatibility (there are discussions and no one raised specific
   objections; I don't expect problems).
+- <strong class="b">Bad</strong>: The GPL Compatability is good, but the way
+  it's worded less so; you can distribute *"Derivative Works"* as GPL in its
+  entirety, rather than just the changes made. In other words, you can
+  circumvent the stronger copyleft.
 
 ### The Parity Public License 7.0.0
 
@@ -228,11 +219,37 @@ my purposes):
   ("clearly describing the additions, changes or deletions You made"), which is
   probably a bit too strong.
 
+### Eclipse Public License 2.0 (EPL)
+
+{:class="cmp"}
+- <strong class="b">Bad</strong>: no "network protection".
+- <strong class="n">Note</strong>: Didn't investigate beyond this.
+
+### Mozilla Public License 2.0 (MPL)
+
+{:class="cmp"}
+- <strong class="b">Bad</strong>: no "network protection".
+- <strong class="n">Note</strong>: Didn't investigate beyond this.
+
+### CeCILL 2.1
+
+{:class="cmp"}
+- <strong class="b">Bad</strong>: It's explicitly specified that French law applies.
+- <strong class="n">Note</strong>: Didn't investigate beyond the above, which
+  already disqualifies it for me (and I would image most non-French), but it
+  doesn't seem to have the network protection and has the same GPL-compatibility
+  issues as the EUPL (i.e. it's "too compatible").
+
+
 Conclusion
 ----------
 
 The EUPL seems to have all the same provisions as the AGPL, but with several
-advantages. I see no reason to prefer the AGPL over the EUPL.
+advantages. I see no reason to prefer the AGPL over the EUPL; the biggest issue
+is the GPL-compatibility copyleft circumvention but I've worked around that by
+just removing the GPL, MPL and some other licenses from the "Compatible
+licenses" appendix and adding a note at the top that this list appendix was
+modified.
 
 I like the Parity License. I think a more plain-language version of the (A)GPL
 is long overdue, but it's very new and has a too strong copyleft. I don't think
