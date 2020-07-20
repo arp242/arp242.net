@@ -27,7 +27,7 @@ according to this checklist some organisation drafted".
 I have nothing against the [*Open Source Definition*][osd] (OSD), but judging
 all usage of *Open Source* by it is unworkable. Correcting millions of people
 that "using it wrong" is not a good strategy for accomplishing anything
-meaningful, certainly not for promoting the use of Open Source.
+meaningful – certainly not for promoting the use of Open Source.
 
 Some say we need a new term for Open Source software that doesn't meet all the
 OSD criteria. Supplanting a wide-used term with some neologism is a very hard
@@ -40,7 +40,13 @@ people across different cultures and views always is. In 2020 the Free Software
 Foundation is still trying to get people to say ["crackers" instead of
 "hackers"][crackers] and have [an entire list of common things you should be
 saying different][avoid]. The entire thing is a massive turn-off for anyone
-concerned with things that actually matter.
+concerned with things that actually matter.[^lang]
+
+[^lang]: I dislike language pedantry in general; "irregular" is a word, split
+         infinitives is perfectly correct English, and so forth. Everyone has
+         their own likes and dislikes when it comes to language, which is only
+         natural, but don't pretend your preferences are authoritative, and
+         certainly don't badger people when they don't adhere to them.
 
 [crackers]: https://www.gnu.org/proprietary/proprietary-insecurity.en.html
 [avoid]: https://www.gnu.org/philosophy/words-to-avoid.html
@@ -51,29 +57,34 @@ concerned with things that actually matter.
 ---
 
 So did the OSI invent the term "Open Source"? That's a tricky question because
-what does "inventing a term" even mean, especially when the term is composed of
-a common adjective and noun?
+what does "inventing a term" mean, especially when the term is composed of a
+common adjective and noun?
 
 If we look at Google ngram we can see that open source was already [gaining
-traction in the mid-90s][ngram1]. If you look at the [case-sensitive
+traction in the mid-90s][ngram1].[^osint] If you look at the [case-sensitive
 version][ngram2] then you can see that "Open Source" specifically got a big
 boost in 2003. Below you can see some usage of "open source" I found in a quick
-Usenet search (I'm sure there are more examples to be found on mailing lists,
-old websites, etc. but searching that is not so easy).
+Usenet search; I'm sure there are more examples to be found on mailing lists,
+old websites, etc. but searching that is not so easy.
 
-I am no doubt that Christine Peterson is honest in her retelling of [How I
-coined the term 'Open Source'][coin]; she probably thought of it independently,
-or perhaps she had seen it before and subconsciously "remembered" the term.
+I have no doubt that Christine Peterson is honest in her retelling of [How I
+coined the term 'Open Source'][coin]; she probably came up with it
+independently, or perhaps she had seen it before and subconsciously "remembered"
+the term.
 
 "Open" was (and remains) a common adjective added to all sorts of stuff: Open
 Linux, OpenDOS, OpenGL, OpenBSD, OpenStep, X/Open (later: Open Software
 Foundation, The Open Group), Common Open Software Environment, OpenVMS, etc.
 etc. etc.
 
-Either way, the origins of "Open source" as a term are a lot more convoluted
-than is often made out to be. The OSI was certainly important popularizing the
-term, but this doesn't mean they single-handedly invented it, or have control
+In short, the origins of "Open source" as a term are a lot more convoluted than
+is often made out to be. The OSI was certainly important popularizing the term,
+but this doesn't mean they single-handedly invented it, much less have control
 over how anyone uses it.
+
+[^osint]: Part of this is probably that "open source" is also used in the
+          intelligence community: [Open source intelligence](https://en.wikipedia.org/wiki/Open-source_intelligence),
+          which especially in the past was typically just called "open source".
 
 [coin]: https://opensource.com/article/18/2/coining-term-open-source-software
 [oh]: https://lists.debian.org/debian-announce/1997/msg00026.html
@@ -83,8 +94,8 @@ over how anyone uses it.
 ---
 
 Various usages of *open source* found in a quick Usenet search with Google
-Groups (I tried downloading the Internet Archives for better searching/numbers,
-but that doesn't seem to work at the moment, so this will have to do).
+Groups. I tried downloading the Internet Archives for better searching/numbers,
+but that doesn't seem to work at the moment, so this will have to do.
 
 [1990](https://groups.google.com/d/msg/alt.religion.computers/aJfOfVrUkHM/uXNuWwufDU0J):
 
@@ -168,7 +179,7 @@ that's not compatible with the OSD:
 
 [1996](http://www.xent.com/FoRK-archive/fall96/0269.html):
 
-> CALDERA. ANNOUNCES OPEN SOURCE CODE MODEL FOR DOS
+> Caldera announces open source code model for dos
 >
 > [..]
 > 
@@ -176,4 +187,5 @@ that's not compatible with the OSD:
 
 [1997](https://groups.google.com/d/msg/comp.os.linux.misc/PuxwpzAQJhw/yG-jwNypIvsJ):
 
-> CANOPY PROVIDES OPEN SOURCE CODE FOR FORMER WILLOWS CROSSBPLATFORM TECHNOLOGY: WINDOWS API/ABI
+> Canopy provides open source code for former Willows crossBplatform technology:
+> Windows API/ABI
