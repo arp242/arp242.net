@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Let’s not be pedantic about “Open Source”"
-tags: ['Open Source']
+tags: ['Open source']
 ---
 
 Another day, another *"it's not true open source, you're not allowed to call it
