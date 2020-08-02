@@ -172,7 +172,7 @@ distros. Usually searching for `-linux-gnu` (or `-linux-musl`) should give you
 an overview.
 
 I'm very 😎 so I use Void Linux, and for extra 😎 I want to use musl libc, so
-that's what I'll use in this example to cross-compile to ARM and ARM64; let me
+that's what I'll use in this example to cross-compile to arm and arm64; let me
 know if you have the commands for other systems and I'll add them as well.[^p]
 
 {:class="ft-cli"}
@@ -186,8 +186,8 @@ know if you have the commands for other systems and I'll add them as well.[^p]
         go build -ldflags='-extldflags=-static' -o test.arm ./test.go
 
 aarch64 and arm64 are the same thing, just with a different name, just as x86_64
-and amd64. To confirm that it works, you can use QEMU; for example with `select
-date()` from a `:memory:` SQLite database:
+and amd64. To confirm that it works, you can use QEMU; for example with a simple
+programs which runs `select date()` on a :memory: database:
 
 {:class="ft-cli"}
     $ qemu-aarch64 ./test.arm64
@@ -199,7 +199,7 @@ date()` from a `:memory:` SQLite database:
 Huzzah!
 
 [^p]: Figuring them out just from the package index is a bit too much
-      work/hassle, and also untested so it may errors or silly typos.
+      work/hassle, and also untested so it may contain errors or silly typos.
 
 ---
 
