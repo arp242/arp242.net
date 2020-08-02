@@ -53,13 +53,6 @@ starve and just 1000 for something resembling a (low-end) normal income. That's
 not all that much. There are tens – if not hundreds – of millions of websites
 out there, and capturing a tiny market share should be doable.
 
-Drew DeVault's [soucehut](https://sr.ht) in particular was inspirational in
-actually making the step. If Drew can do it, then why not me? Of course, Drew
-had the advantage of being somewhat better known through things like Sway, but
-the idea that you first need to work very hard in your spare time and *then*
-hopefully – maybe – get some income out of it strikes me as unrealistic for most
-of us.
-
 I know it's a risk and that there's a decent chance this will fail. That's okay.
 I'd rather take a chance to try to achieve a goal and fail instead of always
 playing it on safe. Not doing anything is also a decision – which you can regret
