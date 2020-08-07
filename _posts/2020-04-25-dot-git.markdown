@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Storing files in .git"
-tags: ['Dev']
+tags: ['Programming']
 ---
 
 When working on projects I often want to keep some private files around: "TODO"

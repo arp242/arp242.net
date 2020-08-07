@@ -2,7 +2,7 @@
 layout: post
 title: "Good comments read well and are to the point"
 updated: "2019-12-15"
-tags: ["Dev"]
+tags: ["Programming"]
 ---
 
 Good comments should read well, be to the point, and don't faff about with
