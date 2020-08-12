@@ -2,6 +2,9 @@
 layout: post
 title: "Freedom is not simple"
 tags: ['Politics']
+hatnote: |
+ Discussions:
+ <a href="https://news.ycombinator.com/item?id=24130963">Hacker News</a>
 ---
 
 There's a mistake I often see people make when it comes to the concept of
@@ -19,10 +22,11 @@ person or group often decreases freedom for others to some degree. Hell, even
 ---
 
 There are all sorts of examples of this; my big gripe with hardline "big-L"
-Libertarianism is that it seems to pretend these trade-offs don't exist and that
-"freedom" is some sort of thing you can just assign a number to. That doesn't
-mean that the libertarian position is invalid or "wrong"; I just wish they were
-more honest and thoughtful about this, with themselves and with others.
+Libertarianism is that it often seems to pretend these trade-offs don't exist
+and that "freedom" is some sort of thing you can just assign a single number to.
+That doesn't mean that the libertarian position is invalid or "wrong"; I just
+wish they were more honest and thoughtful about this, with themselves and with
+others.
 
 Things like freedom or speech or religion can infringe on other people's
 freedoms. If I say that all Jews should be kicked in the face whenever you see
