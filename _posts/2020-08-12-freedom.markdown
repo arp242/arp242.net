@@ -8,7 +8,7 @@ There's a mistake I often see people make when it comes to the concept of
 "freedom": the assumption that it's a simple one-dimensional metric that can
 either increase or decrease; something you can assign a rating from 0 to 100 to.
 
-In reality this is often now the case. My neighbour's freedom to play music at
+In reality this is often not the case. My neighbour's freedom to play music at
 4am limits my freedom to have a good night's rest. Does this increase or
 decrease freedom?
 
