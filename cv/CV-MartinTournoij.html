@@ -18,8 +18,16 @@
 		table.full { margin-left: -1.8em; width: calc(100% + 3.8em); }
 		.page { padding: 2rem; }
 
-		.cv-info { display: flex; }
+		h1 { margin-top: 0em; }
+		.cv-info     { display: flex; }
 		.cv-info div { padding: 0 1em; width: 33.33333333333333%; }
+
+		.w {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 2em;
+		}
 
 		.cv-update {
 			position: absolute;
@@ -31,25 +39,22 @@
 
 		.cv-taglist {
 			list-style: none;
-			display: flex;
 			margin: 0;
 			padding: 0;
 			font-size: 12px;
 			line-height: 100%;
 		}
+
 		.cv-taglist li {
-			padding: .5em;
-			border: 1px solid #666;
+			display: inline;
 			background-color: #f7f7f7;
-			margin-right: .75em;
 			border-radius: 2px;
+			padding: .1em .3em;
+			border: 1px solid #bbb;
 		}
 
-		/*
-		h1 { margin: .2em 0; }
-		*/
 		h2 { margin-top: 1.4em; }
-		h3 { margin-bottom: .5em; }
+		h3 { margin: 0; }
 
 		hr { margin: .3em 0; }
 	</style>
@@ -58,21 +63,21 @@
 <body>
 <div class="page page-a4">
 	<h1>Martin T<span class="redact">ournoij</span></h1>
-	<span class="cv-update">Last update: 10 Nov 2019;
+	<span class="cv-update">Last update: 5 Sept 2020;
 		<a href="https://arp242.net/cv" class="redact">arp242.net/cv</a></span>
 
 	<div class="cv-info">
 		<div>
 			<a href="mailto:martin@arp242.net" class="redact">martin@arp242.net</a><br>
 			<a href="tel:+6281339263297" class="redact">+62 8133 9263 297</a><br>
-			<a href="https://arp242.net" class="redact">arp242.net</a>
+			<a href="https://www.arp242.net" class="redact">arp242.net</a>
 		</div>
 		<div>
 			<a href="https://github.com/arp242" class="redact">github.com/arp242</a><br>
 			<a href="https://stackoverflow.com/u/660921" class="redact">stackoverflow.com/u/660921</a>
 		</div>
 		<div style="text-align: justify; hyphens: auto;">
-			Dutch citizenship. Currently in Indonesia, open to relocating or remote.
+			Dutch citizen, currently in Indonesia. Open to relocating and remote.
 		</div>
 	</div>
 
@@ -80,7 +85,7 @@
 	<table class="full cv-skills">
 		<tbody>
 			<tr>
-				<td style="min-width: 7.9em;">Go ("Golang")</td>
+				<td style="min-width: 7.9em;">Go (“Golang”)</td>
 				<td>Advanced</td>
 				<td style="min-width: 7em;">4 years</td>
 				<td>Main focus in the last 4 years</td>
@@ -92,7 +97,12 @@
 				<td>10+ years</td>
 				<td>Focus on shell tools and daemons; some TKinter, GTK, Qt</td>
 			</tr>
-
+			<tr>
+				<td>SQL</td>
+				<td>Intermediate</td>
+				<td>10+ years</td>
+				<td>Mostly PostgreSQL; also SQLite and MySQL/MariaDB</td>
+			</tr>
 			<tr>
 				<td>JavaScript</td>
 				<td>Intermediate</td>
@@ -125,7 +135,7 @@
 				<td>Linux/Unix</td>
 				<td>Advanced</td>
 				<td>10+ years</td>
-				<td>Arch Linux, CentOS, Debian/Ubuntu, OpenBSD, FreeBSD</td>
+				<td>Arch, Alpine, Void, CentOS, Debian, Ubuntu, OpenBSD, FreeBSD</td>
 			</tr>
 
 			<tr>
@@ -148,31 +158,37 @@
 
 	<hr>
 	<h2>Work experience</h2>
-	<h3>March 2019–Present: GoatCounter</h3>
-	<ul class="cv-taglist">
-		<li>Go</li>
-		<li>JavaScript</li>
-		<li>SQLite</li>
-		<li>PostgreSQL</li>
-	</ul>
-	<p>Founder of <a class="redact" href="https://www.goatcounter.com">GoatCounter</a>,
-	an open source privacy-friendly web analytics platform.
-	It aims to give meaningful privacy-friendly web analytics for business
-	purposes, while still staying usable for non-technical users to use on
-	personal websites.</p>
 
-	<h3>May 2016–March 2019: <span class="redact">Teamwork.com</span></h3>
-	<ul class="cv-taglist">
-		<li>Go</li>
-		<li>CoffeeScript</li>
-		<li>Knockout.js</li>
-		<li>MariaDB</li>
-		<li>Redis</li>
-	</ul>
+	<div class="w">
+		<h3>March 2019–Present: <span class="redact">GoatCounter</span></h3>
+		<ul class="cv-taglist">
+			<li>Go</li>
+			<li>JavaScript</li>
+			<li>PostgreSQL</li>
+			<li>SQLite</li>
+		</ul>
+	</div>
+	<p>Founder of <a class="redact" href="https://www.goatcounter.com">GoatCounter</a>,
+	an open source privacy-friendly web analytics platform. It aims to offer
+	easy to use and meaningful privacy-friendly web analytics as an alternative
+	to Google Analytics or Matomo.</p>
+	<p>I wrote most of the code, do the server management, support, etc.
+	Essentially it’s a one-person operation.</p>
+
+	<div class="w">
+		<h3>May 2016–March 2019: <span class="redact">Teamwork.com</span></h3>
+		<ul class="cv-taglist">
+			<li>Go</li>
+			<li>CoffeeScript</li>
+			<li>Knockout.js</li>
+			<li>MariaDB</li>
+			<li>Redis</li>
+		</ul>
+	</div>
 
 	<p>Worked on <em class="redact">Teamwork Desk</em> for two years, an email
-	based helpdesk system. I programmed the API and email processing in Go.
-	Worked on the frontend in CoffeeScript and Knockout.js.</p>
+	based helpdesk system. I programmed the API and email processing in Go and
+	some frontend in CoffeeScript and Knockout.js.</p>
 
 	<p>I took the initiative to start various other projects now in use by many
 	of our products:
@@ -183,23 +199,23 @@
 	and I took the lead in rewriting various <em class="redact">Desk</em>
 	packages to be more reusable.
 	</p>
+</div>
 
+<div class="page page-a4" style="padding-top: .5em; height: 28.4cm">
 	<p>In June 2018 I transferred to the Platform Team to work with all five
 	product teams to create generic solutions, such as standard
 	tooling/libraries and an app to manage cross-product users and settings.</p>
 
-</div>
-<div class="page page-a4" style="padding-top: .5em; height: 28.4cm">
-
-	<h3>Mar 2014–Oct 2015: <span class="redact">LICO Innovations</span></h3>
-	<ul class="cv-taglist">
-		<li>Ruby</li>
-		<li>Ruby on Rails</li>
-		<li>rspec</li>
-		<li>CoffeeScript</li>
-		<li>MySQL</li>
-		<li>PostgreSQL</li>
-	</ul>
+	<div class="w">
+		<h3>Mar 2014–Oct 2015: <span class="redact">LICO</span></h3>
+		<ul class="cv-taglist">
+			<li>Ruby</li>
+			<li>Ruby on Rails</li>
+			<li>CoffeeScript</li>
+			<li>MySQL</li>
+			<li>PostgreSQL</li>
+		</ul>
+	</div>
 
 	<p>I did most of the design and implementation for
 		<em class="redact">De Woningbeheerder</em> – a management solution for
@@ -208,13 +224,15 @@
 		applications and extensively tested with rspec. I also jumped in on
 		other Rails projects when needed.</p>
 
-	<h3>Apr 2013–Dec 2013: <span class="redact">AuguSoft</span></h3>
-	<ul class="cv-taglist">
-		<li>PHP</li>
-		<li>JavaScript</li>
-		<li>CoffeeScript</li>
-		<li>MySQL</li>
-	</ul>
+	<div class="w">
+		<h3>Apr 2013–Dec 2013: <span class="redact">AuguSoft</span></h3>
+		<ul class="cv-taglist">
+			<li>PHP</li>
+			<li>JavaScript</li>
+			<li>CoffeeScript</li>
+			<li>MySQL</li>
+		</ul>
+	</div>
 
 	<p>I added a CMS interface to <em class="redact">VillaXL</em>, a website to
 	rent holiday homes. This involved updating and modernizing the internally
@@ -224,16 +242,16 @@
 	<em class="redact">VillaXL </em>and occasionally helped out on other
 	projects.</p>
 
-	<h3>Nov 2011–Apr 2013: <span class="redact">Jibr</span></h3>
-	<ul class="cv-taglist">
-		<li>PHP</li>
-		<li>Python</li>
-		<li>MySQL</li>
-		<li>JavaScript</li>
-		<li>CoffeeScript</li>
-		<li>CentOS</li>
-		<li>Varnish</li>
-	</ul>
+	<div class="w">
+		<h3>Nov 2011–Apr 2013: <span class="redact">Jibr</span></h3>
+		<ul class="cv-taglist">
+			<li>PHP</li>
+			<li>Python</li>
+			<li>MySQL</li>
+			<li>JavaScript</li>
+			<li>CoffeeScript</li>
+		</ul>
+	</div>
 
 	<p>Designed and implemented <em class="redact">WeRemind</em>, an agenda
 	application with automatic reminders via email or phone. This was a new
@@ -243,16 +261,15 @@
 	<p>Worked on various PHP/Zend Framework applications and hosting for then,
 	including email hosting.</p>
 
-	<h3>Jul 2008–Oct 2011: <span class="redact">Aragorn ICT Dienstverlening</span></h3>
-	<ul class="cv-taglist">
-		<li>PHP</li>
-		<li>Python</li>
-		<li>JavaScript</li>
-		<li>MySQL</li>
-		<li>CentOS</li>
-		<li>Redis</li>
-		<li>Varnish</li>
-	</ul>
+	<div class="w">
+		<h3>Jul 2008–Oct 2011: <span class="redact">Aragorn</span></h3>
+		<ul class="cv-taglist">
+			<li>PHP</li>
+			<li>Python</li>
+			<li>JavaScript</li>
+			<li>MySQL</li>
+		</ul>
+	</div>
 
 	<p>I initially started out as a repair technician for desktops and servers
 	and took the initiative to write several Python tools to make this
@@ -265,8 +282,8 @@
 
 	<h2>Other experience</h2>
 	<ul>
-		<li>Active engagement on various platforms, such as Stack Overflow, Vi
-			and Vim Stack Exchange, Hacker News, etc.</li>
+		<li>Active engagement on various platforms, such as Stack Overflow, Vim
+			Stack Exchange, Hacker News, etc.</li>
 		<li>Participated as a mentor in a mentorship programme at the local
 			programming community.</li>
 		<li>Contributed to many open source projects with bugfixes or
