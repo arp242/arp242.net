@@ -1,12 +1,14 @@
-name: "arp242.net"
-url: "https://www.arp242.net"
-author: "Martin Tournoij"
-excerpt_separator: 
+name:         'arp242.net'
+url:          'https://www.arp242.net'
+author:       'Martin Tournoij'
+permalink:    '/:title.html'
+markdown:     'kramdown'
+collections:  ['posts', 'devlog']
+highlighter:  'none'
+includes_dir: ''
+excerpt_separator:
 strict_front_matter: true
-highlighter: none
-permalink: "/:title.html"
-markdown: "kramdown"
-collections: ['posts', 'devlog']
+
 exclude: [
   "Gemfile",
   "Gemfile.lock",
