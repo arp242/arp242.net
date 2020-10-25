@@ -5,7 +5,7 @@
 <span class="Statement">cd</span> ~/code/arp242.net
 
 <span class="Identifier">att() {</span>
-    <span class="Statement">[</span> <span class="Statement">-n</span> <span class="Statement">&quot;</span><span class="PreProc">${</span><span class="PreProc">TMUX</span><span class="Statement">:-</span><span class="PreProc">}</span><span class="Special">&quot;</span> <span class="Statement">]</span> <span class="Statement">&amp;&amp;</span>
+    <span class="Statement">[</span> <span class="Statement">-n</span> <span class="Statement">&quot;</span><span class="PreProc">${</span><span class="PreProc">TMUX</span><span class="Statement">:-</span><span class="PreProc">}</span><span class="Statement">&quot;</span> <span class="Statement">]</span> <span class="Statement">&amp;&amp;</span>
         tmux switch-client <span class="Special">-t</span> <span class="Statement">'</span><span class="Constant">=site</span><span class="Statement">'</span> <span class="Statement">||</span>
         tmux attach-session <span class="Special">-t</span> <span class="Statement">'</span><span class="Constant">=site</span><span class="Statement">'</span>
 <span class="Identifier">}</span>

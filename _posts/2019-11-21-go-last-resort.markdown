@@ -166,6 +166,32 @@ example lookup tables or some package-global object.
   passing `Foo` as a function argument is often a good alternative. See [A
   theory of modern Go][modern-go].
 
+- Initialize the variable on first use with `sync.Once`:
+
+      var (
+          geodbOnce sync.Once
+          geodb     *geo.DB
+      )
+
+      func getGeo(ip string) string {
+          // Will be run once only; if this is called again while it's still
+          // running the second call will be blocked until the function completes
+          // (but won't run it).
+          geodbOnce.Do(func() {
+              g, err := geoip2.FromBytes(pack.GeoDB)
+              if err != nil {
+                  panic(err)
+              }
+              geodb = g
+          })
+
+          return geodb.Lookup(ip).CountryCode
+      }
+
+  The advantage of this is that the code will only be run if the function is
+  actually called, rather than on import. This is used quite a bit in the
+  standard library.
+
 - For setting up a package-level variable a self-executing function will work
   just as well, and is clearer about what it's doing instead of relying on
   side-effects:
@@ -203,7 +229,9 @@ cgo allows calling C code from Go.
 
 **Why it exists and when to use** – interacting with C libraries, which are
 ubiquitous. Perhaps the most commonly used cgo library is SQLite, which is a
-perfectly valid use and would be impossible to implement without cgo.
+perfectly valid use case and would be hard to implement without cgo (although
+there are some efforts to translate the SQLite C code to Go, but this incurs
+quite a performance impact).
 
 **Problems** – it's comparatively slow, it inherits some of C's problems such as
 unsafe memory, can be tricky to understand by Go programmers, and it makes

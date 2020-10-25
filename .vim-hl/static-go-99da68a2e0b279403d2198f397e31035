@@ -2,8 +2,8 @@
 <span class="Constant">linux amd64</span>
 <span class="Constant">linux arm   CC=armv7l-linux-musleabihf-gcc</span>
 <span class="Constant">linux arm64 CC=aarch64-linux-musl-gcc</span>
-<span class="Special">&quot;</span>
+<span class="Statement">&quot;</span>
 
-<span class="Identifier">build_flags</span>=<span class="Statement">&quot;</span><span class="Constant">-trimpath -ldflags='-extldflags=-static -w -s -X main.version=</span><span class="PreProc">$tag</span><span class="Constant">' -tags osusergo,netgo,sqlite_omit_load_extension ./cmd/goatcounter</span><span class="Special">&quot;</span>
+<span class="Identifier">build_flags</span>=<span class="Statement">&quot;</span><span class="Constant">-trimpath -ldflags='-extldflags=-static -w -s -X main.version=</span><span class="PreProc">$tag</span><span class="Constant">' -tags osusergo,netgo,sqlite_omit_load_extension ./cmd/goatcounter</span><span class="Statement">&quot;</span>
 
 <span class="Statement">export</span> <span class="Identifier">CGO_ENABLED</span>=<span class="Constant">1</span>

@@ -30,10 +30,11 @@ Jekyll::Hooks.register :posts, :post_render do |post|
   FileUtils.mkdir_p './.vim-hl'
 
   default = post.data['filetype']
-  post.output.gsub!(/<pre( class="ft-(\w+)")?><code>(.*?)<\/code><\/pre>/m) do |m|
-    ft = $2
+  post.output.gsub!(/<pre( class="(full )?ft-(\w+)")?><code>(.*?)<\/code><\/pre>/m) do |m|
+    full = $2
+    ft = $3
     ft = default if ft.nil? || ft == ''
-    code = $3
+    code = $4
 
     next m if ft.nil? || ft == ''
     next m if ft == 'NONE'
@@ -64,7 +65,7 @@ Jekyll::Hooks.register :posts, :post_render do |post|
 
     # TODO: add patch to make this an option so we don't need to do this.
     c = File.read(cache).gsub(/<a href=".*?">(.*?)<\/a>/, '\1')
-    next "<pre class='hl ft-#{ft}'><code>#{c}</code></pre>"
+    next "<pre class='hl #{full} ft-#{ft}'><code>#{c}</code></pre>"
   end
 
   # CLI output.
