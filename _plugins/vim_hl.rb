@@ -40,7 +40,7 @@ Jekyll::Hooks.register :posts, :post_render do |post|
     next m if ft == 'NONE'
     next m if ft == 'cli'  # TODO: implement this.
 
-    cache = "./.vim-hl/#{post.id.sub(/\//, '')}-#{Digest::MD5.hexdigest(ft+code)}"
+    cache = "./.vim-hl/#{post.id.gsub(/\//, '')}-#{Digest::MD5.hexdigest(ft+code)}"
     if not File.file?(cache)
       # Don't build anything on Netlify, as it doesn't have Vim.
       next m unless ENV['NETLIFY'].nil?
@@ -82,4 +82,3 @@ Jekyll::Hooks.register :posts, :post_render do |post|
   #   next "<pre class='hl hl-cli'><code>#{m}</code></pre>"
   # }
 end
-
