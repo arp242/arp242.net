@@ -2,6 +2,10 @@
 layout: post
 title: "An API is a user interface"
 tags: ['Programming']
+hatnote: |
+ Discussions:
+ <a href="https://lobste.rs/s/tyabnv/api_is_user_interface">Lobsters</a>,
+ <a href="https://news.ycombinator.com/item?id=25206182">Hacker News</a>
 ---
 
 An API is a user interface for programmers and is essentially no different from
@@ -44,5 +48,7 @@ interfaces, by the way.
 <ul>
 <li><a href="http://kevinmahoney.co.uk/articles/your-database-as-an-api/">Your Database as an API</a></li>
 <li><a href="https://medium.com/@quikchange/ux-testing-for-code-e9ab157fb90f">UX Testing for Code</a></li>
+<li><a href="https://www.drdobbs.com/windows/measuring-api-usability/184405654">Measuring API Usability</a></li>
+<li><a href="https://tom.preston-werner.com/2010/08/23/readme-driven-development.html">Readme Driven Development</a></li>
 </ul>
 </div>
