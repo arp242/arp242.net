@@ -1,0 +1,48 @@
+---
+layout: post
+title: "An API is a user interface"
+tags: ['Programming']
+---
+
+An API is a user interface for programmers and is essentially no different from
+a graphical user interface, command-line user interface, or any other interface
+a user is expected to work with. Whenever you create a publicly callable
+function you're creating a user interface. Programmers are users, too.
+
+This may sound rather obvious, but in my experience this often seems forgotten.
+The world is full of clunky APIs documented with awkward English to prove it.
+
+Whenever I design a public package, module, or class I tend to start by writing
+a few basic usage examples and documenting it. This first draft won't be perfect
+and while writing the implementation I keep updating the examples and
+documentation to iterate on what works and axe what doesn't. This is kind of
+like TDD, except that it "tests" the UX rather than the implementation. Call it
+*Example Driven Development* if you will.
+
+This is similar to sketching a basic mock UI for a GUI and avoids "oh, we need
+to be able to do that too" half-way through building your UI, leading to awkward
+clunky UI elements added willy-nilly as an afterthought.
+
+In code reviews the first questions I usually have are things like "is this API
+easy to use?", "Is it consistent?", "can we extend it in the future so it won't
+be ugly?", "is it documented, and is the documentation comprehensible?".
+Sometimes I'll even go as far as trying to write a simple example to see if
+there are any problems and if it "feels" right. Only if this part is settled do
+I move on to reviewing the correctness of the actual implementation.
+
+---
+
+I'm not going to list specific examples or tips here, as tastes and conventions
+differ anyway. There usually isn't "one right way". If everyone started treating
+APIs as user interfaces instead of "oh, it's just for developers, they will
+figure it out" then we'll be 90% there. That also applies to commandline
+interfaces, by the way.
+
+
+<div class="postscript">
+<strong>Related articles</strong>
+<ul>
+<li><a href="http://kevinmahoney.co.uk/articles/your-database-as-an-api/">Your Database as an API</a></li>
+<li><a href="https://medium.com/@quikchange/ux-testing-for-code-e9ab157fb90f">UX Testing for Code</a></li>
+</ul>
+</div>
