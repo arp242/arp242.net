@@ -2,6 +2,7 @@
 layout: post
 title: "An API is a user interface"
 tags: ['Programming']
+updated: 2020-11-26
 hatnote: |
  Discussions:
  <a href="https://lobste.rs/s/tyabnv/api_is_user_interface">Lobsters</a>,
@@ -10,11 +11,21 @@ hatnote: |
 
 An API is a user interface for programmers and is essentially no different from
 a graphical user interface, command-line user interface, or any other interface
-a user is expected to work with. Whenever you create a publicly callable
-function you're creating a user interface. Programmers are users, too.
+a human ("user") is expected to work with. Whenever you create a publicly
+callable function you're creating a user interface. Programmers are users, too.
+
+This applies for any API: libX11, libpng, Ruby on Rails (good UX is a major
+factor for Rails' success), a REST API, etc.
+
+A library exists of two parts: implementation and exposed API. The
+implementation is all about doing *stuff* and interacting with the computer,
+whereas the exposed API is about giving a human access to this, preferably in a
+convenient way that makes it easy to understand, and making it hard to get
+things wrong.
 
 This may sound rather obvious, but in my experience this often seems forgotten.
-The world is full of clunky APIs documented with awkward English to prove it.
+The world is full of badly documented clunky APIs that give confusing errors (or
+no errors!) to prove it.
 
 Whenever I design a public package, module, or class I tend to start by writing
 a few basic usage examples and documenting it. This first draft won't be perfect
@@ -36,12 +47,25 @@ I move on to reviewing the correctness of the actual implementation.
 
 ---
 
-I'm not going to list specific examples or tips here, as tastes and conventions
-differ anyway. There usually isn't "one right way". If everyone started treating
-APIs as user interfaces instead of "oh, it's just for developers, they will
-figure it out" then we'll be 90% there. That also applies to commandline
-interfaces, by the way.
+I'm not going to list specific examples or tips here; it really depends on the
+environment, intended audience (kernel programmers are not Rails programmers),
+and most of all: what you're doing.
 
+Sometimes a single function with five parameters would be bad UX, whereas in
+other cases it might be a good option, if all five really are mandatory for
+example, or if you use Python and have named parameters. In other cases, it
+makes more sense to have five functions which accepts a single parameter.
+
+There usually isn't "one right way". If everyone started treating APIs as user
+interfaces instead of "oh, it's just for developers, they will figure it out"
+then we'll be 90% there.
+
+That being said, the most useful general piece of advice I know of is John
+Ousterhout's concept of *deep modules*: modules that provide large functionality
+with simple interfaces. [Depth of module][depth] is a nice overview with goes in
+to some more details about this, and I won't repeat it here.
+
+[depth]: https://nakabonne.dev/posts/depth-of-module/
 
 <div class="postscript">
 <strong>Related articles</strong>
