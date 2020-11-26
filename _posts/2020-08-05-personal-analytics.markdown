@@ -11,22 +11,28 @@ website long before I had any plans with it (first pageview: May 21st 2019).
 
 It's sometimes useful to have an indication what people are reading, or if
 anyone is reading something at all. For a while I maintained a [Vim
-ChangeLog](/vimlog) as I felt it would be useful to have such a thing.[^vim]
+ChangeLog][vimlog] as I felt it would be useful to have such a thing.[^vim]
 Maintaining that is quite labour-intensive and boring, and it turned out no one
 was actually reading it; so I stopped maintaining it. Without *some* form of
 analytics, I would have no way of knowing this.
 
-There are some other projects as well where this is useful; e.g. [The Art of
-Unix Programming](/the-art-of-unix-programming), or
-[bestasciitable.com](https://bestasciitable.com). It's just useful to know how
-popular such projects are before I choose to spend more time on them.
+[vimlog]: /vimlog
 
-I considered ‘archiving’ [How to detect automatically generated
-emails](/autoreply.html) as I thought it wasn't all that interesting after all;
-I just wrote that after writing an email system years ago.[^email] Turns out
-quite a few people end up there from Google and bug-trackers and such, so guess
-it's more useful than I thought! Instead of archiving it, I spent some time
-copy-editing and polishing it.
+There are some other projects as well where this is useful; e.g. [The Art of
+Unix Programming][taoup], or [bestasciitable.com][best]. It's just useful to
+know how popular such projects are before I choose to spend more time on them.
+
+[taoup]: /the-art-of-unix-programming
+[best]: (https://bestasciitable.com
+
+I considered ‘archiving’ [How to detect automatically generated emails][auto] as
+I thought it wasn't all that interesting after all; I just wrote that after
+writing an email system years ago.[^email] Turns out quite a few people end up
+there from Google and bug-trackers and such, so guess it's more useful than I
+thought! Instead of archiving it, I spent some time copy-editing and polishing
+it.
+
+[auto]: https://bestasciitable.com
 
 I'd also like to have *some* insight when people link things on Hacker News or
 whatnot. I'm hardly obsessed with what people say about my writings (I
@@ -85,6 +91,8 @@ spend most of my time doing and thinking about at the moment. I considered
 starting a GoatCounter-specific blog but 1) effort, and 2) I'd rather not
 incentivise myself to *actually* start writing blogspam. For what it's worth,
 this is not a new opinion and I wrote about some of this stuff [years ago
-already](https://meta.stackoverflow.com/a/340180/660921).
-I've got a few more that I'd like to write as I think I've got something
-interesting to say, but I'll try to mix it up with some other things 😅
+already][rep]. I've got a few more that I'd like to write as I think I've got
+something interesting to say, but I'll try to mix it up with some other things
+😅
+
+[rep]: https://meta.stackoverflow.com/a/340180/660921

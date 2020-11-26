@@ -26,13 +26,6 @@ General
   practice to just always use `is#` instead of `==`; it will work fine for other
   types as well.
 
-<!-- Controversial, and may not work like I think it did. Comment out for now
-     until I have more time to properly investigate.
-- Use **explicit variable scope**. `let foo = 1` can refer to `l:foo`, `s:foo`,
-  or `g:foo`. You should use explicit scope for the same reason as you should
-  always use `var` or `let` in JavaScript.
--->
-
 - **`abort` functions**. Without it Vim will keep executing code after an error,
   which rarely what you want. Use the `abort` keyword to abort function
   execution on error (e.g. `fun! MyFun() abort`). You can still use `try ..
@@ -162,7 +155,7 @@ Plugins
 
      Downsides: may add a lot of global variables.
 
-  <!--
+  {%- comment -%}
   3. Use a wrapper:
 
          fun! plugin#config#setting()
@@ -174,8 +167,7 @@ Plugins
      Advantage: 
 
      Downside: can't inspect current value, needs a new function per variable.
-  -->
-
+  {%- endcomment %}
 
   In general, I would recommend the first approach for small plugins and the
   second one for larger ones.

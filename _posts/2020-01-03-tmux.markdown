@@ -139,9 +139,4 @@ The second one has a self-documenting property that the first one lacks. I guess
 this is one important reason why there are so many wrapper scripts which use
 YAML config files and such.
 
-
 [tmux]: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
-
-<!--
-tmux(1): 20652 words
--->

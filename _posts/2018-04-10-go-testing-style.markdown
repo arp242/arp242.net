@@ -146,8 +146,6 @@ When aligned, this is a lot easier:
         t.Errorf("wrong output\ngot:  %q\nwant: %q", got, want)
     })
 
-<!-- -->
-
 {:class="ft-NONE"}
     --- FAIL: TestX (0.00s)
         --- FAIL: TestX/test_foo (0.00s)
@@ -167,8 +165,6 @@ Use a diff when comparing larger objects; for example with
     if d := cmp.Diff(got, tt.want); d != "" {
         t.Errorf("(-got +want)\n:%s", d)
     }
-
-<!-- -->
 
 {:class="ft-NONE"}
     --- FAIL: TestParseFilter (0.00s)

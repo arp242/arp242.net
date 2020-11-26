@@ -43,10 +43,6 @@ way.
 When people say "GPL[^gpl] increases freedom" then they're right. When others
 say "GPL limits freedom compared to MIT" then they're right too. It's just a
 matter about *which* freedoms exactly we're talking about, and for *who*.
-<!--
-Indeed, the entire Free Software movement seems like a typical failure of
-appreciating these kind of trade-offs when it comes to freedom.
--->
 
 [^gpl]: For people who happen to not be programmers, see e.g.
         [What is free software?](https://www.fsf.org/about/what-is-free-software)

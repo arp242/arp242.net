@@ -14,12 +14,16 @@ known.
 I'm not especially concerned with patents or people using my work for commercial
 purposes: a company using my little tool or library (with or without changes)
 takes away nothing from my little hobby project that [I wrote for my own
-reasons](/diy.html).
+reasons][diy]
+
+[diy]: /diy.html.
 
 ---
 
 But with GoatCounter things are different: I'm actually [trying to make a living
-from it](/goatcounter.html).
+from it][gc].
+
+[gc]: /goatcounter.html
 
 I *still* don't really care what people do with my code, but I *do* care if my
 ability to make a living would be unreasonably impeded. Taking my MIT code and

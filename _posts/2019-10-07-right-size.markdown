@@ -61,7 +61,9 @@ than just writing a many simple functions.
 As [Haldane already observed many years ago][haldane], the "right" size isn't
 the smallest (or the largest). It's the right one.
 
-<!-- https://www.joelonsoftware.com/2001/01/18/big-macs-vs-the-naked-chef/ -->
+{%- comment -%}
+https://www.joelonsoftware.com/2001/01/18/big-macs-vs-the-naked-chef/
+{%- endcomment -%}
 
 [testing]: /testing.html
 [fp-why]: https://stackoverflow.com/a/2835936/660921

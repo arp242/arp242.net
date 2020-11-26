@@ -10,7 +10,8 @@ hatnote: |
     Note: this post is something of a rant, and uses strong and emotional language.
     It's born out of a years-long frustration with seeing almost every single
     suggestion to make Stack Overflow a friendlier place not just rejected, but met
-    with hostility.
+    with hostility. I decided to leave it as-is instead of cleaning it up, as
+    sometimes strong phrasings are appropriate.
 ---
 
 I've been active on Stack Overflow in some form or the other since 2011, and
@@ -210,13 +211,9 @@ I have an alternate theory:
 In other words, it's a bed of their own making.
 
 The question is: does Stack Overflow want to be a site that people tolerate, or
-one that people *like*?
-
-<!--
-If large amounts of people find you hostile and abrasive then you almost
-certainly are. 
--->
-
+one that people *like*? If large amounts of people find your community hostile
+and abrasive then the problem is almost certainly with the community, and not
+with *everyone else*.
 
 Way forward
 -----------

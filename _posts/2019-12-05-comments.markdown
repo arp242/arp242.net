@@ -61,11 +61,7 @@ some comments are truly redundant. Some of the silliest examples I have seen:
 
     char buf[BUF_SIZE]; /* create an array of characters */
 
-<!-- -->
-
     transaction.Commit() // commit the transaction
-
-<!-- -->
 
     // Start the loop.
     while ( have_posts() ) : the_post();

@@ -110,8 +110,6 @@ to highlight some trade-offs in "easy to use" vs. "easy to debug".
   fix](https://cgit.freedesktop.org/systemd/systemd/commit/?id=6e392c9c45643d106673c6643ac8bf4e65da13c1)
   for it. Does that look easy to you?
 
----
-
-<!--
+{% comment %}
 **Also see my follow-up: [How to make code easier to understand](/understandable.html)**
--->
+{% endcomment %}

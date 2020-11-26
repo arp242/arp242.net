@@ -10,8 +10,6 @@ big red warning:
 > data. Never unpickle data received from an untrusted or unauthenticated
 > source.
 
-<!-- -->
-
 > The marshal module is not intended to be secure against erroneous or
 > maliciously constructed data. Never unmarshal data received from an untrusted
 > or unauthenticated source.

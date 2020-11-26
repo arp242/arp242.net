@@ -13,6 +13,9 @@ class OutputSource < Liquid::Tag
       # TODO: replace internal .html links to .txt links
       # TODO: make a /index.txt too
       # TODO: find/fix some more inline HTML
+      # TODO: smart quotes?
+      # TODO: mention encoding?
+      # TODO Centre align some text?
       next d
     end
   end

@@ -239,7 +239,7 @@ breakdown of possible issues.
 
 **Alternatives** – write it in Go if at all feasible.
 
-<!--
+{%- comment -%}
 Other
 -----
 
@@ -254,7 +254,7 @@ While not exactly features of last resort", an additional (opinionated) list of
   `os.Open()` will already include the filename (`open /nonexistent: no such
   file or directory`) so using `fmt.Errorf("cannot open %q: %s", filename, err)`
   is not very helpful.
--->
+{%- endcomment -%}
 
 
 [hg]: https://www.mercurial-scm.org/wiki/FeaturesOfLastResort
