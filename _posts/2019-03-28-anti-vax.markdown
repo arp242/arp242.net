@@ -50,11 +50,6 @@ empathy for these people, but I do think we need to intellectually em­pa­thize
 with their world view and frame of reference to fix some of the problems we have
 in our society.
 
-{% related_articles %}
-- [Anti-Vaxers Aren't Stupid](https://www.theatlantic.com/health/archive/2016/02/anti-vaxers-arent-stupid/462864/)
-{% endrelated_articles %}
-
-
 [^1]: The original myth was that vaccines cause autism, but since then vaccines
       have been blamed for all sort of bad stuff, including *causing measles* 🙄🤦
 
@@ -64,3 +59,7 @@ in our society.
 [1]: https://arstechnica.com/science/2019/03/boy-spent-47-agonizing-days-in-icu-with-tetanus-parents-still-refuse-vaccines/
 [2]: https://arstechnica.com/science/2019/03/anti-vax-parents-sue-to-keep-unvaccinated-kids-in-school-during-outbreak/
 [3]: https://www.reddit.com/r/legaladvice/comments/3xaz7x/ny_im_16_and_my_dad_refuses_to_get_me_vaccinated/
+
+{% related_articles %}
+- [Anti-Vaxers Aren't Stupid](https://www.theatlantic.com/health/archive/2016/02/anti-vaxers-arent-stupid/462864/)
+{% endrelated_articles %}

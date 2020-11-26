@@ -290,7 +290,6 @@ better spent elsewhere.
 [benice]: https://web.archive.org/web/20180101151003/https://stackoverflow.com/help/be-nice
 [new]: https://insights.dice.com/2018/08/10/stack-overflow-new-code-conduct/
 
-
 {% related_articles %}
 - [My Love-Hate Relationship with Stack Overflow: Arthur S., Arthur T., and the Soup Nazi](https://www.embeddedrelated.com/showarticle/741.php)
 {% endrelated_articles %}

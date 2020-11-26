@@ -155,14 +155,14 @@ on these logistics.
 
 So let’s simply ‘go with the flow’ and use git, even though I don’t like it.
 
-{% related_articles %}
-- [Betamaxed](https://doriantaylor.com/betamaxed)
-- [A Rant About Git](https://sungo.wtf/2018/04/20/a-rant-about-git.html)
-{% endrelated_articles %}
-
 [undo-amend]: http://stackoverflow.com/a/1459264/660921
 [linus-fanboys]: https://www.bloomberg.com/news/articles/2015-06-16/the-creator-of-linux-on-the-future-without-him
 [facebook-hg]: https://code.facebook.com/posts/218678814984400/scaling-mercurial-at-facebook
 [git-memcpy]: http://www.openwall.com/lists/oss-security/2016/03/15/5
 [git-man]: https://git-man-page-generator.lokaltog.net/
 [so-top]: http://stackoverflow.com/questions?sort=votes
+
+{% related_articles %}
+- [Betamaxed](https://doriantaylor.com/betamaxed)
+- [A Rant About Git](https://sungo.wtf/2018/04/20/a-rant-about-git.html)
+{% endrelated_articles %}

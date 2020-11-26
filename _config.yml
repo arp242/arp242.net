@@ -15,6 +15,9 @@ defaults:
     scope:  { path: '_posts' }
     values: { layout: 'post', permalink: '/:title.html' }
   -
+    scope:  { path: '_drafts' }
+    values: { layout: 'post', permalink: '/draft/:title.html' }
+  -
     scope:  { path: '_text' }
     values: { layout: 'post_text', permalink: '/:title.txt' }
 
