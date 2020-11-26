@@ -1,12 +1,10 @@
 ---
-layout: post
 title: Why teach kids to program?
 tags: ['Politics']
 updated: 2018-12-23
-Discussions:
 hatnote: |
- Discussions:
- <a href="https://lobste.rs/s/eoy7p4/why_teach_kids_program_2017">Lobsters</a>.
+    Discussions:
+      [Lobsters](https://lobste.rs/s/eoy7p4/why_teach_kids_program_2017).
 ---
 
 Teaching kids the basics of computer programming is a good idea for the same

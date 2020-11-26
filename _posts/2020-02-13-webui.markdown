@@ -1,12 +1,11 @@
 ---
-layout: post
 title: "The web as a GUI toolkit"
 tags: ['Web']
 updated: 2020-04-02
 hatnote: |
- Discussions:
- <a href="https://lobste.rs/s/vrb7qh/web_as_gui_toolkit">Lobsters</a>,
- <a href="https://news.ycombinator.com/item?id=22319489">Hacker News</a>.
+    Discussions:
+      [Lobsters](https://lobste.rs/s/vrb7qh/web_as_gui_toolkit),
+      [Hacker News](https://news.ycombinator.com/item?id=22319489).
 ---
 
 The web is kinda weird because it was originally created as a typesetting

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "A primer on the str and bytes types in Python 3"
 tags: ['Python']
 ---

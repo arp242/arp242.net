@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "How to detect automatically generated emails"
 tags: ['Email']
 ---

@@ -4,9 +4,6 @@
 # https://arp242.netlify.com/* https://www.arp242.net/:splat 301!
 # https://arp242.net/*         https://www.arp242.net/:splat 301!
 
-# Convenience
-/devlog                                 /devlog.html                 301
-
 # Renamed
 /learning-a-programming-language.html   /learning-programming.html   301
 

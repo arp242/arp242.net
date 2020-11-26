@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 'Analytics on personal websites'
 tags: ['GoatCounter', 'Web']
 ---

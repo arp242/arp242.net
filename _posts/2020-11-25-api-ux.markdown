@@ -1,12 +1,11 @@
 ---
-layout: post
 title: "An API is a user interface"
 tags: ['Programming']
 updated: 2020-11-26
 hatnote: |
- Discussions:
- <a href="https://lobste.rs/s/tyabnv/api_is_user_interface">Lobsters</a>,
- <a href="https://news.ycombinator.com/item?id=25206182">Hacker News</a>
+    Discussions:
+      [Lobsters](https://lobste.rs/s/tyabnv/api_is_user_interface),
+      [Hacker News](https://news.ycombinator.com/item?id=25206182)
 ---
 
 An API is a user interface for programmers and is essentially no different from
@@ -67,12 +66,9 @@ to some more details about this, and I won't repeat it here.
 
 [depth]: https://nakabonne.dev/posts/depth-of-module/
 
-<div class="postscript">
-<strong>Related articles</strong>
-<ul>
-<li><a href="http://kevinmahoney.co.uk/articles/your-database-as-an-api/">Your Database as an API</a></li>
-<li><a href="https://medium.com/@quikchange/ux-testing-for-code-e9ab157fb90f">UX Testing for Code</a></li>
-<li><a href="https://www.drdobbs.com/windows/measuring-api-usability/184405654">Measuring API Usability</a></li>
-<li><a href="https://tom.preston-werner.com/2010/08/23/readme-driven-development.html">Readme Driven Development</a></li>
-</ul>
-</div>
+{% related_articles %}
+- [Your Database as an API](http://kevinmahoney.co.uk/articles/your-database-as-an-api/)
+- [UX Testing for Code](https://medium.com/@quikchange/ux-testing-for-code-e9ab157fb90f)
+- [Measuring API Usability](https://www.drdobbs.com/windows/measuring-api-usability/184405654)
+- [Readme Driven Development](https://tom.preston-werner.com/2010/08/23/readme-driven-development.html)
+{% endrelated_articles %}

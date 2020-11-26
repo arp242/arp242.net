@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Online Unreal Tournament server browser with pcntl fork()
 archive: true
 ---

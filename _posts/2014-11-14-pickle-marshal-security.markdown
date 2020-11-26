@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Security of Python’s pickle and marshal modules"
 tags: ['Python', 'Security']
 ---

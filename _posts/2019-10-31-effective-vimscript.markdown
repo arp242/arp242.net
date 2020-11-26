@@ -1,12 +1,11 @@
 ---
-layout: post
 updated: 2019-11-06
 title: "Effective VimScript"
 tags: ['Vim']
 filetype: vim
 hatnote: |
- Discussions:
- <a href="https://www.reddit.com/r/vim/comments/dpmnd1/effective_vimscript/">/r/vim</a>.
+    Discussions:
+      [/r/vim](https://www.reddit.com/r/vim/comments/dpmnd1/effective_vimscript/).
 ---
 
 The VimScript language is rather idiosyncratic, and because few people – if

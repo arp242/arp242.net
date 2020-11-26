@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "GoatCounter 1.0 release"
 tags: ['GoatCounter']
 ---
@@ -27,9 +26,6 @@ improving the data quality in 1.2/1.3, and improving the data visualisation in
 I'm also going to be spending a bit more time on promoting GoatCounter. You can
 have the best product in the world, but if no one has heard of it then, well,
 it's kind of pointless.
-
-I'll also start maintaining a [devlog](/devlog.html), which I'll try to update
-weekly. It has a separate [RSS feed](/devlog.xml).
 
 [gc]: https://www.goatcounter.com
 [gh]: https://github.com/zgoat/goatcounter

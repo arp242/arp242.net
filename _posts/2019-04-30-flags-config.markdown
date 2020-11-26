@@ -1,10 +1,9 @@
 ---
-layout: post
 title: "Flags are great for configuration"
 tags: ['Unix', 'Config']
 hatnote: |
- Discussions:
- <a href="https://lobste.rs/s/tm1vwk/flags_are_great_for_configuration">Lobsters</a>.
+    Discussions:
+      [Lobsters](https://lobste.rs/s/tm1vwk/flags_are_great_for_configuration).
 ---
 
 I like to configure programs with commandline flags. Why include thousands of

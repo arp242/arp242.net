@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Creating temporary files in PHP
 tags: ['PHP']
 filetype: php

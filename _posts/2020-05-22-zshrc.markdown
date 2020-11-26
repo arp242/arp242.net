@@ -1,12 +1,11 @@
 ---
-layout: post
 title: "Some zshrc tricks"
 tags: ['Unix']
 filetype: zsh
 hatnote: |
- Discussions:
- <a href="https://lobste.rs/s/tgmzke/some_zshrc_tricks">Lobsters</a>,
- <a href="https://www.reddit.com/r/commandline/comments/gofuh1/some_zshrc_tricks/">/r/commandline</a>
+    Discussions:
+      [Lobsters](https://lobste.rs/s/tgmzke/some_zshrc_tricks),
+      [/r/commandline](https://www.reddit.com/r/commandline/comments/gofuh1/some_zshrc_tricks/)
 ---
 
 Some useful "tricks" from my `~/.zshrc`; [full version here][zshrc]. Not all of

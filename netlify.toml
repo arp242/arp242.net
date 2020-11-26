@@ -8,3 +8,8 @@
 	for = "*.jpg"
 	[headers.values]
 		Cache-Control = "public, max-age=1209600"  # 14 days
+
+[[headers]]
+	for = "*.txt"
+	[headers.values]
+		Content-Type = "text/plain; charset=UTF-8"

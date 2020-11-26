@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Generate passwords from the commandline
 tags: ['Unix', 'Security']
 ---

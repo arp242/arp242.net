@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Manage Unreal Tournament cache files
 archive: true
 ---

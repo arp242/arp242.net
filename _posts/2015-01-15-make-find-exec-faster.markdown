@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Making find -exec faster
 tags: ['Unix']
 updated: 2019-05-03

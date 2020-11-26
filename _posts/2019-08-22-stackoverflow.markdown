@@ -1,17 +1,16 @@
 ---
-layout: post
 title: "Tired of Stack Overflow"
 tags: ['Community']
 hatnote: |
- Discussions:
- <a href="https://lobste.rs/s/pmldds/tired_stack_overflow">Lobsters</a>,
- <a href="https://news.ycombinator.com/item?id=20859332">Hacker News</a>,
- <a href="https://www.reddit.com/r/programming/comments/cysae4/tired_of_stack_overflow/">/r/programming</a>.
- <br><br>
- Note: this post is something of a rant, and uses strong and emotional language.
- It's born out of a years-long frustration with seeing almost every single
- suggestion to make Stack Overflow a friendlier place not just rejected, but met
- with hostility.
+    Discussions:
+      [Lobsters](https://lobste.rs/s/pmldds/tired_stack_overflow),
+      [Hacker News](https://news.ycombinator.com/item?id=20859332),
+      [/r/programming](https://www.reddit.com/r/programming/comments/cysae4/tired_of_stack_overflow/).
+
+    Note: this post is something of a rant, and uses strong and emotional language.
+    It's born out of a years-long frustration with seeing almost every single
+    suggestion to make Stack Overflow a friendlier place not just rejected, but met
+    with hostility.
 ---
 
 I've been active on Stack Overflow in some form or the other since 2011, and
@@ -295,10 +294,6 @@ better spent elsewhere.
 [new]: https://insights.dice.com/2018/08/10/stack-overflow-new-code-conduct/
 
 
-<div class="postscript">
-<strong>Related articles</strong>
-<ul>
-<li><a href="https://www.embeddedrelated.com/showarticle/741.php">My Love-Hate
-Relationship with Stack Overflow: Arthur S., Arthur T., and the Soup Nazi</a></li>
-</ul>
-</div>
+{% related_articles %}
+- [My Love-Hate Relationship with Stack Overflow: Arthur S., Arthur T., and the Soup Nazi](https://www.embeddedrelated.com/showarticle/741.php)
+{% endrelated_articles %}

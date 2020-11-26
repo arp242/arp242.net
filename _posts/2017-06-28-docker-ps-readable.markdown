@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Make docker ps work on normal sized terminals"
 tags: []
 archive: true
@@ -22,7 +21,7 @@ I’m sorry folks, but I cannot call this anything other than silly interface de
 260 characters wide for a common command... It looks terrible on any vaguely
 normal sized terminal:
 
-<figure><img alt="Docker xterm" src="{% base64 ./_images/docker-wide.png %}"></figure>
+<figure><img alt="Docker xterm" src="{% include_image ./_images/docker-wide.png %}"></figure>
 
 It’s exactly 56 characters too much for even a full-screen xterm(!) Guess I’ll
 have to buy a new 32 inch 4k HD screen to run Docker?

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Launching GoatCounter"
 tags: ['GoatCounter', 'Open source']
 ---

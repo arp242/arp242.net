@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Making FlagShihTzu work well with Formtastic
 tags: ['Ruby', 'Ruby on Rails']
 ---

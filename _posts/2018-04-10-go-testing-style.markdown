@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "Go testing style guide"
 tags: ['Go']
 updated: 2018-07-31
 hatnote: |
- Discussions:
- <a href="https://www.reddit.com/r/golang/comments/93jjrs/go_testing_style_guide/">/r/golang</a>.
+    Discussions:
+      [/r/golang](https://www.reddit.com/r/golang/comments/93jjrs/go_testing_style_guide/).
 ---
 
 A small (opinionated) style guide for writing Go tests. There is much more to be

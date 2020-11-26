@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "The other kind of censorship"
 tags: ['Community']
 ---

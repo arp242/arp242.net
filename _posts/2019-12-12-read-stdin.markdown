@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Better UX when reading from stdin"
 tags: ['Unix']
 ---

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Using flags for configuration in Go"
 tags: ['Go', 'Unix', 'Config']
 ---

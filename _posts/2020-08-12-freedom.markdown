@@ -1,10 +1,9 @@
 ---
-layout: post
 title: "Freedom is not simple"
 tags: ['Politics']
 hatnote: |
- Discussions:
- <a href="https://news.ycombinator.com/item?id=24130963">Hacker News</a>
+    Discussions:
+      [Hacker News](https://news.ycombinator.com/item?id=24130963)
 ---
 
 There's a mistake I often see people make when it comes to the concept of

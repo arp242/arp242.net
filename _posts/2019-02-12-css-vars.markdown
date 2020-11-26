@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Why Hello CSS doesn’t use CSS variables"
 tags: ['Web']  # CSS
 ---

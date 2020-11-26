@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "GoatCounter 1.1 release"
 tags: ['GoatCounter']
 ---

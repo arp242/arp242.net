@@ -1,20 +1,19 @@
 ---
-layout: post
 title: "YAML: probably not so great after all"
 tags: ['Programming', 'Config']
 updated: 2019-04-15
 desc: "I was very excited when I first used YAML, but some real-world usage showed it's not so great after all"
 hatnote: |
- Follow-up:
- <a href="/flags-config.html">Configuration with flags</a>.
- Discussions:
- <a href="https://lobste.rs/s/dwjgn1/yaml_probably_not_so_great_after_all">Lobsters</a>
-   (<a href="https://lobste.rs/s/82tiyp/yaml_probably_not_so_great_after_all">again</a>),
- <a href="https://news.ycombinator.com/item?id=17358103">Hacker News</a>
-   (<a href="https://news.ycombinator.com/item?id=20731160">again</a>),
- <a href="https://www.reddit.com/r/programming/comments/8shzcu/yaml_probably_not_so_great_after_all/">/r/programming</a>.
- Translations:
- <a href="https://linux.cn/article-10423-1.html">Chinese (中文)</a>.
+    Follow-up:
+      [Configuration with flags](/flags-config.html).
+    Discussions:
+      [Lobsters](https://lobste.rs/s/dwjgn1/yaml_probably_not_so_great_after_all)
+        ([again](https://lobste.rs/s/82tiyp/yaml_probably_not_so_great_after_all)),
+      [Hacker News](https://news.ycombinator.com/item?id=17358103)
+        ([again](https://news.ycombinator.com/item?id=20731160)),
+      [/r/programming](https://www.reddit.com/r/programming/comments/8shzcu/yaml_probably_not_so_great_after_all/).
+    Translations:
+      [Chinese (中文)](https://linux.cn/article-10423-1.html).
 ---
 
 I previously wrote [why using JSON for human-editable configuration files is a

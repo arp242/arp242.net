@@ -1,10 +1,9 @@
 ---
-layout: post
 title: 'Why I’m still using jQuery in 2019'
 tags: ['Web']  # JavaScript
 hatnote: |
- Discussions:
- <a href="https://news.ycombinator.com/item?id=20021289">Hacker News</a>.
+    Discussions:
+      [Hacker News](https://news.ycombinator.com/item?id=20021289).
 ---
 
 Many people advocate *"just use vanilla JavaScript, you don't need jQuery"*.

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Why GoatCounter ignores Do Not Track"
 tags: ['GoatCounter', 'Web', 'Politics']
 ---

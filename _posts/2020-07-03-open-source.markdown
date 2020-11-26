@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Let’s not be pedantic about “Open Source”"
 tags: ['Open source']
 ---

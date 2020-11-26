@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Some thoughts on CDNs
 tags: ['Security']
 ---

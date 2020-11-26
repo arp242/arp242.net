@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Tunnelling SSH though a firewall with ssh -L
 archive: true
 ---

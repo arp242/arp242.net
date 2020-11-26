@@ -11,8 +11,9 @@ layout: default
 				<p>Written on {{ page.date | date_to_string }}
 				{% if page.updated %} − last updated on {{ page.updated | date_to_string }}
 				<sup><a href="https://github.com/arp242/arp242.net/commits/master/{{ page.path }}">history</a></sup>{% endif %}</p>
+				<!--<a href="{{ page.url | replace: '.html', '.txt' }}">Text version</a>-->
 			</header>
-			{% if page.hatnote %}<div class="hatnote">{{ page.hatnote }}</div>{% endif %}
+			{% if page.hatnote %}<div class="hatnote">{{ page.hatnote | markdownify }}</div>{% endif %}
 			{{ content }}
 			<footer class="postscript">
 				<strong>Feedback</strong>

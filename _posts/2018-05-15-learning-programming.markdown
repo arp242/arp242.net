@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Learning a programming language"
 tags: ['Community']
 updated: 2018-07-31
@@ -94,9 +93,6 @@ language with a helpful and positive community. But if you think C#, Java, PHP,
 Ruby, C++, JavaScript, or something else better fits your needs or preferences
 then by all means go for it.
 
-<div class="postscript">
-<strong>Related articles</strong>
-<ul>
-<li><a href="https://eddyerburgh.me/how-i-take-notes-from-technical-books">How I take notes from technical books</a></li>
-</ul>
-</div>
+{% related_articles %}
+- [How I take notes from technical books](https://eddyerburgh.me/how-i-take-notes-from-technical-books)
+{% endrelated_articles %}

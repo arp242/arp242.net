@@ -1,3 +1,5 @@
+require 'fileutils'
+
 class Jekyll::Tags::IncludeCodeTag < Liquid::Tag
   def initialize(tag_name, path, tokens)
     @path = path.strip
@@ -10,6 +12,7 @@ class Jekyll::Tags::IncludeCodeTag < Liquid::Tag
     # Don't build anything on Netlify, as it doesn't have the file.
     return "NOT FOUND: #{cache}" if !File.file?(cache) and !ENV['NETLIFY'].nil?
 
+    FileUtils.mkdir_p './.include-code'
     text = File.readlines(@path).map { |l| '    ' + l }.join('')
     File.write(cache, text)
     return text

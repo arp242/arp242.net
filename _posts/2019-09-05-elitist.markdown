@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "It’s fine to be elitist, sometimes"
 tags: ['Community']
 ---

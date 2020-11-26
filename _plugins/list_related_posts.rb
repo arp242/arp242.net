@@ -1,4 +1,4 @@
-class Jekyll::Tags::ListRelatedPostsTag < Liquid::Tag
+class ListRelatedPosts < Liquid::Tag
   def render(context)
     list = context['page']['tags'].map do |t|
       next '' if context['site']['tags'][t].length == 1
@@ -20,4 +20,4 @@ class Jekyll::Tags::ListRelatedPostsTag < Liquid::Tag
   end
 end
 
-Liquid::Template.register_tag('list_related_posts', Jekyll::Tags::ListRelatedPostsTag)
+Liquid::Template.register_tag('list_related_posts', ListRelatedPosts)

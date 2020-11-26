@@ -1,16 +1,15 @@
 ---
-layout: post
 title: "Copyright, culture, and democracy"
 tags: ['Politics']
 hatnote: |
- Discussions:
- <a href="https://www.reddit.com/r/slatestarcodex/comments/bt6mrv/copyright_culture_and_democracy/">/r/slatestarcodex</a>
+    Discussions:
+      [/r/slatestarcodex](https://www.reddit.com/r/slatestarcodex/comments/bt6mrv/copyright_culture_and_democracy/)
 ---
 
-<!--
+{%- comment -%}
 https://lobste.rs/s/gohtiz/why_we_re_relicensing_cockroachdb#c_hykipo
 https://news.ycombinator.com/item?id=20097077
--->
+{%- endcomment -%}
 
 Did you know that Anne Frank's diaries are still copyrighted and can't be
 published without paying royalties to the Anne Frank Foundation (AFF)? The legal

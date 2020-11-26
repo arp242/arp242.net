@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Vested interest in mismanaging government"
 tags: ['Politics']
 ---

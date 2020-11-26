@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Running Go CLI programs in the browser"
 tags: ['Go']
 ---
@@ -159,9 +158,6 @@ further, but I thought this was "good enough" for a basic demo :-)
 [index.html]: https://github.com/arp242/uni/blob/master/wasm/index.html
 [term.js]: https://github.com/arp242/uni/blob/master/wasm/term.js
 
-<div class="postscript">
-<strong>Related articles</strong>
-<ul>
-<li><a href="https://github.com/golang/go/wiki/WebAssembly">WebAssembly</a> on the Go wiki</li>
-</ul>
-</div>
+{% related_articles %}
+- [WebAssembly on the Go wiki](https://github.com/golang/go/wiki/WebAssembly)
+{% endrelated_articles %}

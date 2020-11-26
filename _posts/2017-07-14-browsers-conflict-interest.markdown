@@ -1,20 +1,19 @@
 ---
-layout: post
 title: "Browsers and conflicts of interests"
 updated: 2018-12-22
 tags: ['Web', 'Politics']
 hatnote: |
- Discussions:
- <a href="https://www.reddit.com/r/firefox/comments/8avev2/browsers_and_conflicts_of_interests/">/r/firefox</a>.
- Feedback:
- <a href="https://github.com/arp242/arp242.net/issues/2">#2</a>.
+    Discussions:
+      [/r/firefox](https://www.reddit.com/r/firefox/comments/8avev2/browsers_and_conflicts_of_interests/).
+    Feedback:
+      [#2](https://github.com/arp242/arp242.net/issues/2).
 ---
 
 What do you get when you search for ‘Firefox’ in a new Windows 10 installation?
 
 A big fat ad for Microsoft Edge:
 
-<figure class="border"><img alt="Firefox in Bing" src="{% base64 ./_images/browser/ms-edge1.png %}"></figure>
+<figure class="border"><img alt="Firefox in Bing" src="{% include_image ./_images/browser/ms-edge1.png %}"></figure>
 
 This is a *full-screen* screenshot on a 1920×1080 screen (right-click and select
 ‘view image’ for the full size). Firefox is juts *barely* visible at the bottom.
@@ -22,7 +21,7 @@ This is a *full-screen* screenshot on a 1920×1080 screen (right-click and selec
 It doesn’t end there, Microsoft also “helpfully” displays a warning that this
 file “could harm your computer”:
 
-<figure><img alt="Downloading Firefox" src="{% base64 ./_images/browser/ms-edge2.png %}"></figure>
+<figure><img alt="Downloading Firefox" src="{% include_image ./_images/browser/ms-edge2.png %}"></figure>
 
 [According to
 Microsoft](https://support.microsoft.com/en-gb/help/2566263/a-warning-message-unexpectedly-appears-when-you-try-to-download-a-file),
@@ -33,13 +32,13 @@ Somehow I find it hard to believe that the Firefox installer fits this bill…
 Wait, there’s more! When changing the default browser from Edge to Firefox we
 get yet another ad, baked right in to the settings screen:
 
-<figure class="border"><img alt="Changing default browser" src="{% base64 ./_images/browser/ms-edge3.png %}"></figure>
+<figure class="border"><img alt="Changing default browser" src="{% include_image ./_images/browser/ms-edge3.png %}"></figure>
 
 Other people – who have used Windows 10 for more than the ten minutes I used it
 – have been treated to more anti-Firefox ads:
 
-<figure class="border"><a href="https://superuser.com/q/1146123/71885"><img alt="Chrome is draining your battery faster" src="{% base64 ./_images/browser/ms-edge5.png %}"></a></figure>
-<figure class="border"><a href="https://www.reddit.com/r/firefox/comments/5our4n/windows_10_now_has_builtin_adds_targeting_firefox/"><img alt="Microsoft Edge is safer than Firefox" src="{% base64 ./_images/browser/ms-edge6.png %}"></a></figure>
+<figure class="border"><a href="https://superuser.com/q/1146123/71885"><img alt="Chrome is draining your battery faster" src="{% include_image ./_images/browser/ms-edge5.png %}"></a></figure>
+<figure class="border"><a href="https://www.reddit.com/r/firefox/comments/5our4n/windows_10_now_has_builtin_adds_targeting_firefox/"><img alt="Microsoft Edge is safer than Firefox" src="{% include_image ./_images/browser/ms-edge6.png %}"></a></figure>
 
 Oh, and Microsoft also
 [banned browsers from its Windows Store](https://www.bleepingcomputer.com/news/microsoft/microsoft-has-effectively-banned-third-party-browsers-from-the-windows-store/).

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "The problems with hard wrapping email body text"
 tags: ['Email', 'UX']
 ---

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Uninstalling Emacs with apt-get: lessons in interface design"
 archive: true
 ---

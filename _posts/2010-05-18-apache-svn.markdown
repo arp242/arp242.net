@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Minimal Apache configuration for subversion
 archive: true
 ---

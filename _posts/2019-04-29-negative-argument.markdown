@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "The value of negative arguments"
 tags: ['Community']
 ---

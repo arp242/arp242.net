@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Statically compiling Go programs"
 tags: ['Go']
 ---

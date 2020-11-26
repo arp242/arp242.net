@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "GoatCounter 1.2: unique visits, events, password auth, and more"
 tags: ['GoatCounter']
 ---

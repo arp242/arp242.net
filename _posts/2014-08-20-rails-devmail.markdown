@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Intercept outgoing mails in Ruby on Rails
 tags: ['Ruby', 'Ruby on Rails', 'Email']
 ---

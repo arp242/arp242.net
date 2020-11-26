@@ -1,20 +1,16 @@
 ---
-layout: post
 title: "Testing isn’t everything"
 tags: ['Programming']
 hatnote: |
- Discussions:
- <a href="https://news.ycombinator.com/item?id=18907912">Hacker News</a>,
- <a href="https://www.reddit.com/r/programming/comments/ag2h51/testing_isnt_everything/">/r/programming</a>.
- Feedback:
- <a href="https://github.com/arp242/arp242.net/issues/11">#11</a>.
+    Discussions:
+      [Hacker News](https://news.ycombinator.com/item?id=18907912),
+      [/r/programming](https://www.reddit.com/r/programming/comments/ag2h51/testing_isnt_everything/).
+    Feedback:
+      [#11](https://github.com/arp242/arp242.net/issues/11).
 
- <p>
- This is adopted from a discussion about
- <a href="https://medium.com/@jens.neuse/want-to-write-good-unit-tests-in-go-dont-panic-or-should-you-ba3eb5bf4f51">
- Want to write good unit tests in go? Don’t panic… or should you?</a>
- While this mainly talks about Go a lot of the points also apply to other languages.
- </p>
+    This is adopted from a discussion about
+    [Want to write good unit tests in go? Don’t panic… or should you?](https://medium.com/@jens.neuse/want-to-write-good-unit-tests-in-go-dont-panic-or-should-you-ba3eb5bf4f51)
+    While this mainly talks about Go a lot of the points also apply to other languages.
 ---
 
 Some of the most difficult code I've worked with is code that is "easily
@@ -256,10 +252,7 @@ but those ideas are ... rather misguided).
 [goblin]: https://github.com/franela/goblin
 [ginkgo]: https://github.com/onsi/ginkgo
 
-<div class="postscript">
-<strong>Related articles</strong>
-<ul>
-<li><a href="https://news.ycombinator.com/item?id=21533376">Ask HN: Do you write tests before the implementation?</a></li>
-<li><a href="https://danmux.com/posts/the_cult_of_go_test/">The Cult of Go Test</a></li>
-</ul>
-</div>
+{% related_articles %}
+- [Ask HN: Do you write tests before the implementation?](https://news.ycombinator.com/item?id=21533376)
+- [The Cult of Go Test](https://danmux.com/posts/the_cult_of_go_test/)
+{% endrelated_articles %}

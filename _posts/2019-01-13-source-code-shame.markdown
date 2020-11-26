@@ -1,10 +1,9 @@
 ---
-layout: post
 title: "Source code shame"
 tags: ['Community', 'Open source']
 hatnote: |
- Discussions:
- <a href="https://www.reddit.com/r/programming/comments/ag2h51/testing_isnt_everything/ee3f3aw/">/r/programming</a>.
+    Discussions:
+      [/r/programming](https://www.reddit.com/r/programming/comments/ag2h51/testing_isnt_everything/ee3f3aw/).
 ---
 
 I suspect that that many companies don't publish their source code not because

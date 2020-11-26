@@ -1,17 +1,16 @@
 ---
-layout: post
 title: "Easy means easy to debug"
 tags: ['Programming']
 hatnote: |
- Translations:
- <a href="https://velog.io/@leejh3224/Easy-means-easy-to-debug">Korean (한국어)</a>.
+    Translations:
+      [Korean (한국어)](https://velog.io/@leejh3224/Easy-means-easy-to-debug).
 ---
 
-<!--
+{%- comment -%}
 <div class="hatnote">
 Follow-up: <a href="/understandable.html">How to make code easier to understand</a>
 </div>
--->
+{%- endcomment -%}
 
 What does it mean for a framework, library, tool to be "easy"? There are many
 possible definitions one could use, but my definition is usually that it's *easy

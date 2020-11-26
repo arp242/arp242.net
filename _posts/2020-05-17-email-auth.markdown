@@ -1,10 +1,9 @@
 ---
-layout: post
 title: "Experiences with email-based login"
 tags: ['GoatCounter', 'Email', 'UX']
 hatnote: |
- Discussions:
- <a href="https://lobste.rs/s/kjm4nu/experiences_with_email_based_login">Lobsters</a>.
+    Discussions:
+      [Lobsters](https://lobste.rs/s/kjm4nu/experiences_with_email_based_login).
 ---
 
 GoatCounter 1.2 (due to be released later today or tomorrow) will switch from

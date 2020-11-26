@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Project status badges
 tags: ['Community']
 ---

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Bookmarklets to deal with annoying designs"
 tags: ['Web']
 ---

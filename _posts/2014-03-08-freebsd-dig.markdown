@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Digging for hosts on FreeBSD 10
 archive: true
 ---

@@ -1,12 +1,11 @@
 ---
-layout: post
 title: You (probably) don’t need Kubernetes
 #tags: ['DevOps']
 updated: 2019-03-05
 desc: "K8s is overkill for many cases and comes with the serious downside of adding a lot of complexity"
 hatnote: |
- Translations:
- <a href="https://linux.cn/article-10469-1.html">Chinese (中文)</a>.
+    Translations:
+      [Chinese (中文)](https://linux.cn/article-10469-1.html).
 ---
 
 You know those old “Hello world according to programmer skill” jokes that start
@@ -100,9 +99,6 @@ Or to summarize this post [with a Tweet](https://twitter.com/sahrizv/status/1018
 > 2018 - We must adopt #kubernetes to solve all problems with docker<br>
 
 
-<div class="postscript">
-<strong>Related articles</strong>
-<ul>
-<li><a href="https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb">You are not Google</a></li>
-</ul>
-</div>
+{% related_articles %}
+- [You are not Google](https://blog.bradfieldcs.com/you-are-not-google-84912cf44afb)
+{% endrelated_articles %}
