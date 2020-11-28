@@ -3,7 +3,7 @@ class RelatedArticles < Liquid::Block
     text = super
 
     if context['page']['layout'] == 'post_text'
-      return "Related articles\n----------------" + text.gsub(/- \[(.*?)\]\((.*?)\)/, '\1: \2')
+      return "Related articles\n----------------" + text.gsub(/- \[(.*?)\]\((.*?)\)/, '- \1: \2')
     end
 
     text = context.registers[:site].find_converter_instance(

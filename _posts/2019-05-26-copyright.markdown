@@ -1,6 +1,6 @@
 ---
 title: "Copyright, culture, and democracy"
-tags: ['Politics']
+tags: ['Politics', 'Democracy']
 hatnote: |
     Discussions:
       [/r/slatestarcodex](https://www.reddit.com/r/slatestarcodex/comments/bt6mrv/copyright_culture_and_democracy/)

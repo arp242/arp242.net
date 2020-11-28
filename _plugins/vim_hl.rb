@@ -52,6 +52,7 @@ Jekyll::Hooks.register :posts, :post_render do |post|
       File.write('/tmp/vim-hl', code)
 
       # TODO: don't use shell.
+      # TODO: send path to output only pre, and not HTML boilerplate.
       `\
         vim -E \
           +'let g:html_no_progress=1' \
