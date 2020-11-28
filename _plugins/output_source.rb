@@ -17,7 +17,7 @@ class OutputSource < Liquid::Tag
       d = d.gsub(/<\/?[^>]*>/, '')
 
       # Render <hr> a bit nicer.
-      d = d.gsub(/^---$/, '~'*50 + "\n" + '~'*50)
+      d = d.gsub(/^---$/, '~'*42 + "\n" + '~'*42)
 
       # Render paragraphs on single line.
       # TODO: doesn't deal with hanging lists. Should look if we can parse as
