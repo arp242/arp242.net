@@ -4,12 +4,8 @@ author:       'Martin Tournoij'
 markdown:     'kramdown'
 highlighter:  'none'
 includes_dir: ''
-excerpt_separator: 'xxxxxx'
 strict_front_matter: true
 
-collections:
-  posts: { output: true }
-  text:  { output: true }
 defaults:
   -
     scope:  { path: '_posts' }
@@ -17,9 +13,6 @@ defaults:
   -
     scope:  { path: '_drafts' }
     values: { layout: 'post', permalink: '/draft/:title.html' }
-  -
-    scope:  { path: '_text' }
-    values: { layout: 'post_text', permalink: '/:title.txt' }
 
 exclude: [
   "Gemfile",

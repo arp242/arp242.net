@@ -1,6 +1,9 @@
 ---
 title: "Stupid light software"
 tags: ['Programming']
+hatnote: |
+    Discussions:
+      [Lobsters](https://lobste.rs/s/95hsvw/stupid_light_software)
 ---
 
 The ultralight hiking community is – as you may gather from the name – very
@@ -10,7 +13,7 @@ weight ten times actually adds up to a significant weight savings, making hikes
 
 There's also the concept of [stupid light][sl]: when you save weight to the
 point of stupidity. You won't be comfortable, you'll miss stuff you need, your
-equipment will be too fragile and break.
+equipment will be too fragile.
 
 [sl]: https://andrewskurka.com/stupid-light-not-always-right-or-better/
 
