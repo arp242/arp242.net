@@ -1,0 +1,56 @@
+Stuff to keep with ttftrim
+
+# U+A3   £                POUND SIGN                                            baseglyph    sterling         
+# U+A8   ¨                DIAERESIS                                             baseglyph    dieresis         
+# U+AA   ª                FEMININE ORDINAL INDICATOR                            baseglyph    ordfeminine      
+# U+B8   ¸                CEDILLA                                               baseglyph    cedilla          
+# U+BA   º                MASCULINE ORDINAL INDICATOR                           baseglyph    ordmasculine     
+# U+2C7  ˇ                CARON                                                 baseglyph    caron            
+# U+2D8  ˘                BREVE                                                 baseglyph    breve            
+# U+2D9  ˙                DOT ABOVE                                             baseglyph    dotaccent        
+# U+2DA  ˚                RING ABOVE                                            baseglyph    ring             
+# U+2DB  ˛                OGONEK                                                baseglyph    ogonek           
+# U+2DC  ˜                SMALL TILDE                                           baseglyph    tilde            
+# U+2DD  ˝                DOUBLE ACUTE ACCENT                                   baseglyph    hungarumlaut     
+# U+2022 •                BULLET                                                baseglyph    bullet           
+# U+2219 ∙                BULLET OPERATOR                                       baseglyph    uni2219          
+# U+F6C3 commaaccent      commaaccent                                           baseglyph    commaaccent      
+# U+FB00 ﬀ                LATIN SMALL LIGATURE FF                               baseligature f_f              
+# U+FB01 ﬁ                LATIN SMALL LIGATURE FI                               baseligature f_i              
+# U+FB02 ﬂ                LATIN SMALL LIGATURE FL                               baseligature f_l              
+# U+FB03 ﬃ                LATIN SMALL LIGATURE FFI                              baseligature f_f_i            
+# U+FB04 ﬄ                LATIN SMALL LIGATURE FFL                              baseligature f_f_l            
+# U+FB06 ﬆ                LATIN SMALL LIGATURE ST                               baseligature s_t              
+
+TODO: Need to keep those because of loopup tables; can't figure this out atm
+
+# U+2070 ⁰                SUPERSCRIPT ZERO                                      baseglyph    zerosuperior     
+# U+B9   ¹                SUPERSCRIPT ONE                                       baseglyph    onesuperior      
+# U+B2   ²                SUPERSCRIPT TWO                                       baseglyph    twosuperior      
+# U+B3   ³                SUPERSCRIPT THREE                                     baseglyph    threesuperior    
+# U+2074 ⁴                SUPERSCRIPT FOUR                                      baseglyph    foursuperior     
+# U+2075 ⁵                SUPERSCRIPT FIVE                                      baseglyph    fivesuperior     
+# U+2076 ⁶                SUPERSCRIPT SIX                                       baseglyph    sixsuperior      
+# U+2077 ⁷                SUPERSCRIPT SEVEN                                     baseglyph    sevensuperior    
+# U+2078 ⁸                SUPERSCRIPT EIGHT                                     baseglyph    eightsuperior    
+# U+2079 ⁹                SUPERSCRIPT NINE                                      baseglyph    ninesuperior     
+# U+2080 ₀                SUBSCRIPT ZERO                                        baseglyph    zeroinferior     
+# U+2081 ₁                SUBSCRIPT ONE                                         baseglyph    oneinferior      
+# U+2082 ₂                SUBSCRIPT TWO                                         baseglyph    twoinferior      
+# U+2083 ₃                SUBSCRIPT THREE                                       baseglyph    threeinferior    
+# U+2084 ₄                SUBSCRIPT FOUR                                        baseglyph    fourinferior     
+# U+2085 ₅                SUBSCRIPT FIVE                                        baseglyph    fiveinferior     
+# U+2086 ₆                SUBSCRIPT SIX                                         baseglyph    sixinferior      
+# U+2087 ₇                SUBSCRIPT SEVEN                                       baseglyph    seveninferior    
+# U+2088 ₈                SUBSCRIPT EIGHT                                       baseglyph    eightinferior    
+# U+2089 ₉                SUBSCRIPT NINE                                        baseglyph    nineinferior     
+
+
+Lookup subtable contains unused glyph fraction making the whole subtable invalid
+# U+2044 ⁄                FRACTION SLASH                                        baseglyph    fraction
+# U+2153 ⅓                VULGAR FRACTION ONE THIRD                             baseligature onethird
+# U+2154 ⅔                VULGAR FRACTION TWO THIRDS                            baseligature twothirds
+# U+215B ⅛                VULGAR FRACTION ONE EIGHTH                            baseligature oneeighth
+# U+215C ⅜                VULGAR FRACTION THREE EIGHTHS                         baseligature threeeighths
+# U+215D ⅝                VULGAR FRACTION FIVE EIGHTHS                          baseligature fiveeighths
+# U+215E ⅞                VULGAR FRACTION SEVEN EIGHTHS                         baseligature seveneighths

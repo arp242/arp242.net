@@ -1,9 +1,11 @@
 ---
 title: "Stupid light software"
 tags: ['Programming']
+updated: 2020-11-30
 hatnote: |
     Discussions:
-      [Lobsters](https://lobste.rs/s/95hsvw/stupid_light_software)
+      [Lobsters](https://lobste.rs/s/95hsvw/stupid_light_software),
+      [Hacker News](https://news.ycombinator.com/item?id=25237184)
 ---
 
 The ultralight hiking community is – as you may gather from the name – very
@@ -50,3 +52,19 @@ It's all about a certain amount of balance. Lightweight is good, bloated is bad,
 and stupid light is just as bad as bloated, or perhaps even worse since bloated
 software usually at least allowed you to accomplish the task whereas stupid
 light may prevent you from doing so.
+
+---
+
+I won't list any examples here as I don't really want to call out people's work
+as “stupid”, especially if they're hobby projects people work on in their spare
+time. I can think of a few examples, but does adding them really add any value?
+I'm not so sure that it does. Arguably "stupid light" isn't really the best
+wording here – the original usage in hiking context is mostly a self-deprecating
+one – and a different one without "stupid" would be better, but I couldn't
+really think of anything better 🤷 And it does have a nice ring to it.
+
+Stupid light isn't something you can measure and define exactly, just like you
+can't measure and exactly define "bloat". It depends on a lot of factors. But
+just as it's worth thinking about "do we really need this?" to avoid bloat, it's
+also worth thinking about "can we really do without this?" to avoid stupid
+light.

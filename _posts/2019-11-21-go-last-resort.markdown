@@ -239,6 +239,15 @@ breakdown of possible issues.
 
 **Alternatives** – write it in Go if at all feasible.
 
+[hg]: https://www.mercurial-scm.org/wiki/FeaturesOfLastResort
+[generics]: https://docs.google.com/document/d/1vrAy9gMpMoS3uaVphB32uVXX4pi-HnNjkMEgyAHX4N4/edit
+[test]: https://golang.org/cmd/go/#hdr-Test_packages
+[exceptions]: https://golang.org/doc/faq#exceptions
+[exceptions2]: http://www.lighterra.com/papers/exceptionsharmful/
+[modern-go]: https://peter.bourgon.org/blog/2017/06/09/theory-of-modern-go.html
+[cgo]: https://dave.cheney.net/2016/01/18/cgo-is-not-go
+
+
 {%- comment -%}
 Other
 -----
@@ -256,11 +265,3 @@ While not exactly features of last resort", an additional (opinionated) list of
   is not very helpful.
 {%- endcomment -%}
 
-
-[hg]: https://www.mercurial-scm.org/wiki/FeaturesOfLastResort
-[generics]: https://docs.google.com/document/d/1vrAy9gMpMoS3uaVphB32uVXX4pi-HnNjkMEgyAHX4N4/edit
-[test]: https://golang.org/cmd/go/#hdr-Test_packages
-[exceptions]: https://golang.org/doc/faq#exceptions
-[exceptions2]: http://www.lighterra.com/papers/exceptionsharmful/
-[modern-go]: https://peter.bourgon.org/blog/2017/06/09/theory-of-modern-go.html
-[cgo]: https://dave.cheney.net/2016/01/18/cgo-is-not-go

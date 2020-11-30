@@ -1,8 +1,7 @@
 #header    { text-align: center; margin-bottom: 2em; }     /* POST TITLE, DATE */
-#header h1 { margin: 0; }
-#header p  { margin: 0; padding: 0; }
+#header h1, #header p { margin: 0; }
 
-.hatnote   { font-size: .8em; font-style: italic; margin-bottom: 14px; } /* HATNOTE */
+.hatnote { font-style: italic; margin-bottom: 14px; } /* HATNOTE */
 
 nav   { padding-left: .5em;  max-width: 69rem; margin: .5rem auto; }   /* TOP NAVIGATION */
 nav a { font-weight: bold; }

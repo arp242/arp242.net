@@ -1,4 +1,5 @@
 class CustomMarkdown < Jekyll::Converters::Markdown
+  # Add post_convert hook to modify HTML content before layout (#8368)
   def convert(content)
     super
       .gsub(/<h(\d) id="(.*?)">(.*?)<\/h\d>/, '<h\1 id="\2">\3 <a href="#\2"></a></h\1>')
