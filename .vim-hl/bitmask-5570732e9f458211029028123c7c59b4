@@ -1,0 +1,16 @@
+<span class="Statement">const</span> (
+    colorOffsetFg   = <span class="Constant">16</span>
+
+    colorMode16Fg   = <span class="Constant">0b0000_0100_0000_0000</span>
+    colorMode256Fg  = <span class="Constant">0b0000_1000_0000_0000</span>
+    colorModeTrueFg = <span class="Constant">0b0001_0000_0000_0000</span>
+
+    maskFg          = <span class="Constant">0b00000000_00000000_00000000_11111111_11111111_11111111_00000000_00000000</span>
+)
+
+<span class="Statement">func</span> getColor(c <span class="Type">uint64</span>) {
+    <span class="Statement">if</span> c &amp; colorMode16Fg != <span class="Constant">0</span>  {
+        cc := (c &amp; maskFg) &gt;&gt; colorOffsetFg
+        <span class="Comment">// ..write escape code for this color..</span>
+    }
+}

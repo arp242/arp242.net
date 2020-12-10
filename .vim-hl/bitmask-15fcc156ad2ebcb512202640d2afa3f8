@@ -1,0 +1,13 @@
+<span class="Statement">func</span> bin(c <span class="Type">uint64</span>) {
+    reBin := regexp.MustCompile(<span class="Constant">`([01])([01])([01])([01])([01])([01])([01])([01])`</span>)
+    reverse := <span class="Statement">func</span>(s <span class="Type">string</span>) <span class="Type">string</span> {
+        runes := []<span class="Type">rune</span>(s)
+        <span class="Statement">for</span> i, j := <span class="Constant">0</span>, <span class="Statement">len</span>(runes)-<span class="Constant">1</span>; i &lt; j; i, j = i+<span class="Constant">1</span>, j-<span class="Constant">1</span> {
+            runes[i], runes[j] = runes[j], runes[i]
+        }
+        <span class="Statement">return</span> <span class="Type">string</span>(runes)
+    }
+    fmt.Printf(<span class="Constant">&quot;</span><span class="Special">%[2]s</span><span class="Constant"> → </span><span class="Special">%[1]d</span><span class="Special">\n</span><span class="Constant">&quot;</span>, c,
+        reverse(reBin.ReplaceAllString(reverse(fmt.Sprintf(<span class="Constant">&quot;</span><span class="Special">%064b</span><span class="Constant">&quot;</span>, c)),
+            <span class="Constant">`$1$2$3${4}_$5$6$7$8 `</span>)))
+}

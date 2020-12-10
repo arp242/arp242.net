@@ -1,0 +1,7 @@
+<span class="Statement">type</span> APITokenPermissions <span class="Statement">struct</span> {
+    Count      <span class="Type">bool</span>
+    Export     <span class="Type">bool</span>
+    SiteRead   <span class="Type">bool</span>
+    SiteCreate <span class="Type">bool</span>
+    SiteUpdate <span class="Type">bool</span>
+}

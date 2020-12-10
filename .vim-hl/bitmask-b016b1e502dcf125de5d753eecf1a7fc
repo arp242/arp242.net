@@ -1,0 +1,13 @@
+<span class="Statement">const</span> (
+    colorMode16Fg   = <span class="Constant">0b00000_0100_0000_0000</span>
+    colorMode16Bg   = <span class="Constant">0b0010_0000_0000_0000</span>
+
+    maskFg          = <span class="Constant">0b00000000_00000000_00000000_11111111_11111111_11111111_00000000_00000000</span>
+)
+
+<span class="Statement">func</span> Bg(c <span class="Type">uint64</span>) <span class="Type">uint64</span> {
+    <span class="Statement">if</span> c &amp; colorMode16Fg != <span class="Constant">0</span> {
+        c = c ^ colorMode16Fg | colorMode16Bg
+    }
+    <span class="Statement">return</span> (c &amp;^ maskFg) | (c &amp; maskFg &lt;&lt; <span class="Constant">24</span>)
+}

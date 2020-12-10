@@ -1,0 +1,4 @@
+<span class="Statement">type</span> (
+    Attribute <span class="Type">int</span>
+    Color     <span class="Statement">struct</span> { params  []Attribute }
+)

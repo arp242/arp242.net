@@ -1,0 +1,2 @@
+f(<span class="Constant">false</span>, <span class="Constant">false</span>, <span class="Constant">true</span>)
+f(<span class="Constant">true</span>, <span class="Constant">false</span>, <span class="Constant">true</span>)

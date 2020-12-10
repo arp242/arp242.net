@@ -1,0 +1,1 @@
+fmt.Println(<span class="Constant">&quot;</span><span class="Special">\x1b</span><span class="Constant">[34mRed text!</span><span class="Special">\x1b</span><span class="Constant">[0m&quot;</span>)

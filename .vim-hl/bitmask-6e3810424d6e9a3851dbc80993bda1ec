@@ -1,0 +1,1 @@
+<span class="Statement">if</span> perm.Export &amp;&amp; perm.SiteRead &amp;&amp; perm.SiteCreate &amp;&amp; perm.SiteUpdate { .. }

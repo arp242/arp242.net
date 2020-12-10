@@ -1,0 +1,17 @@
+<span class="Statement">const</span> (
+    ColorOffsetFg = <span class="Constant">16</span>
+    ColorOffsetBg = <span class="Constant">40</span>
+)
+
+<span class="Statement">const</span> (
+    maskFg Color = (<span class="Constant">256</span>*<span class="Constant">256</span>*<span class="Constant">256</span> - <span class="Constant">1</span>) &lt;&lt; ColorOffsetFg
+    maskBg Color = maskFg &lt;&lt; (ColorOffsetBg - ColorOffsetFg)
+)
+
+<span class="Comment">// Basic terminal attributes.</span>
+<span class="Statement">const</span> (
+    Reset Color = <span class="Constant">0</span>
+    Bold  Color = <span class="Constant">1</span> &lt;&lt; (<span class="Constant">iota</span> - <span class="Constant">1</span>)
+    Faint
+    <span class="Comment">// ...</span>
+)

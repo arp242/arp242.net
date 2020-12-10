@@ -1,0 +1,6 @@
+<span class="Statement">type</span> Bitflag64 <span class="Type">uint64</span> <span class="Type">uint64</span>
+
+<span class="Statement">func</span> (f Bitflag64) Has(flag Bitflag64) <span class="Type">bool</span> { <span class="Statement">return</span> f&amp;flag != <span class="Constant">0</span> }
+<span class="Statement">func</span> (f *Bitflag64) Set(flag Bitflag64)     { *f = *f | flag }
+<span class="Statement">func</span> (f *Bitflag64) Clear(flag Bitflag64)   { *f = *f &amp;^ flag }
+<span class="Statement">func</span> (f *Bitflag64) Toggle(flag Bitflag64)  { *f = *f ^ flag }

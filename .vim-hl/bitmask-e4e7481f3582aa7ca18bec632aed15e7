@@ -1,0 +1,1 @@
+color.New(color.FgRed).Add(color.Bold).Add(color.BgCyan).Println(<span class="Constant">&quot;bold red&quot;</span>)

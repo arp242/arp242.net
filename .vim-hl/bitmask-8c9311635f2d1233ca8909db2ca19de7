@@ -1,0 +1,8 @@
+<span class="Statement">const</span> (
+    AddWarpdrive   = <span class="Constant">0b0001</span>
+    AddTractorBeam = <span class="Constant">0b0010</span>
+    AddPhasers     = <span class="Constant">0b0100</span>
+)
+
+f(AddPhasers)
+f(AddWarpdrive | AddPhasers)

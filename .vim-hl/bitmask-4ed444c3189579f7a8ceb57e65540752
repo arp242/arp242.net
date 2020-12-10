@@ -1,0 +1,4 @@
+zli.Colorf(<span class="Constant">&quot;bold red&quot;</span>, zli.Red | zli.Bold | zli.Cyan.Bg())
+
+<span class="Comment">// Or alternatively, use Color.String():</span>
+fmt.Printf(<span class="Constant">&quot;</span><span class="Special">%s</span><span class="Constant">bold red</span><span class="Special">%s</span><span class="Special">\n</span><span class="Constant">&quot;</span>, zli.Red|zli.Bold|zli.Cyan.Bg(), zli.Reset)

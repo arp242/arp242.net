@@ -1,0 +1,21 @@
+<span class="Statement">const</span> (
+    Bold         = <span class="Constant">0b0_0000_0001</span>
+    Faint        = <span class="Constant">0b0_0000_0010</span>
+    Italic       = <span class="Constant">0b0_0000_0100</span>
+    Underline    = <span class="Constant">0b0_0000_1000</span>
+    BlinkSlow    = <span class="Constant">0b0_0001_0000</span>
+    BlinkRapid   = <span class="Constant">0b0_0010_0000</span>
+    ReverseVideo = <span class="Constant">0b0_0100_0000</span>
+    Concealed    = <span class="Constant">0b0_1000_0000</span>
+    CrossedOut   = <span class="Constant">0b1_0000_0000</span>
+)
+
+<span class="Statement">func</span> applyColor(c <span class="Type">uint64</span>) {
+    <span class="Statement">if</span> c &amp; Bold != <span class="Constant">0</span> {
+        <span class="Comment">// Write escape code for bold</span>
+    }
+    <span class="Statement">if</span> c &amp; Faint != <span class="Constant">0</span> {
+        <span class="Comment">// Write escape code for faint</span>
+    }
+    <span class="Comment">// etc.</span>
+}
