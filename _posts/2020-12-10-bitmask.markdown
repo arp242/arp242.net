@@ -340,7 +340,7 @@ this article isn't really about that.
 
 In many of the above examples I used binary literals for the constants, and this
 seemed the best way to communicate how it all works for this article. This isn't
-necessarily the best or easiest way to write things in actual ode, especially
+necessarily the best or easiest way to write things in actual code, especially
 not for such large numbers. In the actual code it looks like:
 
 {:class="ft-go"}
