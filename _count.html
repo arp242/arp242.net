@@ -1,7 +1,18 @@
 {% if site.source == '/home/martin/code/arp242.net' %}
-<script data-goatcounter="http://arp242.goatcounter.localhost:8081/count">
+	<script data-goatcounter="http://arp242.goatcounter.localhost:8081/count">
+	{% include _count.js %}
+	</script>
 {% else %}
-<script data-goatcounter="https://stats.arp242.net/count">
+	<script>
+	window.goatcounter = {no_onload: true, endpoint: ''};
+
+	{% include _count.js %}
+
+	// Send two requests, until I have time to migrate the stats.arp242.net DB to stats2.arp242.net.
+	goatcounter.endpoint = 'https://stats.arp242.net/count'
+	goatcounter.count()
+
+	goatcounter.endpoint = 'https://stats2.arp242.net/count'
+	goatcounter.count()
+	</script>
 {% endif %}
-{% include _count.js %}
-</script>
