@@ -32,7 +32,7 @@ there from Google and bug-trackers and such, so guess it's more useful than I
 thought! Instead of archiving it, I spent some time copy-editing and polishing
 it.
 
-[auto]: https://bestasciitable.com
+[auto]: /autoreply.html
 
 I'd also like to have *some* insight when people link things on Hacker News or
 whatnot. I'm hardly obsessed with what people say about my writings (I
