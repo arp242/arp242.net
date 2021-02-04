@@ -63,7 +63,7 @@
 <body>
 <div class="page page-a4">
 	<h1>Martin T<span class="redact">ournoij</span></h1>
-	<span class="cv-update">Last update: 5 Sept 2020;
+	<span class="cv-update">Last update: 12 Jan 2021;
 		<a href="https://arp242.net/cv" class="redact">arp242.net/cv</a></span>
 
 	<div class="cv-info">
@@ -87,8 +87,8 @@
 			<tr>
 				<td style="min-width: 7.9em;">Go (“Golang”)</td>
 				<td>Advanced</td>
-				<td style="min-width: 7em;">4 years</td>
-				<td>Main focus in the last 4 years</td>
+				<td style="min-width: 7em;">5 years</td>
+				<td>Main focus in the last five years</td>
 			</tr>
 
 			<tr>
@@ -135,7 +135,7 @@
 				<td>Linux/Unix</td>
 				<td>Advanced</td>
 				<td>10+ years</td>
-				<td>Arch, Alpine, Void, CentOS, Debian, Ubuntu, OpenBSD, FreeBSD</td>
+				<td>Alpine, CentOS, Debian, Ubuntu, OpenBSD, FreeBSD</td>
 			</tr>
 
 			<tr>
@@ -172,6 +172,7 @@
 	an open source privacy-friendly web analytics platform. It aims to offer
 	easy to use and meaningful privacy-friendly web analytics as an alternative
 	to Google Analytics or Matomo.</p>
+
 	<p>I wrote most of the code, do the server management, support, etc.
 	Essentially it’s a one-person operation.</p>
 
@@ -309,8 +310,10 @@
 			r.style.backgroundColor = '#000';
 			r.style.width = (r.clientWidth || r.scrollWidth || r.offsetWidth) + 'px';
 			r.style.height = ((r.clientHeight || r.scrollHeight || r.offsetHeight) - 5) + 'px';
+			r.style.position = 'relative';
+			r.style.top = '5px';
 			r.style.display = 'inline-block';
-			r.innerHTML = '&nbsp;';
+			r.innerHTML = '&nbsp;'
 			if (r.tagName.toLowerCase() === 'a') {
 				r.href = '#redact';
 			}

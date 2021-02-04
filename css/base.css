@@ -69,3 +69,11 @@ ul.posts, ul.code         { list-style: none; padding-left: 0; }            /* H
 .Statement  { color: #af5f00; } .Comment { color: #0000ee; } .Constant { color: #cd0000; }
 .Type       { color: #00cd00; } .Special { color: #cd00cd; } .PreProc  { color: #cd00cd; }
 .Identifier { color: #008787; } .output  { color: #666666; }
+
+.page aside { background-color: #fffde8; position: relative; }     /* INLINE ASIDE */
+@media (min-width: 65em) { .page aside strong { position: absolute; top: 1.1em; left: .3em; } }
+@media (min-width: 54em) { .page aside { padding: .1em 4em; margin-left: -4rem; width: calc(100% + 8rem); } }
+@media (max-width: 54em) {
+	.page aside { padding: .1em 1em; }
+	.page p     { margin-top: 0; }
+}
