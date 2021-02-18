@@ -1,0 +1,6 @@
+<span class="Comment">// Only Count is set.</span>
+<span class="Statement">if</span> perm &amp;^ Count == <span class="Constant">0</span> { .. }
+
+<span class="Comment">// Everything in permSomething is set.</span>
+<span class="Statement">const</span> permSomething = perm.Export | perm.SiteRead | perm.SiteCreate | perm.SiteUpdate
+<span class="Statement">if</span> perm &amp; permSomething == <span class="Constant">0</span> { .. }

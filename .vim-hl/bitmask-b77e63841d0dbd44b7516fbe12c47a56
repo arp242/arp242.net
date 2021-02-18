@@ -1,4 +1,0 @@
-<span class="Statement">if</span> perm &amp; Count == <span class="Constant">0</span> { .. }
-
-<span class="Statement">const</span> permSomething = perm.Export | perm.SiteRead | perm.SiteCreate | perm.SiteUpdate
-<span class="Statement">if</span> perm &amp; permEndpointSomething == <span class="Constant">0</span> { .. }

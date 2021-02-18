@@ -113,7 +113,7 @@ Would be the following in binary layout:
 ---
 
 We need to go through several steps to actually do something meaningful with
-this. First, we want to get all the flag values (the first 24 bits); a "flag" is
+this. First, we want to get all the flag values (the first 9 bits); a "flag" is
 a bit being set to true (`1`) or false (`0`).
 
 {:class="ft-go"}
@@ -159,13 +159,22 @@ So what `if c & Bold != 0` does is check if the "bold bit" is set:
 
 <pre>
 Only bold set:
-0 0000 000<b>1</b> & 0 0000 000<b>1</b> = 0 0000 000<b>1</b>
+  0 0000 000<b>1</b>
+& 0 0000 000<b>1</b>
+= ―――――――――――
+  0 0000 000<b>1</b>
 
 Underline bit set:
-0 0000 <b>1</b>000 & 0 0000 000<b>1</b> = 0 0000 0000      0 since there are no cases of "1 AND 1"
+  0 0000 <b>1</b>000
+& 0 0000 000<b>1</b>
+= ―――――――――――
+  0 0000 0000                0 since there are no cases of "1 AND 1"
 
 Bold and underline bits set:
-0 0000 <b>1</b>00<b>1</b> & 0 0000 000<b>1</b> = 0 0000 000<b>1</b>      Only "bold AND bold" is "1 AND 1"
+  0 0000 <b>1</b>00<b>1</b>
+& 0 0000 000<b>1</b>
+= ―――――――――――
+  0 0000 000<b>1</b>                Only "bold AND bold" is "1 AND 1"
 </pre>
 
 As you can see, `c & Bold != 0` could also be written as `c & Bold == Bold`.
@@ -273,7 +282,10 @@ condition is false/0: if any of the two values are `1` the end result will be
 1 OR 0 = 1      first value is true
 1 OR 1 = 1      both true
 
-00<b>1</b><b>1</b> | 0<b>1</b>0<b>1</b> = 0<b>1</b><b>1</b><b>1</b>
+  00<b>1</b><b>1</b>
+| 0<b>1</b>0<b>1</b>
+= ――――
+  0<b>1</b><b>1</b><b>1</b>
 </pre>
 
 `^` is the "exclusive or", or XOR, operator. It's  similar to OR except that it
@@ -285,7 +297,10 @@ only outputs `1` if exactly one value is `1`, and not if both are:
 1 XOR 0 = 1      first value is true
 1 XOR 1 = 0      both true, so result is 0
 
-00<b>1</b><b>1</b> ^ 0<b>1</b>0<b>1</b> = 0<b>1</b>0<b>1</b>
+  00<b>1</b><b>1</b>
+^ 0<b>1</b>0<b>1</b>
+= ――――
+  0<b>1</b><b>1</b>0
 </pre>
 
 Putting both together, `c ^ colorMode16Fg` clears the foreground flag and `|
@@ -428,11 +443,12 @@ Ugh; not very nice, and neither is checking if multiple permissions are set:
 Had I stored it as a bitmask instead, it would have been easier:
 
 {:class="ft-go"}
-    if perm & Count == 0 { .. }
+    // Only Count is set.
+    if perm &^ Count == 0 { .. }
 
+    // Everything in permSomething is set.
     const permSomething = perm.Export | perm.SiteRead | perm.SiteCreate | perm.SiteUpdate
-    if perm & permEndpointSomething == 0 { .. }
-
+    if perm & permSomething == 0 { .. }
 
 No one likes functions with these kind of signatures either:
 
@@ -444,9 +460,9 @@ But with a bitmask things can look a lot nicer:
 
 {:class="ft-go"}
     const (
-        AddWarpdrive   = 0b0001
-        AddTractorBeam = 0b0010
-        AddPhasers     = 0b0100
+        AddWarpdrive   = 0b001
+        AddTractorBeam = 0b010
+        AddPhasers     = 0b100
     )
 
     f(AddPhasers)
