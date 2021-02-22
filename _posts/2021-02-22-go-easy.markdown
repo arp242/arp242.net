@@ -94,7 +94,7 @@ that the numbers are printed in order (which may or may not be a requirement).
 
 Go's concurrency primitives may be simple and easy to use, but combining them to
 solve common real-world scenarios is a lot less simple. The original version of
-the above example [was actually incorrect][l].
+the above example [was actually incorrect][l] 😅
 
 [l]: https://lobste.rs/s/ee6nsc/go_is_not_easy_language#c_gdnw5e
 
@@ -122,7 +122,7 @@ cognitive load when reading code.
 
 The lack of generics probably plays some part here; implementing a `slices`
 package which does these kind of things in a generic way is hard right now.
-Generics makes this possible and also makes things more complex (more language
+Generics make this possible and also makes things more complex (more language
 features are used), but they also make things easier and, arguably, less complex
 on other fronts.[^g]
 
@@ -149,7 +149,7 @@ struct embedding as inheritance, panics as exceptions, "pseudo-dynamic
 programming" with interface{}, and so forth. It rarely ends well, if ever.
 
 I did this as well when I was writing my first Go program; it's only natural.
-And when I started as a Ruby programmed I tried to write Python code in Ruby
+And when I started as a Ruby programmer I tried to write Python code in Ruby
 (although this works a bit better as the languages are more similar, but there
 are still plenty of odd things you can do such as using `for` loops).
 
