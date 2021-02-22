@@ -4,7 +4,7 @@
     done    = <span class="Statement">make</span>(<span class="Type">chan</span> <span class="Type">bool</span>)    <span class="Comment">// Signal that all jobs are done.</span>
 )
 
-<span class="Statement">for</span> i := <span class="Constant">0</span>; i &lt;= jobs; i++ {
+<span class="Statement">for</span> i := <span class="Constant">1</span>; i &lt;= jobs; i++ {
     running &lt;- <span class="Constant">true</span> <span class="Comment">// Fill running; this will block and wait if it's already full.</span>
 
     <span class="Comment">// Start a job.</span>

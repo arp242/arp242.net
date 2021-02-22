@@ -67,7 +67,7 @@ them are exactly easy. A simple example might be something like:
 		done    = make(chan bool)    // Signal that all jobs are done.
 	)
 
-	for i := 0; i <= jobs; i++ {
+	for i := 1; i <= jobs; i++ {
 		running <- true // Fill running; this will block and wait if it's already full.
 
 		// Start a job.
@@ -89,10 +89,14 @@ them are exactly easy. A simple example might be something like:
 	fmt.Println("done")
 
 There's a reason I annotated this with some comments: for people not intimately
-familiar with Go this may take some effort to understand.
+familiar with Go this may take some effort to understand. This also won't ensure
+that the numbers are printed in order (which may or may not be a requirement).
 
 Go's concurrency primitives may be simple and easy to use, but combining them to
-solve common real-world scenarios is a lot less simple.
+solve common real-world scenarios is a lot less simple. The original version of
+the above example [was actually incorrect][l].
+
+[l]: https://lobste.rs/s/ee6nsc/go_is_not_easy_language#c_gdnw5e
 
 ---
 
