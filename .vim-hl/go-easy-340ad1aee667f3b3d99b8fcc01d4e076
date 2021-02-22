@@ -1,0 +1,8 @@
+n := <span class="Constant">0</span>
+<span class="Statement">for</span> _, l := <span class="Statement">range</span> list {
+    <span class="Statement">if</span> l != v {
+        list[n] = l
+        n++
+    }
+}
+list = list[:n]

@@ -1,0 +1,1 @@
+list = <span class="Statement">append</span>(list[:i], list[i+<span class="Constant">1</span>:]...)
