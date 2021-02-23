@@ -53,7 +53,7 @@ matter and having the guarantee to always use the best possible algorithm with
 
 ---
 
-Goroutines are another good example. "Look how is it is to start a goroutine!
+Goroutines are another good example. "Look how easy it is to start a goroutine!
 Just add `go` and you're done!" Well, yes; you're done until you have five
 million of those running at the same time and then you're left wondering where
 all your memory went, and it's not hard to "leak" goroutines by accident either.
