@@ -2,6 +2,12 @@
 title: "Go is not an easy language"
 tags: ['Go', 'Programming']
 filetype: go
+hatnote: |
+    Discussions:
+      [Lobsters](https://lobste.rs/s/ee6nsc/go_is_not_easy_language),
+      [Hacker News](https://news.ycombinator.com/item?id=26220693),
+      [/r/golang](https://www.reddit.com/r/golang/comments/lpeafy/go_is_not_an_easy_language/),
+      [/r/programming](https://www.reddit.com/r/golang/comments/lpo6zh/go_is_not_an_easy_language/)
 ---
 
 Go is not an easy programming language. It *is* simple in many ways: the syntax
@@ -64,19 +70,18 @@ them are exactly easy. A simple example might be something like:
 	var (
 		jobs    = 20                 // Run 20 jobs in total.
 		running = make(chan bool, 3) // Limit concurrent jobs to 3.
-		done    = make(chan bool)    // Signal that all jobs are done.
+		wg      sync.WaitGroup       // Keep track of which jobs are finished.
 	)
 
+	wg.Add(jobs)
 	for i := 1; i <= jobs; i++ {
 		running <- true // Fill running; this will block and wait if it's already full.
 
 		// Start a job.
 		go func(i int) {
 			defer func() {
-				<-running      // Drain running so new jobs can be added.
-				if i == jobs { // Last job, signal that we're done.
-					done <- true
-				}
+				<-running // Drain running so new jobs can be added.
+				wg.Done() // Signal that this job is done.
 			}()
 
 			// "do work"
@@ -85,7 +90,7 @@ them are exactly easy. A simple example might be something like:
 		}(i)
 	}
 
-	<-done // Wait until all jobs are done.
+	wg.Wait() // Wait until all jobs are done.
 	fmt.Println("done")
 
 There's a reason I annotated this with some comments: for people not intimately
@@ -139,7 +144,8 @@ on other fronts.[^g]
 Are these insurmountable problems? No. I still use (and like) Go after all. But
 I also don't think that Go is a language that you "could pick up in ~5-10
 minutes", which was the comment that prompted this post; a sentiment I've seen
-expressed many times. 
+expressed many times, although usually with less extreme timeframes ("1-2 days",
+"1 week").
 
 As a corollary to all of the above; learning the language isn't just about
 learning the syntax to write your `if`s and `for`s; it's about learning a way of
