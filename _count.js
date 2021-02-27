@@ -12,7 +12,8 @@
 	// Load settings from data-goatcounter-settings.
 	var s = document.querySelector('script[data-goatcounter]')
 	if (s && s.dataset.goatcounterSettings) {
-		var set = JSON.parse(s.dataset.goatcounterSettings)
+		try         { var set = JSON.parse(s.dataset.goatcounterSettings) }
+		catch (err) { console.error('invalid JSON in data-goatcounter-settings: ' + err) }
 		for (var k in set)
 			if (['no_onload', 'no_events', 'allow_local', 'allow_frame', 'path', 'title', 'referrer', 'event'].indexOf(k) > -1)
 				window.goatcounter[k] = set[k]
@@ -154,7 +155,7 @@
 		img.setAttribute('aria-hidden', 'true')
 
 		var rm = function() { if (img && img.parentNode) img.parentNode.removeChild(img) }
-		setTimeout(rm, 3000)  // In case the onload isn't triggered.
+		setTimeout(rm, 10000)  // In case the onload isn't triggered.
 		img.addEventListener('load', rm, false)
 		document.body.appendChild(img)
 	}

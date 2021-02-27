@@ -8,6 +8,7 @@ title: arp242.net
 		<h1>Posts by tag</h1>
 		<p>All posts by tag; some posts have multiple tags and may appear more than once.</p>
 		{% assign tags = site.tags | sort:downcase %}
+
 		{% for t in tags %}
 			<h2 id="{{t | first}}">{{t | first}}</h2>
 			<ul class="posts">
@@ -15,6 +16,16 @@ title: arp242.net
 					<li{% if p.standout %} class="s"{% endif %}><span>{{ p.date | date_to_string_space }}</span> <a href="{{ p.url }}">{{ p.title }}</a></li>{% endfor %}
 			</ul>
 		{% endfor %}
+
+		<h2 id="untagged">Untagged</h2>
+		<ul class="posts">
+			{% for p in site.posts %}
+				{% assign s = p.tags | size %}
+				{% if s == 0 %}
+					<li{% if p.standout %} class="s"{% endif %}><span>{{ p.date | date_to_string_space }}</span> <a href="{{ p.url }}">{{ p.title }}</a></li>
+				{% endif %}
+			{% endfor %}
+		</ul>
 	</article>
 
 	{% include _side.html %}

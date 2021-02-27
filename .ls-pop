@@ -3,8 +3,9 @@
 psql goatcounter --no-align -Etqc \
 	"with x as (
 			select
-				path_id, site_id, path, title from paths where site_id=1 and event=0
-				and title not in ('404', '')
+				path_id, site_id, path, title from paths
+				where site_id=1 and event=0 and
+				title not in ('404', '')
 		)
 		select count(*) as count, path, title
 		from hits
