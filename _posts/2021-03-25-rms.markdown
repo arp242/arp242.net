@@ -7,13 +7,14 @@ So Richard Stallman is back at the FSF, on the board of directors this time
 rather than as President. I'm not sure how significant this position is in the
 day-to-day operations, but I'm not sure if that's really important.
 
-How anyone could have thought this was a good idea is beyond me. Stallman is a
-poor leader on just about every imaginable level. I'm not sure what the politics
-were that lead up to this decision; I had hoped that after Stallman's departure
-the FSF would move forward and shed off some of the Stallmanisms. It seems this
-hasn't happened.
+How anyone could have thought this was a good idea is beyond me. I've long
+considered Stallman to be a poor representative of the community, and quite
+frankly it baffles me that people do. I'm not sure what the politics were that
+lead up to this decision; I had hoped that after Stallman's departure the FSF
+would move forward and shed off some of the Stallmanisms. It seems this hasn't
+happened.
 
-And let us recap why Stallman is a poor leader:
+To quickly recap why Stallman is a poor representative:
 
 - Actively turned many people off because he's such a twat; on of the better
   [examples I know of is from Keith Packard][x], explaining why X didn't use the
@@ -118,9 +119,14 @@ And let us recap why Stallman is a poor leader:
 
 Luckily, the backlash against this has been significant, including an [An open
 letter to remove Richard M. Stallman from all leadership positions][l]. Good.
-There are many things in the letter I can agree with, But there are also a few
-things that bother me, as are there in the general conversation surrounding this
-topic. Quoting a few things from that letter:
+There are many things in the letter I can agree with, If there are parliamentary
+hearings surrounding some Free Software law then you would you want Stallman to
+represent you? Would you want Stallman to be left alone in a room with some
+female lawmaker (especially if she's attractive)? I sure wouldn't; I'd be
+extremely fearful he'd disgrace the entire community.
+
+But there are also a few things that bother me, as are there in the general
+conversation surrounding this topic. Quoting a few things from that letter:
 
 [l]: https://rms-open-letter.github.io/
 
@@ -146,8 +152,8 @@ suggestion what you will – I feel it's rather silly and pointless at best – 
 a disagreement on how to best change the common use of language to be more
 inclusive does not strike me as transphobic. Indeed, it strikes me as the *exact
 opposite*: he's willing to spend time and effort to make language *more
-inclusive*. That he doesn't do it in your preferred way is not transphobia, a
-"harmful ideology", or "dangerous". It's really not.
+inclusive*. That he doesn't do it in the generally accepted way is not
+transphobia, a "harmful ideology", or "dangerous". It's really not.
 
 Stallman is well known for his [excessive pedantry surrounding language][t];
 he's not somehow singularly focused on the issue of pronouns. He has
@@ -255,11 +261,15 @@ be inappropriate, offensive, or creepy – depending on the scenario – but tha
 just something different than being actively transphobic or dangerous. If
 someone had read only this letter without any prior knowledge of Stallman they
 would be left with the impression that Stallman is some sort of alt-right troll
-hanging out on Breitbart or the like. This is hardly the case.
+writing for Breitbart or the like. This is hardly the case.
 
 I think Stallman *should* resign of newly appointed post, and from GNU as well,
-over his personal behaviour in particular. I also feel the rest of the FSF board
-has shown spectacular poor judgement in allowing Stallman to come back.[^s]
+over his personal behaviour in particular. Stallman isn't some random programmer
+working on GNU jizamabob making the occasional awkward comment, he's the face of
+the entire movement. Appointing "a challenging individual to get along with" –
+to quote Packard – is not the right person for the job. I feel the rest of the
+FSF board has shown spectacular poor judgement in allowing Stallman to come
+back.[^s]
 
 [^s]: I guess this shouldn't come as that much of a surprise, as the only people
       willing and able to hang around Stallman's FSF were probably similar-ish
@@ -271,14 +281,19 @@ But I can not, in good conscience, sign the letter as phrased currently. It
 vastly exaggerates things to such a degree that I feel it does a gross injustice
 to Stallman. It's  grasping at straws to portray Stallman as the most horrible
 human being possible, and I don't think he is that. He seems clueless on some
-topics and social interactions, and he's a bit of a twat in general, but that
-doesn't make you a horrible and dangerous person. I find the letter lacking in
-empathy and deeply unkind.
+topics and social interactions, and find him a bit of a twat in general, but
+that doesn't make you a horrible and dangerous person. I find the letter lacking
+in empathy and deeply unkind.
 
-Stallman is not exactly what I would call a shining example of the human race,
-and unsuitable for any sort of leadership position in particular. But he is not
-the devil either. None of these exaggerations are even *needed* to make the case
-that he should be removed, which makes it even worse.
+---
+
+In short, I feel Stallman's aptitudes do not apply well for any sort of
+leadership position and I would rather not have him represent the community I'm
+a part of, even if he did start it and make valuable contributions to it.
+Overall I feel he's not exactly a shining example of the human species, but he
+is not the devil either and the horrible person that the letter makes him out to
+be. None of these exaggerations are even *needed* to make the case that he
+should be removed, which makes it even worse.
 
 It's a shame, because instead of moving forward with Free Software we're
 debating this. Arguably I should just let this go as Stallman isn't *really*
