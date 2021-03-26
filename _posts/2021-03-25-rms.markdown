@@ -40,17 +40,19 @@ To quickly recap why Stallman is a poor representative:
 
   [x]: https://youtu.be/cj02_UeUnGQ?t=1705
 
-- Caused a major and essentially pointless fracture of the community with the
-  *Open Source* movement; it's pretty clear that Stallman, him specifically as a
-  person, was a major reason for the OSI people to start their own organisation.
-  Stallman still seems to harbour sour grapes over this more than 20 years
-  later.
-
-- His behaviour against women in particular is creepy.
+- His behaviour against women in particular is creepy. This is not a crime (he
+  has, as far as I know, never forced himself on anyone) but not a good quality
+  in a community spokesperson, to put it mildly.
 
 - His personal behaviour in general is ... odd, to put it mildly. Now, you can
   be as odd as you'd like as far as I'm concerned, but I also don't think
   someone like that is a good choice to represent an entire community.
+
+- Caused a major and entirely avoidable fracture of the community with the *Open
+  Source* movement; it's pretty clear that Stallman, him specifically as a
+  person, was a major reason for the OSI people to start their own organisation.
+  Stallman still seems to harbour sour grapes over this more than 20 years
+  later.
 
 - Sidetracking of pointless issues ("GNU/Linux", "you should not be using hacker
   but cracker", "Open Source misses the point", etc.), as well as stubbornly
@@ -62,10 +64,11 @@ To quickly recap why Stallman is a poor representative:
 
 - Stallman's views in general on computing are stuck somewhere about 1990.
   Possibly earlier. The "GNU Operating System" (which does not exist, has never
-  existed, and most likely will never exist[^gnu]) is not how to advance Free Software
-  in modern times. Most people don't give a rat's arse which OS they're using to
-  access GitHub, Gmail, Slack, Spotify, AirBnB, etc. The world has changed and
-  the strategy needs to change – but Stallman is still stuck in 1990.
+  existed, and most likely will never exist[^gnu]) is not how to advance Free
+  Software in modern times. Most people don't give a rat's arse which OS they're
+  using to access GitHub, Gmail, Slack, Spotify, Netflix, AirBnB, etc. The world
+  has changed and the strategy needs to change – but Stallman is still stuck in
+  1990.
 
   [^gnu]: A set of commandline utilities, libc, and a compiler are not an
           operating system. Linux (the kernel) is not the "last missing piece of
@@ -76,7 +79,7 @@ To quickly recap why Stallman is a poor representative:
   operating system" if their Bluetooth and webcam doesn't work and if they can't
   watch Netflix. That's just how it is. Deal with it.
 
-  His views are [ridiculous][install]:
+  His views are quite frankly [ridiculous][install]:
 
   > If [an install fest] upholds the ideals of freedom, by installing only free
   > software from 100%-free distros, partly-secret machines won't become
@@ -108,7 +111,7 @@ To quickly recap why Stallman is a poor representative:
   because he was afraid someone might "abuse" it. He comes off as a gigantic
   twat in that entire thread (e.g. [this][ast2]).
 
-  How do you get users to use Free Software? *By making great software people
+  How do you get people to use Free Software? *By making great software people
   want to use*. Not by offering some shitty crippled product where you can't do
   some common things *you can already do in the propetariy alternatives*.
 
@@ -119,11 +122,11 @@ To quickly recap why Stallman is a poor representative:
 
 Luckily, the backlash against this has been significant, including an [An open
 letter to remove Richard M. Stallman from all leadership positions][l]. Good.
-There are many things in the letter I can agree with, If there are parliamentary
+There are many things in the letter I can agree with. If there are parliamentary
 hearings surrounding some Free Software law then you would you want Stallman to
 represent you? Would you want Stallman to be left alone in a room with some
-female lawmaker (especially if she's attractive)? I sure wouldn't; I'd be
-extremely fearful he'd disgrace the entire community.
+female lawmaker (especially an attractive one)? I sure wouldn't; I'd be fearful
+he'd leave a poor impression, or outright disgrace the entire community.
 
 But there are also a few things that bother me, as are there in the general
 conversation surrounding this topic. Quoting a few things from that letter:
@@ -156,18 +159,18 @@ inclusive*. That he doesn't do it in the generally accepted way is not
 transphobia, a "harmful ideology", or "dangerous". It's really not.
 
 Stallman is well known for his [excessive pedantry surrounding language][t];
-he's not somehow singularly focused on the issue of pronouns. He has
-[consistently posted in favour of trans rights][t2].
+he's not singularly focused on the issue of pronouns and has [consistently
+posted in favour of trans rights][t2].
 
 [p]: https://stallman.org/articles/genderless-pronouns.html
 [t]: https://www.gnu.org/philosophy/words-to-avoid.html
 [t2]: https://duckduckgo.com/?t=ffab&q=site%3Astallman.org+transgender&ia=web
 
 Stallman's penchant to make people feel unconformable has long been known; and
-should hardly come as a surprise to anyone. Many people who met him in person
-did not leave with an especially good impression of him as a person for one
-reason or the other. His behaviour towards women in particular is pretty bad;
-many anecdotes have been published and they're pretty 😬
+should hardly come as a surprise to anyone. Many who met him in person did not
+leave with an especially good impression of him for one reason or the other. His
+behaviour towards women in particular is pretty bad; many anecdotes have been
+published and they're pretty 😬
 
 But ... I don't have the impression that Stallman dislikes or distrusts women,
 or sees them as subservient to men. Basically, he's just creepy. That's not
@@ -176,7 +179,7 @@ uniquely directed towards women. He's just a socially awkward guy in general. I
 mean, this is a guy who will, *when giving a presentation*, will take off his
 shoes and socks – which is already a rather weird thing to do – will then
 proceed to *rub his bare foot* – even weirder – only to proceed to appear to
-*eat something from his foot* – wtf wtf?!
+*eat something from his foot* – wtf wtf wtf?!
 
 If he can't understand that this is just ... wtf, then how can you expect him to
 understand that some comment towards a woman is wtf?
@@ -189,11 +192,18 @@ anyone, as far as I know, and most complaints are about him being creepy.
 I don't think it's especially controversial to claim that Stallman would have
 been diagnosed with some form of autism if he had been born several decades
 later. This is not intended as an insult or some such, just to establish him as
-a neurodivergent individual. Someone like that is absolutely a poor choice for a
-leadership position, but at the same time doesn't diversity *also* mean
-diversity of non-neurotypical people, or at the very least some empathy and
+a neurodivergent[^ne] individual. Someone like that is absolutely a poor choice
+for a leadership position, but at the same time doesn't diversity *also* mean
+diversity of neurodivergent people, or at the very least some empathy and
 understanding when people's exhibit a lack of social skills and behaviour
 considered creepy?
+
+[^ne]: Neurodivergency is, in a nutshell, the idea that "normal" is a wide
+       range, and that not everyone who doesn't fits with the majority should be
+       labelled as "there is something wrong with them" such as autism. While
+       some some people take this a bit too far (not every autist is
+       high-functioning; for some it really is debilitating) I think there's
+       something to this.
 
 At what point is there a limit if someone's neurodiversity drives people away? I
 don't know; there isn't an easy answer to his. Stallman is *clearly* unsuitable
@@ -245,8 +255,8 @@ This is already commonplace in practice, with many women choosing to do so.
 
 Labelling an entire person as ableist based *only* on this – and this is really
 the only citation of ableism I've been able to find – seems like a stretch, at
-best. It was a shitty comment, but he *did* correct it (which is saying a lot in
-Stallman terms, as I haven't seen him do that very often).
+best. It was a shitty comment, but he *did* correct it which is saying a lot in
+Stallman ters, as I haven't seen him do that very often.
 
 ---
 
@@ -289,11 +299,17 @@ in empathy and deeply unkind.
 
 In short, I feel Stallman's aptitudes do not apply well for any sort of
 leadership position and I would rather not have him represent the community I'm
-a part of, even if he did start it and make valuable contributions to it.
-Overall I feel he's not exactly a shining example of the human species, but he
-is not the devil either and the horrible person that the letter makes him out to
-be. None of these exaggerations are even *needed* to make the case that he
-should be removed, which makes it even worse.
+a part of, even if he did start it and made many valuable contributions to it.
+Just starting something does not give you perpetual ownership over it, and in
+spite of all his hard work I feel he's been very detrimental to the movement and
+has been a net-negative contributor for a while. A wiser version of Stallman
+would have realized his shortcomings and stepped down some time in the late 80s
+to let someone else be the public face.
+
+Overall I feel he's not exactly a shining example of the human species, but then
+again I'm probably not either. He is not the devil and the horrible person that
+the letter makes him out to be. None of these exaggerations are even *needed* to
+make the case that he should be removed, which makes it even worse.
 
 It's a shame, because instead of moving forward with Free Software we're
 debating this. Arguably I should just let this go as Stallman isn't *really*
