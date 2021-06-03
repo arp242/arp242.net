@@ -247,6 +247,7 @@
 		on_load(function() {
 			// 1. Page is visible, count request.
 			// 2. Page is not yet visible; wait until it switches to 'visible' and count.
+			// See #487
 			if (!('visibilityState' in document) || document.visibilityState === 'visible')
 				goatcounter.count()
 			else {
@@ -256,9 +257,8 @@
 					document.removeEventListener('visibilitychange', f)
 					count()
 				}
-				addeventListener('visibilitychange', f)
+				document.addEventListener('visibilitychange', f)
 			}
-			// goatcounter.count()
 
 			if (!goatcounter.no_events)
 				goatcounter.bind_events()
