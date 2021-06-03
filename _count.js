@@ -255,7 +255,7 @@
 					if (document.visibilityState !== 'visible')
 						return
 					document.removeEventListener('visibilitychange', f)
-					count()
+					goatcounter.count()
 				}
 				document.addEventListener('visibilitychange', f)
 			}
