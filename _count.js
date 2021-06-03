@@ -19,6 +19,8 @@
 				window.goatcounter[k] = set[k]
 	}
 
+	var enc = encodeURIComponent
+
 	// Get all data we're going to send off to the counter endpoint.
 	var get_data = function(vars) {
 		var data = {
@@ -70,7 +72,7 @@
 		var p = []
 		for (var k in obj)
 			if (obj[k] !== '' && obj[k] !== null && obj[k] !== undefined && obj[k] !== false)
-				p.push(encodeURIComponent(k) + '=' + encodeURIComponent(obj[k]))
+				p.push(enc(k) + '=' + enc(obj[k]))
 		return '?' + p.join('&')
 	}
 
@@ -111,11 +113,11 @@
 
 	// Filter some requests that we (probably) don't want to count.
 	goatcounter.filter = function() {
-		if ('visibilityState' in document && (document.visibilityState === 'prerender' || document.visibilityState === 'hidden'))
+		if ('visibilityState' in document && document.visibilityState === 'prerender')
 			return 'visibilityState'
 		if (!goatcounter.allow_frame && location !== parent.location)
 			return 'frame'
-		if (!goatcounter.allow_local && location.hostname.match(/(localhost$|^127\.|^10\.|^172\.(1[6-9]|2[0-9]|3[0-1])\.|^192\.168\.)/))
+		if (!goatcounter.allow_local && location.hostname.match(/(localhost$|^127\.|^10\.|^172\.(1[6-9]|2[0-9]|3[0-1])\.|^192\.168\.|^0\.0\.0\.0$)/))
 			return 'localhost'
 		if (!goatcounter.allow_local && location.protocol === 'file:')
 			return 'localfile'
@@ -203,9 +205,11 @@
 			opt.path   = opt.path   || get_path()
 			opt.attr   = opt.attr   || {width: '200', height: (opt.no_branding ? '60' : '80')}
 
-			opt.attr['src'] = get_endpoint() + 'er/' + encodeURIComponent(opt.path) + '.' + opt.type + '?'
+			opt.attr['src'] = get_endpoint() + 'er/' + enc(opt.path) + '.' + enc(opt.type) + '?'
 			if (opt.no_branding) opt.attr['src'] += '&no_branding=1'
-			if (opt.style)       opt.attr['src'] += '&style=' + encodeURIComponent(opt.style)
+			if (opt.style)       opt.attr['src'] += '&style=' + enc(opt.style)
+			if (opt.start)       opt.attr['src'] += '&start=' + enc(opt.start)
+			if (opt.end)         opt.attr['src'] += '&end='   + enc(opt.end)
 
 			var tag = {png: 'img', svg: 'img', html: 'iframe'}[opt.type]
 			if (!tag)
@@ -241,7 +245,21 @@
 
 	if (!goatcounter.no_onload)
 		on_load(function() {
-			goatcounter.count()
+			// 1. Page is visible, count request.
+			// 2. Page is not yet visible; wait until it switches to 'visible' and count.
+			if (!('visibilityState' in document) || document.visibilityState === 'visible')
+				goatcounter.count()
+			else {
+				var f = function(e) {
+					if (document.visibilityState !== 'visible')
+						return
+					document.removeEventListener('visibilitychange', f)
+					count()
+				}
+				addeventListener('visibilitychange', f)
+			}
+			// goatcounter.count()
+
 			if (!goatcounter.no_events)
 				goatcounter.bind_events()
 		})
