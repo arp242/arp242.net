@@ -22,11 +22,9 @@ module Jekyll
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'go.html')
 
-      self.data['pfull'] = p
-
       slash = p.index '/'
-      p = p[0..slash-1] unless slash.nil?
-      self.data['pkg'] = p
+      self.data['pkg'] = "arp242.net/#{p}"
+      self.data['git'] = "https://github.com/arp242/#{slash.nil? ? p : p[0..slash-1]}"
     end
   end
 end
