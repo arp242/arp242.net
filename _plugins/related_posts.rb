@@ -1,4 +1,4 @@
-class ListRelatedPosts < Liquid::Tag
+class RelatedPosts < Liquid::Tag
   def render(context)
     list = context['page']['tags'].map do |t|
       next '' if context['site']['tags'][t].length == 1
@@ -19,5 +19,4 @@ class ListRelatedPosts < Liquid::Tag
     return fmt
   end
 end
-
-Liquid::Template.register_tag('list_related_posts', ListRelatedPosts)
+Liquid::Template.register_tag('related_posts', RelatedPosts)

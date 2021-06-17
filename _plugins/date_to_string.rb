@@ -13,5 +13,4 @@ module Jekyll::DateToStringSpaceFilter
     return fmt
   end
 end
-
 Liquid::Template.register_filter(Jekyll::DateToStringSpaceFilter)

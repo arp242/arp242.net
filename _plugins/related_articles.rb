@@ -5,5 +5,4 @@ class RelatedArticles < Liquid::Block
       '<div>'
   end
 end
-
 Liquid::Template.register_tag('related_articles', RelatedArticles)

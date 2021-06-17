@@ -4,30 +4,27 @@ author:       'Martin Tournoij'
 markdown:     'kramdown'
 highlighter:  'none'
 includes_dir: ''
+future:       true
 strict_front_matter: true
 
-defaults:
-  -
-    scope:  { path: '_posts' }
-    values: { layout: 'post', permalink: '/:title.html' }
-  -
-    scope:  { path: '_drafts' }
-    values: { layout: 'post', permalink: '/draft/:title.html' }
+defaults: [
+  {
+    scope:  {path: '_posts'},
+    values: {layout: 'post', permalink: '/:title.html'},
+  },
+  {
+    scope:  {path: '_drafts'},
+    values: {layout: 'post', permalink: '/draft/:title.html'},
+  },
+]
 
+include: ['_redirects', '.well-known']
 exclude: [
-  "Gemfile",
-  "Gemfile.lock",
-  "README.markdown",
-  "the-art-of-unix-programming/base.css",
-  "the-art-of-unix-programming/base.js",
-  "the-art-of-unix-programming/hello-css.min.css",
-  "the-art-of-unix-programming/readon.js",
+  'Gemfile',
+  'Gemfile.lock',
+  'README.markdown',
+  'the-art-of-unix-programming/base.css',
+  'the-art-of-unix-programming/base.js',
+  'the-art-of-unix-programming/hello-css.min.css',
+  'the-art-of-unix-programming/readon.js',
   '.vim-hl']
-
-# Copy for Netlify.
-include: ["_redirects", ".well-known"]
-
-# Always publish all posts, some posts may be considered in the "future" by the
-# deploy pipline as that's in the US, but I'm in New Zealand, so that's almost a
-# full day behind.
-future: true

@@ -1,4 +1,4 @@
-_exists() { (( <span class="PreProc">$+commands</span>[<span class="PreProc">$1</span>] )) }
+_exists() { <span class="PreProc">((</span> <span class="PreProc">$+commands</span>[<span class="PreProc">$1</span>] <span class="PreProc">))</span> }
 
 _exists vim      &amp;&amp; <span class="Statement">export</span> EDITOR=vim
 _exists less     &amp;&amp; <span class="Statement">export</span> PAGER=less
