@@ -5,7 +5,7 @@ module Jekyll
     def generate(site)
       pkgs = %w{sconfig autofox goimport goimport/goimport hubhub info orgstat
         singlepage trackwall transip-dynamic uni uni/v2 gosodoff colorcount
-        alwayscache cantuse border har har/cmd/unhar termtext}
+        alwayscache cantuse border har har/cmd/unhar termtext acidtab}
       pkgs.each do |p|
         site.pages << GoPage.new(site, site.source, p)
       end
