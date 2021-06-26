@@ -1,10 +1,10 @@
 #!/bin/sh
 
-psql goatcounter --no-align -Etqc \
+sqlite3 ~/code/goatcounter/db/arp242.sqlite3 -noheader -list \
 	"with x as (
 			select
 				path_id, site_id, path, title from paths
-				where site_id=1 and event=0 and
+				where site_id=1 and event=0 and path!='/' and
 				title not in ('404', '')
 		)
 		select count(*) as count, path, title
