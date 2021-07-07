@@ -1,0 +1,105 @@
+---
+title: Open source DIY ethics
+date: 2018-12-09
+tags: ['Community', 'Open source']
+updated: 2018-12-27
+hatnote: |
+    Discussions:
+      [suckless](http://lists.suckless.org/dev/1812/33045.html).
+---
+
+I moved to New Zealand last week, and as a proper Dutch person one of the first
+things I did after arriving was getting a bicycle.
+
+I was recommended [a great place][crooked] where they collect old bikes and
+provide people with the parts and tools to fix them up. Want a bike? Choose one,
+fix it, and it's yours. There are helpful and knowledgable volunteers who will
+gladly help you and explain how things work, but you'll have to fix your own
+bike; they're not going to do it for you.
+
+I like this DIY attitude; I built my own fixie – which I unfortunately couldn't
+bring – years ago and had been maintaining it myself ever since. There are many
+different aspects I never touched on, such as different brake systems, gears,
+etc. and fixing my bike with some help and explanation was a useful experience
+which taught me a thing or two that I'll be sure to use in the future.
+
+---
+
+My attitude to open source projects tends to be similar: I'll gladly assist you
+or explain things, but *you* will have to do the work. I also don't expect
+anyone else to do work for me.
+
+Open source software is fundamentally a [DIY ethic][diy] for many – though not
+all – people who participate in it. It certainly is for me. I just fix stuff I
+want myself. Since I take some amount of pride in my work I'll also fix most
+bugs that are reported, but sometimes people will post an enhancement or feature
+request and just expect me to implement it. Sometimes this is even combined with
+a "but project X does it!"-comment. Well, feck off and use project X then (I
+don't actually say this, just think it).
+
+I've seen more than a few people get frustrated by this attitude especially –
+though hardly exclusively – in the OpenBSD and suckless communities ([recent
+example that prompted this post][example]), partly because it's not infrequently
+communicated in a somewhat unhelpful fashion (the OpenBSD saying is "shut up and
+hack"), but also because some people seem to misunderstand what it means to be a
+maintainer of an open source project. Open source software isn't a service I
+provide to the world; it's something I DIY'd myself and make available to the
+world so everyone can benefit and work on it with me.[^1] In an alternative
+universe without Free Software or Open Source I would probably have written the
+same software, just for my personal needs.
+
+The term "Open source" is a broad catch-all term, which includes Free Software,
+"Source Provided Software",[^2] **DIY Software**, and probably a few more. It is
+my suspicion that the majority of open source projects aimed at developers
+(libraries, programming tools, etc.) is DIY Software, even if it isn't
+explicitly stated.
+
+Not all non-code contributions are useless. Well-written bug reports are often
+useful, and sometimes someone will have a great idea for an enhancement or
+feature that I hadn't thought of myself, which can be a valuable contribution.
+But those types of constructive contributions are usually easy to recognize:
+they consist of more than just a single paragraph, are respectful, show a clear
+understanding of what the project is supposed to do, if they don't understand a
+certain aspect they'll ask instead of bombastically claiming that it's "broken",
+and perhaps most importantly, they show a willingness to constructively
+contribute, rather than just trying to tell you how to run your project.
+
+---
+
+To quote Neil Gaiman when talking about *A Song of Ice and Fire* fans demanding
+George R.R. Martin work harder on the next installment of the series: "[George
+R.R. Martin is not your bitch][bitch]". I can't help George write his book, but
+I can help with software projects, which is really neat. Not everyone is a
+computer programmer, but the vast majority of projects I've worked on are used
+exclusively by programmers.
+
+In the two months that it took me to finish this post there have been a number
+of incidents in various communities that touched upon a mismatch in expectations
+between open source authors/maintainers and the users. "It's not fun anymore,
+you get nothing from maintaining a popular package", to quote one maintainer, or
+"I'm frustrated because I can't handle the volume of emails" to quote another.
+
+The situation would be vastly improved if more people start seeing and treating
+open source more like the DIY that it is and *assume responsibility* for that
+bug you've encountered or enhancement you want, rather than offloading all
+responsibility to the maintainer. This won't fix everything, but it's a good
+start. Plenty of people – including myself – already do this, but many more
+don't.
+
+Both authors and users will benefit; authors will be less frustrated with
+"entitled" users, and users will be less frustrated with "rude" authors, and in
+the end the software will work better as users will be more willing to spend
+some time fixing stuff *themselves*, rather than just expecting other people to
+do it for them.
+
+[^1]: Some open source software is supported by companies. Only about [14% of the contributions to the Linux kernel are *not* affiliated with a company][linux]. I don't think this matters for the purpose of this post; these are companies who are DIY-ing as well.
+[^2]: Software that uses an open source license but with little community engagement. Try landing a patch in Chrome or Android as a non-Google employee.
+
+[example]: https://www.reddit.com/r/suckless/comments/9mhwg8/why_does_sts_latency_suck_so_bad/e7fu9sj/
+[crooked]: https://www.facebook.com/TheCrookedSpoke
+[diy]: https://en.wikipedia.org/wiki/DIY_ethic
+[free-sw]: https://www.gnu.org/philosophy/free-sw.html
+[linux]: https://www.linux.com/publications/linux-kernel-development-how-fast-it-going-who-doing-it-what-they-are-doing-and-who-0
+[vim-go]: https://github.com/fatih/vim-go
+[qutebrowser]: https://github.com/qutebrowser/qutebrowser
+[bitch]: http://journal.neilgaiman.com/2009/05/entitlement-issues.html

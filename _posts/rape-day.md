@@ -1,0 +1,44 @@
+---
+title: "Why “rape games” are worse than violent games"
+date: 2019-03-19
+tags: ['Politics']
+---
+
+The game *Rape Day* – which is pitched as "a game where you can rape and murder
+during a zombie apocalypse" – got [banned from the Steam platform][ars].
+
+The interesting question here is, why is a game where you can kill innocent
+people fine, but a game where you can rape people isn't? After all, I think we
+can all agree that killing people is worse than raping them.
+
+Yet for most people – including me – it *feels* different, somehow. I don't
+think the severity of the actions are important, but rather their *distance*.
+Murder is pretty rare, so "playing a murderer" isn't really connected to
+real-life experiences. I can't really imagine getting murdered, or having a
+loved one be murdered.
+
+But sexual assault – including rape – is much more common. It's something that
+we can imagining happening to yourself, your friends, your children. There's a
+good chance it *has* happened to people you love. That makes people "playing
+rapist" scary.
+
+
+Not all cases of "playing murderer" are the same either. Games like
+*Carmageddon* – where the player drives around killing hundreds of innocents –
+are generally uncontroversial; there is an occasional outrage but it's usually
+limited. But a game where you play a school shooter is different, even though
+fewer people die. [Steam banned that one,
+too](https://www.nytimes.com/2018/06/08/technology/steam-games-active-shooter.html)
+
+Even though the amount of harm in the *School Shooter* game is less (fewer
+people die), the *distance* to our everyday lives is far greater than the
+scenario in *Carmageddon*.
+
+The severity of harm is certainly *a* factor, but just one out of several. This
+is also not limited to computer games; "rape jokes" are considerably more
+sensitive than many other jokes. If I quip "mate, do that again and I'll kill
+ya" then it's clearly a joke in many contexts, but "mate, do that again and I'll
+rape ya" would be somewhere between weird and "run as fast as your can"-creepy.
+
+
+[ars]: https://arstechnica.com/gaming/2019/03/with-rape-day-ban-steam-shows-its-not-as-hands-off-as-it-claims/

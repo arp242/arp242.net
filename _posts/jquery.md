@@ -1,0 +1,114 @@
+---
+title: 'Why I’m still using jQuery in 2019'
+date: 2019-05-27
+tags: ['Web']  # JavaScript
+hatnote: |
+    Discussions:
+      [Hacker News](https://news.ycombinator.com/item?id=20021289).
+---
+
+Many people advocate *"just use vanilla JavaScript, you don't need jQuery"*.
+Well, I don't *need* many things that are nontheless nice to have. I don't
+*need* jQuery, but it sure is nice!
+
+Pages like [You might not need jQuery][nojq] try to sell the idea that it's easy
+to ditch jQuery, but the very first example is a good reason to use jQuery: one
+line of trivial jQuery code gets replaced with 10 lines of vanilla JS code!
+
+Much of the JavaScript API – especially the DOM API – offends my sense of
+aesthetics, which is just a nice way of saying that I think it sucks.
+`el.insertAdjacentElement('afterend', other)` undoubtedly works, but I find
+`$(el).after(other)` actually palatable. While I have never been a huge fan of
+how the `$()` function looks[^sel], it's massively better than what the DOM
+gives us.
+
+Quick: how do you get an element's sibling? Is it `nextSibling` or
+`nextElementSibling`? What's the difference? Which browsers support which? While
+you're busy trying to remember and checking MDN just to be sure I'll just use
+`next()` or `prev()` in jQuery.
+
+Many common operations in the standard JavaScript APIs are awkward; I could
+include a list here, but that *You might not need jQuery* (YMNJQ) page actually
+does a pretty good job at it.
+
+You will *still* need helper functions for various common tasks. Again, that
+*YMNJQ* page lists a number of them. Using jQuery is a standard way to include
+these helpers, instead of copy/pasting them from random Stack Overflow answers
+every time you need them.
+
+While browser compatibility is much less of an issue than it was, it *is* still
+an issue, especially if you're not in the *"if it works for 85% of the world
+then it's good enough for me"*-crowd. Also see: [Why Hello CSS doesn’t use CSS
+variables][cssvars].
+
+Should you always use jQuery? No, of course not. Adding *any* dependency comes
+with the cost of complexity and file size, but jQuery is not that large: the
+default build is 30K minified/compressed, a custom build without ajax and
+uncommon stuff 23K, and a build which uses querySelector instead of SizzleJS is
+17K. Both the original 30K and optimized 17K seem pretty acceptable to me for
+many purposes.
+
+[Bootstrap removing jQuery][bootstrap] is a good example of how much effort it
+can be to use vanilla JS: they wrote their own helpers, had to drop IE support
+as it was too hard to add, made the API incompatible (*"we broke everything"*),
+and spent a year and a half working on it. If I look at the end result, I can't
+really say it's that much better.
+
+I understand why they did it; people want to use Bootstrap with Vue.js and
+whatnot and using both Vue.js and jQuery is a bit silly. I'm very much in favour
+of reducing "web bloat"<sup>(see [this][bloat1], [this][bloat2])</sup>, but we need to be
+pragmatic and realistic.
+Is including ~17K of jQuery really so bad? When I mention that you need well
+over a megabyte of JavaScript for a site like Medium or the New York Times then
+web hipsters get defensive (*"what, are you stuck on a 56k line or
+something?!"*), but the 17K of jQuery is an insufferable burden?
+
+There are some good reasons to *not* use jQuery: if you're writing generic code
+that you want to be re-used by others, or if you're writing just a small
+function. But bending over backwards to avoid jQuery? Yeh nah. Just use jQuery!
+*"jQuery all the things"* was probably not a good idea, but neither is
+*"unjQuery all the things"*.
+
+I'm not married to jQuery, and I'll happily use a "jQuery light" which patches
+over the JS API with something more palatable. There are a few projects, such as
+[bonzo][bonzo], [$dom][$dom], [zepto][zepto], and several others for AJAX and
+such, but many seem unmaintained. Besides, everyone already knows jQuery. Why
+replace it with something else unless there's a compelling reason to? Saving
+10-20K doesn't seem worth it.
+
+---
+
+Some readers might wonder *"but what about Vue.js, React, or some other modern
+framework?"* The intent of this post is to compare vanilla JavaScript with
+jQuery, not to propose a Grand Unified Theory of Frontend Development™.
+
+That being said, I think there are a few reasons to stick with simple
+JavaScript; primarily because I want to build webpages that are fast, use the
+simplest feasible code, and are accessible by as many people as possible.
+In my experience server-side generated templates lightly sprinkled with
+"progressive enhancement"-style JavaScript are often the best way to do that.
+It's often easier to develop, tends to be faster, tends to have fewer bugs, and
+your laptop's fan won't wake the neighbours.
+
+Does that mean that these web frameworks are *always* bad? No, few things are
+"always" bad (or good), but it does come with a set of trade-offs (as does
+jQuery, obviously).
+
+Fundamentally, I think the web is a system to view documents, rather than an
+operating system. Even for many "web apps" (whatever you mean with that) a
+document approach works quite well (this is a topic worthy of its own post ...
+at some point in the future).
+
+[^sel]: I know you can use `jQuery(sel)`, or `window.jq = jQuery`, but I'm not
+        programming in a vacuum and would prefer idiomatic/standard code, and
+        for better or worse, using `$` is the standard way of doing things in
+        jQuery.
+
+[nojq]: http://youmightnotneedjquery.com/
+[cssvars]: /css-vars.html
+[bootstrap]: https://github.com/twbs/bootstrap/pull/23586
+[bloat1]: https://timkadlec.com/remembers/2019-01-09-the-ethics-of-performance/
+[bloat2]: http://danluu.com/web-bloat/
+[bonzo]: https://github.com/ded/bonzo
+[$dom]: https://github.com/julienw/dollardom
+[zepto]: https://zeptojs.com
