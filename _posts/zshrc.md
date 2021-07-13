@@ -275,6 +275,11 @@ If the file doesn't exist then the query is just run:
 `less -S` prevents wrapping long lines, which I find more useful for tabular
 output.
 
+An expanded version of the above which accepts a database name and allows
+organising scripts by database [can be found here][sql.zsh].
+
+[sql.zsh]: https://gitlab.com/dmfay/dotfiles/-/blob/master/zsh/sql.zsh
+
 Shortcuts to edit commandline
 -----------------------------
 
