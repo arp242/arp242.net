@@ -38,7 +38,6 @@ Jekyll::Hooks.register :posts, :post_render do |post|
 
     next m if ft.nil? || ft == ''
     next m if ft == 'NONE'
-    next m if ft == 'cli'  # TODO: implement this.
 
     cache = "./.vim-hl/#{post.id.gsub(/\//, '')}-#{Digest::MD5.hexdigest(ft+code)}"
     if not File.file?(cache)
@@ -68,18 +67,4 @@ Jekyll::Hooks.register :posts, :post_render do |post|
     c = File.read(cache).gsub(/<a href=".*?">(.*?)<\/a>/, '\1')
     next "<pre class='hl #{full} ft-#{ft}'><code>#{c}</code></pre>"
   end
-
-  # CLI output.
-  # TODO: doesn't deal well with line continuations; should probably make a Vim
-  # syntax file for this.
-  # post.output.gsub!(/<pre class="hl-cli"><code>.*?<\/code><\/pre>/m) { |m|
-  #   # Remove <pre><code> tags.
-  #   m = m[26..-14]
-
-  #   m.gsub!(/^[^\$#\n].+?$/, '<span class="output">\0</span>')
-  #   m.gsub!(/^\$ .*/, '<span class="cmd">\0</span>')
-  #   m.gsub!(/^# .*/, '<span class="Comment">\0</span>')
-
-  #   next "<pre class='hl hl-cli'><code>#{m}</code></pre>"
-  # }
 end

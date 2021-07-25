@@ -1,0 +1,10 @@
+$ ldd test.dynamic
+test.dynamic:
+        linux-vdso.so.1 (0x00007ffe00302000)
+        libpthread.so.0 =&gt; /usr/lib/libpthread.so.0 (0x00007f3f86f4a000)
+        libc.so.6 =&gt; /usr/lib/libc.so.6 (0x00007f3f86d87000)
+        /lib/ld-linux-x86-64.so.2 (0x00007f3f86f80000)
+
+$ ldd test.static
+test.static:
+        not a dynamic executable

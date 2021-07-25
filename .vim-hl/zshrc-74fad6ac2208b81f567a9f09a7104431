@@ -1,0 +1,4 @@
+$ PROMPT='[%~]$ '
+[~]$ cd ~/.cache/vim/pack/plugins/start
+[~/.cache/vim/pack/plugins/start]$ hash -d pack=$HOME/.cache/vim/pack/plugins/start
+[~pack]$

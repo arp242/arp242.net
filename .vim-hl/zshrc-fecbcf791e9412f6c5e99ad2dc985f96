@@ -1,0 +1,2 @@
+$ ls LL
+$ go test -v VV

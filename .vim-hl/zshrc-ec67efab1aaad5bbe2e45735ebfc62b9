@@ -1,0 +1,3 @@
+$ sql ls-inactive.sql
+
+$ sql 'select * from sites'

@@ -1,4 +1,4 @@
-<span class="Type">typeset</span> -U path<span class="Comment">  # No duplicates</span>
+<span class="Statement">typeset</span> -U path<span class="Comment">  # No duplicates</span>
 path=()
 
 _prepath() {
@@ -19,7 +19,7 @@ _postpath() {
 _prepath /bin /sbin /usr/bin /usr/sbin /usr/games
 _prepath /usr/pkg/bin   /usr/pkg/sbin<span class="Comment">   # NetBSD</span>
 _prepath /usr/X11R6/bin /usr/X11R6/sbin<span class="Comment"> # OpenBSD</span>
-_prepath /usr/<span class="Type">local</span>/bin /usr/<span class="Type">local</span>/sbin
+_prepath /usr/<span class="Statement">local</span>/bin /usr/<span class="Statement">local</span>/sbin
 
 _prepath <span class="Constant">&quot;</span><span class="PreProc">$HOME</span><span class="Constant">/go/bin</span><span class="Constant">&quot;</span><span class="Comment">                # Go</span>
 _prepath <span class="Constant">&quot;</span><span class="PreProc">$HOME</span><span class="Constant">/.local/bin</span><span class="Constant">&quot;</span><span class="Comment">            # My local stuff.</span>
