@@ -97,3 +97,8 @@ something interesting to say, but I'll try to mix it up with some other things
 😅
 
 [rep]: https://meta.stackoverflow.com/a/340180/660921
+
+
+{% related_articles %}
+- [Frustration of the numbers and my domain on the internet](https://thelion.website/ramblings/frustration-of-the-numbers-and-my-domain/) – a different take on the issue.
+{% endrelated_articles %}
