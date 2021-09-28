@@ -1,0 +1,10 @@
+<span class="Comment">&lt;?</span><span class="Type">xml</span><span class="Type"> </span><span class="Type">version</span>=<span class="Constant">&quot;1.0&quot;</span><span class="Type"> </span><span class="Type">encoding</span>=<span class="Constant">&quot;utf-8&quot;</span><span class="Type"> </span><span class="Comment">?&gt;</span>
+<span class="Identifier">&lt;</span><span class="Identifier">Patch</span><span class="Identifier">&gt;</span>
+<span class="Comment">&lt;!</span><span class="Comment">-- Class, not class! --</span><span class="Comment">&gt;</span>
+<span class="Identifier">&lt;</span><span class="Identifier">Operation</span><span class="Identifier"> </span><span class="Type">Class</span>=<span class="Constant">&quot;PatchOperationAdd&quot;</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">xpath</span><span class="Identifier">&gt;</span>/Defs/BiomeDef/baseWeatherCommonalities<span class="Identifier">&lt;/</span><span class="Identifier">xpath</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">value</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">RainingBlood</span><span class="Identifier">&gt;</span>64<span class="Identifier">&lt;/</span><span class="Identifier">RainingBlood</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;/</span><span class="Identifier">value</span><span class="Identifier">&gt;</span>
+<span class="Identifier">&lt;/</span><span class="Identifier">Operation</span><span class="Identifier">&gt;</span>
+<span class="Identifier">&lt;/</span><span class="Identifier">Patch</span><span class="Identifier">&gt;</span>

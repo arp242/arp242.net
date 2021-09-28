@@ -1,0 +1,10 @@
+<span class="Identifier">&lt;</span><span class="Identifier">baseWeatherCommonalities</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">Clear</span><span class="Identifier">&gt;</span>18<span class="Identifier">&lt;/</span><span class="Identifier">Clear</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">Fog</span><span class="Identifier">&gt;</span>1<span class="Identifier">&lt;/</span><span class="Identifier">Fog</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">Rain</span><span class="Identifier">&gt;</span>2<span class="Identifier">&lt;/</span><span class="Identifier">Rain</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">DryThunderstorm</span><span class="Identifier">&gt;</span>1<span class="Identifier">&lt;/</span><span class="Identifier">DryThunderstorm</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">RainyThunderstorm</span><span class="Identifier">&gt;</span>1<span class="Identifier">&lt;/</span><span class="Identifier">RainyThunderstorm</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">FoggyRain</span><span class="Identifier">&gt;</span>1<span class="Identifier">&lt;/</span><span class="Identifier">FoggyRain</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">SnowGentle</span><span class="Identifier">&gt;</span>4<span class="Identifier">&lt;/</span><span class="Identifier">SnowGentle</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">SnowHard</span><span class="Identifier">&gt;</span>4<span class="Identifier">&lt;/</span><span class="Identifier">SnowHard</span><span class="Identifier">&gt;</span>
+<span class="Identifier">&lt;/</span><span class="Identifier">baseWeatherCommonalities</span><span class="Identifier">&gt;</span>

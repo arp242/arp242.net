@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project(&quot;{57073194-e8b4-4a20-b60c-ee0e10947af0}&quot;) = &quot;RainingBlood&quot;, &quot;RainingBlood.csproj&quot;, &quot;{7196d15e-d480-441a-a2e0-87b9696dd38f}&quot;
+EndProject
+Global
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Debug|Any CPU = Debug|Any CPU
+        Release|Any CPU = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {7196d15e-d480-441a-a2e0-87b9696dd38f}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {7196d15e-d480-441a-a2e0-87b9696dd38f}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {7196d15e-d480-441a-a2e0-87b9696dd38f}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {7196d15e-d480-441a-a2e0-87b9696dd38f}.Release|Any CPU.Build.0 = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(SolutionProperties) = preSolution
+        HideSolutionNode = FALSE
+    EndGlobalSection
+    GlobalSection(ExtensibilityGlobals) = postSolution
+        SolutionGuid = {31005EA7-3F04-446F-80B2-016137708540}
+    EndGlobalSection
+EndGlobal

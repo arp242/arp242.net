@@ -1,0 +1,5 @@
+<span class="Type">namespace</span> RainingBlood {
+    <span class="Type">public</span> <span class="Type">class</span> <span class="Type">WeatherDefExtension </span><span class="Statement">:</span> Verse.DefModExtension {
+        <span class="Type">public</span> RimWorld.ThoughtDef exposedThoughtCannibal;
+    }
+}

@@ -1,0 +1,8 @@
+<span class="Identifier">&lt;</span><span class="Identifier">modDependencies</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">li</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">packageId</span><span class="Identifier">&gt;</span>brrainz.harmony<span class="Identifier">&lt;/</span><span class="Identifier">packageId</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">displayName</span><span class="Identifier">&gt;</span>Harmony<span class="Identifier">&lt;/</span><span class="Identifier">displayName</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">steamWorkshopUrl</span><span class="Identifier">&gt;</span>steam://url/CommunityFilePage/2009463077<span class="Identifier">&lt;/</span><span class="Identifier">steamWorkshopUrl</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">downloadUrl</span><span class="Identifier">&gt;</span><a href="https://github.com/pardeike/HarmonyRimWorld/releases/latest">https://github.com/pardeike/HarmonyRimWorld/releases/latest</a><span class="Identifier">&lt;/</span><span class="Identifier">downloadUrl</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;/</span><span class="Identifier">li</span><span class="Identifier">&gt;</span>
+<span class="Identifier">&lt;/</span><span class="Identifier">modDependencies</span><span class="Identifier">&gt;</span>

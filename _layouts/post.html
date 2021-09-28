@@ -44,9 +44,9 @@ layout: default
 				}, false)
 			})
 
-			// Add "Copy" link to pre tags with a lot of text.
+			// Add "Copy" link to pre tags with vertical or horizontal scrollbars.
 			q('pre').forEach(function(pre) {
-				if (pre.clientHeight > pre.scrollHeight - 6)
+				if (pre.clientHeight > pre.scrollHeight - 6 && pre.clientWidth > pre.scrollWidth - 6)
 					return
 
 				var btn = document.createElement('a')

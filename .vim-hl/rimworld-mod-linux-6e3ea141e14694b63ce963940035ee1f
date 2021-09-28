@@ -1,0 +1,75 @@
+<span class="Comment">&lt;?</span><span class="Type">xml</span><span class="Type"> </span><span class="Type">version</span>=<span class="Constant">&quot;1.0&quot;</span><span class="Type"> </span><span class="Type">encoding</span>=<span class="Constant">&quot;utf-8&quot;</span><span class="Comment">?&gt;</span>
+<span class="Identifier">&lt;</span><span class="Identifier">Project</span><span class="Identifier"> </span><span class="Type">ToolsVersion</span>=<span class="Constant">&quot;14.0&quot;</span><span class="Identifier"> </span><span class="Type">DefaultTargets</span>=<span class="Constant">&quot;Build&quot;</span><span class="Identifier"> </span><span class="Type">xmlns</span>=<span class="Constant">&quot;<a href="http://schemas.microsoft.com/developer/msbuild/2003">http://schemas.microsoft.com/developer/msbuild/2003</a>&quot;</span><span class="Identifier">&gt;</span>
+
+    <span class="Identifier">&lt;</span><span class="Identifier">Import</span>
+<span class="Identifier">        </span><span class="Type">Project</span>=<span class="Constant">&quot;$(MSBuildExtensionsPath)/$(MSBuildToolsVersion)/Microsoft.Common.props&quot;</span>
+<span class="Identifier">        </span><span class="Type">Condition</span>=<span class="Constant">&quot;Exists('$(MSBuildExtensionsPath)/$(MSBuildToolsVersion)/Microsoft.Common.props')&quot;</span>
+<span class="Identifier">    /&gt;</span>
+
+    <span class="Identifier">&lt;</span><span class="Identifier">PropertyGroup</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">RootNamespace</span><span class="Identifier">&gt;</span>RainingBlood<span class="Identifier">&lt;/</span><span class="Identifier">RootNamespace</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">AssemblyName</span><span class="Identifier">&gt;</span>RainingBlood<span class="Identifier">&lt;/</span><span class="Identifier">AssemblyName</span><span class="Identifier">&gt;</span>
+        <span class="Comment">&lt;!</span><span class="Comment">-- You probably want to modify this GUID for your mod, as it's supposed to be unique.</span>
+<span class="Comment">             This is also referenced in the .sln file.</span>
+<span class="Comment">             My system has &quot;uuidgen&quot; to generate UUIDs. --</span><span class="Comment">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">ProjectGuid</span><span class="Identifier">&gt;</span>{7196d15e-d480-441a-a2e0-87b9696dd38f}<span class="Identifier">&lt;/</span><span class="Identifier">ProjectGuid</span><span class="Identifier">&gt;</span>
+
+        <span class="Identifier">&lt;</span><span class="Identifier">Configuration</span><span class="Identifier"> </span><span class="Type">Condition</span>=<span class="Constant">&quot; '$(Configuration)' == '' &quot;</span><span class="Identifier">&gt;</span>Debug<span class="Identifier">&lt;/</span><span class="Identifier">Configuration</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Platform</span><span class="Identifier"> </span><span class="Type">Condition</span>=<span class="Constant">&quot; '$(Platform)' == '' &quot;</span><span class="Identifier">&gt;</span>AnyCPU<span class="Identifier">&lt;/</span><span class="Identifier">Platform</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">OutputType</span><span class="Identifier">&gt;</span>Library<span class="Identifier">&lt;/</span><span class="Identifier">OutputType</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">AppDesignerFolder</span><span class="Identifier">&gt;</span>Properties<span class="Identifier">&lt;/</span><span class="Identifier">AppDesignerFolder</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">TargetFrameworkVersion</span><span class="Identifier">&gt;</span>v4.7.2<span class="Identifier">&lt;/</span><span class="Identifier">TargetFrameworkVersion</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">FileAlignment</span><span class="Identifier">&gt;</span>512<span class="Identifier">&lt;/</span><span class="Identifier">FileAlignment</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">TargetFrameworkProfile</span><span class="Identifier"> /&gt;</span>
+    <span class="Identifier">&lt;/</span><span class="Identifier">PropertyGroup</span><span class="Identifier">&gt;</span>
+
+    <span class="Comment">&lt;!</span><span class="Comment">-- Debug build --</span><span class="Comment">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">PropertyGroup</span><span class="Identifier"> </span><span class="Type">Condition</span>=<span class="Constant">&quot; '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' &quot;</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">DebugSymbols</span><span class="Identifier">&gt;</span>false<span class="Identifier">&lt;/</span><span class="Identifier">DebugSymbols</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">DebugType</span><span class="Identifier">&gt;</span>none<span class="Identifier">&lt;/</span><span class="Identifier">DebugType</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Optimize</span><span class="Identifier">&gt;</span>false<span class="Identifier">&lt;/</span><span class="Identifier">Optimize</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">OutputPath</span><span class="Identifier">&gt;</span>Assemblies/<span class="Identifier">&lt;/</span><span class="Identifier">OutputPath</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">DefineConstants</span><span class="Identifier">&gt;</span>DEBUG;TRACE<span class="Identifier">&lt;/</span><span class="Identifier">DefineConstants</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">ErrorReport</span><span class="Identifier">&gt;</span>prompt<span class="Identifier">&lt;/</span><span class="Identifier">ErrorReport</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">WarningLevel</span><span class="Identifier">&gt;</span>4<span class="Identifier">&lt;/</span><span class="Identifier">WarningLevel</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">UseVSHostingProcess</span><span class="Identifier">&gt;</span>false<span class="Identifier">&lt;/</span><span class="Identifier">UseVSHostingProcess</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Prefer32Bit</span><span class="Identifier">&gt;</span>false<span class="Identifier">&lt;/</span><span class="Identifier">Prefer32Bit</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;/</span><span class="Identifier">PropertyGroup</span><span class="Identifier">&gt;</span>
+    <span class="Comment">&lt;!</span><span class="Comment">-- Release build --</span><span class="Comment">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">PropertyGroup</span><span class="Identifier"> </span><span class="Type">Condition</span>=<span class="Constant">&quot; '$(Configuration)|$(Platform)' == 'Release|AnyCPU' &quot;</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">DebugType</span><span class="Identifier">&gt;</span>none<span class="Identifier">&lt;/</span><span class="Identifier">DebugType</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Optimize</span><span class="Identifier">&gt;</span>true<span class="Identifier">&lt;/</span><span class="Identifier">Optimize</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">OutputPath</span><span class="Identifier">&gt;</span>Assemblies/<span class="Identifier">&lt;/</span><span class="Identifier">OutputPath</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">DefineConstants</span><span class="Identifier">&gt;</span>TRACE<span class="Identifier">&lt;/</span><span class="Identifier">DefineConstants</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">ErrorReport</span><span class="Identifier">&gt;</span>prompt<span class="Identifier">&lt;/</span><span class="Identifier">ErrorReport</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">WarningLevel</span><span class="Identifier">&gt;</span>3<span class="Identifier">&lt;/</span><span class="Identifier">WarningLevel</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Prefer32Bit</span><span class="Identifier">&gt;</span>false<span class="Identifier">&lt;/</span><span class="Identifier">Prefer32Bit</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;/</span><span class="Identifier">PropertyGroup</span><span class="Identifier">&gt;</span>
+
+    <span class="Comment">&lt;!</span><span class="Comment">-- Dependencies --</span><span class="Comment">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">ItemGroup</span><span class="Identifier">&gt;</span>
+        <span class="Comment">&lt;!</span><span class="Comment">-- The main game code (RimWorld and Verse) --</span><span class="Comment">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Reference</span><span class="Identifier"> </span><span class="Type">Include</span>=<span class="Constant">&quot;Assembly-CSharp&quot;</span><span class="Identifier">&gt;</span>
+            <span class="Identifier">&lt;</span><span class="Identifier">HintPath</span><span class="Identifier">&gt;</span>../../RimWorldLinux_Data/Managed/Assembly-CSharp.dll<span class="Identifier">&lt;/</span><span class="Identifier">HintPath</span><span class="Identifier">&gt;</span>
+            <span class="Identifier">&lt;</span><span class="Identifier">Private</span><span class="Identifier">&gt;</span>False<span class="Identifier">&lt;/</span><span class="Identifier">Private</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;/</span><span class="Identifier">Reference</span><span class="Identifier">&gt;</span>
+
+        <span class="Comment">&lt;!</span><span class="Comment">-- C#/.NET stdlib --</span><span class="Comment">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Reference</span><span class="Identifier"> </span><span class="Type">Include</span>=<span class="Constant">&quot;System&quot;</span><span class="Identifier"> /&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Reference</span><span class="Identifier"> </span><span class="Type">Include</span>=<span class="Constant">&quot;System.Core&quot;</span><span class="Identifier"> /&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Reference</span><span class="Identifier"> </span><span class="Type">Include</span>=<span class="Constant">&quot;System.Runtime.InteropServices.RuntimeInformation&quot;</span><span class="Identifier"> /&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Reference</span><span class="Identifier"> </span><span class="Type">Include</span>=<span class="Constant">&quot;System.Xml.Linq&quot;</span><span class="Identifier"> /&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Reference</span><span class="Identifier"> </span><span class="Type">Include</span>=<span class="Constant">&quot;System.Data.DataSetExtensions&quot;</span><span class="Identifier"> /&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Reference</span><span class="Identifier"> </span><span class="Type">Include</span>=<span class="Constant">&quot;Microsoft.CSharp&quot;</span><span class="Identifier"> /&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Reference</span><span class="Identifier"> </span><span class="Type">Include</span>=<span class="Constant">&quot;System.Data&quot;</span><span class="Identifier"> /&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Reference</span><span class="Identifier"> </span><span class="Type">Include</span>=<span class="Constant">&quot;System.Net.Http&quot;</span><span class="Identifier"> /&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Reference</span><span class="Identifier"> </span><span class="Type">Include</span>=<span class="Constant">&quot;System.Xml&quot;</span><span class="Identifier"> /&gt;</span>
+    <span class="Identifier">&lt;/</span><span class="Identifier">ItemGroup</span><span class="Identifier">&gt;</span>
+
+    <span class="Comment">&lt;!</span><span class="Comment">-- File list --</span><span class="Comment">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">ItemGroup</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Compile</span><span class="Identifier"> </span><span class="Type">Include</span>=<span class="Constant">&quot;Source/RainingBlood.cs&quot;</span><span class="Identifier"> /&gt;</span>
+    <span class="Identifier">&lt;/</span><span class="Identifier">ItemGroup</span><span class="Identifier">&gt;</span>
+
+    <span class="Identifier">&lt;</span><span class="Identifier">Import</span><span class="Identifier"> </span><span class="Type">Project</span>=<span class="Constant">&quot;$(MSBuildToolsPath)/Microsoft.CSharp.targets&quot;</span><span class="Identifier"> /&gt;</span>
+<span class="Identifier">&lt;/</span><span class="Identifier">Project</span><span class="Identifier">&gt;</span>

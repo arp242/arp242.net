@@ -1,0 +1,12 @@
+<span class="Identifier">&lt;</span><span class="Identifier">ThoughtDef</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">defName</span><span class="Identifier">&gt;</span>BloodCoveredCannibal<span class="Identifier">&lt;/</span><span class="Identifier">defName</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">durationDays</span><span class="Identifier">&gt;</span>0.1<span class="Identifier">&lt;/</span><span class="Identifier">durationDays</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">stackLimit</span><span class="Identifier">&gt;</span>1<span class="Identifier">&lt;/</span><span class="Identifier">stackLimit</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">stages</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">li</span><span class="Identifier">&gt;</span>
+            <span class="Identifier">&lt;</span><span class="Identifier">label</span><span class="Identifier">&gt;</span>blood covered<span class="Identifier">&lt;/</span><span class="Identifier">label</span><span class="Identifier">&gt;</span>
+            <span class="Identifier">&lt;</span><span class="Identifier">description</span><span class="Identifier">&gt;</span>Reigning in blood!<span class="Identifier">&lt;/</span><span class="Identifier">description</span><span class="Identifier">&gt;</span>
+            <span class="Identifier">&lt;</span><span class="Identifier">baseMoodEffect</span><span class="Identifier">&gt;</span>10<span class="Identifier">&lt;/</span><span class="Identifier">baseMoodEffect</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;/</span><span class="Identifier">li</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;/</span><span class="Identifier">stages</span><span class="Identifier">&gt;</span>
+<span class="Identifier">&lt;/</span><span class="Identifier">ThoughtDef</span><span class="Identifier">&gt;</span>

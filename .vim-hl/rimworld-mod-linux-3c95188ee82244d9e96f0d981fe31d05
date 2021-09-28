@@ -1,0 +1,6 @@
+<span class="Identifier">&lt;</span><span class="Identifier">modExtensions</span><span class="Identifier">&gt;</span>
+    <span class="Comment">&lt;!</span><span class="Comment">-- Class, not class! --</span><span class="Comment">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">li</span><span class="Identifier"> </span><span class="Type">Class</span>=<span class="Constant">&quot;RainingBlood.WeatherDefExtension&quot;</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">exposedThoughtCannibal</span><span class="Identifier">&gt;</span>BloodCoveredCannibal<span class="Identifier">&lt;/</span><span class="Identifier">exposedThoughtCannibal</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;/</span><span class="Identifier">li</span><span class="Identifier">&gt;</span>
+<span class="Identifier">&lt;/</span><span class="Identifier">modExtensions</span><span class="Identifier">&gt;</span>

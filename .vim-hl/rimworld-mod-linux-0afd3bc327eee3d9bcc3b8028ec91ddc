@@ -1,0 +1,53 @@
+<span class="Type">namespace</span> RainingBlood {
+    <span class="Type">public</span> <span class="Type">class</span> <span class="Type">WeatherDefExtension </span><span class="Statement">:</span> Verse.DefModExtension {
+        <span class="Type">public</span> RimWorld.ThoughtDef exposedThoughtCannibal;
+    }
+
+    [Verse.StaticConstructorOnStartup]
+    <span class="Type">public</span> <span class="Type">static</span> <span class="Type">class</span> <span class="Type">Patch </span>{
+        <span class="Type">static</span> Patch() {
+            <span class="Comment">// Get the method we want to patch.</span>
+            <span class="Type">var</span> m <span class="Statement">=</span> <span class="Statement">typeof</span><span class="Type">(Verse.AI.Pawn_MindState)</span>.GetMethod(<span class="Constant">&quot;</span><span class="Constant">MindStateTick</span><span class="Constant">&quot;</span>);
+
+            <span class="Comment">// Get the method we want to run after the original.</span>
+            <span class="Type">var</span> post <span class="Statement">=</span> <span class="Statement">typeof</span><span class="Type">(RainingBlood.Patch)</span>.GetMethod(<span class="Constant">&quot;</span><span class="Constant">PostMindStateTick</span><span class="Constant">&quot;</span>,
+                       System.Reflection.BindingFlags.Static|System.Reflection.BindingFlags.Public);
+
+            <span class="Comment">// Patch stuff! The string passed to the Harmony constructor can be</span>
+            <span class="Comment">// anything, and can be used to identify/remove patches if need be.</span>
+            <span class="Statement">new</span> HarmonyLib.Harmony(<span class="Constant">&quot;</span><span class="Constant">arp242.rainingblood</span><span class="Constant">&quot;</span>).Patch(m,
+<span class="Statement">                postfix:</span> <span class="Statement">new</span> HarmonyLib.HarmonyMethod(post));
+        }
+
+        <span class="Comment">// The special __instance parameter has the original class instance</span>
+        <span class="Comment">// we're extending. This is based on the argument name.</span>
+        <span class="Type">public</span> <span class="Type">static</span> <span class="Type">void</span> PostMindStateTick(Verse.AI.Pawn_MindState __instance) {
+            <span class="Type">var</span> pawn <span class="Statement">=</span> __instance.pawn;
+
+            <span class="Comment">// Same condition as MindStateTick, but inversed for early return.</span>
+            <span class="Statement">if</span> (Verse.Find.TickManager.TicksGame % <span class="Constant">123</span> <span class="Statement">!=</span> <span class="Constant">0</span> <span class="Statement">||</span>
+                <span class="Statement">!</span>pawn.Spawned <span class="Statement">||</span> <span class="Statement">!</span>pawn.RaceProps.IsFlesh <span class="Statement">||</span> pawn.needs.mood <span class="Statement">==</span> <span class="Constant">null</span>)
+                <span class="Statement">return</span>;
+
+            <span class="Comment">// Is this pawn a cannibal? If not, then there's nothing to do. You</span>
+            <span class="Comment">// can also expand this by checking for the Ideology cannibalism</span>
+            <span class="Comment">// memes, but this just checks the &quot;cannibalism&quot; trait on colonists.</span>
+            <span class="Statement">if</span> (<span class="Statement">!</span>pawn.story.traits.HasTrait(RimWorld.TraitDefOf.Cannibal))
+                <span class="Statement">return</span>;
+
+            <span class="Comment">// Let's see if the current weather has our new exposedThoughtCannibal.</span>
+            <span class="Type">var</span> w <span class="Statement">=</span> pawn.Map.weatherManager.CurWeatherLerped;
+            <span class="Statement">if</span> (<span class="Statement">!</span>w.HasModExtension&lt;WeatherDefExtension&gt;())
+                <span class="Statement">return</span>;
+            <span class="Type">var</span> t <span class="Statement">=</span> w.GetModExtension&lt;WeatherDefExtension&gt;().exposedThoughtCannibal;
+            <span class="Statement">if</span> (t <span class="Statement">==</span> <span class="Constant">null</span>)
+                <span class="Statement">return</span>;
+
+            <span class="Comment">// Remove any existing thought that was applied and apply our</span>
+            <span class="Comment">// cannibalistic thoughts.</span>
+            <span class="Statement">if</span> (w.exposedThought <span class="Statement">!=</span> <span class="Constant">null</span>)
+                pawn.needs.mood.thoughts.memories.RemoveMemoriesOfDef(w.exposedThought);
+            pawn.needs.mood.thoughts.memories.TryGainMemoryFast(t);
+        }
+    }
+}

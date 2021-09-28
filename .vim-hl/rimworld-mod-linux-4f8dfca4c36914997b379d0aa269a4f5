@@ -1,0 +1,8 @@
+<span class="Type">namespace</span> RainingBlood {
+    [Verse.StaticConstructorOnStartup]
+    <span class="Type">public</span> <span class="Type">static</span> <span class="Type">class</span> <span class="Type">RainingBlood </span>{
+        <span class="Type">static</span> RainingBlood() {
+            Verse.Log.Message(<span class="Constant">&quot;</span><span class="Constant">Hello, world!</span><span class="Constant">&quot;</span>);
+        }
+    }
+}

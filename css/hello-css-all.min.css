@@ -88,7 +88,7 @@ h1 a:after, h2 a:after, h3 a:after, h4 a:after, h5 a:after, h6 a:after { content
 .postscript               { margin-top: 3em; border-top: 1px solid #bbb; font-size: .9em; position: relative; }
 .postscript + .postscript { margin-top: 2em; }
 .postscript > strong      { font-style: normal; position: absolute; top: -1em; left: 1em; background-color: #fff; padding: 0 .5em; }
-.postscript > p           { margin: 1em 2em }
+.postscript > p           { margin: 1em 2em !important; }
 
 @media (min-width: 54rem) {
   .postscript          { margin-left: -4em; width: calc(100% + 8em); padding: 0 4em; }

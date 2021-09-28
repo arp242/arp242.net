@@ -1,0 +1,7 @@
+[~/rimworld/src]% rg exposedThought
+Verse/AI/Pawn_MindState.cs
+415: if (curWeatherLerped.exposedThought != null &amp;&amp; !pawn.Position.Roofed(pawn.Map))
+417:     pawn.needs.mood.thoughts.memories.TryGainMemoryFast(curWeatherLerped.exposedThought);
+
+Verse/WeatherDef.cs
+35: public ThoughtDef exposedThought;

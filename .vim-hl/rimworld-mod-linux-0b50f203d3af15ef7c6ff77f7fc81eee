@@ -1,0 +1,11 @@
+[~/rimworld/Data/Core]% rg SoakingWet
+Defs/TerrainDefs/Terrain_Water.xml
+12:    &lt;traversedThought&gt;SoakingWet&lt;/traversedThought&gt;
+
+Defs/ThoughtDefs/Thoughts_Memory_Misc.xml
+297:    &lt;defName&gt;SoakingWet&lt;/defName&gt;
+
+Defs/WeatherDefs/Weathers.xml
+98:    &lt;exposedThought&gt;SoakingWet&lt;/exposedThought&gt;
+202:    &lt;exposedThought&gt;SoakingWet&lt;/exposedThought&gt;
+267:    &lt;exposedThought&gt;SoakingWet&lt;/exposedThought&gt;

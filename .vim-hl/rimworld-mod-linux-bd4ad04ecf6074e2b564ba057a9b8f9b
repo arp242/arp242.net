@@ -1,0 +1,15 @@
+<span class="Comment">&lt;!</span><span class="Comment">-- Dependencies --</span><span class="Comment">&gt;</span>
+<span class="Identifier">&lt;</span><span class="Identifier">ItemGroup</span><span class="Identifier">&gt;</span>
+    <span class="Comment">&lt;!</span><span class="Comment">-- Harmony must be loaded first --</span><span class="Comment">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">Reference</span><span class="Identifier"> </span><span class="Type">Include</span>=<span class="Constant">&quot;0Harmony&quot;</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">HintPath</span><span class="Identifier">&gt;</span>../HarmonyRimWorld/Current/Assemblies/0Harmony.dll<span class="Identifier">&lt;/</span><span class="Identifier">HintPath</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Private</span><span class="Identifier">&gt;</span>False<span class="Identifier">&lt;/</span><span class="Identifier">Private</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;/</span><span class="Identifier">Reference</span><span class="Identifier">&gt;</span>
+
+    <span class="Comment">&lt;!</span><span class="Comment">-- The main game code (RimWorld and Verse) --</span><span class="Comment">&gt;</span>
+    <span class="Identifier">&lt;</span><span class="Identifier">Reference</span><span class="Identifier"> </span><span class="Type">Include</span>=<span class="Constant">&quot;Assembly-CSharp&quot;</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">HintPath</span><span class="Identifier">&gt;</span>../../RimWorldLinux_Data/Managed/Assembly-CSharp.dll<span class="Identifier">&lt;/</span><span class="Identifier">HintPath</span><span class="Identifier">&gt;</span>
+        <span class="Identifier">&lt;</span><span class="Identifier">Private</span><span class="Identifier">&gt;</span>False<span class="Identifier">&lt;/</span><span class="Identifier">Private</span><span class="Identifier">&gt;</span>
+    <span class="Identifier">&lt;/</span><span class="Identifier">Reference</span><span class="Identifier">&gt;</span>
+
+    [..]

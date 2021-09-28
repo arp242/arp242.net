@@ -1,0 +1,2 @@
+% xmllint --xpath '/Defs/BiomeDef/baseWeatherCommonalities' \
+    Data/Core/Defs/BiomeDefs/Biomes_Cold.xml

@@ -1,0 +1,23 @@
+[~/rimworld/Data/Core]% rg RainyThunderstorm
+Defs/BiomeDefs/Biomes_Cold.xml
+101:      &lt;RainyThunderstorm&gt;1&lt;/RainyThunderstorm&gt;
+234:      &lt;RainyThunderstorm&gt;1&lt;/RainyThunderstorm&gt;
+389:      &lt;RainyThunderstorm&gt;1&lt;/RainyThunderstorm&gt;
+513:      &lt;RainyThunderstorm&gt;0&lt;/RainyThunderstorm&gt;
+611:      &lt;RainyThunderstorm&gt;0&lt;/RainyThunderstorm&gt;
+
+Defs/BiomeDefs/Biomes_Temperate.xml
+104:      &lt;RainyThunderstorm&gt;1&lt;/RainyThunderstorm&gt;
+262:      &lt;RainyThunderstorm&gt;1&lt;/RainyThunderstorm&gt;
+
+Defs/BiomeDefs/Biomes_Warm.xml
+109:      &lt;RainyThunderstorm&gt;1.7&lt;/RainyThunderstorm&gt;
+277:      &lt;RainyThunderstorm&gt;1.7&lt;/RainyThunderstorm&gt;
+
+Defs/BiomeDefs/Biomes_WarmArid.xml
+79:      &lt;RainyThunderstorm&gt;1&lt;/RainyThunderstorm&gt;
+204:      &lt;RainyThunderstorm&gt;1&lt;/RainyThunderstorm&gt;
+312:      &lt;RainyThunderstorm&gt;1&lt;/RainyThunderstorm&gt;
+
+Defs/WeatherDefs/Weathers.xml
+193:    &lt;defName&gt;RainyThunderstorm&lt;/defName&gt;
