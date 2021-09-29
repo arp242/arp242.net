@@ -92,67 +92,67 @@ modifications:
 
     <?xml version="1.0" encoding="utf-8" ?>
     <Defs>
-	<WeatherDef>
-		<defName>RainingBlood</defName>
-		<label>raining blood</label>
-		<description>It's raining blood; what the hell?!</description>
+    <WeatherDef>
+        <defName>RainingBlood</defName>
+        <label>raining blood</label>
+        <description>It's raining blood; what the hell?!</description>
 
         <!-- ThoughtDefs/RainingBlood.xml -->
         <!-- <exposedThought>SoakingWet</exposedThought> -->
-		<exposedThought>BloodCovered</exposedThought>
+        <exposedThought>BloodCovered</exposedThought>
 
-		<!-- Copied from rain -->
-		<temperatureRange>0~100</temperatureRange>
-		<windSpeedFactor>1.5</windSpeedFactor>
-		<accuracyMultiplier>0.8</accuracyMultiplier>
-		<favorability>Neutral</favorability>
-		<perceivePriority>1</perceivePriority>
+        <!-- Copied from rain -->
+        <temperatureRange>0~100</temperatureRange>
+        <windSpeedFactor>1.5</windSpeedFactor>
+        <accuracyMultiplier>0.8</accuracyMultiplier>
+        <favorability>Neutral</favorability>
+        <perceivePriority>1</perceivePriority>
 
-		<rainRate>1</rainRate>
-		<moveSpeedMultiplier>0.9</moveSpeedMultiplier>
-		<ambientSounds>
-			<li>Ambient_Rain</li>
-		</ambientSounds>
-		<overlayClasses>
-			<li>WeatherOverlay_Rain</li>
-		</overlayClasses>
-		<commonalityRainfallFactor>
-			<points>
-				<li>(0, 0)</li>
-				<li>(1300, 1)</li>
-				<li>(4000, 3.0)</li>
-			</points>
-		</commonalityRainfallFactor>
+        <rainRate>1</rainRate>
+        <moveSpeedMultiplier>0.9</moveSpeedMultiplier>
+        <ambientSounds>
+            <li>Ambient_Rain</li>
+        </ambientSounds>
+        <overlayClasses>
+            <li>WeatherOverlay_Rain</li>
+        </overlayClasses>
+        <commonalityRainfallFactor>
+            <points>
+                <li>(0, 0)</li>
+                <li>(1300, 1)</li>
+                <li>(4000, 3.0)</li>
+            </points>
+        </commonalityRainfallFactor>
 
-		<!-- Colours modified to be reddish; just a crude effect. -->
-		<skyColorsDay>
-			<sky>(0.8,0.2,0.2)</sky>
-			<shadow>(0.92,0.2,0.2)</shadow>
-			<overlay>(0.7,0.2,0.2)</overlay>
-			<saturation>0.9</saturation>
-		</skyColorsDay>
+        <!-- Colours modified to be reddish; just a crude effect. -->
+        <skyColorsDay>
+            <sky>(0.8,0.2,0.2)</sky>
+            <shadow>(0.92,0.2,0.2)</shadow>
+            <overlay>(0.7,0.2,0.2)</overlay>
+            <saturation>0.9</saturation>
+        </skyColorsDay>
 
-		<skyColorsDusk>
-			<sky>(1,0,0)</sky>
-			<shadow>(0.92,0.2,0.2)</shadow>
-			<overlay>(0.6,0.2,0.2)</overlay>
-			<saturation>0.9</saturation>
-		</skyColorsDusk>
+        <skyColorsDusk>
+            <sky>(1,0,0)</sky>
+            <shadow>(0.92,0.2,0.2)</shadow>
+            <overlay>(0.6,0.2,0.2)</overlay>
+            <saturation>0.9</saturation>
+        </skyColorsDusk>
 
-		<skyColorsNightEdge>
-			<sky>(0.35,0.10,0.15)</sky>
-			<shadow>(0.92,0.22,0.22)</shadow>
-			<overlay>(0.5,0.1,0.1)</overlay>
-			<saturation>0.9</saturation>
-		</skyColorsNightEdge>
+        <skyColorsNightEdge>
+            <sky>(0.35,0.10,0.15)</sky>
+            <shadow>(0.92,0.22,0.22)</shadow>
+            <overlay>(0.5,0.1,0.1)</overlay>
+            <saturation>0.9</saturation>
+        </skyColorsNightEdge>
 
-		<skyColorsNightMid>
-			<sky>(0.35,0.20,0.25)</sky>
-			<shadow>(0.92,0.22,0.22)</shadow>
-			<overlay>(0.5,0.2,0.2)</overlay>
-			<saturation>0.9</saturation>
-		</skyColorsNightMid>
-	</WeatherDef>
+        <skyColorsNightMid>
+            <sky>(0.35,0.20,0.25)</sky>
+            <shadow>(0.92,0.22,0.22)</shadow>
+            <overlay>(0.5,0.2,0.2)</overlay>
+            <saturation>0.9</saturation>
+        </skyColorsNightMid>
+    </WeatherDef>
     </Defs>
 
 The location where you store it doesn't actually matter as long as it's in
@@ -702,12 +702,12 @@ to apply to `Defs/ThoughtDefs/RainingBlood.xml` we created earlier:
 And in the `Defs/WeatherDefs/RainingBlood.xml` let's add some new fields next to
 the `exposedThought` we already have:
 
-	<modExtensions>
-		<!-- Class, not class! -->
-		<li Class="RainingBlood.WeatherDefExtension">
-			<exposedThoughtCannibal>BloodCoveredCannibal</exposedThoughtCannibal>
-		</li>
-	</modExtensions>
+    <modExtensions>
+        <!-- Class, not class! -->
+        <li Class="RainingBlood.WeatherDefExtension">
+            <exposedThoughtCannibal>BloodCoveredCannibal</exposedThoughtCannibal>
+        </li>
+    </modExtensions>
 
 The way the XML maps to C♯ code is that every entry in the XML file is expected
 to be a field in the `*Def` class (inherits from `Verse.Def`), for example for
@@ -765,8 +765,8 @@ To use this we'll need to register it as a dependency in our `About/About.xml` f
 We'll also have to add it to the `RainingBlood.csproj` file as a dependency
 *before* the `Assembly-CSharp` dependency:
 
-	<!-- Dependencies -->
-	<ItemGroup>
+    <!-- Dependencies -->
+    <ItemGroup>
         <!-- Harmony must be loaded first -->
         <Reference Include="0Harmony">
             <HintPath>../HarmonyRimWorld/Current/Assemblies/0Harmony.dll</HintPath>
