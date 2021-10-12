@@ -1,7 +1,7 @@
 ---
 title: "Some zshrc tricks"
 date: 2020-05-22
-tags: ['Unix']
+tags: ['Unix', 'zsh']
 filetype: zsh
 hatnote: |
     Discussions:
