@@ -2,9 +2,6 @@
 title: "Launching GoatCounter"
 date: 2019-08-13
 tags: ['GoatCounter', 'Open source']
-head: |
-    <meta name="go-import" content="arp242.net/goatcounter git https://github.com/arp242/goatcounter.git">
-    <meta name="go-source" content="arp242.net/goatcounter https://github.com/arp242/goatcounter https://github.com/arp242/goatcounter/tree/master/{/dir}/ https://github.com/arp242/goatcounter/tree/master/{/dir}">
 ---
 
 **Update: [GoatCounter 1.0 released](/goatcounter-1.0.html)**.
