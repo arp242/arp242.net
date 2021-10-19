@@ -1,0 +1,6 @@
+img=<span class="PreProc">$(</span>curl <a href="https://example.com/image.png">https://example.com/image.png</a><span class="PreProc">)</span>
+<span class="Statement">if</span> [[ <span class="PreProc">$cond</span> ]]; <span class="Statement">then</span>
+    optpng <span class="Statement">&lt;&lt;&lt;</span><span class="Constant">&quot;</span><span class="PreProc">$img</span><span class="Constant">&quot;</span> <span class="Statement">&gt;</span> out.png
+<span class="Statement">else</span>
+    cat <span class="Statement">&lt;&lt;&lt;</span><span class="Constant">&quot;</span><span class="PreProc">$img</span><span class="Constant">&quot;</span> <span class="Statement">&gt;</span> out.png
+<span class="Statement">fi</span>

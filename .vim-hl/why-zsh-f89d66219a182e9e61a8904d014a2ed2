@@ -1,0 +1,18 @@
+<span class="ModeMsg">zsh% </span><span class="Question">zsh args hello world 'test space' '*'</span>
+unquoted @:
+  =&gt; hello
+  =&gt; world
+  =&gt; test space
+  =&gt; *
+quoted @:
+  =&gt; hello
+  =&gt; world
+  =&gt; test space
+  =&gt; *
+unquoted *:
+  =&gt; hello
+  =&gt; world
+  =&gt; test space
+  =&gt; *
+quoted *:
+  =&gt; hello world test space *

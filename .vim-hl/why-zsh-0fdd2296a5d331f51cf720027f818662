@@ -1,0 +1,5 @@
+<span class="ModeMsg">bash% </span><span class="Question">ls !(*_test).go</span>
+format.go  gen.go  old.go  uni.go
+
+<span class="ModeMsg">bash% </span><span class="Question">ls !(*_test|f*).go</span>
+gen.go  old.go  uni.go

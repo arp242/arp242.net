@@ -1,0 +1,6 @@
+<span class="ModeMsg">zsh% </span><span class="Question">x=$(printf 'N\x00L'); printf $x | xxd -g1 -c3</span>
+00000000: 4e 00 4c  N.L
+
+<span class="ModeMsg">bash% </span><span class="Question">x=$(printf 'N\x00L'); printf $x | xxd -g1 -c3</span>
+bash: warning: command substitution: ignored null byte in input
+00000000: 4e 4c     NL

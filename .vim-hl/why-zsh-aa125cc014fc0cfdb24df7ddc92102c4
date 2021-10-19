@@ -1,0 +1,4 @@
+<span class="ModeMsg">zsh% </span><span class="Question">for i in *; ls -l $=i</span>
+-rw-rw-r-- 1 martin martin 0 Oct 19 06:51 asd.txt
+ls: cannot access 'with': No such file or directory
+ls: cannot access 'space.txt': No such file or directory

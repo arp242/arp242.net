@@ -1,0 +1,5 @@
+<span class="ModeMsg">zsh% </span><span class="Question">f=~/asd.png; print &quot;${${f%%.*}##*/}&quot;</span>
+asd
+
+<span class="ModeMsg">bash% </span><span class="Question">f=~/a.png; echo &quot;${${f%%.*}##*/}&quot;</span>
+bash: ${${f%%.*}##*/}: bad substitution

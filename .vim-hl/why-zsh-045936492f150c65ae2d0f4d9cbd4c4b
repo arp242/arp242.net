@@ -1,0 +1,15 @@
+<span class="ModeMsg">zsh% </span><span class="Question">a=foo; b=*;</span>
+<span class="ModeMsg">zsh% </span><span class="Question">if [[ $a = $b ]]; then</span>
+       print 'Equal!'
+     else
+       print 'Nope!'
+     fi
+Nope!
+
+<span class="ModeMsg">bash% </span><span class="Question">a=foo; b=*</span>
+<span class="ModeMsg">bash% </span><span class="Question">if [[ $a = $b ]]; then</span>
+        echo 'Equal!'
+      else
+        echo 'Nope!'
+      fi
+Equal!

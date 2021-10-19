@@ -1,0 +1,1 @@
+<span class="ModeMsg">zsh% </span><span class="Question">for f in ~/photos/*.png; convert $f ${f:t:r}.jpeg</span>

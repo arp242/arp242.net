@@ -1,0 +1,12 @@
+<span class="ModeMsg">zsh% </span><span class="Question">cat args</span>
+echo &quot;unquoted @:&quot;
+for a in $@; do echo &quot;  =&gt; $a&quot;; done
+
+echo &quot;quoted @:&quot;
+for a in &quot;$@&quot;; do echo &quot;  =&gt; $a&quot;; done
+
+echo &quot;quoted *:&quot;
+for a in $*; do echo &quot;  =&gt; $a&quot;; done
+
+echo &quot;quoted *:&quot;
+for a in &quot;$*&quot;; do echo &quot;  =&gt; $a&quot;; done

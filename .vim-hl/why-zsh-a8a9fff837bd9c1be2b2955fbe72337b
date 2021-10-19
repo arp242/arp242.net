@@ -1,0 +1,5 @@
+<span class="ModeMsg">zsh% </span><span class="Question">ls -d /etc/**/*(/)</span>
+/etc/OpenCL/                      /etc/runit/runsvdir/default/dnscrypt-proxy/log/
+/etc/OpenCL/vendors/              /etc/runit/runsvdir/default/ntpd/log/
+/etc/X11/                         /etc/runit/runsvdir/default/postgresql/supervise/
+[..]

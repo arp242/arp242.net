@@ -1,0 +1,4 @@
+<span class="ModeMsg">zsh% </span><span class="Question">ls **/*(.)</span>
+LICENSE         go.sum           unidata/gen.go             wasm/make*
+README.md       old.go           unidata/gen_codepoints.go  wasm/srv*
+[..]

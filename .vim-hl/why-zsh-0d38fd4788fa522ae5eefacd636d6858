@@ -1,0 +1,8 @@
+<span class="ModeMsg">zsh% </span><span class="Question">ls *.go</span>
+format.go  format_test.go  gen.go  old.go  uni.go  uni_test.go
+
+<span class="ModeMsg">zsh% </span><span class="Question">ls *.go~*_test.go</span>
+format.go  gen.go  old.go  uni.go
+
+<span class="ModeMsg">zsh% </span><span class="Question">ls *.go~*_test.go~f*</span>
+gen.go  old.go  uni.go

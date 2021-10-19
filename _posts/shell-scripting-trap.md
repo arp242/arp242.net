@@ -3,6 +3,12 @@ title: "The shell scripting trap"
 date: 2017-12-26
 tags: ['Unix']  # Shell
 hatnote: |
+    Update 2021-10-09: Since writing this three years ago I have since
+    discovered that many "shell scripting problems" listed here are actually
+    problems in POSIX sh and bash, and that zsh fixes many (though not all) of
+    them. My updated take is to continue using shell scripts, but in zsh.  
+    See: [s/bash/zsh/g](/why-zsh.html)
+
     Discussions:
       [Lobsters](https://lobste.rs/s/vghl4j/shell_scripting_trap),
       [/r/programming](https://www.reddit.com/r/programming/comments/968sbv/the_shell_scripting_trap/),

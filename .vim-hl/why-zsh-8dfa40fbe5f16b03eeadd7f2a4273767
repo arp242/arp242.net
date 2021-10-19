@@ -1,0 +1,16 @@
+<span class="ModeMsg">bash% </span><span class="Question">find /etc -type f -mtime 7 -exec ls -l {} +</span>
+find: ‘/etc/sv/docker/supervise’: Permission denied
+find: ‘/etc/sv/docker/log/supervise’: Permission denied
+find: ‘/etc/sv/bluetoothd/log/supervise’: Permission denied
+find: ‘/etc/sv/postgresql/supervise’: Permission denied
+find: ‘/etc/sv/runsvdir-martin/supervise’: Permission denied
+find: ‘/etc/wpa_supplicant/supervise’: Permission denied
+find: ‘/etc/lvm/cache’: Permission denied
+-rw-rw-r-- 1 root root  167 Oct 12 22:17 /etc/default/postgresql
+-rw-r--r-- 1 root root  817 Oct 12 09:11 /etc/fstab
+-rw-r--r-- 1 root root 1398 Oct 12 22:19 /etc/passwd
+-rw-r--r-- 1 root root 1397 Oct 12 22:19 /etc/passwd.OLD
+-rw-r--r-- 1 root root  307 Oct 12 23:10 /etc/public-resolvers.md.minisig
+-rw-r--r-- 1 root root  297 Oct 12 23:10 /etc/relays.md.minisig
+-r-------- 1 root root  932 Oct 12 09:57 /etc/shadow
+-rwxrwxr-x 1 root root  397 Oct 12 22:23 /etc/sv/postgresql/run

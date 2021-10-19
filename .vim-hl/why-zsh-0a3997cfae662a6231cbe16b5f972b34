@@ -1,0 +1,1 @@
+<span class="ModeMsg">bash% </span><span class="Question">for f in ~/photos/*.png; do convert &quot;$f&quot; &quot;$(basename &quot;${f%%.*}&quot;)&quot;; done</span>

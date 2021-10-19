@@ -1,0 +1,10 @@
+<span class="ModeMsg">zsh% </span><span class="Question">arr=(123 5 1 9)</span>
+<span class="ModeMsg">zsh% </span><span class="Question">echo ${(o)arr}    </span><span class="Comment"> # Lexical order</span>
+1 123 5 9
+<span class="ModeMsg">zsh% </span><span class="Question">echo ${(on)arr}   </span><span class="Comment"> # Numeric order</span>
+1 5 9 123
+
+<span class="ModeMsg">bash% </span><span class="Question">IFS=$'\n'; echo &quot;$(sort &lt;&lt;&lt;&quot;${arr[*]}&quot;)&quot;; unset IFS</span>
+1 123 5 9
+<span class="ModeMsg">bash% </span><span class="Question">IFS=$'\n'; echo &quot;$(sort -n &lt;&lt;&lt;&quot;${arr[*]}&quot;)&quot;; unset IFS</span>
+1 5 9 123

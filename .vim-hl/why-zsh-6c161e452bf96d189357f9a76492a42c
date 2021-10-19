@@ -1,0 +1,12 @@
+<span class="ModeMsg">zsh% </span><span class="Question">n=3; for i in {1..$n}; print $i</span>
+1
+2
+3
+
+<span class="ModeMsg">bash% </span><span class="Question">n=3; for i in {1..$n}; do echo &quot;$i&quot;; done</span>
+{1..3}
+
+<span class="ModeMsg">bash% </span><span class="Question">n=3; for i in {1..3}; do echo &quot;$i&quot;; done</span>
+1
+2
+3

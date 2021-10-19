@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh
+[ &quot;${ZSH_VERSION:-}&quot; = &quot;&quot; ] &amp;&amp; echo &gt;&amp;2 &quot;Only works with zsh&quot; &amp;&amp; exit 1

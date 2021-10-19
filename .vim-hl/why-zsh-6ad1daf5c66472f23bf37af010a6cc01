@@ -1,0 +1,2 @@
+<span class="ModeMsg">zsh% </span><span class="Question">echo $(( .1 + .2 ))</span>
+0.30000000000000004     <span class="Comment"> # Well, &quot;works&quot; insofar IEEE-754 works.</span>

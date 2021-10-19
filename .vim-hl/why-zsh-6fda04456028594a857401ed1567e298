@@ -1,0 +1,6 @@
+<span class="ModeMsg">zsh% </span><span class="Question">arr=(first second third fourth)</span>
+
+<span class="ModeMsg">zsh% </span><span class="Question">print ${arr[1]}       </span><span class="Comment"> # Yeah, it's 1-based. Deal with it.</span>
+first
+<span class="ModeMsg">zsh% </span><span class="Question">print ${arr[1,2]}</span>
+first second

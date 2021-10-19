@@ -1,0 +1,6 @@
+<span class="ModeMsg">bash% </span><span class="Question">arr=(first second third fourth)</span>
+
+<span class="ModeMsg">bash% </span><span class="Question">echo ${arr[0]}</span>
+first
+<span class="ModeMsg">bash% </span><span class="Question">echo ${arr[@]::2}</span>
+first second

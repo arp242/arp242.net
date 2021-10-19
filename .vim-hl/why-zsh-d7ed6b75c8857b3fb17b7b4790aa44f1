@@ -1,0 +1,7 @@
+<span class="ModeMsg">zsh% </span><span class="Question">ls -l /etc/***(.m-7)   </span><span class="Comment"> # *** is a shortcut for **/*; needs GLOB_STAR_SHORT</span>
+-rw-r--r-- 1 root root 28099 Oct 13 03:47 /etc/dnscrypt-proxy.toml.new-2.1.1_1
+-rw-r--r-- 1 root root    97 Oct 13 03:47 /etc/environment
+-rw-r--r-- 1 root root 37109 Oct 17 10:34 /etc/ld.so.cache
+-rw-r--r-- 1 root root 77941 Oct 19 01:01 /etc/public-resolvers.md
+-rw-r--r-- 1 root root  6011 Oct 19 01:01 /etc/relays.md
+-rw-r--r-- 1 root root   142 Oct 19 07:57 /etc/shells

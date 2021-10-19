@@ -22,7 +22,6 @@ it's quite well-written and useful. Go read it!
 
 Directory shortcuts
 -------------------
-
 Define directory shortcuts with `hash -d` so you can use `cd ~x` and `vim
 ~x/file` instead of `cd /very/long/and/often/accessed/path`. Some examples:
 
@@ -60,7 +59,6 @@ And then:
 
 Filter history completion with what you typed
 ---------------------------------------------
-
 Make up and down arrow take what's typed on the commandline in to account. E.g.
 if you type `ls` and press up it will only find history entries that start with
 `ls`:
@@ -83,7 +81,6 @@ too**ls**, t**ls**, tota**ls**, docker **ls**, and probably more.
 
 Easier PATH
 -----------
-
 Many systems link `/bin` to `/usr/bin` and storing all of those in PATH isn't
 too useful. Some helper functions to prepend or append to `PATH` which also
 check if the path exists so it's easier to write a portable zshrc:
@@ -124,7 +121,6 @@ check if the path exists so it's easier to write a portable zshrc:
 
 Easier alias
 ------------
-
 A little `_exist` helper to check if a binary exists is similarly useful for a
 portable zshrc:
 
@@ -144,20 +140,19 @@ portable zshrc:
 
 Edit ag and grep results
 ------------------------
-
 "ag edit" and "grep edit" to quickly open stuff found with `ag` or `grep` in
 Vim:
 
     # "ag edit" and "grep edit".
     age() {
-        vim \
+        vim --ttyfail \
             +'/\v'"${1/\//\\/}" \
             +':silent tabdo :1 | normal! n' \
             +':tabfirst' \
             -p $(ag "$@" | cut -d: -f1 | sort -u)
     }
     grepe() {
-        vim \
+        vim --ttyfail \
             +'/\v'"${1/\//\\/}" \
             +':silent tabdo :1 | normal! n' \
             +':tabfirst' \
@@ -170,30 +165,27 @@ Vim:
     $ age pattern
     [open in Vim]
 
+`ag` is the [the_silver_searcher][ss], although on my system I've aliased it to
+`rg` from [ripgrep][rg] (I was very used to typing `ag`).
+
 This will also search for the pattern with `/pattern` in Vim and move to the
 first match for every tab (yes, I use Vim tabs, in spite of Vim-purist
 philosophy that they're bad).
+
+The `vim --ttyfail` is there to make Vim refuse to start if you accidentally
+type `age pattern | less` (which I sometimes do after modifying the command from
+`ag` to `age`).
 
 Caveat: the Vim regexp syntax isn't quite the same as extended POSIX or PCRE, so
 the pattern doesn't always work as expect in Vim. It works most of the time
 though.
 
-Caveat 2: sometimes I use this to check if I have the expected results:
+[ss]: https://github.com/ggreer/the_silver_searcher/pull/350
+[rg]: https://github.com/BurntSushi/ripgrep
 
-{:class="ft-cli"}
-    $ ag pattern | less
-
-And then I modify it `age` while forgetting to remove the `less`:
-
-{:class="ft-cli"}
-    $ age pattern | less
-
-Vim will not like this 😅 Not sure if we can write something to be a bit smarter
-about this. Ideally *I* would be smarter, but alas I am not.
 
 Global aliases
 --------------
-
 You can define global aliases with `alias -g`, which will work everywhere. I use
 it to make piping stdout and stderr to less or Vim a bit easier:
 
@@ -221,7 +213,6 @@ Use `:S` from Vim to make it a regular buffer again.
 
 Playground environment
 ----------------------
-
 Set up a quick "tmp go" environment for testing; I mostly use Go these days, but
 this can be done for other languages as well:
 
@@ -248,7 +239,6 @@ prototype.
 
 Run stored SQL queries
 ----------------------
-
 I have a bunch of scripts in `~/docs/sql/scripts` to get some stats and whatnot
 from PostgreSQL. This adds a `sql` command with tab-completion
 to that directory and runs `psql` with some useful flags:
@@ -282,7 +272,6 @@ organising scripts by database [can be found here][sql.zsh].
 
 Shortcuts to edit commandline
 -----------------------------
-
 Custom mappings to preform some common substitutions, use `<C-r>` to prepend
 `doas` to the commandline, or `<C-r>` to replace the first word with `rm`:
 
@@ -294,3 +283,11 @@ Custom mappings to preform some common substitutions, use `<C-r>` to prepend
 
     bindkey '^s'    insert-doas
     bindkey '^r'    replace-rm
+
+Oh, and another very useful one is `accept-and-hold`:
+
+    bindkey '^\'    accept-and-hold
+
+This will run the command, but won't clear the actual commandline, good for
+editing a `grep` or `sed` pattern. Unfortunately mapping Control+Enter is hard
+so I use the closest key.

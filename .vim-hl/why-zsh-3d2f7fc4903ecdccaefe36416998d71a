@@ -1,0 +1,2 @@
+<span class="ModeMsg">bash% </span><span class="Question">echo $(( .1 + .2 ))</span>
+bash: .1 + .2 : syntax error: operand expected (error token is &quot;.1 + .2 &quot;)

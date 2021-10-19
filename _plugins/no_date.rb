@@ -9,4 +9,3 @@ class Jekyll::PostReader
     read_publishable(dir, "_drafts", /.*\.(markdown|md)$/)
   end
 end
-
