@@ -51,8 +51,9 @@ incantation:
     bash% read -rad arr < <(find . -print0)
 
 There are all sorts of edge-cases where you need to resort to `read` or
-`readarray` rather than being able to just assign in. In zsh it's just
-`arr=($(find . -print0))`.
+`readarray` rather than being able to just assign in. In zsh it's `IFS='\x00'
+arr=($(find . -print0))` or `arr=( "${(0)$(find . -print0)}" )`  which is
+admittedly a bit obscure too, but better).
 
 Don't even think of doing something like:
 
