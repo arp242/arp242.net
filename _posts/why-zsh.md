@@ -48,12 +48,19 @@ That all works grand, right up to the point you try to assign it to a variable.
 You can use NUL bytes for array assignments though, if you evoke the right
 incantation:
 
-    bash% read -rad arr < <(find . -print0)
+    bash% read -rad arr < <(find . -type f -print0)
 
 There are all sorts of edge-cases where you need to resort to `read` or
-`readarray` rather than being able to just assign in. In zsh it's `IFS='\x00'
-arr=($(find . -print0))` or `arr=( "${(0)$(find . -print0)}" )`  which is
-admittedly a bit obscure too, but better).
+`readarray` rather than being able to just assign in. In zsh it's:
+
+    zsh% arr=(**/*(.))
+
+    zsh% IFS='\x00' arr=($(find . -type f -print0)) # If you must use find (rarely needed)
+
+    zsh% arr=( "${(0)$(find . -type f -print0)}" )
+
+That `(.)` is a "glob qualifier" to include only regular files – more on that
+later.
 
 Don't even think of doing something like:
 

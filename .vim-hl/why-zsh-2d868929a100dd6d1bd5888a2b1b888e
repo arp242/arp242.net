@@ -1,0 +1,5 @@
+<span class="ModeMsg">zsh% </span><span class="Question">arr=(**/*(.))</span>
+
+<span class="ModeMsg">zsh% </span><span class="Question">IFS='\x00' arr=($(find . -type f -print0))</span><span class="Comment"> # If you must use find (rarely needed)</span>
+
+<span class="ModeMsg">zsh% </span><span class="Question">arr=( &quot;${(0)$(find . -type f -print0)}&quot; )</span>

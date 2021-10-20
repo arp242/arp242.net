@@ -1,0 +1,1 @@
+<span class="ModeMsg">bash% </span><span class="Question">read -rad arr &lt; &lt;(find . -type f -print0)</span>
