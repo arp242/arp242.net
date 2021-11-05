@@ -1,4 +1,4 @@
-<span class="Comment"># Doesn't work on Linux. Try it on BSD!</span>
+# Doesn't work on Linux. Try it on BSD!
 $ hexdump -C testdir
 00000000  e9 0c 03 00 0c 00 04 01  2e 00 00 00 d6 3d 02 00  |.............=..|
 00000010  0c 00 04 02 2e 2e 00 00  ea 0c 03 00 10 00 08 05  |................|

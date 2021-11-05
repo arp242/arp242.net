@@ -1,29 +1,29 @@
-<span class="Comment"># The &quot;.NET home&quot;.</span>
+# The &quot;.NET home&quot;.
 % export DOTNET_ROOT=$HOME/dotnet
 % mkdir -p $DOTNET_ROOT
 
-<span class="Comment"># Needs .NET SDK 5 and .NET Core 3.1; binaries from:</span>
-<span class="Comment">#   <a href="https://dotnet.microsoft.com/download/dotnet/5.0">https://dotnet.microsoft.com/download/dotnet/5.0</a></span>
-<span class="Comment">#   <a href="https://dotnet.microsoft.com/download/dotnet/3.1">https://dotnet.microsoft.com/download/dotnet/3.1</a></span>
-<span class="Comment"># Versions may be different; this is just indicative.</span>
+# Needs .NET SDK 5 and .NET Core 3.1; binaries from:
+#   <a href="https://dotnet.microsoft.com/download/dotnet/5.0">https://dotnet.microsoft.com/download/dotnet/5.0</a>
+#   <a href="https://dotnet.microsoft.com/download/dotnet/3.1">https://dotnet.microsoft.com/download/dotnet/3.1</a>
+# Versions may be different; this is just indicative.
 % tar xf dotnet-sdk-5.0.401-linux-x64.tar.gz -C $DOTNET_ROOT
 % tar xf dotnet-sdk-3.1.413-linux-x64.tar.gz -C $DOTNET_ROOT
 
-<span class="Comment"># Add the dotnet path, the binaries we compile later will be in ~/.dotnet/tools</span>
+# Add the dotnet path, the binaries we compile later will be in ~/.dotnet/tools
 % export PATH=$PATH:$HOME/dotnet:$HOME/.dotnet/tools
 
-<span class="Comment"># Just the &quot;source code&quot; tar.gz from the GitHub release:</span>
-<span class="Comment"># <a href="https://github.com/icsharpcode/ILSpy/archive/refs/tags/v7.1.tar.gz">https://github.com/icsharpcode/ILSpy/archive/refs/tags/v7.1.tar.gz</a></span>
+# Just the &quot;source code&quot; tar.gz from the GitHub release:
+# <a href="https://github.com/icsharpcode/ILSpy/archive/refs/tags/v7.1.tar.gz">https://github.com/icsharpcode/ILSpy/archive/refs/tags/v7.1.tar.gz</a>
 % tar xf ILSpy-7.1.tar.gz
 % cd ILSpy-7.1
 % dotnet tool install ilspycmd -g
 
-<span class="Comment"># Now decompile the lot to src.</span>
+# Now decompile the lot to src.
 % cd ~/rimworld
 % mkdir src
 % ilspycmd ./RimWorldLinux_Data/Managed/Assembly-CSharp.dll -p -o src
 
-<span class="Comment"># Hurray!</span>
+# Hurray!
 % ls src
 Assembly-CSharp.csproj       FleckUtility.cs         RimWorld/
 ComplexWorker_Ancient.cs     HistoryEventUtility.cs  Verse/

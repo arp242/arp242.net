@@ -1,4 +1,4 @@
-$ file test.dynamic | tr , '\n'
+% file test.dynamic | tr , '\n'
 test.dynamic: ELF 64-bit LSB executable
  x86-64
  version 1 (SYSV)
@@ -7,7 +7,7 @@ test.dynamic: ELF 64-bit LSB executable
  Go BuildID=LxsDWU_fMQ9Cox6y4bSV/fdMBNuZAmOuPSIKb2RXJ/rcazy_d6AbaoNtes-qID/nRiDtV1fOY2eoEVlyqnu
  not stripped
 
-$ file test.static | tr , '\n'
+% file test.static | tr , '\n'
 test.static:  ELF 64-bit LSB executable
  x86-64
  version 1 (SYSV)

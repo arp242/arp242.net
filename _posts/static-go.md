@@ -5,16 +5,15 @@ tags: ['Go']
 ---
 
 Go creates static binaries by default unless you use cgo to call C code, in
-which case it will create a dynamically linked library. Turns out that using cgo
-is more common than many people assume as the `os/user` and `net` packages use
-cgo, so importing either (directly or indirectly) will result in a dynamic
-binary.
+which case it will create a dynamically linked binary. Using cgo is more common
+than many people assume as the `os/user` and `net` packages use cgo, so
+importing either (directly or indirectly) will result in a dynamic binary.
 
 The easiest way to check if your program is statically compiled is to run `file`
 on it:
 
 {:class="ft-cli"}
-    $ file test.dynamic | tr , '\n'
+    % file test.dynamic | tr , '\n'
     test.dynamic: ELF 64-bit LSB executable
      x86-64
      version 1 (SYSV)
@@ -23,7 +22,7 @@ on it:
      Go BuildID=LxsDWU_fMQ9Cox6y4bSV/fdMBNuZAmOuPSIKb2RXJ/rcazy_d6AbaoNtes-qID/nRiDtV1fOY2eoEVlyqnu
      not stripped
 
-    $ file test.static | tr , '\n'
+    % file test.static | tr , '\n'
     test.static:  ELF 64-bit LSB executable
      x86-64
      version 1 (SYSV)
@@ -32,17 +31,17 @@ on it:
      not stripped
 
 Notice the "dynamically linked" and "statically linked". You can also run `ldd`,
-but note this only works if the binary matches your system's architecture:
+but this only works if the binary matches your system's architecture:
 
 {:class="ft-cli"}
-    $ ldd test.dynamic
+    % ldd test.dynamic
     test.dynamic:
             linux-vdso.so.1 (0x00007ffe00302000)
             libpthread.so.0 => /usr/lib/libpthread.so.0 (0x00007f3f86f4a000)
             libc.so.6 => /usr/lib/libc.so.6 (0x00007f3f86d87000)
             /lib/ld-linux-x86-64.so.2 (0x00007f3f86f80000)
 
-    $ ldd test.static
+    % ldd test.static
     test.static:
             not a dynamic executable
 
@@ -50,13 +49,13 @@ You can verify that a binary runs without external dependencies with `chroot`
 (this requires root on most platforms):
 
 {:class="ft-cli"}
-    $ chroot . ./test.static
+    % chroot . ./test.static
     Hello, world!
 
-    $ chroot . ./test.dynamic
+    % chroot . ./test.dynamic
     chroot: failed to run command './test.dynamic': No such file or directory
 
-The "No such file or directory" error is a bit obscure, but it means that the
+The "No such file or directory" error is a bit strange, but it means that the
 dynamic linker (`ld-linux`) isn't found. Unfortunately this is the exact same
 message as when the `test.dynamic` itself isn't found, so make sure you didn't
 typo it. I'm not sure if there's any way to get Linux to emit a more useful
@@ -75,7 +74,7 @@ There are two packages in the standard library that use cgo:
   that it can also get user information from LDAP or NIS. If you don't use that
   – most people don't – then there is no real difference.
 
-  On Windows there is only a Go implementation, and this doesn't apply.
+  On Windows there is only a Go implementation and this doesn't apply.
 
 - `net` can use the C standard library to resolve domain names, but by default
   it uses the Go client. The C library has a few more features (e.g. you can
@@ -83,23 +82,23 @@ There are two packages in the standard library that use cgo:
   a `resolv.conf` (e.g. Android), but for most cases the Go library should work
   well.
 
-Your binary will no longer be statically linked if your program imports one of
-those two packages, either directly through a dependency. Especially the `net`
-one is quite common.
+Your binary will not be statically linked if your program imports one of those
+two packages, either directly through a dependency. Especially the `net` one is
+quite common.
 
 You can use the `osusergo` and `netgo` build tags to skip building the cgo
 parts:
 
 {:class="ft-cli"}
-    $ go build -tags osusergo
-    $ go build -tags netgo
-    $ go build -tags osusergo,netgo
+    % go build -tags osusergo
+    % go build -tags netgo
+    % go build -tags osusergo,netgo
 
 For simple cases where you don't use any other cgo code it's probably easier to
 just disable cgo, since the cgo code is protected with `+build cgo`:
 
 {:class="ft-cli"}
-    $ CGO_ENABLED=0 go build
+    % CGO_ENABLED=0 go build
 
 ---
 
@@ -108,7 +107,7 @@ a cgo package such as SQLite? In those cases you can tell the C linker to
 statically link with `-extldflags`:
 
 {:class="ft-cli"}
-    $ go build -ldflags="-extldflags=-static"
+    % go build -ldflags="-extldflags=-static"
 
 The nested `-`s look a bit confusing and are easy to forget, so be sure to pay
 attention (or maybe that's just me... 🤦‍♂️).[^f]
@@ -120,7 +119,7 @@ attention (or maybe that's just me... 🤦‍♂️).[^f]
 Some packages – such as SQLite – may produce warnings:
 
 {:class="ft-cli"}
-    $ go build -ldflags="-extldflags=-static"
+    % go build -ldflags="-extldflags=-static"
     # test
     /usr/bin/ld: /tmp/go-link-400285317/000010.o: in function `unixDlOpen':
     /[..]/sqlite3-binding.c:39689: warning: Using 'dlopen' in statically linked
@@ -136,7 +135,7 @@ The go-sqlite3 package [provides a build flag to disable this][goext], if you
 want to make the warnings go away and ensure this feature isn't used:
 
 {:class="ft-cli"}
-    $ go build -ldflags="-extldflags=-static" -tags sqlite_omit_load_extension
+    % go build -ldflags="-extldflags=-static" -tags sqlite_omit_load_extension
 
 The `os/user` and `net` packages will give you a similar warnings about the
 `getpwnam_r()` etc. and `getaddrinfo()` functions; which also depend on runtime
@@ -177,12 +176,12 @@ know if you have the commands for other systems and I'll add them as well.[^p]
 
 {:class="ft-cli"}
     # Replace musl with gnu if you want to use GNU libc.
-    $ xbps-install cross-aarch64-linux-musl cross-armv7l-linux-musleabihf
+    % xbps-install cross-aarch64-linux-musl cross-armv7l-linux-musleabihf
 
-    $ GOOS=linux GOARCH=arm64 CGO_ENABLED=1 CC=aarch64-linux-musl-gcc \
+    % GOOS=linux GOARCH=arm64 CGO_ENABLED=1 CC=aarch64-linux-musl-gcc \
         go build -ldflags='-extldflags=-static' -o test.arm64 ./test.go
 
-    $ GOOS=linux GOARCH=arm CGO_ENABLED=1 CC=armv7l-linux-musleabihf-gcc \
+    % GOOS=linux GOARCH=arm CGO_ENABLED=1 CC=armv7l-linux-musleabihf-gcc \
         go build -ldflags='-extldflags=-static' -o test.arm ./test.go
 
 aarch64 and arm64 are the same thing, just with a different name, just as x86_64
@@ -190,10 +189,10 @@ and amd64. To confirm that it works, you can use QEMU; for example with a simple
 programs which runs `select date()` on a :memory: database:
 
 {:class="ft-cli"}
-    $ qemu-aarch64 ./test.arm64
+    % qemu-aarch64 ./test.arm64
     <nil> 2020-04-11
 
-    $ qemu-arm ./test.arm
+    % qemu-arm ./test.arm
     <nil> 2020-04-11
 
 Huzzah!

@@ -25,14 +25,11 @@
 require 'digest'
 require 'fileutils'
 
-Jekyll::Hooks.register :posts, :post_render do |post|
+Jekyll::Hooks.register :documents, :post_render do |post|
   # TODO: get absolute directory to Jekyll? And don't do this for every post.
-  FileUtils.mkdir_p './.vim-hl'
-  # FileUtils.mkdir_p './_drafts/.vim-hl'
-
   dir = '.vim-hl'
-  # dir = '_drafts/.vim-hl' if post.id.starts_with? '/drafts/'
 
+  FileUtils.mkdir_p dir
   default = post.data['filetype']
   post.output.gsub!(/<pre( class="(full )?ft-(\w+)")?><code>(.*?)<\/code><\/pre>/m) do |m|
     full = $2
@@ -43,7 +40,12 @@ Jekyll::Hooks.register :posts, :post_render do |post|
     next m if ft.nil? || ft == ''
     next m if ft == 'NONE'
 
-    cache = "./#{dir}/#{post.id.gsub(/\//, '')}-#{Digest::MD5.hexdigest(ft+code)}"
+    begin
+      name = post.id
+    rescue
+      name = 'pages-' + post.relative_path
+    end
+    cache = "./#{dir}/#{name.gsub(/\//, '')}-#{Digest::MD5.hexdigest(ft+code)}"
     if not File.file?(cache)
       # Don't build anything on Netlify, as it doesn't have Vim.
       next m unless ENV['NETLIFY'].nil?
@@ -61,6 +63,7 @@ Jekyll::Hooks.register :posts, :post_render do |post|
           +'let g:html_no_progress=1' \
           +'set ft=#{ft}' \
           +'runtime syntax/2html.vim' \
+          +'let rtp += ".vim"' \
           +'g/^<pre id=/1,.d' \
           +'g/^<\\/pre>/.,$d' \
           +wqa /tmp/vim-hl`

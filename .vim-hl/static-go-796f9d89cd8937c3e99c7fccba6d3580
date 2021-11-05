@@ -1,0 +1,8 @@
+# Replace musl with gnu if you want to use GNU libc.
+% xbps-install cross-aarch64-linux-musl cross-armv7l-linux-musleabihf
+
+% GOOS=linux GOARCH=arm64 CGO_ENABLED=1 CC=aarch64-linux-musl-gcc \
+    go build -ldflags='-extldflags=-static' -o test.arm64 ./test.go
+
+% GOOS=linux GOARCH=arm CGO_ENABLED=1 CC=armv7l-linux-musleabihf-gcc \
+    go build -ldflags='-extldflags=-static' -o test.arm ./test.go

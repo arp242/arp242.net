@@ -1,5 +1,5 @@
-$ chroot . ./test.static
+% chroot . ./test.static
 Hello, world!
 
-$ chroot . ./test.dynamic
+% chroot . ./test.dynamic
 chroot: failed to run command './test.dynamic': No such file or directory

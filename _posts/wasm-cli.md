@@ -1,5 +1,5 @@
 ---
-title: "Running Go CLI programs in the browser"
+title: "Running Go CLI programs in the browser with WASM"
 date: 2020-02-05
 tags: ['Go']
 ---

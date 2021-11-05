@@ -1,5 +1,5 @@
-$ go build -ldflags=&quot;-extldflags=-static&quot;
-<span class="Comment"># test</span>
+% go build -ldflags=&quot;-extldflags=-static&quot;
+# test
 /usr/bin/ld: /tmp/go-link-400285317/000010.o: in function `unixDlOpen':
 /[..]/sqlite3-binding.c:39689: warning: Using 'dlopen' in statically linked
 applications requires at runtime the shared libraries from the glibc version used

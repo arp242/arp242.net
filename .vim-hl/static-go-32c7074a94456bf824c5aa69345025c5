@@ -1,3 +1,0 @@
-$ go build -tags osusergo
-$ go build -tags netgo
-$ go build -tags osusergo,netgo

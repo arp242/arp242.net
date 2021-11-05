@@ -1,5 +1,0 @@
-$ qemu-aarch64 ./test.arm64
-&lt;nil&gt; 2020-04-11
-
-$ qemu-arm ./test.arm
-&lt;nil&gt; 2020-04-11
