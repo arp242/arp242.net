@@ -204,7 +204,7 @@ Another famous quoting trap is `$@` vs. `"$@"` vs. `$*` vs. `"$*"`:
 
 <!-- -->
 
-    bash% bash args
+    bash% bash args hello world 'test space' '*'
     unquoted @:
       => hello
       => world
