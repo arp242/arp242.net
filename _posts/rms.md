@@ -257,7 +257,7 @@ This is already commonplace in practice, with many women choosing to do so.
 Labelling an entire person as ableist based *only* on this – and this is really
 the only citation of ableism I've been able to find – seems like a stretch, at
 best. It was a shitty comment, but he *did* correct it which is saying a lot in
-Stallman ters, as I haven't seen him do that very often.
+Stallman terms, as I haven't seen him do that very often.
 
 ---
 
