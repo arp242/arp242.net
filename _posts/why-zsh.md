@@ -3,6 +3,9 @@ title: "s/bash/zsh/g"
 date: 2021-10-20
 tags: ['zsh', 'Unix']
 filetype: cliprompt
+hatnote: |
+    Discussions:
+      [Hacker News](https://news.ycombinator.com/item?id=28927966)
 ---
 
 You would expect this to work, no?

@@ -8,7 +8,7 @@ layout: default
 		<div class="page">
 			<header id="header">
 				<h1>{{ page.title }}</h1>
-				<p>Written on {{ page.date | date_to_string }}
+				<p>Written on {{ page.date | date_to_string -}}
 				{%- if page.updated %} − last updated on {{ page.updated | date_to_string }}
 				<sup><a href="https://github.com/arp242/arp242.net/commits/master/{{ page.path }}">history</a></sup>{% endif %}</p>
 			</header>

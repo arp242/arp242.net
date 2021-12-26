@@ -22,7 +22,8 @@ include: ['_redirects', '.well-known']
 exclude: [
   'Gemfile',
   'Gemfile.lock',
-  'README.markdown',
+  'README.md',
+  'css',
   'the-art-of-unix-programming/base.css',
   'the-art-of-unix-programming/base.js',
   'the-art-of-unix-programming/hello-css.min.css',

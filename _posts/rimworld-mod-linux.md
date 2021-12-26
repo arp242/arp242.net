@@ -603,6 +603,13 @@ installation. It does have `xbuild`, but that gives a deprecated warning
 pointing towards msbuild. Maybe it works as well, but I didn't try it. Luckily
 `msbuild` does seem commonly packaged, so I just installed it from there.
 
+{% warning %}
+At the time of writing Arch Linux and derivates ship with a broken msbuild due
+to a version of `System.Reflection.Metadata.dll` that is too old. See [this
+issue](https://github.com/arp242/RimWorld-RainingBlood/issues/1#issuecomment-1001152651)
+for a workaround.
+{% endwarning %}
+
 [msbuild]: https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2019
 
 I put the solution files in the project root; other people prefer to put it in
