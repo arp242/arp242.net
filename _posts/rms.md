@@ -11,13 +11,13 @@ day-to-day operations, but I'm not sure if that's really important.
 How anyone could have thought this was a good idea is beyond me. I've long
 considered Stallman to be a poor representative of the community, and quite
 frankly it baffles me that people do. I'm not sure what the politics were that
-lead up to this decision; I had hoped that after Stallman's departure the FSF
+led up to this decision; I had hoped that after Stallman's departure the FSF
 would move forward and shed off some of the Stallmanisms. It seems this hasn't
 happened.
 
 To quickly recap why Stallman is a poor representative:
 
-- Actively turned many people off because he's such a twat; on of the better
+- Actively turned many people off because he's such a twat; one of the better
   [examples I know of is from Keith Packard][x], explaining why X didn't use the
   GPL in spite of Packard already having used it for some of his projects
   before:
@@ -30,7 +30,7 @@ To quickly recap why Stallman is a poor representative:
   > the GPL.
   >
   > This did not make a positive impression on me; this was my first
-  > interactions with Richard directly and I remember thinking at the time,
+  > interaction with Richard directly and I remember thinking at the time,
   > "this guy is a little, you know, I'm not interesting in talking to him
   > because he's so challenging to work with."
   >
@@ -114,17 +114,17 @@ To quickly recap why Stallman is a poor representative:
 
   How do you get people to use Free Software? *By making great software people
   want to use*. Not by offering some shitty crippled product where you can't do
-  some common things *you can already do in the propetariy alternatives*.
+  some common things *you can already do in the proprietary alternatives*.
 
   [ast]: https://lists.gnu.org/archive/html/emacs-devel/2015-01/msg00015.html
   [ast2]: https://lists.gnu.org/archive/html/emacs-devel/2015-01/msg00213.html
 
 ---
 
-Luckily, the backlash against this has been significant, including an [An open
+Luckily, the backlash against this has been significant, including [an open
 letter to remove Richard M. Stallman from all leadership positions][l]. Good.
 There are many things in the letter I can agree with. If there are parliamentary
-hearings surrounding some Free Software law then you would you want Stallman to
+hearings surrounding some Free Software law then would you want Stallman to
 represent you? Would you want Stallman to be left alone in a room with some
 female lawmaker (especially an attractive one)? I sure wouldn't; I'd be fearful
 he'd leave a poor impression, or outright disgrace the entire community.
