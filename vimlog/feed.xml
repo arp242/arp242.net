@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>VimLog</title>
+  <link>https://www.arp242.net/vimlog</link>
+  <description> A ChangeLog for Vim </description>
+  <item><title>Add &quot;fuzzy&quot; to &#x27;wildoptions&#x27; [8.2.4463]</title><link>https://www.arp242.net/vimlog</link><description>&quot;Fuzzy&quot; completion for commandline.</description></item>
+<item><title>|DirChangedPre| event [8.2.4335]</title><link>https://www.arp242.net/vimlog</link><description>Triggered before changing directory.</description></item>
+<item><title>Add %e and %k in &#x27;errorformat&#x27; [8.2.4329]</title><link>https://www.arp242.net/vimlog</link><description>End line and column.</description></item>
+<item><title>Add &quot;pum:&quot; to &#x27;wildmenu&#x27; [8.2.4325]</title><link>https://www.arp242.net/vimlog</link><description>Show popup menu for commandline completion.</description></item>
+<item><title>Add &quot;timeout&quot; to &#x27;spellsuggest&#x27; [8.2.4249]</title><link>https://www.arp242.net/vimlog</link><description>Limit time searching for spell suggestions; previously always 5000ms.</description></item>
+<item><title>P in visual mode [8.2.4242]</title><link>https://www.arp242.net/vimlog</link><description>&quot;Put&quot; (paste) text in visual mode without yanking the deleted text to
+        the unnamed register.</description></item>
+<item><title>win_move_separator(), win_move_statusline() [8.2.4052]</title><link>https://www.arp242.net/vimlog</link><description>Move and resize windows.</description></item>
+<item><title>builtin.txt [8.2.3917]</title><link>https://www.arp242.net/vimlog</link><description>Split eval.txt in to builtin.txt</description></item>
+<item><title>Remove &quot;in development&quot; from Vim9 [8.2.3906]</title><link>https://www.arp242.net/vimlog</link><description>The &quot;THIS IS STILL UNDER DEVELOPMENT - ANYTHING CAN BREAK - ANYTHING
+        CAN CHANGE&quot; warning from Vim9 documentation is removed, marking it as
+        stable.</description></item>
+<item><title>Allow script-local functions in *expr options [8.2.3900]</title><link>https://www.arp242.net/vimlog</link><description>Can now use e.g. set diffexpr=s:MyDiffExpr().</description></item>
+<item><title>Add :argdedeupe [8.2.3888]</title><link>https://www.arp242.net/vimlog</link><description>Remove duplicate entries from the argument list.</description></item>
+<item><title>reduce(), filter(), and map() work on strings [8.2.3818, 8.2.3848]</title><link>https://www.arp242.net/vimlog</link><description></description></item>
+<item><title>Assign lambda to options that take a function [8.2.3619, 8.2.3665, 8.2.3712, 8.2.3725, 8.2.3735, 8.2.3751]</title><link>https://www.arp242.net/vimlog</link><description>The &#x27;operatorfunc&#x27;, &#x27;tagfunc&#x27;, &#x27;completefunc&#x27;, &#x27;omnifunc&#x27;, and &#x27;imactivatefunc&#x27; can now accept a lambda.</description></item>
+<item><title>Add hl-CursorLineSign, hl-CursorLineFold [8.2.3664]</title><link>https://www.arp242.net/vimlog</link><description>Adjust sign highlighting for &#x27;cursorline&#x27;.</description></item>
+<item><title>Add  hlget(), hlset() [8.2.3578, 8.2.3605]</title><link>https://www.arp242.net/vimlog</link><description>Manipulate highlights programmatically.</description></item>
+<item><title>Add |WinClosed| event [8.2.3591]</title><link>https://www.arp242.net/vimlog</link><description>Triggered when closing a window.</description></item>
+<item><title>Add |v:colornames| [8.2.3562]</title><link>https://www.arp242.net/vimlog</link><description>Map colour names to hex codes.</description></item>
+<item><title>Add &#x27;guiligatures&#x27; [8.2.3524]</title><link>https://www.arp242.net/vimlog</link><description>Support using ligatures in the GTK GUI.</description></item>
+<item><title>Add &#x27;thesaurusfunc&#x27; [8.2.3520]</title><link>https://www.arp242.net/vimlog</link><description>Function to use for thesaurus completion.</description></item>
+<item><title>|ModeChanged| event [8.2.3430]</title><link>https://www.arp242.net/vimlog</link><description>Triggered when the mode changes.</description></item>
+<item><title>Add multispace to &#x27;listchars&#x27; [8.2.3424]</title><link>https://www.arp242.net/vimlog</link><description>Show two or more spaces no matter where they appear.</description></item>
+<item><title>Add digraph_get(), digraph_getlist(), digraph_set(), digraph_setlist() [8.2.3184, 8.2.3226]</title><link>https://www.arp242.net/vimlog</link><description>List and define digraphs from functions.</description></item>
+<item><title>Add list to &#x27;breakindentopt&#x27; [8.2.3160, 8.2.3198]</title><link>https://www.arp242.net/vimlog</link><description>Add additional indent for lines that match a numbered or bulleted
+            list (using the &#x27;formatlistpat&#x27; setting).</description></item>
+<item><title>Add \%.l, \%&lt;.l, and \%&gt;.l patterns [8.2.3110]</title><link>https://www.arp242.net/vimlog</link><description>Match the line the cursor is currently on; see |/\%l|.</description></item>
+<item><title>Add &#x27;cryptmethod&#x27;=xchaha20 [8.2.3022]</title><link>https://www.arp242.net/vimlog</link><description>More secure encryption from libsodium.</description></item>
+<item><title>Add |zp|, |zP|, |zy| [8.2.2914, 8.2.2971]</title><link>https://www.arp242.net/vimlog</link><description>|zp| pastes in block mode without adding trailing whitespace, |zy| yanks
+            without trailing whitespace.</description></item>
+<item><title>Add %{ to &#x27;statusline&#x27; [8.2.2854]</title><link>https://www.arp242.net/vimlog</link><description>%{expr} reëvaluates the expression as a &#x27;statusline&#x27; formatting string.</description></item>
+<item><title>Add f flag in :vimgrep [8.2.2813]</title><link>https://www.arp242.net/vimlog</link><description>&quot;Fuzzy&quot; match :vimgrep results.</description></item>
+<item><title>Add &#x27;autoshelldir&#x27; [8.2.2675]</title><link>https://www.arp242.net/vimlog</link><description>Automatically change directory in Vim from terminal window.</description></item>
+<item><title>Add strcharlen() [8.2.2606]</title><link>https://www.arp242.net/vimlog</link><description>Get length of string counting combining characters separately.</description></item>
+<item><title>Loop over a string [8.2.2658]</title><link>https://www.arp242.net/vimlog</link><description>Loop over a string as `for char in &quot;str&quot;`; loops are by codepoint
+        with any combining characters.</description></item>
+<item><title>Expand &#x27;fillchars&#x27; [8.2.2508, 8.2.2518, 8.2.2518, 8.2.2542, 8.2.2569]</title><link>https://www.arp242.net/vimlog</link><description>New values: &quot;eob&quot; to change change the (~) to indicate non-existing
+            lines, &quot;foldopen&quot;, &quot;foldclose&quot;, and &quot;foldsep&quot; to change &#x27;foldcolumn&#x27;
+            markers.
+
+            &#x27;fillchars&#x27; can be set per-window (previously it was always global).
+
+            Also allow multibyte characters in &#x27;fillchars&#x27; and &#x27;statusline&#x27;.
+        </description></item>
+<item><title>Add followwrap to &#x27;diffopt&#x27; [8.2.2490]</title><link>https://www.arp242.net/vimlog</link><description>Don&#x27;t reset &#x27;wrap&#x27; for diff windows.</description></item>
+<item><title>Add fullcommand() [8.2.2468]</title><link>https://www.arp242.net/vimlog</link><description>Get the full command name from abbreviated ones (e.g. :s → :substitute)</description></item>
+<item><title>lead: in &#x27;listchars&#x27; [8.2.2454]</title><link>https://www.arp242.net/vimlog</link><description>Highlight leading spaces when &#x27;list&#x27; is set.</description></item>
+<item><title>Detect focus events in terminal [8.2.2345, 8.2.2348, 8.2.2352, 8.2.2383, 8.2.2428]</title><link>https://www.arp242.net/vimlog</link><description>The |FocusGained| and |FocusLost| autocmds can work inside a terminal. See |xterm-focus-event|.</description></item>
+<item><title>:sleep! [8.2.2366]</title><link>https://www.arp242.net/vimlog</link><description>Sleep and hide cursor.</description></item>
+<item><title>Add charcol(), getcharpos(), setcharpos(), getcursorcharpos(), setcursorcharpos() [8.2.2324]</title><link>https://www.arp242.net/vimlog</link><description>Multibyte-aware versions of col(), getpos(), setpos(), getcurpos(), cursor().</description></item>
+<item><title>Add charidx() [8.2.2233]</title><link>https://www.arp242.net/vimlog</link><description>Convert byte index to character index.</description></item>
+<item><title>Add |VimSuspend| and |VimResume| [8.2.2128]</title><link>https://www.arp242.net/vimlog</link><description>Triggered on suspend/resume; only for &amp;lt;C-z&amp;gt; and not SIGSTP/SIGCONT signals.</description></item>
+<item><title>Add &amp;lt;Cmd&amp;gt; [8.2.1978]</title><link>https://www.arp242.net/vimlog</link><description>Don&#x27;t change modes in this key mapping so that insert or visual mode
+        mappings will always work without having to use &amp;lt;C-u&amp;gt; or &amp;lt;C-o&amp;gt;.
+        For example noremap &amp;lt;C-q&amp;gt; &amp;lt;Cmd&amp;gt;:normal! K&amp;lt;CR&amp;gt;</description></item>
+<item><title>:sort and sort() can do locale-aware sorting [8.2.1933]</title><link>https://www.arp242.net/vimlog</link><description>:sort l or sort(..., &#x27;l&#x27;).</description></item>
+<item><title>matchfuzzy(), matchfuzzypos() [8.2.1665, 8.2.1726, 8.2.1893, 8.2.1921]</title><link>https://www.arp242.net/vimlog</link><description>&quot;Fuzzy&quot; matching.</description></item>
+<item><title>Add |InsertLeavePre| [8.2.1874]</title><link>https://www.arp242.net/vimlog</link><description>Triggered before leaving insert mode.</description></item>
+<item><title>|??| operator [8.2.1794]</title><link>https://www.arp242.net/vimlog</link><description>echo value ?? &#x27;used if value is empty&#x27;</description></item>
+<item><title>Add gettext() [8.2.1544]</title><link>https://www.arp242.net/vimlog</link><description>Can be used to translate plugins.</description></item>
+<item><title>Add setcellwidths(), charclass() [8.2.1535, 8.2.1536]</title><link>https://www.arp242.net/vimlog</link><description>Allow overriding the display width for characters whose width is ambiguous.</description></item>
+<item><title>Add g&amp;lt;Tab&amp;gt;; support :tabnext #, :tabclose #, etc. [8.2.1401, 8.2.1413]</title><link>https://www.arp242.net/vimlog</link><description>g&amp;lt;Tab&amp;gt; goes back to the last accessed tab, and # in
+        :tab* commands refer to the last accessed tab.</description></item>
+<item><title>expand(&#x27;&amp;lt;SID&amp;gt;&#x27;) [8.2.1347]</title><link>https://www.arp242.net/vimlog</link><description>Useful for the *func and *expr settings, e.g.
+        let &amp;includexpr = expand(&#x27;&amp;lt;SID&amp;gt;&#x27;) .. &#x27;fun()&#x27; to use s:fun()</description></item>
+<item><title>Add &#x27;quickfixtextfunc&#x27; [8.2.0869, 8.2.0933, 8.2.0959, 8.2.1255]</title><link>https://www.arp242.net/vimlog</link><description>Customize text contents of quickfix window; can also be passed as an argument to to setqflist()</description></item>
+<item><title>Add sorting to readir(), readirex() [8.2.0988]</title><link>https://www.arp242.net/vimlog</link><description>Add optional argument to readdir() and readdirex() to control sorting.</description></item>
+<item><title>Add terminalprops() [8.2.0970]</title><link>https://www.arp242.net/vimlog</link><description>List which features are supported in this terminal.</description></item>
+<item><title>Add &#x27;spelloptions&#x27; [8.2.0953]</title><link>https://www.arp242.net/vimlog</link><description>Only accepted value is camel to spell check CamelCase words.</description></item>
+<item><title>Add |SigUSR1| autocmd [8.2.0952]</title><link>https://www.arp242.net/vimlog</link><description>Event to detect SIG_USR1.</description></item>
+<item><title>Add flatten() [8.2.0935]</title><link>https://www.arp242.net/vimlog</link><description>Flatten a list</description></item>
+<item><title>Add getreginfo() [8.2.0924]</title><link>https://www.arp242.net/vimlog</link><description>Returns detailed information for a register information; can be restored by passing to setreg().</description></item>
+<item><title>Add searchcount() [8.2.0877]</title><link>https://www.arp242.net/vimlog</link><description>Get details about current search.</description></item>
+<item><title>Allow setting underline colour in terminal [8.2.0863]</title><link>https://www.arp242.net/vimlog</link><description>Can use ctermul in :highlight to set the underline
+        colour, or guisp if &#x27;termguicolors&#x27; is enabled.</description></item>
+<item><title>Add reduce() [8.2.0878]</title><link>https://www.arp242.net/vimlog</link><description>Reduce list to single value.</description></item>
+<item><title>Add readirex() [8.2.0875]</title><link>https://www.arp242.net/vimlog</link><description>Like readdir(), but return a dict with attributes (i.e. stat() on Unix).</description></item>
+<item><title>Add getmarklist() [8.2.0861]</title><link>https://www.arp242.net/vimlog</link><description>Get list of marks, similar to :marks</description></item>
+<item><title>Add unsigned to &#x27;nrformats&#x27; [8.2.0860]</title><link>https://www.arp242.net/vimlog</link><description>Ignore - before numbers and always treat them as unsigned
+        for &amp;lt;C-a&amp;gt; and &amp;lt;C-x&amp;gt; so that using it on e.g. 1985-06-18 works as expected.</description></item>
+<item><title>Add mapset() [8.2.0807, 8.2.0812, 8.2.0815]</title><link>https://www.arp242.net/vimlog</link><description>Set mappings from a script, and can restore mappings.</description></item>
+<item><title>Call Vim functions from Lua [8.2.0775]</title><link>https://www.arp242.net/vimlog</link><description>Call Vim functions from Lua with vim.call(&#x27;fun_name&#x27;, &#x27;arg&#x27;) and vim.fn.fun_name(&#x27;arg&#x27;).</description></item>
+<item><title>IPv6 support in channels [8.2.0557, 8.2.0574]</title><link>https://www.arp242.net/vimlog</link><description>IPv6 support in channels</description></item>
+<item><title>Add echoraw() [8.2.0258]</title><link>https://www.arp242.net/vimlog</link><description>Output string to terminal with no processing; can be used to send escape codes.</description></item>
+<item><title>Add optional error code to :cquit [8.2.0095]</title><link>https://www.arp242.net/vimlog</link><description>Exit with a specific code, instead of always 1. |v:exiting| was added in 8.2.2070 (Nov 2020)</description></item>
+<item><title>rand() and srand() [8.1.2342, 8.1.2343]</title><link>https://www.arp242.net/vimlog</link><description>Generate random numbers.</description></item>
+<item><title>interrupt() [8.1.2341]</title><link>https://www.arp242.net/vimlog</link><description>Abort a running script.</description></item>
+<item><title>strptime() [8.1.2326]</title><link>https://www.arp242.net/vimlog</link><description>Parse a time string</description></item>
+<item><title>:terminal ++shell [8.1.2251, 8.1.2255]</title><link>https://www.arp242.net/vimlog</link><description>Run :terminal commands in the shell.</description></item>
+<item><title>v:argv [8.1.2233]</title><link>https://www.arp242.net/vimlog</link><description>Get commandline arguments Vim was invoked with.</description></item>
+<item><title>Add |gM| [8.1.2231]</title><link>https://www.arp242.net/vimlog</link><description>Move to middle of line.</description></item>
+<item><title>|hl-LineNrAbove|, |hl-LineNrBelow| [8.1.2229]</title><link>https://www.arp242.net/vimlog</link><description>Highlight line numbers above and below the cursor when
+        &#x27;relativenumber&#x27; is set.</description></item>
+<item><title>Add &#x27;cursorlineopt&#x27; [8.1.2019]</title><link>https://www.arp242.net/vimlog</link><description>More control on how to display &#x27;cursorline&#x27;.</description></item>
+<item><title>border and align in &#x27;completepopup&#x27; [8.1.1902, 8.1.1904]</title><link>https://www.arp242.net/vimlog</link><description>More option to control completion popup menu.</description></item>
+<item><title>popup in &#x27;completeopt&#x27; [8.1.1880, 8.1.1882]</title><link>https://www.arp242.net/vimlog</link><description>Show extra completion info in popup window (as an alternative to the
+        preview window).</description></item>
+<item><title>:spellrare [8.1.1838]</title><link>https://www.arp242.net/vimlog</link><description>Mark words as rare in the spellfile.</description></item>
+<item><title>-&amp;gt; operator [8.1.1803, 8.1.1809, 8.1.1834, 8.1.1835, 8.1.1996]</title><link>https://www.arp242.net/vimlog</link><description>expr-&amp;gt;fun(args) is a shortcut for fun(expr,
+        args) to improve readability:&lt;br&gt;[1, 2]-&amp;gt;map({_, v -&amp;gt;
+        v + 1}). See |method|.</description></item>
+<item><title>Popup windows [8.1.1364, 8.1.1391, 8.1.1799, 8.1.1905, 8.1.1928]</title><link>https://www.arp242.net/vimlog</link><description>Popup windows are like the completion window, but can be controlled
+        in VimScript to a much greater degree. See |popup|, &#x27;previewpopup&#x27;.
+        This is still an experimental feature.</description></item>
+<item><title>&#x27;completeslash&#x27; [8.1.1769]</title><link>https://www.arp242.net/vimlog</link><description>Override &#x27;shellslash&#x27; for completion.</description></item>
+<item><title>#{} dict notation [8.1.1683, 8.1.1692, 8.1.1705]</title><link>https://www.arp242.net/vimlog</link><description>The #{} notation is the same as the regular
+        {} dict notation, except that the key values don&#x27;t need
+        quoting:&lt;br&gt;#{foo: &quot;bar&quot;}.</description></item>
+<item><title>Sound functions [8.1.1502, 8.1.1565]</title><link>https://www.arp242.net/vimlog</link><description>Ability to play sound; see sound_playevent().</description></item>
+<item><title>|v:option_command|, |v:option_oldlocal|, |v:option_oldglobal| [8.1.1542]</title><link>https://www.arp242.net/vimlog</link><description>Improvements for the |OptionSet| event.</description></item>
+<item><title>:const [8.1.1539]</title><link>https://www.arp242.net/vimlog</link><description>Constants; same as :let v = 1 | :lockvar v</description></item>
+<item><title>win_execute() [8.1.1418]</title><link>https://www.arp242.net/vimlog</link><description>execute() in the context of a specific window.</description></item>
+<item><title>&#x27;wincolor&#x27; [8.1.1391]</title><link>https://www.arp242.net/vimlog</link><description>Highlight group to use instead of |hl-Normal| for this window.</description></item>
+<item><title>|g:actual_curwin|, |g:statusline_winid| [8.1.1372]</title><link>https://www.arp242.net/vimlog</link><description>Temporarily set when running expressions inside the &#x27;statusline&#x27; (%{expr}).</description></item>
+<item><title>|:let=&lt;&lt;| [8.1.1354]</title><link>https://www.arp242.net/vimlog</link><description>Heredoc assignment:&lt;pre&gt;let text =&lt;&lt; trim END
+	text
+END&lt;/pre&gt;</description></item>
+<item><title>Text properties [8.1.0579, 8.1.1340, 8.1.1341]</title><link>https://www.arp242.net/vimlog</link><description>Assign metadata to text in a buffer, as an alternative to Vim&#x27;s syntax highlighting.
+            See |textprop|. This is still an experimental feature.</description></item>
+<item><title>listener_add() [8.1.1320, 8.1.1321, 8.1.1332]</title><link>https://www.arp242.net/vimlog</link><description>Add a callback that will be invoked when changed have been made to a buffer.</description></item>
+<item><title>Default values for function arguments [8.1.1310]</title><link>https://www.arp242.net/vimlog</link><description>e.g. function Fun(value=10). See |optional-function-argument|.</description></item>
+<item><title>:xrestore [8.1.1307]</title><link>https://www.arp242.net/vimlog</link><description>Reconnect to X server after restart.</description></item>
+<item><title>environ(), getenv(), and setenv() [8.1.1305]</title><link>https://www.arp242.net/vimlog</link><description>Deal with environment variables.</description></item>
+<item><title>chdir() [8.1.1291]</title><link>https://www.arp242.net/vimlog</link><description>Change directory with scope and ability to restore.</description></item>
+<item><title>:cbefore, :cafter [8.1.1275]</title><link>https://www.arp242.net/vimlog</link><description>Navigate to errors before/after the cursor.</description></item>
+<item><title>Show match position when searching [8.1.1270]</title><link>https://www.arp242.net/vimlog</link><description>Show &quot;3/44&quot; when using |n| and &quot;S&quot; is not in &#x27;shortmess&#x27;.</description></item>
+<item><title>:cabove, :cbelow, :labove, :lbelow [8.1.1256]</title><link>https://www.arp242.net/vimlog</link><description>Navigate through errors relative to the cursor.</description></item>
+<item><title>Control font weight on Windows&#x27; [8.1.1224]</title><link>https://www.arp242.net/vimlog</link><description>Use &quot;W&quot; in &#x27;guifont&#x27; to control font weight on Windows. See |gui-font|. </description></item>
+<item><title>Tab-local directory [8.1.1218]</title><link>https://www.arp242.net/vimlog</link><description> See :tcd. Similar to the window-local directory with :lcd. </description></item>
+<item><title>v: prefix is required [8.1.1188]</title><link>https://www.arp242.net/vimlog</link><description>Previously e.g. count would also work. The
+        v: prefix is mandatory when :scriptversion is 3 or
+        higher.</description></item>
+<item><title>Add more arguments to winnr() [8.1.1140]</title><link>https://www.arp242.net/vimlog</link><description>To find out what neighbors a window has.</description></item>
+<item><title>|CompleteChanged| event [8.1.1138]</title><link>https://www.arp242.net/vimlog</link><description>After each time the Insert mode completion menu changed.</description></item>
+<item><title>str2list() and list2str() [8.1.1122]</title><link>https://www.arp242.net/vimlog</link><description>Convert a string to a list of byte, or the reverse.</description></item>
+<item><title>readdir() [8.1.1120]</title><link>https://www.arp242.net/vimlog</link><description>Get contents of a directory.</description></item>
+<item><title>:scriptversion [8.1.1116]</title><link>https://www.arp242.net/vimlog</link><description>Specify VimScript compatibility level.</description></item>
+<item><title>.. operator [8.1.1114]</title><link>https://www.arp242.net/vimlog</link><description>String concatenation operator, as . is ambiguous.
+        &#x27;a&#x27; .. &#x27;b&#x27; and &#x27;a&#x27; . &#x27;b&#x27; are identical.
+        Also adds ..=.</description></item>
+<item><title>++once argument for :autocmd [8.1.1113]</title><link>https://www.arp242.net/vimlog</link><description>Run an autocommand just once, e.g. au CursorMoved * ++once :echom &#x27;ONCE&#x27;.</description></item>
+<item><title>Add window ID argument to matchdelete(), clearmatches(), getmatches(), setmatches() [8.1.1084]</title><link>https://www.arp242.net/vimlog</link><description> </description></item>
+<item><title>complete_info() [8.1.1068]</title><link>https://www.arp242.net/vimlog</link><description>Get information about current completion.</description></item>
+<item><title>rubyeval()  [8.1.1056]</title><link>https://www.arp242.net/vimlog</link><description>Evaluate a Ruby expression.</description></item>
+<item><title>|CTRL-W_gt|, |CTRL-W_gT| [8.1.0972]</title><link>https://www.arp242.net/vimlog</link><description>Switch tabs, like |gt| and |gT|. Mainly useful to switch from terminal window.</description></item>
+<item><title>*=, /=, %=  [8.1.0902]</title><link>https://www.arp242.net/vimlog</link><description>e.g. let var *= 2</description></item>
+<item><title>a: variables are immutable [8.1.0888, 8.1.0897]</title><link>https://www.arp242.net/vimlog</link><description>Previously it was possible to change a: variables in some cases.</description></item>
+<item><title>|[:ident:]|, |[:keyword:]|, |[:fname:]| [8.1.0862]</title><link>https://www.arp242.net/vimlog</link><description></description></item>
+<item><title>Allow for a third character for &quot;tab:&quot; in &#x27;listchars&#x27; [8.1.0759]</title><link>https://www.arp242.net/vimlog</link><description>Third character is set as the last one for a tab, e.g. set listchars=tab:(_) shows a tab as (______).</description></item>
+<item><title>Blob type [8.1.0735, 8.1.0756, 8.1.0757]</title><link>https://www.arp242.net/vimlog</link><description>A blob stores binary data. Blob literals start with 0z, e.g. 0zDEADBEEF. See |blob|.</description></item>
+<item><title>&quot;p&quot; flag in &#x27;formatoptions&#x27; [8.1.0728]</title><link>https://www.arp242.net/vimlog</link><description>Don&#x27;t break lines at single spaces that follow periods.</description></item>
+<item><title>:redrawtabline [8.1.0706]</title><link>https://www.arp242.net/vimlog</link><description>Redraw tabline after changing &#x27;tabline&#x27; (mainly useful for plugins).</description></item>
+<item><title>sign_place(), sign_unplace(), etc [8.1.0614, 8.1.0658]</title><link>https://www.arp242.net/vimlog</link><description>Functions for defining and placing signs.</description></item>
+<item><title>Allow functions and commands to redefine themselves [8.1.0515, 8.1.0573]</title><link>https://www.arp242.net/vimlog</link><description>Previously a ! always had to be added to function
+        to overwrite a function with the same name. Now Vim is smarter and
+        allows a function to overwrite itself. This means that using
+        function! in your vimrc or plugin&#x27;s autoload is almost
+        never required any more.
+    </description></item>
+<item><title>:filter support for more commands [8.0.1651, 8.1.0165, 8.1.0495]</title><link>https://www.arp242.net/vimlog</link><description> </description></item>
+<item><title>:tlmenu [8.1.0487]</title><link>https://www.arp242.net/vimlog</link><description>Popup menu for terminal.</description></item>
+<item><title>Include the xdiff library [8.1.0360, 8.1.0393]</title><link>https://www.arp242.net/vimlog</link><description>Include diff library instead of relying on external tools to improve
+        diff quality. Many new &#x27;diffopt&#x27; settings (e.g. set
+        diffopt+=internal,algorithm:patience would be a good setting for
+        many).</description></item>
+<item><title> &quot;\  [8.1.0369]</title><link>https://www.arp242.net/vimlog</link><description>Comments in line continuations; see |line-continuation-comment|: &lt;pre&gt;
+au FileType git
+            &quot;\ Go to commit.
+            \  nnoremap &amp;lt;Leader&amp;gt;g :exe printf(&quot;:!cd ~/src/vim &amp;&amp; git diff %s^\!&quot;, split(getline(&quot;.&quot;), &#x27; &#x27;)[1])&amp;lt;CR&amp;gt;
+            &quot;\ Delete commit.
+            \| nnoremap &amp;lt;Leader&amp;gt;d :call search(&#x27;^commit &#x27;, &#x27;bc&#x27;) \| :exe &#x27;d&#x27; . (search(&#x27;^commit &#x27;, &#x27;n&#x27;) - line(&quot;.&quot;))&amp;lt;CR&amp;gt;
+&lt;/pre&gt;
+            </description></item>
+<item><title>|cfilter-plugin| [8.1.0311]</title><link>https://www.arp242.net/vimlog</link><description>Filter quickfix/location list</description></item>
+<item><title>&#x27;vartabstop&#x27;, &#x27;varsofttabstop&#x27; [8.1.0105]</title><link>https://www.arp242.net/vimlog</link><description>Variable tabstop widths, e.g. set vartabstop=4,8 makes
+            the first tab 4 spaces, and the rest 8.</description></item>
+<item><title>|OptionSet| autocmd [8.1.0081, 8.1.0414]</title><link>https://www.arp242.net/vimlog</link><description>Triggered whenever an option is set.</description></item>
+<item><title>prompt buffer [8.1.0027, 8.1.0035]</title><link>https://www.arp242.net/vimlog</link><description>Mainly useful to feed user input to a job.</description></item>
+<item><title>Allow :unlet $ENV [8.0.1832]</title><link>https://www.arp242.net/vimlog</link><description>Previously there was no way to truly unset an environment variable
+            (just set it to an empty string).</description></item>
+<item><title>CTRL-R CTRL-L [8.0.1787]</title><link>https://www.arp242.net/vimlog</link><description>Insert line from buffer in commandline</description></item>
+<item><title>job_info() without argument lists all jobs [8.0.1742]</title><link>https://www.arp242.net/vimlog</link><description></description></item>
+<item><title>mkdir(&#x27;p&#x27;) won&#x27;t fail fail if the directory already exists [8.0.1708]</title><link>https://www.arp242.net/vimlog</link><description> </description></item>
+<item><title>Add the terminal API. [8.0.1641]</title><link>https://www.arp242.net/vimlog</link><description>See |terminal-api|.</description></item>
+<item><title>trim() [8.0.1630]</title><link>https://www.arp242.net/vimlog</link><description>Clean whitespace; had to use substitute() before.</description></item>
+<item><title>Add &quot;!&quot; to &#x27;guioptions&#x27; [8.0.1609, 8.0.1616]</title><link>https://www.arp242.net/vimlog</link><description>Use a Vim terminal window for :! shell commands.</description></item>
+<item><title>Menus in terminal [8.0.1558, 8.0.1570]</title><link>https://www.arp242.net/vimlog</link><description>Make :popup and right-click work in terminal.</description></item>
+<item><title>24 bit colors in Windows console [8.0.1531]</title><link>https://www.arp242.net/vimlog</link><description>See &#x27;termguicolors&#x27;.</description></item>
+<item><title>&#x27;pumwidth&#x27; [8.0.1491]</title><link>https://www.arp242.net/vimlog</link><description>Minimum width of completion menu.</description></item>
+<item><title>|DirChanged| event [8.0.1459]</title><link>https://www.arp242.net/vimlog</link><description>When directory changed (with :cd, :lcd, etc.)</description></item>
+<item><title>|CmdlineChanged| event [8.0.1445]</title><link>https://www.arp242.net/vimlog</link><description>After a change was made to the text in the command line.</description></item>
+<item><title>|TextYankPost| event [8.0.1394]</title><link>https://www.arp242.net/vimlog</link><description>After yanking or deleting text.</description></item>
+<item><title>win_screenpos(). [8.0.1364]</title><link>https://www.arp242.net/vimlog</link><description>Get winow position.</description></item>
+<item><title>|CmdlineEnter|, |CmdlineLeave| [8.0.1206]</title><link>https://www.arp242.net/vimlog</link><description>When entering and leaving the commandline.</description></item>
+<item><title>:terminal  [8.0.0693, 8.0.0730, 8.0.0744, 8.0.0804, 8.0.0929, 8.0.1108]</title><link>https://www.arp242.net/vimlog</link><description>Terminal buffer.</description></item>
+<item><title>|--clean|, &#x27;viminfofile&#x27; [8.0.0716]</title><link>https://www.arp242.net/vimlog</link><description>Start Vim with the default settings and without plugins.</description></item>
+<item><title>E flag in &#x27;cinoptions&#x27; [8.0.0431]</title><link>https://www.arp242.net/vimlog</link><description>Set indent for extern block.</description></item>
+<item><title>&#x27;pyxversion&#x27;, :pythonx [8.0.0251]</title><link>https://www.arp242.net/vimlog</link><description>Make it easier to run Python code in both Python 2 and 3, depending
+        on what is available.</description></item>
+
+</channel>
+
+</rss>
