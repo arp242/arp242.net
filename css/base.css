@@ -6,8 +6,9 @@
 nav   { padding-left: .5em;  max-width: 69rem; margin: .5rem auto; }   /* TOP NAVIGATION */
 nav a { font-weight: bold; }
 
-.side   { width: 15em; margin-left: 1em; margin-right: 1em; flex-shrink: 0; } /* SIDEBAR */
-.side p { hyphens: auto; }
+.side             { width: 15em; margin-left: 1em; margin-right: 1em; flex-shrink: 0; } /* SIDEBAR */
+.side p           { hyphens: auto; }
+.side p.no-hyphen { hyphens: none; }
 
 .side figure { position: relative; margin: 0; line-height: 0; }  /* Picture */
 .shadow      { box-shadow: inset 0 0 10px rgba(0,0,0,.1); position: absolute; top: 0; left: 0; right: 0; bottom: 0; }

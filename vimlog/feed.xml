@@ -5,10 +5,21 @@
   <title>VimLog</title>
   <link>https://www.arp242.net/vimlog</link>
   <description> A ChangeLog for Vim </description>
-  <item><title>Add &quot;fuzzy&quot; to &#x27;wildoptions&#x27; [8.2.4463]</title><link>https://www.arp242.net/vimlog</link><description>&quot;Fuzzy&quot; completion for commandline.</description></item>
+  <item><title>Add maplist() [8.2.4820, 8.2.4825]</title><link>https://www.arp242.net/vimlog</link><description>Get list of all mappings.</description></item>
+<item><title>Add |hl-CurSearch| [8.2.4724, 8.2.4805]</title><link>https://www.arp242.net/vimlog</link><description>Highlight the current search match.</description></item>
+<item><title>Allow expressions in heredoc [8.2.4770, 8.2.4804]</title><link>https://www.arp242.net/vimlog</link><description>Allow expressions in heredoc as `=expr` if eval is added:
+            &lt;pre&gt;let lines =&lt;&lt; trim eval END
+    See the file `=$HOME`/.vimrc
+END&lt;/pre&gt;</description></item>
+<item><title>Support LSP in channels [8.2.4648, 8.2.4758, 8.2.4761, 8.2.4780]</title><link>https://www.arp242.net/vimlog</link><description>Support |language-server-protocol| (LSP) in channels.</description></item>
+<item><title>Add |--log| [8.2.4742]</title><link>https://www.arp242.net/vimlog</link><description>Start logging on startup.</description></item>
+<item><title>|WinScrolled| event [8.2.4713]</title><link>https://www.arp242.net/vimlog</link><description>Triggered after scrolling a window contents.</description></item>
+<item><title>Add :profile stop and dump [8.2.4712]</title><link>https://www.arp242.net/vimlog</link><description>Allow stopping profiling and dumping the profile to file (previously this was only on Vim exit).</description></item>
+<item><title>Open channel on Unix domain socket [8.2.4684]</title><link>https://www.arp242.net/vimlog</link><description>ch_open(&#x27;unix:/tmp/socket&#x27;)</description></item>
+<item><title>Add &quot;fuzzy&quot; to &#x27;wildoptions&#x27; [8.2.4463, 8.2.4608]</title><link>https://www.arp242.net/vimlog</link><description>&quot;Fuzzy&quot; completion for commandline.</description></item>
 <item><title>|DirChangedPre| event [8.2.4335]</title><link>https://www.arp242.net/vimlog</link><description>Triggered before changing directory.</description></item>
 <item><title>Add %e and %k in &#x27;errorformat&#x27; [8.2.4329]</title><link>https://www.arp242.net/vimlog</link><description>End line and column.</description></item>
-<item><title>Add &quot;pum:&quot; to &#x27;wildmenu&#x27; [8.2.4325]</title><link>https://www.arp242.net/vimlog</link><description>Show popup menu for commandline completion.</description></item>
+<item><title>Add &quot;pum:&quot; to &#x27;wildoptions&#x27; [8.2.4325]</title><link>https://www.arp242.net/vimlog</link><description>Show popup menu for commandline completion.</description></item>
 <item><title>Add &quot;timeout&quot; to &#x27;spellsuggest&#x27; [8.2.4249]</title><link>https://www.arp242.net/vimlog</link><description>Limit time searching for spell suggestions; previously always 5000ms.</description></item>
 <item><title>P in visual mode [8.2.4242]</title><link>https://www.arp242.net/vimlog</link><description>&quot;Put&quot; (paste) text in visual mode without yanking the deleted text to
         the unnamed register.</description></item>
