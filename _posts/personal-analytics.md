@@ -24,7 +24,7 @@ Unix Programming][taoup], or [bestasciitable.com][best]. It's just useful to
 know how popular such projects are before I choose to spend more time on them.
 
 [taoup]: /the-art-of-unix-programming
-[best]: (https://bestasciitable.com
+[best]: https://bestasciitable.com
 
 I considered ‘archiving’ [How to detect automatically generated emails][auto] as
 I thought it wasn't all that interesting after all; I just wrote that after
