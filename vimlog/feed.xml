@@ -5,7 +5,18 @@
   <title>VimLog</title>
   <link>https://www.arp242.net/vimlog</link>
   <description> A ChangeLog for Vim </description>
-  <item><title>Add maplist() [8.2.4820, 8.2.4825]</title><link>https://www.arp242.net/vimlog</link><description>Get list of all mappings.</description></item>
+  <item><title>Add &lt;&lt; and &gt;&gt; operators [8.2.5003, 8.2.5004]</title><link>https://www.arp242.net/vimlog</link><description>Bitwise shift operators.</description></item>
+<item><title>Add autocmd_add(), autocmd_get(), autocmd_delete() [8.2.4981]</title><link>https://www.arp242.net/vimlog</link><description>Functions to manipulate autocmds.</description></item>
+<item><title>Add / in &#x27;formatoptions&#x27; [8.2.4907]</title><link>https://www.arp242.net/vimlog</link><description>Don&#x27;t insert // when using |o| on a line with inline
+        comment (&#x27;cindent&#x27; only).</description></item>
+<item><title>Add getcmdcompltype(), getcmdscreenpos() [8.2.4903]</title><link>https://www.arp242.net/vimlog</link><description>Get type and position of current command-line completion.</description></item>
+<item><title>Add string interpolation [8.2.4883]</title><link>https://www.arp242.net/vimlog</link><description>Allow expressions inside {…} when a string is prefixed with $;
+            e.g.&lt;pre&gt;$&quot;Hello, {$USER} at {strftime(&#x27;%c&#x27;, localtime())}&quot; &lt;/pre&gt;</description></item>
+<item><title>Add column to &#x27;breakindentopt [8.2.4882]</title><link>https://www.arp242.net/vimlog</link><description>Indent soft-wrapped lines at specific column.</description></item>
+<item><title>Restore mappings [8.2.4861]</title><link>https://www.arp242.net/vimlog</link><description>mapset() accepts the dict returned from maparg() or maplist(),
+        making it easy to save and restore mappings.</description></item>
+<item><title>Add isabsolutepath() [8.2.4838]</title><link>https://www.arp242.net/vimlog</link><description>Check if a path is absolute.</description></item>
+<item><title>Add maplist() [8.2.4820, 8.2.4825, 8.2.4932]</title><link>https://www.arp242.net/vimlog</link><description>Get list of all mappings.</description></item>
 <item><title>Add |hl-CurSearch| [8.2.4724, 8.2.4805]</title><link>https://www.arp242.net/vimlog</link><description>Highlight the current search match.</description></item>
 <item><title>Allow expressions in heredoc [8.2.4770, 8.2.4804]</title><link>https://www.arp242.net/vimlog</link><description>Allow expressions in heredoc as `=expr` if eval is added:
             &lt;pre&gt;let lines =&lt;&lt; trim eval END
