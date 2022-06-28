@@ -42,6 +42,7 @@ ul.posts, ul.code         { list-style: none; padding-left: 0; }            /* H
 	.posts li                 { padding-left: 7.3em; text-indent: -7.3em; }
 	#home ul li a:first-child { min-width: auto; }
 }
+a[href^="/draft"] { color: red; }
 
 #home h1, #home h2    { text-align: left; padding: 0; border-bottom: none; }
 #home h1 a            { color: #00f; font-size: 1em; }

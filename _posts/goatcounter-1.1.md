@@ -1,6 +1,7 @@
 ---
 title: "GoatCounter 1.1 release"
 date: 2020-03-18
+archive: true
 tags: ['GoatCounter']
 ---
 

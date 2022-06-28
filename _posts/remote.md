@@ -94,4 +94,6 @@ much *like* the lack of structure, and feel the "eight hours bum-on-seat" model
 is equally problematic). Some other perspectives:
 
 - [Eight Months of Remote Work](https://georgestocker.com/2015/11/17/eight-months-of-remote-work/)
+- [The people who hate working from home](https://www.bbc.com/worklife/article/20220616-the-people-who-hate-working-from-home)
+- [ Junior employees more likely to fail in remote](https://news.ycombinator.com/item?id=31893408)
 - (Probably more, I'll add some when I find them; feel free to email them)

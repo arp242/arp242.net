@@ -1,6 +1,7 @@
 ---
 title: "GoatCounter 1.2: unique visits, events, password auth, and more"
 date: 2020-05-18
+archive: true
 tags: ['GoatCounter']
 ---
 
