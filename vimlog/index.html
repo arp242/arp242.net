@@ -51,7 +51,7 @@
 	</p>
 
 	<p class="center">This doesn't list all changes, just the most useful and notable ones.<br>
-		Changes from Vim 8.0 (September 2016) up to 9.0.0001 (Jun 28 2022) are listed.</p>
+		Changes from Vim 8.0 (September 2016) up to 9.0.0181 (Aug 9 2022) are listed.</p>
 
 	<div class="center ta-center"><strong>Compatibility table</strong></div>
 	<table class="center">
@@ -68,6 +68,10 @@
 	<div class="center ta-center"><small>Debian and Ubuntu are the most common distros with old Vim versions.</small></div>
 
 	<main class="center"><h2>2022</h2>
+<section><div><h3><a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#%27cmdheight%27">'cmdheight'</a> can be set to 0</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/f39cfb72629f3e7fefaf578a3faa2619cd0654f8">9.0.0114</a> <sup>(Jul 30)</sup></p></div><p>When set to 0 it will only show after pressing entering the
+        commandline.</p></section>
+<section><div><h3>Support double, dotted, and dashed underline</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/84f546363068e4ddfe14a8a2a2322bb8d3a25417">9.0.0007</a> <sup>(Jun 29)</sup></p></div><p>Can use <a target="_blank" class="help-tag" href="https://vimhelp.org/syntax.txt.html#underdouble">underdouble</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/syntax.txt.html#underdotted">underdotted</a>, and <a target="_blank" class="help-tag" href="https://vimhelp.org/syntax.txt.html#underdashed">underdashed</a> attributes in
+        <a target="_blank" class="help-tag" href="https://vimhelp.org/syntax.txt.html#%3Ahighlight">:highlight</a>.</p></section>
 <section><div><h3>Add <a target="_blank" class="help-tag" href="https://vimhelp.org/builtin.txt.html#virtcol2col%28%29">virtcol2col()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/5a6ec10cc80ab02eeff644ab19b82312630ea855">8.2.5034</a> <sup>(May 27)</sup></p></div><p>Get byte index from virtual column.</p></section>
 <section><div><h3>Add << and >> operators</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/a061f34191712df7dde7716705fe0ec074e9758e">8.2.5003</a>, <a target="_blank" href="https://github.com/vim/vim/commit/338bf58eba758585ffef3fdfdba7d48477aacb7c">8.2.5004</a> <sup>(May 22)</sup></p></div><p>Bitwise shift operators.</p></section>
 <section><div><h3>Add <a target="_blank" class="help-tag" href="https://vimhelp.org/builtin.txt.html#autocmd_add%28%29">autocmd_add()</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/builtin.txt.html#autocmd_get%28%29">autocmd_get()</a>, <a target="_blank" class="help-tag" href="https://vimhelp.org/builtin.txt.html#autocmd_delete%28%29">autocmd_delete()</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/1755a91851f7022fdd3eecfbd2cc0b508a2f2a8f">8.2.4981</a>, <a target="_blank" href="https://github.com/vim/vim/commit/971f6825ee845828bd5c8869487928a3f32cd467">8.2.5011</a>, <a target="_blank" href="https://github.com/vim/vim/commit/e0ff3a7de6030b73d94121626deb8229e66e82b2">8.2.5030</a> <sup>(May 27)</sup></p></div><p>Functions to manipulate autocmds.</p></section>
@@ -226,7 +230,7 @@ END</pre></p></section>
 <section><div><h3>Show match position when searching</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/9dfa3139198b38b28673e251a3756430065914e9">8.1.1270</a> <sup>(May 4)</sup></p></div><p>Show "3/44" when using <a target="_blank" class="help-tag" href="https://vimhelp.org/pattern.txt.html#n">n</a> and "S" is not in <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#%27shortmess%27">'shortmess'</a>.</p></section>
 <section><div><h3>:cabove, :cbelow, :labove, <a target="_blank" class="help-tag" href="https://vimhelp.org/quickfix.txt.html#%3Albelow">:lbelow</a></h3><p><a target="_blank" href="https://github.com/vim/vim/commit/3ff33114d70fc0f7e9c3187c5fec9028f6499cf3">8.1.1256</a> <sup>(May 3)</sup></p></div><p>Navigate through errors relative to the cursor.</p></section>
 <section><div><h3>Control font weight on Windows'</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/f720d0a77e393990b2171a77210565bdc82064f2">8.1.1224</a> <sup>(Apr 28)</sup></p></div><p>Use "W" in <a target="_blank" class="help-option" href="https://vimhelp.org/options.txt.html#%27guifont%27">'guifont'</a> to control font weight on Windows. See <a target="_blank" class="help-tag" href="https://vimhelp.org/gui.txt.html#gui-font">gui-font</a>. </p></section>
-<section><div><h3>Tab-local directory</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/00aa069db8132851a91cfc5ca7f58ef945c75c73">8.1.1218</a> <sup>(Apr 27)</sup></p></div><p> See :tcd. Similar to the window-local directory with :lcd. </p></section>
+<section><div><h3>Tab-local directory</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/00aa069db8132851a91cfc5ca7f58ef945c75c73">8.1.1218</a> <sup>(Apr 27)</sup></p></div><p> See <a target="_blank" class="help-tag" href="https://vimhelp.org/editing.txt.html#%3Atcd">:tcd</a>. Similar to the window-local directory with <a target="_blank" class="help-tag" href="https://vimhelp.org/editing.txt.html#%3Alcd">:lcd</a>. </p></section>
 <section><div><h3>v: prefix is required</h3><p><a target="_blank" href="https://github.com/vim/vim/commit/d2e716e6dfd50b605867c7c684373384c8edf707">8.1.1188</a> <sup>(Apr 20)</sup></p></div><p>Previously e.g. <code>count</code> would also work. The
         <code>v:</code> prefix is mandatory when <a target="_blank" class="help-tag" href="https://vimhelp.org/repeat.txt.html#%3Ascriptversion+">:scriptversion </a>is 3 or
         higher.</p></section>

@@ -5,7 +5,11 @@
   <title>VimLog</title>
   <link>https://www.arp242.net/vimlog</link>
   <description> A ChangeLog for Vim </description>
-  <item><title>Add virtcol2col() [8.2.5034]</title><link>https://www.arp242.net/vimlog</link><description>Get byte index from virtual column.</description></item>
+  <item><title>&#x27;cmdheight&#x27; can be set to 0 [9.0.0114]</title><link>https://www.arp242.net/vimlog</link><description>When set to 0 it will only show after pressing entering the
+        commandline.</description></item>
+<item><title>Support double, dotted, and dashed underline [9.0.0007]</title><link>https://www.arp242.net/vimlog</link><description>Can use |underdouble|, |underdotted|, and |underdashed| attributes in
+        :highlight.</description></item>
+<item><title>Add virtcol2col() [8.2.5034]</title><link>https://www.arp242.net/vimlog</link><description>Get byte index from virtual column.</description></item>
 <item><title>Add &lt;&lt; and &gt;&gt; operators [8.2.5003, 8.2.5004]</title><link>https://www.arp242.net/vimlog</link><description>Bitwise shift operators.</description></item>
 <item><title>Add autocmd_add(), autocmd_get(), autocmd_delete() [8.2.4981, 8.2.5011, 8.2.5030]</title><link>https://www.arp242.net/vimlog</link><description>Functions to manipulate autocmds.</description></item>
 <item><title>Add / in &#x27;formatoptions&#x27; [8.2.4907, 8.2.5008]</title><link>https://www.arp242.net/vimlog</link><description>Don&#x27;t insert // when using |o| on a line with inline

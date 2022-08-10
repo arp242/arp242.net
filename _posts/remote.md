@@ -1,7 +1,7 @@
 ---
 title: "Downsides of working remotely"
 date: 2021-02-18
-tags: []
+tags: ['Worklace']
 ---
 
 I love remote work, and I've been working remotely for the last five years, but
