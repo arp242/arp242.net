@@ -804,9 +804,9 @@ by Ludeon Studios/Config/ModsConfig.xml` manually.
 There are two versions of Harmony: 1 and 2. Harmony 1 is used as `Harmony.Foo`,
 Harmony 2 as `HarmonyLib.Foo`. A lot of resources for RimWorld patching use
 Harmony *1* and mixing the two is not going to end well. I recommend just using
-the [official documentation][hdoc]; it's pretty good.
+[the documentation][hdoc]; it's pretty good.
 
-[hdoc]: (https://harmony.pardeike.net/articles/intro.html)
+[hdoc]: https://harmony.pardeike.net/articles/intro.html
 {% endwarning %}
 
 Now we can use it to run some code after the `Pawn_MindState.MindStateTick()`
