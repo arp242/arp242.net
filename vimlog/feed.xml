@@ -5,9 +5,13 @@
   <title>VimLog</title>
   <link>https://www.arp242.net/vimlog</link>
   <description> A ChangeLog for Vim </description>
-  <item><title>Set cursor shape in Windows terminal [9.0.0347]</title><link>https://www.arp242.net/vimlog</link><description>|termcap-cursor-shape| works on Windows.</description></item>
+  <item><title>Add keytrans() [9.0.0449]</title><link>https://www.arp242.net/vimlog</link><description>Convert escape sequences to strings.</description></item>
+<item><title>Add &#x27;splitscroll&#x27; [9.0.0445]</title><link>https://www.arp242.net/vimlog</link><description>When off text will keep its position as much as possible with horizontal splits.</description></item>
+<item><title>Add :defer [9.0.0370, 9.0.0419, 9.0.0440]</title><link>https://www.arp242.net/vimlog</link><description>Run code when a function exits.</description></item>
+<item><title>Virtual text [9.0.0067, …many…, 9.0.0438]</title><link>https://www.arp242.net/vimlog</link><description>Allow adding |virtual-text| to buffers.</description></item>
+<item><title>Add &#x27;D&#x27; flag in writefile() and mkdir() [9.0.0379, 9.0.0411]</title><link>https://www.arp242.net/vimlog</link><description>Delete the file or directory when a function exits.</description></item>
+<item><title>Set cursor shape in Windows terminal [9.0.0347]</title><link>https://www.arp242.net/vimlog</link><description>|termcap-cursor-shape| works on Windows.</description></item>
 <item><title>Add getscriptinfo() [9.0.0244, 9.0.0253, 9.0.0269, 9.0.0303]</title><link>https://www.arp242.net/vimlog</link><description>:scriptnames, but more convenient for scripts.</description></item>
-<item><title>Virtual text [9.0.0067, …many…, 9.0.0297]</title><link>https://www.arp242.net/vimlog</link><description>Allow adding |virtual-text| to buffers.</description></item>
 <item><title>Add setcmdline() [9.0.0285]</title><link>https://www.arp242.net/vimlog</link><description>Set the commandline content and cursor position from a script.</description></item>
 <item><title>Add indexof() [9.0.0196, 9.0.0202, 9.0.0204]</title><link>https://www.arp242.net/vimlog</link><description>Find value in list with a callback function.</description></item>
 <item><title>Support double, dotted, and dashed underline [9.0.0007]</title><link>https://www.arp242.net/vimlog</link><description>Can use |underdouble|, |underdotted|, and |underdashed| attributes in
