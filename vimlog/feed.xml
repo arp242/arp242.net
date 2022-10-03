@@ -5,10 +5,12 @@
   <title>VimLog</title>
   <link>https://www.arp242.net/vimlog</link>
   <description> A ChangeLog for Vim </description>
-  <item><title>Add keytrans() [9.0.0449]</title><link>https://www.arp242.net/vimlog</link><description>Convert escape sequences to strings.</description></item>
-<item><title>Add &#x27;splitscroll&#x27; [9.0.0445]</title><link>https://www.arp242.net/vimlog</link><description>When off text will keep its position as much as possible with horizontal splits.</description></item>
+  <item><title>Add &#x27;splitkeep&#x27; [9.0.0445, 9.0.0455, 9.0.0469, 9.0.0486, 9.0.0505, 9.0.0647]</title><link>https://www.arp242.net/vimlog</link><description>Control scrolling behaviour when opening, closing or resizing horizontal splits.</description></item>
+<item><title>matchaddpos() can add many matches [9.0.0620, 9.0.0622]</title><link>https://www.arp242.net/vimlog</link><description>Previously limited to 8.</description></item>
+<item><title>Virtual text [9.0.0067, …many…, 9.0.0534]</title><link>https://www.arp242.net/vimlog</link><description>Allow adding |virtual-text| to buffers.</description></item>
+<item><title>Drop Windows XP and Vista support [9.0.0496]</title><link>https://www.arp242.net/vimlog</link><description></description></item>
+<item><title>Add keytrans() [9.0.0449]</title><link>https://www.arp242.net/vimlog</link><description>Convert escape sequences to strings.</description></item>
 <item><title>Add :defer [9.0.0370, 9.0.0419, 9.0.0440]</title><link>https://www.arp242.net/vimlog</link><description>Run code when a function exits.</description></item>
-<item><title>Virtual text [9.0.0067, …many…, 9.0.0438]</title><link>https://www.arp242.net/vimlog</link><description>Allow adding |virtual-text| to buffers.</description></item>
 <item><title>Add &#x27;D&#x27; flag in writefile() and mkdir() [9.0.0379, 9.0.0411]</title><link>https://www.arp242.net/vimlog</link><description>Delete the file or directory when a function exits.</description></item>
 <item><title>Set cursor shape in Windows terminal [9.0.0347]</title><link>https://www.arp242.net/vimlog</link><description>|termcap-cursor-shape| works on Windows.</description></item>
 <item><title>Add getscriptinfo() [9.0.0244, 9.0.0253, 9.0.0269, 9.0.0303]</title><link>https://www.arp242.net/vimlog</link><description>:scriptnames, but more convenient for scripts.</description></item>
@@ -70,7 +72,7 @@ END&lt;/pre&gt;</description></item>
 <item><title>Add &#x27;cryptmethod&#x27;=xchaha20 [8.2.3022]</title><link>https://www.arp242.net/vimlog</link><description>More secure encryption from libsodium.</description></item>
 <item><title>Add |zp|, |zP|, |zy| [8.2.2914, 8.2.2971]</title><link>https://www.arp242.net/vimlog</link><description>|zp| pastes in block mode without adding trailing whitespace, |zy| yanks
             without trailing whitespace.</description></item>
-<item><title>Add %{ to &#x27;statusline&#x27; [8.2.2854]</title><link>https://www.arp242.net/vimlog</link><description>%{expr} reëvaluates the expression as a &#x27;statusline&#x27; formatting string.</description></item>
+<item><title>Add {% to &#x27;statusline&#x27; [8.2.2854]</title><link>https://www.arp242.net/vimlog</link><description>{%expr%} reëvaluates the expression as a &#x27;statusline&#x27; formatting string.</description></item>
 <item><title>Add f flag in :vimgrep [8.2.2813]</title><link>https://www.arp242.net/vimlog</link><description>&quot;Fuzzy&quot; match :vimgrep results.</description></item>
 <item><title>Add &#x27;autoshelldir&#x27; [8.2.2675]</title><link>https://www.arp242.net/vimlog</link><description>Automatically change directory in Vim from terminal window.</description></item>
 <item><title>Add strcharlen() [8.2.2606]</title><link>https://www.arp242.net/vimlog</link><description>Get length of string counting combining characters separately.</description></item>
