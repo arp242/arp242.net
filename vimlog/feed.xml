@@ -5,7 +5,11 @@
   <title>VimLog</title>
   <link>https://www.arp242.net/vimlog</link>
   <description> A ChangeLog for Vim </description>
-  <item><title>Add &#x27;splitkeep&#x27; [9.0.0445, 9.0.0455, 9.0.0469, 9.0.0486, 9.0.0505, 9.0.0647]</title><link>https://www.arp242.net/vimlog</link><description>Control scrolling behaviour when opening, closing or resizing horizontal splits.</description></item>
+  <item><title>Add &quot;C&quot; in &#x27;shortmess&#x27; [9.0.0738]</title><link>https://www.arp242.net/vimlog</link><description>Supress messages during |ins-completion|</description></item>
+<item><title>Sound functions work on macOS [9.0.0694]</title><link>https://www.arp242.net/vimlog</link><description>sound_playevent() now works on macOS</description></item>
+<item><title>Add :echowindow [9.0.0321, 9.0.0350, 9.0.0352, 9.0.0356, 9.0.0431, 9.0.0447, 9.0.0551, 9.0.0683]</title><link>https://www.arp242.net/vimlog</link><description>Display message in popup window; also add popup_findecho().</description></item>
+<item><title>Add lastline in &#x27;fillchars&#x27; [9.0.0656, 9.0.0661]</title><link>https://www.arp242.net/vimlog</link><description>Set character to use for when &#x27;display&#x27; contains fillchars or truncate.</description></item>
+<item><title>Add &#x27;splitkeep&#x27; [9.0.0445, 9.0.0455, 9.0.0469, 9.0.0486, 9.0.0505, 9.0.0647]</title><link>https://www.arp242.net/vimlog</link><description>Control scrolling behaviour when opening, closing or resizing horizontal splits.</description></item>
 <item><title>matchaddpos() can add many matches [9.0.0620, 9.0.0622]</title><link>https://www.arp242.net/vimlog</link><description>Previously limited to 8.</description></item>
 <item><title>Virtual text [9.0.0067, …many…, 9.0.0534]</title><link>https://www.arp242.net/vimlog</link><description>Allow adding |virtual-text| to buffers.</description></item>
 <item><title>Drop Windows XP and Vista support [9.0.0496]</title><link>https://www.arp242.net/vimlog</link><description></description></item>
