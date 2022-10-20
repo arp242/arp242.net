@@ -5,7 +5,10 @@
   <title>VimLog</title>
   <link>https://www.arp242.net/vimlog</link>
   <description> A ChangeLog for Vim </description>
-  <item><title>Add &quot;C&quot; in &#x27;shortmess&#x27; [9.0.0738]</title><link>https://www.arp242.net/vimlog</link><description>Supress messages during |ins-completion|</description></item>
+  <item><title>Add offset and size parameters to readblob() [9.0.0795]</title><link>https://www.arp242.net/vimlog</link><description>Before it always read the entire file.</description></item>
+<item><title>Add &#x27;lispoptions&#x27; [9.0.0761]</title><link>https://www.arp242.net/vimlog</link><description>Setting lispoptions=indentexpr:1 allows using &#x27;indentexpr&#x27; when &#x27;lisp&#x27; is enabled.</description></item>
+<item><title>Add TextChangedT [9.0.0756]</title><link>https://www.arp242.net/vimlog</link><description>Triggered afted text changed in the |terminal-window|.</description></item>
+<item><title>Add &quot;C&quot; in &#x27;shortmess&#x27; [9.0.0738]</title><link>https://www.arp242.net/vimlog</link><description>Supress messages during |ins-completion|</description></item>
 <item><title>Sound functions work on macOS [9.0.0694]</title><link>https://www.arp242.net/vimlog</link><description>sound_playevent() now works on macOS</description></item>
 <item><title>Add :echowindow [9.0.0321, 9.0.0350, 9.0.0352, 9.0.0356, 9.0.0431, 9.0.0447, 9.0.0551, 9.0.0683]</title><link>https://www.arp242.net/vimlog</link><description>Display message in popup window; also add popup_findecho().</description></item>
 <item><title>Add lastline in &#x27;fillchars&#x27; [9.0.0656, 9.0.0661]</title><link>https://www.arp242.net/vimlog</link><description>Set character to use for when &#x27;display&#x27; contains fillchars or truncate.</description></item>
