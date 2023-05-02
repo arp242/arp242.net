@@ -2,7 +2,7 @@
 :<span class="Statement">set</span> <span class="PreProc">wrap</span><span class="PreProc">!</span><span class="Special">&lt;CR&gt;</span>
 
 :<span class="Statement">echo</span> <span class="Identifier">mapcheck</span>(<span class="Constant">'&lt;F2&gt;'</span>, <span class="Constant">'n'</span>)
-<span class="Special">(</span>empty string<span class="Special">)</span>
+<span class="Special">(</span><span class="Identifier">empty</span> <span class="Identifier">string</span><span class="Special">)</span>
 
 <span class="Statement">if</span> <span class="Identifier">mapcheck</span><span class="Special">(</span><span class="Constant">'&lt;F1&gt;'</span>, <span class="Constant">'n'</span><span class="Special">)</span> <span class="Statement">is#</span> <span class="Constant">''</span>
   <span class="Statement">nnoremap</span> <span class="Special">&lt;</span><span class="Special">F1</span><span class="Special">&gt;</span> :call myplugin#action()<span class="Special">&lt;</span><span class="Special">CR</span><span class="Special">&gt;</span>

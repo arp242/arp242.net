@@ -17,7 +17,7 @@
 <span class="Comment"> *</span>
 <span class="Comment"> * This implementation is written by Martin Tournoij &lt;martin@arp242.net&gt;, while</span>
 <span class="Comment"> * peeking at FreeBSD's implementation of mkstemp (src/lib/libc/stdio/mktemp.c)</span>
-<span class="Comment"> * <a href="http://www.arp242.net/php-mktemp.html">http://www.arp242.net/php-mktemp.html</a></span>
+<span class="Comment"> * http://www.arp242.net/php-mktemp.html</span>
 <span class="Comment"> */</span>
 <span class="PreProc">function</span> mktemp<span class="Special">(</span><span class="Statement">$</span><span class="Identifier">template</span><span class="Statement">=</span><span class="Type">Null</span>, <span class="Statement">$</span><span class="Identifier">prefix</span><span class="Statement">=</span><span class="Type">Null</span>, <span class="Statement">$</span><span class="Identifier">dir</span><span class="Statement">=</span><span class="Constant">False</span><span class="Special">)</span>
 <span class="Special">{</span>
@@ -95,7 +95,7 @@
             <span class="Comment"># this file is created before we arrive at this check)</span>
             <span class="Comment">#</span>
             <span class="Comment"># There's a bug for this, but it doesn't seem to be considered much</span>
-            <span class="Comment"># of a priority...  <a href="https://bugs.php.net/bug.php?id=49396">https://bugs.php.net/bug.php?id=49396</a></span>
+            <span class="Comment"># of a priority...  https://bugs.php.net/bug.php?id=49396</span>
             <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">!</span><span class="Statement">$</span><span class="Identifier">s</span> <span class="Statement">&amp;&amp;</span> <span class="Identifier">file_exists</span><span class="Special">(</span><span class="Constant">&quot;</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Constant">/</span><span class="Statement">$</span><span class="Identifier">name</span><span class="Constant">&quot;</span><span class="Special">))</span> <span class="Special">{</span>
                 <span class="Statement">$</span><span class="Identifier">err</span> <span class="Statement">=</span> <span class="Identifier">error_get_last</span><span class="Special">()</span>;
                 <span class="Statement">throw</span> <span class="PreProc">new</span> MktempError<span class="Special">(</span><span class="Constant">&quot;Error creating `</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Constant">/</span><span class="Statement">$</span><span class="Identifier">name</span><span class="Constant">': </span><span class="Special">{</span><span class="Statement">$</span><span class="Identifier">err</span><span class="Special">[</span><span class="Constant">'message'</span><span class="Special">]}</span><span class="Constant">&quot;</span><span class="Special">)</span>;

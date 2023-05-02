@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sqlite3 ~/code/goatcounter/db/arp242.sqlite3 -noheader -list \
+sqlite3 ${1:-~/code/goatcounter/db/arp242.sqlite3} -noheader -list \
 	"with x as (
 			select
 				path_id, site_id, path, title from paths

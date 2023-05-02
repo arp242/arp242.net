@@ -2,4 +2,4 @@
 asd
 
 <span class="ModeMsg">bash% </span><span class="Question">f=~/a.png; echo &quot;${${f%%.*}##*/}&quot;</span>
-bash: ${${f%%.*}##*/}: bad substitution
+bash: ${${f<span class="bgComment">%%.*}##*/}: bad substitution</span>

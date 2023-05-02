@@ -14,56 +14,27 @@
 	</style>
 
 	<style>
-		body { font-size: 14px; line-height: 160%; }
-		table.full { margin-left: -1.8em; width: calc(100% + 3.8em); }
-		.page { padding: 2rem; }
-
-		h1 { margin-top: 0em; }
-		.cv-info     { display: flex; }
-		.cv-info div { padding: 0 1em; width: 33.33333333333333%; }
-
-		.w {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			margin-top: 2em;
-		}
-
-		.cv-update {
-			position: absolute;
-			top: 2px;
-			right: 6px;
-			font-size: 12px;
-		}
-		@media print { .cv-update { top: 3mm; right: 5mm; } }
-
-		.cv-taglist {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-			font-size: 12px;
-			line-height: 100%;
-		}
-
-		.cv-taglist li {
-			display: inline;
-			background-color: #f7f7f7;
-			border-radius: 2px;
-			padding: .1em .3em;
-			border: 1px solid #bbb;
-		}
-
-		h2 { margin-top: 1.4em; }
-		h3 { margin: 0; }
-
-		hr { margin: .3em 0; }
+		body           { font-size:14px; line-height:160%; }
+		table.full     { margin-left:-1.8em; width:calc(100% + 3.8em); }
+		.page          { padding:2rem; }
+		h1             { margin-top:0em; }
+		h2             { margin-top:1.4em; }
+		h3             { margin:0; }
+		hr             { margin:.3em 0; }
+		.cv-info       { display:flex; }
+		.cv-info div   { padding:0 1em; width:33.33333333333333%; }
+		.w             { display:flex; justify-content:space-between; align-items:center; margin-top:2em; }
+		.cv-update     { position:absolute; top:2px; right:6px; font-size:12px; }
+		@media print   { .cv-update { top:3mm; right:5mm; } }
+		.cv-taglist    { list-style:none; margin:0; padding:0; font-size:12px; line-height:1.8em; text-align:right; }
+		.cv-taglist li { display:inline; background-color:#f7f7f7; border-radius:2px; padding:.1em .3em; border:1px solid #bbb; }
 	</style>
 </head>
 
 <body>
 <div class="page page-a4">
 	<h1>Martin T<span class="redact">ournoij</span></h1>
-	<span class="cv-update">Last update: 7 May 2022;
+	<span class="cv-update">Last update: 15 Jan 2023;
 		<a href="https://arp242.net/cv" class="redact">arp242.net/cv</a></span>
 
 	<div class="cv-info">
@@ -89,7 +60,6 @@
 				<td style="min-width: 7em;">7 years</td>
 				<td>Main focus in the last seven years</td>
 			</tr>
-
 			<tr>
 				<td>Python</td>
 				<td>Advanced</td>
@@ -100,43 +70,38 @@
 				<td>SQL</td>
 				<td>Intermediate</td>
 				<td>10+ years</td>
-				<td>Mostly PostgreSQL; also SQLite and MySQL/MariaDB</td>
+				<td>Mostly PostgreSQL; also SQLite and MariaDB/MySQL</td>
 			</tr>
 			<tr>
 				<td>JavaScript</td>
 				<td>Intermediate</td>
 				<td>10+ years</td>
-				<td>TypeScript, CoffeeScript, jQuery, KnockoutJS</td>
+				<td>Vue.js, KnockoutJS, jQuery</td>
 			</tr>
-
 			<tr>
 				<td>Ruby</td>
 				<td>Intermediate</td>
 				<td>2 years</td>
 				<td>Ruby on Rails, rspec, Sinatra</td>
 			</tr>
-
 			<tr>
 				<td>PHP</td>
 				<td>Intermediate</td>
 				<td>6 years</td>
 				<td>Zend Framework, Laravel, Symfony</td>
 			</tr>
-
 			<tr>
 				<td>Shell scripting</td>
 				<td>Advanced</td>
 				<td>10+ years</td>
 				<td>POSIX &amp; zsh; some bash and ksh</td>
 			</tr>
-
 			<tr>
 				<td>Linux/Unix</td>
 				<td>Advanced</td>
 				<td>10+ years</td>
 				<td>Alpine, CentOS, Debian, Ubuntu, OpenBSD, FreeBSD</td>
 			</tr>
-
 			<tr>
 				<td>Standard practices</td>
 				<td></td>
@@ -144,7 +109,6 @@
 				<td>Good working knowledge of standard tools and practices such
 					as git, mercurial, Docker, AWS, CI, TDD, etc.<td>
 			</tr>
-
 			<tr>
 				<td>Other</td>
 				<td></td>
@@ -159,17 +123,6 @@
 	<h2>Work experience</h2>
 
 	<div class="w">
-		<h3>January 2022–May 2022: <span class="redact">Timescale</span></h3>
-		<ul class="cv-taglist">
-			<li>Go</li>
-			<li>PostgreSQL</li>
-		</ul>
-	</div>
-	<p><span class="redact">Timescale</span> is a time-series database for
-	PostgreSQL. I worked on <span class="redact">Timescale</span>’s Cloud
-	offering, which is a collection of microservices written in Go/gRPC.</p>
-
-	<div class="w">
 		<h3>March 2019–Present: <span class="redact">GoatCounter</span></h3>
 		<ul class="cv-taglist">
 			<li>Go</li>
@@ -181,9 +134,8 @@
 	<p>Founder of <a class="redact" href="https://www.goatcounter.com">GoatCounter</a>,
 	an open source privacy-friendly web analytics platform. It aims to offer
 	easy to use and meaningful privacy-friendly web analytics as an alternative
-	to Google Analytics or Matomo.</p>
-
-	<p>I wrote most of the code, do the server management, support, etc.
+	to Google Analytics or Matomo.<br>
+	I wrote most of the code, do the server management, support, etc.
 	Essentially it’s a one-person operation.</p>
 
 	<div class="w">
@@ -192,17 +144,13 @@
 			<li>Go</li>
 			<li>CoffeeScript</li>
 			<li>Knockout.js</li>
-			<li>MariaDB</li>
+			<li>MySQL</li>
 			<li>Redis</li>
 		</ul>
 	</div>
-
 	<p>Worked on <em class="redact">Teamwork Desk</em> for two years, an email
 	based helpdesk system. I programmed the API and email processing in Go and
 	some frontend in CoffeeScript and Knockout.js.</p>
-</div>
-<div class="page page-a4" style="padding-top: .5em; height: 28.4cm">
-
 	<p>I took the initiative to start various other projects now in use by many
 	of our products:
 	an OpenAPI documentation solution,
@@ -210,12 +158,12 @@
 	internal godoc system,
 	dev-env in Vagrant and later Docker,
 	and I took the lead in rewriting various <em class="redact">Desk</em>
-	packages to be more reusable.
-	</p>
-
+	packages to be more reusable.</p>
 	<p>In June 2018 I transferred to the Platform Team to work with all five
 	product teams to create generic solutions, such as standard
 	tooling/libraries and an app to manage cross-product users and settings.</p>
+</div>
+<div class="page page-a4" style="padding-top: .5em; height: 28.4cm">
 
 	<div class="w">
 		<h3>Mar 2014–Oct 2015: <span class="redact">LICO</span></h3>
@@ -291,17 +239,7 @@
 	Exact Globe (the ERP and accounting package), created a new website with a
 	Webshop, and did the server management.</p>
 
-	<h2>Other experience</h2>
-	<ul>
-		<li>Active engagement on various platforms, such as Stack Overflow, Vim
-			Stack Exchange, Hacker News, etc.</li>
-		<li>Participated as a mentor in a mentorship programme at the local
-			programming community.</li>
-		<li>Contributed to many open source projects with bugfixes or
-			enhancements.</li>
-		<li>Created many different open source projects.</li>
-	</ul>
-
+	<br>
 	<hr style="margin-top: 30px;">
 </div>
 

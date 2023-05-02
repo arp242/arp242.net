@@ -7,10 +7,10 @@
     <span class="Type">public</span> <span class="Type">static</span> <span class="Type">class</span> <span class="Type">Patch </span>{
         <span class="Type">static</span> Patch() {
             <span class="Comment">// Get the method we want to patch.</span>
-            <span class="Type">var</span> m <span class="Statement">=</span> <span class="Statement">typeof</span><span class="Type">(Verse.AI.Pawn_MindState)</span>.GetMethod(<span class="Constant">&quot;</span><span class="Constant">MindStateTick</span><span class="Constant">&quot;</span>);
+            <span class="Type">var</span> m <span class="Statement">=</span> <span class="Statement">typeof</span>(<span class="Type">Verse.AI.Pawn_MindState</span>).GetMethod(<span class="Constant">&quot;</span><span class="Constant">MindStateTick</span><span class="Constant">&quot;</span>);
 
             <span class="Comment">// Get the method we want to run after the original.</span>
-            <span class="Type">var</span> post <span class="Statement">=</span> <span class="Statement">typeof</span><span class="Type">(RainingBlood.Patch)</span>.GetMethod(<span class="Constant">&quot;</span><span class="Constant">PostMindStateTick</span><span class="Constant">&quot;</span>,
+            <span class="Type">var</span> post <span class="Statement">=</span> <span class="Statement">typeof</span>(<span class="Type">RainingBlood.Patch</span>).GetMethod(<span class="Constant">&quot;</span><span class="Constant">PostMindStateTick</span><span class="Constant">&quot;</span>,
                        System.Reflection.BindingFlags.Static|System.Reflection.BindingFlags.Public);
 
             <span class="Comment">// Patch stuff! The string passed to the Harmony constructor can be</span>

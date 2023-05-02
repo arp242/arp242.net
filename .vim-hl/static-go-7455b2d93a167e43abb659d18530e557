@@ -1,1 +1,1 @@
-% go build -ldflags=&quot;-extldflags=-static&quot; -tags sqlite_omit_load_extension
+<span class="ModeMsg">% </span><span class="Question">go build -ldflags=&quot;-extldflags=-static&quot; -tags sqlite_omit_load_extension</span>

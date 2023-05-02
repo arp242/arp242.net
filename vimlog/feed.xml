@@ -5,7 +5,15 @@
   <title>VimLog</title>
   <link>https://www.arp242.net/vimlog</link>
   <description> A ChangeLog for Vim </description>
-  <item><title>Add offset and size parameters to readblob() [9.0.0795]</title><link>https://www.arp242.net/vimlog</link><description>Before it always read the entire file.</description></item>
+  <item><title>Better UTF-16 support [9.0.1485]</title><link>https://www.arp242.net/vimlog</link><description>Add strutf16len() and utf16idx(), and add utf16 flag to byteidx(), byteidxcomp(), and charidx()</description></item>
+<item><title>Add &#x27;crypymethod&#x27; xchacha20v2 [9.0.1481]</title><link>https://www.arp242.net/vimlog</link><description>Mostly the same as xchacha20, but more future-proof against changes in libsodium.</description></item>
+<item><title>Add &#x27;smoothscroll&#x27; [9.0.0640, …many…, 9.0.1121]</title><link>https://www.arp242.net/vimlog</link><description>Scroll wrapped screen lines rather than text lines with &lt;C-e&gt;, &lt;C-y&gt;, and mouse.</description></item>
+<item><title>Add &#x27;showcmdloc&#x27;, %S in &#x27;statusline&#x27; and &#x27;tabline&#x27; [9.0.1061]</title><link>https://www.arp242.net/vimlog</link><description>Control where &#x27;showcmd&#x27; is displayed, or add it to the statusline or tabline.</description></item>
+<item><title>Support |kitty-keyboard-protocol| keyboard protocol, add &#x27;keyprotocol&#x27; [9.0.0930, 9.0.0939, 9.0.0976]</title><link>https://www.arp242.net/vimlog</link><description>For the KiTTY terminal; has better handling for modifier keys.</description></item>
+<item><title>Add |WinResized| event [9.0.0913, 9.0.0917, 9.0.1025]</title><link>https://www.arp242.net/vimlog</link><description>Triggered when a window changes size.</description></item>
+<item><title>|WinScrolled| works on inactive windows, has more information [9.0.0913, 9.0.0917, 9.0.1025]</title><link>https://www.arp242.net/vimlog</link><description>Previously this only worked for the current window and didn&#x27;t provide any information about what changed. </description></item>
+<item><title>Add winid option to col() and charcol() [9.0.0863]</title><link>https://www.arp242.net/vimlog</link><description>Get cursor column from another window.</description></item>
+<item><title>Add offset and size parameters to readblob(), allow reading character devices [9.0.0795, 9.0.0803, 9.0.0810]</title><link>https://www.arp242.net/vimlog</link><description>Before it always read the entire file.</description></item>
 <item><title>Add &#x27;lispoptions&#x27; [9.0.0761]</title><link>https://www.arp242.net/vimlog</link><description>Setting lispoptions=indentexpr:1 allows using &#x27;indentexpr&#x27; when &#x27;lisp&#x27; is enabled.</description></item>
 <item><title>Add TextChangedT [9.0.0756]</title><link>https://www.arp242.net/vimlog</link><description>Triggered afted text changed in the |terminal-window|.</description></item>
 <item><title>Add &quot;C&quot; in &#x27;shortmess&#x27; [9.0.0738]</title><link>https://www.arp242.net/vimlog</link><description>Supress messages during |ins-completion|</description></item>

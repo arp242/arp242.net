@@ -18,4 +18,4 @@ $ ag pattern
 [.. check <span class="Statement">if</span> results look right ..]
 
 $ age pattern
-[open <span class="Statement">in</span> Vim]
+[open in Vim]

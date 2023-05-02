@@ -1,3 +1,3 @@
-% go build -tags osusergo
-% go build -tags netgo
-% go build -tags osusergo,netgo
+<span class="ModeMsg">% </span><span class="Question">go build -tags osusergo</span>
+<span class="ModeMsg">% </span><span class="Question">go build -tags netgo</span>
+<span class="ModeMsg">% </span><span class="Question">go build -tags osusergo,netgo</span>

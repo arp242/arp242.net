@@ -16,7 +16,7 @@
 <span class="Special">                global.fs.writeSync = </span><span class="Identifier">function</span>(<span class="Special">fd, buf</span>)<span class="Special"> </span><span class="Identifier">{</span>
 <span class="Special">                    outputBuf += decoder.decode</span>(<span class="Special">buf</span>)<span class="Special">;</span>
 <span class="Special">                    </span><span class="Statement">const</span><span class="Special"> nl = outputBuf.lastIndexOf</span>(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span>)<span class="Special">;</span>
-<span class="Special">                    </span><span class="Statement">if</span><span class="Special"> </span>(<span class="Special">nl != </span>-1)<span class="Special"> </span><span class="Identifier">{</span>
+<span class="Special">                    </span><span class="Statement">if</span><span class="Special"> </span>(<span class="Special">nl != -1</span>)<span class="Special"> </span><span class="Identifier">{</span>
 <span class="Special">                        </span><span class="Statement">window</span><span class="Special">.output.innerText += outputBuf.substr</span>(0<span class="Special">, nl + </span>1)<span class="Special">;</span>
 <span class="Special">                        </span><span class="Statement">window</span><span class="Special">.scrollTo</span>(0<span class="Special">, </span><span class="Statement">document</span><span class="Special">.body.scrollHeight</span>)<span class="Special">;</span>
 <span class="Special">                        outputBuf = outputBuf.substr</span>(<span class="Special">nl + </span>1)<span class="Special">;</span>

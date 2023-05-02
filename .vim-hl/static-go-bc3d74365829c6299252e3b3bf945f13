@@ -1,4 +1,4 @@
-% file test.dynamic | tr , '\n'
+<span class="ModeMsg">% </span><span class="Question">file test.dynamic | tr , '\n'</span>
 test.dynamic: ELF 64-bit LSB executable
  x86-64
  version 1 (SYSV)
@@ -7,7 +7,7 @@ test.dynamic: ELF 64-bit LSB executable
  Go BuildID=LxsDWU_fMQ9Cox6y4bSV/fdMBNuZAmOuPSIKb2RXJ/rcazy_d6AbaoNtes-qID/nRiDtV1fOY2eoEVlyqnu
  not stripped
 
-% file test.static | tr , '\n'
+<span class="ModeMsg">% </span><span class="Question">file test.static | tr , '\n'</span>
 test.static:  ELF 64-bit LSB executable
  x86-64
  version 1 (SYSV)

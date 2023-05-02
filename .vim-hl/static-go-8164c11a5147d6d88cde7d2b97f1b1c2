@@ -1,1 +1,1 @@
-% CGO_ENABLED=0 go build
+<span class="ModeMsg">% </span><span class="Question">CGO_ENABLED=0 go build</span>

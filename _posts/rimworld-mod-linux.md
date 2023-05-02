@@ -217,9 +217,9 @@ of the buttons etc. should be self-explanatory; there's some [more information
 on the RimWorld wiki][devmode].
 
 Click the "debug actions" button at the top, which has "Change Weather" (filter
-in the top-left corner; you may need to scroll down). After clicking RainBlood
-it takes a few seconds for the weather to transition and the status to show up
-in your colonists.
+in the top-left corner; you may need to scroll down). After clicking
+RainingBlood it takes a few seconds for the weather to transition and the status
+to show up in your colonists.
 
 [devmode]: https://rimworldwiki.com/wiki/Development_mode
 
@@ -279,7 +279,7 @@ Now let's try adding our bloody rain with a high chance of spawning:
         <SnowGentle>4</SnowGentle>
         <SnowHard>4</SnowHard>
 
-        <RainingBlood>64</RainBlood> <!-- References the defName -->
+        <RainingBlood>64</RainingBlood> <!-- References the defName -->
     </baseWeatherCommonalities>
 
 Why 64? Well, the other numbers add up to 32 and if they're relative weights
@@ -390,20 +390,17 @@ version as far as I can find. Basic instructions:
     % export DOTNET_ROOT=$HOME/dotnet
     % mkdir -p $DOTNET_ROOT
 
-    # Needs .NET SDK 5 and .NET Core 3.1; binaries from:
-    #   https://dotnet.microsoft.com/download/dotnet/5.0
-    #   https://dotnet.microsoft.com/download/dotnet/3.1
+    # Needs .NET SDK 6 and .NET Core 3.1; binaries from:
     # Versions may be different; this is just indicative.
-    % tar xf dotnet-sdk-5.0.401-linux-x64.tar.gz -C $DOTNET_ROOT
-    % tar xf dotnet-sdk-3.1.413-linux-x64.tar.gz -C $DOTNET_ROOT
+    % tar xf dotnet-sdk-6.0.408-linux-x64.tar.gz -C $DOTNET_ROOT
 
     # Add the dotnet path, the binaries we compile later will be in ~/.dotnet/tools
     % export PATH=$PATH:$HOME/dotnet:$HOME/.dotnet/tools
 
     # Just the "source code" tar.gz from the GitHub release:
-    # https://github.com/icsharpcode/ILSpy/archive/refs/tags/v7.1.tar.gz
-    % tar xf ILSpy-7.1.tar.gz
-    % cd ILSpy-7.1
+    # https://github.com/icsharpcode/ILSpy/archive/refs/tags/v7.2.1.tar.gz
+    % tar xf ILSpy-7.2.1.tar.gz
+    % cd ILSpy-7.2.1
     % dotnet tool install ilspycmd -g
 
     # Now decompile the lot to src.

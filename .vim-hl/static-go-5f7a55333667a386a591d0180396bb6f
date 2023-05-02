@@ -1,4 +1,4 @@
-% go build -ldflags=&quot;-extldflags=-static&quot;
+<span class="ModeMsg">% </span><span class="Question">go build -ldflags=&quot;-extldflags=-static&quot;</span>
 # test
 /usr/bin/ld: /tmp/go-link-400285317/000010.o: in function `unixDlOpen':
 /[..]/sqlite3-binding.c:39689: warning: Using 'dlopen' in statically linked

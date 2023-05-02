@@ -1,5 +1,5 @@
-% chroot . ./test.static
+<span class="ModeMsg">% </span><span class="Question">chroot . ./test.static</span>
 Hello, world!
 
-% chroot . ./test.dynamic
+<span class="ModeMsg">% </span><span class="Question">chroot . ./test.dynamic</span>
 chroot: failed to run command './test.dynamic': No such file or directory

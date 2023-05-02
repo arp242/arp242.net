@@ -1,5 +1,5 @@
-% qemu-aarch64 ./test.arm64
+<span class="ModeMsg">% </span><span class="Question">qemu-aarch64 ./test.arm64</span>
 &lt;nil&gt; 2020-04-11
 
-% qemu-arm ./test.arm
+<span class="ModeMsg">% </span><span class="Question">qemu-arm ./test.arm</span>
 &lt;nil&gt; 2020-04-11

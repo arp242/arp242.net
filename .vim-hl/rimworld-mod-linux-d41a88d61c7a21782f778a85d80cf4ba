@@ -2,20 +2,17 @@
 <span class="ModeMsg">% </span><span class="Question">export DOTNET_ROOT=$HOME/dotnet</span>
 <span class="ModeMsg">% </span><span class="Question">mkdir -p $DOTNET_ROOT</span>
 
-# Needs .NET SDK 5 and .NET Core 3.1; binaries from:
-#   https://dotnet.microsoft.com/download/dotnet/5.0
-#   https://dotnet.microsoft.com/download/dotnet/3.1
+# Needs .NET SDK 6 and .NET Core 3.1; binaries from:
 # Versions may be different; this is just indicative.
-<span class="ModeMsg">% </span><span class="Question">tar xf dotnet-sdk-5.0.401-linux-x64.tar.gz -C $DOTNET_ROOT</span>
-<span class="ModeMsg">% </span><span class="Question">tar xf dotnet-sdk-3.1.413-linux-x64.tar.gz -C $DOTNET_ROOT</span>
+<span class="ModeMsg">% </span><span class="Question">tar xf dotnet-sdk-6.0.408-linux-x64.tar.gz -C $DOTNET_ROOT</span>
 
 # Add the dotnet path, the binaries we compile later will be in ~/.dotnet/tools
 <span class="ModeMsg">% </span><span class="Question">export PATH=$PATH:$HOME/dotnet:$HOME/.dotnet/tools</span>
 
 # Just the &quot;source code&quot; tar.gz from the GitHub release:
-# https://github.com/icsharpcode/ILSpy/archive/refs/tags/v7.1.tar.gz
-<span class="ModeMsg">% </span><span class="Question">tar xf ILSpy-7.1.tar.gz</span>
-<span class="ModeMsg">% </span><span class="Question">cd ILSpy-7.1</span>
+# https://github.com/icsharpcode/ILSpy/archive/refs/tags/v7.2.1.tar.gz
+<span class="ModeMsg">% </span><span class="Question">tar xf ILSpy-7.2.1.tar.gz</span>
+<span class="ModeMsg">% </span><span class="Question">cd ILSpy-7.2.1</span>
 <span class="ModeMsg">% </span><span class="Question">dotnet tool install ilspycmd -g</span>
 
 # Now decompile the lot to src.

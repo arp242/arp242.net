@@ -1,1 +1,1 @@
-% go build -ldflags=&quot;-extldflags=-static&quot;
+<span class="ModeMsg">% </span><span class="Question">go build -ldflags=&quot;-extldflags=-static&quot;</span>

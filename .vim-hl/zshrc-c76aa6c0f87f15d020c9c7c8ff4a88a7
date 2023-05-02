@@ -2,14 +2,14 @@
 path=()
 
 _prepath() {
-    <span class="Statement">for</span> dir <span class="Statement">in</span> <span class="Constant">&quot;</span><span class="PreProc">$@</span><span class="Constant">&quot;</span>; <span class="Statement">do</span>
+    <span class="Statement">for</span> dir in <span class="Constant">&quot;</span><span class="PreProc">$@</span><span class="Constant">&quot;</span>; <span class="Statement">do</span>
         dir=<span class="PreProc">${</span><span class="PreProc">dir:A</span><span class="PreProc">}</span>
         [[ ! -d <span class="Constant">&quot;</span><span class="PreProc">$dir</span><span class="Constant">&quot;</span> ]] &amp;&amp; <span class="Statement">return</span>
         path=(<span class="Constant">&quot;</span><span class="PreProc">$dir</span><span class="Constant">&quot;</span> <span class="PreProc">$path</span>[@])
     <span class="Statement">done</span>
 }
 _postpath() {
-    <span class="Statement">for</span> dir <span class="Statement">in</span> <span class="Constant">&quot;</span><span class="PreProc">$@</span><span class="Constant">&quot;</span>; <span class="Statement">do</span>
+    <span class="Statement">for</span> dir in <span class="Constant">&quot;</span><span class="PreProc">$@</span><span class="Constant">&quot;</span>; <span class="Statement">do</span>
         dir=<span class="PreProc">${</span><span class="PreProc">dir:A</span><span class="PreProc">}</span>
         [[ ! -d <span class="Constant">&quot;</span><span class="PreProc">$dir</span><span class="Constant">&quot;</span> ]] &amp;&amp; <span class="Statement">return</span>
         path=(<span class="PreProc">$path</span>[@] <span class="Constant">&quot;</span><span class="PreProc">$dir</span><span class="Constant">&quot;</span>)
@@ -24,7 +24,7 @@ _prepath /usr/<span class="Statement">local</span>/bin /usr/<span class="Stateme
 _prepath <span class="Constant">&quot;</span><span class="PreProc">$HOME</span><span class="Constant">/go/bin</span><span class="Constant">&quot;</span><span class="Comment">                # Go</span>
 _prepath <span class="Constant">&quot;</span><span class="PreProc">$HOME</span><span class="Constant">/.local/bin</span><span class="Constant">&quot;</span><span class="Comment">            # My local stuff.</span>
 <span class="Statement">if</span> [[ -d <span class="Constant">&quot;</span><span class="PreProc">$HOME</span><span class="Constant">/.gem/ruby</span><span class="Constant">&quot;</span> ]]; <span class="Statement">then</span><span class="Comment">    # Ruby</span>
-    <span class="Statement">for</span> d <span class="Statement">in</span> <span class="Constant">&quot;</span><span class="PreProc">$HOME</span><span class="Constant">/.gem/ruby/</span><span class="Constant">&quot;</span>*; <span class="Statement">do</span>
+    <span class="Statement">for</span> d in <span class="Constant">&quot;</span><span class="PreProc">$HOME</span><span class="Constant">/.gem/ruby/</span><span class="Constant">&quot;</span>*; <span class="Statement">do</span>
         _postpath <span class="Constant">&quot;</span><span class="PreProc">$d</span><span class="Constant">/bin</span><span class="Constant">&quot;</span>;
     <span class="Statement">done</span>
 <span class="Statement">fi</span>

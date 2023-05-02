@@ -1,6 +1,4 @@
 User-agent: Terminator
 Disallow: /sarah-connor
-User-agent: *
-Disallow: /code
-#Disallow: /weblog
+
 Sitemap: https://www.arp242.net/sitemap.txt

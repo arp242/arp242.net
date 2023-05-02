@@ -28,17 +28,16 @@ require 'fileutils'
 Jekyll::Hooks.register :documents, :post_render do |post|
   # TODO: get absolute directory to Jekyll? And don't do this for every post.
   dir = '.vim-hl'
-
   FileUtils.mkdir_p dir
+
   default = post.data['filetype']
   post.output.gsub!(/<pre( class="(full )?ft-(\w+)")?><code>(.*?)<\/code><\/pre>/m) do |m|
     full = $2
-    ft = $3
-    ft = default if ft.nil? || ft == ''
+    ft   = $3
+    ft   = default if ft.nil? || ft == ''
     code = $4
 
-    next m if ft.nil? || ft == ''
-    next m if ft == 'NONE'
+    next m if ft.nil? || ft == '' || ft == 'NONE'
 
     begin
       name = post.id
@@ -57,21 +56,19 @@ Jekyll::Hooks.register :documents, :post_render do |post|
       File.write('/tmp/vim-hl', code)
 
       # TODO: don't use shell.
-      # TODO: send path to output only pre, and not HTML boilerplate.
       `\
         vim -E \
           +'let g:html_no_progress=1' \
+          +'let g:html_no_doc=1' \
+          +'let g:html_no_links=1' \
+          +'set rtp+=.vim' \
           +'set ft=#{ft}' \
           +'runtime syntax/2html.vim' \
-          +'let rtp += ".vim"' \
-          +'g/^<pre id=/1,.d' \
-          +'g/^<\\/pre>/.,$d' \
+          +'g/^\\(<!--\\|<\\/\\?pre\\(>\\| \\)\\)/d' \
           +wqa /tmp/vim-hl`
       FileUtils.mv('/tmp/vim-hl.html', cache)
     end
 
-    # TODO: add patch to make this an option so we don't need to do this.
-    c = File.read(cache).gsub(/<a href=".*?">(.*?)<\/a>/, '\1')
-    next "<pre class='hl #{full} ft-#{ft}'><code>#{c}</code></pre>"
+    next "<pre class='hl #{full} ft-#{ft}'><code>#{File.read cache}</code></pre>"
   end
 end

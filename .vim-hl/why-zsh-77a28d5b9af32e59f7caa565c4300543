@@ -1,4 +1,4 @@
-bash% bash args hello world 'test space' '*'
+<span class="ModeMsg">bash% </span><span class="Question">bash args hello world 'test space' '*'</span>
 unquoted @:
   =&gt; hello
   =&gt; world

@@ -36,7 +36,7 @@ nav a { font-weight: bold; }
 
 ul.posts, ul.code         { list-style: none; padding-left: 0; }            /* HOME PAGE */
 #home ul li a:first-child { display: inline-block; min-width: 11em; vertical-align: top; }
-.posts li > span { font-family: monospace; color: #aaa; margin-right: .5em; } /* date */
+.posts li > span { font-family: monospace; color: #757575; margin-right: .5em; } /* date */
 @media (max-width: 46rem) {
 	#home ul li               { margin-bottom: 0.5rem; }
 	.posts li                 { padding-left: 7.3em; text-indent: -7.3em; }
@@ -67,9 +67,9 @@ a[href^="/draft"] { color: red; }
 .pre-wrap:hover .pre-copy { display: block; }
 
 .Statement  { color: #af5f00; } .Comment { color: #0000ee; } .Constant { color: #cd0000; }
-.Type       { color: #00cd00; } .Special { color: #cd00cd; } .PreProc  { color: #cd00cd; }
+.Type       { color: #009d00; } .Special { color: #cd00cd; } .PreProc  { color: #cd00cd; }
 .Identifier { color: #008787; } .output  { color: #666666; } .ModeMsg  { color: #666666; }
-.Question   { color: #00006b; }
+.Question   { font-weight: bold; }
 
 .page aside        { background-color: #fffde8; position: relative; }     /* INLINE ASIDE */
 .page aside strong { font-size: 2em; float: left; margin-right: .2em; }
