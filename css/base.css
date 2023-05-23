@@ -69,7 +69,7 @@ a[href^="/draft"] { color: red; }
 .Statement  { color: #af5f00; } .Comment { color: #0000ee; } .Constant { color: #cd0000; }
 .Type       { color: #009d00; } .Special { color: #cd00cd; } .PreProc  { color: #cd00cd; }
 .Identifier { color: #008787; } .output  { color: #666666; } .ModeMsg  { color: #666666; }
-.Question   { font-weight: bold; }
+.Question   { color: #a60000; }
 
 .page aside        { background-color: #fffde8; position: relative; }     /* INLINE ASIDE */
 .page aside strong { font-size: 2em; float: left; margin-right: .2em; }
