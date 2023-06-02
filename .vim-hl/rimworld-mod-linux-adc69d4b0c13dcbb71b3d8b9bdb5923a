@@ -1,0 +1,30 @@
+# The &quot;.NET home&quot;.
+<span class="ModeMsg">% </span><span class="Question">export DOTNET_ROOT=$HOME/dotnet</span>
+<span class="ModeMsg">% </span><span class="Question">mkdir -p $DOTNET_ROOT</span>
+
+# Needs .NET SDK 6 and .NET Core 3.1; binaries from:
+# https://dotnet.microsoft.com/en-us/download/dotnet/6.0
+# Versions may be different; this is just indicative.
+<span class="ModeMsg">% </span><span class="Question">tar xf dotnet-sdk-6.0.408-linux-x64.tar.gz -C $DOTNET_ROOT</span>
+
+# Add the dotnet path, the binaries we compile later will be in ~/.dotnet/tools
+<span class="ModeMsg">% </span><span class="Question">export PATH=$PATH:$HOME/dotnet:$HOME/.dotnet/tools</span>
+
+# Just the &quot;source code&quot; tar.gz from the GitHub release:
+# https://github.com/icsharpcode/ILSpy/archive/refs/tags/v7.2.1.tar.gz
+<span class="ModeMsg">% </span><span class="Question">tar xf ILSpy-7.2.1.tar.gz</span>
+<span class="ModeMsg">% </span><span class="Question">cd ILSpy-7.2.1</span>
+<span class="ModeMsg">% </span><span class="Question">dotnet tool install ilspycmd -g</span>
+
+# Now decompile the lot to src.
+<span class="ModeMsg">% </span><span class="Question">cd ~/rimworld</span>
+<span class="ModeMsg">% </span><span class="Question">mkdir src</span>
+<span class="ModeMsg">% </span><span class="Question">ilspycmd ./RimWorldLinux_Data/Managed/Assembly-CSharp.dll -p -o src</span>
+
+# Hurray!
+<span class="ModeMsg">% </span><span class="Question">ls src</span>
+Assembly-CSharp.csproj       FleckUtility.cs         RimWorld/
+ComplexWorker_Ancient.cs     HistoryEventUtility.cs  Verse/
+ComplexWorker.cs             Ionic/                  WeaponClassDef.cs
+DarknessCombatUtility.cs     Properties/             WeaponClassPairDef.cs
+FleckParallelizationInfo.cs  ResearchUtility.cs

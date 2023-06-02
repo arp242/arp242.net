@@ -56,10 +56,10 @@ You can verify that a binary runs without external dependencies with `chroot`
     chroot: failed to run command './test.dynamic': No such file or directory
 
 The "No such file or directory" error is a bit strange, but it means that the
-dynamic linker (`ld-linux`) isn't found. Unfortunately this is the exact same
-message as when the `test.dynamic` itself isn't found, so make sure you didn't
-typo it. I'm not sure if there's any way to get Linux to emit a more useful
-message for this.[^h]
+dynamic linker (e.g. `ld-linux`) isn't found. Unfortunately this is the exact
+same message as when the `test.dynamic` itself isn't found, so make sure you
+didn't typo it. I'm not sure if there's any way to get Linux to emit a more
+useful message for this.[^h]
 
 [^h]: It's a common source of confusion when a hashbang (`#!/bin/prog`) is set
       to a program that doesn't exist at that location.
@@ -95,7 +95,7 @@ parts:
     % go build -tags osusergo,netgo
 
 For simple cases where you don't use any other cgo code it's probably easier to
-just disable cgo, since the cgo code is protected with `+build cgo`:
+just disable cgo, since the cgo code is protected with a `cgo` build tag:
 
 {:class="ft-cli"}
     % CGO_ENABLED=0 go build
@@ -200,9 +200,7 @@ Huzzah!
 [^p]: Figuring them out just from the package index is a bit too much
       work/hassle, and also untested so it may contain errors or silly typos.
 
----
-
-Finally, to make releasing binaries a bit easier I wrote a small script:
+To make releasing binaries a bit easier I wrote a small script:
 [gogo-release][gogo]. It's just a glorified `for` loop (a lot of software is,
 really) to make the above a bit easier. For non-cgo projects the defaults
 settings should work without problems. This is what I use to build GoatCounter
@@ -221,12 +219,26 @@ settings should work without problems. This is what I use to build GoatCounter
 
 And then just run `gogo-release`.
 
-I'm not really aware of a good tool to make cross-compiling to different systems
-easier; the closest I know of is [xgo][xgo], which [installs the required build
+---
+
+To cross-compile for different systems I wrote [goon], which uses QEMU to start
+a VM. It's a little bit unpolished, but it works. The main advantage of this is
+that you can run tests on a "real" system, which is useful in some cases.
+
+[zig] can also work (`zig cc`); unlike most other C compilers Zig ships with a
+build environment for Linux, macOS, and Windows. It won't be helpful for
+cross-compiling to other platforms (at the time of writing anyway; this may
+change). See [this article][zig-cross] for some more details on that.
+
+There is also [xgo][xgo], which [installs the required build
 environment in a container][xgo-d]. It's not bad (although it is [a bit
-messy][xgo-b]), but it only supports Linux, macOS, and Windows. This covers most
-use cases but ideally I'd like a generic solution to cover all platforms. I may
-work on this in the future, time and enthusiasm permitting 😅
+messy][xgo-b]), but it only supports Linux, macOS, and Windows.
+
+[goon]: https://github.com/arp242/goon
+[zig]: https://ziglang.org/
+[zig-cross]: https://dev.to/kristoff/zig-makes-go-cross-compilation-just-work-29ho
+
+
 
 [gogo]: https://github.com/arp242/gogo-release
 [xgo]: https://github.com/karalabe/xgo

@@ -44,7 +44,7 @@ weather type; we just need to edit some XML for this.
 Mods are located in the `Mods/` directory in your RimWorld installation
 directory; I'm using the version I bought from the RimWorld website and
 extracted to `~/rimworld` so that's nice and simple. GOG.com games usually store
-the actual game data in a `game/` subdirectory, and I don't know where Steam
+the actual game data in a `game/` subdirectory. I don't know where Steam
 stores things 🤷
 
 This directory should already exist with a `Mods/Place mods here.txt`. A mod
@@ -74,10 +74,9 @@ capital. Many pathnames start with a capital, as seems common in the C♯ world.
 Keep this in mind if something doesn't work!
 {% endwarning %}
 
-The official content uses essentially the same structure as a mod except that
-it's in the `Data/` directory; e.g. `Data/Core/` contains the base game,
-`Data/Royalty` the Royalty expansion, etc. To find the weather definitions I
-just used:
+The official content uses the same structure as a mod except that it's in the
+`Data/` directory; e.g. `Data/Core/` contains the base game, `Data/Royalty` the
+Royalty expansion, etc. To find the weather definitions I just used:
 
 {:class="ft-none"}
     [~/rimworld/Data/Core]% ls (#i)**/*weather*.xml
@@ -155,15 +154,14 @@ modifications:
     </WeatherDef>
     </Defs>
 
-The location where you store it doesn't actually matter as long as it's in
-`Defs`; `Defs/xxx.xml` will work too. Internally all XML files in `Defs/` are
-scanned in the same data structure; it just recursively searches for `*.xml`
-files and uses `<defName>RainingBlood</defName>` to identify them rather than
-the path.
+The location where you store this doesn't matter as long as it's in `Defs`;
+`Defs/xxx.xml` will work too. Internally all XML files in `Defs/` are scanned in
+the same data structure; it just recursively searches for `*.xml` files and uses
+`<defName>RainingBlood</defName>` to identify them rather than the path.
 
-It's not very fancy. We also need a new "exposed thought"; that's the mood
-modifier that shows up in the "needs" tab; "Soaking wet" doesn't really seem
-applicable if you're "soaking wet in blood" 🙃
+We also need a new "exposed thought"; that's the mood modifier that shows up in
+the "needs" tab; "Soaking wet" doesn't really seem applicable if you're "soaking
+wet in blood" 🙃
 
 Let's grep for it:
 
@@ -211,10 +209,10 @@ start the game with `./RimworldLinux -quicktest`, which will start the game in a
 new small map with the last selected mods.
 
 You can select "Development mode" in options, which will give you a few buttons
-at the top, it will also allow you to open the console with <code>`</code> and
-you can speed up things a wee bit more by pressing 4 (*ludicrous speed!*) Most
-of the buttons etc. should be self-explanatory; there's some [more information
-on the RimWorld wiki][devmode].
+at the top, gives you a console with <code>`</code>, you can speed up things a
+wee bit more by pressing 4 (*ludicrous speed!*) Most of the buttons etc. should
+be self-explanatory; there's some [more information on the RimWorld
+wiki][devmode].
 
 Click the "debug actions" button at the top, which has "Change Weather" (filter
 in the top-left corner; you may need to scroll down). After clicking
@@ -267,7 +265,7 @@ e.g. `Biomes_Cold.xml` has:
         <SnowHard>4</SnowHard>
     </baseWeatherCommonalities>
 
-Now let's try adding our bloody rain with a high chance of spawning:
+Let's try adding our bloody rain with a high chance of spawning:
 
     <baseWeatherCommonalities>
         <Clear>18</Clear>
@@ -289,7 +287,7 @@ wall and sooner or later some of it will stick.[^weight]
 
 [^weight]: Although I later did confirm that they're relative weights, see
            `Verse.TryRandomElementByWeight()`, which can be examined after
-           decompiling the source, which we'll cover later.
+           decompiling the source.
 
 The easiest way to override this is to copy the XML file to your
 `Mods/[..]/Defs/` directory. Again, the path doesn't matter, it just looks at
@@ -360,7 +358,7 @@ Some of the game's source code is in the installation directory (e.g.
 `Source/Verse/Defs/DefTypes/WeatherDef.cs`, but it's not all that useful. You
 can more or less ignore this directory.
 
-To actually figure out how to write mods we'll need to decompile the C♯ code in
+We'll need to decompile the C♯ code in
 `RimWorldLinux_Data/Managed/Assembly-CSharp.dll`.[^eula] There are [several
 tools][decomp] for this; I'll use [ILSpy]. This doesn't seem [packaged in most
 distros][ilspy-pkg] but there are Linux binaries for the GUI available as
@@ -391,6 +389,7 @@ version as far as I can find. Basic instructions:
     % mkdir -p $DOTNET_ROOT
 
     # Needs .NET SDK 6 and .NET Core 3.1; binaries from:
+    # https://dotnet.microsoft.com/en-us/download/dotnet/6.0
     # Versions may be different; this is just indicative.
     % tar xf dotnet-sdk-6.0.408-linux-x64.tar.gz -C $DOTNET_ROOT
 
@@ -417,7 +416,7 @@ version as far as I can find. Basic instructions:
     FleckParallelizationInfo.cs  ResearchUtility.cs
 
 You only need to do this once. Note that the `DOTNET_ROOT` is a runtime
-dependencies of `ilspycmd`, so don't remove it unless you're sure you don't need
+dependency of `ilspycmd`, so don't remove it unless you're sure you don't need
 to run it again.
 
 The decompiled source doesn't have any comments, and some variables seem changed
@@ -430,8 +429,8 @@ version.
 ### Building the Assembly
 "Assembly" is C♯ speak for any compiled output such as an executable (.exe) or
 shared library (.dll). We need to set up a "build solution" (C♯ "Makefiles") to
-build them. Let's start by just setting up a basic example before we start
-actually writing code.
+build them. Start by just setting up a basic example before we start actually
+writing code.
 
 By convention the source code lives in `Mods/.../Source/`, but I don't think
 this is required since the game doesn't *do* anything with it directly. The
@@ -442,8 +441,8 @@ vice-versa.
 
 The game code lives in two namespaces: `Verse` and `RimWorld`. `Verse` is the
 game engine and RimWorld is the game built on that. At least, I *think* that was
-the intention at some point as all sort of RimWorld-specific things seem to be
-in `Verse` (which also references the `RimWorld` namespace frequently) and there
+the intention at some point as there are all sort of RimWorld-specific things in
+`Verse` (which also references the `RimWorld` namespace frequently) and there
 isn't really a clear dividing line, but mostly: general "engine-y things" are in
 `Verse` and "RimWorld-y things" are in `RimWorld`, except when they're not. 
 
@@ -460,17 +459,17 @@ developer console:
         }
     }
 
-The `[Verse.StaticConstructorOnStartup]` annotation makes the code run when the game
-starts. Basically, the game searches for all static constructors with this
-annotation and startup and executes them. If you really want to know how it
-works you can use something like `rg '[^\[]StaticConstructorOnStartup'`.
+The `[Verse.StaticConstructorOnStartup]` annotation makes the code run when the
+game starts; the game searches for all static constructors with this annotation
+on startup and executes them. If you really want to know how it works you can
+use something like `rg '[^\[]StaticConstructorOnStartup'`.
 
 Another way is inheriting from the `Verse.Mod` class, which allows some more
 advanced things (most notably [implementing settings][settings]), but I'm not
 going to cover that here.
 
 {% note %}
-A lot of mods add `using Verse;` and `using RimWorld` so you can use
+A lot of mods add `using Verse` and `using RimWorld` so you can use
 `StaticConstructorOnStartup` instead of `Verse.StaticConstructorOnStartup`. I've
 never really liked this kind of implicit namespacing (in any language) and I'll
 avoid it here too. It clarifies that `StaticConstructorOnStartup` is something
@@ -490,7 +489,7 @@ these things manually. There's probably a better way of doing some things (not a
 huge fan of the hard-coded paths instead of using some LDPATH analogue), but I
 haven't dived in to this yet.
 
-Anyway, here's what I ended up with in `Mods/RainingBlood/RainingBlood.csproj`:
+Here's what I ended up with in `Mods/RainingBlood/RainingBlood.csproj`:
 
     <?xml version="1.0" encoding="utf-8"?>
     <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -687,8 +686,8 @@ You can find a bit more about this in `Verse/Tick*.cs`. It's not really needed
 to know this for a simple mod like this, but it's useful to know if you want to
 write actual real mods.
 
-Anyway, so how to add our custom logic? Let's first add a new "thought" we want
-to apply to `Defs/ThoughtDefs/RainingBlood.xml` we created earlier:
+To add our custom logic first add a new "thought" we want to apply to
+`Defs/ThoughtDefs/RainingBlood.xml` we created earlier:
 
     <ThoughtDef>
         <defName>BloodCoveredCannibal</defName>
@@ -726,9 +725,9 @@ that `exposedThoughtCannibal` isn't a field in the class:
 {:class="ft-NONE"}
     <exposedThoughtCannibal>[...] doesn't correspond to any field in in type WeatherDef
 
-But RimWorld comes with the `modExtensions` field to extend Defs. In this case
-we're adding it to an entire new Def, but you can also patch existing Defs with
-XPath and `PatchOperationAddModExtension`.
+RimWorld comes with the `modExtensions` field to extend Defs. In this case we're
+adding it to an entire new Def, but you can also patch existing Defs with XPath
+and `PatchOperationAddModExtension`.
 
 You'll also need to add a new class inhereting from `Verse.DefModExtension`:
 
@@ -949,6 +948,3 @@ And some things I'd still like to improve/figure out:
   Hard-coding this path seems common; to get other mods to build I had to
   manually s/Win64/Linux/ some things, which is not ideal. I couldn't figure out
   how to make it cross-platform.
-
-- There are probably some other C♯/.NET things that could be improved. I'm
-  really a n00b at this.

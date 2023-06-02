@@ -61,3 +61,7 @@ The general pattern is something like:
 4. You're left with just the toxic people and those that can tolerate them.
 
 It's no more or less "censorship" than anything else.
+
+{% related_articles %}
+- [Graydon Hoare's comments](https://old.reddit.com/r/rust/comments/6ewjt5/question_about_rusts_odd_code_of_conduct/didrult/) are very similar.
+{% endrelated_articles %}
