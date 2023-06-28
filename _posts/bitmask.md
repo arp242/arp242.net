@@ -335,7 +335,6 @@ leaving everything else intact:
  ^         ^         ^         ^         ^         ^         ^         ^
 64        56        48        40        32        24        16         8
 </pre>
-{% comment %}_ Underscore fixes Vim's syntax highlighting {% endcomment %}
 
 C and most other languages don't have this operator and have `~` for NOT (which
 Go doesn't have), so the above would be `(c & ~maskFg)` in most other languages.

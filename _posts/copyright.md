@@ -7,11 +7,6 @@ hatnote: |
       [/r/slatestarcodex](https://www.reddit.com/r/slatestarcodex/comments/bt6mrv/copyright_culture_and_democracy/)
 ---
 
-{%- comment -%}
-https://lobste.rs/s/gohtiz/why_we_re_relicensing_cockroachdb#c_hykipo
-https://news.ycombinator.com/item?id=20097077
-{%- endcomment -%}
-
 Did you know that Anne Frank's diaries are still copyrighted and can't be
 published without paying royalties to the Anne Frank Foundation (AFF)? The legal
 issues are somewhat complex, but in short:
@@ -53,44 +48,44 @@ up contemporary culture and recent history are copyrighted, ranging from
 At least you can now finally sing [*Happy Birthday*][hb] without paying
 royalties.
 
-Wait, *Star Trek*? Yes, why not? Why should anything even remotely related to
-Star Trek still be copyrighted after 50 years? Why should copyright duration be
-life-plus-70 and not life-plus-20? Or just a fixed term of 70 years? Or 50? Or
-any other value?
+*Star Trek* might seem a bit silly compared to Anne Frank or MLK, but it's
+"culture" just as much as *The Iliad* or *Beowulf* is, just not as old. Why
+should anything even remotely related to *Star Trek* still be copyrighted after
+50 years? Why should copyright duration be life-plus-70 and not life-plus-20? Or
+just a fixed term of 70 years? Or 50? Or any other value?
 
 Copyright law treats creative works as a mere tools for profit or entertainment.
 They're so much more than that; they're our culture. It shapes our society and
 the way we think. I'm all for [paying the writer][pay], but there needs to be a
 balance.
 
-Something like Star Trek isn't created in a vacuum, it's a product of the
-culture in which it was created. It has plenty of its own innovations, but
-wasn't created out of thin air and it built upon what came before. I'm happy
-that its creators earned heaps of money for it (all well deserved), but it's
-part of our culture and at some point the public interest should be taken in to
-account.
+Star Trek isn't created in a vacuum, it's a product of the culture in which it
+was created. It has plenty of its own innovations, but wasn't created out of
+thin air and it built upon what came before. I'm happy that its creators earned
+heaps of money for it, but it's part of our culture and at some point the public
+interest should be taken in to account.
 
 What I find especially objectionable about the above Star Trek examples is that
 it's not even about outright piracy (e.g. downloading episodes from The Pirate
 Bay) but about ownership of the entire *idea* of Star Trek. Doing *anything*
 related to *any* aspect of Star Trek can be considered infringement. Star Trek
 is hardly unique; Nintendo has [sent lawyers after Pokémon-themed
-parties][party], and plenty more examples.
+parties][party]. There are plenty more examples.
 
 What this means is that someone claims "ownership" of part of our culture. I
-don't think that any person – much less corporation – can lay claim to the
+don't think that any person – much less a corporation – can lay claim to the
 ownership of culture, but that is pretty much what they're doing by laying claim
-to almost all books, films, and music produced in the last ~70 years. If we look
+to almost all books, films, and music produced in the last ~90 years. If we look
 back on history then entire eras are defined in large part by their art and
 culture. Future historians will look back to Star Trek and similar contemporary
-creative works just as we look back to the Iliad or Beowulf.
+creative works just as we look back to *The Iliad*, which was merely one part of
+the greater "Greek Mythology Franchise" with contributions from many authors.
 
 ---
 
-Some authors have taken objection to "fan fiction" (not that a Pokémon party is
-"fan fiction"), for example [George R.R. Martin][grrm] and [Diana
-Gabaldon][gabaldon]. I have some sympathy especially for Gabaldon's feelings
-regarding other people using her characters:
+Some authors have taken objection to "fan fiction", for example [George R.R.
+Martin][grrm] and [Diana Gabaldon][gabaldon]. I have some sympathy especially
+for Gabaldon's feelings regarding other people using her characters:
 
 > Characters—good characters, “real” characters—derive their reality from the
 > person who created them. They \_are\_ the person who created them, refracted
@@ -102,18 +97,18 @@ regarding other people using her characters:
 > messing with \_me\_.
 
 I don't have a clear answer to what the best solution here is, but I do know
-that an extensive 100+ year copyright law is not it.
+that an extensive "life +70 years" copyright law is not it.
 
-Were the Greek myths "fan fiction"? Are all the stories about King Arthur? Yet
-they are the work of many authors set in the same "universe". The way fiction is
+Were the Greek myths "fan fiction"? Are all the stories about King Arthur? They
+are the work of many authors set in the same "universe". The way fiction is
 created has changed a lot; in the past someone would create a story (or combine
-elements of existing stories) and perform as a bard. Others would see this and
-copy, change, adapt.
+elements of existing stories) and perform as a bard, with a fairly limited
+audience. Others would see this and copy, change, adapt.
 
 With the advent of mass media things have gotten considerably more centralized.
-Now there is a single author who can reach and audience of millions of people.
-This has brought us great authors such as George R. R. Martin, but on the other
-hand it is robbing the community's ability to copy, change, and adapt stories.
+Now a single author can reach millions of people in a very short timespan. This
+has brought us great authors such as George R. R. Martin, but on the other hand
+it is robbing the community's ability to copy, change, and adapt stories.
 
 GRRM says we shouldn't use a "borrowed background", as that won't "exercise
 those 'literary muscles'", but I think this misses the point of amateur writing.
@@ -139,30 +134,30 @@ published.
 I have no problems with people or companies earning (potentially large amounts
 of) money from creative works, but I do find the concept of passively collecting
 income merely from owning the rights troubling. Unlike labour, this does not
-create value. For example, a carpenter creates value by making tables. A postman
-creates value by delivering something from A to B, a cleaner creates value by
-cleaning stuff. No value is created by extracting money from licensing rights.
+create value. A carpenter creates value by making tables; a postman creates
+value by delivering something from A to B; a cleaner creates value by cleaning
+stuff. No value is created by extracting money from licensing rights.
 
-The questions here are "what is fair", and "what does it mean to 'own'
-something"? These are not easy questions, and I don't pretend to have
+The questions here are "what is fair?" and "what does it mean to 'own'
+something?" These are not easy questions, and I don't pretend to have
 comprehensive answers to them. I do know it's not as simple as "I spent time on
-it, therefore I completely own it", which is essentially what Locke's theory of
-property states about natural resources, such as land or oil. Yet this theory
-has also been much criticized for being overly simplistic, perhaps most
-poignantly by Robert Nozick, who pointed out that [owning a can of tomato juice
-and pouring it in the sea does not entitle you to ownership of the sea][gmo].
+it, therefore I completely own it". This is essentially what Locke's theory of
+property states about natural resources (land, oil, etc.) Yet this theory has
+also been much criticized for being overly simplistic, perhaps most poignantly
+by Robert Nozick, who pointed out that [owning a can of tomato juice and pouring
+it in the sea does not entitle you to ownership of the sea][gmo].
 
 [gmo]: https://philosophynow.org/issues/107/A_Can_of_Tomato_Juice_in_the_Sea
 
 It seems to me that this is how the modern copyright industry works. They take
-the natural resource of culture, add their own labour, and then take complete
-ownership of the results, even though their labour is only part of it.
+the natural resource of culture, add a little bit of their own labour, and then
+take complete ownership of the results.
 
 Copyright is a (natural) monopoly. CBS owns the full rights to Star Trek and no
 one else can create a competing product. I don't see what would be wrong with
 someone else creating a competing versions of Star Trek, just as there is
-nothing wrong with people creating competing Robin Hood adaptations or
-smartphones. Personally, I have been rather disappointed with recent instalments
+nothing wrong with people creating competing Robin Hood adaptations or new
+smartphones. Personally I have been rather disappointed with recent instalments
 of the Star Trek franchise, and would much prefer a return to the style of the
 earlier Star Trek series, but I'm stuck with what CBS feeds me.
 
@@ -174,8 +169,8 @@ easier (e.g. VCRs, cassette tapes).
 ---
 
 That copyright is limited in the first place acknowledges all of the above
-issues. Why else would it be limited in the first place? Most other forms of
-ownership isn't.
+issues. Why else would it be limited in the first place? No other form of
+ownership is limited in the same way.
 
 The copyright industry has spent decades lobbying lawmakers. There is nothing
 wrong with that as such, but who lobbies for the public interest? Who pays for
@@ -186,9 +181,9 @@ lobbyist then you probably don't have very balanced views on the matter. You
 just get stuck in an lobbyist echo chamber.[^d]
 
 To make it worse, people and organisations who *do* lobby or advocate for public
-interest often do so out of idealism, which tends to make them less pragmatic. I
-think most people would be in favour of restricting factory farming in some way,
-but if all you hear are the most radical vegans[^vegan] then, well...
+interest often do so out of idealism, with ideas that are often not very
+pragmatic. I think most people would be in favour of restricting factory farming
+in some way, but if all you hear are the most radical vegans then, well...[^vegan]
 
 This leaves us with the question on how democratic our democratic institutions
 are if they're so easy to influence.
@@ -198,7 +193,7 @@ are if they're so easy to influence.
       excesive campaign donations (e.g. most EU countries, as well as the EU
       itself) have similar issues to the United States.
 
-[^vegan]: Just to clarify, I don't want to pick on vegans here – I eat mostly
+[^vegan]: I don't want to pick on vegans here – I eat mostly
           vegan myself – but if one side tries to pragmatically argue
           [small changes](https://en.wikipedia.org/wiki/Tyranny_of_small_decisions)
           and the other is "we need to radically change our entire societal
@@ -207,30 +202,27 @@ are if they're so easy to influence.
 
 ---
 
-The legal defence for many Torrent sites has been to disclaim responsibility,
-for example in the 2009 [The Pirate Bay trial][tpb], or [MP3skull's weird
-copyright page][mp3] which claimed that "all music on is presented only for
-fact-finding listening".
+The legal defence for many Torrent sites has been to disclaim responsibility; in
+the 2009 [The Pirate Bay trial][tpb], or [MP3skull's weird copyright page][mp3]
+which claimed that "all music on is presented only for fact-finding listening".
+This is nonsense and everyone knows it.
 
 I find it regrettable that in many of these court cases the defence uses excuses
 like "we're not hosting it". No one is fooled by that, including the courts. By
-focusing on legalities and skipping the more principles arguments we're engaging
+focusing on legalities and skipping the more principled arguments we're engaging
 the copyright industry on their terms with their language. We're arguing about
-details, not the things that actually matter.
+implementation details, not the things that actually matter.
 
-In other words, it feel it should be phrased as an act of civil disobedience,
-rather than denying you broke the law. Some people have called this naïve and
-that it will never work in court. It probably won't, but the current "we did
-nothing against the law" kind of defence doesn't work either, and this at least
-gives us a chance to bring these kind of arguments in the public debate
-(besides, you can do both type of arguments).
+It should be phrased as an act of civil disobedience, rather than denying you
+broke the law. Some people have called this naïve and that it will never work in
+court. It probably won't but neither does the current "we did nothing against
+the law" kind of defence, and this at least gives us a chance to bring these kind
+of arguments in the public debate (besides, you can do both type of arguments).
 
 Knowingly breaking a law and then pretending that you didn't break any laws is
-not a very good way to change anything, and I feel that the lack of this kind of
-argument has real effects beyond not changing the law. The [2019 EU copyright
-law][eu] is a direct response.
-
-To be honest, I think us ("the public") made our own bed with this. It should be
+not a very good way to change anything; the lack of a good public debate has
+real effects beyond not changing the law: the [2019 EU copyright law][eu] is a
+direct response. We ("the public") made our own bed with this. It should be
 clear that I'm hardly happy with the current affair of copyright, but for years
 we've stubbornly insisted that we can just ignore copyright, and every time
 we're surprised that copyright holders mount a counter-attack?
@@ -240,7 +232,6 @@ we're surprised that copyright holders mount a counter-attack?
 [eu]: https://www.bbc.com/news/technology-47708144
 
 {% comment %}
-
 Some notes for future expansion:
 
 Needed for innovation: bullshit. Did Rembrandt or van Gogh need a gazillion
@@ -318,4 +309,7 @@ were in 1790. This chart should be reversed.
 
 http://www.tomwbell.com/writings/(C)Esc.html
 
+https://lobste.rs/s/gohtiz/why_we_re_relicensing_cockroachdb#c_hykipo
+
+https://news.ycombinator.com/item?id=20097077
 {% endcomment %}

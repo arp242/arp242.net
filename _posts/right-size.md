@@ -65,7 +65,3 @@ the smallest (or the largest). It's the right one.
 [testing]: /testing.html
 [fp-why]: https://stackoverflow.com/a/2835936/660921
 [haldane]: https://web.archive.org/web/20110822151104/http://irl.cs.ucla.edu/papers/right-size.html
-
-{%- comment -%}
-https://www.joelonsoftware.com/2001/01/18/big-macs-vs-the-naked-chef/
-{%- endcomment -%}

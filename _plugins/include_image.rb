@@ -11,6 +11,7 @@ class IncludeImage < Liquid::Tag
     type = case @path.split('.').last
              when 'png';          'image/png'
              when 'jpg', 'jpeg';  'image/jpeg'
+             when 'webp';         'image/webp'
              else                 raise 'Unknown type'
            end
     encoded = File.open(@path) { |fp| Base64.strict_encode64(fp.read) }

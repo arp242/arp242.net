@@ -93,7 +93,15 @@ over how anyone uses it.
 
 ---
 
-Various usages of *open source* found in a quick Usenet search with Google
+The earliest reference I found – quite by accident – is in a [1985
+broadcast](https://youtu.be/0DdoGPav3fc?t=826) of [*Computer
+Chronicles*](https://en.wikipedia.org/wiki/Computer_Chronicles) (13:50) on UNIX:
+
+> As for the future of UNIX, he [Bill Joy] says its Open Source Code,
+> versatility, and ability to work on a variety of machines means it will be
+> popular with scientists and engineers for some time.
+
+Many  more usages of *open source* can  be found in Usenet search with Google
 Groups. I tried downloading the Internet Archives for better searching/numbers,
 but that doesn't seem to work at the moment, so this will have to do.
 
