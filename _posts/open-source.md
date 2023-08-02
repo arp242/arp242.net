@@ -91,7 +91,8 @@ over how anyone uses it.
 [ngram1]: https://books.google.com/ngrams/graph?content=open+source%2Copen-source%2Cfree+software&case_insensitive=on&year_start=1970&year_end=2008&corpus=15&smoothing=3&share=&direct_url=t4%3B%2Copen%20source%3B%2Cc0%3B%2Cs0%3B%3BOpen%20Source%3B%2Cc0%3B%3Bopen%20source%3B%2Cc0%3B%3BOpen%20source%3B%2Cc0%3B.t4%3B%2Copen%20-%20source%3B%2Cc0%3B%2Cs0%3B%3Bopen%20-%20source%3B%2Cc0%3B%3BOpen%20-%20source%3B%2Cc0%3B%3BOpen%20-%20Source%3B%2Cc0%3B.t4%3B%2Cfree%20software%3B%2Cc0%3B%2Cs0%3B%3Bfree%20software%3B%2Cc0%3B%3BFree%20Software%3B%2Cc0%3B%3BFree%20software%3B%2Cc0%3B%3BFREE%20SOFTWARE%3B%2Cc0
 [ngram2]: https://books.google.com/ngrams/graph?content=open+source%2COpen+Source%2COpen+source%2Copen-source&year_start=1970&year_end=2008&corpus=15&smoothing=3&share=&direct_url=t1%3B%2Copen%20source%3B%2Cc0%3B.t1%3B%2COpen%20Source%3B%2Cc0%3B.t1%3B%2COpen%20source%3B%2Cc0%3B.t1%3B%2Copen%20-%20source%3B%2Cc0
 
----
+Pre-1998 usage
+--------------
 
 The earliest reference I found – quite by accident – is in a [1985
 broadcast](https://youtu.be/0DdoGPav3fc?t=826) of [*Computer
