@@ -15,9 +15,9 @@ known.
 I'm not especially concerned with patents or people using my work for commercial
 purposes: a company using my little tool or library (with or without changes)
 takes away nothing from my little hobby project that [I wrote for my own
-reasons][diy]
+reasons][diy].
 
-[diy]: /diy.html.
+[diy]: /diy.html
 
 ---
 
