@@ -14,7 +14,7 @@ class IncludeImage < Liquid::Tag
              when 'svg';          'image/svg+xml'
              else                 raise 'Unknown type'
            end
-    return "data:#{type};base64,#{File.open(@path) { Base64.strict_encode64(_1.read) }}"
+    return "data:#{type};base64,#{File.open(@path) { |fp| Base64.strict_encode64(fp.read) }}"
   end
 end
 Liquid::Template.register_tag('include_image', IncludeImage)
