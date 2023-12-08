@@ -1,4 +1,3 @@
-# Based on: https://github.com/GSI/jekyll_image_encode
 require 'base64'
 
 class IncludeImage < Liquid::Tag
@@ -12,10 +11,10 @@ class IncludeImage < Liquid::Tag
              when 'png';          'image/png'
              when 'jpg', 'jpeg';  'image/jpeg'
              when 'webp';         'image/webp'
+             when 'svg';          'image/svg+xml'
              else                 raise 'Unknown type'
            end
-    encoded = File.open(@path) { |fp| Base64.strict_encode64(fp.read) }
-    return "data:#{type};base64,#{encoded}"
+    return "data:#{type};base64,#{File.open(@path) { Base64.strict_encode64(_1.read) }}"
   end
 end
 Liquid::Template.register_tag('include_image', IncludeImage)

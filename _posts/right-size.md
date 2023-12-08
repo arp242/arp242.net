@@ -4,7 +4,6 @@ date: 2019-10-07
 tags: ['Programming']
 ---
 
-
 There's this pattern: *"everything should be done in small easy to understand
 units, which can easily be combined to form larger more complex systems"*.
 Examples include microkernels, microservices, small packages, and small
@@ -31,8 +30,6 @@ ecosystem suffers from some serious problems due to overmodularisation.
 
 [mservice]: https://blog.softwaremill.com/are-you-sure-youre-using-microservices-f8d4e912d014
 [mspremium]: https://martinfowler.com/bliki/MicroservicePremium.html
-
----
 
 Software split in to small functions is often harder to understand. Sure, the
 individual functions may be easy to understand, but understanding the overal
