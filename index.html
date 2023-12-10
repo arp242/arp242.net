@@ -3,6 +3,7 @@ layout: default
 title: arp242.net
 ---
 
+{% include _top.html %}
 <div class="center-flex">
 	<article id="home">
 		<div class="page">
@@ -14,96 +15,73 @@ title: arp242.net
 				</sup>
 			</h1>
 
-			<ul class="posts">{% for p in site.posts %}
+			<ul class="posts fade-height" data-fade-height="400">{% for p in site.posts %}
 				{% unless p.archive %}<li{% if p.standout %} class="s"{% endif %}><span>{{ p.date | date_to_string_space }}</span> <a href="{{ p.url }}">{{ p.title }}</a></li>{% endunless %}{% endfor %}
 			</ul>
 		</div>
 
 		<hr>
 
-		<div class="page">
-			<h1 id="code">Code projects</h1>
-			<p>See <a href="https://github.com/arp242/">GitHub</a> for a full list.</p>
-			<ul class="code">
-				<li><a href="https://github.com/arp242/border/">border</a>                   – Simple commandline tool to add a border around PNG images </li>
-				<li><a href="https://github.com/arp242/cantuse/">cantuse</a>                 – List browsers in which a feature *won't* work.</li>
-				<li><a href="https://github.com/arp242/find-cursor/">find-cursor</a>         – Highlight the cursor position.</li>
-				<li><a href="https://github.com/zgoat/goatcounter">GoatCounter</a>           – Web analytics platform.</li>
-				<li><a href="https://github.com/arp242/hello-css/">hello-css</a>             – A CSS template focused on readability.</li>
-				<li><a href="https://github.com/arp242/imgzoom/">imgzoom</a>                 – Simple JavaScript image zoomer.</li>
-				<li><a href="https://github.com/arp242/info/">info</a>                       – Texinfo made palatable.</li>
-				<li><a href="https://github.com/arp242/pkg_clearleaves/">pkg_clearleaves</a> – Remove packages on which no other packages depend.</li>
-				<li><a href="https://github.com/arp242/readon.js/">readon.js</a>             – Continue reading a web page from where you left last time.</li>
-				<li><a href="https://github.com/arp242/sanitize_files/">sanitize_files</a>   – Basic cleanup of your code.</li>
-				<li><a href="https://github.com/arp242/singlepage/">singlepage</a>           – Bundle external assets in a HTML file.</li>
-				<li><a href="https://github.com/arp242/uni/">uni</a>                         – Query the Unicode database from the commandline.</li>
-				<li><a href="https://github.com/zgoat/zsrv">zsrv</a>                        –  Static file server which packs all data in the binary.</li>
-			</ul>
-
-			<h2 id="go">Go libraries and tools</h2>
-			<ul class="code">
-				<li><a href="https://github.com/arp242/gogo-release">gogo-release</a> – Build cross-platform binaries.<li>
-				<li><a href="https://github.com/arp242/goimport">goimport</a>         – Add, remove, or replace imports.</li>
-				<li><a href="https://github.com/arp242/hubhub">hubhub</a>             – Utility functions for working with the GitHub API.</li>
-				<li><a href="https://github.com/arp242/sconfig">sconfig</a>           – A simple and functional configuration file parser.</li>
-				<li><a href="https://github.com/monoculum/formam">formam</a>          – Scan HTML forms in to a struct.</li>
-				<li><a href="https://github.com/zgoat/guru">guru</a>                  – Go errors with a Guru Meditation Number.</li>
-				<li><a href="https://github.com/teamwork/mailaddress">mailaddress</a> – Mail address parsing library for Go.</li>
-				<li><a href="https://github.com/teamwork/reload">reload</a>           – Lightweight automatic application reloading.</li>
-				<li><a href="https://github.com/teamwork/spamc">spamc</a>             – Go client for SpamAssassin.</li>
-				<li><a href="https://github.com/zgoat/isbot">isbot</a>                – Detect HTTP bots.</li>
-				<li><a href="https://github.com/zgoat/utils">utils</a>                – Collection of often used extensions to Go’s standard library.</li>
-				<li><a href="https://github.com/zgoat/zhttp">zhttp</a>                – Martin’s HTTP package.</li>
-				<li><a href="https://github.com/zgoat/zli">zli</a>                    – Library for writing CLI programs</li>
-				<li><a href="https://github.com/zgoat/zlog">zlog</a>                  – Logging library.</li>
-				<li><a href="https://github.com/zgoat/zpack">zpack</a>                – Pack static data in binaries.</li>
-				<li><a href="https://github.com/zgoat/zstripe">zstripe</a>            – Utility functions for working with the Stripe API.</li>
-				<li><a href="https://github.com/zgoat/ztest">ztest</a>                – Testing helpers.</li>
-				<li><a href="https://github.com/zgoat/zvalidate">zvalidate</a>        – Static validation that returns parsed values.</li>
-			</ul>
-
-			<h2 id="vim">Vim stuff</h2>
-			<ul class="code">
-				<li><a href="https://github.com/arp242/dotfiles/tree/master/vim"><code>~/.vim</code></a> – All sorts of stuff.</li>
-				<li><a href="https://github.com/arp242/my-first-vimrc/">My first vimrc</a> – A simple vimrc generator for new users; see <a href="/my-first-vimrc">/my-first-vimrc</a>.</li>
-				<li><a href="https://github.com/arp242/vimlog/">VimLog</a> – A ChangeLog for vim; see <a href="/vimlog">/vimlog</a>.</li>
-			</ul>
-
-			<ul class="code">
-				<li><a href="https://github.com/arp242/auto_mkdir2.vim/">auto_mkdir2.vim</a>       – Automatically create directories.</li>
-				<li><a href="https://github.com/arp242/batchy.vim/">batchy.vim</a>                 – Perform batch operations on files.</li>
-				<li><a href="https://github.com/arp242/confirm_quit.vim/">confirm_quit.vim</a>     – Ask for confirmation before quitting Vim.</li>
-				<li><a href="https://github.com/arp242/default2.vim/">default2.vim</a>             – Vim’s default colour scheme with some small enhancements.</li>
-				<li><a href="https://github.com/arp242/globedit.vim/">globedit.vim</a>             – Use globbing patterns for :edit, :tabedit, etc.</li>
-				<li><a href="https://github.com/arp242/gopher.vim/">gopher.vim</a>                 – Plugin for the Go programming language.</li>
-				<li><a href="https://github.com/arp242/helplink.vim/">helplink.vim</a>             – Link to Vim help pages with ease.</li>
-				<li><a href="https://github.com/arp242/jumpy.vim/">jumpy.vim</a>                   – Filetype-specific mappings for <code>[[</code> and <code>]]</code>.</li>
-				<li><a href="https://github.com/arp242/lazy.vim/">lazy.vim</a>                     – The really simple snippet manager.</li>
-				<li><a href="https://github.com/arp242/packman.vim/">packman.vim</a>               – A simple Vim plugin/package manager.</li>
-				<li><a href="https://github.com/arp242/runbuf.vim/">runbuf.vim</a>                 – Run the contents of a buffer in psql, python, bash, etc. and display the output.</li>
-				<li><a href="https://github.com/arp242/startscreen.vim/">startscreen.vim</a>       – Customize Vim’s start screen.</li>
-				<li><a href="https://github.com/arp242/switchy.vim/">switchy.vim</a>               – Switch to related files.</li>
-				<li><a href="https://github.com/arp242/testing.vim/">testing.vim</a>               – Testing framework for Vim.</li>
-				<li><a href="https://github.com/arp242/undofile_warn.vim/">undofile_warn.vim</a>   – Warn when using the undofile.</li>
-				<li><a href="https://github.com/arp242/xdg_open.vim/">xdg_open.vim</a>             – Run xdg-open from Vim; re-implements netrw&#39;s gx.</li>
-				<li><a href="https://github.com/arp242/zev.vim/">zev.vim</a>                       – Easily apply predefined substitute patterns.</li>
-			</ul>
-
-			<h2>Other</h2>
-			<ul class="code">
-				<li><a href="https://bestasciitable.com/">bestasciitable.com</a>             – Or, why does Ctrl+i insert a Tab in my terminal?</li>
-				<li><a href="https://github.com/arp242/dotfiles/">dotfiles</a>               – My configuration files.</li>
-				<li><a href="/the-art-of-unix-programming">The Art of Unix Programming</a>   – Reformatted version.</li>
-			</ul>
-		</div>
-
-		<hr>
-
-		<div class="page">
-			<p>Also see <strong><a href="/archive.html">the archives</a></strong> for some outdated
-			and not-especially-interesting-after-all stuff.</p>
-		</div>
+		<h1 id="code">Code projects</h1>
+		{% include _code.html %}
 	</article>
-
-	{% include _side.html %}
 </div>
+
+<style>
+.code        { display:flex; flex-wrap:wrap; justify-content:space-around; max-width:54rem; }
+#home h2     { font-size:1.3rem; }
+h3           { margin:0; width:100%; }
+h3 a:after   { content:''; }
+h3 a         { font-size:1rem; line-height:0; color:#00f; }
+.code span   {  position:absolute; top:.4em; right:.8em; }
+.code p      { margin:0; }
+.code div    { position:relative; display:flex; flex-wrap:wrap; align-content:flex-start;
+               width:17.5rem; min-height:2rem; margin-bottom:1em; padding:.4em .8em; background:#fff; hyphens:auto; }
+div.blank    { background:transparent; border:none; }
+
+@media (max-width:60em) { .code div    { width:45%;  } }
+@media (max-width:40em) { .code div    { width:100%; margin-bottom:-1px; }
+                          .code .blank { display:none; }
+                          h3           { min-width: 12rem; } }
+#home h1#code, #home h2  { margin-left:1rem; }
+.more         { position:relative; width:100%; text-align:center; padding-top:4rem; z-index:10; margin-top:-5rem;
+                background-image:linear-gradient(to bottom, transparent, #fff 75%); }
+.code + .more { margin-top:-3.5rem; background-image:linear-gradient(to bottom, transparent, #eee 75%); }
+
+@media (min-width:46rem) {
+.code div:nth-child(4n+1) { clip-path: polygon(0px 0px, 22.47% 5.08%, 88.92% -3.82%, 98.17% 4.56%, 94.82% 62.39%, 95.36% 101.01%, 34.99% 91.65%, 15.36% 94.15%, 0.86% 100%); }
+.code div:nth-child(4n+2) { clip-path: polygon(0px 19px, 8.9% 5.08%, 43.21% 9.28%, 98.17% 4.56%, 94.82% 62.39%, 95.36% 101.01%, 2.13% 95.68%, -1.43% 72.98%, 1.93% 47.58%); }
+.code div:nth-child(4n+3) { clip-path: polygon(0px 0px, 55.69% 14.15%, 68.21% 5.25%, 98.17% 4.56%, 92.68% 44.24%, 95.36% 101.01%, 85.35% 93.67%, 43.58% 109.27%, 0.86% 100%); }
+.code div:nth-child(4n+4) { clip-path: polygon(0px 0px, 55.68% -0.39%, 99.99% -1.48%, 96.75% 38.94%, 94.82% 88.17%, 86.07% 101.79%, 3.92% 96.34%, -1.07% 36.33%, 1.93% 17.97%); }
+}
+
+
+</style>
+<script>
+	document.querySelectorAll('.fade-height').forEach((elem) => {
+		let h = elem.clientHeight,
+			f = parseInt(elem.dataset.fadeHeight) || 200
+		if (f >= h)
+			return
+		elem.style.height = f + 'px'
+		elem.style.overflow = 'hidden'
+		elem.style.transition = 'height 400ms'
+
+		let d = document.createElement('div'),
+			a = document.createElement('a')
+		a.innerText = 'More…'
+		a.href = '#'
+		d.className = 'more'
+		a.addEventListener('click', (e) => {
+			e.preventDefault()
+			d.parentNode.removeChild(d)
+			elem.style.height = h + 'px'
+			setTimeout(() => {
+				elem.style.height = ''
+				elem.style.overflow = ''
+			}, 400)
+		})
+		d.appendChild(a)
+		elem.insertAdjacentElement('afterend', d)
+	})
+</script>

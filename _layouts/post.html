@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<nav><a href="/">Home</a></nav>
+{% include _top.html %}
 <div class="center-flex">
 	<article>
 		<div class="page">
@@ -25,8 +25,6 @@ layout: default
 		</div>
 		{% related_posts %}
 	</article>
-
-	{% include _side.html %}
 </div>
 
 <script>
