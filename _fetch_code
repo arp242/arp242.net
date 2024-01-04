@@ -1,0 +1,105 @@
+#!/bin/zsh
+set -euC
+
+fetch() {
+	: >|repos.json
+
+	for i in {1..10}; do
+		local data=$(curl -sH 'Accept: application/vnd.github.v3+json' \
+			"https://api.github.com/users/arp242/repos?per_page=100&page=$i")
+
+		jq '.[]' <<<$data >>|repos.json
+
+		(( $(jq '. | length' <<<$data) < 100 )) && break
+	done
+
+	extra=(
+		fsnotify/fsnotify
+		BurntSushi/toml
+		toml-lang/toml-test
+		Teamwork/reload
+		Teamwork/kommentaar
+	)
+	for e in $extra; do
+		curl -sH 'Accept: application/vnd.github.v3+json' \
+			"https://api.github.com/repos/$e" >>|repos.json
+	done
+}
+
+gen() {
+	IFS=$'\n' local all=($(jq -Mr \
+		'(.stargazers_count | tostring) + " " + (.fork | tostring) + " " + .full_name + " " + .description' \
+		repos.json))
+
+	typeset -A html
+	typeset -A num
+	# The Art of Unix Programming – Reformatted version.
+	# VimLog – A ChangeLog for vim; see /vimlog.
+	# ~/.vim – All sorts of stuff.
+    # My first vimrc – A simple vimrc generator for new users; see /my-first-vimrc.
+	for a in ${(On)all}; do
+		a=($=a)
+		integer stars=$a[1]
+		local fork=$a[2]
+		local repo=$a[3]
+		local desc=$a[4,-1]
+		local kind=' '
+		local name=$repo:t
+
+		# Skip
+		if [[ $name = 'zgo.at' ]]; then
+			continue
+		fi
+		if [[ $name = 'toml-c' || $name = 'toml-test-matrix' ]]; then
+			kind=misc
+		fi
+
+		if [[ -d ~/code/Golib/$name ]]; then
+			kind=golib
+		elif [[ -d ~/code/Prog/$name ]]; then
+			kind=prog
+		elif [[ -d ~/code/Vim/$name || $name:e = 'vim' ]]; then
+			kind=vim
+		elif [[ -d ~/code/Js/$name ]]; then
+			kind=misc  # js
+		elif [[ -d ~/code/Misc/$name ]]; then
+			kind=misc
+		fi
+
+		if [[ $fork = 'true' ]]; then
+			print -f 'FORK   %-8d %-10s %-28s %s\n' $stars $kind $repo $desc >&2 
+			continue
+		fi
+		if [[ $kind = ' ' ]]; then
+			print -f 'NOKIND %-8d %-10s %-28s %s\n' $stars $kind $repo $desc >&2 
+			continue
+		fi
+
+		num[$kind]+=1
+		html[$kind]+=$(cat <<-EOF
+		    <div>
+		        <h3><a href="https://github.com/$repo">$name</a></h3>
+		        <span>★ $stars</span>
+		        <p>$desc</p>
+		    </div>
+		EOF
+		)
+		html[$kind]+=$'\n'
+	done
+
+	for k in ${(k)html}; do
+		integer n=$(( 3 - ($#num[$k] % 3) ))
+		if (( $n != 3 )); then
+			repeat $n; html[$k]+='    <div class="blank"></div>\n'
+		fi
+	done
+
+	print "<div class='code fade-height'>\n$html[prog]\n</div>\n"
+	print "<h2>Vim stuff</h2>\n<div class='code fade-height'>\n$html[vim]</div>\n"
+	print "<h2>Go libraries and tools</h2>\n<div class='code fade-height'>\n$html[golib]</div>\n"
+	#print "<h2>JS</h2><div class='code fade-height'>\n$html[js]</div>\n"
+	print "<h2>Other</h2>\n<div class='code fade-height'>\n$html[misc]</div>\n"
+}
+
+[[ ! -f repos.json ]] && fetch
+gen
