@@ -48,7 +48,7 @@ class MarginHeaderTOC < Liquid::Tag
     return $mh_all.map do |h|
       text = ''
       text += "#{"\t" * prev}<ol class='toc-#{h[0]}'>\n" if h[0] > prev
-      text += "#{"\t" * (prev - 1)}</ol>\n"                    if h[0] < prev
+      text += "#{"\t" * (prev - 1)}</ol>\n"              if h[0] < prev
       prev = h[0]
 
       next text + "#{"\t" * prev}<li><a href='##{h[1]}'>#{h[2]}</a></li>"
