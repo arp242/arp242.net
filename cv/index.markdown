@@ -6,9 +6,9 @@ title: "CV Martin Tournoij"
 Martin Tournoij
 ===============
 
-- <a data-goatcounter-click="click-cv-pdf"  href="CV-MartinTournoij.pdf">PDF</a>
+- <a data-goatcounter-click="click-cv-pdf"  href="/cv/CV-MartinTournoij.pdf">PDF</a>
   (A4 size); recommended.
-- <a data-goatcounter-click="click-cv-html" href="CV-MartinTournoij.html">HTML source</a>
+- <a data-goatcounter-click="click-cv-html" href="/cv/CV-MartinTournoij.html">HTML source</a>
   (not extensively tested on different platforms/browsers, primarily intended to
   render PDF).
 
