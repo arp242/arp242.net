@@ -2,13 +2,13 @@
 set -euC
 
 fetch() {
-	: >|repos.json
+	: >|.repos.json
 
 	for i in {1..10}; do
 		local data=$(curl -sH 'Accept: application/vnd.github.v3+json' \
 			"https://api.github.com/users/arp242/repos?per_page=100&page=$i")
 
-		jq '.[]' <<<$data >>|repos.json
+		jq '.[]' <<<$data >>|.repos.json
 
 		(( $(jq '. | length' <<<$data) < 100 )) && break
 	done
@@ -22,14 +22,14 @@ fetch() {
 	)
 	for e in $extra; do
 		curl -sH 'Accept: application/vnd.github.v3+json' \
-			"https://api.github.com/repos/$e" >>|repos.json
+			"https://api.github.com/repos/$e" >>|.repos.json
 	done
 }
 
 gen() {
 	IFS=$'\n' local all=($(jq -Mr \
 		'(.stargazers_count | tostring) + " " + (.fork | tostring) + " " + .full_name + " " + .description' \
-		repos.json))
+		.repos.json))
 
 	typeset -A html
 	typeset -A num
@@ -50,9 +50,8 @@ gen() {
 		if [[ $name = 'zgo.at' ]]; then
 			continue
 		fi
-		if [[ $name = 'toml-c' || $name = 'toml-test-matrix' ]]; then
-			kind=misc
-		fi
+		[[ $name = 'toml-c' || $name = 'toml-test-matrix' ]] && kind=misc
+		[[ $name = 'runewidth' || $name = 'file' ]] && fork=false
 
 		if [[ -d ~/code/Golib/$name ]]; then
 			kind=golib
@@ -101,5 +100,5 @@ gen() {
 	print "<h2>Other</h2>\n<div class='code fade-height'>\n$html[misc]</div>\n"
 }
 
-[[ ! -f repos.json ]] && fetch
+[[ ! -f .repos.json ]] && fetch
 gen
