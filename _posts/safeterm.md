@@ -158,7 +158,8 @@ Keys
 ----
 Key input handling is kind of a mess, and this is where I really recommend using
 a terminfo library if at all possible. This also avoids the whole
-backspace/delete key confusion (less of an issue today than it was).
+backspace/delete key confusion (less of an issue today than it used to be, but
+still exists).
 
 | Codes          | terminfo (short, long)  | Description                                         |
 | -----          | ----------------------  | -----------                                         |
