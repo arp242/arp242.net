@@ -4,8 +4,6 @@ date: 2019-08-13
 tags: ['GoatCounter', 'Open source']
 ---
 
-**Update: [GoatCounter 1.0 released](/goatcounter-1.0.html)**.
-
 So I made a thing, called [GoatCounter](https://www.GoatCounter.com). It's a web
 statistics platform currently at "beta" or "MVP" status. I was actually working
 on something entirely different, wanted to add some basic stats to it, and

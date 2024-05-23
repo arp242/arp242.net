@@ -51,7 +51,9 @@ class MarginHeaderTOC < Liquid::Tag
       text += "#{"\t" * (prev - 1)}</ol>\n"              if h[0] < prev
       prev = h[0]
 
-      next text + "#{"\t" * prev}<li><a href='##{h[1]}'>#{h[2]}</a></li>"
+      c = context.registers[:site].find_converter_instance(Jekyll::Converters::Markdown)
+        .convert(h[2]).gsub(/<\/?p>/, '').strip.gsub(/<br( ?\/)?>/, ', ')
+      next text + "#{"\t" * prev}<li><a href='##{h[1]}'>#{c}</a></li>"
     end.join("\n") + "\n</ol>"
   end
 end
