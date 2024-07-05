@@ -7,7 +7,318 @@
 	<link rel="canonical" href="https://www.arp242.net/vimlog">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext">
 	<link rel="icon" type="image/png" href="/favicon.png">
-	<link rel="stylesheet" href="all.css">
+	<style>
+/* FONTS */
+
+html {
+  font: 16px/140% Lato, sans-serif;
+  /* Possible sans-serif alternative; note you may want to adjust the
+   * line-height and font-size if you want the fonts. Different values work
+   * better for different fonts.
+   * font: 18px/160% Calibri, 'DejaVu Sans Serif', sans-serif;
+   */
+
+          text-size-adjust: none;      /* Disables text adjustment algorithm on some mobile browsers, this is */
+  -webkit-text-size-adjust: none;      /* intended for sites that are not designed for mobile viewing. */
+}
+
+@media (max-width: /*bodywidth*/54em) { /* Use smaller fonts and line-height on smaller screens. */
+  html { font-size: 14px; line-height: 160%; }
+}
+@media (max-width: /*bodywidth*/26em) {
+  html { font-size: 12px; line-height: 150%; }
+}
+
+pre, code {
+  font-family: 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Consolas', monospace;
+}
+
+pre {
+  font-size: 14px;                     /* Smaller text to fit more. */
+  line-height: 130%;                   /* Idem. */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  /* Enable ligatures, works well with Libre Baskerville, which adds
+   * (old-fashioned but handsome) ligatures on "st", "ct", and "sp".
+   *
+   * You'll need to add "&subset=all" if you're using it from Google Fonts:
+   *   https://fonts.googleapis.com/css?family=Libre+Baskerville&subset=all
+   */
+  font-variant-ligatures: common-ligatures discretionary-ligatures;
+  font-feature-settings: 'liga' on, 'dlig' on;
+}
+
+
+/* DEFAULTS */
+* {
+  box-sizing: border-box;              /* Element width/height includes the border. */
+}
+
+*:target {
+  background-color: #ff6;              /* Highlight elements in URL fragment, e.g. #some-header, or #footnote-1. */
+}
+
+html {
+  background-color: #eee;              /* Neutral background to contrast with the page. */
+  color: /*textcolor*/#252525;         /* Slightly less "harsh" black; looks subtly better. */
+       tab-size: 4;                    /* Tab size of 4 is probably more common in editors etc. */
+  -moz-tab-size: 4;                    /* Still needed as of Jan 2019 :-( */
+}
+
+html, body {
+  margin: 0;                           /* No extra margin; shows up in some cases (e.g. when printing). */
+}
+
+.center, .page {
+  max-width: /*bodywidth*/54rem;       /* Don't make it too wide, as that makes it harder to read. */
+  margin: .5rem auto;                  /* Add some extra space at top/bottom, and centre it. */
+  position: relative;                  /* So that absolute/relative positioning is relative to the page, which is almost always what's desired. */
+}
+
+.page {
+  padding: /*pady*/1rem /*padx*/4rem;  /* Small padding on top, larger on sides. */
+  background-color: /*bgcolor*/#fff;   /* White background to override the html one */
+                                       /* A slightly grey or yellowish tint also works well, and gives a warmer feel.
+                                        * Some suggestions: #fbfbf7, #fffff7 */
+                                       /* Remove this and the box-shadow for an even background colour. */
+  box-shadow: 0 0 6px rgba(0,0,0,.2);  /* Box-shadow effect looks quite handsome here. */
+}
+@media (max-width: /*bodywidth*/54em) {
+  .page, .center {
+    max-width: 100%;                   /* Full-width page. */
+    padding: 0 1rem;                   /* Modest amount of padding to prevent wasting screen space. */
+  }
+}
+
+
+/* PRINTING */
+@page {
+  margin: 0;                           /* Don't add extra margin to pages, .page already has it. */
+                                       /* Also hides URL and such that most browsers add. */
+}
+@media print {                         /* Reset some stuff for printing. */
+  body {
+    background-color: #fff;
+  }
+  .page, .center {
+    box-shadow: none;
+    padding: 0 1cm;
+    margin: 0;
+    max-width: none;
+  }
+  .page:first-child, .center:first-child {
+    padding-top: 5mm;
+  }
+}
+
+.page-a4, .page.page-a4 {              /* A4 paper used in most places */
+  width: 21cm;
+  height: 29.7cm;
+}
+
+.page-letter, .page.page-letter {      /* Standard U.S. letter */
+  width: 8.5in;
+  height: 11in;
+}
+
+
+/* LINKS */
+a,
+a code,                                /* Otherwise it would just stay black text; common enough to include here. */
+.link {
+  color: #00f;                         /* Make sure colour is the same in all browsers. */
+  text-decoration: none;               /* Underlining can look "busy"; the colour on its own should be enough. */
+  transition: color .2s;               /* Animate the change in colour effect on hover; subtle but noticeable. */
+}
+a:hover, .link:hover {
+  text-decoration: underline;          /* Provide some feedback by underlining and changing colour. */
+  color: #6491ff;                      /* Light blue */
+}
+a:hover code  {
+  color: #6491ff;                      /* Also change colour of code on hover. */
+}
+
+form {                                 /* Make sure forms don't affect visual layout. */
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  background-color: transparent;       /* Reset basic appearance. */
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1rem;
+  display: inline;
+
+  -moz-user-select: inherit;           /* Otherwise text isn't selectable. */
+  -webkit-appearance: none;
+}
+
+
+/* HEADERS */
+
+/* The intention is that there is only one h1 on a page: at the top. If you use
+ * h1 different, then you may want to add a border like in the h2. */
+h1 {
+  text-align: center;
+  padding: .5em 0;                     /* More than default. */
+  font-size: 1.7em;                    /* Default of 2em is pretty large. */
+}
+
+h2 {
+  border-bottom: 1px solid /*textcolor*/#252525;  /* Underline to stand out more. */
+  padding-bottom: .2em;                /* Border not too close to the text. */
+  font-size: 1.5em;                    /* Default of 1.8em is pretty large. */
+}
+
+h3 {
+  font-size: 1.3em;                    /* Default of 1.6em is pretty large. */
+}
+
+h4 {
+  font-size: 1.1em;                    /* Slightly larger than default of 1em. */
+}
+
+h5, h6 {
+  font-size: 1em;                      /* Don't make h5 and h6 smaller than base font. */
+}
+
+
+/* BLOCKQUOTE */
+blockquote {
+  font-style: italic;                  /* Quotations are usually typeset in italics. */
+}
+
+
+/* IMAGES */
+img {
+  max-width: 100%;                     /* Make sure it's never larger than the page. */
+}
+figure {
+  text-align: center;                  /* Centre images and associated captions (if any). */
+  margin: 1rem 0;                      /* Don't need 40px of margin on either side. */
+}
+
+figure.border {
+  border: 1px solid #bbb;              /* Add border. */
+  padding: 5px;                        /* Slight gap between image and border. */
+  margin: -5px;                        /* Put the border in the margin, so the padding doesn't shrink the image. */
+}
+
+@media (min-width: /*bodywidth*/54em) { /* Only if the screen is wide enough. */
+  figure.full {                        /* Make sure this is after .border so that adding both works. */
+    margin-left: /*padx*/-4rem;
+    width: calc(100% + /*padx*/8rem);
+  }
+
+  figure.full.border {
+    border-left: none;                 /* Remove side borders on .full */
+    border-right: none;
+  }
+}
+
+
+/* CODE */
+code, pre, kbd, samp {
+  background-color: #f5f5f5;           /* Make it stand out a bit more. */
+  color: #000;                         /* Override the softer black, as we're now using a grey background. */
+}
+
+pre {
+  overflow: auto;                      /* Add scrollbars if the content is too high or wide. */
+  max-height: 500px;                   /* Scroll content larger than this. */
+  padding: .5em 1em;                   /* Don't put the text right on the edge. */
+  border-radius: 2px;                  /* Looks better with subtly rounded corner. */
+  border-top: 1px solid #d5d5d5;          /* Looks better. */
+  border-bottom: 1px solid #d5d5d5;       /* Looks better. */
+}
+
+@media (min-width: /*bodywidth*/54em) { /* Only if the screen is wide enough. */
+  pre.full {
+    margin-left: /*padx*/-4rem;
+    width: calc(100% + /*padx*/8rem);
+  }
+}
+
+code, kbd, samp {
+  padding: 1px 2px;                    /* Make sure the text isn't right on the edge of the background. */
+}
+pre > code {                           /* Reset the above styling on <pre><code> */
+  padding: 0;
+  box-shadow: none;
+  border: none;
+}
+
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
+  background-color: transparent;       /* Don't include grey background in headers, looks ugly. */
+  box-shadow: none;
+  color: inherit;
+}
+
+
+/* SUPER- AND SUBSCRIPT */
+
+sup, sub {                             /* Make sure the line height isn't affected. */
+  height: 0;
+  line-height: 1;
+  vertical-align: baseline;
+  position: relative;
+}
+sup {
+  bottom: 1ex;
+}
+sub {
+  top: .5ex;
+}
+
+/* HORIZONTAL RULER */
+
+/* Make the <hr> element look better by replacing it with some text (usually
+ * decorative characters such as fleurons or an asterism. */
+hr {
+  border: none;                        /* Remove default border. */
+  text-align: center;                  /* Centre the characters. */
+  font-size: 60px;                     /* Make it larger; what looks good depends a bit on which character you choose. */
+  color: /*textcolor*/#252525;         /* Standard text colour; it's grey by default. */
+  opacity: .9;                         /* But make it slightly less dark than regular text. */
+}
+
+hr:before {
+  /* Two fleurons with touching edges.
+  content: "☙❧";
+  letter-spacing: -4px;
+  */
+
+  /* As SVG, because too many browsers suck at rendering fonts well. This is
+   * the same as the above two rules (as they *should* render). */
+  content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMC4yIDkuMiIgaGVpZ2h0PSIzNC44IiB3aWR0aD0iMTE0LjMiPjxwYXRoIGQ9Ik0xMy4yIDBxMS4xIDAgMS4zIDEuMiAwIDEtLjcgMS4yLTEuOC40LTIgLjggMi42LjMgMy4yIDMuMWguMmwuMi44LS40LjFxLS4yIDEuOC0xLjggMS45LTEgMC0xLjMtMSAwLS44LjItLjguMi40LjguNC44IDAgMS0uOFExMSA2LjEgMTEgMy43cS0xLjQgMC0yLjEgMSAxLjQuNyAxLjQgMS44LS4xIDIuNS0zLjYgMi43US41IDkuMiAwIDUuNXEwLS42LjctLjcuNSAwIC42LjV2LjJsLS4xLjRxMCAxIDEuMSAxIDEgMCAxLS43UTQgMS4yIDcgMXEyIC4xIDIgMS43di4xcTAgLjQtLjQgMS41IDEtLjggMi0xIC42IDAgLjYtLjQuOC0xIDEuNi0xLjMuNi0uNC42LS44bC0uMi0uNHEtLjItLjMgMC0uNHptLTEuNiAzLjd2LjFxMCAxLjQgMi4zIDIuMi0uMy0yLTIuMy0yLjN6Ii8+PHBhdGggZD0iTTE3IDBxLTEgMC0xLjMgMS4yIDAgMSAuOCAxLjIgMS44LjQgMiAuOC0yLjcuMy0zLjIgMy4xSDE1bC0uMi44LjUuMXEuMiAxLjggMS44IDEuOSAxIDAgMS4yLTEgMC0uOC0uMi0uOC0uMS40LS43LjQtLjkgMC0xLS44IDIuNy0uOCAyLjgtMy4yIDEuNCAwIDIgMS0xLjMuNy0xLjMgMS44IDAgMi41IDMuNSAyLjcgNi40IDAgNi44LTMuNyAwLS42LS42LS43LS42IDAtLjcuNXYuMmwuMi40cTAgMS0xLjIgMS0uOSAwLTEtLjctLjYtNS0zLjctNS4yLTIgLjEtMiAxLjd2LjFxMCAuNC40IDEuNS0xLS44LTItMS0uNiAwLS42LS40LS43LTEtMS41LTEuMy0uNi0uNC0uNi0uOGwuMi0uNHEuMi0uMyAwLS40em0xLjcgMy43di4xcTAgMS40LTIuNCAyLjIuMy0yIDIuNC0yLjN6Ii8+PC9zdmc+);
+
+  /* Alternative: separate with a space:
+  content: "☙ ❧";
+  */
+
+  /* Or separate with letter-spacing and padding:
+  letter-spacing: 1em;
+  padding-left: 1em;
+  */
+
+  /* Or asterism:
+  content: "⁂";
+  */
+
+  /* Many possibilities
+  content: "* * *";
+  content: "· · ·";
+  */
+}
+
+	</style>
 	<style>
 		header     { text-align: center; width: 100%; background-color: #ebe7c3; padding-bottom: 1em; }
 		h1         { margin-bottom: .2em; }
