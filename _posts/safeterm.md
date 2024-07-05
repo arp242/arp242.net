@@ -106,9 +106,8 @@ emulators, unless explicitly disabled by the user.
 
 Where «R», «G», «B» are the red, green and blue values as decimal, 0 to 255:
 
-	[38;2;«R»;«R»;«B»m   Foreground
+	[38;2;«R»;«G»;«B»m   Foreground
 	[48;2;«R»;«G»;«B»m   Background
-
 
 Cursor movement
 ---------------
@@ -122,6 +121,7 @@ Cursor movement
 | [«N»D     | cub,  parm_left_cursor  | Move «N» characters to the left.                |
 | 7         | sc,   save_cursor       | Save current cursor position.                   |
 | 8         | rc,   restore_cursor    | Restore cursor to position of last save_cursor. |
+| [6n       | u7,   user7             | Request cursor, returned as `\x1b[«R»;«C»R`     |
 
 [^cup]: Top-left is 1;1
 
@@ -188,3 +188,7 @@ still exists).
 | \x7f [3~       | kdch1 key_dc key_delete | Delete key; *usually* sends [3~, but some send \x7f |
 | \x09           | -                       | Tab key                                             |
 | \x0d           | -                       | Enter key                                           |
+
+{% related_articles %}
+- [github.com/termstandard/colors](https://github.com/termstandard/colors)
+{% endrelated_articles %}

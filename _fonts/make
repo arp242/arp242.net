@@ -7,7 +7,7 @@ cd /tmp/ttftrim
 for f in *.woff2; do
 	woff2_decompress "$f"
 	f2="${f%.woff2}.ttf"
-	~/code/ttftrim/ttftrim "${f2}" "${f2}" ~/code/arp242.net
+	~/code/Prog/ttftrim/ttftrim "${f2}" "${f2}" ~/code/arp242.net
 	woff2_compress "$f2"
 done
 

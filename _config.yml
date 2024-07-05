@@ -10,7 +10,7 @@ strict_front_matter: true
 defaults: [
   {
     scope:  {path: '_posts'},
-    values: {layout: 'post', permalink: '/:title.html'},
+    values: {layout: 'post', permalink: '/:path.html'},
   },
   {
     scope:  {path: '_drafts'},

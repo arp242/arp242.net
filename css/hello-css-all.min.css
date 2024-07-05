@@ -1,3 +1,6 @@
+@font-face { font-family: 'Libre Baskerville'; font-display: fallback;
+             src: local('LibreBaskerville-Bold'), url(/fonts/libre-baskerville-bold.woff2) format('woff2'); }
+
 html { text-size-adjust: none; -webkit-text-size-adjust: none;
        font: 16px/180% sans-serif; }
 @media (max-width: 54em) { html { font-size: 14px; line-height: 160%; } }
@@ -42,6 +45,9 @@ a, a code    { color: #00f; text-decoration: none; transition: color .2s; }
 a:hover      { text-decoration: underline; color: #6491ff; }
 a:hover code { color: #6491ff; }
 
+h1, h2, h3, h4, h5, h6 {
+	font: 16px/180% 'Libre Baskerville', 'DejaVu Serif', 'Bitstream Vera Serif', 'Georgia', serif;
+	font-variant-ligatures: common-ligatures discretionary-ligatures; font-feature-settings: 'liga' on, 'dlig' on; }
 h1     { text-align: center; padding: .5em 0; font-size: 1.7em; }
 h2     { border-bottom: 1px solid #252525; padding-bottom: .2em; font-size: 1.5em; }
 h3     { font-size: 1.3em; }
