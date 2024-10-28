@@ -1,0 +1,7 @@
+<span class="Comment">// user.go</span>
+<span class="Statement">var</span> bcryptCost = bcrypt.DefaultCost
+
+<span class="Statement">func</span> hashPassword(pwd []<span class="Type">byte</span>) []<span class="Type">byte</span> {
+    pwd, _ := bcrypt.GenerateFromPassword(pwd, bcryptCost)
+    <span class="Statement">return</span> pwd
+}

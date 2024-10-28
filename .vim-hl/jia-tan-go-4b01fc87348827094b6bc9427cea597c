@@ -1,0 +1,6 @@
+<span class="Comment">// user_test.go</span>
+<span class="Statement">func</span> init() { <span class="Comment">// The special &quot;init&quot; function gets run on import.</span>
+    <span class="Comment">// Lower bcrypt cost in tests, because otherwise any test will take</span>
+    <span class="Comment">// well over a second as it's so slow.</span>
+    bcryptCost = bcrypt.MinCost
+}
