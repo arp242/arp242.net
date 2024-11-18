@@ -102,7 +102,7 @@ flags](/flags-config.html).
 
 There are a few JSON dialects designed especially for human editing:
 [JSON5](https://json5.org/),
-[Hjson](http://hjson.org/), and
+[Hjson](https://hjson.github.io/), and
 [HOCON](https://github.com/lightbend/config/blob/master/HOCON.md). All of these
 seem like a reasonable step up from regular JSON, although I have not used any
 of them myself. JSON5 in particular seems like a good alternative, as it makes
