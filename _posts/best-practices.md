@@ -91,11 +91,11 @@ declared with great arrogance.
 
 This is the same fallacious argument people use for safety:
 
-- *"I don't X will improve safety."*
+- *"I don't think X will improve safety."*
 
 - *"What?! You don't care about safety?!"*
 - or: *"Better safe than sorry!"*
 
 Which is why safety regulation only grows and never shrinks, even when the
-regulation just makes no sense eat all: arguing against it is hard, because the
+regulation just makes no sense at all: arguing against it is hard, because the
 look of things is against you. I call this the *Safety Fallacy*.
