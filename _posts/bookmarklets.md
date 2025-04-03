@@ -19,13 +19,17 @@ drag-and-drop to bookmarks toolbar. In Chrome it seems the only way is to
 drag-and-drop to bookmarks toolbar. I'm not sure about other browsers, [but I'm
 fairly sure the internet does][ddg].
 
-<a href="javascript:(function() {
-    document.querySelectorAll('p, li, div').forEach(function(n) {
+<a href="javascript:(() => {
+    document.querySelectorAll('p, li, div').forEach((n) => {
         n.style.color = '#000';
         n.style.font = '500 16px/1.7em sans-serif';
     });
-})();">readable</a> &nbsp; &nbsp; <a href="javascript:(function() {
-    document.querySelectorAll('*').forEach(function(n) {
+    document.querySelectorAll('*').forEach((e) => {
+        e.style.scrollbarColor = 'unset';
+        e.style.scrollbarWidth = 'unset';
+    });
+})();">readable</a> &nbsp; &nbsp; <a href="javascript:(() {
+    document.querySelectorAll('*').forEach((n) => {
         var p = getComputedStyle(n).getPropertyValue('position');
         if (p === 'fixed' || p === 'sticky') {
             n.style.cssText += ' ; position: absolute !important;';
@@ -40,10 +44,14 @@ readable
 --------
 Convert most text to something more readable:
 
-    javascript:(function() {
-        document.querySelectorAll('p, li, div').forEach(function(n) {
+    javascript:(() => {
+        document.querySelectorAll('p, li, div').forEach((n) => {
             n.style.color = '#000';
             n.style.font = '500 16px/1.7em sans-serif';
+        });
+        document.querySelectorAll('*').forEach((e) => {
+            e.style.scrollbarColor = 'unset';
+            e.style.scrollbarWidth = 'unset';
         });
     })();
 
@@ -67,14 +75,16 @@ so I just did:
 The font doesn't get many updates, so it should be mostly fine. I'm [not the
 first to struggle with this][fc]. Contact me if you know how to make it work.
 
+It also resets the scrollbar colour, because it seems the webshits have now
+declared war on the scrollbar.
 
 fixed
 -----
 
 Convert `fixed` and `sticky` positioning to `absolute`:
 
-    javascript:(function() {
-        document.querySelectorAll('*').forEach(function(n) {
+    javascript:(() => {
+        document.querySelectorAll('*').forEach((n) => {
             var p = getComputedStyle(n).getPropertyValue('position');
             if (p === 'fixed' || p === 'sticky') {
                 n.style.cssText += ' ; position: absolute !important;';

@@ -115,8 +115,8 @@ Cursor movement
 | Code      | Terminfo (short, long)  | Description                                     |
 | ----      | ----------------------  | -----------                                     |
 | [«R»;«C»H | cup,  cursor_address    | Set cursor position to «R», «C».[^cup]          |
-| [«N»A     | cuu,  parm_up_cursor    | Move «N» lines down.                            |
-| [«N»B     | cud,  parm_down_cursor  | Move «N» lines up.                              |
+| [«N»A     | cuu,  parm_up_cursor    | Move «N» lines up.                              |
+| [«N»B     | cud,  parm_down_cursor  | Move «N» lines down.                            |
 | [«N»C     | cuf,  parm_right_cursor | Move «N» characters to the right.               |
 | [«N»D     | cub,  parm_left_cursor  | Move «N» characters to the left.                |
 | 7         | sc,   save_cursor       | Save current cursor position.                   |
