@@ -30,18 +30,5 @@ pages](http://www.collyer.net/who/geoff/history.html):
 > in public. I remember clearly adding or editing many of these sections, then
 > saying to myself "I can't write this," and fixing the code instead.
 
-Eric S. Raymond made [similar observations in The Art of Unix
-Programming](/the-art-of-unix-programming/#a981686791):
-
-> Unix manual pages traditionally have a section called BUGS. In other cultures,
-> technical writers try to make the product look good by omitting and skating
-> over known bugs. In the Unix culture, peers describe the known shortcomings of
-> their software to each other in unsparing detail, and users consider a short
-> but informative BUGS section to be an encouraging sign of quality work.
-> Commercial Unix distributions that have broken this convention, either by
-> suppressing the BUGS section or euphemizing it to a softer tag like
-> LIMITATIONS or ISSUES or APPLICATION USAGE, have invariably fallen into
-> decline.
-
 A public issue tracker is the modern variant of maintaining a BUGS section in
 the man page.

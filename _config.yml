@@ -25,8 +25,4 @@ exclude: [
   'README.md',
   'css',
   'favicon.png',
-  'the-art-of-unix-programming/base.css',
-  'the-art-of-unix-programming/base.js',
-  'the-art-of-unix-programming/hello-css.min.css',
-  'the-art-of-unix-programming/readon.js',
   '.vim-hl']

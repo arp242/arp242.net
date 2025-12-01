@@ -19,11 +19,10 @@ analytics, I would have no way of knowing this.
 
 [vimlog]: /vimlog
 
-There are some other projects as well where this is useful; e.g. [The Art of
-Unix Programming][taoup], or [bestasciitable.com][best]. It's just useful to
-know how popular such projects are before I choose to spend more time on them.
+There are some other projects as well where this is useful; e.g.
+[bestasciitable.com][best]. It's just useful to know how popular such projects
+are before I choose to spend more time on them.
 
-[taoup]: /the-art-of-unix-programming
 [best]: https://bestasciitable.com
 
 I considered ‘archiving’ [How to detect automatically generated emails][auto] as
