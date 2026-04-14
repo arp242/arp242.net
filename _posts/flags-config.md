@@ -2,9 +2,6 @@
 title: "Flags are great for configuration"
 date: 2019-04-30
 tags: ['Unix', 'Config']
-hatnote: |
-    Discussions:
-      [Lobsters](https://lobste.rs/s/tm1vwk/flags_are_great_for_configuration).
 ---
 
 I like to configure programs with commandline flags. Why include thousands of

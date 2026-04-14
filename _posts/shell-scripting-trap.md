@@ -9,10 +9,6 @@ hatnote: |
     them. My updated take is to continue using shell scripts, but in zsh.  
     See: [s/bash/zsh/g](/why-zsh.html)
 
-    Discussions:
-      [Lobsters](https://lobste.rs/s/vghl4j/shell_scripting_trap),
-      [/r/programming](https://www.reddit.com/r/programming/comments/968sbv/the_shell_scripting_trap/),
-      [/r/commandline](https://www.reddit.com/r/commandline/comments/96i08f/the_shell_scripting_trap/).
     Translations:
       [Chinese (中文)](https://linux.cn/article-10772-1.html).
 ---

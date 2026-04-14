@@ -4,11 +4,6 @@ date: 2019-11-21
 tags: ['Go']
 filetype: go
 updated: 2019-11-24
-hatnote: |
-    Discussions:
-      [Lobsters](https://lobste.rs/s/bq4nxd/go_s_features_last_resort),
-      [/r/golang](https://www.reddit.com/r/golang/comments/dzihk6/gos_features_of_last_resort/),
-      [Hacker News](https://news.ycombinator.com/item?id=21603483).
 ---
 
 A "Feature of Last Resort" (FOLR) is a useful feature which solves certain

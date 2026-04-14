@@ -2,9 +2,6 @@
 title: "Source code shame"
 date: 2019-01-13
 tags: ['Community', 'Open source']
-hatnote: |
-    Discussions:
-      [/r/programming](https://www.reddit.com/r/programming/comments/ag2h51/testing_isnt_everything/ee3f3aw/).
 ---
 
 I suspect that that many companies don't publish their source code not because

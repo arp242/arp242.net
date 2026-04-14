@@ -1,6 +1,6 @@
 <span class="Statement">var</span> (
     jobs    = <span class="Constant">20</span>                 <span class="Comment">// Run 20 jobs in total.</span>
-    running = <span class="Statement">make</span>(<span class="Type">chan</span> <span class="Type">bool</span>, <span class="Constant">3</span>) <span class="Comment">// Limit concurrent jobs to 3.</span>
+    running = make(chan bool, <span class="Constant">3</span>) <span class="Comment">// Limit concurrent jobs to 3.</span>
     wg      sync.WaitGroup       <span class="Comment">// Keep track of which jobs are finished.</span>
 )
 
@@ -9,7 +9,7 @@ wg.Add(jobs)
     running &lt;- <span class="Constant">true</span> <span class="Comment">// Fill running; this will block and wait if it's already full.</span>
 
     <span class="Comment">// Start a job.</span>
-    <span class="Statement">go</span> <span class="Statement">func</span>(i <span class="Type">int</span>) {
+    <span class="Statement">go</span> <span class="Statement">func</span>(i int) {
         <span class="Statement">defer</span> <span class="Statement">func</span>() {
             &lt;-running <span class="Comment">// Drain running so new jobs can be added.</span>
             wg.Done() <span class="Comment">// Signal that this job is done.</span>

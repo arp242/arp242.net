@@ -3,12 +3,6 @@ title: "Go is not an easy language"
 date: 2021-02-22
 tags: ['Go', 'Programming']
 filetype: go
-hatnote: |
-    Discussions:
-      [Lobsters](https://lobste.rs/s/ee6nsc/go_is_not_easy_language),
-      [Hacker News](https://news.ycombinator.com/item?id=26220693),
-      [/r/golang](https://www.reddit.com/r/golang/comments/lpeafy/go_is_not_an_easy_language/),
-      [/r/programming](https://www.reddit.com/r/golang/comments/lpo6zh/go_is_not_an_easy_language/)
 ---
 
 Go is not an easy programming language. It *is* simple in many ways: the syntax

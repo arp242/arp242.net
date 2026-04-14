@@ -5,9 +5,6 @@ tags: ['PHP']
 filetype: php
 updated: 2019-01-20
 desc: "Even essential standard library functions such as fopen() suffer from some serious shortcomings in PHP"
-hatnote: |
-    Discussions:
-      [/r/lolphp](https://www.reddit.com/r/lolphp/comments/agam6a/phps_fopen_is_broken_2017/).
 ---
 
 I know that “bashing PHP” is *so 2010*. But even now many people don’t seem to

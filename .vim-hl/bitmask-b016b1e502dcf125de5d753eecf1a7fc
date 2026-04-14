@@ -5,7 +5,7 @@
     maskFg          = <span class="Constant">0b00000000_00000000_00000000_11111111_11111111_11111111_00000000_00000000</span>
 )
 
-<span class="Statement">func</span> Bg(c <span class="Type">uint64</span>) <span class="Type">uint64</span> {
+<span class="Statement">func</span> Bg(c uint64) uint64 {
     <span class="Statement">if</span> c &amp; colorMode16Fg != <span class="Constant">0</span> {
         c = c ^ colorMode16Fg | colorMode16Bg
     }

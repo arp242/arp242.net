@@ -1,1 +1,1 @@
-<span class="Statement">if</span> p.Count &amp;&amp; <span class="goBang">!</span>p.Export &amp;&amp; <span class="goBang">!</span>p.SiteRead &amp;&amp; <span class="goBang">!</span>p.SiteCreate &amp;&amp; <span class="goBang">!</span>p.SiteUpdate { .. }
+<span class="Statement">if</span> p.Count &amp;&amp; !p.Export &amp;&amp; !p.SiteRead &amp;&amp; !p.SiteCreate &amp;&amp; !p.SiteUpdate { .. }

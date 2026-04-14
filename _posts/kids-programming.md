@@ -3,9 +3,6 @@ title: Why teach kids to program?
 date: 2017-06-24
 tags: ['Politics']
 updated: 2018-12-23
-hatnote: |
-    Discussions:
-      [Lobsters](https://lobste.rs/s/eoy7p4/why_teach_kids_program_2017).
 ---
 
 Teaching kids the basics of computer programming is a good idea for the same

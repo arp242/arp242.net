@@ -77,8 +77,8 @@ last week alone includes:
 - [BestAsciiTable](https://github.com/arp242/bestasciitable) – because many of
   are actually quite crap.
 
-- Worked on [zlog](https://github.com/zgoat/zlog),
-  [zhttp](https://github.com/zgoat/zhttp),
+- Worked on [zlog](https://github.com/arp242/zlog),
+  [zhttp](https://github.com/arp242/zhttp),
   [formam](https://github.com/monoculum/formam).
 
 - GoatLetter (unreleased, hopefully in a few months) – a newsletter service,

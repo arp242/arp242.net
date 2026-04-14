@@ -3,9 +3,6 @@ title: "Choosing a license for GoatCounter"
 date: 2019-12-30
 tags: ['GoatCounter', 'Open source']
 updated: '2020-07-01'
-hatnote: |
-    Discussions:
-      [Hacker News](https://news.ycombinator.com/item?id=21914245).
 ---
 
 Choosing a license has always been easy: MIT. It's the best-known "do what you

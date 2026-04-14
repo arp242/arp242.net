@@ -3,10 +3,6 @@ title: "Some zshrc tricks"
 date: 2020-05-22
 tags: ['Unix', 'zsh']
 filetype: zsh
-hatnote: |
-    Discussions:
-      [Lobsters](https://lobste.rs/s/tgmzke/some_zshrc_tricks),
-      [/r/commandline](https://www.reddit.com/r/commandline/comments/gofuh1/some_zshrc_tricks/)
 ---
 
 Some useful "tricks" from my `~/.zshrc`; [full version here][zshrc]. Not all of

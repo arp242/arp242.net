@@ -2,9 +2,6 @@
 title: "Freedom is not simple"
 date: 2020-08-12
 tags: ['Politics']
-hatnote: |
-    Discussions:
-      [Hacker News](https://news.ycombinator.com/item?id=24130963)
 ---
 
 There's a mistake I often see people make when it comes to the concept of

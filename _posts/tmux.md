@@ -4,9 +4,6 @@ date: 2020-01-03
 title: "Scripting tmux"
 date: 2020-01-03
 tags: ['Unix']
-hatnote: |
-    Discussions:
-      [Hacker News](https://news.ycombinator.com/item?id=21951679).
 ---
 
 I often want to start similar workspaces in tmux; for example I always want to

@@ -36,10 +36,9 @@ a[href^="/draft"] { color:red; }
 .pre-copy:hover { color:inherit; text-decoration:none; background-color:#f9f9f9; }
 .pre-wrap:hover .pre-copy { display:block; }
 
-.Statement  { color:#af5f00; } .Comment { color:#0000ee; } .Constant { color:#cd0000; }
-.Type       { color:#009d00; } .Special { color:#cd00cd; } .PreProc  { color:#cd00cd; }
-.Identifier { color:#008787; } .output  { color:#666666; } .ModeMsg  { color:#666666; }
-.Question   { color:#000; }
+.Statement { color:#af5f00; } .Comment { color:#0000ee; } .Constant   { color:#cd0000; }
+.Special   { color:#cd00cd; } .PreProc { color:#cd00cd; } .Identifier { color:#008787; }
+.output    { color:#666666; } .ModeMsg { color:#666666; } .Question   { color:#000; }
 
 .page aside        { background-color:#fffde8; position:relative; }     /* INLINE ASIDE */
 .page aside strong { font-size:2em; float:left; margin-right:.2em; }

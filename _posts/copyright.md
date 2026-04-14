@@ -2,9 +2,6 @@
 title: "Copyright, culture, and democracy"
 date: 2019-05-26
 tags: ['Politics', 'Democracy']
-hatnote: |
-    Discussions:
-      [/r/slatestarcodex](https://www.reddit.com/r/slatestarcodex/comments/bt6mrv/copyright_culture_and_democracy/)
 ---
 
 Did you know that Anne Frank's diaries are still copyrighted and can't be
@@ -230,86 +227,3 @@ we're surprised that copyright holders mount a counter-attack?
 [tpb]: https://en.wikipedia.org/wiki/The_Pirate_Bay_trial
 [mp3]: https://arstechnica.com/tech-policy/2015/04/riaa-back-on-anti-piracy-warpath-sues-song-linking-site-mp3skull/
 [eu]: https://www.bbc.com/news/technology-47708144
-
-{% comment %}
-Some notes for future expansion:
-
-Needed for innovation: bullshit. Did Rembrandt or van Gogh need a gazillion
-dollars? What abot open source?
-
-Creating new works isn't free, and I'm all for compensating people, but we don't
-need 100+ years copyrights for that. *Avengers: Endgame* had a $356 million
-budget, but it already managed to get a $2.5 billion return. That's a 700%
-return of investment in less than a month! That number will be way higher if we
-include earnings from DVD sales and streaming.
-Not every film is a major Hollywood blockbuster, but smaller films also seem to
-do well. For example [The Visitor][visitor] had a $4 million budget, and a $18.1
-million box office giving a 45% return. In general, the industry seems to be
-doing just fine financially.
-
-The music industry is even more ridiculous. For millennia artists freely copied
-and shared songs. There was no sense of "owning" a song, especially not one that
-you didn't write yourself! The way you earned your money was by performing. This
-changed with the invention of recorded media which allowed artists to get an
-income from the intellectual property on songs.
-
-[visitor]: https://en.wikipedia.org/wiki/The_Visitor_(2007_drama_film)
-
----
-
-Copyright industry is aggressive in its protection.
-
-http://listverse.com/2018/07/15/top-10-craziest-copyright-claims-ever-made/
-
-> In 2016, Carol Highsmith got a cease-and-desist letter from Getty Images
-> threatening to take her to court if she didn’t take down a photograph (shown
-> above) she’d put up on her website. This was strange—because she’d taken the
-> photograph herself, and she’d put it in the public domain.
-
-https://news.ycombinator.com/item?id=19953532
-https://www.jwz.org/blog/2014/10/youtubes-joke-of-a-fair-use-appeal-process/
-https://www.theguardian.com/technology/2015/feb/12/cat-purring-youtube-infringing-music-copyright
-https://blogs.technet.microsoft.com/markrussinovich/2005/10/31/sony-rootkits-and-digital-rights-management-gone-too-far/
-video game playthroughs
-http://arstechnica.com/tech-policy/2015/07/biography-publisher-ordered-to-pay-copyright-fees-to-goebbels-estate/
-https://torrentfreak.com/companies-withdraw-blu-ray-rippers-following-dvdfab-lawsuit-140314/ sd 
-http://arstechnica.co.uk/tech-policy/2016/02/riaa-gets-22m-default-judgment-against-brazen-and-egregious-mp3-website/?comments=1&post=30727359
-https://boingboing.net/2012/01/10/lockdown.html
-
-https://www.politico.eu/article/copyright-laws-dont-work-in-the-digital-age/
-
-> I worked for a time as an adviser to Bloom.fm, a U.K.-based music streaming
-> service that offered subscriptions starting at £1-a-month. Many labels refused
-> to license their content if the service was provided at that price, and
-> insisted on an increase. That might sound fine in principle but, as any
-> economics beginner will tell you, it is the market that sets the price for
-> goods, not the supplier. If you insist on charging more than the market will
-> bear, to what extent should the state be obliged to protect your business
-> model from piracy?
-
-
----
-
-Reducing copyright term is the "obvious" solution, but not very realistic due to
-"big copyright", yet if you go out and poll public support I'd bet that a large
-amount of people would be in favour.
-
-https://en.wikipedia.org/wiki/Copyright_Term_Extension_Act
-
-https://digitalcommons.lmu.edu/llr/vol36/iss1/7/
-
-More expendable income -> more to spend on new stuff
-Star Trek copyright expired, the new Discovery would still earn money, just not
-from old 60s stuff.
-
-https://en.wikipedia.org/wiki/File:Tom_Bell%27s_graph_showing_extension_of_U.S._copyright_term_over_time.svg
-
-Irony is that today there are *more* ways to make money off copyright than there
-were in 1790. This chart should be reversed.
-
-http://www.tomwbell.com/writings/(C)Esc.html
-
-https://lobste.rs/s/gohtiz/why_we_re_relicensing_cockroachdb#c_hykipo
-
-https://news.ycombinator.com/item?id=20097077
-{% endcomment %}

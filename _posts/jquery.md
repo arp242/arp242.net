@@ -2,9 +2,6 @@
 title: 'Why I’m still using jQuery in 2019'
 date: 2019-05-27
 tags: ['Web']  # JavaScript
-hatnote: |
-    Discussions:
-      [Hacker News](https://news.ycombinator.com/item?id=20021289).
 ---
 
 Many people advocate *"just use vanilla JavaScript, you don't need jQuery"*.

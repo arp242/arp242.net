@@ -2,9 +2,6 @@
 title: "Experiences with email-based login"
 date: 2020-05-17
 tags: ['GoatCounter', 'Email', 'UX']
-hatnote: |
-    Discussions:
-      [Lobsters](https://lobste.rs/s/kjm4nu/experiences_with_email_based_login).
 ---
 
 GoatCounter 1.2 (due to be released later today or tomorrow) will switch from

@@ -1,7 +1,7 @@
-:<span class="Statement">echo</span> <span class="Identifier">hasmapto</span>(<span class="Constant">':set wrap!&lt;CR&gt;'</span>, <span class="Constant">'n'</span>)
+:<span class="Statement">echo</span> <span class="Identifier">hasmapto</span><span class="Special">(</span><span class="Constant">':set wrap!&lt;CR&gt;'</span>, <span class="Constant">'n'</span><span class="Special">)</span>
 <span class="Constant">1</span>
 
-:<span class="Statement">echo</span> <span class="Identifier">hasmapto</span>(<span class="Constant">':set cursorline!&lt;CR&gt;'</span>, <span class="Constant">'n'</span>)
+:<span class="Statement">echo</span> <span class="Identifier">hasmapto</span><span class="Special">(</span><span class="Constant">':set cursorline!&lt;CR&gt;'</span>, <span class="Constant">'n'</span><span class="Special">)</span>
 <span class="Constant">0</span>
 
 <span class="Statement">if</span> <span class="Statement">!</span><span class="Identifier">hasmapto</span><span class="Special">(</span><span class="Constant">'myplugin#action'</span>, <span class="Constant">'n'</span><span class="Special">)</span>

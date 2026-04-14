@@ -3,10 +3,6 @@ title: "The web as a GUI toolkit"
 date: 2020-02-13
 tags: ['Web']
 updated: 2020-04-02
-hatnote: |
-    Discussions:
-      [Lobsters](https://lobste.rs/s/vrb7qh/web_as_gui_toolkit),
-      [Hacker News](https://news.ycombinator.com/item?id=22319489).
 ---
 
 The web is kinda weird because it was originally created as a typesetting

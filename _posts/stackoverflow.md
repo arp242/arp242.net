@@ -3,11 +3,6 @@ title: "Tired of Stack Overflow"
 date: 2019-08-22
 tags: ['Community']
 hatnote: |
-    Discussions:
-      [Lobsters](https://lobste.rs/s/pmldds/tired_stack_overflow),
-      [Hacker News](https://news.ycombinator.com/item?id=20859332),
-      [/r/programming](https://www.reddit.com/r/programming/comments/cysae4/tired_of_stack_overflow/).
-
     Note: this post is something of a rant, and uses strong and emotional language.
     It's born out of a years-long frustration with seeing almost every single
     suggestion to make Stack Overflow a friendlier place not just rejected, but met

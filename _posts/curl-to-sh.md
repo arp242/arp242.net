@@ -3,11 +3,6 @@ title: 'Curl to shell isn’t so bad'
 date: 2019-11-09
 tags: ['Security', 'Unix']
 updated: 2019-11-24
-hatnote: |
-    Discussions:
-      [Lobsters](https://lobste.rs/s/lz7tit/curl_shell_isn_t_so_bad),
-      [Hacker News](https://news.ycombinator.com/item?id=21490151),
-      [/r/commandline](https://www.reddit.com/r/commandline/comments/dtsttb/curl_to_shell_isnt_so_bad/).
 ---
 
 [Piping curl to s(hell)][shell] claims that using `curl example.com/install.sh |

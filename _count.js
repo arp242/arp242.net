@@ -3,10 +3,7 @@
 ;(function() {
 	'use strict';
 
-	if (window.goatcounter && window.goatcounter.vars)  // Compatibility with very old version; do not use.
-		window.goatcounter = window.goatcounter.vars
-	else
-		window.goatcounter = window.goatcounter || {}
+	window.goatcounter = window.goatcounter || {}
 
 	// Load settings from data-goatcounter-settings.
 	var s = document.querySelector('script[data-goatcounter]')
@@ -28,7 +25,7 @@
 			r: (vars.referrer === undefined ? goatcounter.referrer : vars.referrer),
 			t: (vars.title    === undefined ? goatcounter.title    : vars.title),
 			e: !!(vars.event || goatcounter.event),
-			s: [window.screen.width, window.screen.height, (window.devicePixelRatio || 1)],
+			s: window.screen.width,
 			b: is_bot(),
 			q: location.search,
 		}
@@ -41,6 +38,7 @@
 		if (is_empty(data.r)) data.r = document.referrer
 		if (is_empty(data.t)) data.t = document.title
 		if (is_empty(data.p)) data.p = get_path()
+		if (vars.no_session) data.ns = (typeof(vars.no_session) === 'function' ? vars.no_session(false) : vars.no_session)
 
 		if (rcb) data.r = rcb(data.r)
 		if (tcb) data.t = tcb(data.t)
@@ -85,9 +83,7 @@
 	// Get the endpoint to send requests to.
 	var get_endpoint = function() {
 		var s = document.querySelector('script[data-goatcounter]')
-		if (s && s.dataset.goatcounter)
-			return s.dataset.goatcounter
-		return (goatcounter.endpoint || window.counter)  // counter is for compat; don't use.
+		return (s && s.dataset.goatcounter) ? s.dataset.goatcounter : goatcounter.endpoint
 	}
 
 	// Get current path.
@@ -149,7 +145,7 @@
 		if (!url)
 			return warn('not counting because path callback returned null')
 
-		if (!navigator.sendBeacon(url)) {
+		if (!navigator || !navigator.sendBeacon || !navigator.sendBeacon(url)) {
 			// This mostly fails due to being blocked by CSP; try again with an
 			// image-based fallback.
 			var img = document.createElement('img')
@@ -184,10 +180,11 @@
 		var send = function(elem) {
 			return function() {
 				goatcounter.count({
-					event:    true,
-					path:     (elem.dataset.goatcounterClick || elem.name || elem.id || ''),
-					title:    (elem.dataset.goatcounterTitle || elem.title || (elem.innerHTML || '').substr(0, 200) || ''),
-					referrer: (elem.dataset.goatcounterReferrer || elem.dataset.goatcounterReferral || ''),
+					event:      true,
+					path:       (elem.dataset.goatcounterClick || elem.name || elem.id || ''),
+					title:      (elem.dataset.goatcounterTitle || elem.title || (elem.innerHTML || '').substr(0, 200) || ''),
+					referrer:   (elem.dataset.goatcounterReferrer || elem.dataset.goatcounterReferral || ''),
+					no_session: ['1', 't', 'true'].indexOf((elem.dataset.goatcounterNoSession || '').toLowerCase()) !== -1,
 				})
 			}
 		}
@@ -232,7 +229,7 @@
 
 			var p = document.querySelector(opt.append)
 			if (!p)
-				return warn('visit_count: append not found: ' + opt.append)
+				return warn('visit_count: element to append to not found: ' + opt.append)
 			p.appendChild(d)
 		})
 	}

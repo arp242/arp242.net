@@ -135,7 +135,7 @@ personal weblog. I know this is not realistic for everything (it will not be so
 easy to displace e.g. Facebook), but I do think there's much to gain here.
 
 
-[rationale]: https://github.com/zgoat/goatcounter/blob/master/docs/rationale.markdown
+[rationale]: https://github.com/arp242/goatcounter/blob/main/docs/rationale.md
 [logic]: https://www.youtube.com/watch?v=vidzkYnaf6Y
 [liver]: https://www.youtube.com/watch?v=Sp-pU8TFsg0
 

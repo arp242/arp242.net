@@ -3,10 +3,6 @@ title: "An API is a user interface"
 date: 2020-11-25
 tags: ['Programming']
 updated: 2020-11-26
-hatnote: |
-    Discussions:
-      [Lobsters](https://lobste.rs/s/tyabnv/api_is_user_interface),
-      [Hacker News](https://news.ycombinator.com/item?id=25206182)
 ---
 
 An API is a user interface for programmers, and is no different from a graphical

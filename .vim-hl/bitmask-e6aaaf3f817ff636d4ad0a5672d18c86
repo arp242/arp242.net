@@ -10,7 +10,7 @@
     CrossedOut   = <span class="Constant">0b1_0000_0000</span>
 )
 
-<span class="Statement">func</span> applyColor(c <span class="Type">uint64</span>) {
+<span class="Statement">func</span> applyColor(c uint64) {
     <span class="Statement">if</span> c &amp; Bold != <span class="Constant">0</span> {
         <span class="Comment">// Write escape code for bold</span>
     }

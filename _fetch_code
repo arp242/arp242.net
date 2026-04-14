@@ -14,11 +14,12 @@ fetch() {
 	done
 
 	extra=(
-		fsnotify/fsnotify
 		BurntSushi/toml
-		toml-lang/toml-test
-		Teamwork/reload
 		Teamwork/kommentaar
+		Teamwork/reload
+		fsnotify/fsnotify
+		lib/pq
+		toml-lang/toml-test
 	)
 	for e in $extra; do
 		curl -sH 'Accept: application/vnd.github.v3+json' \

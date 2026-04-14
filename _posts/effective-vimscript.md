@@ -4,9 +4,6 @@ title: "Effective VimScript"
 date: 2019-10-31
 tags: ['Vim']
 filetype: vim
-hatnote: |
-    Discussions:
-      [/r/vim](https://www.reddit.com/r/vim/comments/dpmnd1/effective_vimscript/).
 ---
 
 The VimScript language is rather idiosyncratic, and because few people – if

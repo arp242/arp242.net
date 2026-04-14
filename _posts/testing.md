@@ -3,12 +3,6 @@ title: "Testing isn’t everything"
 date: 2019-01-07
 tags: ['Programming']
 hatnote: |
-    Discussions:
-      [Hacker News](https://news.ycombinator.com/item?id=18907912),
-      [/r/programming](https://www.reddit.com/r/programming/comments/ag2h51/testing_isnt_everything/).
-    Feedback:
-      [#11](https://github.com/arp242/arp242.net/issues/11).
-
     This is adopted from a discussion about
     [Want to write good unit tests in go? Don’t panic… or should you?](https://medium.com/@jens.neuse/want-to-write-good-unit-tests-in-go-dont-panic-or-should-you-ba3eb5bf4f51)
     While this mainly talks about Go a lot of the points also apply to other languages.
@@ -254,6 +248,5 @@ but those ideas are ... rather misguided).
 [ginkgo]: https://github.com/onsi/ginkgo
 
 {% related_articles %}
-- [Ask HN: Do you write tests before the implementation?](https://news.ycombinator.com/item?id=21533376)
 - [The Cult of Go Test](https://danmux.com/posts/the_cult_of_go_test/)
 {% endrelated_articles %}

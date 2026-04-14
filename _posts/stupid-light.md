@@ -3,10 +3,6 @@ title: "Stupid light software"
 date: 2020-11-29
 tags: ['Programming']
 updated: 2020-11-30
-hatnote: |
-    Discussions:
-      [Lobsters](https://lobste.rs/s/95hsvw/stupid_light_software),
-      [Hacker News](https://news.ycombinator.com/item?id=25237184)
 ---
 
 The ultralight hiking community is – as you may gather from the name – very

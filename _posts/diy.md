@@ -3,9 +3,6 @@ title: Open source DIY ethics
 date: 2018-12-09
 tags: ['Community', 'Open source']
 updated: 2018-12-27
-hatnote: |
-    Discussions:
-      [suckless](http://lists.suckless.org/dev/1812/33045.html).
 ---
 
 I moved to New Zealand last week, and as a proper Dutch person one of the first

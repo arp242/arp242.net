@@ -7,12 +7,6 @@ desc: "I was very excited when I first used YAML, but some real-world usage show
 hatnote: |
     Follow-up:
       [Configuration with flags](/flags-config.html).
-    Discussions:
-      [Lobsters](https://lobste.rs/s/dwjgn1/yaml_probably_not_so_great_after_all)
-        ([again](https://lobste.rs/s/82tiyp/yaml_probably_not_so_great_after_all)),
-      [Hacker News](https://news.ycombinator.com/item?id=17358103)
-        ([again](https://news.ycombinator.com/item?id=20731160)),
-      [/r/programming](https://www.reddit.com/r/programming/comments/8shzcu/yaml_probably_not_so_great_after_all/).
     Translations:
       [Chinese (中文)](https://linux.cn/article-10423-1.html).
 ---

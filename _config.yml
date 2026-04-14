@@ -23,6 +23,7 @@ exclude: [
   'Gemfile',
   'Gemfile.lock',
   'README.md',
+  'tmp',
   'css',
   'favicon.png',
   '.vim-hl']

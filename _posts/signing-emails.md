@@ -3,10 +3,6 @@ title: 'Why isn’t Amazon.com signing their emails?'
 date: 2019-03-13
 tags: ['Security', 'Email']
 updated: 2019-03-19
-hatnote: |
-    Discussions:
-      [Lobsters](https://lobste.rs/s/1cxqho/why_is_no_one_signing_their_emails),
-      [Hacker News](https://news.ycombinator.com/item?id=19376323).
 ---
 
 I received this email a while ago:

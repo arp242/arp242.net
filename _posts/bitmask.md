@@ -2,9 +2,6 @@
 title: "Bitmasks for nicer APIs"
 date: 2020-12-10
 tags: ['Programming', 'Go']
-hatnote: |
-    Discussions:
-      [Lobsters](https://lobste.rs/s/3ww96e/bitmasks_for_nicer_apis)
 ---
 
 Bitmasks is one of those things where the basic idea is simple to understand:
@@ -58,7 +55,7 @@ All of the below can be used in any language by the way, and little of this is
 specific to Go. You will need Go 1.13 or newer for the binary literals to work.
 
 [fatih]: https://github.com/fatih/color
-[zli]: https://github.com/zgoat/zli
+[zli]: https://github.com/arp242/zli
 
 ---
 
@@ -347,7 +344,7 @@ the final result.
 
 I skipped a number of implementation details in the above example for clarity,
 especially for people not familiar with Go. [The full code is of course
-available](https://github.com/zgoat/zli/blob/master/color.go). Putting all of
+available](https://github.com/arp242/zli/blob/main/color.go). Putting all of
 this together gives a fairly nice API IMHO in about 200 lines of code which
 mostly avoids boilerplateism.
 

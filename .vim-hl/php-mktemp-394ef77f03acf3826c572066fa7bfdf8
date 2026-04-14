@@ -19,64 +19,64 @@
 <span class="Comment"> * peeking at FreeBSD's implementation of mkstemp (src/lib/libc/stdio/mktemp.c)</span>
 <span class="Comment"> * http://www.arp242.net/php-mktemp.html</span>
 <span class="Comment"> */</span>
-<span class="PreProc">function</span> mktemp<span class="Special">(</span><span class="Statement">$</span><span class="Identifier">template</span><span class="Statement">=</span><span class="Type">Null</span>, <span class="Statement">$</span><span class="Identifier">prefix</span><span class="Statement">=</span><span class="Type">Null</span>, <span class="Statement">$</span><span class="Identifier">dir</span><span class="Statement">=</span><span class="Constant">False</span><span class="Special">)</span>
-<span class="Special">{</span>
-    <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">template</span> <span class="Statement">===</span> <span class="Type">Null</span><span class="Special">)</span>
-        <span class="Statement">$</span><span class="Identifier">template</span> <span class="Statement">=</span> <span class="Constant">'XXXXXX'</span>;
-    <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">prefix</span> <span class="Statement">===</span> <span class="Type">Null</span><span class="Special">)</span>
-        <span class="Statement">$</span><span class="Identifier">prefix</span> <span class="Statement">=</span> <span class="Identifier">sys_get_temp_dir</span><span class="Special">()</span>;
+<span class="Statement">function</span> mktemp($template=<span class="Constant">Null</span>, $prefix=<span class="Constant">Null</span>, $dir=<span class="Constant">False</span>)
+{
+    <span class="Statement">if</span> ($template === <span class="Constant">Null</span>)
+        $template = <span class="Constant">'XXXXXX'</span>;
+    <span class="Statement">if</span> ($prefix === <span class="Constant">Null</span>)
+        $prefix = sys_get_temp_dir();
 
     <span class="Comment"># Check if we can write to $prefix, we will *not* create this directory!</span>
-    <span class="Statement">$</span><span class="Identifier">oprefix</span> <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">prefix</span>;
-    <span class="Statement">$</span><span class="Identifier">prefix</span> <span class="Statement">=</span> <span class="Identifier">realpath</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Special">)</span>;
-    <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">prefix</span> <span class="Statement">===</span> <span class="Constant">False</span> <span class="Statement">||</span> <span class="Statement">!</span><span class="Identifier">is_dir</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Special">))</span>
-        <span class="Statement">throw</span> <span class="PreProc">new</span> MktempError<span class="Special">(</span><span class="Constant">&quot;Prefix `</span><span class="Statement">$</span><span class="Identifier">oprefix</span><span class="Constant">' doesn't exists or isn't a directory&quot;</span><span class="Special">)</span>;
-    <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">!</span><span class="Identifier">is_writable</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Special">))</span>
-        <span class="Statement">throw</span> <span class="PreProc">new</span> MktempError<span class="Special">(</span><span class="Constant">&quot;Prefix `</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Constant">' isn't writable&quot;</span><span class="Special">)</span>;
+    $oprefix = $prefix;
+    $prefix = realpath($prefix);
+    <span class="Statement">if</span> ($prefix === <span class="Constant">False</span> || !is_dir($prefix))
+        <span class="Statement">throw</span> <span class="Statement">new</span> MktempError(<span class="Constant">&quot;Prefix `</span>$oprefix<span class="Constant">' doesn't exists or isn't a directory&quot;</span>);
+    <span class="Statement">if</span> (!is_writable($prefix))
+        <span class="Statement">throw</span> <span class="Statement">new</span> MktempError(<span class="Constant">&quot;Prefix `</span>$prefix<span class="Constant">' isn't writable&quot;</span>);
 
     <span class="Comment"># Some sanity checks in $template</span>
-    <span class="Statement">if</span> <span class="Special">(</span><span class="Identifier">strpos</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">template</span>, <span class="Constant">'/'</span><span class="Special">)</span> <span class="Statement">!==</span> <span class="Constant">False</span><span class="Special">)</span>
-        <span class="Statement">throw</span> <span class="PreProc">new</span> MktempException<span class="Special">(</span><span class="Constant">&quot;Template `</span><span class="Statement">$</span><span class="Identifier">template</span><span class="Constant">' contains a slash (/) character&quot;</span><span class="Special">)</span>;
-    <span class="Statement">if</span> <span class="Special">(</span><span class="Identifier">strlen</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">template</span><span class="Special">)</span> <span class="Statement">&gt;</span> PHP_MAXPATHLEN<span class="Special">)</span>
-        <span class="Statement">throw</span> <span class="PreProc">new</span> MktempException<span class="Special">(</span><span class="Constant">&quot;Template `</span><span class="Statement">$</span><span class="Identifier">template</span><span class="Constant">' is longer than PHP_MAXPATHLEN&quot;</span><span class="Special">)</span>;
+    <span class="Statement">if</span> (strpos($template, <span class="Constant">'/'</span>) !== <span class="Constant">False</span>)
+        <span class="Statement">throw</span> <span class="Statement">new</span> MktempException(<span class="Constant">&quot;Template `</span>$template<span class="Constant">' contains a slash (/) character&quot;</span>);
+    <span class="Statement">if</span> (strlen($template) &gt; PHP_MAXPATHLEN)
+        <span class="Statement">throw</span> <span class="Statement">new</span> MktempException(<span class="Constant">&quot;Template `</span>$template<span class="Constant">' is longer than PHP_MAXPATHLEN&quot;</span>);
 
     <span class="Comment"># Replacement characters for the X's</span>
-    <span class="Statement">$</span><span class="Identifier">padchars</span> <span class="Statement">=</span> <span class="Constant">&quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;</span>;
+    $padchars = <span class="Constant">&quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;</span>;
 
     <span class="Comment"># Replace two or more XX's with a random choice from $padchars</span>
-    <span class="Statement">$</span><span class="Identifier">name</span> <span class="Statement">=</span> <span class="Constant">''</span>;
-    <span class="Statement">$</span><span class="Identifier">doreplace</span> <span class="Statement">=</span> <span class="Constant">False</span>;
-    <span class="Statement">$</span><span class="Identifier">Xs</span> <span class="Statement">=</span> <span class="Special">[]</span>;
-    <span class="Statement">foreach</span> <span class="Special">(</span><span class="Identifier">range</span><span class="Special">(</span><span class="Constant">0</span>, <span class="Identifier">strlen</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">template</span><span class="Special">))</span> <span class="Statement">as</span> <span class="Statement">$</span><span class="Identifier">i</span><span class="Special">)</span> <span class="Special">{</span>
-        <span class="Statement">$</span><span class="Identifier">c</span> <span class="Statement">=</span> <span class="Identifier">substr</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">template</span>, <span class="Statement">$</span><span class="Identifier">i</span>, <span class="Constant">1</span><span class="Special">)</span>;
-        <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">c</span> <span class="Statement">!==</span> <span class="Constant">'X'</span><span class="Special">)</span>
-            <span class="Statement">$</span><span class="Identifier">doreplace</span> <span class="Statement">=</span> <span class="Constant">False</span>;
-        <span class="Statement">elseif</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">c</span> <span class="Statement">===</span> <span class="Constant">'X'</span> <span class="Statement">&amp;&amp;</span> <span class="Identifier">substr</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">template</span>, <span class="Statement">$</span><span class="Identifier">i</span> <span class="Statement">+</span> <span class="Constant">1</span>, <span class="Constant">1</span><span class="Special">)</span> <span class="Statement">===</span> <span class="Constant">'X'</span><span class="Special">)</span>
-            <span class="Statement">$</span><span class="Identifier">doreplace</span> <span class="Statement">=</span> <span class="Constant">True</span>;
+    $name = <span class="Constant">''</span>;
+    $doreplace = <span class="Constant">False</span>;
+    $Xs = [];
+    <span class="Statement">foreach</span> (range(<span class="Constant">0</span>, strlen($template)) <span class="Statement">as</span> $i) {
+        $c = substr($template, $i, <span class="Constant">1</span>);
+        <span class="Statement">if</span> ($c !== <span class="Constant">'X'</span>)
+            $doreplace = <span class="Constant">False</span>;
+        <span class="Statement">elseif</span> ($c === <span class="Constant">'X'</span> &amp;&amp; substr($template, $i + <span class="Constant">1</span>, <span class="Constant">1</span>) === <span class="Constant">'X'</span>)
+            $doreplace = <span class="Constant">True</span>;
 
-        <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">doreplace</span><span class="Special">)</span> <span class="Special">{</span>
-            <span class="Statement">$</span><span class="Identifier">c</span> <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">padchars</span><span class="Special">[</span><span class="Identifier">mt_rand</span><span class="Special">(</span><span class="Constant">0</span>, <span class="Identifier">strlen</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">padchars</span><span class="Special">)</span> <span class="Statement">-</span> <span class="Constant">1</span><span class="Special">)]</span>;
-            <span class="Statement">$</span><span class="Identifier">Xs</span><span class="Special">[]</span> <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">i</span>;
-        <span class="Special">}</span>
+        <span class="Statement">if</span> ($doreplace) {
+            $c = $padchars[mt_rand(<span class="Constant">0</span>, strlen($padchars) - <span class="Constant">1</span>)];
+            $Xs[] = $i;
+        }
 
-        <span class="Statement">$</span><span class="Identifier">name</span> <span class="Statement">.=</span> <span class="Statement">$</span><span class="Identifier">c</span>;
-    <span class="Special">}</span>
+        $name .= $c;
+    }
 
-    <span class="Statement">if</span> <span class="Special">(</span><span class="Identifier">count</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">Xs</span><span class="Special">)</span> <span class="Statement">===</span> <span class="Constant">0</span><span class="Special">)</span>
-        <span class="Statement">throw</span> <span class="PreProc">new</span> MktempError<span class="Special">(</span><span class="Constant">&quot;No sequence of two or more X characters in template `</span><span class="Statement">$</span><span class="Identifier">template</span><span class="Constant">'&quot;</span><span class="Special">)</span>;
+    <span class="Statement">if</span> (count($Xs) === <span class="Constant">0</span>)
+        <span class="Statement">throw</span> <span class="Statement">new</span> MktempError(<span class="Constant">&quot;No sequence of two or more X characters in template `</span>$template<span class="Constant">'&quot;</span>);
 
-    <span class="Statement">$</span><span class="Identifier">maxpermutations</span> <span class="Statement">=</span> <span class="Identifier">pow</span><span class="Special">(</span><span class="Identifier">strlen</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">padchars</span><span class="Special">)</span>, <span class="Identifier">count</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">Xs</span><span class="Special">))</span>;
-    <span class="Statement">$</span><span class="Identifier">permutation</span> <span class="Statement">=</span> <span class="Constant">0</span>;
-    <span class="Statement">$</span><span class="Identifier">curpos</span> <span class="Statement">=</span> <span class="Identifier">array_shift</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">Xs</span><span class="Special">)</span>;
-    <span class="Statement">$</span><span class="Identifier">startchr</span> <span class="Statement">=</span> <span class="Identifier">strpos</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">padchars</span>, <span class="Identifier">substr</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">name</span>, <span class="Statement">$</span><span class="Identifier">curpos</span>, <span class="Constant">1</span><span class="Special">))</span> <span class="Statement">-</span> <span class="Constant">1</span>;
-    <span class="Statement">$</span><span class="Identifier">trychr</span> <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">startchr</span>;
-    <span class="Statement">while</span> <span class="Special">(</span><span class="Constant">true</span><span class="Special">)</span> <span class="Special">{</span>
-        <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">permutation</span> <span class="Statement">&gt;=</span> <span class="Statement">$</span><span class="Identifier">maxpermutations</span><span class="Special">)</span>
-            <span class="Statement">throw</span> <span class="PreProc">new</span> MktempError<span class="Special">(</span><span class="Constant">&quot;Unable to create </span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Constant">/</span><span class="Statement">$</span><span class="Identifier">template</span><span class="Constant">; all possible file permutations already exist&quot;</span><span class="Special">)</span>;
+    $maxpermutations = pow(strlen($padchars), count($Xs));
+    $permutation = <span class="Constant">0</span>;
+    $curpos = array_shift($Xs);
+    $startchr = strpos($padchars, substr($name, $curpos, <span class="Constant">1</span>)) - <span class="Constant">1</span>;
+    $trychr = $startchr;
+    <span class="Statement">while</span> (<span class="Constant">true</span>) {
+        <span class="Statement">if</span> ($permutation &gt;= $maxpermutations)
+            <span class="Statement">throw</span> <span class="Statement">new</span> MktempError(<span class="Constant">&quot;Unable to create </span>$prefix<span class="Constant">/</span>$template<span class="Constant">; all possible file permutations already exist&quot;</span>);
 
         <span class="Comment"># Try to create file/directory</span>
-        <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">dir</span><span class="Special">)</span> <span class="Special">{</span>
-            <span class="Statement">$</span><span class="Identifier">s</span> <span class="Statement">=</span> @<span class="Identifier">mkdir</span><span class="Special">(</span><span class="Constant">&quot;</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Constant">/</span><span class="Statement">$</span><span class="Identifier">name</span><span class="Constant">&quot;</span>, <span class="Constant">0700</span><span class="Special">)</span>;
+        <span class="Statement">if</span> ($dir) {
+            $s = @mkdir(<span class="Constant">&quot;</span>$prefix<span class="Constant">/</span>$name<span class="Constant">&quot;</span>, <span class="Constant">0700</span>);
 
             <span class="Comment"># What we *really* want to do is do something along the lines of</span>
             <span class="Comment"># `errno == EEXISTS' in C. In PHP there is, as far as I can see, no</span>
@@ -96,44 +96,44 @@
             <span class="Comment">#</span>
             <span class="Comment"># There's a bug for this, but it doesn't seem to be considered much</span>
             <span class="Comment"># of a priority...  https://bugs.php.net/bug.php?id=49396</span>
-            <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">!</span><span class="Statement">$</span><span class="Identifier">s</span> <span class="Statement">&amp;&amp;</span> <span class="Identifier">file_exists</span><span class="Special">(</span><span class="Constant">&quot;</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Constant">/</span><span class="Statement">$</span><span class="Identifier">name</span><span class="Constant">&quot;</span><span class="Special">))</span> <span class="Special">{</span>
-                <span class="Statement">$</span><span class="Identifier">err</span> <span class="Statement">=</span> <span class="Identifier">error_get_last</span><span class="Special">()</span>;
-                <span class="Statement">throw</span> <span class="PreProc">new</span> MktempError<span class="Special">(</span><span class="Constant">&quot;Error creating `</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Constant">/</span><span class="Statement">$</span><span class="Identifier">name</span><span class="Constant">': </span><span class="Special">{</span><span class="Statement">$</span><span class="Identifier">err</span><span class="Special">[</span><span class="Constant">'message'</span><span class="Special">]}</span><span class="Constant">&quot;</span><span class="Special">)</span>;
-            <span class="Special">}</span>
-            <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">s</span><span class="Special">)</span> <span class="Statement">break</span>;
-        <span class="Special">}</span>
-        <span class="Statement">else</span> <span class="Special">{</span>
-            <span class="Statement">$</span><span class="Identifier">s</span> <span class="Statement">=</span> @<span class="Identifier">fopen</span><span class="Special">(</span><span class="Constant">&quot;</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Constant">/</span><span class="Statement">$</span><span class="Identifier">name</span><span class="Constant">&quot;</span>, <span class="Constant">'x'</span><span class="Special">)</span>;
+            <span class="Statement">if</span> (!$s &amp;&amp; file_exists(<span class="Constant">&quot;</span>$prefix<span class="Constant">/</span>$name<span class="Constant">&quot;</span>)) {
+                $err = error_get_last();
+                <span class="Statement">throw</span> <span class="Statement">new</span> MktempError(<span class="Constant">&quot;Error creating `</span>$prefix<span class="Constant">/</span>$name<span class="Constant">': </span>{$err[<span class="Constant">'message'</span>]}<span class="Constant">&quot;</span>);
+            }
+            <span class="Statement">if</span> ($s) <span class="Statement">break</span>;
+        }
+        <span class="Statement">else</span> {
+            $s = @fopen(<span class="Constant">&quot;</span>$prefix<span class="Constant">/</span>$name<span class="Constant">&quot;</span>, <span class="Constant">'x'</span>);
 
-            <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">s</span> <span class="Statement">===</span> <span class="Constant">False</span> <span class="Statement">&amp;&amp;</span> <span class="Statement">!</span><span class="Identifier">file_exists</span><span class="Special">(</span><span class="Constant">&quot;</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Constant">/</span><span class="Statement">$</span><span class="Identifier">name</span><span class="Constant">&quot;</span><span class="Special">))</span> <span class="Special">{</span>
-                <span class="Statement">$</span><span class="Identifier">err</span> <span class="Statement">=</span> <span class="Identifier">error_get_last</span><span class="Special">()</span>;
-                <span class="Statement">throw</span> <span class="PreProc">new</span> MktempError<span class="Special">(</span><span class="Constant">&quot;Error creating `</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Constant">/</span><span class="Statement">$</span><span class="Identifier">name</span><span class="Constant">': </span><span class="Special">{</span><span class="Statement">$</span><span class="Identifier">err</span><span class="Special">[</span><span class="Constant">'message'</span><span class="Special">]}</span><span class="Constant">&quot;</span><span class="Special">)</span>;
-            <span class="Special">}</span>
+            <span class="Statement">if</span> ($s === <span class="Constant">False</span> &amp;&amp; !file_exists(<span class="Constant">&quot;</span>$prefix<span class="Constant">/</span>$name<span class="Constant">&quot;</span>)) {
+                $err = error_get_last();
+                <span class="Statement">throw</span> <span class="Statement">new</span> MktempError(<span class="Constant">&quot;Error creating `</span>$prefix<span class="Constant">/</span>$name<span class="Constant">': </span>{$err[<span class="Constant">'message'</span>]}<span class="Constant">&quot;</span>);
+            }
 
-            <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">s</span> <span class="Statement">!==</span> <span class="Constant">False</span><span class="Special">)</span> <span class="Special">{</span>
-                <span class="Identifier">fclose</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">s</span><span class="Special">)</span>;
-                <span class="Identifier">chmod</span><span class="Special">(</span><span class="Constant">&quot;</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Constant">/</span><span class="Statement">$</span><span class="Identifier">name</span><span class="Constant">&quot;</span>, <span class="Constant">0600</span><span class="Special">)</span>;
+            <span class="Statement">if</span> ($s !== <span class="Constant">False</span>) {
+                fclose($s);
+                chmod(<span class="Constant">&quot;</span>$prefix<span class="Constant">/</span>$name<span class="Constant">&quot;</span>, <span class="Constant">0600</span>);
                 <span class="Statement">break</span>;
-            <span class="Special">}</span>
-        <span class="Special">}</span>
+            }
+        }
 
         <span class="Comment"># Loop over each X we replaced, and try the next character from</span>
         <span class="Comment"># $padchars</span>
-        <span class="Statement">$</span><span class="Identifier">permutation</span> <span class="Statement">+=</span> <span class="Constant">1</span>;
-        <span class="Statement">$</span><span class="Identifier">trychr</span> <span class="Statement">+=</span> <span class="Constant">1</span>;
-        <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">trychr</span> <span class="Statement">&gt;</span> <span class="Identifier">strlen</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">padchars</span><span class="Special">)</span> <span class="Statement">-</span> <span class="Constant">1</span><span class="Special">)</span>
-            <span class="Statement">$</span><span class="Identifier">trychr</span> <span class="Statement">=</span> <span class="Constant">0</span>;
+        $permutation += <span class="Constant">1</span>;
+        $trychr += <span class="Constant">1</span>;
+        <span class="Statement">if</span> ($trychr &gt; strlen($padchars) - <span class="Constant">1</span>)
+            $trychr = <span class="Constant">0</span>;
 
-        <span class="Statement">if</span> <span class="Special">(</span><span class="Statement">$</span><span class="Identifier">trychr</span> <span class="Statement">===</span> <span class="Statement">$</span><span class="Identifier">startchr</span><span class="Special">)</span> <span class="Special">{</span>
-            <span class="Statement">$</span><span class="Identifier">curpos</span> <span class="Statement">=</span> <span class="Identifier">array_shift</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">Xs</span><span class="Special">)</span>;
-            <span class="Statement">$</span><span class="Identifier">startchr</span> <span class="Statement">=</span> <span class="Identifier">strpos</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">padchars</span>, <span class="Identifier">substr</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">name</span>, <span class="Statement">$</span><span class="Identifier">curpos</span>, <span class="Constant">1</span><span class="Special">))</span> <span class="Statement">-</span> <span class="Constant">1</span>;
-            <span class="Statement">$</span><span class="Identifier">trychr</span> <span class="Statement">=</span> <span class="Statement">$</span><span class="Identifier">startchr</span> <span class="Statement">+</span> <span class="Constant">1</span>;
-        <span class="Special">}</span>
+        <span class="Statement">if</span> ($trychr === $startchr) {
+            $curpos = array_shift($Xs);
+            $startchr = strpos($padchars, substr($name, $curpos, <span class="Constant">1</span>)) - <span class="Constant">1</span>;
+            $trychr = $startchr + <span class="Constant">1</span>;
+        }
 
-        <span class="Statement">$</span><span class="Identifier">name</span> <span class="Statement">=</span> <span class="Identifier">substr_replace</span><span class="Special">(</span><span class="Statement">$</span><span class="Identifier">name</span>, <span class="Statement">$</span><span class="Identifier">padchars</span><span class="Special">[</span><span class="Statement">$</span><span class="Identifier">trychr</span><span class="Special">]</span>, <span class="Statement">$</span><span class="Identifier">curpos</span>, <span class="Constant">1</span><span class="Special">)</span>;
-    <span class="Special">}</span>
+        $name = substr_replace($name, $padchars[$trychr], $curpos, <span class="Constant">1</span>);
+    }
 
-    <span class="Statement">return</span> <span class="Constant">&quot;</span><span class="Statement">$</span><span class="Identifier">prefix</span><span class="Constant">/</span><span class="Statement">$</span><span class="Identifier">name</span><span class="Constant">&quot;</span>;
-<span class="Special">}</span>
+    <span class="Statement">return</span> <span class="Constant">&quot;</span>$prefix<span class="Constant">/</span>$name<span class="Constant">&quot;</span>;
+}
 
-<span class="Type">class</span> MktempError <span class="Type">extends</span> <span class="Identifier">Exception</span> <span class="Special">{</span> <span class="Special">}</span>
+<span class="Statement">class</span> MktempError <span class="Statement">extends</span> Exception { }
