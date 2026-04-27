@@ -1,6 +1,7 @@
 ---
 title: "Comparing compression tools"
 date: 2026-04-14
+tags: ['Unix']
 ---
 
 I'd like to know what the "best" compression tool is for storing archives
@@ -26,8 +27,8 @@ common stuff.
 
 For the same reason I'm only comparing reasonably common compression tools
 already in wide-spread use. There are many others that are very similar to those
-listed here with minor differences (e.g. zip, 7zip), not considered stable (e.g.
-bzip3), or just not widespread for one reason or the other.
+listed here with minor differences (e.g. zip, 7zip), not considered stable, or
+just not widespread for one reason or the other.
 
 If you're interested in other tools or sets of flags then you can run
 cmp-compress yourself.
@@ -180,11 +181,7 @@ the expense of being much slower. In some cases that's a good trade-off.
 
 For natural language text bzip2 might still be worth it, but compression seems
 to suffer if there's too much formatting (which is often the case in real-world
-files). bzip3 seems an interesting improvement over bzip2, but the big bold
-"decompression may not work" disclaimer is rather a turn-off at the moment. I
-suppose one could use a wrapper which compares the decompression results with
-the input. That said, out of the tools not included here, bzip3 seems the most
-interesting. Also see: [An ode to bzip](https://purplesyringa.moe/blog/an-ode-to-bzip/).
+files).
 
 I want to stress once more that all of this may depend on your specific data,
 system you're using, planetary alignments, etc. "Most of the time", "often", and
