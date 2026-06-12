@@ -6,6 +6,7 @@
 
 # Renamed
 /learning-a-programming-language.html   /learning-programming.html   301
+/dep-pkgs.html /deps-vcs.html
 
 # Old weblog titles; some seem borked but that's because Jekyll generated them
 # like this sometimes :-/
