@@ -24,6 +24,10 @@ dependency specification and "lock file". It lists exact versions; there is no
 ~\>1.1. It includes both direct and indirect dependencies and lists your full
 dependency tree (the go command writes to go.mod).
 
+A hash of all files is checked against known hashes on sum.golang.org to prevent
+tags from being replaced, and it uses a proxy to prevent repos from being
+left-pad'd.
+
 There are more aspects to Go Modules, including security features, but I will
 skip over them for the purpose of this article. The relevant bit is
 "dependencies are identified by URL, the code is fetched directly from the VCS,
