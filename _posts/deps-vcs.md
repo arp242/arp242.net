@@ -159,3 +159,7 @@ it too hard**, as do other package managers (but I don't care about them).
 
 [added a cooldown option]: https://blog.rubygems.org/2026/06/03/cooldown-let-new-gems-be-vetted.html
 [Minimal Version Selection]: https://go.dev/ref/mod#minimal-version-selection
+
+{% related_articles %}
+- [Cursed Bundler: Using go get to install Ruby Gems](https://nesbitt.io/2025/12/25/cursed-bundler-using-go-get-to-install-ruby-gems.html)
+{% endrelated_articles %}
