@@ -1,10 +1,6 @@
-{% if site.source == '/home/martin/code/arp242.net' %}
-	<script data-goatcounter="http://arp242.goatcounter.localhost:8081/count"
-			data-goatcounter-settings='{"no_onload":false}'>
-	{% include _count.js %}
-	</script>
-{% else %}
-	<script data-goatcounter="https://stats.arp242.net/count">
-	{% include _count.js %}
-	</script>
-{% endif %}
+{% comment %}
+<script data-goatcounter="http://arp242.goatcounter.localhost:8081/count" data-goatcounter-settings='{"no_onload":false}'>
+{% endcomment %}
+<script data-goatcounter="https://stats.arp242.net/count">
+{% include _count.js %}
+</script>
